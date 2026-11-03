@@ -16,17 +16,70 @@ document.addEventListener('click',async event=>{
   const detail=document.querySelector('#preview-detail');detail.href=`/overlays/${item.slug}/`;
   document.querySelector('#preview-shop').href=item.shopUrl;
   video.poster=item.image;video.src=item.video;video.setAttribute('aria-label',`Originalvideo: ${item.name}`);
-  dialog.showModal();document.body.classList.add('no-scroll');
+  dialog.showModal();document.body.classList.add('no-scroll');syncInlineVideos();
   // Playback starts only after an explicit preview click. Reduced-motion users get the still preview first.
   if(!matchMedia('(prefers-reduced-motion: reduce)').matches)await video.play().catch(()=>{});
- }catch{if(!dialog.open){document.querySelector('#preview-title').textContent='Vorschau nicht verfügbar';video.removeAttribute('src');video.removeAttribute('poster');document.querySelector('#preview-detail').href=`/overlays/${button.dataset.preview}/`;document.querySelector('#preview-shop').href='https://chatstyle.gg/templates/creator/jesusteng';dialog.showModal();document.body.classList.add('no-scroll')}showMediaError('Die Vorschau konnte nicht geladen werden. Versuche es erneut oder öffne das Template auf Chatstyle.');}
+ }catch{if(!dialog.open){document.querySelector('#preview-title').textContent='Vorschau nicht verfügbar';video.removeAttribute('src');video.removeAttribute('poster');document.querySelector('#preview-detail').href=`/overlays/${button.dataset.preview}/`;document.querySelector('#preview-shop').href='https://chatstyle.gg/templates/creator/jesusteng';dialog.showModal();document.body.classList.add('no-scroll');syncInlineVideos()}showMediaError('Die Vorschau konnte nicht geladen werden. Versuche es erneut oder öffne das Template auf Chatstyle.');}
  finally{button.disabled=false;}
 });
 dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close()}});
-dialog.addEventListener('close',()=>{requestVersion++;video.pause();video.removeAttribute('src');video.load();document.body.classList.remove('no-scroll');previousFocus?.focus()});
+dialog.addEventListener('close',()=>{requestVersion++;video.pause();video.removeAttribute('src');video.load();document.body.classList.remove('no-scroll');previousFocus?.focus();syncInlineVideos()});
 video.addEventListener('error',()=>{if(dialog.open&&video.getAttribute('src'))showMediaError('Das Video kann hier nicht abgespielt werden. Das Vorschaubild und der Link zu Chatstyle stehen weiterhin zur Verfügung.')});
-document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause()});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();syncInlineVideos()});
+
+// Hero loops load on visibility. Card loops load only on hover or keyboard focus.
+// The still image remains visible until playback actually starts, including on failure.
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+let heroPaused=reducedMotion.matches;
+const heroToggle=document.querySelector('#hero-motion');
+const inlineRecords=[...document.querySelectorAll('[data-inline-video]')].map(media=>({
+ media,kind:media.dataset.inlineVideo,
+ container:media.closest(media.dataset.inlineVideo==='hero'?'[data-autoplay-preview]':'[data-hover-preview]'),
+ inView:false,hovered:false,focused:false,requested:false,failed:false
+}));
+function wantsInlinePlayback(record){
+ return record.inView&&!document.hidden&&!dialog.open&&!record.container.closest('[hidden]')&&!record.failed&&
+  (record.kind==='hero'?!heroPaused:!reducedMotion.matches&&(record.hovered||record.focused));
+}
+function syncInlineVideos(){
+ for(const record of inlineRecords){
+  const {media,container}=record;
+  if(!wantsInlinePlayback(record)){
+   record.requested=false;media.pause();container.classList.remove('is-playing');continue;
+  }
+  if(record.requested)continue;
+  record.requested=true;media.muted=true;
+  if(!media.getAttribute('src'))media.src=media.dataset.src;
+  media.play().then(()=>{
+   if(wantsInlinePlayback(record)){container.classList.add('is-playing')}
+   else{media.pause();container.classList.remove('is-playing')}
+  }).catch(()=>{record.requested=false;if(media.paused)container.classList.remove('is-playing')});
+ }
+}
+function updateHeroToggle(){
+ if(!heroToggle)return;
+ heroToggle.setAttribute('aria-pressed',String(heroPaused));
+ heroToggle.innerHTML=`<span aria-hidden="true">${heroPaused?'▶':'Ⅱ'}</span> Videos ${heroPaused?'abspielen':'pausieren'}`;
+}
+heroToggle?.addEventListener('click',()=>{heroPaused=!heroPaused;updateHeroToggle();syncInlineVideos()});
+reducedMotion.addEventListener('change',()=>{heroPaused=reducedMotion.matches;updateHeroToggle();syncInlineVideos()});
+updateHeroToggle();
+const inlineObserver=new IntersectionObserver(entries=>{
+ for(const entry of entries){const record=inlineRecords.find(r=>r.container===entry.target);if(record)record.inView=entry.isIntersecting;}
+ syncInlineVideos();
+},{threshold:.12});
+for(const record of inlineRecords){
+ const {container,media}=record;
+ media.addEventListener('error',()=>{record.failed=true;record.requested=false;container.classList.remove('is-playing')});
+ media.addEventListener('pause',()=>container.classList.remove('is-playing'));
+ inlineObserver.observe(container);
+ if(record.kind!=='hover')continue;
+ container.addEventListener('pointerenter',event=>{if(event.pointerType==='touch')return;record.hovered=true;syncInlineVideos()});
+ container.addEventListener('pointerleave',()=>{record.hovered=false;syncInlineVideos()});
+ container.addEventListener('focusin',()=>{record.focused=true;syncInlineVideos()});
+ container.addEventListener('focusout',event=>{if(!container.contains(event.relatedTarget)){record.focused=false;syncInlineVideos()}});
+}
 const grid=document.querySelector('#template-grid');
 if(grid){
  const cards=[...grid.querySelectorAll('[data-template]')];
@@ -46,6 +99,7 @@ if(grid){
   more.hidden=visible>=matches;
   document.querySelector('#empty-state').hidden=matches>0;
   filters.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===active)));
+  syncInlineVideos();
  }
  function updateUrl(){const url=new URL(location.href);url.searchParams.delete('style');url.searchParams.delete('q');if(active!=='all')url.searchParams.set('style',active);if(search.value.trim())url.searchParams.set('q',search.value.trim());history.replaceState(null,'',url);}
  function readUrl(){const p=new URLSearchParams(location.search);active=filters.some(b=>b.dataset.filter===p.get('style'))?p.get('style'):'all';search.value=p.get('q')??'';limit=12;render();}

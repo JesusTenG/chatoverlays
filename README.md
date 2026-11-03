@@ -18,8 +18,9 @@ Die Vorschau läuft unter http://127.0.0.1:4173. Das Verzeichnis `dist/` lässt 
 
 - `source/catalog.json`: 40 verifizierte Template-Namen, Originalmedien-Quellen und Chatstyle-Links.
 - `source/editorial.mjs`: deutsche Beschreibungen und individuelle Gestaltungstipps sowie fünf Stilwelten.
-- `source/style.css`, `source/app.js`: responsive Gestaltung, Suche, Filter, Sortierung, Nachladen und zugänglicher Video-Dialog.
-- `dist/assets/templates/`: 40 lokale WebP-Bilder und 40 lokale WebM-Videos, insgesamt ca. 41 MB. Videos werden erst auf ausdrücklichen Klick geladen und abgespielt. Bei reduzierter Bewegung startet das Video nicht automatisch.
+- `source/style.css`, `source/retro.css`, `source/app.js`: responsive Gestaltung im Vintage-Arcade-Stil, Suche, Filter, Sortierung, Nachladen und zugänglicher Video-Dialog.
+- `dist/assets/templates/`: 40 lokale WebP-Bilder und 40 lokale WebM-Videos, insgesamt ca. 41 MB. Die beiden Hero-Videos laufen sichtbar stumm in Schleife und lassen sich gemeinsam pausieren. Kartenvideos laden und starten beim Hover oder Tastaturfokus. Außerhalb des sichtbaren Bereichs, bei versteckten Karten, in inaktiven Tabs und hinter dem geöffneten Video-Dialog pausieren die Vorschauen. Bei reduzierter Bewegung startet nichts automatisch; manuelles Abspielen bleibt möglich.
+- `dist/assets/fonts/`: lokal gespeicherte Schrift Fraunces mit SIL Open Font License. Papierkörnung, Streifen und Geräte-Details entstehen mit CSS; die Template-Medien bleiben unverändert.
 - `build.mjs`: erzeugt Startseite, 40 Detailseiten, fünf Kategorie-Seiten, einen Ratgeber, 404, Sitemap, Canonicals, Open-Graph-Metadaten und JSON-LD.
 - `site.config.json`: öffentlicher Ursprung, Creator-Link und Indexierungsstatus.
 

@@ -1,0 +1,737 @@
+[
+  {
+    "id": 130,
+    "name": "Neo Tokyo",
+    "slug": "neo-tokyo",
+    "url": "https://chatstyle.gg/template/neo-tokyo",
+    "tags": [
+      "animated",
+      "blue",
+      "console",
+      "dark",
+      "microsoft",
+      "neon",
+      "retro",
+      "tech",
+      "purple"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/neo-tokyo/neo-tokyo.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/neo-tokyo/neo-tokyo.webm",
+    "image": "/assets/templates/neo-tokyo.webp",
+    "video": "/assets/templates/neo-tokyo.webm"
+  },
+  {
+    "id": 140,
+    "name": "Lofi Windows 93",
+    "slug": "lofi-windows-93",
+    "url": "https://chatstyle.gg/template/lofi-windows-93",
+    "tags": [
+      "animated",
+      "bold",
+      "blue",
+      "colorful",
+      "cozy",
+      "cute",
+      "light",
+      "pink",
+      "retro",
+      "pixel",
+      "purple"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/140/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/51/poster.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/140/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/51/preview.webm",
+    "image": "/assets/templates/lofi-windows-93.webp",
+    "video": "/assets/templates/lofi-windows-93.webm"
+  },
+  {
+    "id": 56,
+    "name": "Lunar Omen",
+    "slug": "lunar-omen",
+    "url": "https://chatstyle.gg/template/lunar-omen",
+    "tags": [
+      "dark"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/lunar-omen/lunar-omen.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/lunar-omen/lunar-omen.webm",
+    "image": "/assets/templates/lunar-omen.webp",
+    "video": "/assets/templates/lunar-omen.webm"
+  },
+  {
+    "id": 143,
+    "name": "WhatsChat LoFi",
+    "slug": "whatschat-lofi",
+    "url": "https://chatstyle.gg/template/whatschat-lofi",
+    "tags": [
+      "animated",
+      "bold",
+      "cozy",
+      "pink",
+      "tech",
+      "purple"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/143/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/54/poster.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/143/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/54/preview.webm",
+    "image": "/assets/templates/whatschat-lofi.webp",
+    "video": "/assets/templates/whatschat-lofi.webm"
+  },
+  {
+    "id": 92,
+    "name": "Chromatic Flow",
+    "slug": "chromatic-flow",
+    "url": "https://chatstyle.gg/template/chromatic-flow",
+    "tags": [
+      "animated",
+      "colorful",
+      "neon",
+      "purple",
+      "pink",
+      "tech"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/chromatic-flow/chromatic-flow.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/chromatic-flow/chromatic-flow.webm",
+    "image": "/assets/templates/chromatic-flow.webp",
+    "video": "/assets/templates/chromatic-flow.webm"
+  },
+  {
+    "id": 117,
+    "name": "Magical Love",
+    "slug": "magical-love",
+    "url": "https://chatstyle.gg/template/magical-love",
+    "tags": [
+      "animated",
+      "bold",
+      "comic",
+      "colorful",
+      "cute",
+      "cozy",
+      "pink"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/magical-love/magical-love.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/magical-love/magical-love.webm",
+    "image": "/assets/templates/magical-love.webp",
+    "video": "/assets/templates/magical-love.webm"
+  },
+  {
+    "id": 97,
+    "name": "Illusion Frames",
+    "slug": "illusion-frames",
+    "url": "https://chatstyle.gg/template/illusion-frames",
+    "tags": [
+      "animated",
+      "bold",
+      "minimalistic"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/illusion-frames/illusion-frames.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/illusion-frames/illusion-frames.webm",
+    "image": "/assets/templates/illusion-frames.webp",
+    "video": "/assets/templates/illusion-frames.webm"
+  },
+  {
+    "id": 67,
+    "name": "Skate Check",
+    "slug": "skate-check",
+    "url": "https://chatstyle.gg/template/skate-check",
+    "tags": [
+      "animated",
+      "colorful",
+      "bold",
+      "pixelated",
+      "retro"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/skate-check/skate-check.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/skate-check/skate-check.webm",
+    "image": "/assets/templates/skate-check.webp",
+    "video": "/assets/templates/skate-check.webm"
+  },
+  {
+    "id": 113,
+    "name": "Medieval Announcement",
+    "slug": "medieval-announcement",
+    "url": "https://chatstyle.gg/template/medieval-announcement",
+    "tags": [
+      "animated"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/medieval-announcement/medieval-announcement.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/medieval-announcement/medieval-announcement.webm",
+    "image": "/assets/templates/medieval-announcement.webp",
+    "video": "/assets/templates/medieval-announcement.webm"
+  },
+  {
+    "id": 133,
+    "name": "Neon Chat",
+    "slug": "neon-chat",
+    "url": "https://chatstyle.gg/template/neon-chat",
+    "tags": [
+      "animated",
+      "colorful",
+      "cozy",
+      "dark",
+      "games",
+      "neon",
+      "tech",
+      "purple",
+      "pink"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/133/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/39/poster.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/133/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/39/preview.webm",
+    "image": "/assets/templates/neon-chat.webp",
+    "video": "/assets/templates/neon-chat.webm"
+  },
+  {
+    "id": 88,
+    "name": "Receipt Flow",
+    "slug": "receipt-flow",
+    "url": "https://chatstyle.gg/template/receipt-flow",
+    "tags": [
+      "animated",
+      "bold",
+      "light",
+      "minimalistic",
+      "pixelated",
+      "retro"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/receipt-flow/receipt-flow.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/receipt-flow/receipt-flow.webm",
+    "image": "/assets/templates/receipt-flow.webp",
+    "video": "/assets/templates/receipt-flow.webm"
+  },
+  {
+    "id": 104,
+    "name": "System Failure",
+    "slug": "system-failure",
+    "url": "https://chatstyle.gg/template/system-failure",
+    "tags": [
+      "animated",
+      "tech",
+      "retro",
+      "red",
+      "neon"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/system-failure/system-failure.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/system-failure/system-failure.webm",
+    "image": "/assets/templates/system-failure.webp",
+    "video": "/assets/templates/system-failure.webm"
+  },
+  {
+    "id": 64,
+    "name": "Gemstone Flow",
+    "slug": "gemstone-flow",
+    "url": "https://chatstyle.gg/template/gemstone-flow",
+    "tags": [
+      "animated",
+      "colorful",
+      "dark"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/gemstone-flow/gemstone-flow.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/gemstone-flow/gemstone-flow.webm",
+    "image": "/assets/templates/gemstone-flow.webp",
+    "video": "/assets/templates/gemstone-flow.webm"
+  },
+  {
+    "id": 66,
+    "name": "90s Vibe",
+    "slug": "90s-vibe",
+    "url": "https://chatstyle.gg/template/90s-vibe",
+    "tags": [
+      "animated",
+      "bold",
+      "colorful",
+      "retro"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/90s-vibe/90s-vibe.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/90s-vibe/90s-vibe.webm",
+    "image": "/assets/templates/90s-vibe.webp",
+    "video": "/assets/templates/90s-vibe.webm"
+  },
+  {
+    "id": 114,
+    "name": "Wooden Signs",
+    "slug": "wooden-signs",
+    "url": "https://chatstyle.gg/template/wooden-signs",
+    "tags": [
+      "bold",
+      "animated",
+      "dark"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/wooden-signs/wooden-signs.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/wooden-signs/wooden-signs.webm",
+    "image": "/assets/templates/wooden-signs.webp",
+    "video": "/assets/templates/wooden-signs.webm"
+  },
+  {
+    "id": 69,
+    "name": "Daydream",
+    "slug": "daydream",
+    "url": "https://chatstyle.gg/template/daydream",
+    "tags": [
+      "animated",
+      "colorful",
+      "cute",
+      "minimalistic",
+      "neon",
+      "pink",
+      "purple",
+      "light"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/daydream/daydream.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/daydream/daydream.webm",
+    "image": "/assets/templates/daydream.webp",
+    "video": "/assets/templates/daydream.webm"
+  },
+  {
+    "id": 70,
+    "name": "Sakura Cherry Blossom",
+    "slug": "sakura-cherry-blossom",
+    "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+    "tags": [
+      "animated",
+      "bold",
+      "colorful",
+      "cute",
+      "floral",
+      "pink",
+      "purple"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/sakura-cherry-blossom/sakura-cherry-blossom.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/sakura-cherry-blossom/sakura-cherry-blossom.webm",
+    "image": "/assets/templates/sakura-cherry-blossom.webp",
+    "video": "/assets/templates/sakura-cherry-blossom.webm"
+  },
+  {
+    "id": 105,
+    "name": "Arcade Pixel",
+    "slug": "arcade-pixel",
+    "url": "https://chatstyle.gg/template/arcade-pixel",
+    "tags": [
+      "animated",
+      "bold",
+      "colorful",
+      "console",
+      "game",
+      "games",
+      "retro"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/105/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/49/poster.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/105/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/49/preview.webm",
+    "image": "/assets/templates/arcade-pixel.webp",
+    "video": "/assets/templates/arcade-pixel.webm"
+  },
+  {
+    "id": 71,
+    "name": "Retromon Silver",
+    "slug": "retromon-silver",
+    "url": "https://chatstyle.gg/template/retromon-silver",
+    "tags": [
+      "animated",
+      "console",
+      "games",
+      "minimalistic",
+      "pixelated",
+      "retro",
+      "tech"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/retromon-silver/retromon-silver.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/retromon-silver/retromon-silver.webm",
+    "image": "/assets/templates/retromon-silver.webp",
+    "video": "/assets/templates/retromon-silver.webm"
+  },
+  {
+    "id": 77,
+    "name": "Prism Shift",
+    "slug": "prism-shift",
+    "url": "https://chatstyle.gg/template/prism-shift",
+    "tags": [
+      "animated",
+      "bold",
+      "colorful"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/prism-shift/prism-shift.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/prism-shift/prism-shift.webm",
+    "image": "/assets/templates/prism-shift.webp",
+    "video": "/assets/templates/prism-shift.webm"
+  },
+  {
+    "id": 89,
+    "name": "CyberChat 2077",
+    "slug": "cyberchat-2077",
+    "url": "https://chatstyle.gg/template/cyberchat-2077",
+    "tags": [
+      "animated",
+      "cyan",
+      "tech",
+      "retro",
+      "purple",
+      "pink",
+      "neon"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/cyberchat-2077/cyberchat-2077.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/cyberchat-2077/cyberchat-2077.webm",
+    "image": "/assets/templates/cyberchat-2077.webp",
+    "video": "/assets/templates/cyberchat-2077.webm"
+  },
+  {
+    "id": 90,
+    "name": "Zuluxxman",
+    "slug": "zuluxxman",
+    "url": "https://chatstyle.gg/template/zuluxxman",
+    "tags": [
+      "animated",
+      "blue",
+      "minimalistic",
+      "neon",
+      "colorful"
+    ],
+    "free": true,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/zuluxxman/zuluxxman.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/zuluxxman/zuluxxman.webm",
+    "image": "/assets/templates/zuluxxman.webp",
+    "video": "/assets/templates/zuluxxman.webm"
+  },
+  {
+    "id": 100,
+    "name": "Sakura Ice Tea",
+    "slug": "sakura-ice-tea",
+    "url": "https://chatstyle.gg/template/sakura-ice-tea",
+    "tags": [
+      "animated",
+      "blue",
+      "cyan",
+      "colorful",
+      "floral",
+      "plantsies"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/sakura-ice-tea/sakura-ice-tea.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/sakura-ice-tea/sakura-ice-tea.webm",
+    "image": "/assets/templates/sakura-ice-tea.webp",
+    "video": "/assets/templates/sakura-ice-tea.webm"
+  },
+  {
+    "id": 108,
+    "name": "Small Talk",
+    "slug": "small-talk",
+    "url": "https://chatstyle.gg/template/small-talk",
+    "tags": [
+      "animated",
+      "colorful",
+      "minimalistic"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/small-talk/small-talk.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/small-talk/small-talk.webm",
+    "image": "/assets/templates/small-talk.webp",
+    "video": "/assets/templates/small-talk.webm"
+  },
+  {
+    "id": 106,
+    "name": "Floral Cuteness",
+    "slug": "floral-cuteness",
+    "url": "https://chatstyle.gg/template/floral-cuteness",
+    "tags": [
+      "animated",
+      "cute",
+      "floral",
+      "minimalistic",
+      "plantsies"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/floral-cuteness/floral-cuteness.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/floral-cuteness/floral-cuteness.webm",
+    "image": "/assets/templates/floral-cuteness.webp",
+    "video": "/assets/templates/floral-cuteness.webm"
+  },
+  {
+    "id": 101,
+    "name": "Dark Glitch",
+    "slug": "dark-glitch",
+    "url": "https://chatstyle.gg/template/dark-glitch",
+    "tags": [
+      "animated",
+      "dark",
+      "cyan",
+      "neon",
+      "red",
+      "pink"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/dark-glitch/dark-glitch.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/dark-glitch/dark-glitch.webm",
+    "image": "/assets/templates/dark-glitch.webp",
+    "video": "/assets/templates/dark-glitch.webm"
+  },
+  {
+    "id": 109,
+    "name": "Neon Talks",
+    "slug": "neon-talks",
+    "url": "https://chatstyle.gg/template/neon-talks",
+    "tags": [
+      "animated",
+      "blue",
+      "minimalistic",
+      "neon",
+      "tech"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/neon-talks/neon-talks.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/neon-talks/neon-talks.webm",
+    "image": "/assets/templates/neon-talks.webp",
+    "video": "/assets/templates/neon-talks.webm"
+  },
+  {
+    "id": 102,
+    "name": "Sleeping Cats",
+    "slug": "sleeping-cats",
+    "url": "https://chatstyle.gg/template/sleeping-cats",
+    "tags": [
+      "animated",
+      "bold",
+      "cute"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/sleeping-cats/sleeping-cats.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/sleeping-cats/sleeping-cats.webm",
+    "image": "/assets/templates/sleeping-cats.webp",
+    "video": "/assets/templates/sleeping-cats.webm"
+  },
+  {
+    "id": 57,
+    "name": "Violet Frame",
+    "slug": "violet-frame",
+    "url": "https://chatstyle.gg/template/violet-frame",
+    "tags": [
+      "animated",
+      "colorful",
+      "neon",
+      "purple",
+      "tech"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/violet-frame/violet-frame.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/violet-frame/violet-frame.webm",
+    "image": "/assets/templates/violet-frame.webp",
+    "video": "/assets/templates/violet-frame.webm"
+  },
+  {
+    "id": 103,
+    "name": "Microchip Flow",
+    "slug": "microchip-flow",
+    "url": "https://chatstyle.gg/template/microchip-flow",
+    "tags": [
+      "animated",
+      "blue",
+      "colorful",
+      "cyan",
+      "dark",
+      "tech",
+      "retro",
+      "neon"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/microchip-flow/microchip-flow.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/microchip-flow/microchip-flow.webm",
+    "image": "/assets/templates/microchip-flow.webp",
+    "video": "/assets/templates/microchip-flow.webm"
+  },
+  {
+    "id": 110,
+    "name": "Lightning Flow",
+    "slug": "lightning-flow",
+    "url": "https://chatstyle.gg/template/lightning-flow",
+    "tags": [
+      "animated",
+      "blue",
+      "minimalistic",
+      "neon",
+      "tech"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/lightning-flow/lightning-flow.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/lightning-flow/lightning-flow.webm",
+    "image": "/assets/templates/lightning-flow.webp",
+    "video": "/assets/templates/lightning-flow.webm"
+  },
+  {
+    "id": 79,
+    "name": "PacChat Ghosts",
+    "slug": "pacchat-ghosts",
+    "url": "https://chatstyle.gg/template/pacchat-ghosts",
+    "tags": [
+      "animated",
+      "console",
+      "games",
+      "pixelated",
+      "retro"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/pacchat-ghosts/pacchat-ghosts.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/pacchat-ghosts/pacchat-ghosts.webm",
+    "image": "/assets/templates/pacchat-ghosts.webp",
+    "video": "/assets/templates/pacchat-ghosts.webm"
+  },
+  {
+    "id": 107,
+    "name": "Chat Garden",
+    "slug": "chat-garden",
+    "url": "https://chatstyle.gg/template/chat-garden",
+    "tags": [
+      "animated",
+      "cute",
+      "floral",
+      "green",
+      "plantsies"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/chat-garden/chat-garden.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/chat-garden/chat-garden.webm",
+    "image": "/assets/templates/chat-garden.webp",
+    "video": "/assets/templates/chat-garden.webm"
+  },
+  {
+    "id": 98,
+    "name": "Inline Flow",
+    "slug": "inline-flow",
+    "url": "https://chatstyle.gg/template/inline-flow",
+    "tags": [
+      "colorful",
+      "dark",
+      "minimalistic"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/inline-flow/inline-flow.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/inline-flow/inline-flow.webm",
+    "image": "/assets/templates/inline-flow.webp",
+    "video": "/assets/templates/inline-flow.webm"
+  },
+  {
+    "id": 68,
+    "name": "Poker Stack",
+    "slug": "poker-stack",
+    "url": "https://chatstyle.gg/template/poker-stack",
+    "tags": [
+      "animated",
+      "bold",
+      "colorful",
+      "retro"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/poker-stack/poker-stack.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/poker-stack/poker-stack.webm",
+    "image": "/assets/templates/poker-stack.webp",
+    "video": "/assets/templates/poker-stack.webm"
+  },
+  {
+    "id": 124,
+    "name": "Manhunt 2026",
+    "slug": "manhunt-2026",
+    "url": "https://chatstyle.gg/template/manhunt-2026",
+    "tags": [
+      "animated",
+      "brand",
+      "dark",
+      "orange",
+      "neon",
+      "tech"
+    ],
+    "free": true,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/manhunt-2026/manhunt-2026.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/manhunt-2026/manhunt-2026.webm",
+    "image": "/assets/templates/manhunt-2026.webp",
+    "video": "/assets/templates/manhunt-2026.webm"
+  },
+  {
+    "id": 94,
+    "name": "Violet Frame Slim",
+    "slug": "violet-frame-slim",
+    "url": "https://chatstyle.gg/template/violet-frame-slim",
+    "tags": [
+      "animated",
+      "colorful",
+      "minimalistic",
+      "neon",
+      "purple"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/violet-frame-slim/violet-frame-slim.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/violet-frame-slim/violet-frame-slim.webm",
+    "image": "/assets/templates/violet-frame-slim.webp",
+    "video": "/assets/templates/violet-frame-slim.webm"
+  },
+  {
+    "id": 137,
+    "name": "Y2K Media Player",
+    "slug": "y2k-media-player",
+    "url": "https://chatstyle.gg/template/y2k-media-player",
+    "tags": [
+      "animated",
+      "blue",
+      "bold",
+      "console",
+      "microsoft",
+      "tech",
+      "retro"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/137/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/45/poster.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/137/revisions/07e700c48e5130a540a3f4bb249ff3a2676be3147b9a9c97488105b0b549a802/45/preview.webm",
+    "image": "/assets/templates/y2k-media-player.webp",
+    "video": "/assets/templates/y2k-media-player.webm"
+  },
+  {
+    "id": 116,
+    "name": "Kuromi",
+    "slug": "kuromi",
+    "url": "https://chatstyle.gg/template/kuromi",
+    "tags": [
+      "animated",
+      "bold",
+      "cute",
+      "dark",
+      "pink",
+      "purple"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/kuromi/kuromi.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/kuromi/kuromi.webm",
+    "image": "/assets/templates/kuromi.webp",
+    "video": "/assets/templates/kuromi.webm"
+  },
+  {
+    "id": 60,
+    "name": "Pastel Love",
+    "slug": "pastel-love",
+    "url": "https://chatstyle.gg/template/pastel-love",
+    "tags": [
+      "animated",
+      "colorful",
+      "cute",
+      "light",
+      "minimalistic"
+    ],
+    "free": false,
+    "sourceImage": "https://cdn.chatstyle.gg/templates/pastel-love/pastel-love.webp",
+    "sourceVideo": "https://cdn.chatstyle.gg/templates/pastel-love/pastel-love.webm",
+    "image": "/assets/templates/pastel-love.webp",
+    "video": "/assets/templates/pastel-love.webm"
+  }
+]

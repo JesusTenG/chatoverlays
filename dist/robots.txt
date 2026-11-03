@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chatoverlays-studio-wutan.roanfawn2.chatgpt.site/sitemap.xml

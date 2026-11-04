@@ -18,9 +18,10 @@ Die Vorschau läuft unter http://127.0.0.1:4173. Das Verzeichnis `dist/` lässt 
 
 - `source/catalog.json`: 40 verifizierte Template-Namen, Originalmedien-Quellen und Chatstyle-Links.
 - `source/editorial.mjs`: deutsche Beschreibungen und individuelle Gestaltungstipps sowie fünf Stilwelten.
-- `source/style.css`, `source/retro.css`, `source/app.js`: responsive Gestaltung im Vintage-Arcade-Stil, Suche, Filter, Sortierung, Nachladen und zugänglicher Video-Dialog.
-- `dist/assets/templates/`: 40 lokale WebP-Bilder und 40 lokale WebM-Videos, insgesamt ca. 41 MB. Die beiden Hero-Videos laufen sichtbar stumm in Schleife und lassen sich gemeinsam pausieren. Kartenvideos laden und starten beim Hover oder Tastaturfokus. Außerhalb des sichtbaren Bereichs, bei versteckten Karten, in inaktiven Tabs und hinter dem geöffneten Video-Dialog pausieren die Vorschauen. Bei reduzierter Bewegung startet nichts automatisch; manuelles Abspielen bleibt möglich.
-- `dist/assets/fonts/`: lokal gespeicherte Schrift Fraunces mit SIL Open Font License. Papierkörnung, Streifen und Geräte-Details entstehen mit CSS; die Template-Medien bleiben unverändert.
+- `source/style.css`, `source/app.js`: reduzierte Gestaltung mit einer Creme-Braun-Terrakotta-Palette, durchgehend kräftiger Schrift ab 16 px, Suche, einem Stilfilter, Nachladen und Video-Dialog. Die Startseite besteht aus Hero, Galerie und Footer; die Erläuterungen stehen auf den Detailseiten und im Ratgeber.
+- `dist/assets/templates/`: 40 lokale WebP-Bilder und 40 lokale WebM-Videos, insgesamt ca. 41 MB. Im Hero laufen Sleeping Cats, Neo Tokyo und Neon Talks sichtbar stumm in Schleife und lassen sich gemeinsam pausieren. Mobil sind die drei Vorschauen horizontal scrollbar. Kartenvideos laden und starten beim Hover oder Tastaturfokus. Außerhalb des sichtbaren Bereichs, bei versteckten Karten, in inaktiven Tabs und hinter dem geöffneten Video-Dialog pausieren die Vorschauen. Bei reduzierter Bewegung startet nichts automatisch; manuelles Abspielen bleibt möglich.
+- `dist/assets/fonts/`: lokal gespeicherte Schrift Fraunces mit SIL Open Font License. Überschriften und Vorschauen erscheinen mit kurzen, weichen Animationen; reduzierte Bewegung wird berücksichtigt.
+- `dist/assets/logo.svg`, `dist/assets/favicon.svg`: schlichtes Vektorlogo aus zwei überlagerten Chatblasen.
 - `build.mjs`: erzeugt Startseite, 40 Detailseiten, fünf Kategorie-Seiten, einen Ratgeber, 404, Sitemap, Canonicals, Open-Graph-Metadaten und JSON-LD.
 - `site.config.json`: öffentlicher Ursprung, Creator-Link und Indexierungsstatus.
 
@@ -52,4 +53,5 @@ Preise werden nicht kopiert, weil sie sich ändern können. Jeder Kauf-Link füh
 
 ## Validierung
 
-`node check.mjs` prüft alle internen Links und Medienpfade, die 40 Original-Zielseiten, Dateisignaturen aller 80 Vorschaumedien, eindeutige Seitentitel und Beschreibungen, H1-Struktur, Canonicals, JSON-LD und Sitemap. Browserprüfungen decken Suche, Filter, leere Ergebnisse, Sortierung, Nachladen, Videowiedergabe, Escape-Schließen und mobile Layouts ab.
+`node check.mjs` prüft alle internen Links und Medienpfade, die 40 Original-Zielseiten, Dateisignaturen aller 80 Vorschaumedien, eindeutige Seitentitel und Beschreibungen, H1-Struktur, Canonicals, JSON-LD und Sitemap. Browserprüfungen decken Suche, Stilfilter, leere Ergebnisse, Nachladen, drei Hero-Videos, Hover-Vorschauen, Escape-Schließen, reduzierte Bewegung, kräftige Schrift ab 16 px und mobile Layouts ab.
+

@@ -84,30 +84,45 @@ const grid=document.querySelector('#template-grid');
 if(grid){
  const cards=[...grid.querySelectorAll('[data-template]')];
  const search=document.querySelector('#template-search');
- const sort=document.querySelector('#template-sort');
- const filters=[...document.querySelectorAll('[data-filter]')];
+ const filter=document.querySelector('#template-filter');
  const more=document.querySelector('#load-more');
  const count=document.querySelector('#result-count');
- let active='all',limit=12;
+ let active='all',limit=9;
  const normalize=value=>value.toLocaleLowerCase('de').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('ß','ss');
  function render(){
   const words=normalize(search.value.trim()).split(/\s+/).filter(Boolean);
-  const ordered=[...cards].sort((a,b)=>sort.value==='az'?a.dataset.name.localeCompare(b.dataset.name,'de'):sort.value==='za'?b.dataset.name.localeCompare(a.dataset.name,'de'):Number(a.dataset.order)-Number(b.dataset.order));
+  const ordered=cards;
   let matches=0,visible=0;
   for(const card of ordered){const match=(active==='all'||card.dataset.category===active)&&words.every(w=>normalize(card.dataset.search).includes(w));card.hidden=!match||matches>=limit;if(match)matches++;if(!card.hidden)visible++;grid.append(card);}
   count.textContent=matches===0?'Keine Templates gefunden':`${visible} von ${matches} Templates`;
   more.hidden=visible>=matches;
   document.querySelector('#empty-state').hidden=matches>0;
-  filters.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===active)));
+  filter.value=active;
   syncInlineVideos();
  }
  function updateUrl(){const url=new URL(location.href);url.searchParams.delete('style');url.searchParams.delete('q');if(active!=='all')url.searchParams.set('style',active);if(search.value.trim())url.searchParams.set('q',search.value.trim());history.replaceState(null,'',url);}
- function readUrl(){const p=new URLSearchParams(location.search);active=filters.some(b=>b.dataset.filter===p.get('style'))?p.get('style'):'all';search.value=p.get('q')??'';limit=12;render();}
- filters.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;limit=12;render();updateUrl()}));
- search.addEventListener('input',()=>{limit=12;render();updateUrl()});
- sort.addEventListener('change',render);
- more.addEventListener('click',()=>{const previousVisible=cards.filter(c=>!c.hidden);limit+=12;render();const firstNew=[...grid.children].find(c=>!c.hidden&&!previousVisible.includes(c));firstNew?.querySelector('a')?.focus({preventScroll:true})});
- document.querySelector('#reset-filters').addEventListener('click',()=>{active='all';search.value='';limit=12;render();updateUrl();search.focus()});
+ function readUrl(){const p=new URLSearchParams(location.search);active=[...filter.options].some(o=>o.value===p.get('style'))?p.get('style'):'all';search.value=p.get('q')??'';limit=9;render();}
+ filter.addEventListener('change',()=>{active=filter.value;limit=9;render();updateUrl()});
+ search.addEventListener('input',()=>{limit=9;render();updateUrl()});
+ more.addEventListener('click',()=>{const previousVisible=cards.filter(c=>!c.hidden);limit+=9;render();const firstNew=[...grid.children].find(c=>!c.hidden&&!previousVisible.includes(c));firstNew?.querySelector('[data-preview]')?.focus({preventScroll:true})});
+ document.querySelector('#reset-filters').addEventListener('click',()=>{active='all';search.value='';limit=9;render();updateUrl();search.focus()});
  document.addEventListener('keydown',e=>{if(e.key==='/'&&!dialog.open&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)&&!document.activeElement.isContentEditable){e.preventDefault();search.focus()}});
  addEventListener('popstate',readUrl);readUrl();
 }
+
+// Reveal content once as it enters the viewport; without JS all content stays visible.
+const revealObserver=new IntersectionObserver(entries=>{
+ for(const entry of entries){
+  if(!entry.isIntersecting)continue;
+  revealObserver.unobserve(entry.target);
+  if(reducedMotion.matches)continue;
+  entry.target.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{
+   duration:650,delay:Number(entry.target.dataset.revealDelay||0),easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'
+  });
+ }
+},{threshold:.08});
+document.querySelectorAll('[data-reveal],.template-card,.guide h2').forEach((element,index)=>{
+ if(element.matches('.template-card'))element.dataset.revealDelay=String(index%3*55);
+ revealObserver.observe(element);
+});
+reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)document.getAnimations().forEach(animation=>animation.cancel())});

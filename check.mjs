@@ -1,15 +1,56 @@
-import {readFile,readdir,stat} from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-const root=path.resolve('dist');const config=JSON.parse(await readFile('site.config.json','utf8'));const catalog=JSON.parse(await readFile('dist/assets/catalog.json','utf8'));
-async function walk(dir){const entries=await readdir(dir,{withFileTypes:true});return(await Promise.all(entries.map(e=>e.isDirectory()?walk(path.join(dir,e.name)):path.join(dir,e.name)))).flat()}
-const htmlFiles=(await walk(root)).filter(f=>f.endsWith('.html'));
-const titles=new Set();const descriptions=new Set();let links=0;
-for(const file of htmlFiles){const html=await readFile(file,'utf8');assert.equal((html.match(/<h1[ >]/g)||[]).length,1,`${file}: H1`);const title=html.match(/<title>(.*?)<\/title>/)[1];assert(!titles.has(title),`Duplicate title: ${title}`);titles.add(title);const description=html.match(/<meta name="description" content="([^"]*)"/)[1];assert(!descriptions.has(description),`Duplicate description: ${title}`);descriptions.add(description);assert(html.includes(`content="${config.indexable?'index,follow':'noindex,follow'}"`));JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);assert(html.includes(`rel="canonical" href="${config.origin}`));
- for(const [,attr,url] of html.matchAll(/(href|src)="([^"]+)"/g)){if(!url.startsWith('/')||url.startsWith('//'))continue;const pathname=url.split(/[?#]/)[0];let target=path.join(root,pathname);if(!path.extname(target))target=path.join(target,'index.html');assert((await stat(target).catch(()=>null))?.isFile(),`Broken ${attr}: ${url} in ${file}`);links++;}
+import { categories } from './source/editorial.mjs';
+
+const root = path.resolve('out');
+const config = JSON.parse(await readFile('site.config.json', 'utf8'));
+const original = JSON.parse(await readFile('source/catalog.json', 'utf8'));
+const catalog = JSON.parse(await readFile('out/assets/catalog.json', 'utf8'));
+const routes = ['/', ...catalog.map(item => `/overlays/${item.slug}/`), ...categories.map(item => `/styles/${item.slug}/`), '/ratgeber/chat-overlay-auswaehlen/'];
+const files = [...routes.map(route => path.join(root, route, 'index.html')), path.join(root, '404.html')];
+const titles = new Set(), descriptions = new Set();
+let links = 0, shopLinks = 0;
+
+for (const file of files) {
+  const html = await readFile(file, 'utf8');
+  assert.equal((html.match(/<h1[ >]/g) || []).length, 1, `${file}: H1`);
+  const title = html.match(/<title>(.*?)<\/title>/)?.[1];
+  const description = html.match(/<meta name="description" content="([^"]*)"/)?.[1];
+  assert(title && !titles.has(title), `Missing/duplicate title: ${file}`); titles.add(title);
+  assert(description && !descriptions.has(description), `Missing/duplicate description: ${file}`); descriptions.add(description);
+  const robots = [...html.matchAll(/<meta name="robots" content="([^"]*)"/g)].map(match => match[1]);
+  assert(robots.some(value => config.indexable ? /(^|,\s*)index(,|$)/.test(value) : value.includes('noindex')), `Robots: ${file}`);
+  assert(html.includes(`rel="canonical" href="${config.origin}`), `Canonical: ${file}`);
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)];
+  assert(schemas.length, `JSON-LD: ${file}`);
+  schemas.forEach(match => JSON.parse(match[1]));
+  for (const [, attr, url] of html.matchAll(/(href|src)="([^"]+)"/g)) {
+    if (!url.startsWith('/') || url.startsWith('//')) continue;
+    const pathname = decodeURIComponent(url.split(/[?#]/)[0]);
+    let target = path.join(root, pathname);
+    if (!path.extname(target)) target = path.join(target, 'index.html');
+    assert((await stat(target).catch(() => null))?.isFile(), `Broken ${attr}: ${url} in ${file}`); links++;
+  }
+  for (const [, attributes, body] of html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)) {
+    if (!attributes.includes('https://chatstyle.gg/')) continue;
+    assert(body.includes('/assets/chatstyle-logo.svg'), `ChatStyle logo missing: ${file}`); shopLinks++;
+  }
 }
-assert.equal(catalog.length,40);assert.equal(htmlFiles.length,48);
-const creator=await readFile('source/creator.html','utf8');
-for(const t of catalog){assert(creator.includes(`href="${t.url}"`),`Unverified shop URL: ${t.slug}`);assert.equal(new URL(t.shopUrl).pathname,new URL(t.url).pathname);const image=await readFile(path.join(root,t.image));assert.equal(image.subarray(8,12).toString(),'WEBP');const video=await readFile(path.join(root,t.video));assert.equal(video.subarray(0,4).toString('hex'),'1a45dfa3');}
-const sitemap=await readFile('dist/sitemap.xml','utf8');assert.equal((sitemap.match(/<loc>/g)||[]).length,47);
-console.log(`PASS: ${htmlFiles.length} HTML pages; ${links} internal links/assets; 40 verified Chatstyle targets; 80 valid media files; unique metadata, JSON-LD and sitemap.`);
+assert.equal(catalog.length, 40);
+assert.equal(routes.length, 47);
+for (const item of catalog) {
+  assert.equal(item.url, original.find(source => source.slug === item.slug)?.url, `Changed destination: ${item.slug}`);
+  assert.equal(new URL(item.shopUrl).pathname, new URL(item.url).pathname);
+  const image = await readFile(path.join(root, item.image));
+  assert.equal(image.subarray(8, 12).toString(), 'WEBP');
+  const video = await readFile(path.join(root, item.video));
+  assert.equal(video.subarray(0, 4).toString('hex'), '1a45dfa3');
+}
+const sitemap = await readFile('out/sitemap.xml', 'utf8');
+assert.equal((sitemap.match(/<loc>/g) || []).length, routes.length);
+for (const route of routes) assert(sitemap.includes(`${config.origin}${route}</loc>`), `Missing sitemap route: ${route}`);
+const home = await readFile('out/index.html', 'utf8');
+assert.equal((home.match(/data-template="true"/g) || []).length, 40, 'All templates must be present in server-rendered HTML');
+assert(home.includes('/_next/'), 'Next.js assets missing');
+console.log(`PASS: ${files.length} pages; ${links} local links/assets; ${shopLinks} branded ChatStyle links; 40 original destinations; 80 media files; metadata, JSON-LD and sitemap.`);

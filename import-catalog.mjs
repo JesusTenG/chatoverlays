@@ -14,13 +14,13 @@ if (catalog.length !== 40 || new Set(catalog.map(t => t.slug)).size !== 40) thro
 await writeFile(new URL('./source/catalog.json', import.meta.url), JSON.stringify(catalog, null, 2));
 console.log(`Parsed ${catalog.length} templates by JesusTenG.`);
 if (process.argv.includes('--download')) {
-  await mkdir(new URL('./dist/assets/templates/', import.meta.url), { recursive: true });
+  await mkdir(new URL('./public/assets/templates/', import.meta.url), { recursive: true });
   const jobs = catalog.flatMap(t => [[t.sourceImage, t.image], [t.sourceVideo, t.video]]).filter(([url]) => url);
   let total = 0;
   await Promise.all(Array.from({length: 4}, async () => {
     while(jobs.length) {
       const [url, file] = jobs.shift();
-      const target = new URL(`./dist${file}`, import.meta.url);
+      const target = new URL(`./public${file}`, import.meta.url);
       if (await stat(target).then(s=>s.size > 100).catch(()=>false)) continue;
       const response = await fetch(url, { signal: AbortSignal.timeout(60000) });
       if (!response.ok) throw new Error(`${response.status}: ${url}`);

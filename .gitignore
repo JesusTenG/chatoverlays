@@ -4,3 +4,9 @@ source/*.html
 *.tar.gz
 *.log
 qa/
+.next/
+out/
+dist/
+*.tsbuildinfo
+.env*
+!.env.example

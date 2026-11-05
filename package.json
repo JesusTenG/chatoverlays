@@ -2,5 +2,24 @@
   "name": "jesusteng-chat-overlays",
   "private": true,
   "type": "module",
-  "scripts": { "build": "node build.mjs", "dev": "node server.mjs", "check": "node check.mjs" }
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build && node scripts/fix-static-export.mjs",
+    "start": "node server.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && node --test tests/*.test.mjs && node check.mjs",
+    "import:catalog": "node import-catalog.mjs --download"
+  },
+  "engines": { "node": ">=20.9.0" },
+  "dependencies": {
+    "next": "16.4.5",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2"
+  }
 }

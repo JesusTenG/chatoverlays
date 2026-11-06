@@ -1,0 +1,1275 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Daydream – shiny3</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/6d5fda4e7c8bd9440de1.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/677b9d983d6d18bcb5d9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/48c0f365e555c930159f.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/2c6636f5c2033988ae0a.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/4f6e38c96abe28ed90f9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/e3c9d5360767a6d8abf1.woff2") format('woff2');
+}
+/*//////////////BASE//////////////////*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+}
+
+.cs-bubble,
+.cs-bubble *,
+.cs-bubble::before,
+.cs-bubble::after {
+    box-sizing: border-box;
+}
+
+.cs-chat {
+    --cs-chat-padding-bottom: 28px;
+}
+
+
+/*//////////////BUBBLE//////////////////*/
+
+.cs-bubble {
+    /*//////////////DAYDREAM COLORS//////////////////*/
+
+    --dd-bubble-primary:
+        var(--cs-bubble-background-color, #ff7ed6);
+
+    --dd-user-primary:
+        var(--cs-username-background-color, #ff7ed6);
+
+    --dd-avatar-primary:
+        var(--cs-avatar-background-color, #ff7ed6);
+
+    --dd-white: #fffaff;
+    --dd-purple: #b987ff;
+
+    --dd-event-white: #fff7fe;
+    --dd-event-purple: #cba7ff;
+
+    --dd-text: #1f1729;
+
+
+    /*//////////////BUBBLE EFFECT COLORS//////////////////*/
+
+    --dd-bubble-p32:
+        color-mix(
+            in srgb,
+            var(--dd-bubble-primary) 32%,
+            transparent
+        );
+
+    --dd-bubble-p38:
+        color-mix(
+            in srgb,
+            var(--dd-bubble-primary) 38%,
+            transparent
+        );
+
+    --dd-bubble-p48:
+        color-mix(
+            in srgb,
+            var(--dd-bubble-primary) 48%,
+            transparent
+        );
+
+    --dd-bubble-glow:
+        rgba(185, 135, 255, .28);
+
+    --dd-bubble-glow-strong:
+        rgba(185, 135, 255, .34);
+
+    --dd-bubble-shadow:
+        rgba(80, 45, 120, .14);
+
+
+    /*//////////////USERNAME EFFECT COLORS//////////////////*/
+
+    --dd-user-p38:
+        color-mix(
+            in srgb,
+            var(--dd-user-primary) 38%,
+            transparent
+        );
+
+    --dd-user-glow:
+        rgba(185, 135, 255, .28);
+
+
+    /*//////////////AVATAR EFFECT COLORS//////////////////*/
+
+    --dd-avatar-p32:
+        color-mix(
+            in srgb,
+            var(--dd-avatar-primary) 32%,
+            transparent
+        );
+
+    --dd-avatar-p48:
+        color-mix(
+            in srgb,
+            var(--dd-avatar-primary) 48%,
+            transparent
+        );
+
+    --dd-avatar-glow:
+        rgba(185, 135, 255, .32);
+
+
+    /*//////////////BUBBLE SETTINGS//////////////////*/
+
+    --cs-bubble-width: 430px;
+
+    --cs-bubble-padding-top: 11px;
+    --cs-bubble-padding-right: 14px;
+    --cs-bubble-padding-bottom: 12px;
+    --cs-bubble-padding-left: 14px;
+
+    --cs-bubble-border-width: 1px;
+    --cs-bubble-border-style: solid;
+    --cs-bubble-border-color: rgba(255, 255, 255, .88);
+
+    --cs-bubble-border-radius-top-left: 15px;
+    --cs-bubble-border-radius-top-right: 15px;
+    --cs-bubble-border-radius-bottom-right: 15px;
+    --cs-bubble-border-radius-bottom-left: 7px;
+
+
+    /*//////////////AVATAR SETTINGS//////////////////*/
+
+    --cs-avatar-size: 50px;
+    --cs-avatar-padding: 0px;
+
+    --cs-avatar-border-width: 1px;
+    --cs-avatar-border-style: solid;
+    --cs-avatar-border-color: rgba(255, 255, 255, .92);
+    --cs-avatar-border-radius: 999px;
+
+
+    /*//////////////USERNAME SETTINGS//////////////////*/
+
+    --cs-username-padding-top: 6px;
+    --cs-username-padding-right: 11px;
+    --cs-username-padding-bottom: 6px;
+    --cs-username-padding-left: 11px;
+
+    --cs-username-border-width: 1px;
+    --cs-username-border-style: solid;
+    --cs-username-border-color: rgba(255, 255, 255, .88);
+    --cs-username-border-radius: 999px;
+
+    --cs-username-font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    --cs-username-font-size: 12px;
+    --cs-username-font-weight: 700;
+    --cs-username-font-color: var(--dd-text);
+
+
+    /*//////////////PRONOUN SETTINGS//////////////////*/
+
+    --cs-pronouns-font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    --cs-pronouns-font-size: 8px;
+    --cs-pronouns-font-weight: 700;
+    --cs-pronouns-font-color: rgba(31, 23, 41, .68);
+
+
+    /*//////////////MESSAGE SETTINGS//////////////////*/
+
+    --cs-message-font-family:
+        "Pixelify Sans",
+        "Cascadia Mono",
+        Consolas,
+        "Courier New",
+        monospace;
+
+    --cs-message-font-size: 11px;
+    --cs-message-font-weight: 700;
+    --cs-message-font-color: var(--dd-text);
+
+
+    /*//////////////LAYOUT//////////////////*/
+
+    display: block;
+
+    inline-size: fit-content;
+    max-inline-size: min(520px, calc(100vw - 28px));
+
+    margin: 2px 14px;
+    padding: 0;
+
+    overflow: visible;
+
+    background: transparent;
+    border: 0;
+
+    animation: none;
+}
+
+
+/*//////////////PSEUDO ELEMENTS//////////////////*/
+
+.cs-bubble::before,
+.cs-bubble::after,
+.cs-header::before,
+.cs-header::after,
+.cs-content::after {
+    content: none;
+    display: none;
+}
+
+
+/*//////////////HEADER//////////////////*/
+
+.cs-header {
+    position: relative;
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    inline-size: fit-content;
+    max-inline-size: 100%;
+
+    margin: 0 0 -5px;
+
+    overflow: visible;
+}
+
+.cs-header > .cs-user {
+    order: 1;
+}
+
+.cs-header > .cs-avatar {
+    order: 2;
+}
+
+
+/*//////////////AVATAR POSITION//////////////////*/
+
+.cs-bubble.cs-avatar-position-left .cs-header > .cs-avatar {
+    order: 1;
+}
+
+.cs-bubble.cs-avatar-position-left .cs-header > .cs-user {
+    order: 2;
+}
+
+.cs-bubble.cs-avatar-position-right .cs-header > .cs-user {
+    order: 1;
+}
+
+.cs-bubble.cs-avatar-position-right .cs-header > .cs-avatar {
+    order: 2;
+}
+
+.cs-bubble.cs-avatar-position-center .cs-header {
+    flex-direction: column;
+}
+
+.cs-bubble.cs-avatar-position-center .cs-header > .cs-avatar {
+    order: 1;
+}
+
+.cs-bubble.cs-avatar-position-center .cs-header > .cs-user {
+    order: 2;
+}
+
+
+/*//////////////AVATAR//////////////////*/
+
+.cs-avatar {
+    position: relative;
+    z-index: 5;
+
+    flex: 0 0 var(--cs-avatar-size);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    inline-size: var(--cs-avatar-size);
+    block-size: var(--cs-avatar-size);
+
+    padding: var(--cs-avatar-padding);
+
+    overflow: hidden;
+
+    background-color:
+        var(--cs-avatar-background-color, #ff7ed6);
+
+    background-image:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 255, 255, .95),
+            rgba(255, 255, 255, .42) 35%,
+            var(--dd-avatar-p32)
+        ),
+        var(
+            --cs-avatar-background-gradient,
+            linear-gradient(
+                135deg,
+                var(--dd-avatar-primary),
+                var(--dd-purple)
+            )
+        );
+
+    border:
+        var(--cs-avatar-border-width)
+        var(--cs-avatar-border-style)
+        var(--cs-avatar-border-color);
+
+    border-radius:
+        var(--cs-avatar-border-radius);
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, .22) inset,
+        0 0 8px var(--dd-avatar-p48),
+        0 0 16px var(--dd-avatar-glow);
+
+    animation:
+        daydreamAvatarReveal
+        1.2s
+        cubic-bezier(.18, 1.28, .32, 1)
+        .1s
+        both,
+
+        avatarFloat
+        3.4s
+        ease-in-out
+        1.35s
+        infinite;
+}
+
+.cs-avatar img,
+.cs-avatar svg {
+    inline-size: 100%;
+    block-size: 100%;
+
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+
+/*//////////////USER//////////////////*/
+
+.cs-user {
+    position: relative;
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    inline-size: fit-content;
+    max-inline-size: 340px;
+
+    padding:
+        var(--cs-username-padding-top)
+        var(--cs-username-padding-right)
+        var(--cs-username-padding-bottom)
+        var(--cs-username-padding-left);
+
+    overflow: hidden;
+
+    background-color:
+        var(--cs-username-background-color, #ff7ed6);
+
+    background-image:
+        radial-gradient(
+            circle at 16% 12%,
+            rgba(255, 255, 255, .95),
+            rgba(255, 255, 255, .42) 18%,
+            transparent 38%
+        ),
+        var(
+            --cs-username-background-gradient,
+            linear-gradient(
+                120deg,
+                var(--dd-white) 0%,
+                color-mix(
+                    in srgb,
+                    var(--dd-user-primary) 28%,
+                    white 72%
+                ) 15%,
+                var(--dd-user-primary) 30%,
+                var(--dd-purple) 48%,
+                var(--dd-user-primary) 68%,
+                #fff 100%
+            )
+        );
+
+    background-size:
+        260% 260%,
+        520% 520%;
+
+    background-position:
+        0% 0%,
+        0% 50%;
+
+    border:
+        var(--cs-username-border-width)
+        var(--cs-username-border-style)
+        var(--cs-username-border-color);
+
+    border-radius:
+        var(--cs-username-border-radius);
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, .16) inset,
+        0 0 7px var(--dd-user-p38),
+        0 0 14px var(--dd-user-glow);
+
+    animation:
+        daydreamUserReveal
+        1.15s
+        cubic-bezier(.18, 1.28, .32, 1)
+        .03s
+        both;
+}
+
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-username,
+.cs-username--inline {
+    display: inline-block;
+
+    min-inline-size: 0;
+    max-inline-size: 260px;
+
+    overflow: hidden;
+
+    color: var(--cs-username-font-color);
+
+    font-family: var(--cs-username-font-family);
+    font-size: var(--cs-username-font-size);
+    font-weight: var(--cs-username-font-weight);
+
+    line-height: 1;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, .55),
+        0 0 8px rgba(255, 255, 255, .45);
+}
+
+
+/*//////////////PRONOUNS//////////////////*/
+
+.cs-pronouns {
+    display: inline;
+
+    margin-inline-end: 4px;
+
+    color: var(--cs-pronouns-font-color);
+
+    font-family: var(--cs-pronouns-font-family);
+    font-size: var(--cs-pronouns-font-size);
+    font-weight: var(--cs-pronouns-font-weight);
+
+    line-height: 1;
+}
+
+
+/*//////////////BADGES//////////////////*/
+
+.cs-badges {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.cs-badges img,
+.cs-badges svg {
+    display: block;
+
+    inline-size: 14px;
+    block-size: 14px;
+
+    object-fit: contain;
+}
+
+
+/*//////////////CONTENT//////////////////*/
+
+.cs-content {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    inline-size: fit-content;
+    min-inline-size: 0;
+    max-inline-size: var(--cs-bubble-width);
+
+    margin: 0 0 0 20px;
+
+    padding:
+        var(--cs-bubble-padding-top)
+        var(--cs-bubble-padding-right)
+        var(--cs-bubble-padding-bottom)
+        var(--cs-bubble-padding-left);
+
+    overflow: visible;
+
+    background-color:
+        var(--cs-bubble-background-color, #ff7ed6);
+
+    background-image:
+        radial-gradient(
+            circle at 14% 10%,
+            rgba(255, 255, 255, .96),
+            rgba(255, 255, 255, .44) 20%,
+            transparent 40%
+        ),
+        var(
+            --cs-bubble-background-gradient,
+linear-gradient(
+    125deg,
+    #ffffff 0%,
+    #ffffff 7%,
+    #fffafd 11%,
+    color-mix(
+        in srgb,
+        var(--dd-bubble-primary) 5%,
+        white 95%
+    ) 15%,
+    color-mix(
+        in srgb,
+        var(--dd-bubble-primary) 15%,
+        white 85%
+    ) 20%,
+    var(--dd-bubble-primary) 32%,
+    var(--dd-purple) 50%,
+    var(--dd-bubble-primary) 72%,
+    #fff 100%
+)
+        );
+
+    background-size:
+        260% 260%,
+        560% 560%;
+
+    background-position:
+        0% 0%,
+        0% 50%;
+
+    border:
+        var(--cs-bubble-border-width)
+        var(--cs-bubble-border-style)
+        var(--cs-bubble-border-color);
+
+    border-radius:
+        var(--cs-bubble-border-radius-top-left)
+        var(--cs-bubble-border-radius-top-right)
+        var(--cs-bubble-border-radius-bottom-right)
+        var(--cs-bubble-border-radius-bottom-left);
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, .18) inset,
+        0 0 10px var(--dd-bubble-p38),
+        0 0 20px var(--dd-bubble-glow),
+        0 8px 18px var(--dd-bubble-shadow);
+
+    animation:
+        daydreamContentReveal
+        1.25s
+        cubic-bezier(.18, 1.25, .32, 1)
+        .17s
+        both;
+}
+
+.cs-content::before {
+    content: "";
+
+    position: absolute;
+    inset: -7px;
+    z-index: -1;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--dd-bubble-p32),
+            rgba(185, 135, 255, .24),
+            rgba(255, 255, 255, .22)
+        );
+
+    filter: blur(8px);
+    opacity: .45;
+
+    pointer-events: none;
+}
+
+
+/*//////////////INLINE USER//////////////////*/
+
+.cs-user--inline {
+    display: none;
+    align-items: baseline;
+    gap: 4px;
+
+    margin-inline-end: 5px;
+
+    padding: 3px 7px;
+
+    background-color:
+        color-mix(
+            in srgb,
+            var(--dd-user-primary) 18%,
+            rgba(255, 255, 255, .34)
+        );
+
+    background-image:
+        var(
+            --cs-username-background-gradient,
+            linear-gradient(
+                120deg,
+                rgba(255, 255, 255, .35),
+                color-mix(
+                    in srgb,
+                    var(--dd-user-primary) 28%,
+                    transparent
+                )
+            )
+        );
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--cs-username-border-color) 70%,
+            transparent
+        );
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 7px var(--dd-user-p38);
+}
+
+.cs-bubble.cs-username-position-inline .cs-user {
+    display: none;
+}
+
+.cs-bubble.cs-username-position-inline .cs-user--inline {
+    display: inline-flex;
+}
+
+
+/*//////////////MESSAGE//////////////////*/
+
+.cs-message {
+    display: block;
+
+    max-inline-size: 100%;
+
+    color: var(--cs-message-font-color);
+
+    font-family: var(--cs-message-font-family);
+    font-size: var(--cs-message-font-size);
+    font-weight: var(--cs-message-font-weight);
+
+    line-height: 1.3;
+    letter-spacing: .1px;
+
+    font-variant-ligatures: none;
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, .52);
+
+    white-space: normal;
+
+    word-break: normal;
+    overflow-wrap: anywhere;
+
+    animation: none;
+}
+
+.cs-bubble.cs-username-position-inline .cs-message {
+    display: inline;
+}
+
+/*//////////////EMOTE FIX//////////////////*/
+
+.cs-message .emote,
+.cs-message img.emote {
+    display: inline-block !important;
+
+    width: auto !important;
+    inline-size: auto !important;
+
+    height: calc(var(--cs-message-font-size, 11px) * 1.55) !important;
+    block-size: calc(var(--cs-message-font-size, 11px) * 1.55) !important;
+
+    max-width: none !important;
+    max-inline-size: none !important;
+
+    max-height: calc(var(--cs-message-font-size, 11px) * 1.55) !important;
+    max-block-size: calc(var(--cs-message-font-size, 11px) * 1.55) !important;
+
+    object-fit: contain !important;
+    aspect-ratio: auto !important;
+
+    margin-inline: 2px;
+
+    vertical-align: middle;
+}
+
+
+/*//////////////FULL WIDTH//////////////////*/
+
+.cs-chat.cs-full-width .cs-content {
+    inline-size: calc(100% - 20px);
+    max-inline-size: none;
+}
+
+
+/*//////////////FONT FALLBACK//////////////////*/
+
+.cs-bubble[style*="--cs-message-font-family: 'Inter'"],
+.cs-bubble[style*="--cs-message-font-family:'Inter'"] {
+    --cs-message-font-family:
+        "Pixelify Sans",
+        "Cascadia Mono",
+        Consolas,
+        "Courier New",
+        monospace !important;
+}
+
+
+/*//////////////EVENT//////////////////*/
+
+.cs-bubble.cs-event {
+    --cs-message-font-color: #3b2844;
+}
+
+.cs-bubble.cs-event .cs-avatar,
+.cs-bubble.cs-event .cs-badges,
+.cs-bubble.cs-event .cs-pronouns {
+    display: none;
+}
+
+.cs-bubble.cs-event .cs-header {
+    margin: 0 auto -5px;
+}
+
+
+/*//////////////EVENT USER//////////////////*/
+
+.cs-bubble.cs-event .cs-user,
+.cs-bubble.cs-event .cs-user--inline {
+    transform-origin: center;
+
+    animation:
+        daydreamEventReveal
+        1.15s
+        cubic-bezier(.18, 1.28, .32, 1)
+        .04s
+        both,
+
+        daydreamEventFloat
+        3.6s
+        ease-in-out
+        1.22s
+        infinite;
+}
+
+
+/*//////////////EVENT CONTENT//////////////////*/
+
+.cs-bubble.cs-event .cs-content {
+    min-inline-size: 220px;
+
+    margin-inline-start: 0;
+
+    padding: 13px 16px;
+
+    background-color:
+        var(--cs-bubble-background-color, #ff7ed6);
+
+    background-image:
+        radial-gradient(
+            circle at 18% 12%,
+            rgba(255, 255, 255, .98),
+            rgba(255, 255, 255, .46) 22%,
+            transparent 42%
+        ),
+        var(
+            --cs-bubble-background-gradient,
+            linear-gradient(
+                120deg,
+                var(--dd-event-white) 0%,
+                var(--dd-bubble-primary) 18%,
+                var(--dd-event-purple) 38%,
+                #fff 50%,
+                var(--dd-bubble-primary) 64%,
+                var(--dd-event-purple) 82%,
+                var(--dd-event-white) 100%
+            )
+        );
+
+    background-size:
+        220% 220%,
+        360% 360%;
+
+    background-position:
+        0% 0%,
+        0% 35%;
+
+    border-color:
+        var(--cs-bubble-border-color);
+
+    border-radius:
+        18px 18px 18px 8px;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, .26) inset,
+        0 0 12px var(--dd-bubble-p48),
+        0 0 24px var(--dd-bubble-glow-strong),
+        0 8px 18px rgba(80, 45, 120, .16);
+
+    animation:
+        daydreamContentReveal
+        1.25s
+        cubic-bezier(.18, 1.25, .32, 1)
+        .17s
+        both,
+
+        daydreamEventGradient
+        4.8s
+        ease-in-out
+        1.35s
+        infinite
+        alternate,
+
+        daydreamEventGlow
+        3.2s
+        ease-in-out
+        1.35s
+        infinite;
+}
+
+.cs-bubble.cs-event .cs-content::before {
+    background:
+        linear-gradient(
+            135deg,
+            var(--dd-bubble-p38),
+            rgba(185, 135, 255, .34),
+            rgba(255, 255, 255, .34)
+        );
+
+    opacity: .62;
+}
+
+.cs-bubble.cs-event .cs-message,
+.cs-bubble.cs-event .cs-events {
+    color: var(--cs-message-font-color);
+
+    text-align: center;
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, .68),
+        0 0 7px rgba(255, 255, 255, .46);
+}
+
+.cs-bubble.cs-event .cs-message {
+    display: flex;
+    justify-content: center;
+
+    inline-size: 100%;
+}
+
+.cs-bubble.cs-event.cs-username-position-inline .cs-message {
+    display: inline;
+    inline-size: auto;
+}
+
+
+/*//////////////USER REVEAL//////////////////*/
+
+@keyframes daydreamUserReveal {
+    from {
+        opacity: 0;
+        translate: -65px 0;
+        scale: .96;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+    }
+}
+
+
+/*//////////////AVATAR REVEAL//////////////////*/
+
+@keyframes daydreamAvatarReveal {
+    from {
+        opacity: 0;
+        translate: 0 -60px;
+        scale: .9;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+    }
+}
+
+
+/*//////////////CONTENT REVEAL//////////////////*/
+
+@keyframes daydreamContentReveal {
+    from {
+        opacity: 0;
+        translate: 75px 18px;
+        scale: .975;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+    }
+}
+
+
+/*//////////////EVENT REVEAL//////////////////*/
+
+@keyframes daydreamEventReveal {
+    from {
+        opacity: 0;
+        translate: 0 -55px;
+        scale: .95;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+    }
+}
+
+
+/*//////////////AVATAR FLOAT//////////////////*/
+
+@keyframes avatarFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-5px)
+            rotate(1.5deg);
+    }
+}
+
+
+/*//////////////EVENT FLOAT//////////////////*/
+
+@keyframes daydreamEventFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-5px)
+            rotate(1.2deg);
+    }
+}
+
+
+/*//////////////EVENT GRADIENT//////////////////*/
+
+@keyframes daydreamEventGradient {
+    0% {
+        background-position:
+            0% 0%,
+            0% 35%;
+    }
+
+    50% {
+        background-position:
+            35% 18%,
+            100% 65%;
+    }
+
+    100% {
+        background-position:
+            5% 35%,
+            35% 20%;
+    }
+}
+
+
+/*//////////////EVENT GLOW//////////////////*/
+
+@keyframes daydreamEventGlow {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, .26) inset,
+            0 0 12px var(--dd-bubble-p48),
+            0 0 24px var(--dd-bubble-glow-strong),
+            0 8px 18px rgba(80, 45, 120, .16);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, .34) inset,
+            0 0 17px var(--dd-bubble-p48),
+            0 0 34px var(--dd-bubble-glow-strong),
+            0 9px 22px rgba(80, 45, 120, .20);
+    }
+}
+.cs-bubble:not(.cs-event) {
+    --dd-bubble-primary: #ff997f !important;
+    --dd-user-primary: #ffb28f !important;
+    --dd-avatar-primary: #ff8da6 !important;
+    --dd-purple: #c678ef !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-content {
+    position: relative !important;
+    overflow: hidden !important;
+
+    background:
+        linear-gradient(
+            128deg,
+            #fffdf5 0%,
+            #ffd69e 16%,
+            #ff987d 32%,
+            #ff76ac 49%,
+            #c178ef 67%,
+            #ffca82 84%,
+            #ffffff 100%
+        ) !important;
+
+    border-color: rgba(255,244,218,.98) !important;
+
+    box-shadow:
+        0 0 12px rgba(255,135,115,.45),
+        0 0 27px rgba(229,103,182,.3),
+        0 0 38px rgba(255,191,91,.14) !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-content::after {
+    content: "" !important;
+    display: block !important;
+
+    position: absolute;
+
+    width: 150px;
+    height: 190%;
+
+    left: -180px;
+    top: -45%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,236,180,.18),
+            rgba(255,255,255,.9),
+            rgba(255,217,156,.45),
+            transparent
+        );
+
+    pointer-events: none;
+
+    animation:
+        ddSunsetShimmer
+        5.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes ddSunsetShimmer {
+    0%,
+    58% {
+        transform:
+            translateX(0)
+            rotate(18deg);
+
+        opacity: 0;
+    }
+
+    66%,
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateX(620px)
+            rotate(18deg);
+
+        opacity: 0;
+    }
+}
+
+.cs-bubble:not(.cs-event) .cs-user {
+    position: relative !important;
+    overflow: hidden !important;
+
+    background:
+        linear-gradient(
+            120deg,
+            #fffdf5,
+            #ffd38c 24%,
+            #ff8b94 48%,
+            #d477ed 72%,
+            #ffffff
+        ) !important;
+
+    box-shadow:
+        0 0 8px rgba(255,131,118,.48),
+        0 0 20px rgba(208,106,234,.28) !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-user::after {
+    content: "" !important;
+
+    position: absolute;
+
+    width: 48px;
+    height: 180%;
+
+    left: -70px;
+    top: -40%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.92),
+            transparent
+        );
+
+    pointer-events: none;
+
+    animation:
+        ddSunsetUserShimmer
+        5.4s
+        .18s
+        ease-in-out
+        infinite;
+}
+
+@keyframes ddSunsetUserShimmer {
+    0%,
+    60% {
+        transform:
+            translateX(0)
+            rotate(18deg);
+
+        opacity: 0;
+    }
+
+    68%,
+    92% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateX(430px)
+            rotate(18deg);
+
+        opacity: 0;
+    }
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-right cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: right; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 0px; --cs-chat-padding-right: 0px; --cs-chat-padding-bottom: 28px; --cs-chat-padding-left: 0px; --cs-bubble-padding-top: 11px; --cs-bubble-padding-right: 14px; --cs-bubble-padding-bottom: 12px; --cs-bubble-padding-left: 14px; --cs-bubble-background-color: #ff7ed6; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 1px; --cs-bubble-border-style: solid; --cs-bubble-border-color: rgba(255, 255, 255, .88); --cs-bubble-border-radius-top-left: 15px; --cs-bubble-border-radius-top-right: 15px; --cs-bubble-border-radius-bottom-right: 15px; --cs-bubble-border-radius-bottom-left: 7px; --cs-bubble-gap: 10px; --cs-bubble-width: 430px; --cs-avatar-padding: 0px; --cs-avatar-padding-top: 0px; --cs-avatar-padding-right: 0px; --cs-avatar-padding-bottom: 0px; --cs-avatar-padding-left: 0px; --cs-avatar-border-width: 1px; --cs-avatar-border-style: solid; --cs-avatar-border-color: transparent; --cs-avatar-border-radius: 999px; --cs-avatar-border-radius-top-left: 999px; --cs-avatar-border-radius-top-right: 999px; --cs-avatar-border-radius-bottom-right: 999px; --cs-avatar-border-radius-bottom-left: 999px; --cs-avatar-size: 50px; --cs-username-padding-top: 6px; --cs-username-padding-right: 11px; --cs-username-padding-bottom: 6px; --cs-username-padding-left: 11px; --cs-username-background-color: #ff7ed6; --cs-username-background-gradient: none; --cs-username-border-width: 1px; --cs-username-border-style: solid; --cs-username-border-color: rgba(255, 255, 255, .88); --cs-username-border-radius: 999px; --cs-username-border-radius-top-left: 999px; --cs-username-border-radius-top-right: 999px; --cs-username-border-radius-bottom-right: 999px; --cs-username-border-radius-bottom-left: 999px; --cs-username-font-size: 12px; --cs-username-font-color: var(--dd-text); --cs-username-font-family: 'Inter'; --cs-username-font-weight: 700; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: #000000; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding: 0px; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-border-radius: 0px; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #000000; --cs-message-box-shadow-inset: ; --cs-message-font-size: 11px; --cs-message-font-color: var(--dd-text); --cs-message-font-family: 'Inter'; --cs-message-font-weight: 700; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: #000000; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+    <div class="cs-header">
+        <div class="cs-avatar"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E"></div>
+
+        <div class="cs-user">
+            <span class="cs-badges"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+            <span class="cs-username">
+                <span class="cs-pronouns"></span>
+                JesusTenG
+            </span>
+        </div>
+    </div>
+
+    <div class="cs-content">
+        <span class="cs-user--inline">
+            <span class="cs-badges cs-badges--inline"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+            <span class="cs-username--inline">
+                <span class="cs-pronouns"></span>
+                JesusTenG
+            </span>
+        </span>
+
+        <div class="cs-message">So sieht dein Chat aus.</div>
+    </div>
+</div></div></div></body></html>

@@ -1,0 +1,1836 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Manhunt 2026 – teamniclas</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/51e7dd8c3983db060d79.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/9a950e44d54d62008439.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/69b3f72b658509bf72f4.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/c209168194e75ae63d57.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/b05d41db03c7bafb7826.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/c516129b25492f8085c2.woff2") format('woff2');
+}
+/*//////////////TEMPLATE VARIABLES//////////////////*/
+
+.cs-bubble {
+    --mh-cut: 7px;
+
+    --mh-surface:
+        rgba(
+            0,
+            0,
+            0,
+            .78
+        );
+
+    --mh-edge:
+        rgba(
+            0,
+            0,
+            0,
+            .94
+        );
+
+    --mh-glow:
+        var(
+            --cs-bubble-border-color,
+            #ff5a00
+        );
+
+    --mh-glow-medium:
+        color-mix(
+            in srgb,
+            var(--mh-glow) 82%,
+            transparent
+        );
+
+    --mh-glow-soft:
+        color-mix(
+            in srgb,
+            var(--mh-glow) 48%,
+            transparent
+        );
+}
+
+
+/*//////////////BASE//////////////////*/
+
+.cs-bubble,
+.cs-bubble * {
+    box-sizing: border-box;
+}
+
+
+/*//////////////CHAT//////////////////*/
+
+.cs-chat {
+    gap:
+        var(
+            --cs-bubble-gap,
+            7px
+        );
+
+    padding-block-start:
+        var(
+            --cs-chat-padding-top,
+            var(--cs-chat-padding, 23px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-chat-padding-right,
+            var(--cs-chat-padding, 23px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-chat-padding-bottom,
+            var(--cs-chat-padding, 23px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-chat-padding-left,
+            var(--cs-chat-padding, 23px)
+        );
+}
+
+
+/*//////////////BUBBLE//////////////////*/
+
+.cs-bubble {
+    inline-size: fit-content;
+
+    max-inline-size:
+        var(
+            --cs-bubble-width,
+            450px
+        );
+
+    padding: 0;
+
+    background: transparent;
+    background-image: none;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    overflow: visible;
+}
+
+
+/*//////////////FRAME//////////////////*/
+
+.mh-frame {
+    position: relative;
+
+    display: inline-block;
+
+    inline-size: fit-content;
+    max-inline-size: 100%;
+
+    isolation: isolate;
+
+    overflow: visible;
+}
+
+
+/*//////////////STATIC OUTER GLOW//////////////////*/
+
+.mh-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            var(--mh-glow),
+            var(--mh-glow)
+        )
+        right top /
+        calc(100% - var(--mh-cut) - 2px)
+        1px
+        no-repeat,
+
+        linear-gradient(
+            var(--mh-glow),
+            var(--mh-glow)
+        )
+        right top /
+        1px
+        calc(100% - var(--mh-cut) - 2px)
+        no-repeat,
+
+        linear-gradient(
+            var(--mh-glow),
+            var(--mh-glow)
+        )
+        left bottom /
+        calc(100% - var(--mh-cut) - 2px)
+        1px
+        no-repeat,
+
+        linear-gradient(
+            var(--mh-glow),
+            var(--mh-glow)
+        )
+        left bottom /
+        1px
+        calc(100% - var(--mh-cut) - 2px)
+        no-repeat,
+
+        linear-gradient(
+            135deg,
+            transparent calc(50% - .5px),
+            var(--mh-glow) calc(50% - .5px),
+            var(--mh-glow) calc(50% + .5px),
+            transparent calc(50% + .5px)
+        )
+        left top /
+        calc(var(--mh-cut) + 2px)
+        calc(var(--mh-cut) + 2px)
+        no-repeat,
+
+        linear-gradient(
+            135deg,
+            transparent calc(50% - .5px),
+            var(--mh-glow) calc(50% - .5px),
+            var(--mh-glow) calc(50% + .5px),
+            transparent calc(50% + .5px)
+        )
+        right bottom /
+        calc(var(--mh-cut) + 2px)
+        calc(var(--mh-cut) + 2px)
+        no-repeat;
+
+    opacity: 1;
+
+    filter:
+        blur(1.8px)
+        drop-shadow(
+            0 0 5px
+            var(--mh-glow)
+        )
+        drop-shadow(
+            0 0 10px
+            var(--mh-glow-medium)
+        )
+        drop-shadow(
+            0 0 19px
+            var(--mh-glow-soft)
+        );
+
+    animation: none;
+}
+
+
+/*//////////////DARK EDGE//////////////////*/
+
+.mh-frame::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            var(--mh-edge),
+            var(--mh-edge)
+        )
+        right top /
+        calc(100% - var(--mh-cut))
+        1px
+        no-repeat,
+
+        linear-gradient(
+            var(--mh-edge),
+            var(--mh-edge)
+        )
+        right top /
+        1px
+        calc(100% - var(--mh-cut))
+        no-repeat,
+
+        linear-gradient(
+            var(--mh-edge),
+            var(--mh-edge)
+        )
+        left bottom /
+        calc(100% - var(--mh-cut))
+        1px
+        no-repeat,
+
+        linear-gradient(
+            var(--mh-edge),
+            var(--mh-edge)
+        )
+        left bottom /
+        1px
+        calc(100% - var(--mh-cut))
+        no-repeat,
+
+        linear-gradient(
+            135deg,
+            transparent calc(50% - .5px),
+            var(--mh-edge) calc(50% - .5px),
+            var(--mh-edge) calc(50% + .5px),
+            transparent calc(50% + .5px)
+        )
+        left top /
+        var(--mh-cut)
+        var(--mh-cut)
+        no-repeat,
+
+        linear-gradient(
+            135deg,
+            transparent calc(50% - .5px),
+            var(--mh-edge) calc(50% - .5px),
+            var(--mh-edge) calc(50% + .5px),
+            transparent calc(50% + .5px)
+        )
+        right bottom /
+        var(--mh-cut)
+        var(--mh-cut)
+        no-repeat;
+}
+
+
+/*//////////////SURFACE//////////////////*/
+
+.mh-surface {
+    position: relative;
+
+    z-index: 2;
+
+    inline-size: fit-content;
+    max-inline-size: 100%;
+
+    padding-block-start:
+        var(
+            --cs-bubble-padding-top,
+            var(--cs-bubble-padding, 4px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding, 8px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding, 4px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding, 6px)
+        );
+
+    background:
+        var(--mh-surface);
+
+    clip-path:
+        polygon(
+            var(--mh-cut) 0,
+            100% 0,
+            100% calc(100% - var(--mh-cut)),
+            calc(100% - var(--mh-cut)) 100%,
+            0 100%,
+            0 var(--mh-cut)
+        );
+}
+
+
+/*//////////////MAIN ROW//////////////////*/
+
+.mh-row {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+    gap: 7px;
+
+    min-inline-size: 0;
+    max-inline-size: 100%;
+}
+
+
+/*//////////////SVG SLOT//////////////////*/
+
+.mh-mark-slot {
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+    flex:
+        0
+        0
+        15px;
+
+    inline-size: 15px;
+    block-size: 18px;
+
+    align-self: center;
+
+    overflow: visible;
+}
+
+
+/*//////////////FINAL SVG//////////////////*/
+
+.mh-mark {
+    display: block;
+
+    inline-size: 13px;
+    block-size: auto;
+
+    color: #ffffff;
+
+    opacity: 1;
+
+    overflow: visible;
+
+    transform:
+        translate3d(
+            0,
+            0,
+            0
+        );
+
+    transform-origin:
+        center center;
+
+    filter:
+        drop-shadow(
+            0 0 0
+            transparent
+        )
+        drop-shadow(
+            0 0 0
+            transparent
+        )
+        drop-shadow(
+            0 0 0
+            transparent
+        );
+}
+
+
+/*//////////////SVG PATH//////////////////*/
+
+.mh-mark path {
+    fill: currentColor;
+
+    stroke: transparent;
+
+    stroke-width: 0;
+
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+
+    paint-order:
+        fill
+        stroke;
+
+    vector-effect:
+        non-scaling-stroke;
+}
+
+
+/*//////////////MAIN//////////////////*/
+
+.mh-main {
+    display: flex;
+
+    align-items: center;
+
+    flex:
+        1
+        1
+        auto;
+
+    min-inline-size: 0;
+    max-inline-size: 100%;
+}
+
+
+/*//////////////HEADER//////////////////*/
+
+.cs-header {
+    display: contents;
+}
+
+
+/*//////////////AVATAR//////////////////*/
+
+.cs-avatar {
+    flex-shrink: 0;
+}
+
+
+/*//////////////AVATAR IMAGE//////////////////*/
+
+.cs-avatar img {
+    inline-size:
+        var(
+            --cs-avatar-size,
+            21px
+        );
+
+    block-size:
+        var(
+            --cs-avatar-size,
+            21px
+        );
+
+    object-fit: cover;
+}
+
+
+/*//////////////CONTENT//////////////////*/
+
+.cs-content {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+    flex:
+        1
+        1
+        auto;
+
+    min-inline-size: 0;
+    max-inline-size: 100%;
+
+    gap: 0;
+}
+
+
+/*//////////////STANDARD USER HIDDEN//////////////////*/
+
+.cs-bubble.cs-username-position-inline
+.cs-user {
+    display: none;
+}
+
+
+/*//////////////INLINE USER//////////////////*/
+
+.cs-bubble.cs-username-position-inline
+.cs-user--inline {
+    display: inline-flex;
+
+    align-items: center;
+
+    align-self: center;
+
+    flex:
+        0
+        0
+        auto;
+
+    min-inline-size: max-content;
+
+    gap: 3px;
+
+    padding-block: 0;
+
+    padding-inline-start: 0;
+
+    padding-inline-end:
+        8px !important;
+
+    margin: 0;
+
+    white-space: nowrap;
+}
+
+
+/*//////////////INLINE BADGES//////////////////*/
+
+.cs-bubble.cs-username-position-inline
+.cs-badges--inline {
+    align-self: center;
+
+    align-items: center;
+}
+
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-username,
+.cs-username--inline {
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Roboto"
+        ),
+        Arial,
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-username-font-size,
+            13px
+        );
+
+    font-weight:
+        var(
+            --cs-username-font-weight,
+            800
+        );
+
+    color:
+        var(
+            --cs-username-font-color,
+            #ffffff
+        );
+
+    line-height: 1;
+
+    letter-spacing: -.01em;
+
+    white-space: nowrap;
+}
+
+
+/*//////////////MESSAGE//////////////////*/
+
+.cs-bubble.cs-username-position-inline
+.cs-content
+.cs-message {
+    display: block;
+
+    flex:
+        1
+        1
+        auto;
+
+    min-inline-size: 0;
+    max-inline-size: 100%;
+
+    margin: 0;
+
+    padding-block-start:
+        var(
+            --cs-message-padding-top,
+            var(--cs-message-padding, 0px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-message-padding-right,
+            var(--cs-message-padding, 0px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-message-padding-bottom,
+            var(--cs-message-padding, 0px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-message-padding-left,
+            var(--cs-message-padding, 0px)
+        );
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "Roboto"
+        ),
+        Arial,
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            13px
+        );
+
+    font-weight:
+        var(
+            --cs-message-font-weight,
+            400
+        );
+
+    color:
+        var(
+            --cs-message-font-color,
+            #ffffff
+        );
+
+    line-height: 1.17;
+
+    letter-spacing: -.015em;
+
+    word-break: break-word;
+}
+
+
+/*//////////////EMOTE WRAPPER//////////////////*/
+
+.cs-message .emote {
+    max-block-size: 16px;
+
+    margin-inline: 1px;
+
+    vertical-align: middle;
+}
+
+
+/*//////////////EMOTE IMAGE//////////////////*/
+
+.cs-message img.emote,
+.cs-message .emote img {
+    display: inline-block;
+
+    width: auto !important;
+    height: 16px !important;
+
+    inline-size: auto !important;
+    block-size: 16px !important;
+
+    max-width: none !important;
+    max-height: 16px !important;
+
+    max-inline-size: none !important;
+    max-block-size: 16px !important;
+
+    object-fit: contain;
+
+    vertical-align: middle;
+
+    margin-inline: 1px;
+}
+
+
+/*//////////////EVENT INTRO DEFAULT//////////////////*/
+
+.mh-event-intro {
+    display: none;
+}
+
+
+/*//////////////SPECIAL EVENT SURFACE//////////////////*/
+
+.cs-bubble.cs-event
+.mh-surface {
+    min-inline-size: 260px;
+}
+
+
+/*//////////////SPECIAL EVENT INTRO//////////////////*/
+
+.cs-bubble.cs-event
+.mh-event-intro {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 20;
+
+    display: block;
+
+    pointer-events: none;
+
+    overflow: visible;
+
+    animation:
+        mh-event-intro-hide
+        1ms
+        3.30s
+        steps(1, end)
+        forwards;
+}
+
+
+
+/*//////////////FINAL EVENT SVG INITIAL//////////////////*/
+
+.cs-bubble.cs-event
+.mh-mark-slot {
+    opacity: 0;
+
+    animation:
+        mh-event-final-mark-reveal
+        260ms
+        3.04s
+        ease-out
+        forwards;
+}
+
+
+/*//////////////EVENT CONTENT INITIAL//////////////////*/
+
+.cs-bubble.cs-event
+.mh-main {
+    opacity: 0;
+
+    transform:
+        translate3d(
+            8px,
+            0,
+            0
+        );
+
+    animation:
+        mh-event-content-reveal
+        520ms
+        3.46s
+        cubic-bezier(.16, 1, .3, 1)
+        forwards;
+}
+
+
+/*//////////////EVENT INTRO MARK//////////////////*/
+
+.mh-event-mark-wrap {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    inline-size: 48px;
+
+    color: #ffffff;
+
+    transform-origin:
+        center center;
+
+    animation:
+        mh-event-mark-sequence
+        3.28s
+        cubic-bezier(.22, 1, .36, 1)
+        both;
+}
+
+
+/*//////////////EVENT INTRO SVG//////////////////*/
+
+.mh-event-mark {
+    display: block;
+
+    inline-size: 100%;
+    block-size: auto;
+
+    overflow: visible;
+
+    filter:
+        drop-shadow(
+            0 0 4px
+            var(--mh-glow)
+        )
+        drop-shadow(
+            0 0 12px
+            var(--mh-glow)
+        )
+        drop-shadow(
+            0 0 26px
+            var(--mh-glow-medium)
+        );
+}
+
+
+/*//////////////EVENT SVG OUTLINE//////////////////*/
+
+.mh-event-mark-outline {
+    fill: none;
+
+    stroke:
+        currentColor;
+
+    stroke-width: 2px;
+
+    stroke-linejoin: miter;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    stroke-dasharray: 1;
+
+    stroke-dashoffset: 1;
+
+    animation:
+        mh-event-svg-draw
+        780ms
+        80ms
+        cubic-bezier(.65, 0, .35, 1)
+        forwards;
+}
+
+
+/*//////////////EVENT SVG FILL//////////////////*/
+
+.mh-event-mark-fill {
+    fill:
+        currentColor;
+
+    opacity: 0;
+
+    animation:
+        mh-event-svg-fill
+        340ms
+        700ms
+        cubic-bezier(.22, 1, .36, 1)
+        forwards;
+}
+
+
+/*//////////////EVENT TYPE//////////////////*/
+
+.mh-event-type {
+    position: absolute;
+
+    left:
+        calc(
+            50% - 48px
+        );
+
+    top: 50%;
+
+    color: #ffffff;
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Roboto"
+        ),
+        Arial,
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: .17em;
+
+    white-space: nowrap;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 5px
+        var(--mh-glow),
+
+        0 0 14px
+        var(--mh-glow-medium),
+
+        0 0 24px
+        var(--mh-glow-soft);
+
+    opacity: 0;
+
+    transform:
+        translate3d(
+            10px,
+            -50%,
+            0
+        )
+        scaleX(.96);
+
+    transform-origin:
+        left center;
+
+    filter:
+        blur(2px);
+
+    animation:
+        mh-event-type-sequence
+        3.28s
+        linear
+        both;
+}
+
+
+/*//////////////SUB//////////////////*/
+
+.cs-bubble.cs-event-sub
+.mh-event-type::before {
+    content: "SUB";
+}
+
+
+/*//////////////RESUB//////////////////*/
+
+.cs-bubble.cs-event-resub
+.mh-event-type::before {
+    content: "RESUB";
+}
+
+
+/*//////////////SUB GIFT//////////////////*/
+
+.cs-bubble.cs-event-subgift
+.mh-event-type::before {
+    content: "SUB GIFT";
+}
+
+
+/*//////////////GIFT//////////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade
+)
+.mh-event-type::before {
+    content: "GIFT";
+}
+
+
+/*//////////////RAID//////////////////*/
+
+.cs-bubble.cs-event-raid
+.mh-event-type::before {
+    content: "RAID";
+}
+
+
+/*//////////////CHEER//////////////////*/
+
+.cs-bubble.cs-event-cheer
+.mh-event-type::before {
+    content: "CHEER";
+}
+
+
+/*//////////////BITS//////////////////*/
+
+.cs-bubble.cs-event-bits-badge
+.mh-event-type::before {
+    content: "BITS";
+}
+
+
+/*//////////////EVENT MARK CHOREOGRAPHY//////////////////*/
+
+@keyframes mh-event-mark-sequence {
+
+    /*//////////////ICON APPEARS CENTERED//////////////////*/
+
+    0% {
+        left: 50%;
+        top: 50%;
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                -50%,
+                -50%,
+                0
+            )
+            scale(.86);
+    }
+
+    7% {
+        opacity: 1;
+
+        transform:
+            translate3d(
+                -50%,
+                -50%,
+                0
+            )
+            scale(.94);
+    }
+
+    20% {
+        left: 50%;
+
+        opacity: 1;
+
+        transform:
+            translate3d(
+                -50%,
+                -50%,
+                0
+            )
+            scale(1);
+    }
+
+
+    /*//////////////CENTER HOLD//////////////////*/
+
+    30% {
+        left: 50%;
+
+        opacity: 1;
+
+        transform:
+            translate3d(
+                -50%,
+                -50%,
+                0
+            )
+            scale(1);
+    }
+
+
+    /*//////////////ONE SMOOTH MOVE BESIDE EVENT TYPE//////////////////*/
+
+    43% {
+        left:
+            calc(
+                50% - 78px
+            );
+
+        opacity: 1;
+
+        transform:
+            translate3d(
+                -50%,
+                -50%,
+                0
+            )
+            scale(.60);
+    }
+
+
+    /*//////////////HOLD BESIDE EVENT TYPE//////////////////*/
+
+    68% {
+        left:
+            calc(
+                50% - 78px
+            );
+
+        opacity: 1;
+
+        transform:
+            translate3d(
+                -50%,
+                -50%,
+                0
+            )
+            scale(.60);
+    }
+
+
+    /*//////////////ONE SMOOTH MOVE TO FINAL POSITION//////////////////*/
+
+    91% {
+        left:
+            calc(
+                var(
+                    --cs-bubble-padding-left,
+                    var(
+                        --cs-bubble-padding,
+                        6px
+                    )
+                )
+                + 7.5px
+            );
+
+        opacity: 1;
+
+        transform:
+            translate3d(
+                -50%,
+                -50%,
+                0
+            )
+            scale(.271);
+    }
+
+
+    /*//////////////KEEP INTRO SVG VISIBLE FOR HANDOFF//////////////////*/
+
+    100% {
+        left:
+            calc(
+                var(
+                    --cs-bubble-padding-left,
+                    var(
+                        --cs-bubble-padding,
+                        6px
+                    )
+                )
+                + 7.5px
+            );
+
+        opacity: 1;
+
+        transform:
+            translate3d(
+                -50%,
+                -50%,
+                0
+            )
+            scale(.271);
+    }
+}
+
+
+/*//////////////EVENT TYPE CHOREOGRAPHY//////////////////*/
+
+@keyframes mh-event-type-sequence {
+
+    0%,
+    36% {
+        opacity: 0;
+
+        letter-spacing: .26em;
+
+        transform:
+            translate3d(
+                12px,
+                -50%,
+                0
+            )
+            scaleX(.94);
+
+        filter:
+            blur(2px);
+    }
+
+    43% {
+        opacity: .70;
+
+        letter-spacing: .20em;
+
+        transform:
+            translate3d(
+                4px,
+                -50%,
+                0
+            )
+            scaleX(.985);
+
+        filter:
+            blur(.7px);
+    }
+
+    48% {
+        opacity: 1;
+
+        letter-spacing: .17em;
+
+        transform:
+            translate3d(
+                0,
+                -50%,
+                0
+            )
+            scaleX(1);
+
+        filter:
+            blur(0);
+    }
+
+    65% {
+        opacity: 1;
+
+        letter-spacing: .17em;
+
+        transform:
+            translate3d(
+                0,
+                -50%,
+                0
+            )
+            scaleX(1);
+
+        filter:
+            blur(0);
+    }
+
+    72% {
+        opacity: .96;
+
+        letter-spacing: .16em;
+
+        transform:
+            translate3d(
+                -1px,
+                -50%,
+                0
+            )
+            scaleX(.995);
+
+        filter:
+            blur(.1px);
+    }
+
+    78% {
+        opacity: .76;
+
+        letter-spacing: .145em;
+
+        transform:
+            translate3d(
+                -3px,
+                -50%,
+                0
+            )
+            scaleX(.985);
+
+        filter:
+            blur(.45px);
+    }
+
+    83% {
+        opacity: .50;
+
+        letter-spacing: .125em;
+
+        transform:
+            translate3d(
+                -6px,
+                -50%,
+                0
+            )
+            scaleX(.97);
+
+        filter:
+            blur(.9px);
+    }
+
+    88% {
+        opacity: .27;
+
+        letter-spacing: .105em;
+
+        transform:
+            translate3d(
+                -9px,
+                -50%,
+                0
+            )
+            scaleX(.955);
+
+        filter:
+            blur(1.45px);
+    }
+
+    92% {
+        opacity: .10;
+
+        letter-spacing: .09em;
+
+        transform:
+            translate3d(
+                -11px,
+                -50%,
+                0
+            )
+            scaleX(.945);
+
+        filter:
+            blur(2px);
+    }
+
+    96%,
+    100% {
+        opacity: 0;
+
+        letter-spacing: .08em;
+
+        transform:
+            translate3d(
+                -13px,
+                -50%,
+                0
+            )
+            scaleX(.94);
+
+        filter:
+            blur(2.4px);
+    }
+}
+
+
+/*//////////////SVG DRAW//////////////////*/
+
+@keyframes mh-event-svg-draw {
+
+    from {
+        stroke-dashoffset: 1;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/*//////////////SVG FILL//////////////////*/
+
+@keyframes mh-event-svg-fill {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*//////////////FINAL SVG REVEAL//////////////////*/
+
+@keyframes mh-event-final-mark-reveal {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*//////////////EVENT CONTENT REVEAL//////////////////*/
+
+@keyframes mh-event-content-reveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                8px,
+                0,
+                0
+            );
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            );
+    }
+}
+
+
+/*//////////////EVENT INTRO HIDE//////////////////*/
+
+@keyframes mh-event-intro-hide {
+
+    to {
+        visibility: hidden;
+    }
+}
+
+
+/*//////////////FINAL SVG HANDOFF//////////////////*/
+
+.cs-bubble.cs-event
+.mh-mark {
+    animation:
+        mh-event-mark-settle
+        1s
+        3.31s
+        cubic-bezier(.22, 1, .36, 1)
+        both,
+
+        mh-event-energy-breathe
+        5s
+        4.75s
+        ease-in-out
+        infinite;
+
+    will-change:
+        filter;
+}
+
+
+/*//////////////FINAL SVG SETTLE//////////////////*/
+
+@keyframes mh-event-mark-settle {
+
+    0% {
+        filter:
+            drop-shadow(
+                0 0 4px
+                var(--mh-glow)
+            )
+            drop-shadow(
+                0 0 11px
+                var(--mh-glow)
+            )
+            drop-shadow(
+                0 0 21px
+                var(--mh-glow-medium)
+            );
+    }
+
+    35% {
+        filter:
+            drop-shadow(
+                0 0 3px
+                var(--mh-glow)
+            )
+            drop-shadow(
+                0 0 8px
+                var(--mh-glow-medium)
+            )
+            drop-shadow(
+                0 0 14px
+                var(--mh-glow-soft)
+            );
+    }
+
+    100% {
+        filter:
+            drop-shadow(
+                0 0 0
+                transparent
+            )
+            drop-shadow(
+                0 0 0
+                transparent
+            )
+            drop-shadow(
+                0 0 0
+                transparent
+            );
+    }
+}
+
+
+/*//////////////SIMPLE WHITE IDLE GLOW//////////////////*/
+
+@keyframes mh-event-energy-breathe {
+
+    /*//////////////START WEISS//////////////////*/
+
+    0% {
+        color: #ffffff;
+
+        filter:
+            drop-shadow(
+                0 0 0
+                transparent
+            )
+            drop-shadow(
+                0 0 0
+                transparent
+            )
+            drop-shadow(
+                0 0 0
+                transparent
+            );
+    }
+
+
+    /*//////////////SOFTER AUFBAU//////////////////*/
+
+    15% {
+        color: #ffffff;
+
+        filter:
+            drop-shadow(
+                0 0 1px
+                var(--mh-glow-soft)
+            )
+            drop-shadow(
+                0 0 3px
+                var(--mh-glow-soft)
+            )
+            drop-shadow(
+                0 0 7px
+                var(--mh-glow-soft)
+            );
+    }
+
+
+    /*//////////////EIN PEAK//////////////////*/
+
+    30% {
+        color: #ffffff;
+
+        filter:
+            drop-shadow(
+                0 0 3px
+                var(--mh-glow)
+            )
+            drop-shadow(
+                0 0 8px
+                var(--mh-glow)
+            )
+            drop-shadow(
+                0 0 16px
+                var(--mh-glow-medium)
+            );
+    }
+
+
+    /*//////////////SOFTER RELEASE//////////////////*/
+
+    45% {
+        color: #ffffff;
+
+        filter:
+            drop-shadow(
+                0 0 1px
+                var(--mh-glow-soft)
+            )
+            drop-shadow(
+                0 0 3px
+                var(--mh-glow-soft)
+            )
+            drop-shadow(
+                0 0 7px
+                var(--mh-glow-soft)
+            );
+    }
+
+
+    /*//////////////GLOW KOMPLETT AUS//////////////////*/
+
+    60% {
+        color: #ffffff;
+
+        filter:
+            drop-shadow(
+                0 0 0
+                transparent
+            )
+            drop-shadow(
+                0 0 0
+                transparent
+            )
+            drop-shadow(
+                0 0 0
+                transparent
+            );
+    }
+
+
+    /*//////////////2 SEKUNDEN REINES WEISS//////////////////*/
+
+    100% {
+        color: #ffffff;
+
+        filter:
+            drop-shadow(
+                0 0 0
+                transparent
+            )
+            drop-shadow(
+                0 0 0
+                transparent
+            )
+            drop-shadow(
+                0 0 0
+                transparent
+            );
+    }
+}
+
+
+/*//////////////REDUCED MOTION//////////////////*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mh-event-intro {
+        display: none !important;
+    }
+
+    .mh-mark-slot {
+        opacity: 1 !important;
+
+        animation: none !important;
+    }
+
+    .mh-main {
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        animation: none !important;
+    }
+
+    .mh-mark {
+        color: #ffffff !important;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+
+        animation: none !important;
+    }
+
+    .mh-mark path {
+        stroke: transparent !important;
+
+        stroke-opacity: 0 !important;
+
+        animation: none !important;
+    }
+}
+.cs-bubble {
+    --cs-username-font-color: #B3FFD0;
+}
+
+.cs-bubble .mh-mark {
+    color: #00FF55;
+}
+
+.cs-bubble .mh-event-mark-fill {
+    fill: #00FF55;
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-left cs-username-position-inline cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-avatar-hidden cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 0; --cs-avatar-position: left; --cs-username-position: inline; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 23px; --cs-chat-padding-right: 23px; --cs-chat-padding-bottom: 23px; --cs-chat-padding-left: 23px; --cs-bubble-border-width: 0px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #00ff55; --cs-bubble-animation: bp-slide-in-left; --cs-bubble-animation-duration: 750ms; --cs-bubble-animation-delay: 0ms; --cs-bubble-animation-timing-function: ease-in-out; --cs-bubble-gap: 7px; --cs-bubble-width: 450px; --cs-avatar-animation: none; --cs-avatar-animation-duration: 750ms; --cs-avatar-animation-delay: 0ms; --cs-avatar-animation-timing-function: ease-in-out; --cs-username-font-size: 13px; --cs-username-font-color: #59ff90; --cs-username-font-family: 'Roboto'; --cs-username-font-weight: 800; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: #000000; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-username-animation: none; --cs-username-animation-duration: 750ms; --cs-username-animation-delay: 0ms; --cs-username-animation-timing-function: ease-in-out; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-background-color: transparent; --cs-message-background-gradient: none; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: transparent; --cs-message-border-radius: 0px; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #000000; --cs-message-box-shadow-inset: ; --cs-message-font-size: 13px; --cs-message-font-color: #ffffff; --cs-message-font-family: 'Roboto'; --cs-message-font-weight: 400; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: #000000; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-message-animation: none; --cs-message-animation-duration: 750ms; --cs-message-animation-delay: 0ms; --cs-message-animation-timing-function: ease-in-out; --cs-usercolor: #9b59b6;">
+    <div class="mh-frame"> 
+
+        <div class="mh-event-intro">
+
+            <div class="mh-event-mark-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mh-event-mark" viewBox="250 92 1046.277 1098">
+                    <path class="mh-event-mark-outline" d="                             M 773.250 91.980                             L 1296.277 1190.000                             L 1061.635 1190.000                             L 773.250 587.218                             L 484.843 1190.000                             L 250.206 1190.000                             Z                         "/>
+
+                    <path class="mh-event-mark-fill" d="                             M 773.250 91.980                             L 1296.277 1190.000                             L 1061.635 1190.000                             L 773.250 587.218                             L 484.843 1190.000                             L 250.206 1190.000                             Z                         "/>
+                </svg>
+            </div>
+
+            <div class="mh-event-type"></div>
+
+        </div>
+
+        <div class="mh-surface">
+
+            <div class="mh-row">
+
+                <div class="mh-mark-slot">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mh-mark" viewBox="250 92 1046.277 1098" aria-hidden="true">
+                        <path d="                                 M 773.250 91.980                                 L 1296.277 1190.000                                 L 1061.635 1190.000                                 L 773.250 587.218                                 L 484.843 1190.000                                 L 250.206 1190.000                                 Z                             " fill="currentColor"/>
+                    </svg>
+                </div>
+
+                <div class="mh-main">
+
+                    <div class="cs-header">
+
+                        <div class="cs-avatar">
+                            <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">
+                        </div>
+
+                        <div class="cs-user">
+
+                            <span class="cs-badges">
+                                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+                            </span>
+
+                            <span class="cs-username">
+                                <span class="cs-pronouns">
+                                    
+                                </span>
+
+                                JesusTenG
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="cs-content">
+
+                        <span class="cs-user--inline">
+
+                            <span class="cs-badges cs-badges--inline">
+                                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+                            </span>
+
+                            <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+                                <span class="cs-pronouns">
+                                    
+                                </span>
+
+                                JesusTenG
+                            </span>
+
+                        </span>
+
+                        <div class="cs-message">
+                            So sieht dein Chat aus.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div></div></div></body></html>

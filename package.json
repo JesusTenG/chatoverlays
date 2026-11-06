@@ -8,7 +8,8 @@
     "start": "node server.mjs",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && node --test tests/*.test.mjs && node check.mjs",
-    "import:catalog": "node import-catalog.mjs --download"
+    "import:catalog": "node import-catalog.mjs --download",
+    "import:skins": "node scripts/import-skins.mjs"
   },
   "engines": { "node": ">=20.9.0" },
   "dependencies": {

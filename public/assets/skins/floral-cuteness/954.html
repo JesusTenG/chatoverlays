@@ -1,0 +1,3062 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Floral Cuteness – ice</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Indie Flower';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/d2133cfb8c07f1ecafd8.woff2") format('woff2');
+}
+/*//////////////BASE//////////////*/
+
+.cs-chat {
+    --cs-chat-padding: 16px;
+    --cs-bubble-gap: 12px;
+
+    box-sizing: border-box;
+}
+
+
+/*//////////////DESIGN TOKENS//////////////*/
+
+.cs-bubble {
+    --bloom-shell:
+        var(
+            --cs-bubble-background-color,
+            #e9e5f3
+        );
+
+    --bloom-border:
+        var(
+            --cs-bubble-border-color,
+            #756a9f
+        );
+
+
+    --bloom-user-panel:
+        var(
+            --cs-username-background-color,
+            #fff8e9
+        );
+
+    --bloom-user-border:
+        var(
+            --cs-username-border-color,
+            #b4a7cd
+        );
+
+    --bloom-user-text:
+        var(
+            --cs-username-font-color,
+            #433e56
+        );
+
+
+    --bloom-message-panel:
+        var(
+            --cs-message-background-color,
+            #fff8e9
+        );
+
+    --bloom-message-border:
+        var(
+            --cs-message-border-color,
+            #b4a7cd
+        );
+
+    --bloom-message-text:
+        var(
+            --cs-message-font-color,
+            #433e56
+        );
+
+
+    --bloom-pronouns:
+        var(
+            --cs-pronouns-font-color,
+            var(--bloom-user-text)
+        );
+
+
+    --bloom-avatar-panel:
+        var(
+            --cs-avatar-background-color,
+            var(--bloom-message-panel)
+        );
+
+    --bloom-avatar-border:
+        var(
+            --cs-avatar-border-color,
+            var(--bloom-message-border)
+        );
+
+
+    --bloom-user-shadow:
+        var(
+            --cs-username-box-shadow-color,
+            #d4cbe2
+        );
+
+    --bloom-message-shadow:
+        var(
+            --cs-message-box-shadow-color,
+            #d4cbe2
+        );
+
+    --bloom-avatar-shadow:
+        var(
+            --cs-avatar-box-shadow-color,
+            #d4cbe2
+        );
+
+
+    /* FLOWERS FOLLOW CUSTOMIZER COLORS */
+
+    --bloom-petal-light:
+        color-mix(
+            in srgb,
+            var(--bloom-shell) 25%,
+            #ffffff 75%
+        );
+
+    --bloom-petal-soft:
+        color-mix(
+            in srgb,
+            var(--bloom-shell) 70%,
+            var(--bloom-message-panel) 30%
+        );
+
+    --bloom-petal-border:
+        color-mix(
+            in srgb,
+            var(--bloom-border) 80%,
+            #ffffff 20%
+        );
+
+    --bloom-center:
+        color-mix(
+            in srgb,
+            var(--bloom-message-panel) 72%,
+            #f2c85d 28%
+        );
+
+    --bloom-center-border:
+        color-mix(
+            in srgb,
+            var(--bloom-border) 55%,
+            #d7ac4f 45%
+        );
+
+
+    --bloom-min-bubble:
+        300px;
+
+    --bloom-min-message:
+        258px;
+
+    --bloom-max-message:
+        370px;
+}
+
+
+/*//////////////FONT DEFAULTS//////////////*/
+
+.cs-bubble {
+    --cs-username-font-family:
+        "Indie Flower";
+
+    --cs-message-font-family:
+        "Indie Flower";
+}
+
+
+/*//////////////NORMAL ANIMATIONS//////////////*/
+
+.cs-bubble:not(.cs-event) {
+    --cs-bubble-animation:
+        bloom-shell-in;
+
+    --cs-bubble-animation-duration:
+        430ms;
+
+    --cs-bubble-animation-timing-function:
+        cubic-bezier(.2,.85,.25,1.14);
+
+
+    --cs-avatar-animation:
+        bloom-avatar-in;
+
+    --cs-avatar-animation-duration:
+        390ms;
+
+    --cs-avatar-animation-delay:
+        70ms;
+
+    --cs-avatar-animation-timing-function:
+        cubic-bezier(.18,.9,.25,1.3);
+
+
+    --cs-username-animation:
+        bloom-user-in;
+
+    --cs-username-animation-duration:
+        390ms;
+
+    --cs-username-animation-delay:
+        120ms;
+
+    --cs-username-animation-timing-function:
+        cubic-bezier(.18,.9,.25,1.2);
+
+
+    --cs-message-animation:
+        bloom-message-in;
+
+    --cs-message-animation-duration:
+        420ms;
+
+    --cs-message-animation-delay:
+        180ms;
+
+    --cs-message-animation-timing-function:
+        cubic-bezier(.18,.88,.25,1.15);
+}
+
+
+/*//////////////NORMAL BUBBLE//////////////*/
+
+.cs-bubble:not(.cs-event) {
+    position: relative;
+
+    display: inline-grid;
+
+    grid-template-columns:
+        auto auto;
+
+    grid-template-rows:
+        auto auto;
+
+    column-gap: 9px;
+    row-gap: 3px;
+
+    align-items: center;
+    justify-content: start;
+
+
+    inline-size:
+        fit-content;
+
+    min-inline-size:
+        var(--bloom-min-bubble);
+
+    max-inline-size:
+        min(
+            var(--cs-bubble-width, 430px),
+            calc(100% - 20px)
+        );
+
+    box-sizing:
+        border-box;
+
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-bubble-padding-top,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 8px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 15px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-bubble-padding-bottom,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 8px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-bubble-padding-left,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 15px
+        );
+
+
+    /* FRAMEWORK BACKGROUND */
+
+    background-color:
+        var(--bloom-shell);
+
+    background-image:
+        var(
+            --cs-bubble-background-gradient,
+            none
+        );
+
+    background-repeat:
+        no-repeat;
+
+
+    /* FRAMEWORK BORDER */
+
+    border-width:
+        var(
+            --cs-bubble-border-width,
+            2.5px
+        );
+
+    border-style:
+        var(
+            --cs-bubble-border-style,
+            solid
+        );
+
+    border-color:
+        var(--bloom-border);
+
+
+    border-start-start-radius:
+        var(
+            --cs-bubble-border-radius-top-left,
+            var(--cs-bubble-border-radius, 999px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-bubble-border-radius-top-right,
+            var(--cs-bubble-border-radius, 999px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-bubble-border-radius-bottom-right,
+            var(--cs-bubble-border-radius, 999px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-bubble-border-radius-bottom-left,
+            var(--cs-bubble-border-radius, 999px)
+        );
+
+
+    /* FRAMEWORK SHADOW */
+
+    box-shadow:
+        var(--cs-bubble-box-shadow-inset,)
+        var(--cs-bubble-box-shadow-offset-x, 0px)
+        var(--cs-bubble-box-shadow-offset-y, 0px)
+        var(--cs-bubble-box-shadow-blur-radius, 0px)
+        var(--cs-bubble-box-shadow-spread-radius, 0px)
+        var(
+            --cs-bubble-box-shadow-color,
+            transparent
+        );
+
+
+    overflow:
+        visible;
+
+    isolation:
+        isolate;
+}
+
+
+/*//////////////HEADER//////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-header {
+    display:
+        contents;
+}
+
+
+/*//////////////FLOWER SHAPE//////////////*/
+
+.cs-bubble:not(.cs-event)::before,
+.cs-bubble:not(.cs-event)::after,
+.bloom-event-flower {
+    background:
+
+        radial-gradient(
+            circle at 50% 22%,
+            var(--bloom-petal-light) 0 3.9px,
+            var(--bloom-petal-border) 4.1px 4.7px,
+            transparent 4.9px
+        ),
+
+        radial-gradient(
+            circle at 75% 36%,
+            var(--bloom-petal-soft) 0 3.9px,
+            var(--bloom-petal-border) 4.1px 4.7px,
+            transparent 4.9px
+        ),
+
+        radial-gradient(
+            circle at 75% 64%,
+            var(--bloom-petal-light) 0 3.9px,
+            var(--bloom-petal-border) 4.1px 4.7px,
+            transparent 4.9px
+        ),
+
+        radial-gradient(
+            circle at 50% 78%,
+            var(--bloom-petal-soft) 0 3.9px,
+            var(--bloom-petal-border) 4.1px 4.7px,
+            transparent 4.9px
+        ),
+
+        radial-gradient(
+            circle at 25% 64%,
+            var(--bloom-petal-light) 0 3.9px,
+            var(--bloom-petal-border) 4.1px 4.7px,
+            transparent 4.9px
+        ),
+
+        radial-gradient(
+            circle at 25% 36%,
+            var(--bloom-petal-soft) 0 3.9px,
+            var(--bloom-petal-border) 4.1px 4.7px,
+            transparent 4.9px
+        ),
+
+        radial-gradient(
+            circle at center,
+            var(--bloom-center) 0 3px,
+            var(--bloom-center-border) 3.2px 3.9px,
+            transparent 4.1px
+        );
+
+    background-repeat:
+        no-repeat;
+}
+
+
+/*//////////////NORMAL FLOWERS//////////////*/
+
+.cs-bubble:not(.cs-event)::before,
+.cs-bubble:not(.cs-event)::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 30;
+
+    inset-block-start:
+        50%;
+
+    inline-size:
+        24px;
+
+    block-size:
+        24px;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    scale:
+        .2;
+
+    animation:
+        bloom-flower-in
+        370ms
+        cubic-bezier(.18,.9,.25,1.4)
+        forwards;
+}
+
+
+/*//////////////LEFT FLOWER//////////////*/
+
+.cs-bubble:not(.cs-event)::before {
+    inset-inline-start:
+        0;
+
+    translate:
+        -50% -50%;
+
+    rotate:
+        -8deg;
+
+    animation-delay:
+        250ms;
+}
+
+
+/*//////////////RIGHT FLOWER//////////////*/
+
+.cs-bubble:not(.cs-event)::after {
+    inset-inline-end:
+        0;
+
+    translate:
+        50% -50%;
+
+    rotate:
+        8deg;
+
+    animation-delay:
+        300ms;
+}
+
+
+/*//////////////AVATAR//////////////*/
+
+.cs-avatar {
+    grid-column:
+        1;
+
+    grid-row:
+        1 / span 2;
+
+    align-self:
+        center;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+}
+
+
+.cs-avatar img {
+    inline-size:
+        var(
+            --cs-avatar-size,
+            30px
+        );
+
+    block-size:
+        var(
+            --cs-avatar-size,
+            30px
+        );
+
+    aspect-ratio:
+        1;
+
+    display:
+        block;
+
+    box-sizing:
+        border-box;
+
+    object-fit:
+        cover;
+
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-avatar-padding-top,
+                var(--cs-avatar-padding, 0px)
+            )
+            + 1px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-avatar-padding-right,
+                var(--cs-avatar-padding, 0px)
+            )
+            + 1px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-avatar-padding-bottom,
+                var(--cs-avatar-padding, 0px)
+            )
+            + 1px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-avatar-padding-left,
+                var(--cs-avatar-padding, 0px)
+            )
+            + 1px
+        );
+
+
+    background-color:
+        var(--bloom-avatar-panel);
+
+    background-image:
+        var(
+            --cs-avatar-background-gradient,
+            none
+        );
+
+    background-repeat:
+        no-repeat;
+
+
+    border-width:
+        var(
+            --cs-avatar-border-width,
+            2px
+        );
+
+    border-style:
+        var(
+            --cs-avatar-border-style,
+            solid
+        );
+
+    border-color:
+        var(--bloom-avatar-border);
+
+
+    border-radius:
+        50% !important;
+
+
+    box-shadow:
+        var(--cs-avatar-box-shadow-inset,)
+        var(--cs-avatar-box-shadow-offset-x, 2px)
+        var(--cs-avatar-box-shadow-offset-y, 2px)
+        var(--cs-avatar-box-shadow-blur-radius, 0px)
+        var(--cs-avatar-box-shadow-spread-radius, 0px)
+        var(--bloom-avatar-shadow);
+
+
+    rotate:
+        -2deg;
+}
+
+
+/*//////////////NO AVATAR//////////////*/
+
+.cs-bubble.cs-avatar-hidden:not(.cs-event),
+.cs-bubble:not(.cs-event):has(.cs-avatar:empty) {
+    grid-template-columns:
+        minmax(
+            var(--bloom-min-message),
+            auto
+        );
+}
+
+
+.cs-bubble.cs-avatar-hidden
+.cs-avatar,
+
+.cs-bubble:has(.cs-avatar:empty)
+.cs-avatar {
+    display:
+        none;
+}
+
+
+.cs-bubble.cs-avatar-hidden:not(.cs-event)
+.cs-user,
+
+.cs-bubble.cs-avatar-hidden:not(.cs-event)
+.cs-content,
+
+.cs-bubble:not(.cs-event):has(.cs-avatar:empty)
+.cs-user,
+
+.cs-bubble:not(.cs-event):has(.cs-avatar:empty)
+.cs-content {
+    grid-column:
+        1;
+}
+
+
+/*//////////////USERNAME//////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-user {
+    grid-column:
+        2;
+
+    grid-row:
+        1;
+
+    justify-self:
+        start;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    inline-size:
+        fit-content;
+
+    max-inline-size:
+        calc(100% - 16px);
+
+    min-inline-size:
+        0;
+
+    box-sizing:
+        border-box;
+
+    gap:
+        3px;
+
+
+    margin-inline-start:
+        11px;
+
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-username-padding-top,
+                var(--cs-username-padding, 0px)
+            )
+            + 2px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-username-padding-right,
+                var(--cs-username-padding, 0px)
+            )
+            + 7px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-username-padding-bottom,
+                var(--cs-username-padding, 0px)
+            )
+            + 2px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-username-padding-left,
+                var(--cs-username-padding, 0px)
+            )
+            + 7px
+        );
+
+
+    background-color:
+        var(--bloom-user-panel);
+
+    background-image:
+        var(
+            --cs-username-background-gradient,
+            none
+        );
+
+    background-repeat:
+        no-repeat;
+
+
+    border-width:
+        var(
+            --cs-username-border-width,
+            2px
+        );
+
+    border-style:
+        var(
+            --cs-username-border-style,
+            solid
+        );
+
+    border-color:
+        var(--bloom-user-border);
+
+
+    border-start-start-radius:
+        var(
+            --cs-username-border-radius-top-left,
+            var(--cs-username-border-radius, 999px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-username-border-radius-top-right,
+            var(--cs-username-border-radius, 999px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-username-border-radius-bottom-right,
+            var(--cs-username-border-radius, 999px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-username-border-radius-bottom-left,
+            var(--cs-username-border-radius, 999px)
+        );
+
+
+    box-shadow:
+        var(--cs-username-box-shadow-inset,)
+        var(--cs-username-box-shadow-offset-x, 2px)
+        var(--cs-username-box-shadow-offset-y, 2px)
+        var(--cs-username-box-shadow-blur-radius, 0px)
+        var(--cs-username-box-shadow-spread-radius, 0px)
+        var(--bloom-user-shadow);
+
+
+    rotate:
+        1.5deg;
+
+    transform-origin:
+        center;
+}
+
+
+/*//////////////USERNAME TEXT//////////////*/
+
+.cs-username,
+.cs-username--inline {
+    color:
+        var(--bloom-user-text);
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Indie Flower"
+        ),
+        cursive;
+
+    font-size:
+        var(
+            --cs-username-font-size,
+            15px
+        );
+
+    font-weight:
+        var(
+            --cs-username-font-weight,
+            700
+        );
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        .1px;
+
+    white-space:
+        nowrap;
+
+
+    -webkit-text-stroke:
+        var(
+            --cs-username-text-stroke-width,
+            .35px
+        )
+        var(
+            --cs-username-text-stroke-color,
+            var(--bloom-user-text)
+        );
+
+
+    paint-order:
+        stroke fill;
+
+    text-shadow:
+        var(--cs-username-text-shadow-offset-x, 0px)
+        var(--cs-username-text-shadow-offset-y, 0px)
+        var(--cs-username-text-shadow-blur-radius, 0px)
+        var(
+            --cs-username-text-shadow-color,
+            transparent
+        );
+}
+
+
+/*//////////////PRONOUNS//////////////*/
+
+.cs-pronouns {
+    color:
+        var(--bloom-pronouns);
+
+    background-color:
+        var(
+            --cs-pronouns-background-color,
+            transparent
+        );
+
+    font-size:
+        .78em;
+
+    font-weight:
+        700;
+}
+
+
+/*//////////////BADGES//////////////*/
+
+.cs-badges {
+    gap:
+        3px;
+}
+
+
+.cs-badges img {
+    inline-size:
+        calc(
+            var(--cs-username-font-size, 15px)
+            - 1px
+        );
+
+    block-size:
+        calc(
+            var(--cs-username-font-size, 15px)
+            - 1px
+        );
+
+    object-fit:
+        contain;
+
+    border-radius:
+        3px;
+
+    opacity:
+        0;
+
+    animation:
+        bloom-badge-in
+        320ms
+        cubic-bezier(.18,.9,.25,1.4)
+        forwards;
+
+    animation-delay:
+        190ms;
+}
+
+
+.cs-badges img:nth-child(2) {
+    animation-delay:
+        230ms;
+}
+
+
+.cs-badges img:nth-child(3) {
+    animation-delay:
+        270ms;
+}
+
+
+.cs-badges img:nth-child(4) {
+    animation-delay:
+        310ms;
+}
+
+
+/*//////////////CONTENT//////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-content {
+    grid-column:
+        2;
+
+    grid-row:
+        2;
+
+    position:
+        relative;
+
+    justify-self:
+        start;
+
+    inline-size:
+        fit-content;
+
+    min-inline-size:
+        var(--bloom-min-message);
+
+    max-inline-size:
+        min(
+            var(--bloom-max-message),
+            calc(100% - 2px)
+        );
+
+    box-sizing:
+        border-box;
+
+
+    padding-inline-end:
+        4px;
+
+    padding-block-end:
+        4px;
+}
+
+
+/*//////////////MESSAGE//////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-message {
+    position:
+        relative;
+
+    inline-size:
+        100%;
+
+    min-inline-size:
+        0;
+
+    max-inline-size:
+        100%;
+
+    box-sizing:
+        border-box;
+
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-message-padding-top,
+                var(--cs-message-padding, 0px)
+            )
+            + 3px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-message-padding-right,
+                var(--cs-message-padding, 0px)
+            )
+            + 10px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-message-padding-bottom,
+                var(--cs-message-padding, 0px)
+            )
+            + 3px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-message-padding-left,
+                var(--cs-message-padding, 0px)
+            )
+            + 10px
+        );
+
+
+    background-color:
+        var(--bloom-message-panel);
+
+    background-image:
+        var(
+            --cs-message-background-gradient,
+            none
+        );
+
+    background-repeat:
+        no-repeat;
+
+
+    border-width:
+        var(
+            --cs-message-border-width,
+            2px
+        );
+
+    border-style:
+        var(
+            --cs-message-border-style,
+            solid
+        );
+
+    border-color:
+        var(--bloom-message-border);
+
+
+    border-start-start-radius:
+        var(
+            --cs-message-border-radius-top-left,
+            var(--cs-message-border-radius, 999px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-message-border-radius-top-right,
+            var(--cs-message-border-radius, 999px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-message-border-radius-bottom-right,
+            var(--cs-message-border-radius, 999px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-message-border-radius-bottom-left,
+            var(--cs-message-border-radius, 999px)
+        );
+
+
+    box-shadow:
+        var(--cs-message-box-shadow-inset,)
+        var(--cs-message-box-shadow-offset-x, 2px)
+        var(--cs-message-box-shadow-offset-y, 2px)
+        var(--cs-message-box-shadow-blur-radius, 0px)
+        var(--cs-message-box-shadow-spread-radius, 0px)
+        var(--bloom-message-shadow);
+
+
+    color:
+        var(--bloom-message-text);
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "Indie Flower"
+        ),
+        cursive;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cs-message-font-weight,
+            700
+        );
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        .08px;
+
+
+    white-space:
+        normal;
+
+    overflow-wrap:
+        anywhere;
+
+    word-break:
+        normal;
+
+
+    -webkit-text-stroke:
+        var(
+            --cs-message-text-stroke-width,
+            .35px
+        )
+        var(
+            --cs-message-text-stroke-color,
+            var(--bloom-message-text)
+        );
+
+
+    paint-order:
+        stroke fill;
+
+
+    text-shadow:
+        var(--cs-message-text-shadow-offset-x, 0px)
+        var(--cs-message-text-shadow-offset-y, 0px)
+        var(--cs-message-text-shadow-blur-radius, 0px)
+        var(
+            --cs-message-text-shadow-color,
+            transparent
+        );
+
+
+    rotate:
+        -.65deg;
+
+    transform-origin:
+        center;
+}
+
+
+/*//////////////EMOTES//////////////*/
+
+.cs-message .emote {
+    display:
+        inline-block;
+
+    flex:
+        0 0 auto;
+
+    width:
+        auto !important;
+
+    inline-size:
+        auto !important;
+
+    height:
+        calc(
+            var(--cs-message-font-size,16px)
+            * 1.55
+        )
+        !important;
+
+    block-size:
+        calc(
+            var(--cs-message-font-size,16px)
+            * 1.55
+        )
+        !important;
+
+    max-width:
+        none !important;
+
+    max-inline-size:
+        none !important;
+
+    max-height:
+        calc(
+            var(--cs-message-font-size,16px)
+            * 1.55
+        )
+        !important;
+
+    max-block-size:
+        calc(
+            var(--cs-message-font-size,16px)
+            * 1.55
+        )
+        !important;
+
+    object-fit:
+        contain;
+
+    margin-inline:
+        2px;
+
+    vertical-align:
+        middle;
+}
+
+
+/*//////////////EVENT//////////////*/
+
+.cs-bubble.cs-event {
+    --bloom-event-min:
+        var(--bloom-min-bubble);
+
+
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+
+    inline-size:
+        fit-content;
+
+    min-inline-size:
+        var(--bloom-event-min);
+
+    max-inline-size:
+        min(
+            var(--cs-bubble-width, 430px),
+            calc(100% - 20px)
+        );
+
+
+    box-sizing:
+        border-box;
+
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-bubble-padding-top,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 14px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 22px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-bubble-padding-bottom,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 14px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-bubble-padding-left,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 22px
+        );
+
+
+    /*
+        The visible event bubble is drawn by
+        .bloom-event-shell so it can reveal later.
+    */
+
+    background:
+        transparent;
+
+    border:
+        0;
+
+    box-shadow:
+        none;
+
+
+    overflow:
+        visible;
+
+    isolation:
+        isolate;
+
+
+    animation:
+        none;
+}
+
+
+/*//////////////EVENT STAGE//////////////*/
+
+.bloom-event-stage {
+    display:
+        none;
+}
+
+
+.cs-event
+.bloom-event-stage {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        0;
+
+    display:
+        block;
+
+    overflow:
+        visible;
+
+    pointer-events:
+        none;
+}
+
+
+/*//////////////EVENT SHELL//////////////*/
+
+.bloom-event-shell {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        1;
+
+    display:
+        block;
+
+    box-sizing:
+        border-box;
+
+
+    /* SAME FRAMEWORK BUBBLE COLORS */
+
+    background-color:
+        var(--bloom-shell);
+
+    background-image:
+        var(
+            --cs-bubble-background-gradient,
+            none
+        );
+
+    background-repeat:
+        no-repeat;
+
+
+    border-width:
+        var(
+            --cs-bubble-border-width,
+            2.5px
+        );
+
+    border-style:
+        var(
+            --cs-bubble-border-style,
+            solid
+        );
+
+    border-color:
+        var(--bloom-border);
+
+
+    border-start-start-radius:
+        var(
+            --cs-bubble-border-radius-top-left,
+            var(--cs-bubble-border-radius, 999px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-bubble-border-radius-top-right,
+            var(--cs-bubble-border-radius, 999px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-bubble-border-radius-bottom-right,
+            var(--cs-bubble-border-radius, 999px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-bubble-border-radius-bottom-left,
+            var(--cs-bubble-border-radius, 999px)
+        );
+
+
+    box-shadow:
+        var(--cs-bubble-box-shadow-inset,)
+        var(--cs-bubble-box-shadow-offset-x, 0px)
+        var(--cs-bubble-box-shadow-offset-y, 0px)
+        var(--cs-bubble-box-shadow-blur-radius, 0px)
+        var(--cs-bubble-box-shadow-spread-radius, 0px)
+        var(
+            --cs-bubble-box-shadow-color,
+            transparent
+        );
+
+
+    opacity:
+        0;
+
+    transform-origin:
+        center;
+
+
+    animation:
+        bloom-event-shell-open
+        560ms
+        430ms
+        cubic-bezier(.18,.88,.24,1.14)
+        forwards;
+}
+
+
+/*//////////////EVENT FLOWERS//////////////*/
+
+.bloom-event-flower {
+    position:
+        absolute;
+
+    z-index:
+        20;
+
+    inset-block-start:
+        50%;
+
+
+    inline-size:
+        24px;
+
+    block-size:
+        24px;
+
+
+    pointer-events:
+        none;
+
+
+    opacity:
+        0;
+
+    scale:
+        .15;
+}
+
+
+/*//////////////EVENT LEFT FLOWER//////////////*/
+
+.bloom-event-flower--left {
+    inset-inline-start:
+        50%;
+
+    translate:
+        -50% -50%;
+
+    rotate:
+        -25deg;
+
+
+    animation:
+        bloom-event-flower-left
+        620ms
+        cubic-bezier(.18,.85,.22,1.16)
+        forwards;
+}
+
+
+/*//////////////EVENT RIGHT FLOWER//////////////*/
+
+.bloom-event-flower--right {
+    inset-inline-start:
+        50%;
+
+    translate:
+        -50% -50%;
+
+    rotate:
+        25deg;
+
+
+    animation:
+        bloom-event-flower-right
+        620ms
+        70ms
+        cubic-bezier(.18,.85,.22,1.16)
+        forwards;
+}
+
+
+/*//////////////EVENT HIDDEN ELEMENTS//////////////*/
+
+.cs-event
+.cs-avatar,
+
+.cs-event
+.cs-badges,
+
+.cs-event
+.cs-badges--inline,
+
+.cs-event
+.cs-pronouns {
+    display:
+        none !important;
+}
+
+
+/*//////////////EVENT HEADER//////////////*/
+
+.cs-event
+.cs-header {
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+
+    inline-size:
+        100%;
+
+
+    margin-block-end:
+        5px;
+}
+
+
+/*//////////////EVENT USER//////////////*/
+
+.cs-event
+.cs-user {
+    display:
+        inline-flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+
+    inline-size:
+        fit-content;
+
+    max-inline-size:
+        calc(100% - 24px);
+
+
+    margin:
+        0 auto;
+
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-username-padding-top,
+                var(--cs-username-padding, 0px)
+            )
+            + 3px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-username-padding-right,
+                var(--cs-username-padding, 0px)
+            )
+            + 10px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-username-padding-bottom,
+                var(--cs-username-padding, 0px)
+            )
+            + 3px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-username-padding-left,
+                var(--cs-username-padding, 0px)
+            )
+            + 10px
+        );
+
+
+    background-color:
+        var(--bloom-user-panel);
+
+    background-image:
+        var(
+            --cs-username-background-gradient,
+            none
+        );
+
+
+    border-width:
+        var(
+            --cs-username-border-width,
+            2px
+        );
+
+    border-style:
+        var(
+            --cs-username-border-style,
+            solid
+        );
+
+    border-color:
+        var(--bloom-user-border);
+
+
+    border-radius:
+        var(
+            --cs-username-border-radius,
+            999px
+        );
+
+
+    box-shadow:
+        var(--cs-username-box-shadow-inset,)
+        var(--cs-username-box-shadow-offset-x, 2px)
+        var(--cs-username-box-shadow-offset-y, 2px)
+        var(--cs-username-box-shadow-blur-radius, 0px)
+        var(--cs-username-box-shadow-spread-radius, 0px)
+        var(--bloom-user-shadow);
+
+
+    rotate:
+        1.4deg;
+
+
+    animation:
+        bloom-event-user-in
+        390ms
+        920ms
+        cubic-bezier(.18,.9,.25,1.2)
+        both;
+}
+
+
+/*//////////////EVENT USERNAME//////////////*/
+
+.cs-event
+.cs-username,
+
+.cs-event
+.cs-username--inline {
+    color:
+        var(--bloom-user-text);
+
+    font-size:
+        calc(
+            var(--cs-username-font-size, 15px)
+            + 1px
+        );
+
+    text-align:
+        center;
+
+    white-space:
+        normal;
+}
+
+
+/*//////////////EVENT CONTENT//////////////*/
+
+.cs-event
+.cs-content {
+    position:
+        relative;
+
+    z-index:
+        10;
+
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+
+    inline-size:
+        100%;
+
+    min-inline-size:
+        0;
+
+    max-inline-size:
+        100%;
+
+
+    box-sizing:
+        border-box;
+
+
+    padding-inline:
+        3px;
+
+    padding-block-end:
+        3px;
+}
+
+
+/*//////////////EVENT MESSAGE//////////////*/
+
+.cs-event
+.cs-message {
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+
+    inline-size:
+        100%;
+
+    min-inline-size:
+        0;
+
+    max-inline-size:
+        100%;
+
+
+    box-sizing:
+        border-box;
+
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-message-padding-top,
+                var(--cs-message-padding, 0px)
+            )
+            + 6px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-message-padding-right,
+                var(--cs-message-padding, 0px)
+            )
+            + 15px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-message-padding-bottom,
+                var(--cs-message-padding, 0px)
+            )
+            + 6px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-message-padding-left,
+                var(--cs-message-padding, 0px)
+            )
+            + 15px
+        );
+
+
+    background-color:
+        var(--bloom-message-panel);
+
+    background-image:
+        var(
+            --cs-message-background-gradient,
+            none
+        );
+
+
+    border-width:
+        var(
+            --cs-message-border-width,
+            2px
+        );
+
+    border-style:
+        var(
+            --cs-message-border-style,
+            solid
+        );
+
+    border-color:
+        var(--bloom-message-border);
+
+
+    border-radius:
+        var(
+            --cs-message-border-radius,
+            999px
+        );
+
+
+    box-shadow:
+        var(--cs-message-box-shadow-inset,)
+        var(--cs-message-box-shadow-offset-x, 2px)
+        var(--cs-message-box-shadow-offset-y, 2px)
+        var(--cs-message-box-shadow-blur-radius, 0px)
+        var(--cs-message-box-shadow-spread-radius, 0px)
+        var(--bloom-message-shadow);
+
+
+    color:
+        var(--bloom-message-text);
+
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "Indie Flower"
+        ),
+        cursive;
+
+
+    font-size:
+        calc(
+            var(--cs-message-font-size, 16px)
+            + 1px
+        );
+
+
+    font-weight:
+        var(
+            --cs-message-font-weight,
+            700
+        );
+
+    line-height:
+        1.2;
+
+    text-align:
+        center;
+
+
+    -webkit-text-stroke:
+        var(
+            --cs-message-text-stroke-width,
+            .35px
+        )
+        var(
+            --cs-message-text-stroke-color,
+            var(--bloom-message-text)
+        );
+
+
+    rotate:
+        -.5deg;
+
+
+    animation:
+        bloom-event-message-in
+        430ms
+        1050ms
+        cubic-bezier(.18,.9,.25,1.15)
+        both;
+}
+
+
+/*//////////////EVENT INLINE//////////////*/
+
+.cs-event.cs-username-position-inline
+.cs-header {
+    display:
+        none;
+}
+
+
+.cs-event.cs-username-position-inline
+.cs-user--inline {
+    display:
+        inline-flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+
+    inline-size:
+        fit-content;
+
+
+    margin:
+        0 auto 5px;
+
+
+    padding:
+        3px 10px;
+
+
+    background-color:
+        var(--bloom-user-panel);
+
+
+    border-width:
+        var(
+            --cs-username-border-width,
+            2px
+        );
+
+    border-style:
+        var(
+            --cs-username-border-style,
+            solid
+        );
+
+    border-color:
+        var(--bloom-user-border);
+
+
+    border-radius:
+        var(
+            --cs-username-border-radius,
+            999px
+        );
+
+
+    box-shadow:
+        var(--cs-username-box-shadow-inset,)
+        var(--cs-username-box-shadow-offset-x, 2px)
+        var(--cs-username-box-shadow-offset-y, 2px)
+        var(--cs-username-box-shadow-blur-radius, 0px)
+        var(--cs-username-box-shadow-spread-radius, 0px)
+        var(--bloom-user-shadow);
+
+
+    rotate:
+        1.4deg;
+
+
+    animation:
+        bloom-event-user-in
+        390ms
+        920ms
+        cubic-bezier(.18,.9,.25,1.2)
+        both;
+}
+
+
+/*//////////////RTL//////////////*/
+
+.cs-bubble.cs-direction-rtl:not(.cs-event) {
+    grid-template-columns:
+        auto auto;
+}
+
+
+.cs-bubble.cs-direction-rtl
+.cs-avatar {
+    grid-column:
+        2;
+}
+
+
+.cs-bubble.cs-direction-rtl:not(.cs-event)
+.cs-user,
+
+.cs-bubble.cs-direction-rtl:not(.cs-event)
+.cs-content {
+    grid-column:
+        1;
+}
+
+
+/*//////////////BUBBLE REVEAL//////////////*/
+
+@keyframes bloom-shell-in {
+    0% {
+        opacity:
+            0;
+
+        translate:
+            0 4px;
+
+        scale:
+            .92;
+    }
+
+    70% {
+        opacity:
+            1;
+
+        scale:
+            1.012;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        scale:
+            1;
+    }
+}
+
+
+/*//////////////AVATAR REVEAL//////////////*/
+
+@keyframes bloom-avatar-in {
+    0% {
+        opacity:
+            0;
+
+        translate:
+            -7px 0;
+
+        scale:
+            .45;
+    }
+
+    70% {
+        opacity:
+            1;
+
+        translate:
+            1px 0;
+
+        scale:
+            1.08;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        translate:
+            0 0;
+
+        scale:
+            1;
+    }
+}
+
+
+/*//////////////USERNAME REVEAL//////////////*/
+
+@keyframes bloom-user-in {
+    0% {
+        opacity:
+            0;
+
+        translate:
+            -6px -2px;
+
+        scale:
+            .84;
+    }
+
+    70% {
+        opacity:
+            1;
+
+        translate:
+            1px 0;
+
+        scale:
+            1.035;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        translate:
+            0 0;
+
+        scale:
+            1;
+    }
+}
+
+
+/*//////////////MESSAGE REVEAL//////////////*/
+
+@keyframes bloom-message-in {
+    0% {
+        opacity:
+            0;
+
+        translate:
+            -7px 2px;
+
+        scale:
+            .88;
+    }
+
+    70% {
+        opacity:
+            1;
+
+        translate:
+            1px 0;
+
+        scale:
+            1.02;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        translate:
+            0 0;
+
+        scale:
+            1;
+    }
+}
+
+
+/*//////////////BADGE REVEAL//////////////*/
+
+@keyframes bloom-badge-in {
+    0% {
+        opacity:
+            0;
+
+        scale:
+            .3;
+
+        rotate:
+            -15deg;
+    }
+
+    70% {
+        opacity:
+            1;
+
+        scale:
+            1.12;
+
+        rotate:
+            4deg;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        scale:
+            1;
+
+        rotate:
+            0deg;
+    }
+}
+
+
+/*//////////////FLOWER REVEAL//////////////*/
+
+@keyframes bloom-flower-in {
+    0% {
+        opacity:
+            0;
+
+        scale:
+            .2;
+    }
+
+    60% {
+        opacity:
+            1;
+
+        scale:
+            1.18;
+    }
+
+    80% {
+        scale:
+            .94;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        scale:
+            1;
+    }
+}
+
+
+/*//////////////EVENT LEFT FLOWER//////////////*/
+
+@keyframes bloom-event-flower-left {
+    0% {
+        inset-inline-start:
+            48%;
+
+        opacity:
+            0;
+
+        scale:
+            .08;
+
+        rotate:
+            -35deg;
+    }
+
+    20% {
+        opacity:
+            1;
+
+        scale:
+            .4;
+    }
+
+    68% {
+        inset-inline-start:
+            0;
+
+        opacity:
+            1;
+
+        scale:
+            1.18;
+
+        rotate:
+            -4deg;
+    }
+
+    84% {
+        inset-inline-start:
+            0;
+
+        scale:
+            .94;
+    }
+
+    100% {
+        inset-inline-start:
+            0;
+
+        opacity:
+            1;
+
+        scale:
+            1;
+
+        rotate:
+            -8deg;
+    }
+}
+
+
+/*//////////////EVENT RIGHT FLOWER//////////////*/
+
+@keyframes bloom-event-flower-right {
+    0% {
+        inset-inline-start:
+            52%;
+
+        opacity:
+            0;
+
+        scale:
+            .08;
+
+        rotate:
+            35deg;
+    }
+
+    20% {
+        opacity:
+            1;
+
+        scale:
+            .4;
+    }
+
+    68% {
+        inset-inline-start:
+            100%;
+
+        opacity:
+            1;
+
+        scale:
+            1.18;
+
+        rotate:
+            4deg;
+    }
+
+    84% {
+        inset-inline-start:
+            100%;
+
+        scale:
+            .94;
+    }
+
+    100% {
+        inset-inline-start:
+            100%;
+
+        opacity:
+            1;
+
+        scale:
+            1;
+
+        rotate:
+            8deg;
+    }
+}
+
+
+/*//////////////EVENT SHELL OPEN//////////////*/
+
+@keyframes bloom-event-shell-open {
+    0% {
+        opacity:
+            0;
+
+        scale:
+            .12 .05;
+    }
+
+    18% {
+        opacity:
+            1;
+
+        scale:
+            .35 .05;
+    }
+
+    50% {
+        opacity:
+            1;
+
+        scale:
+            1 .05;
+    }
+
+    78% {
+        scale:
+            1.015 1.06;
+    }
+
+    90% {
+        scale:
+            .995 .98;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        scale:
+            1 1;
+    }
+}
+
+
+/*//////////////EVENT USER REVEAL//////////////*/
+
+@keyframes bloom-event-user-in {
+    0% {
+        opacity:
+            0;
+
+        translate:
+            0 5px;
+
+        scale:
+            .72;
+    }
+
+    70% {
+        opacity:
+            1;
+
+        translate:
+            0 -1px;
+
+        scale:
+            1.045;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        translate:
+            0 0;
+
+        scale:
+            1;
+    }
+}
+
+
+/*//////////////EVENT MESSAGE REVEAL//////////////*/
+
+@keyframes bloom-event-message-in {
+    0% {
+        opacity:
+            0;
+
+        translate:
+            0 3px;
+
+        scale:
+            .6 1;
+    }
+
+    65% {
+        opacity:
+            1;
+
+        scale:
+            1.025 1.02;
+    }
+
+    100% {
+        opacity:
+            1;
+
+        translate:
+            0 0;
+
+        scale:
+            1 1;
+    }
+}
+
+
+/*//////////////RESPONSIVE//////////////*/
+
+@media (max-width: 460px) {
+    .cs-bubble:not(.cs-event),
+    .cs-bubble.cs-event {
+        max-inline-size:
+            calc(100% - 18px);
+    }
+}
+
+
+/*//////////////SMALL//////////////*/
+
+@media (max-width: 330px) {
+    .cs-chat {
+        --cs-chat-padding:
+            12px;
+    }
+
+
+    .cs-bubble:not(.cs-event),
+    .cs-bubble.cs-event {
+        inline-size:
+            100%;
+
+        min-inline-size:
+            0;
+
+        max-inline-size:
+            100%;
+    }
+
+
+    .cs-bubble:not(.cs-event)
+    .cs-content,
+
+    .cs-event
+    .cs-content {
+        inline-size:
+            100%;
+
+        min-inline-size:
+            0;
+
+        max-inline-size:
+            100%;
+    }
+
+
+    .cs-bubble:not(.cs-event)
+    .cs-message,
+
+    .cs-event
+    .cs-message {
+        inline-size:
+            100%;
+
+        min-inline-size:
+            0;
+
+        max-inline-size:
+            100%;
+    }
+}
+
+
+/*//////////////HORIZONTAL CHAT//////////////*/
+
+.cs-chat.cs-chat--horizontal
+.cs-bubble {
+    min-inline-size:
+        280px;
+
+    max-inline-size:
+        300px;
+}
+
+
+/*//////////////REDUCED MOTION//////////////*/
+
+@media (prefers-reduced-motion: reduce) {
+    .cs-bubble,
+    .cs-avatar img,
+    .cs-user,
+    .cs-message,
+    .cs-badges img,
+    .cs-bubble::before,
+    .cs-bubble::after,
+    .bloom-event-shell,
+    .bloom-event-flower {
+        animation:
+            none !important;
+
+        opacity:
+            1 !important;
+
+        scale:
+            1 !important;
+    }
+
+
+    .bloom-event-flower--left {
+        inset-inline-start:
+            0 !important;
+
+        rotate:
+            -8deg !important;
+    }
+
+
+    .bloom-event-flower--right {
+        inset-inline-start:
+            100% !important;
+
+        rotate:
+            8deg !important;
+    }
+
+
+    .bloom-event-shell {
+        opacity:
+            1 !important;
+    }
+}
+
+/*//////////////COMPACT SIZE//////////////*/
+
+.cs-chat {
+    --cs-chat-padding: 12px;
+    --cs-bubble-gap: 8px;
+}
+
+
+/*//////////////COMPACT TOKENS//////////////*/
+
+.cs-bubble {
+    --bloom-min-bubble: 260px;
+    --bloom-min-message: 220px;
+    --bloom-max-message: 330px;
+}
+
+
+/*//////////////COMPACT NORMAL BUBBLE//////////////*/
+
+.cs-bubble:not(.cs-event) {
+    column-gap: 7px;
+    row-gap: 2px;
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-bubble-padding-top,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 6px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 12px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-bubble-padding-bottom,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 6px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-bubble-padding-left,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 12px
+        );
+}
+
+
+/*//////////////COMPACT AVATAR//////////////*/
+
+.cs-avatar img {
+    inline-size:
+        var(
+            --cs-avatar-size,
+            26px
+        );
+
+    block-size:
+        var(
+            --cs-avatar-size,
+            26px
+        );
+}
+
+
+/*//////////////COMPACT USERNAME//////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-user {
+    gap: 2px;
+
+    margin-inline-start: 8px;
+
+    padding-block-start:
+        calc(
+            var(
+                --cs-username-padding-top,
+                var(--cs-username-padding, 0px)
+            )
+            + 1.5px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-username-padding-right,
+                var(--cs-username-padding, 0px)
+            )
+            + 6px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-username-padding-bottom,
+                var(--cs-username-padding, 0px)
+            )
+            + 1.5px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-username-padding-left,
+                var(--cs-username-padding, 0px)
+            )
+            + 6px
+        );
+}
+
+
+/*//////////////COMPACT MESSAGE//////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-content {
+    padding-inline-end: 3px;
+    padding-block-end: 3px;
+}
+
+.cs-bubble:not(.cs-event)
+.cs-message {
+    padding-block-start:
+        calc(
+            var(
+                --cs-message-padding-top,
+                var(--cs-message-padding, 0px)
+            )
+            + 2px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-message-padding-right,
+                var(--cs-message-padding, 0px)
+            )
+            + 8px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-message-padding-bottom,
+                var(--cs-message-padding, 0px)
+            )
+            + 2px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-message-padding-left,
+                var(--cs-message-padding, 0px)
+            )
+            + 8px
+        );
+}
+
+
+/*//////////////COMPACT FLOWERS//////////////*/
+
+.cs-bubble:not(.cs-event)::before,
+.cs-bubble:not(.cs-event)::after,
+.bloom-event-flower {
+    inline-size: 21px;
+    block-size: 21px;
+}
+
+
+/*//////////////COMPACT EVENT//////////////*/
+
+.cs-bubble.cs-event {
+    padding-block-start:
+        calc(
+            var(
+                --cs-bubble-padding-top,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 10px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 17px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-bubble-padding-bottom,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 10px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-bubble-padding-left,
+                var(--cs-bubble-padding, 0px)
+            )
+            + 17px
+        );
+}
+
+
+/*//////////////COMPACT EVENT MESSAGE//////////////*/
+
+.cs-event
+.cs-message {
+    padding-block-start:
+        calc(
+            var(
+                --cs-message-padding-top,
+                var(--cs-message-padding, 0px)
+            )
+            + 4px
+        );
+
+    padding-inline-end:
+        calc(
+            var(
+                --cs-message-padding-right,
+                var(--cs-message-padding, 0px)
+            )
+            + 11px
+        );
+
+    padding-block-end:
+        calc(
+            var(
+                --cs-message-padding-bottom,
+                var(--cs-message-padding, 0px)
+            )
+            + 4px
+        );
+
+    padding-inline-start:
+        calc(
+            var(
+                --cs-message-padding-left,
+                var(--cs-message-padding, 0px)
+            )
+            + 11px
+        );
+}
+
+
+/*//////////////COMPACT HORIZONTAL//////////////*/
+
+.cs-chat.cs-chat--horizontal
+.cs-bubble {
+    min-inline-size: 245px;
+    max-inline-size: 270px;
+}
+.cs-bubble {
+    --bloom-shell: #d7e1f3;
+    --bloom-border: #637da6;
+
+    --bloom-user-panel: #f7f9ff;
+    --bloom-user-border: #94a9ca;
+    --bloom-user-text: #3d5275;
+
+    --bloom-message-panel: #f2f6ff;
+    --bloom-message-border: #9dafd0;
+    --bloom-message-text: #3c4c67;
+
+    --bloom-avatar-panel: #edf3ff;
+    --bloom-avatar-border: #758eb7;
+
+    --bloom-user-shadow: #b8c8e1;
+    --bloom-message-shadow: #b8c8e1;
+    --bloom-avatar-shadow: #acbdd8;
+
+    --bloom-petal-light: #f6f8ff;
+    --bloom-petal-soft: #c9d7ee;
+    --bloom-petal-border: #6d83ad;
+
+    --bloom-center: #f3d57c;
+    --bloom-center-border: #a58b4d;
+
+    --cs-bubble-background-gradient:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.42),
+            transparent 48%
+        ),
+        linear-gradient(
+            30deg,
+            #d2ddf1,
+            #e4eafa
+        );
+
+    --cs-bubble-box-shadow-offset-x: 2px;
+    --cs-bubble-box-shadow-offset-y: 3px;
+    --cs-bubble-box-shadow-color: #adbed8;
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-right cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-avatar-hidden cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 0; --cs-avatar-position: right; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding: 16px; --cs-chat-padding-top: 16px; --cs-chat-padding-right: 16px; --cs-chat-padding-bottom: 16px; --cs-chat-padding-left: 16px; --cs-bubble-padding-top: 0px; --cs-bubble-padding-right: 0px; --cs-bubble-padding-bottom: 0px; --cs-bubble-padding-left: 0px; --cs-bubble-background-color: #e9e5f3; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 2px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #756a9f; --cs-bubble-border-radius-top-left: 999px; --cs-bubble-border-radius-top-right: 999px; --cs-bubble-border-radius-bottom-right: 999px; --cs-bubble-border-radius-bottom-left: 999px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 0px; --cs-bubble-box-shadow-blur-radius: 0px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: transparent; --cs-bubble-box-shadow-inset: ; --cs-bubble-gap: 12px; --cs-bubble-width: 430px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-background-color: #fff8e9; --cs-username-background-gradient: none; --cs-username-border-width: 2px; --cs-username-border-style: solid; --cs-username-border-color: #b4a7cd; --cs-username-border-radius-top-left: 999px; --cs-username-border-radius-top-right: 999px; --cs-username-border-radius-bottom-right: 999px; --cs-username-border-radius-bottom-left: 999px; --cs-username-box-shadow-offset-x: 2px; --cs-username-box-shadow-offset-y: 2px; --cs-username-box-shadow-blur-radius: 0px; --cs-username-box-shadow-spread-radius: 0px; --cs-username-box-shadow-color: #d4cbe2; --cs-username-box-shadow-inset: ; --cs-username-font-size: 15px; --cs-username-font-color: #433e56; --cs-username-font-family: 'Indie Flower'; --cs-username-font-weight: 700; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: transparent; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-background-color: #fff8e9; --cs-message-background-gradient: none; --cs-message-border-width: 2px; --cs-message-border-style: solid; --cs-message-border-color: #b4a7cd; --cs-message-border-radius-top-left: 999px; --cs-message-border-radius-top-right: 999px; --cs-message-border-radius-bottom-right: 999px; --cs-message-border-radius-bottom-left: 999px; --cs-message-box-shadow-offset-x: 2px; --cs-message-box-shadow-offset-y: 2px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #d4cbe2; --cs-message-box-shadow-inset: ; --cs-message-font-size: 16px; --cs-message-font-color: #433e56; --cs-message-font-family: 'Indie Flower'; --cs-message-font-weight: 700; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: transparent; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+
+    
+
+    <div class="bloom-event-stage">
+        <span class="bloom-event-shell"></span>
+
+        <span class="bloom-event-flower bloom-event-flower--left"></span>
+        <span class="bloom-event-flower bloom-event-flower--right"></span>
+    </div>
+
+
+    
+
+    <div class="cs-header">
+
+        <div class="cs-avatar">
+            <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">
+        </div>
+
+        <div class="cs-user">
+
+            <span class="cs-badges">
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+            </span>
+
+            <span class="cs-username">
+                <span class="cs-pronouns">
+                    
+                </span>
+
+                JesusTenG
+            </span>
+
+        </div>
+
+    </div>
+
+
+    
+
+    <div class="cs-content">
+
+        <span class="cs-user--inline">
+
+            <span class="cs-badges cs-badges--inline">
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+            </span>
+
+            <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+                <span class="cs-pronouns">
+                    
+                </span>
+
+                JesusTenG
+            </span>
+
+        </span>
+
+        <div class="cs-message">
+            So sieht dein Chat aus.
+        </div>
+
+    </div>
+
+</div></div></div></body></html>

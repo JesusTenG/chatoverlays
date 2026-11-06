@@ -4,7 +4,8 @@ import { createContext, useContext, useEffect, useRef, useState, type ReactNode 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Template } from '@/lib/catalog';
-import { ChatStyleLink, ChatStyleLogo } from './site-chrome';
+import { ShopButton } from './site-chrome';
+import { PauseIcon, PlayIcon } from './icons';
 
 type VideoState = {
   reducedMotion: boolean;
@@ -73,7 +74,7 @@ export function VideoProvider({ children }: { children: ReactNode }) {
         <div className="dialog-top"><h2><Link id="preview-detail" href={`/overlays/${selected.slug}/`}><span id="preview-title">{selected.name}</span></Link></h2><button className="icon-button" data-close aria-label="Vorschau schließen" onClick={() => dialogRef.current?.close()}>×</button></div>
         <video ref={videoRef} id="preview-video" src={selected.video ?? undefined} poster={selected.image} aria-label={`Originalvideo: ${selected.name}`} controls muted loop playsInline preload="none" onError={() => setMediaError(true)}/>
         {mediaError && <p className="media-error" role="status">Das Video kann hier nicht abgespielt werden. Das Vorschaubild und der Link zu ChatStyle stehen weiterhin zur Verfügung.</p>}
-        <div className="dialog-bottom"><ChatStyleLink id="preview-shop" className="button" href={selected.shopUrl}>Auf <ChatStyleLogo/> ansehen</ChatStyleLink></div>
+        <div className="dialog-bottom"><ShopButton id="preview-shop" href={selected.shopUrl} label={selected.free ? 'Template holen' : 'Template kaufen'}/></div>
       </>}
     </dialog>
   </VideoContext.Provider>;
@@ -81,5 +82,5 @@ export function VideoProvider({ children }: { children: ReactNode }) {
 
 export function HeroMotionToggle() {
   const { heroPaused, toggleHero } = useVideoState();
-  return <button className="text-button motion-toggle" id="hero-motion" aria-pressed={heroPaused} onClick={toggleHero}><span aria-hidden="true">{heroPaused ? '▶' : 'Ⅱ'}</span> Videos {heroPaused ? 'abspielen' : 'pausieren'}</button>;
+  return <button className="text-button motion-toggle" id="hero-motion" aria-pressed={heroPaused} onClick={toggleHero}>{heroPaused ? <PlayIcon/> : <PauseIcon/>}<span>Vorschauen {heroPaused ? 'abspielen' : 'pausieren'}</span></button>;
 }

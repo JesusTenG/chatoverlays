@@ -1,0 +1,3222 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Lunar Omen – amethyst</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/6d5fda4e7c8bd9440de1.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/677b9d983d6d18bcb5d9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/48c0f365e555c930159f.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/2c6636f5c2033988ae0a.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/4f6e38c96abe28ed90f9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/e3c9d5360767a6d8abf1.woff2") format('woff2');
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+}
+
+
+/*//////////////CHAT//////////////*/
+
+.cs-chat {
+    --cs-bubble-gap: 26px;
+
+    --cs-chat-padding-top: 28px;
+    --cs-chat-padding-right: 24px;
+    --cs-chat-padding-bottom: 20px;
+    --cs-chat-padding-left: 24px;
+}
+
+
+/*//////////////BOX MODEL//////////////*/
+
+.cs-bubble,
+.cs-bubble *,
+.cs-bubble::before,
+.cs-bubble::after {
+    box-sizing: border-box;
+}
+
+
+/*//////////////BUBBLE//////////////*/
+
+.cs-bubble {
+    --gi: #eeeade;
+    --gis: #cbc6ba;
+    --gf: "Playfair Display", Georgia, "Times New Roman", serif;
+    --gs: #8d8a83;
+
+    --cs-username-font-family: var(--gf);
+    --cs-message-font-family: var(--gf);
+
+    --cs-bubble-width: 420px;
+
+    --cs-bubble-padding-top: 13px;
+    --cs-bubble-padding-right: 19px;
+    --cs-bubble-padding-bottom: 14px;
+    --cs-bubble-padding-left: 19px;
+
+    --cs-bubble-background-color: #050506;
+
+    --cs-bubble-background-gradient:
+        radial-gradient(
+            circle at 90% 8%,
+            rgba(255, 255, 255, .035),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(14, 14, 17, .98),
+            rgba(4, 4, 5, .99)
+        );
+
+    --cs-bubble-border-width: 1px;
+    --cs-bubble-border-style: solid;
+    --cs-bubble-border-color: rgba(238, 234, 222, .58);
+    --cs-bubble-border-radius: 5px;
+
+    --cs-bubble-box-shadow-offset-x: 0px;
+    --cs-bubble-box-shadow-offset-y: 12px;
+    --cs-bubble-box-shadow-blur-radius: 26px;
+    --cs-bubble-box-shadow-spread-radius: 0px;
+    --cs-bubble-box-shadow-color: rgba(0, 0, 0, .42);
+
+    --cs-avatar-size: 34px;
+    --cs-avatar-padding: 2px;
+
+    --cs-avatar-background-gradient:
+        linear-gradient(
+            145deg,
+            var(--gi),
+            #706d66
+        );
+
+    --cs-avatar-border-width: 1px;
+    --cs-avatar-border-style: solid;
+    --cs-avatar-border-color: var(--gis);
+    --cs-avatar-border-radius: 4px;
+
+    --cs-avatar-box-shadow-offset-x: 0px;
+    --cs-avatar-box-shadow-offset-y: 3px;
+    --cs-avatar-box-shadow-blur-radius: 8px;
+    --cs-avatar-box-shadow-spread-radius: 0px;
+    --cs-avatar-box-shadow-color: rgba(0, 0, 0, .42);
+
+    --cs-username-font-size: 13px;
+    --cs-username-font-weight: 700;
+    --cs-username-font-color: var(--gi);
+
+    --cs-username-text-shadow-offset-x: 0px;
+    --cs-username-text-shadow-offset-y: 1px;
+    --cs-username-text-shadow-blur-radius: 2px;
+    --cs-username-text-shadow-color: rgba(0, 0, 0, .95);
+
+    --cs-pronouns-font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    --cs-pronouns-font-size: 8px;
+    --cs-pronouns-font-weight: 700;
+    --cs-pronouns-font-color: var(--gs);
+
+    --cs-message-font-size: 14px;
+    --cs-message-font-weight: 400;
+    --cs-message-font-color: #f3f0e8;
+
+    --cs-message-text-shadow-offset-x: 0px;
+    --cs-message-text-shadow-offset-y: 1px;
+    --cs-message-text-shadow-blur-radius: 2px;
+    --cs-message-text-shadow-color: rgba(0, 0, 0, .96);
+
+
+    /*//////////////NORMAL TIMELINE//////////////*/
+
+    --lunar-delay:
+        var(--cs-bubble-animation-delay, 0ms);
+
+    --lunar-corner-start:
+        calc(var(--lunar-delay) + 2.65s);
+
+
+    /*//////////////FRAMEWORK ANIMATIONS//////////////*/
+
+    --cs-bubble-animation:
+        cs-lunar-bubble-in;
+
+    --cs-bubble-animation-duration:
+        1100ms;
+
+    --cs-bubble-animation-timing-function:
+        cubic-bezier(.2, .7, .2, 1);
+
+
+    --cs-avatar-animation:
+        cs-lunar-avatar-in;
+
+    --cs-avatar-animation-duration:
+        900ms;
+
+    --cs-avatar-animation-delay:
+        calc(var(--lunar-delay) + 300ms);
+
+    --cs-avatar-animation-timing-function:
+        cubic-bezier(.18, .72, .22, 1);
+
+
+    --cs-username-animation:
+        cs-lunar-user-in;
+
+    --cs-username-animation-duration:
+        880ms;
+
+    --cs-username-animation-delay:
+        calc(var(--lunar-delay) + 390ms);
+
+    --cs-username-animation-timing-function:
+        cubic-bezier(.18, .72, .22, 1);
+
+
+    --cs-message-animation:
+        cs-lunar-message-in;
+
+    --cs-message-animation-duration:
+        1000ms;
+
+    --cs-message-animation-delay:
+        calc(var(--lunar-delay) + 540ms);
+
+    --cs-message-animation-timing-function:
+        cubic-bezier(.18, .7, .2, 1);
+
+
+    /*//////////////LAYOUT//////////////*/
+
+    isolation: isolate;
+
+    display: block;
+
+    inline-size: fit-content;
+    min-inline-size: 285px;
+
+    max-inline-size:
+        min(
+            var(--cs-bubble-width),
+            calc(100vw - 48px)
+        );
+
+    margin-inline-start: 14px;
+
+    overflow: visible;
+
+    transform-origin: center;
+}
+
+
+/*//////////////FONT DEFAULT FIX//////////////*/
+
+.cs-bubble:is(
+    [style*="--cs-username-font-family: 'Inter'"],
+    [style*="--cs-username-font-family:'Inter'"],
+    [style*='--cs-username-font-family: "Inter"'],
+    [style*='--cs-username-font-family:"Inter"'],
+    [style*="--cs-username-font-family: Inter"],
+    [style*="--cs-username-font-family:Inter"]
+) {
+    --cs-username-font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif !important;
+}
+
+
+.cs-bubble:is(
+    [style*="--cs-message-font-family: 'Inter'"],
+    [style*="--cs-message-font-family:'Inter'"],
+    [style*='--cs-message-font-family: "Inter"'],
+    [style*='--cs-message-font-family:"Inter"'],
+    [style*="--cs-message-font-family: Inter"],
+    [style*="--cs-message-font-family:Inter"]
+) {
+    --cs-message-font-family:
+        "Playfair Display",
+        Georgia,
+        "Times New Roman",
+        serif !important;
+}
+
+
+/*//////////////INNER FRAME//////////////*/
+
+.cs-bubble::before {
+    content: "";
+
+    position: absolute;
+    z-index: 1;
+
+    inset: 5px;
+
+    pointer-events: none;
+
+    border:
+        1px solid
+        rgba(238, 234, 222, .17);
+
+    border-radius: 2px;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, .035),
+
+        inset 0 0 20px
+        rgba(0, 0, 0, .25);
+
+    transform-origin: center;
+
+    animation:
+        cs-lunar-frame-in
+        1250ms
+        cubic-bezier(.18, .7, .2, 1)
+        calc(var(--lunar-delay) + 80ms)
+        both;
+}
+
+
+/*//////////////INNER TOP LINE//////////////*/
+
+.cs-bubble::after {
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+
+    inset-block-start: 7px;
+    inset-inline-end: 7px;
+
+    inline-size: 32px;
+    block-size: 1px;
+
+    opacity: .55;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gis)
+        );
+
+    transform-origin: right center;
+
+    animation:
+        cs-lunar-top-line-in
+        1100ms
+        cubic-bezier(.18, .68, .2, 1)
+        calc(var(--lunar-delay) + 210ms)
+        both;
+}
+
+
+/*//////////////ROLE//////////////*/
+
+.cs-role {
+    position: absolute;
+    z-index: 12;
+
+    inset-block-start: -11px;
+    inset-inline-start: 16px;
+
+    min-inline-size: 78px;
+
+    padding:
+        5px
+        10px
+        4px;
+
+    color: var(--gi);
+
+    background:
+        linear-gradient(
+            180deg,
+            #1d1d21,
+            #09090b
+        );
+
+    border:
+        1px solid
+        rgba(238, 234, 222, .46);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, .5),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, .06);
+
+    font-family:
+        var(--cs-username-font-family);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: .11em;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 1px 2px #000;
+
+    transform-origin: center;
+
+    animation:
+        cs-lunar-role-in
+        900ms
+        cubic-bezier(.18, .76, .2, 1)
+        calc(var(--lunar-delay) + 240ms)
+        both;
+}
+
+
+.cs-role::before {
+    content: "FOLLOWER";
+}
+
+
+.cs-bubble.cs-sub
+.cs-role::before {
+    content: "SUBSCRIBER";
+}
+
+
+.cs-bubble.cs-vip
+.cs-role::before {
+    content: "VIP USER";
+}
+
+
+.cs-bubble.cs-broadcaster
+.cs-role::before {
+    content: "BROADCASTER";
+}
+
+
+.cs-bubble.cs-mod
+.cs-role::before {
+    content: "MODERATOR";
+}
+
+
+/*//////////////TOP DECOR//////////////*/
+
+.cs-top-decor {
+    position: absolute;
+    z-index: 13;
+
+    inset-block-start: -20px;
+    inset-inline-end: 9px;
+
+    inline-size: 40px;
+    block-size: 40px;
+
+    pointer-events: none;
+
+    transform-origin: center;
+
+    animation:
+        cs-lunar-symbol-shell-in
+        1000ms
+        cubic-bezier(.16, .72, .2, 1)
+        calc(var(--lunar-delay) + 300ms)
+        both;
+}
+
+
+/*//////////////SYMBOL BASE//////////////*/
+
+.cs-symbol {
+    position: absolute;
+
+    inset: 0;
+
+    display: none;
+
+    inline-size: 100%;
+    block-size: 100%;
+
+    overflow: visible;
+
+    color: var(--gi);
+
+    fill: currentColor;
+}
+
+
+/*//////////////SYMBOL LINE//////////////*/
+
+.cs-symbol-line {
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.15;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    opacity: 0;
+
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+
+    animation:
+        cs-lunar-stroke-draw
+        3.8s
+        cubic-bezier(.35, 0, .2, 1)
+        calc(var(--lunar-delay) + 380ms)
+        forwards;
+}
+
+
+/*//////////////PENTAGRAM WEIGHT//////////////*/
+
+.cs-symbol--pentagram
+.cs-symbol-line {
+    stroke-width: 1.55;
+}
+
+
+/*//////////////FILLED SYMBOLS//////////////*/
+
+.cs-symbol-fill {
+    fill: transparent;
+
+    stroke: currentColor;
+    stroke-width: .85;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+
+    animation:
+        cs-lunar-filled-symbol-draw
+        4.2s
+        cubic-bezier(.32, 0, .18, 1)
+        calc(var(--lunar-delay) + 380ms)
+        forwards;
+}
+
+
+/*//////////////FOLLOWER TOP SYMBOL//////////////*/
+
+.cs-bubble:not(.cs-sub):not(.cs-vip):not(.cs-broadcaster):not(.cs-mod):not(.cs-event)
+.cs-symbol--moon {
+    display: block;
+}
+
+
+/*//////////////SUB TOP SYMBOL//////////////*/
+
+.cs-bubble.cs-sub:not(.cs-vip):not(.cs-broadcaster):not(.cs-mod):not(.cs-event)
+.cs-symbol--star {
+    display: block;
+}
+
+
+/*//////////////VIP TOP SYMBOL//////////////*/
+
+.cs-bubble.cs-vip:not(.cs-broadcaster):not(.cs-mod):not(.cs-event)
+.cs-symbol--pentagram {
+    display: block;
+}
+
+
+/*//////////////MOD BROADCASTER TOP SYMBOL//////////////*/
+
+.cs-bubble.cs-broadcaster:not(.cs-mod):not(.cs-event)
+.cs-symbol--sun,
+.cs-bubble.cs-mod:not(.cs-event)
+.cs-symbol--sun {
+    display: block;
+}
+
+
+.cs-symbol--pentagram {
+    transform:
+        rotate(30deg);
+}
+
+
+/*//////////////NO TOP SYMBOL EVENT//////////////*/
+
+.cs-bubble.cs-event
+.cs-top-decor {
+    display: none;
+}
+
+
+/*//////////////ROLE BACKGROUND//////////////*/
+
+.cs-role-celestial {
+    position: absolute;
+    z-index: 2;
+
+    inset: 5px;
+
+    display: none;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/*//////////////ROLE SIGIL//////////////*/
+
+.cs-role-sigil {
+    position: absolute;
+
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+
+    inline-size:
+        calc(100% - 12px);
+
+    block-size: auto;
+
+    aspect-ratio:
+        380 / 110;
+
+    overflow: visible;
+
+    color:
+        var(--gis);
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+/*//////////////ROLE ART//////////////*/
+
+.cs-role-art {
+    display: none;
+}
+
+
+/*//////////////MOD BROADCASTER BACKGROUND//////////////*/
+
+.cs-bubble:not(.cs-event).cs-mod
+.cs-role-celestial,
+.cs-bubble:not(.cs-event).cs-broadcaster
+.cs-role-celestial {
+    display: block;
+}
+
+
+/*//////////////MOD BROADCASTER PENTAGRAM//////////////*/
+
+.cs-bubble:not(.cs-event).cs-mod
+.cs-role-art--mod,
+.cs-bubble:not(.cs-event).cs-broadcaster
+.cs-role-art--mod {
+    display: block;
+
+    opacity: .145;
+
+    transform-box: fill-box;
+    transform-origin: center;
+
+    animation:
+        cs-lunar-role-pentagram-in
+        900ms
+        cubic-bezier(.18, .7, .2, 1)
+        calc(var(--lunar-delay) + 360ms)
+        both;
+}
+
+
+/*//////////////STATIC PENTAGRAM PATHS//////////////*/
+
+.cs-bubble:not(.cs-event).cs-mod
+.cs-role-art--mod
+.cs-role-draw,
+.cs-bubble:not(.cs-event).cs-broadcaster
+.cs-role-art--mod
+.cs-role-draw {
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: .9;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    opacity: 1;
+
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+
+    animation: none;
+}
+
+
+/*//////////////PENTAGRAM MAIN LINES//////////////*/
+
+.cs-bubble:not(.cs-event).cs-mod
+.cs-role-art--mod
+.cs-role-draw--mod,
+.cs-bubble:not(.cs-event).cs-broadcaster
+.cs-role-art--mod
+.cs-role-draw--mod {
+    stroke-width: 1.15;
+}
+
+
+/*//////////////STATIC PENTAGRAM DOTS//////////////*/
+
+.cs-bubble:not(.cs-event).cs-mod
+.cs-role-art--mod
+.cs-role-dot,
+.cs-bubble:not(.cs-event).cs-broadcaster
+.cs-role-art--mod
+.cs-role-dot {
+    fill: currentColor;
+
+    opacity: .8;
+
+    transform: none;
+
+    animation: none;
+}
+
+
+/*//////////////NO BACKGROUND SUB VIP//////////////*/
+
+.cs-bubble.cs-sub:not(.cs-mod):not(.cs-broadcaster)
+.cs-role-celestial,
+.cs-bubble.cs-vip:not(.cs-mod):not(.cs-broadcaster)
+.cs-role-celestial {
+    display: none;
+}
+
+
+/*//////////////NO BACKGROUND EVENT//////////////*/
+
+.cs-bubble.cs-event
+.cs-role-celestial {
+    display: none;
+}
+
+
+/*//////////////CORNERS//////////////*/
+
+.cs-corner {
+    position: absolute;
+    z-index: 10;
+
+    inline-size: 15px;
+    block-size: 15px;
+
+    pointer-events: none;
+
+    background-repeat: no-repeat;
+
+    background-size:
+        0
+        0;
+}
+
+
+/*//////////////CORNER HORIZONTAL//////////////*/
+
+.cs-corner::before {
+    content: "";
+
+    position: absolute;
+
+    inline-size: 15px;
+    block-size: 1px;
+
+    background:
+        var(--gis);
+
+    transform:
+        scaleX(0);
+
+    animation:
+        cs-lunar-corner-x
+        1.65s
+        cubic-bezier(.28, .58, .18, 1)
+        both;
+}
+
+
+/*//////////////CORNER VERTICAL//////////////*/
+
+.cs-corner::after {
+    content: "";
+
+    position: absolute;
+
+    inline-size: 1px;
+    block-size: 15px;
+
+    background:
+        var(--gis);
+
+    transform:
+        scaleY(0);
+
+    animation:
+        cs-lunar-corner-y
+        1.65s
+        cubic-bezier(.28, .58, .18, 1)
+        both;
+}
+
+
+/*//////////////TOP LEFT//////////////*/
+
+.cs-corner--tl {
+    inset-block-start: -4px;
+    inset-inline-start: -4px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            var(--gi) 0 1.5px,
+            transparent 1.6px
+        );
+
+    background-position:
+        top left;
+
+    animation:
+        cs-lunar-corner-dot
+        550ms
+        ease-out
+        calc(var(--lunar-corner-start) + 1.05s)
+        both;
+}
+
+
+.cs-corner--tl::before {
+    inset-block-start: 0;
+    inset-inline-start: 0;
+
+    transform-origin:
+        left center;
+
+    animation-delay:
+        var(--lunar-corner-start);
+}
+
+
+.cs-corner--tl::after {
+    inset-block-start: 0;
+    inset-inline-start: 0;
+
+    transform-origin:
+        center top;
+
+    animation-delay:
+        calc(var(--lunar-corner-start) + 90ms);
+}
+
+
+/*//////////////TOP RIGHT//////////////*/
+
+.cs-corner--tr {
+    inset-block-start: -4px;
+    inset-inline-end: -4px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            var(--gi) 0 1.5px,
+            transparent 1.6px
+        );
+
+    background-position:
+        top right;
+
+    animation:
+        cs-lunar-corner-dot
+        550ms
+        ease-out
+        calc(var(--lunar-corner-start) + 1.14s)
+        both;
+}
+
+
+.cs-corner--tr::before {
+    inset-block-start: 0;
+    inset-inline-end: 0;
+
+    transform-origin:
+        right center;
+
+    animation-delay:
+        calc(var(--lunar-corner-start) + 90ms);
+}
+
+
+.cs-corner--tr::after {
+    inset-block-start: 0;
+    inset-inline-end: 0;
+
+    transform-origin:
+        center top;
+
+    animation-delay:
+        calc(var(--lunar-corner-start) + 180ms);
+}
+
+
+/*//////////////BOTTOM RIGHT//////////////*/
+
+.cs-corner--br {
+    inset-block-end: -4px;
+    inset-inline-end: -4px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            var(--gi) 0 1.5px,
+            transparent 1.6px
+        );
+
+    background-position:
+        bottom right;
+
+    animation:
+        cs-lunar-corner-dot
+        550ms
+        ease-out
+        calc(var(--lunar-corner-start) + 1.23s)
+        both;
+}
+
+
+.cs-corner--br::before {
+    inset-block-end: 0;
+    inset-inline-end: 0;
+
+    transform-origin:
+        right center;
+
+    animation-delay:
+        calc(var(--lunar-corner-start) + 180ms);
+}
+
+
+.cs-corner--br::after {
+    inset-block-end: 0;
+    inset-inline-end: 0;
+
+    transform-origin:
+        center bottom;
+
+    animation-delay:
+        calc(var(--lunar-corner-start) + 270ms);
+}
+
+
+/*//////////////BOTTOM LEFT//////////////*/
+
+.cs-corner--bl {
+    inset-block-end: -4px;
+    inset-inline-start: -4px;
+
+    background-image:
+        radial-gradient(
+            circle,
+            var(--gi) 0 1.5px,
+            transparent 1.6px
+        );
+
+    background-position:
+        bottom left;
+
+    animation:
+        cs-lunar-corner-dot
+        550ms
+        ease-out
+        calc(var(--lunar-corner-start) + 1.32s)
+        both;
+}
+
+
+.cs-corner--bl::before {
+    inset-block-end: 0;
+    inset-inline-start: 0;
+
+    transform-origin:
+        left center;
+
+    animation-delay:
+        calc(var(--lunar-corner-start) + 270ms);
+}
+
+
+.cs-corner--bl::after {
+    inset-block-end: 0;
+    inset-inline-start: 0;
+
+    transform-origin:
+        center bottom;
+
+    animation-delay:
+        calc(var(--lunar-corner-start) + 360ms);
+}
+
+
+/*//////////////HEADER//////////////*/
+
+.cs-header {
+    position: relative;
+    z-index: 4;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-inline-size: 0;
+
+    margin-block-end: 4px;
+}
+
+
+.cs-bubble.cs-avatar-position-left
+.cs-header {
+    flex-direction: row;
+}
+
+
+.cs-bubble.cs-avatar-position-right
+.cs-header {
+    flex-direction: row-reverse;
+}
+
+
+.cs-bubble.cs-avatar-position-center
+.cs-header {
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/*//////////////AVATAR//////////////*/
+
+.cs-avatar {
+    position: relative;
+
+    flex:
+        0
+        0
+        auto;
+
+    overflow: visible;
+}
+
+
+.cs-avatar::before {
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border:
+        1px solid
+        rgba(0, 0, 0, .86);
+
+    border-radius:
+        var(--cs-avatar-border-radius);
+
+    animation:
+        cs-lunar-avatar-frame-in
+        850ms
+        cubic-bezier(.18, .72, .2, 1)
+        calc(var(--lunar-delay) + 340ms)
+        both;
+}
+
+
+.cs-avatar::after {
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+
+    inset: 3px;
+
+    pointer-events: none;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .18);
+
+    border-radius: 2px;
+
+    animation:
+        cs-lunar-avatar-frame-in
+        850ms
+        cubic-bezier(.18, .72, .2, 1)
+        calc(var(--lunar-delay) + 420ms)
+        both;
+}
+
+
+.cs-avatar img {
+    filter:
+        grayscale(.7)
+        brightness(.92);
+}
+
+
+/*//////////////USER//////////////*/
+
+.cs-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    min-inline-size: 0;
+}
+
+
+/*//////////////INLINE USER//////////////*/
+
+.cs-user--inline {
+    transform-origin:
+        left center;
+
+    animation-name:
+        var(--cs-username-animation, none);
+
+    animation-duration:
+        var(--cs-username-animation-duration, 750ms);
+
+    animation-delay:
+        var(--cs-username-animation-delay, 0ms);
+
+    animation-timing-function:
+        var(
+            --cs-username-animation-timing-function,
+            ease-out
+        );
+
+    animation-fill-mode:
+        both;
+}
+
+
+/*//////////////BADGES//////////////*/
+
+.cs-badges {
+    display: inline-flex;
+
+    flex:
+        0
+        0
+        auto;
+
+    align-items: center;
+
+    gap: 3px;
+}
+
+
+.cs-badges:empty,
+.cs-pronouns:empty {
+    display: none;
+}
+
+
+.cs-badges img,
+.cs-badges svg {
+    display: block;
+
+    flex:
+        0
+        0
+        auto;
+
+    block-size: 18px;
+    max-inline-size: 21px;
+
+    padding: 2px;
+
+    object-fit: contain;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(238, 234, 222, .18),
+            rgba(0, 0, 0, .5)
+        );
+
+    border:
+        1px solid
+        rgba(238, 234, 222, .52);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, .28);
+
+    filter:
+        grayscale(.78);
+
+    transform-origin:
+        center;
+
+    animation:
+        cs-lunar-badge-in
+        650ms
+        cubic-bezier(.16, .72, .2, 1)
+        calc(var(--lunar-delay) + 450ms)
+        both;
+}
+
+
+.cs-badges img:nth-child(2),
+.cs-badges svg:nth-child(2) {
+    animation-delay:
+        calc(var(--lunar-delay) + 500ms);
+}
+
+
+.cs-badges img:nth-child(3),
+.cs-badges svg:nth-child(3) {
+    animation-delay:
+        calc(var(--lunar-delay) + 550ms);
+}
+
+
+.cs-badges img:nth-child(4),
+.cs-badges svg:nth-child(4) {
+    animation-delay:
+        calc(var(--lunar-delay) + 600ms);
+}
+
+
+/*//////////////USERNAME//////////////*/
+
+.cs-username,
+.cs-username--inline {
+    display: inline-flex;
+
+    align-items: baseline;
+
+    gap: 4px;
+
+    min-inline-size: 0;
+    max-inline-size: 100%;
+
+    overflow: visible;
+
+    line-height: 1.18;
+
+    letter-spacing: .025em;
+
+    white-space: nowrap;
+}
+
+
+/*//////////////EVENT USERNAME//////////////*/
+
+.cs-bubble.cs-event
+.cs-username,
+.cs-bubble.cs-event
+.cs-username--inline {
+    font-size:
+        calc(
+            var(--cs-username-font-size, 13px)
+            + 2px
+        );
+
+    line-height: 1.2;
+}
+
+
+/*//////////////PRONOUNS//////////////*/
+
+.cs-pronouns {
+    display: inline-block;
+
+    flex:
+        0
+        0
+        auto;
+
+    color:
+        var(--cs-pronouns-font-color);
+
+    font-family:
+        var(--cs-pronouns-font-family);
+
+    font-size:
+        var(--cs-pronouns-font-size);
+
+    font-weight:
+        var(--cs-pronouns-font-weight);
+
+    line-height: 1;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+
+/*//////////////CONTENT//////////////*/
+
+.cs-content {
+    position: relative;
+    z-index: 4;
+
+    display: block;
+
+    min-inline-size: 0;
+
+    animation:
+        cs-lunar-content-in
+        900ms
+        cubic-bezier(.18, .68, .2, 1)
+        calc(var(--lunar-delay) + 500ms)
+        both;
+}
+
+
+.cs-user--inline {
+    display: none;
+}
+
+
+/*//////////////INLINE USERNAME//////////////*/
+
+.cs-bubble.cs-username-position-inline
+.cs-user {
+    display: none;
+}
+
+
+.cs-bubble.cs-username-position-inline
+.cs-content {
+    display: flex;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+
+.cs-bubble.cs-username-position-inline
+.cs-user--inline {
+    display: inline-flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+}
+
+
+/*//////////////MESSAGE//////////////*/
+
+.cs-message {
+    overflow-wrap: anywhere;
+
+    line-height: 1.32;
+
+    letter-spacing: .008em;
+}
+
+
+.cs-bubble.cs-message-align-center
+.cs-message {
+    text-align: center;
+}
+
+
+.cs-bubble.cs-message-align-end
+.cs-message {
+    text-align: end;
+}
+
+
+.cs-message a {
+    color: var(--gi);
+
+    text-decoration-color:
+        var(--gs);
+
+    text-underline-offset: 3px;
+}
+
+
+/*//////////////MOON PHASES//////////////*/
+
+.cs-phases {
+    position: absolute;
+    z-index: 14;
+
+    inset-block-end: -12px;
+    inset-inline-start: 50%;
+
+    inline-size: 114px;
+    block-size: 18px;
+
+    overflow: visible;
+
+    color: var(--gis);
+
+    fill: currentColor;
+
+    stroke: currentColor;
+    stroke-width: .8;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/*//////////////PHASE LINE//////////////*/
+
+.cs-phase-line {
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: .8;
+
+    stroke-linecap: round;
+
+    opacity: 0;
+
+    stroke-dasharray: 28;
+    stroke-dashoffset: 28;
+
+    animation:
+        cs-lunar-phase-line-in
+        2.8s
+        cubic-bezier(.3, 0, .2, 1)
+        calc(var(--lunar-delay) + 720ms)
+        forwards;
+}
+
+
+/*//////////////PHASE SYMBOLS//////////////*/
+
+.cs-phases > :not(.cs-phase-line) {
+    opacity: 0;
+
+    transform-box: fill-box;
+    transform-origin: center;
+
+    animation:
+        cs-lunar-phase-in
+        900ms
+        cubic-bezier(.18, .68, .2, 1)
+        both;
+}
+
+
+.cs-phases > :nth-child(7) {
+    animation-delay:
+        calc(var(--lunar-delay) + 740ms);
+}
+
+
+.cs-phases > :nth-child(6),
+.cs-phases > :nth-child(8) {
+    animation-delay:
+        calc(var(--lunar-delay) + 820ms);
+}
+
+
+.cs-phases > :nth-child(5),
+.cs-phases > :nth-child(9) {
+    animation-delay:
+        calc(var(--lunar-delay) + 900ms);
+}
+
+
+.cs-phases > :nth-child(4),
+.cs-phases > :nth-child(10) {
+    animation-delay:
+        calc(var(--lunar-delay) + 980ms);
+}
+
+
+.cs-phases > :nth-child(2),
+.cs-phases > :nth-child(3) {
+    animation-delay:
+        calc(var(--lunar-delay) + 1060ms);
+}
+
+
+/*//////////////EVENT DEFAULT//////////////*/
+
+.cs-event-celestial {
+    display: none;
+}
+
+
+/*//////////////EVENT BUBBLE//////////////*/
+
+.cs-bubble.cs-event {
+    --cs-bubble-background-color:
+        #030304;
+
+    --cs-bubble-background-gradient:
+        radial-gradient(
+            circle at 50% -5%,
+            rgba(238, 234, 222, .13),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 50% 110%,
+            rgba(238, 234, 222, .06),
+            transparent 43%
+        ),
+        linear-gradient(
+            145deg,
+            #121216,
+            #030304
+        );
+
+    --cs-bubble-border-color:
+        rgba(238, 234, 222, .82);
+
+    --cs-message-font-color:
+        #fffaf0;
+
+
+    /*//////////////4 SECOND EVENT TIMELINE//////////////*/
+
+    --lunar-event-draw-start:
+        calc(var(--lunar-delay) + 100ms);
+
+    --lunar-event-content-start:
+        calc(var(--lunar-delay) + 2.95s);
+
+    --lunar-event-corner-start:
+        calc(var(--lunar-delay) + 3.25s);
+
+    min-inline-size: 320px;
+}
+
+
+/*//////////////NO EVENT ROLE//////////////*/
+
+.cs-bubble.cs-event
+.cs-role {
+    display: none;
+}
+
+
+/*//////////////NO EVENT TOP SYMBOL//////////////*/
+
+.cs-bubble.cs-event
+.cs-top-decor {
+    display: none;
+}
+
+
+/*//////////////NO EVENT ROLE BACKGROUND//////////////*/
+
+.cs-bubble.cs-event
+.cs-role-celestial {
+    display: none;
+}
+
+
+/*//////////////EVENT USER ELEMENTS//////////////*/
+
+.cs-bubble.cs-event
+.cs-avatar,
+.cs-bubble.cs-event
+.cs-badges,
+.cs-bubble.cs-event
+.cs-pronouns {
+    display: none;
+}
+
+
+/*//////////////EVENT HEADER//////////////*/
+
+.cs-bubble.cs-event
+.cs-header {
+    justify-content: center;
+
+    inline-size: 100%;
+
+    margin-block-end: 8px;
+
+    animation:
+        cs-lunar-event-header-reveal
+        500ms
+        cubic-bezier(.18, .72, .2, 1)
+        var(--lunar-event-content-start)
+        both;
+}
+
+
+.cs-bubble.cs-event.cs-username-position-inline
+.cs-header {
+    display: none;
+}
+
+
+/*//////////////EVENT CELESTIAL//////////////*/
+
+.cs-bubble.cs-event
+.cs-event-celestial {
+    position: absolute;
+    z-index: 3;
+
+    inset: 0;
+
+    display: block;
+
+    pointer-events: none;
+
+    color: var(--gi);
+}
+
+
+/*//////////////EVENT CENTER SIGIL//////////////*/
+
+.cs-event-sigil--center {
+    position: absolute;
+
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+
+    inline-size: 194px;
+    block-size: 118px;
+
+    overflow: visible;
+
+    opacity: .48;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+/*//////////////EVENT SIDE SIGILS//////////////*/
+
+.cs-event-sigil--left,
+.cs-event-sigil--right {
+    position: absolute;
+
+    inset-block-start: 50%;
+
+    inline-size: 38px;
+    block-size: 78px;
+
+    overflow: visible;
+
+    opacity: .94;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.cs-event-sigil--left {
+    inset-inline-start: 2px;
+}
+
+
+.cs-event-sigil--right {
+    inset-inline-end: 2px;
+}
+
+
+/*//////////////EVENT DRAW//////////////*/
+
+.cs-event-draw {
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.05;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    opacity: 0;
+
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+
+    animation:
+        cs-lunar-event-draw
+        2.8s
+        cubic-bezier(.34, 0, .18, 1)
+        var(--lunar-event-draw-start)
+        forwards;
+}
+
+
+/*//////////////EVENT OUTER//////////////*/
+
+.cs-event-draw--outer {
+    animation-duration:
+        2.8s;
+}
+
+
+/*//////////////EVENT INNER//////////////*/
+
+.cs-event-draw--inner {
+    animation-delay:
+        calc(
+            var(--lunar-event-draw-start)
+            + 80ms
+        );
+
+    animation-duration:
+        2.6s;
+}
+
+
+/*//////////////EVENT ORBIT//////////////*/
+
+.cs-event-draw--orbit {
+    animation-delay:
+        calc(
+            var(--lunar-event-draw-start)
+            + 150ms
+        );
+
+    animation-duration:
+        2.5s;
+}
+
+
+/*//////////////EVENT LEFT DRAW//////////////*/
+
+.cs-event-sigil--left
+.cs-event-draw {
+    stroke-width: 1.2;
+
+    animation-delay:
+        calc(
+            var(--lunar-event-draw-start)
+            + 70ms
+        );
+
+    animation-duration:
+        2.45s;
+}
+
+
+/*//////////////EVENT RIGHT DRAW//////////////*/
+
+.cs-event-sigil--right
+.cs-event-draw {
+    stroke-width: 1.2;
+
+    animation-delay:
+        calc(
+            var(--lunar-event-draw-start)
+            + 140ms
+        );
+
+    animation-duration:
+        2.45s;
+}
+
+
+/*//////////////EVENT SIDE FILLS//////////////*/
+
+.cs-event-sigil--left
+> circle:nth-child(2) {
+    fill:
+        rgba(238, 234, 222, .22);
+}
+
+
+.cs-event-sigil--left
+> path:nth-child(3) {
+    fill:
+        rgba(238, 234, 222, .075);
+}
+
+
+.cs-event-sigil--right
+> path:nth-child(2) {
+    fill:
+        rgba(238, 234, 222, .3);
+}
+
+
+.cs-event-sigil--right
+> circle:nth-child(3) {
+    fill:
+        rgba(238, 234, 222, .075);
+}
+
+
+/*//////////////EVENT CENTER FILL//////////////*/
+
+.cs-event-fill {
+    fill: transparent;
+
+    stroke: currentColor;
+
+    stroke-width: 1;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+
+    animation:
+        cs-lunar-event-fill
+        2.3s
+        cubic-bezier(.32, 0, .18, 1)
+        calc(
+            var(--lunar-event-draw-start)
+            + 300ms
+        )
+        forwards;
+}
+
+
+/*//////////////EVENT DOTS//////////////*/
+
+.cs-event-dot {
+    fill: currentColor;
+
+    opacity: 0;
+
+    transform-box: fill-box;
+    transform-origin: center;
+
+    animation:
+        cs-lunar-event-dot
+        500ms
+        cubic-bezier(.16, .7, .2, 1)
+        calc(
+            var(--lunar-event-draw-start)
+            + 2.1s
+        )
+        forwards;
+}
+
+
+/*//////////////EVENT CONTENT//////////////*/
+
+.cs-bubble.cs-event
+.cs-content {
+    position: relative;
+
+    justify-content: center;
+
+    margin-inline: 4px;
+
+    padding:
+        18px
+        28px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(238, 234, 222, .06),
+            transparent 66%
+        ),
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(238, 234, 222, .08) 50%,
+            transparent
+        );
+
+    border-block:
+        1px solid
+        rgba(238, 234, 222, .27);
+
+    box-shadow:
+        inset 0 1px
+        rgba(255, 255, 255, .035),
+
+        0 0 16px
+        rgba(238, 234, 222, .045);
+
+    transform-origin: center;
+
+    animation:
+        cs-lunar-event-content-reveal
+        650ms
+        cubic-bezier(.18, .7, .2, 1)
+        calc(
+            var(--lunar-event-content-start)
+            + 50ms
+        )
+        both;
+}
+
+
+/*//////////////EVENT CONTENT FRAME//////////////*/
+
+.cs-bubble.cs-event
+.cs-content::before {
+    content: "";
+
+    position: absolute;
+
+    inset:
+        5px
+        9px;
+
+    pointer-events: none;
+
+    border-inline:
+        1px solid
+        rgba(238, 234, 222, .13);
+
+    transform-origin: center;
+
+    animation:
+        cs-lunar-event-inner-frame
+        650ms
+        cubic-bezier(.18, .7, .2, 1)
+        calc(
+            var(--lunar-event-content-start)
+            + 100ms
+        )
+        both;
+}
+
+
+/*//////////////EVENT CENTER MARK//////////////*/
+
+.cs-bubble.cs-event
+.cs-content::after {
+    content: "✦";
+
+    position: absolute;
+
+    inset-block-start: -8px;
+    inset-inline-start: 50%;
+
+    padding-inline: 7px;
+
+    color:
+        rgba(238, 234, 222, .7);
+
+    background:
+        #08080a;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    transform:
+        translateX(-50%);
+
+    animation:
+        cs-lunar-event-mark
+        500ms
+        cubic-bezier(.16, .7, .2, 1)
+        calc(
+            var(--lunar-event-content-start)
+            + 180ms
+        )
+        both;
+}
+
+
+/*//////////////EVENT MESSAGE//////////////*/
+
+.cs-bubble.cs-event
+.cs-message,
+.cs-bubble.cs-event
+.cs-events {
+    position: relative;
+    z-index: 4;
+
+    color:
+        var(--cs-message-font-color);
+
+    text-align: center;
+
+    text-shadow:
+        0 1px 2px #000;
+
+    letter-spacing: .025em;
+
+    animation:
+        cs-lunar-event-text-reveal
+        600ms
+        cubic-bezier(.18, .72, .2, 1)
+        calc(
+            var(--lunar-event-content-start)
+            + 150ms
+        )
+        both;
+}
+
+
+/*//////////////EVENT PHASE LINE//////////////*/
+
+.cs-bubble.cs-event
+.cs-phase-line {
+    animation-duration:
+        700ms;
+
+    animation-delay:
+        calc(
+            var(--lunar-event-content-start)
+            + 220ms
+        );
+}
+
+
+/*//////////////EVENT PHASE SYMBOLS//////////////*/
+
+.cs-bubble.cs-event
+.cs-phases > :not(.cs-phase-line) {
+    animation-duration:
+        450ms;
+
+    animation-delay:
+        calc(
+            var(--lunar-event-content-start)
+            + 280ms
+        );
+}
+
+
+.cs-bubble.cs-event
+.cs-phases {
+    color: var(--gi);
+}
+
+
+/*//////////////EVENT CORNER SPEED//////////////*/
+
+.cs-bubble.cs-event
+.cs-corner::before,
+.cs-bubble.cs-event
+.cs-corner::after {
+    animation-duration:
+        600ms;
+}
+
+
+/*//////////////EVENT TOP LEFT//////////////*/
+
+.cs-bubble.cs-event
+.cs-corner--tl::before {
+    animation-delay:
+        var(--lunar-event-corner-start);
+}
+
+
+.cs-bubble.cs-event
+.cs-corner--tl::after {
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 50ms
+        );
+}
+
+
+.cs-bubble.cs-event
+.cs-corner--tl {
+    animation-duration:
+        300ms;
+
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 350ms
+        );
+}
+
+
+/*//////////////EVENT TOP RIGHT//////////////*/
+
+.cs-bubble.cs-event
+.cs-corner--tr::before {
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 50ms
+        );
+}
+
+
+.cs-bubble.cs-event
+.cs-corner--tr::after {
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 100ms
+        );
+}
+
+
+.cs-bubble.cs-event
+.cs-corner--tr {
+    animation-duration:
+        300ms;
+
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 400ms
+        );
+}
+
+
+/*//////////////EVENT BOTTOM RIGHT//////////////*/
+
+.cs-bubble.cs-event
+.cs-corner--br::before {
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 100ms
+        );
+}
+
+
+.cs-bubble.cs-event
+.cs-corner--br::after {
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 150ms
+        );
+}
+
+
+.cs-bubble.cs-event
+.cs-corner--br {
+    animation-duration:
+        300ms;
+
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 450ms
+        );
+}
+
+
+/*//////////////EVENT BOTTOM LEFT//////////////*/
+
+.cs-bubble.cs-event
+.cs-corner--bl::before {
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 150ms
+        );
+}
+
+
+.cs-bubble.cs-event
+.cs-corner--bl::after {
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 200ms
+        );
+}
+
+
+.cs-bubble.cs-event
+.cs-corner--bl {
+    animation-duration:
+        300ms;
+
+    animation-delay:
+        calc(
+            var(--lunar-event-corner-start)
+            + 500ms
+        );
+}
+
+
+/*//////////////BUBBLE REVEAL//////////////*/
+
+@keyframes cs-lunar-bubble-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.97, .84);
+
+        border-color:
+            transparent;
+    }
+
+    40% {
+        opacity: 1;
+
+        transform:
+            scale(.987, .95);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        border-color:
+            var(--cs-bubble-border-color);
+    }
+}
+
+
+/*//////////////INNER FRAME//////////////*/
+
+@keyframes cs-lunar-frame-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.94, .72);
+    }
+
+    45% {
+        opacity: .62;
+
+        transform:
+            scale(.98, .92);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/*//////////////TOP LINE//////////////*/
+
+@keyframes cs-lunar-top-line-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            scaleX(0);
+    }
+
+    100% {
+        opacity: .55;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/*//////////////ROLE REVEAL//////////////*/
+
+@keyframes cs-lunar-role-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(4px)
+            scaleX(.55);
+    }
+
+    72% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scaleX(1.025);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scaleX(1);
+    }
+}
+
+
+/*//////////////SYMBOL SHELL//////////////*/
+
+@keyframes cs-lunar-symbol-shell-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.5)
+            rotate(-10deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+
+/*//////////////SYMBOL DRAW//////////////*/
+
+@keyframes cs-lunar-stroke-draw {
+    0% {
+        opacity: 0;
+
+        stroke-dashoffset:
+            180;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        stroke-dashoffset:
+            0;
+    }
+}
+
+
+/*//////////////FILLED SYMBOL DRAW//////////////*/
+
+@keyframes cs-lunar-filled-symbol-draw {
+    0% {
+        opacity: 0;
+
+        fill: transparent;
+
+        stroke-dashoffset:
+            180;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    72% {
+        fill: transparent;
+
+        stroke-dashoffset:
+            0;
+    }
+
+    100% {
+        opacity: 1;
+
+        fill: currentColor;
+
+        stroke-dashoffset:
+            0;
+    }
+}
+
+
+/*//////////////ROLE PENTAGRAM REVEAL//////////////*/
+
+@keyframes cs-lunar-role-pentagram-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.94)
+            rotate(30deg);
+    }
+
+    100% {
+        opacity: .145;
+
+        transform:
+            scale(1)
+            rotate(30deg);
+    }
+}
+
+
+/*//////////////CORNER HORIZONTAL//////////////*/
+
+@keyframes cs-lunar-corner-x {
+    0% {
+        opacity: 0;
+
+        transform:
+            scaleX(0);
+    }
+
+    6% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/*//////////////CORNER VERTICAL//////////////*/
+
+@keyframes cs-lunar-corner-y {
+    0% {
+        opacity: 0;
+
+        transform:
+            scaleY(0);
+    }
+
+    6% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scaleY(1);
+    }
+}
+
+
+/*//////////////CORNER DOT//////////////*/
+
+@keyframes cs-lunar-corner-dot {
+    0% {
+        background-size:
+            0
+            0;
+    }
+
+    72% {
+        background-size:
+            4px
+            4px;
+    }
+
+    100% {
+        background-size:
+            3px
+            3px;
+    }
+}
+
+
+/*//////////////AVATAR//////////////*/
+
+@keyframes cs-lunar-avatar-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.68)
+            rotate(-3deg);
+    }
+
+    72% {
+        opacity: 1;
+
+        transform:
+            scale(1.025)
+            rotate(.3deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+
+/*//////////////AVATAR FRAME//////////////*/
+
+@keyframes cs-lunar-avatar-frame-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.72);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/*//////////////USERNAME//////////////*/
+
+@keyframes cs-lunar-user-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////BADGES//////////////*/
+
+@keyframes cs-lunar-badge-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(5px)
+            scale(.6)
+            rotate(-5deg);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1.04)
+            rotate(.5deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+
+/*//////////////CONTENT//////////////*/
+
+@keyframes cs-lunar-content-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-7px);
+    }
+
+    25% {
+        opacity: .2;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////MESSAGE//////////////*/
+
+@keyframes cs-lunar-message-in {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*//////////////PHASE LINE//////////////*/
+
+@keyframes cs-lunar-phase-line-in {
+    0% {
+        opacity: 0;
+
+        stroke-dashoffset:
+            28;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        stroke-dashoffset:
+            0;
+    }
+}
+
+
+/*//////////////PHASES//////////////*/
+
+@keyframes cs-lunar-phase-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(.15)
+            rotate(-12deg);
+    }
+
+    74% {
+        opacity: 1;
+
+        transform:
+            scale(1.05)
+            rotate(.5deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+
+/*//////////////EVENT SVG DRAW//////////////*/
+
+@keyframes cs-lunar-event-draw {
+    0% {
+        opacity: 0;
+
+        stroke-dashoffset:
+            420;
+    }
+
+    4% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        stroke-dashoffset:
+            0;
+    }
+}
+
+
+/*//////////////EVENT SVG FILL//////////////*/
+
+@keyframes cs-lunar-event-fill {
+    0% {
+        opacity: 0;
+
+        fill: transparent;
+
+        stroke-dashoffset:
+            140;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    70% {
+        fill: transparent;
+
+        stroke-dashoffset:
+            0;
+    }
+
+    100% {
+        opacity: 1;
+
+        fill: currentColor;
+
+        stroke-dashoffset:
+            0;
+    }
+}
+
+
+/*//////////////EVENT DOT//////////////*/
+
+@keyframes cs-lunar-event-dot {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0);
+    }
+
+    72% {
+        opacity: 1;
+
+        transform:
+            scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/*//////////////EVENT HEADER//////////////*/
+
+@keyframes cs-lunar-event-header-reveal {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////EVENT CONTENT//////////////*/
+
+@keyframes cs-lunar-event-content-reveal {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(3px)
+            scaleX(.96);
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scaleX(1);
+    }
+}
+
+
+/*//////////////EVENT TEXT//////////////*/
+
+@keyframes cs-lunar-event-text-reveal {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////EVENT INNER FRAME//////////////*/
+
+@keyframes cs-lunar-event-inner-frame {
+    0% {
+        opacity: 0;
+
+        transform:
+            scaleY(.4);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scaleY(1);
+    }
+}
+
+
+/*//////////////EVENT CENTER MARK//////////////*/
+
+@keyframes cs-lunar-event-mark {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(.25)
+            rotate(-35deg);
+    }
+
+    75% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1.1)
+            rotate(3deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+
+/*//////////////REDUCED MOTION//////////////*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cs-bubble,
+    .cs-bubble::before,
+    .cs-bubble::after,
+    .cs-role,
+    .cs-top-decor,
+    .cs-content,
+    .cs-symbol-line,
+    .cs-symbol-fill,
+    .cs-role-art--mod,
+    .cs-corner,
+    .cs-corner::before,
+    .cs-corner::after,
+    .cs-avatar img,
+    .cs-avatar::before,
+    .cs-avatar::after,
+    .cs-user,
+    .cs-user--inline,
+    .cs-badges img,
+    .cs-badges svg,
+    .cs-message,
+    .cs-events,
+    .cs-phase-line,
+    .cs-phases > :not(.cs-phase-line),
+    .cs-event-draw,
+    .cs-event-fill,
+    .cs-event-dot,
+    .cs-bubble.cs-event .cs-content::before,
+    .cs-bubble.cs-event .cs-content::after {
+        animation: none;
+    }
+
+}
+.cs-bubble.cs-bubble.cs-bubble {
+    --gi:#d8b5ff;
+    --gis:#a66fe0;
+    --gs:#a491b4;
+
+    --cs-username-font-color:#f7efff;
+    --cs-pronouns-font-color:#b7a3c7;
+    --cs-message-font-color:#f5eef9;
+
+    --cs-bubble-border-color:#a86ce0;
+    --cs-avatar-border-color:#a86ce0;
+
+    background:
+        radial-gradient(
+            circle at 88% 2%,
+            rgba(172,92,222,.24),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 6% 108%,
+            rgba(91,44,128,.26),
+            transparent 44%
+        ),
+        linear-gradient(
+            145deg,
+            #211528,
+            #15101b 52%,
+            #09080d
+        );
+
+    border-color:#a86ce0;
+
+    box-shadow:
+        0 10px 26px rgba(0,0,0,.46),
+        0 0 8px rgba(170,99,225,.34),
+        0 0 18px rgba(111,57,157,.22),
+        inset 0 1px rgba(255,255,255,.035);
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble::before {
+    border-color:rgba(185,122,230,.25);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.04),
+        inset 0 0 20px rgba(0,0,0,.28);
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble::after {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b775e9
+        );
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble .cs-role {
+    color:#f5eaff;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2b1b35,
+            #100b14
+        );
+
+    border-color:#a86ce0;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.42),
+        0 0 8px rgba(159,91,210,.18);
+
+    text-shadow:none;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble
+.cs-top-decor
+.cs-symbol {
+    color:#c486f1;
+}
+
+.cs-bubble.cs-bubble.cs-bubble
+.cs-top-decor
+.cs-symbol-line,
+.cs-bubble.cs-bubble.cs-bubble
+.cs-top-decor
+.cs-symbol-fill {
+    stroke:#c486f1;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble
+.cs-role-sigil {
+    color:#b46ee0;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event).cs-mod
+.cs-role-art--mod,
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event).cs-broadcaster
+.cs-role-art--mod {
+    animation:
+        cs-amethyst-pentagram
+        900ms
+        cubic-bezier(.18,.7,.2,1)
+        calc(var(--lunar-delay) + 360ms)
+        both;
+}
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-role-art--mod
+.cs-role-draw {
+    stroke:#b46ee0;
+}
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-role-art--mod
+.cs-role-draw--mod {
+    stroke:#d49aff;
+    stroke-width:1.3;
+}
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-role-art--mod
+.cs-role-dot {
+    fill:#d49aff;
+    opacity:1;
+}
+
+@keyframes cs-amethyst-pentagram {
+    0% {
+        opacity:0;
+        transform:scale(.94) rotate(30deg);
+    }
+
+    100% {
+        opacity:.36;
+        transform:scale(1) rotate(30deg);
+    }
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble .cs-phases {
+    color:#c486f1;
+    fill:#c486f1;
+    stroke:#c486f1;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble .cs-corner::before,
+.cs-bubble.cs-bubble.cs-bubble .cs-corner::after {
+    background:#bd7bea;
+}
+
+.cs-bubble.cs-bubble.cs-bubble .cs-corner--tl,
+.cs-bubble.cs-bubble.cs-bubble .cs-corner--tr,
+.cs-bubble.cs-bubble.cs-bubble .cs-corner--bl,
+.cs-bubble.cs-bubble.cs-bubble .cs-corner--br {
+    background-image:
+        radial-gradient(
+            circle,
+            #d29aff 0 1.5px,
+            transparent 1.6px
+        );
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble.cs-event {
+    --cs-message-font-color:#f5eef9;
+
+    background:
+        radial-gradient(
+            circle at 50% -8%,
+            rgba(171,94,219,.22),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #1d1424,
+            #08070c
+        );
+
+    border-color:#a86ce0;
+}
+
+.cs-bubble.cs-bubble.cs-bubble.cs-event
+.cs-event-celestial {
+    color:#c486f1;
+}
+
+.cs-bubble.cs-bubble.cs-bubble.cs-event
+.cs-event-draw,
+.cs-bubble.cs-bubble.cs-bubble.cs-event
+.cs-event-fill {
+    stroke:#c486f1;
+}
+
+.cs-bubble.cs-bubble.cs-bubble.cs-event
+.cs-event-dot {
+    fill:#c486f1;
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-left cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: left; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 28px; --cs-chat-padding-right: 24px; --cs-chat-padding-bottom: 20px; --cs-chat-padding-left: 24px; --cs-bubble-padding-top: 13px; --cs-bubble-padding-right: 19px; --cs-bubble-padding-bottom: 14px; --cs-bubble-padding-left: 19px; --cs-bubble-background-color: #050506; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 1px; --cs-bubble-border-style: solid; --cs-bubble-border-color: rgba(238, 234, 222, .58); --cs-bubble-border-radius: 5px; --cs-bubble-border-radius-top-left: 5px; --cs-bubble-border-radius-top-right: 5px; --cs-bubble-border-radius-bottom-right: 5px; --cs-bubble-border-radius-bottom-left: 5px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 12px; --cs-bubble-box-shadow-blur-radius: 26px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: rgba(0, 0, 0, .42); --cs-bubble-box-shadow-inset: ; --cs-bubble-animation: bp-slide-in-up; --cs-bubble-animation-duration: 1100ms; --cs-bubble-animation-delay: 0ms; --cs-bubble-animation-timing-function: ease-in-out; --cs-bubble-gap: 26px; --cs-bubble-width: 420px; --cs-avatar-padding: 2px; --cs-avatar-padding-top: 2px; --cs-avatar-padding-right: 2px; --cs-avatar-padding-bottom: 2px; --cs-avatar-padding-left: 2px; --cs-avatar-background-color: transparent; --cs-avatar-background-gradient: none; --cs-avatar-border-width: 1px; --cs-avatar-border-style: solid; --cs-avatar-border-color: var(--gis); --cs-avatar-border-radius: 4px; --cs-avatar-border-radius-top-left: 4px; --cs-avatar-border-radius-top-right: 4px; --cs-avatar-border-radius-bottom-right: 4px; --cs-avatar-border-radius-bottom-left: 4px; --cs-avatar-box-shadow-offset-x: 0px; --cs-avatar-box-shadow-offset-y: 3px; --cs-avatar-box-shadow-blur-radius: 8px; --cs-avatar-box-shadow-spread-radius: 0px; --cs-avatar-box-shadow-color: rgba(0, 0, 0, .42); --cs-avatar-box-shadow-inset: ; --cs-avatar-animation: none; --cs-avatar-animation-duration: 900ms; --cs-avatar-animation-delay: 0ms; --cs-avatar-animation-timing-function: ease-in-out; --cs-avatar-size: 34px; --cs-username-padding: 0px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-background-color: transparent; --cs-username-background-gradient: none; --cs-username-border-width: 0px; --cs-username-border-style: solid; --cs-username-border-color: transparent; --cs-username-border-radius: 0px; --cs-username-border-radius-top-left: 0px; --cs-username-border-radius-top-right: 0px; --cs-username-border-radius-bottom-right: 0px; --cs-username-border-radius-bottom-left: 0px; --cs-username-box-shadow-offset-x: 0px; --cs-username-box-shadow-offset-y: 0px; --cs-username-box-shadow-blur-radius: 0px; --cs-username-box-shadow-spread-radius: 0px; --cs-username-box-shadow-color: #000000; --cs-username-box-shadow-inset: ; --cs-username-font-size: 13px; --cs-username-font-color: var(--gi); --cs-username-font-family: 'Inter'; --cs-username-font-weight: 700; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 1px; --cs-username-text-shadow-blur-radius: 2px; --cs-username-text-shadow-color: rgba(0, 0, 0, .95); --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-username-animation: none; --cs-username-animation-duration: 880ms; --cs-username-animation-delay: 0ms; --cs-username-animation-timing-function: ease-in-out; --cs-message-padding: 0px; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-background-color: transparent; --cs-message-background-gradient: none; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: transparent; --cs-message-border-radius: 0px; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #000000; --cs-message-box-shadow-inset: ; --cs-message-font-size: 14px; --cs-message-font-color: #f3f0e8; --cs-message-font-family: 'Inter'; --cs-message-font-weight: 400; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 1px; --cs-message-text-shadow-blur-radius: 2px; --cs-message-text-shadow-color: rgba(0, 0, 0, .96); --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-message-animation: none; --cs-message-animation-duration: 1000ms; --cs-message-animation-delay: 0ms; --cs-message-animation-timing-function: ease-in-out; --cs-usercolor:#9b59b6;">
+  <span class="cs-role"></span>
+
+  <div class="cs-top-decor">
+    <svg class="cs-symbol cs-symbol--moon" viewBox="0 0 32 32"><path class="cs-symbol-fill" d="M20 2C9.5 3.5 4 9.5 4 16S9.5 28.5 20 30C14.8 26.6 12.4 21.8 12.4 16S14.8 5.4 20 2Z"/></svg>
+    <svg class="cs-symbol cs-symbol--star" viewBox="0 0 32 32"><path class="cs-symbol-fill" d="m16 2 2.8 11.2L30 16l-11.2 2.8L16 30l-2.8-11.2L2 16l11.2-2.8Z"/></svg>
+    <svg class="cs-symbol cs-symbol--pentagram" viewBox="0 0 32 32"><circle class="cs-symbol-line" cx="16" cy="16" r="13"/><path class="cs-symbol-line" d="M16 3 23.64 26.52 3.64 11.98 28.36 11.98 8.36 26.52Z"/></svg>
+    <svg class="cs-symbol cs-symbol--sun" viewBox="0 0 32 32"><circle class="cs-symbol-line" cx="16" cy="16" r="7"/><path class="cs-symbol-line" d="M16 2v6m0 16v6M2 16h6m16 0h6M6.1 6.1l4.2 4.2m11.4 11.4 4.2 4.2M25.9 6.1l-4.2 4.2M10.3 21.7l-4.2 4.2"/><path class="cs-symbol-fill" d="m16 10 2.1 3.9L22 16l-3.9 2.1L16 22l-2.1-3.9L10 16l3.9-2.1Z"/></svg>
+  </div>
+
+  <div class="cs-role-celestial">
+    <svg class="cs-role-sigil" viewBox="0 0 380 110">
+      <g class="cs-role-art cs-role-art--sub">
+        <path class="cs-role-draw" d="M105 59C137 29 243 29 275 59"/>
+        <path class="cs-role-draw cs-role-draw--late" d="M122 70C154 91 226 91 258 70"/>
+        <path class="cs-role-draw" d="M197 34c-15 2-23 10-23 22s8 20 23 22c-8-6-11-13-11-22s3-16 11-22Z"/>
+        <circle class="cs-role-dot" cx="131" cy="50" r="1.5"/><circle class="cs-role-dot" cx="249" cy="48" r="1.5"/><circle class="cs-role-dot" cx="153" cy="77" r="1.2"/><circle class="cs-role-dot" cx="226" cy="77" r="1.2"/>
+      </g>
+
+      <g class="cs-role-art cs-role-art--vip">
+        <path class="cs-role-draw" d="M190 25 241 55 190 85 139 55Z"/>
+        <path class="cs-role-draw cs-role-draw--late" d="M151 55c18-19 60-19 78 0-18 19-60 19-78 0Z"/>
+        <circle class="cs-role-draw" cx="190" cy="55" r="12"/>
+        <path class="cs-role-draw" d="m190 45 2.5 7.5 7.5 2.5-7.5 2.5-2.5 7.5-2.5-7.5-7.5-2.5 7.5-2.5Z"/>
+        <circle class="cs-role-dot" cx="139" cy="55" r="1.4"/><circle class="cs-role-dot" cx="241" cy="55" r="1.4"/>
+      </g>
+
+      <g class="cs-role-art cs-role-art--mod">
+        <circle class="cs-role-draw cs-role-draw--mod" cx="190" cy="55" r="37"/>
+        <path class="cs-role-draw cs-role-draw--mod cs-role-draw--late" d="M190 18 211.75 84.93 154.75 43.57 225.25 43.57 168.25 84.93Z"/>
+        <circle class="cs-role-draw" cx="190" cy="55" r="25"/>
+        <circle class="cs-role-dot" cx="190" cy="18" r="1.5"/><circle class="cs-role-dot" cx="225" cy="44" r="1.5"/><circle class="cs-role-dot" cx="212" cy="85" r="1.5"/><circle class="cs-role-dot" cx="168" cy="85" r="1.5"/><circle class="cs-role-dot" cx="155" cy="44" r="1.5"/>
+      </g>
+
+      <g class="cs-role-art cs-role-art--broadcaster">
+        <circle class="cs-role-draw" cx="190" cy="55" r="24"/><circle class="cs-role-draw cs-role-draw--late" cx="190" cy="55" r="14"/>
+        <path class="cs-role-draw" d="M190 15v15M190 80v15M150 55h15M215 55h15M161 26l11 11M208 73l11 11M219 26l-11 11M172 73l-11 11"/>
+        <path class="cs-role-draw cs-role-draw--late" d="m190 44 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cs-event-celestial">
+    <svg class="cs-event-sigil cs-event-sigil--left" viewBox="0 0 48 100">
+      <path class="cs-event-draw" d="M24 2v18M24 80v18"/><circle class="cs-event-draw" cx="24" cy="30" r="5"/>
+      <path class="cs-event-draw" d="M24 38c-8 0-14 6-14 12s6 12 14 12 14-6 14-12-6-12-14-12Z"/><path class="cs-event-draw" d="M24 42c-4 2-6 5-6 8s2 6 6 8"/><path class="cs-event-draw" d="M24 67v8M20 71h8"/>
+      <circle class="cs-event-dot" cx="24" cy="16" r="1.5"/><circle class="cs-event-dot" cx="24" cy="84" r="1.5"/>
+    </svg>
+
+    <svg class="cs-event-sigil cs-event-sigil--center" viewBox="0 0 180 110">
+      <circle class="cs-event-draw cs-event-draw--outer" cx="90" cy="55" r="43"/><circle class="cs-event-draw cs-event-draw--inner" cx="90" cy="55" r="32"/>
+      <path class="cs-event-draw" d="M90 5v12M90 93v12M40 55h12M128 55h12"/><path class="cs-event-draw" d="M54 19l8 8M118 83l8 8M126 19l-8 8M62 83l-8 8"/>
+      <path class="cs-event-draw cs-event-draw--orbit" d="M25 55c17-18 42-28 65-28s48 10 65 28c-17 18-42 28-65 28S42 73 25 55Z"/><path class="cs-event-draw" d="M98 36c-14 2-22 9-22 19s8 17 22 19c-7-5-10-11-10-19s3-14 10-19Z"/>
+      <path class="cs-event-fill" d="m90 45 2.6 7.4L100 55l-7.4 2.6L90 65l-2.6-7.4L80 55l7.4-2.6Z"/>
+      <circle class="cs-event-dot" cx="90" cy="12" r="1.6"/><circle class="cs-event-dot" cx="90" cy="98" r="1.6"/><circle class="cs-event-dot" cx="47" cy="55" r="1.6"/><circle class="cs-event-dot" cx="133" cy="55" r="1.6"/>
+    </svg>
+
+    <svg class="cs-event-sigil cs-event-sigil--right" viewBox="0 0 48 100">
+      <path class="cs-event-draw" d="M24 2v18M24 80v18"/><path class="cs-event-draw" d="m24 26 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/>
+      <circle class="cs-event-draw" cx="24" cy="59" r="11"/><path class="cs-event-draw" d="M29 50c-7 1-11 4-11 9s4 8 11 9c-4-3-5-5-5-9s1-6 5-9Z"/><path class="cs-event-draw" d="M24 74v8M20 78h8"/>
+      <circle class="cs-event-dot" cx="24" cy="15" r="1.5"/><circle class="cs-event-dot" cx="24" cy="89" r="1.5"/>
+    </svg>
+  </div>
+
+  <span class="cs-corner cs-corner--tl"></span><span class="cs-corner cs-corner--tr"></span><span class="cs-corner cs-corner--bl"></span><span class="cs-corner cs-corner--br"></span>
+
+  <div class="cs-header"><div class="cs-avatar"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E"></div><div class="cs-user"><span class="cs-badges"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span><span class="cs-username"><span class="cs-pronouns"></span>JesusTenG</span></div></div>
+
+  <div class="cs-content"><span class="cs-user--inline"><span class="cs-badges cs-badges--inline"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span><span class="cs-username--inline"><span class="cs-pronouns"></span>JesusTenG</span></span><div class="cs-message">So sieht dein Chat aus.</div></div>
+
+  <svg class="cs-phases" viewBox="0 0 118 18" aria-hidden="true"><path class="cs-phase-line" d="M2 9h10m94 0h10"/><circle cx="14" cy="9" r="1.4"/><circle cx="104" cy="9" r="1.4"/><path d="M24 5A4 4 0 1 0 24 13A3 4 0 0 1 24 5Z"/><path d="M36 5A4 4 0 1 0 36 13Z"/><path d="M48 5A4 4 0 1 0 48 13A1.5 4 0 0 0 48 5Z"/><circle cx="60" cy="9" r="4"/><path d="M72 5A4 4 0 1 1 72 13A1.5 4 0 0 1 72 5Z"/><path d="M84 5A4 4 0 1 1 84 13Z"/><path d="M96 5A4 4 0 1 1 96 13A3 4 0 0 0 96 5Z"/></svg>
+</div></div></div></body></html>

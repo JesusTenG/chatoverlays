@@ -1,0 +1,529 @@
+/* ==========================================================
+   ChatStyle — Framework CSS
+   https://chatstyle.gg
+
+   Loaded before each style's CSS template. Provides structural
+   layout, animation defaults, toggle classes, and ALL standard
+   CSS variable bindings for system elements.
+
+   All defaults are neutral/zero (0px, transparent, no shadow).
+   Styles become visible through settings_values overrides.
+   ========================================================== */
+
+/*  ====================
+    Chat Container
+    ==================== */
+
+/* Only the host layout is framework-owned; nested wrapper layouts remain template-owned. */
+.cs-wrapper-active {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.cs-wrapper-active > .cs-chat {
+    flex: 1 1 0;
+    min-block-size: 0;
+}
+
+.cs-chat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    gap: var(--cs-bubble-gap, 10px);
+    inline-size: 100%;
+    /* Needed for proper chat flow */
+    overflow: hidden;
+    /* Safe area for shadows */
+    padding-block-start: var(--cs-chat-padding-top, var(--cs-chat-padding, 0px));
+    padding-block-end: var(--cs-chat-padding-bottom, var(--cs-chat-padding, 0px));
+    padding-inline-start: var(--cs-chat-padding-left, var(--cs-chat-padding, 0px));
+    padding-inline-end: var(--cs-chat-padding-right, var(--cs-chat-padding, 0px));
+
+    /* Twitch helper colors */
+    --cs-color-twitch: #9146ff;
+    --cs-color-twitch-subscriber: #8205b4;
+    --cs-color-twitch-moderator: #05af08;
+    --cs-color-twitch-vip: #e006b9;
+    --cs-color-twitch-broadcaster: #e91916;
+}
+
+/* Chat Flow */
+.cs-chat.cs-chat--bottom-up {
+    justify-content: flex-end;
+}
+
+.cs-chat.cs-chat--top-down {
+    justify-content: flex-start;
+}
+
+.cs-chat.cs-chat--left-to-right {
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.cs-chat.cs-chat--right-to-left {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.cs-chat.cs-chat--horizontal > * {
+    flex-shrink: 0;
+    max-inline-size: 300px;
+    margin-block-start: 0;
+    margin-inline-start: var(--cs-bubble-gap, 20px);
+}
+
+/*  ====================
+    Bubble Base
+    ==================== */
+
+.cs-bubble {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    color: #fff;
+    max-inline-size: var(--cs-bubble-width, 400px);
+    /* We need this, so bubbles never shrink. Super mega weird conflict with overflow:hidden on .cs-bubble element */
+    flex-shrink: 0;
+    paint-order: stroke fill;
+
+    padding-block-start: var(--cs-bubble-padding-top, var(--cs-bubble-padding, 0px));
+    padding-inline-end: var(--cs-bubble-padding-right, var(--cs-bubble-padding, 0px));
+    padding-block-end: var(--cs-bubble-padding-bottom, var(--cs-bubble-padding, 0px));
+    padding-inline-start: var(--cs-bubble-padding-left, var(--cs-bubble-padding, 0px));
+
+    background-color: var(--cs-bubble-background-color, transparent);
+    background-image: var(--cs-bubble-background-gradient, none);
+    background-repeat: no-repeat;
+
+    border-width: var(--cs-bubble-border-width, 0px);
+    border-style: var(--cs-bubble-border-style, solid);
+    border-color: var(--cs-bubble-border-color, transparent);
+
+    border-start-start-radius: var(--cs-bubble-border-radius-top-left, var(--cs-bubble-border-radius, 0px));
+    border-start-end-radius: var(--cs-bubble-border-radius-top-right, var(--cs-bubble-border-radius, 0px));
+    border-end-end-radius: var(--cs-bubble-border-radius-bottom-right, var(--cs-bubble-border-radius, 0px));
+    border-end-start-radius: var(--cs-bubble-border-radius-bottom-left, var(--cs-bubble-border-radius, 0px));
+
+    box-shadow: var(--cs-bubble-box-shadow-inset,) var(--cs-bubble-box-shadow-offset-x, 0px) var(--cs-bubble-box-shadow-offset-y, 0px) var(--cs-bubble-box-shadow-blur-radius, 0px) var(--cs-bubble-box-shadow-spread-radius, 0px) var(--cs-bubble-box-shadow-color, transparent);
+
+    /* Animation */
+    animation-name: var(--cs-bubble-animation, bp-slide-in-up);
+    animation-duration: var(--cs-bubble-animation-duration, 750ms);
+    animation-delay: var(--cs-bubble-animation-delay, 0ms);
+    animation-timing-function: var(--cs-bubble-animation-timing-function, ease-out);
+    animation-fill-mode: both;
+}
+
+/* Full Width */
+.cs-chat.cs-full-width {
+    align-items: stretch !important;
+}
+
+.cs-chat.cs-full-width .cs-bubble {
+    inline-size: 100%;
+    max-inline-size: none;
+}
+
+/* Direction */
+.cs-bubble.cs-direction-rtl {
+    direction: rtl;
+}
+
+/* Alignment (applied to .cs-chat container) */
+.cs-chat.cs-align-left {
+    align-items: flex-start !important;
+}
+
+.cs-chat.cs-align-center {
+    align-items: center !important;
+}
+
+.cs-chat.cs-align-right {
+    align-items: flex-end !important;
+}
+
+.cs-chat.cs-align-top {
+    align-items: flex-start !important;
+}
+
+.cs-chat.cs-align-bottom {
+    align-items: flex-end !important;
+}
+
+/*  ====================
+    Avatar
+    ==================== */
+
+.cs-avatar {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+
+    &:empty {
+        display: none;
+    }
+
+    img {
+        inline-size: var(--cs-avatar-size, 60px);
+        block-size: var(--cs-avatar-size, 60px);
+        object-fit: cover;
+
+        /* Box Properties */
+        padding-block-start: var(--cs-avatar-padding-top, var(--cs-avatar-padding, 0px));
+        padding-inline-end: var(--cs-avatar-padding-right, var(--cs-avatar-padding, 0px));
+        padding-block-end: var(--cs-avatar-padding-bottom, var(--cs-avatar-padding, 0px));
+        padding-inline-start: var(--cs-avatar-padding-left, var(--cs-avatar-padding, 0px));
+
+        background-color: var(--cs-avatar-background-color, transparent);
+        background-image: var(--cs-avatar-background-gradient, none);
+        background-repeat: no-repeat;
+
+        border-width: var(--cs-avatar-border-width, 0px);
+        border-style: var(--cs-avatar-border-style, solid);
+        border-color: var(--cs-avatar-border-color, transparent);
+
+        border-start-start-radius: var(--cs-avatar-border-radius-top-left, var(--cs-avatar-border-radius, 0px));
+        border-start-end-radius: var(--cs-avatar-border-radius-top-right, var(--cs-avatar-border-radius, 0px));
+        border-end-end-radius: var(--cs-avatar-border-radius-bottom-right, var(--cs-avatar-border-radius, 0px));
+        border-end-start-radius: var(--cs-avatar-border-radius-bottom-left, var(--cs-avatar-border-radius, 0px));
+
+        box-shadow: var(--cs-avatar-box-shadow-inset,) var(--cs-avatar-box-shadow-offset-x, 0px) var(--cs-avatar-box-shadow-offset-y, 0px) var(--cs-avatar-box-shadow-blur-radius, 0px) var(--cs-avatar-box-shadow-spread-radius, 0px) var(--cs-avatar-box-shadow-color, transparent);
+
+        /* Animation */
+        animation-name: var(--cs-avatar-animation, none);
+        animation-duration: var(--cs-avatar-animation-duration, 750ms);
+        animation-delay: var(--cs-avatar-animation-delay, 0ms);
+        animation-timing-function: var(--cs-avatar-animation-timing-function, ease-out);
+        animation-fill-mode: both;
+    }
+}
+
+.cs-bubble.cs-avatar-hidden .cs-avatar {
+    display: none;
+}
+
+
+/*  ====================
+    User (Username Header Container)
+    ==================== */
+
+.cs-user {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+    z-index: 1;
+
+    padding-block-start: var(--cs-username-padding-top, var(--cs-username-padding, 0px));
+    padding-inline-end: var(--cs-username-padding-right, var(--cs-username-padding, 0px));
+    padding-block-end: var(--cs-username-padding-bottom, var(--cs-username-padding, 0px));
+    padding-inline-start: var(--cs-username-padding-left, var(--cs-username-padding, 0px));
+
+    background-color: var(--cs-username-background-color, transparent);
+    background-image: var(--cs-username-background-gradient, none);
+    background-repeat: no-repeat;
+
+    border-width: var(--cs-username-border-width, 0px);
+    border-style: var(--cs-username-border-style, solid);
+    border-color: var(--cs-username-border-color, transparent);
+
+    border-start-start-radius: var(--cs-username-border-radius-top-left, var(--cs-username-border-radius, 0px));
+    border-start-end-radius: var(--cs-username-border-radius-top-right, var(--cs-username-border-radius, 0px));
+    border-end-end-radius: var(--cs-username-border-radius-bottom-right, var(--cs-username-border-radius, 0px));
+    border-end-start-radius: var(--cs-username-border-radius-bottom-left, var(--cs-username-border-radius, 0px));
+
+    box-shadow: var(--cs-username-box-shadow-inset,) var(--cs-username-box-shadow-offset-x, 0px) var(--cs-username-box-shadow-offset-y, 0px) var(--cs-username-box-shadow-blur-radius, 0px) var(--cs-username-box-shadow-spread-radius, 0px) var(--cs-username-box-shadow-color, transparent);
+
+    animation-name: var(--cs-username-animation, none);
+    animation-duration: var(--cs-username-animation-duration, 750ms);
+    animation-delay: var(--cs-username-animation-delay, 0ms);
+    animation-timing-function: var(--cs-username-animation-timing-function, ease-out);
+    animation-fill-mode: both;
+}
+
+/* Inside .cs-content */
+.cs-user--inline {
+    display: none;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.cs-username,
+.cs-username--inline {
+    font-family: var(--cs-username-font-family, 'Space Grotesk'), sans-serif;
+    font-size: var(--cs-username-font-size, 16px);
+    font-weight: var(--cs-username-font-weight, 700);
+    color: var(--cs-username-font-color, var(--cs-usercolor, #ffffff));
+    -webkit-text-stroke: var(--cs-username-text-stroke-width, 0px) var(--cs-username-text-stroke-color, #000000);
+    text-shadow: var(--cs-username-text-shadow-offset-x, 0px) var(--cs-username-text-shadow-offset-y, 0px) var(--cs-username-text-shadow-blur-radius, 0px) var(--cs-username-text-shadow-color, transparent);
+    text-align: start;
+    white-space: nowrap;
+}
+
+.cs-pronouns {
+    text-align: start;
+}
+
+.cs-bubble.cs-username-position-inline .cs-user {
+    display: none;
+}
+
+.cs-bubble.cs-username-position-inline .cs-user--inline {
+    display: inline-flex;
+}
+
+.cs-bubble.cs-username-position-inline .cs-badges--inline {
+    display: inline-flex;
+}
+
+.cs-bubble.cs-username-position-inline .cs-username--inline {
+    display: inline;
+}
+
+.cs-bubble.cs-username-position-inline .cs-message {
+    display: inline;
+}
+
+/*  ====================
+    Pronouns
+    ==================== */
+
+.cs-pronouns:empty,
+.cs-pronouns:has(>*:empty),
+.cs-pronouns > *:empty{display:none}
+
+.cs-pronouns {
+    color: var(--cs-pronouns-font-color, currentColor);
+    background-color: var(--cs-pronouns-background-color, transparent);
+}
+
+/*  ====================
+    Timestamp
+    ==================== */
+
+.cs-timestamp:empty {display:none}
+
+/*  ====================
+    Content Wrapper - Inline Elements Wrapper
+    ==================== */
+
+.cs-content {
+    flex: 1;
+    min-inline-size: 0;
+}
+
+/*  ====================
+    Badges
+    ==================== */
+
+.cs-badges {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    &:empty {
+        display: none !important;
+    }
+
+    img {
+        inline-size: calc(var(--cs-username-font-size, 14px) + 2px);
+        aspect-ratio: 1;
+        border-radius: 1px;
+    }
+}
+
+.cs-badges--inline {
+    display: none;
+    align-self: stretch;
+    align-items: center;
+    gap: 3px;
+    margin-inline-end: 3px;
+}
+
+.cs-bubble.cs-badges-hidden {
+    .cs-badges,
+    .cs-badges--inline {
+        display: none;
+    }
+}
+
+.cs-bubble.cs-pronouns-hidden {
+    .cs-pronouns,
+    .cs-pronouns--inline {
+        display: none;
+    }
+}
+
+/* Badges Position */
+/* Header: after-name → badges come after username */
+.cs-bubble.cs-badges-position-after-name .cs-user .cs-badges {
+    order: 1;
+}
+
+/* Inline: after-name → badges after username inside inline wrapper */
+.cs-bubble.cs-badges-position-after-name .cs-user--inline .cs-badges--inline {
+    order: 1;
+}
+
+/*  ====================
+    Message
+    ==================== */
+
+.cs-message {
+    position: relative;
+    word-break: break-word;
+    display: block;
+
+    padding-block-start: var(--cs-message-padding-top, var(--cs-message-padding, 0px));
+    padding-inline-end: var(--cs-message-padding-right, var(--cs-message-padding, 0px));
+    padding-block-end: var(--cs-message-padding-bottom, var(--cs-message-padding, 0px));
+    padding-inline-start: var(--cs-message-padding-left, var(--cs-message-padding, 0px));
+
+    background-color: var(--cs-message-background-color, transparent);
+    background-image: var(--cs-message-background-gradient, none);
+    background-repeat: no-repeat;
+
+    border-width: var(--cs-message-border-width, 0px);
+    border-style: var(--cs-message-border-style, solid);
+    border-color: var(--cs-message-border-color, transparent);
+
+    border-start-start-radius: var(--cs-message-border-radius-top-left, var(--cs-message-border-radius, 0px));
+    border-start-end-radius: var(--cs-message-border-radius-top-right, var(--cs-message-border-radius, 0px));
+    border-end-end-radius: var(--cs-message-border-radius-bottom-right, var(--cs-message-border-radius, 0px));
+    border-end-start-radius: var(--cs-message-border-radius-bottom-left, var(--cs-message-border-radius, 0px));
+
+    box-shadow: var(--cs-message-box-shadow-inset,) var(--cs-message-box-shadow-offset-x, 0px) var(--cs-message-box-shadow-offset-y, 0px) var(--cs-message-box-shadow-blur-radius, 0px) var(--cs-message-box-shadow-spread-radius, 0px) var(--cs-message-box-shadow-color, transparent);
+
+    font-family: var(--cs-message-font-family, 'Inter'), sans-serif;
+    font-size: var(--cs-message-font-size, 16px);
+    font-weight: var(--cs-message-font-weight, 400);
+    color: var(--cs-message-font-color, #ffffff);
+    -webkit-text-stroke: var(--cs-message-text-stroke-width, 0px) var(--cs-message-text-stroke-color, #000000);
+    text-shadow: var(--cs-message-text-shadow-offset-x, 0px) var(--cs-message-text-shadow-offset-y, 0px) var(--cs-message-text-shadow-blur-radius, 0px) var(--cs-message-text-shadow-color, transparent);
+    text-align: start;
+
+    animation-name: var(--cs-message-animation, none);
+    animation-duration: var(--cs-message-animation-duration, 750ms);
+    animation-delay: var(--cs-message-animation-delay, 0ms);
+    animation-timing-function: var(--cs-message-animation-timing-function, ease-out);
+    animation-fill-mode: both;
+
+    .cs-gif {
+        inline-size: auto;
+        block-size: auto;
+        max-block-size: 140px;
+        max-inline-size: 100%;
+        vertical-align: middle;
+    }
+
+    .emote {
+        inline-size: calc(var(--cs-message-font-size, 14px) + 16px);
+        margin-inline: 2px;
+        vertical-align: middle;
+    }
+
+    img {
+        max-inline-size: 100%;
+    }
+}
+
+/*  ====================
+    Events
+    ==================== */
+
+.cs-events {
+    animation-name: var(--cs-events-animation, none);
+    animation-duration: var(--cs-events-animation-duration, 750ms);
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+.cs-bubble.cs-events-hidden .cs-events {
+    display: none;
+}
+
+/*  ====================
+    Font Modifiers
+    ==================== */
+
+/* Username */
+.cs-bubble.cs-username-italic .cs-username,
+.cs-bubble.cs-username-italic .cs-username--inline,
+.cs-bubble.cs-username-italic .cs-pronouns {
+    font-style: italic;
+}
+
+.cs-bubble.cs-username-underline .cs-username,
+.cs-bubble.cs-username-underline .cs-username--inline,
+.cs-bubble.cs-username-underline .cs-pronouns {
+    text-decoration: underline;
+}
+
+.cs-bubble.cs-username-uppercase .cs-username,
+.cs-bubble.cs-username-uppercase .cs-username--inline,
+.cs-bubble.cs-username-uppercase .cs-pronouns {
+    text-transform: uppercase;
+}
+
+.cs-bubble.cs-username-lowercase .cs-username,
+.cs-bubble.cs-username-lowercase .cs-username--inline,
+.cs-bubble.cs-username-lowercase .cs-pronouns {
+    text-transform: lowercase;
+}
+
+.cs-bubble.cs-username-capitalize .cs-username,
+.cs-bubble.cs-username-capitalize .cs-username--inline,
+.cs-bubble.cs-username-capitalize .cs-pronouns {
+    text-transform: capitalize;
+}
+
+.cs-bubble.cs-username-align-center .cs-username,
+.cs-bubble.cs-username-align-center .cs-username--inline,
+.cs-bubble.cs-username-align-center .cs-pronouns {
+    text-align: center;
+}
+
+.cs-bubble.cs-username-align-end .cs-username,
+.cs-bubble.cs-username-align-end .cs-username--inline,
+.cs-bubble.cs-username-align-end .cs-pronouns {
+    text-align: end;
+}
+
+/* Message */
+.cs-bubble.cs-message-italic .cs-message {
+    font-style: italic;
+}
+
+.cs-bubble.cs-message-underline .cs-message {
+    text-decoration: underline;
+}
+
+.cs-bubble.cs-message-uppercase .cs-message {
+    text-transform: uppercase;
+}
+
+.cs-bubble.cs-message-lowercase .cs-message {
+    text-transform: lowercase;
+}
+
+.cs-bubble.cs-message-capitalize .cs-message {
+    text-transform: capitalize;
+}
+
+.cs-bubble.cs-message-align-center .cs-message {
+    text-align: center;
+}
+
+.cs-bubble.cs-message-align-end .cs-message {
+    text-align: end;
+}

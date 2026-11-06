@@ -1,0 +1,1072 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Inline Flow – white</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/6d5fda4e7c8bd9440de1.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/677b9d983d6d18bcb5d9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/48c0f365e555c930159f.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/2c6636f5c2033988ae0a.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/4f6e38c96abe28ed90f9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/e3c9d5360767a6d8abf1.woff2") format('woff2');
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  inline-size: 100%;
+  min-inline-size: 0;
+
+  overflow: visible;
+
+  background: transparent;
+}
+
+.cs-bubble,
+.cs-bubble *,
+.cs-bubble::before,
+.cs-bubble::after {
+  box-sizing: border-box;
+}
+
+/*//////////////CHAT//////////////////*/
+
+.cs-chat {
+  --cs-bubble-gap: 3px;
+
+  --cs-chat-padding-top: 0px;
+  --cs-chat-padding-right: 8px;
+  --cs-chat-padding-bottom: 0px;
+  --cs-chat-padding-left: 8px;
+
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+
+/*//////////////CHAT ITEMS//////////////////*/
+
+/*
+  Verhindert zusätzlichen Inline-
+  beziehungsweise Baseline-Space auf
+  eventuell vorhandenen äußeren
+  Message-Wrappern.
+
+  Der eigentliche Abstand zwischen
+  Nachrichten kommt ausschließlich
+  vom Framework über --cs-bubble-gap.
+*/
+
+.cs-chat > * {
+  margin-block: 0;
+  line-height: 0;
+}
+
+/*//////////////BUBBLE//////////////////*/
+
+.cs-bubble {
+  --cs-bubble-width: 600px;
+
+  --cs-bubble-padding-top: 3px;
+  --cs-bubble-padding-right: 16px;
+  --cs-bubble-padding-bottom: 3px;
+  --cs-bubble-padding-left: 5px;
+
+  --cs-bubble-background-color:
+    var(
+      --cs-usercolor,
+      #ffffff
+    );
+
+  --cs-bubble-border-width: 1px;
+  --cs-bubble-border-style: solid;
+
+  --cs-bubble-border-color:
+    var(
+      --cs-usercolor,
+      #ffffff
+    );
+
+  --cs-bubble-border-radius: 0px;
+
+  --cs-avatar-size: 24px;
+  --cs-avatar-padding: 1px;
+
+  --cs-avatar-border-width: 1px;
+  --cs-avatar-border-style: solid;
+
+  --cs-avatar-border-color:
+    var(
+      --cs-usercolor,
+      #ffffff
+    );
+
+  --cs-avatar-border-radius: 0px;
+
+  --cs-username-font-size: 13px;
+  --cs-username-font-weight: 800;
+
+  --cs-message-font-size: 13px;
+  --cs-message-font-weight: 500;
+
+  --cs-message-background-color: transparent;
+
+  --cs-bubble-animation:
+    bp-light-speed-in-right;
+
+  --cs-bubble-animation-duration:
+    750ms;
+
+  --cs-bubble-animation-delay:
+    0ms;
+
+  --cs-bubble-animation-timing-function:
+    ease-out;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+  inline-size: fit-content;
+
+  min-inline-size: 0;
+
+  max-inline-size:
+    min(
+      var(--cs-bubble-width, 600px),
+      100%
+    );
+
+  margin: 0;
+
+  padding:
+    var(--cs-bubble-padding-top)
+    var(--cs-bubble-padding-right)
+    var(--cs-bubble-padding-bottom)
+    var(--cs-bubble-padding-left);
+
+  column-gap: 8px;
+
+  color:
+    var(
+      --cs-message-font-color,
+      #ffffff
+    );
+
+  background-color:
+    var(
+      --cs-bubble-background-color,
+      var(--cs-usercolor, #ffffff)
+    );
+
+  background-image:
+    var(
+      --cs-bubble-background-gradient,
+      none
+    );
+
+  border-width:
+    var(
+      --cs-bubble-border-width,
+      1px
+    );
+
+  border-style:
+    var(
+      --cs-bubble-border-style,
+      solid
+    );
+
+  border-color:
+    var(
+      --cs-bubble-border-color,
+      var(--cs-usercolor, #ffffff)
+    );
+
+  border-radius:
+    var(
+      --cs-bubble-border-radius,
+      0px
+    );
+
+  line-height: 1;
+
+  overflow: hidden;
+}
+
+/*//////////////STRUCTURE//////////////////*/
+
+/*
+  HTML-Struktur des Frameworks bleibt
+  bestehen.
+
+  Header und Content erzeugen nur keine
+  zusätzliche Flex-Ebene, damit Avatar,
+  User und Message in derselben Reihe
+  angeordnet werden können.
+*/
+
+.cs-header,
+.cs-content {
+  display: contents;
+}
+
+/*//////////////AVATAR//////////////////*/
+
+.cs-avatar {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  inline-size: max-content;
+  min-inline-size: max-content;
+
+  margin: 0;
+  padding: 0;
+
+  order: 0;
+
+  line-height: 1;
+}
+
+/*//////////////AVATAR IMAGE//////////////////*/
+
+.cs-avatar img {
+  display: block;
+
+  inline-size:
+    var(
+      --cs-avatar-size,
+      24px
+    );
+
+  block-size:
+    var(
+      --cs-avatar-size,
+      24px
+    );
+
+  flex: 0 0 auto;
+
+  margin: 0;
+
+  padding:
+    var(
+      --cs-avatar-padding,
+      1px
+    );
+
+  background-color:
+    var(
+      --cs-avatar-background-color,
+      transparent
+    );
+
+  background-image:
+    var(
+      --cs-avatar-background-gradient,
+      none
+    );
+
+  border-width:
+    var(
+      --cs-avatar-border-width,
+      1px
+    );
+
+  border-style:
+    var(
+      --cs-avatar-border-style,
+      solid
+    );
+
+  border-color:
+    var(
+      --cs-avatar-border-color,
+      var(--cs-usercolor, #ffffff)
+    );
+
+  border-radius:
+    var(
+      --cs-avatar-border-radius,
+      0px
+    );
+
+  object-fit: cover;
+}
+
+/*//////////////USER//////////////////*/
+
+.cs-user,
+.cs-user--inline {
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  inline-size: max-content;
+  min-inline-size: max-content;
+  max-inline-size: none;
+
+  gap: 5px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  overflow: visible;
+
+  order: 1;
+}
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-username,
+.cs-username--inline {
+  flex: 0 0 auto;
+
+  inline-size: max-content;
+  min-inline-size: max-content;
+  max-inline-size: none;
+
+  color:
+    var(
+      --cs-username-font-color,
+      #ffffff
+    );
+
+  font-family:
+    var(
+      --cs-username-font-family,
+      inherit
+    );
+
+  font-size:
+    var(
+      --cs-username-font-size,
+      13px
+    );
+
+  font-weight:
+    var(
+      --cs-username-font-weight,
+      800
+    );
+
+  line-height: 13px;
+
+  letter-spacing: -0.01em;
+
+  white-space: nowrap;
+
+  word-break: normal;
+  overflow-wrap: normal;
+
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/*//////////////SEPARATOR//////////////////*/
+
+.cs-user::after,
+.cs-user--inline::after {
+  content: "";
+
+  display: inline-block;
+
+  inline-size: 1px;
+  block-size: 13px;
+
+  flex: 0 0 1px;
+
+  margin-inline-start: 4px;
+  margin-inline-end: 2px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  opacity: 0.72;
+}
+
+/*//////////////PRONOUNS//////////////////*/
+
+.cs-pronouns,
+.cs-pronouns--inline {
+  flex: 0 0 auto;
+
+  inline-size: max-content;
+  min-inline-size: max-content;
+
+  margin: 0;
+
+  color:
+    var(
+      --cs-pronouns-font-color,
+      var(
+        --cs-message-font-color,
+        #ffffff
+      )
+    );
+
+  font-family:
+    var(
+      --cs-pronouns-font-family,
+      inherit
+    );
+
+  font-size:
+    var(
+      --cs-pronouns-font-size,
+      10px
+    );
+
+  font-weight:
+    var(
+      --cs-pronouns-font-weight,
+      500
+    );
+
+  line-height: 10px;
+
+  white-space: nowrap;
+
+  word-break: normal;
+  overflow-wrap: normal;
+
+  opacity: 0.6;
+}
+
+/*//////////////BADGES//////////////////*/
+
+.cs-badges,
+.cs-badges--inline {
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  inline-size: max-content;
+  min-inline-size: max-content;
+
+  gap: 3px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  overflow: visible;
+}
+
+.cs-badges img,
+.cs-badges--inline img {
+  display: block;
+
+  inline-size: 14px;
+  block-size: 14px;
+
+  flex: 0 0 14px;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  object-fit: contain;
+}
+
+/*//////////////MESSAGE//////////////////*/
+
+.cs-message,
+.cs-bubble.cs-username-position-inline .cs-message {
+  position: relative;
+
+  display: block;
+
+  /*
+    Nur die Message darf horizontal
+    schrumpfen.
+  */
+  flex: 1 1 auto;
+
+  inline-size: auto;
+
+  min-inline-size: 0;
+  max-inline-size: 100%;
+
+  order: 2;
+
+  margin: 0;
+  padding:
+    var(
+      --cs-message-padding-top,
+      var(--cs-message-padding, 0px)
+    )
+    var(
+      --cs-message-padding-right,
+      var(--cs-message-padding, 0px)
+    )
+    var(
+      --cs-message-padding-bottom,
+      var(--cs-message-padding, 0px)
+    )
+    var(
+      --cs-message-padding-left,
+      var(--cs-message-padding, 0px)
+    );
+
+  color:
+    var(
+      --cs-message-font-color,
+      #ffffff
+    );
+
+  background-color:
+    var(
+      --cs-message-background-color,
+      transparent
+    );
+
+  background-image:
+    var(
+      --cs-message-background-gradient,
+      none
+    );
+
+  font-family:
+    var(
+      --cs-message-font-family,
+      inherit
+    );
+
+  font-size:
+    var(
+      --cs-message-font-size,
+      13px
+    );
+
+  font-weight:
+    var(
+      --cs-message-font-weight,
+      500
+    );
+
+  line-height: 17px;
+
+  /*
+    Ausschließlich hier darf
+    Text umbrechen.
+  */
+  white-space: normal;
+
+  word-break: normal;
+  overflow-wrap: anywhere;
+
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/*//////////////EMOTES//////////////////*/
+
+.cs-message .emote {
+  display: inline-block;
+
+  flex: 0 0 auto;
+
+  width: auto !important;
+  inline-size: auto !important;
+
+  height:
+    calc(
+      var(--cs-message-font-size, 13px)
+      * 1.55
+    )
+    !important;
+
+  block-size:
+    calc(
+      var(--cs-message-font-size, 13px)
+      * 1.55
+    )
+    !important;
+
+  max-width: none !important;
+  max-inline-size: none !important;
+
+  max-height:
+    calc(
+      var(--cs-message-font-size, 13px)
+      * 1.55
+    )
+    !important;
+
+  max-block-size:
+    calc(
+      var(--cs-message-font-size, 13px)
+      * 1.55
+    )
+    !important;
+
+  object-fit: contain;
+
+  margin-inline: 1px;
+
+  vertical-align: middle;
+}
+
+/*//////////////EMOTE ONLY//////////////////*/
+
+.cs-bubble.cs-emote-only .cs-message,
+.cs-bubble.cs-emote-only.cs-username-position-inline .cs-message {
+  display: flex;
+
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+  inline-size: max-content;
+
+  min-inline-size: 0;
+  max-inline-size: 100%;
+
+  gap: 2px;
+
+  line-height:
+    calc(
+      var(--cs-message-font-size, 13px)
+      * 1.55
+    );
+
+  white-space: nowrap;
+
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/*//////////////LINKS//////////////////*/
+
+.cs-message a {
+  color: inherit;
+
+  overflow-wrap: anywhere;
+
+  text-decoration: underline;
+
+  text-decoration-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/*//////////////DEFAULT ORDER//////////////////*/
+
+.cs-avatar {
+  order: 0;
+}
+
+.cs-user,
+.cs-user--inline {
+  order: 1;
+}
+
+.cs-message {
+  order: 2;
+}
+
+/*//////////////AVATAR LEFT//////////////////*/
+
+.cs-bubble.cs-avatar-position-left .cs-avatar {
+  order: 0;
+}
+
+.cs-bubble.cs-avatar-position-left .cs-user,
+.cs-bubble.cs-avatar-position-left .cs-user--inline {
+  order: 1;
+}
+
+.cs-bubble.cs-avatar-position-left .cs-message {
+  order: 2;
+}
+
+/*//////////////AVATAR CENTER//////////////////*/
+
+.cs-bubble.cs-avatar-position-center .cs-user,
+.cs-bubble.cs-avatar-position-center .cs-user--inline {
+  order: 0;
+}
+
+.cs-bubble.cs-avatar-position-center .cs-avatar {
+  order: 1;
+}
+
+.cs-bubble.cs-avatar-position-center .cs-message {
+  order: 2;
+}
+
+/*//////////////AVATAR RIGHT//////////////////*/
+
+.cs-bubble.cs-avatar-position-right .cs-user,
+.cs-bubble.cs-avatar-position-right .cs-user--inline {
+  order: 0;
+}
+
+.cs-bubble.cs-avatar-position-right .cs-message {
+  order: 1;
+}
+
+.cs-bubble.cs-avatar-position-right .cs-avatar {
+  order: 2;
+}
+
+/*//////////////EVENT BASE//////////////////*/
+
+.cs-bubble.cs-event {
+  --cs-username-font-weight: 800;
+  --cs-message-font-weight: 600;
+
+  margin: 0;
+
+  column-gap: 7px;
+
+  flex-wrap: nowrap;
+
+  align-items: center;
+}
+
+/*//////////////EVENT TAG//////////////////*/
+
+.cs-bubble.cs-event::before {
+  content: "EVENT";
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  order: 0;
+
+  min-inline-size: 42px;
+  block-size: 28px;
+
+  padding-inline: 7px;
+
+  color: #ffffff;
+
+  background:
+    rgba(
+      16,
+      16,
+      18,
+      0.9
+    );
+
+  border:
+    1px
+    solid
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+
+  border-radius: 0;
+
+  font-family:
+    var(
+      --cs-username-font-family,
+      inherit
+    );
+
+  font-size: 9px;
+  font-weight: 900;
+
+  line-height: 9px;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*//////////////EVENT TYPES//////////////////*/
+
+.cs-bubble.cs-event-action::before {
+  content: "ACTION";
+}
+
+.cs-bubble.cs-event-cheer::before {
+  content: "CHEER";
+}
+
+.cs-bubble.cs-event-highlight::before {
+  content: "HIGHLIGHT";
+}
+
+.cs-bubble.cs-event-channel-points::before {
+  content: "POINTS";
+}
+
+.cs-bubble.cs-event-announcement::before {
+  content: "ANNOUNCEMENT";
+}
+
+.cs-bubble.cs-event-gigantified::before {
+  content: "GIGANTIFIED";
+}
+
+.cs-bubble.cs-event-sub::before {
+  content: "SUB";
+}
+
+.cs-bubble.cs-event-resub::before {
+  content: "RESUB";
+}
+
+.cs-bubble.cs-event-subgift::before {
+  content: "SUB GIFT";
+}
+
+.cs-bubble.cs-event-mystery-gift::before {
+  content: "MYSTERY GIFT";
+}
+
+.cs-bubble.cs-event-gift-upgrade::before {
+  content: "GIFT UPGRADE";
+}
+
+.cs-bubble.cs-event-reward-gift::before {
+  content: "REWARD GIFT";
+}
+
+.cs-bubble.cs-event-anon-gift-upgrade::before {
+  content: "ANON UPGRADE";
+}
+
+.cs-bubble.cs-event-raid::before {
+  content: "RAID";
+}
+
+.cs-bubble.cs-event-unraid::before {
+  content: "UNRAID";
+}
+
+.cs-bubble.cs-event-bits-badge::before {
+  content: "BITS BADGE";
+}
+
+.cs-bubble.cs-event-shared-chat::before {
+  content: "SHARED CHAT";
+}
+
+.cs-bubble.cs-event-external::before {
+  content: "EXTERNAL";
+}
+
+.cs-bubble.cs-event-kofi::before {
+  content: "KO-FI";
+}
+
+/*//////////////EVENT AVATAR//////////////////*/
+
+.cs-bubble.cs-event .cs-avatar {
+  display: none;
+}
+
+/*//////////////EVENT BADGES//////////////////*/
+
+.cs-bubble.cs-event .cs-badges,
+.cs-bubble.cs-event .cs-badges--inline {
+  display: none;
+}
+
+/*//////////////EVENT PRONOUNS//////////////////*/
+
+.cs-bubble.cs-event .cs-pronouns,
+.cs-bubble.cs-event .cs-pronouns--inline {
+  display: none;
+}
+
+/*//////////////EVENT USER//////////////////*/
+
+.cs-bubble.cs-event .cs-user,
+.cs-bubble.cs-event .cs-user--inline {
+  order: 1;
+
+  flex: 0 0 auto;
+
+  inline-size: max-content;
+  min-inline-size: max-content;
+
+  gap: 0;
+
+  white-space: nowrap;
+}
+
+/*//////////////EVENT USERNAME//////////////////*/
+
+.cs-bubble.cs-event .cs-username,
+.cs-bubble.cs-event .cs-username--inline {
+  flex: 0 0 auto;
+
+  inline-size: max-content;
+  min-inline-size: max-content;
+
+  white-space: nowrap;
+
+  word-break: normal;
+  overflow-wrap: normal;
+
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/*//////////////EVENT SEPARATOR//////////////////*/
+
+.cs-bubble.cs-event .cs-user::after,
+.cs-bubble.cs-event .cs-user--inline::after {
+  margin-inline-start: 7px;
+  margin-inline-end: 0;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+}
+
+/*//////////////EVENT MESSAGE//////////////////*/
+
+.cs-bubble.cs-event .cs-message {
+  order: 2;
+
+  flex: 1 1 auto;
+
+  min-inline-size: 0;
+  max-inline-size: 100%;
+
+  line-height: 17px;
+
+  white-space: normal;
+
+  word-break: normal;
+  overflow-wrap: anywhere;
+
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/*//////////////RTL//////////////////*/
+
+.cs-bubble.cs-direction-rtl {
+  direction: rtl;
+}
+
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-left cs-username-position-inline cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: left; --cs-username-position: inline; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 0px; --cs-chat-padding-right: 8px; --cs-chat-padding-bottom: 0px; --cs-chat-padding-left: 8px; --cs-bubble-padding-top: 3px; --cs-bubble-padding-right: 16px; --cs-bubble-padding-bottom: 3px; --cs-bubble-padding-left: 5px; --cs-bubble-background-color: #ffffff; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 1px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #ffffff; --cs-bubble-border-radius: 0px; --cs-bubble-border-radius-top-left: 0px; --cs-bubble-border-radius-top-right: 0px; --cs-bubble-border-radius-bottom-right: 0px; --cs-bubble-border-radius-bottom-left: 0px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 0px; --cs-bubble-box-shadow-blur-radius: 0px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: #000000; --cs-bubble-box-shadow-inset: ; --cs-bubble-animation: bp-slide-in-up; --cs-bubble-animation-duration: 750ms; --cs-bubble-animation-delay: 0ms; --cs-bubble-animation-timing-function: ease-in-out; --cs-bubble-gap: 3px; --cs-bubble-width: 600px; --cs-avatar-padding: 1px; --cs-avatar-padding-top: 1px; --cs-avatar-padding-right: 1px; --cs-avatar-padding-bottom: 1px; --cs-avatar-padding-left: 1px; --cs-avatar-background-color: #000000; --cs-avatar-background-gradient: none; --cs-avatar-border-width: 1px; --cs-avatar-border-style: solid; --cs-avatar-border-color: var(--cs-usercolor); --cs-avatar-border-radius: 0px; --cs-avatar-border-radius-top-left: 0px; --cs-avatar-border-radius-top-right: 0px; --cs-avatar-border-radius-bottom-right: 0px; --cs-avatar-border-radius-bottom-left: 0px; --cs-avatar-box-shadow-offset-x: 0px; --cs-avatar-box-shadow-offset-y: 0px; --cs-avatar-box-shadow-blur-radius: 0px; --cs-avatar-box-shadow-spread-radius: 0px; --cs-avatar-box-shadow-color: #000000; --cs-avatar-box-shadow-inset: ; --cs-avatar-animation: none; --cs-avatar-animation-duration: 750ms; --cs-avatar-animation-delay: 0ms; --cs-avatar-animation-timing-function: ease-in-out; --cs-avatar-size: 24px; --cs-username-padding: 0px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-font-size: 13px; --cs-username-font-color: #000000; --cs-username-font-family: 'Inter'; --cs-username-font-weight: 800; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: #000000; --cs-username-text-stroke-width: 2px; --cs-username-text-stroke-color: #000000; --cs-username-animation: none; --cs-username-animation-duration: 750ms; --cs-username-animation-delay: 0ms; --cs-username-animation-timing-function: ease-in-out; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-background-color: transparent; --cs-message-background-gradient: none; --cs-message-font-size: 13px; --cs-message-font-color: #000000; --cs-message-font-family: 'Inter'; --cs-message-font-weight: 500; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: #000000; --cs-message-text-stroke-width: 2px; --cs-message-text-stroke-color: #000000; --cs-message-animation: none; --cs-message-animation-duration: 750ms; --cs-message-animation-delay: 0ms; --cs-message-animation-timing-function: ease-in-out; --cs-usercolor: #9b59b6;">
+
+  <div class="cs-avatar">
+    <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">
+  </div>
+
+  <div class="cs-user">
+    <span class="cs-badges">
+      <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+    </span>
+
+    <span class="cs-username">
+      JesusTenG
+    </span>
+
+    <span class="cs-pronouns">
+      
+    </span>
+  </div>
+
+  <div class="cs-content">
+
+    <span class="cs-user--inline">
+      <span class="cs-badges cs-badges--inline">
+        <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+      </span>
+
+      <span class="cs-username--inline">
+        JesusTenG
+      </span>
+
+      <span class="cs-pronouns cs-pronouns--inline">
+        
+      </span>
+    </span>
+
+    <div class="cs-message">
+      So sieht dein Chat aus.
+    </div>
+
+  </div>
+
+</div></div></div></body></html>

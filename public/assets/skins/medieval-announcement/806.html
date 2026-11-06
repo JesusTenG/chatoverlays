@@ -1,0 +1,5364 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Medieval Announcement – obsidian</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/c248be0d408e9eb962fa.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/0c50e5716dcfea86f74b.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/b71981b5073e4e7fe155.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/b97b9bea3e86d66f5e10.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/1e1d117cc90b7d94520b.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/863c9891b866bfcf5531.woff2") format('woff2');
+}
+/*//////////////CHAT//////////////*/
+
+.cs-chat {
+    gap:
+        var(
+            --cs-bubble-gap,
+            9px
+        );
+
+    padding-block-start:
+        var(
+            --cs-chat-padding-top,
+            var(--cs-chat-padding, 10px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-chat-padding-right,
+            var(--cs-chat-padding, 14px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-chat-padding-bottom,
+            var(--cs-chat-padding, 10px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-chat-padding-left,
+            var(--cs-chat-padding, 14px)
+        );
+}
+
+
+/*//////////////TOKENS//////////////*/
+
+.cs-bubble {
+    --wood-source:
+        var(
+            --cs-bubble-background-color,
+            #25160e
+        );
+
+    --wood-tone:
+        #493529;
+
+    --wood-secondary:
+        #211a17;
+
+    --wood-base:
+        color-mix(
+            in srgb,
+            var(--wood-source) 78%,
+            var(--wood-tone) 22%
+        );
+
+    --wood-warm:
+        color-mix(
+            in srgb,
+            var(--wood-base) 82%,
+            #6c422c 18%
+        );
+
+    --wood-light:
+        color-mix(
+            in srgb,
+            var(--wood-base) 73%,
+            #95603d 27%
+        );
+
+    --wood-mid:
+        color-mix(
+            in srgb,
+            var(--wood-base) 87%,
+            var(--wood-secondary) 13%
+        );
+
+    --wood-dark:
+        color-mix(
+            in srgb,
+            var(--wood-base) 65%,
+            #000000 35%
+        );
+
+    --wood-black:
+        color-mix(
+            in srgb,
+            var(--wood-base) 37%,
+            #000000 63%
+        );
+
+
+    /*//////////////FRAME//////////////*/
+
+    --frame-source:
+        var(
+            --cs-bubble-border-color,
+            #70502f
+        );
+
+    --frame-light:
+        color-mix(
+            in srgb,
+            var(--frame-source) 62%,
+            #c39761 38%
+        );
+
+
+    /*//////////////IRON//////////////*/
+
+    --iron:
+        var(
+            --cs-avatar-border-color,
+            #706e69
+        );
+
+    --iron-black:
+        color-mix(
+            in srgb,
+            var(--iron) 29%,
+            #050606 71%
+        );
+
+    --iron-dark:
+        color-mix(
+            in srgb,
+            var(--iron) 49%,
+            #151718 51%
+        );
+
+    --iron-mid:
+        color-mix(
+            in srgb,
+            var(--iron) 79%,
+            #424446 21%
+        );
+
+    --iron-light:
+        color-mix(
+            in srgb,
+            var(--iron) 61%,
+            #dedad0 39%
+        );
+
+    --iron-glint:
+        color-mix(
+            in srgb,
+            var(--iron) 36%,
+            #ffffff 64%
+        );
+
+
+    /*//////////////BRASS//////////////*/
+
+    --brass:
+        color-mix(
+            in srgb,
+            var(--frame-source) 68%,
+            #b38241 32%
+        );
+
+    --brass-dark:
+        color-mix(
+            in srgb,
+            var(--brass) 50%,
+            #160e05 50%
+        );
+
+    --brass-black:
+        color-mix(
+            in srgb,
+            var(--brass) 27%,
+            #070401 73%
+        );
+
+    --brass-light:
+        color-mix(
+            in srgb,
+            var(--brass) 61%,
+            #efd096 39%
+        );
+
+    --brass-glint:
+        color-mix(
+            in srgb,
+            var(--brass) 34%,
+            #fff1c2 66%
+        );
+
+
+    /*//////////////TEXT//////////////*/
+
+    --text-source:
+        var(
+            --cs-message-font-color,
+            #a39177
+        );
+
+    --carved-text:
+        var(--text-source);
+
+    --carved-cut:
+        color-mix(
+            in srgb,
+            var(--wood-black) 92%,
+            #000000 8%
+        );
+
+    --carved-inner:
+        color-mix(
+            in srgb,
+            var(--wood-dark) 76%,
+            transparent
+        );
+
+    --carved-light:
+        color-mix(
+            in srgb,
+            var(--wood-light) 72%,
+            #ffe3b4 28%
+        );
+
+
+    /*//////////////BANNER//////////////*/
+
+    --banner-base:
+        var(
+            --cs-avatar-background-color,
+            var(--cs-usercolor, #6f5140)
+        );
+
+    --banner-dark:
+        color-mix(
+            in srgb,
+            var(--banner-base) 42%,
+            #0d0907 58%
+        );
+
+    --banner-deep:
+        color-mix(
+            in srgb,
+            var(--banner-base) 58%,
+            #18110e 42%
+        );
+
+    --banner-mid:
+        color-mix(
+            in srgb,
+            var(--banner-base) 76%,
+            #38302a 24%
+        );
+
+    --banner-light:
+        color-mix(
+            in srgb,
+            var(--banner-base) 56%,
+            #d9c9aa 44%
+        );
+
+
+    /*//////////////PARCHMENT//////////////*/
+
+    --parchment:
+        #ccb17c;
+
+    --parchment-light:
+        #dec794;
+
+    --parchment-high:
+        #ead8aa;
+
+    --parchment-mid:
+        #b69a69;
+
+    --parchment-dark:
+        #876039;
+
+    --parchment-burn:
+        #59361e;
+
+    --parchment-shadow:
+        #49301b;
+
+    --event-ink:
+        #3e2a1b;
+
+    --event-ink-soft:
+        #60442c;
+
+    --event-ink-deep:
+        #21140c;
+
+
+    /*//////////////SCROLL WOOD//////////////*/
+
+    --scroll-wood:
+        #57341f;
+
+    --scroll-wood-light:
+        #93613b;
+
+    --scroll-wood-dark:
+        #28160e;
+
+
+    /*//////////////WAX//////////////*/
+
+    --wax-light:
+        #a94a3b;
+
+    --wax:
+        #79271f;
+
+    --wax-dark:
+        #4e1713;
+
+    --wax-black:
+        #2c0c0a;
+
+
+    /*//////////////SHIELD//////////////*/
+
+    --avatar-size:
+        var(
+            --cs-avatar-size,
+            39px
+        );
+
+    --shield-width:
+        calc(
+            var(--avatar-size)
+            + 7px
+        );
+
+    --shield-height:
+        calc(
+            var(--avatar-size)
+            + 12px
+        );
+
+    --shield-shape:
+        polygon(
+            50% 0%,
+            92% 8%,
+            89% 54%,
+            81% 69%,
+            67% 84%,
+            50% 100%,
+            33% 84%,
+            19% 69%,
+            11% 54%,
+            8% 8%
+        );
+
+    --shield-inner:
+        polygon(
+            50% 2%,
+            90% 10%,
+            87% 53%,
+            79% 67%,
+            65% 81%,
+            50% 96%,
+            35% 81%,
+            21% 67%,
+            13% 53%,
+            10% 10%
+        );
+}
+
+
+/*//////////////BUBBLE//////////////*/
+
+.cs-bubble {
+    position:
+        relative;
+
+    isolation:
+        isolate;
+
+    display:
+        block;
+
+    flex-shrink:
+        0;
+
+    inline-size:
+        fit-content;
+
+    min-inline-size:
+        min(
+            180px,
+            calc(100vw - 28px)
+        );
+
+    max-inline-size:
+        min(
+            var(--cs-bubble-width, 400px),
+            calc(100vw - 28px)
+        );
+
+    padding:
+        0;
+
+    background:
+        transparent;
+
+    border:
+        0;
+
+    border-radius:
+        0;
+
+    box-shadow:
+        none;
+
+    overflow:
+        visible;
+
+    animation:
+        none;
+}
+
+
+/*//////////////SURFACE//////////////*/
+
+.cs-surface {
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    isolation:
+        isolate;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr);
+
+    grid-template-areas:
+        "avatar user"
+        "avatar content";
+
+    column-gap:
+        9px;
+
+    row-gap:
+        2px;
+
+    min-inline-size:
+        inherit;
+
+    max-inline-size:
+        inherit;
+
+    padding-block-start:
+        var(
+            --cs-bubble-padding-top,
+            var(--cs-bubble-padding, 7px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding, 11px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding, 7px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding, 8px)
+        );
+
+    border-width:
+        var(
+            --cs-bubble-border-width,
+            1px
+        );
+
+    border-style:
+        var(
+            --cs-bubble-border-style,
+            solid
+        );
+
+    border-color:
+        var(--frame-source);
+
+    border-start-start-radius:
+        var(
+            --cs-bubble-border-radius-top-left,
+            var(--cs-bubble-border-radius, 4px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-bubble-border-radius-top-right,
+            var(--cs-bubble-border-radius, 4px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-bubble-border-radius-bottom-right,
+            var(--cs-bubble-border-radius, 4px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-bubble-border-radius-bottom-left,
+            var(--cs-bubble-border-radius, 4px)
+        );
+
+    background-color:
+        var(--wood-base);
+
+    background-image:
+
+        var(
+            --cs-bubble-background-gradient,
+            linear-gradient(
+                transparent,
+                transparent
+            )
+        ),
+
+        radial-gradient(
+            ellipse 86px 18px at 15% 35%,
+
+            transparent 0 36%,
+
+            rgba(0, 0, 0, .16)
+            38% 39%,
+
+            transparent
+            41% 47%,
+
+            rgba(196, 139, 96, .05)
+            49% 50%,
+
+            transparent 52%
+        ),
+
+        radial-gradient(
+            ellipse 67px 15px at 80% 71%,
+
+            transparent 0 38%,
+
+            rgba(0, 0, 0, .12)
+            40% 41%,
+
+            transparent
+            43% 49%,
+
+            rgba(196, 137, 93, .044)
+            51% 52%,
+
+            transparent 54%
+        ),
+
+        repeating-linear-gradient(
+            2.8deg,
+
+            transparent
+            0 3px,
+
+            rgba(207, 151, 104, .03)
+            4px,
+
+            transparent
+            5px 8px,
+
+            rgba(0, 0, 0, .073)
+            9px,
+
+            transparent
+            10px 14px
+        ),
+
+        repeating-linear-gradient(
+            -3.1deg,
+
+            transparent
+            0 12px,
+
+            rgba(212, 151, 101, .024)
+            13px,
+
+            transparent
+            14px 23px,
+
+            rgba(0, 0, 0, .048)
+            24px,
+
+            transparent
+            25px 35px
+        ),
+
+        linear-gradient(
+            98deg,
+
+            var(--wood-dark) 0%,
+
+            var(--wood-mid) 11%,
+
+            var(--wood-warm) 28%,
+
+            var(--wood-light) 46%,
+
+            var(--wood-mid) 64%,
+
+            var(--wood-warm) 80%,
+
+            var(--wood-dark) 100%
+        );
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 218, 169, .066),
+
+        inset 0 -1px 0
+        rgba(0, 0, 0, .57),
+
+        inset 1px 0 0
+        rgba(255, 222, 173, .03),
+
+        inset -1px 0 0
+        rgba(0, 0, 0, .29),
+
+        inset 0 0 15px
+        rgba(0, 0, 0, .13),
+
+        0 2px 0
+        rgba(0, 0, 0, .43),
+
+        0 4px 8px
+        rgba(0, 0, 0, .19);
+
+    overflow:
+        visible;
+}
+
+
+/*//////////////WOOD EDGE//////////////*/
+
+.cs-surface::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        -1;
+
+    inset:
+        2px;
+
+    pointer-events:
+        none;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--frame-light) 16%,
+            transparent
+        );
+
+    border-radius:
+        max(
+            1px,
+            calc(
+                var(--cs-bubble-border-radius, 4px)
+                - 2px
+            )
+        );
+
+    box-shadow:
+
+        inset 0 1px
+        rgba(255, 220, 173, .035),
+
+        inset 0 -1px
+        rgba(0, 0, 0, .27),
+
+        inset 0 0 8px
+        rgba(0, 0, 0, .09);
+}
+
+
+/*//////////////WOOD FIBRES//////////////*/
+
+.cs-surface::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        -1;
+
+    inset:
+        3px;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .63;
+
+    background:
+
+        repeating-radial-gradient(
+            ellipse 140px 16px at 18% 46%,
+
+            transparent 0 8px,
+
+            rgba(224, 159, 110, .022)
+            9px,
+
+            transparent 10px 16px,
+
+            rgba(0, 0, 0, .03)
+            17px,
+
+            transparent 18px 25px
+        ),
+
+        repeating-radial-gradient(
+            ellipse 168px 22px at 78% 37%,
+
+            transparent 0 12px,
+
+            rgba(217, 156, 107, .019)
+            13px,
+
+            transparent 14px 21px,
+
+            rgba(0, 0, 0, .027)
+            22px,
+
+            transparent 23px 31px
+        );
+}
+
+
+/*//////////////WOOD KNOTS//////////////*/
+
+.cs-wood-knot {
+    position:
+        absolute;
+
+    z-index:
+        0;
+
+    inline-size:
+        30px;
+
+    block-size:
+        10px;
+
+    pointer-events:
+        none;
+
+    border-radius:
+        50%;
+
+    opacity:
+        .29;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+
+            rgba(7, 3, 1, .78)
+            0 9%,
+
+            rgba(34, 15, 7, .52)
+            11% 18%,
+
+            transparent
+            20% 28%,
+
+            rgba(23, 9, 4, .42)
+            30% 35%,
+
+            transparent
+            37% 45%,
+
+            rgba(161, 102, 65, .19)
+            47% 50%,
+
+            transparent
+            52%
+        );
+}
+
+.cs-wood-knot--a {
+    inset-inline-end:
+        16%;
+
+    inset-block-start:
+        7px;
+
+    transform:
+        rotate(-4deg);
+}
+
+.cs-wood-knot--b {
+    inset-inline-start:
+        39%;
+
+    inset-block-end:
+        5px;
+
+    transform:
+        rotate(4deg)
+        scale(.73);
+
+    opacity:
+        .17;
+}
+
+
+/*//////////////HERALDRY//////////////*/
+
+.cs-wood-heraldry {
+    display:
+        none;
+
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    inset:
+        5px;
+
+    pointer-events:
+        none;
+
+    mix-blend-mode:
+        multiply;
+}
+
+
+/*//////////////CORNERS//////////////*/
+
+.cs-corner {
+    position:
+        absolute;
+
+    z-index:
+        8;
+
+    inline-size:
+        6px;
+
+    block-size:
+        6px;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .34;
+}
+
+.cs-corner::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+
+            var(--iron-dark)
+            0 1px,
+
+            color-mix(
+                in srgb,
+                var(--iron-light) 34%,
+                var(--iron-dark) 66%
+            )
+            1px 1.5px,
+
+            transparent
+            1.5px
+        ),
+
+        linear-gradient(
+            180deg,
+
+            var(--iron-dark)
+            0 1px,
+
+            color-mix(
+                in srgb,
+                var(--iron-light) 34%,
+                var(--iron-dark) 66%
+            )
+            1px 1.5px,
+
+            transparent
+            1.5px
+        );
+}
+
+.cs-corner::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset-inline-start:
+        .5px;
+
+    inset-block-start:
+        .5px;
+
+    inline-size:
+        2.5px;
+
+    block-size:
+        2.5px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 27%,
+            var(--iron-light) 0 10%,
+            var(--iron-mid) 12% 38%,
+            var(--iron-dark) 40% 68%,
+            var(--iron-black) 70%
+        );
+}
+
+.cs-corner--tl {
+    inset-inline-start:
+        3px;
+
+    inset-block-start:
+        3px;
+}
+
+.cs-corner--tr {
+    inset-inline-end:
+        3px;
+
+    inset-block-start:
+        3px;
+
+    transform:
+        scaleX(-1);
+}
+
+.cs-corner--bl {
+    inset-inline-start:
+        3px;
+
+    inset-block-end:
+        3px;
+
+    transform:
+        scaleY(-1);
+}
+
+.cs-corner--br {
+    inset-inline-end:
+        3px;
+
+    inset-block-end:
+        3px;
+
+    transform:
+        scale(-1);
+}
+
+
+/*//////////////ROLE BANNER//////////////*/
+
+.cs-role-banner {
+    display:
+        none;
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    inline-size:
+        calc(
+            var(--shield-width)
+            - 6px
+        );
+
+    inset-inline-start:
+        calc(
+            var(
+                --cs-bubble-padding-left,
+                var(--cs-bubble-padding, 8px)
+            )
+            + 3px
+        );
+
+    inset-block-start:
+        -1px;
+
+    inset-block-end:
+        -3px;
+
+    pointer-events:
+        none;
+
+    filter:
+        drop-shadow(
+            0 2px 1px
+            rgba(0, 0, 0, .28)
+        );
+}
+
+
+/*//////////////BANNER CLOTH//////////////*/
+
+.cs-role-banner__cloth {
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    inset-inline:
+        0;
+
+    inset-block-start:
+        0;
+
+    inset-block-end:
+        0;
+
+    transform-origin:
+        50% 0;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 84%,
+            50% 100%,
+            0 84%
+        );
+
+    box-shadow:
+
+        inset 2px 0 3px
+        rgba(255, 255, 255, .035),
+
+        inset -2px 0 3px
+        rgba(0, 0, 0, .2),
+
+        inset 0 2px 2px
+        rgba(0, 0, 0, .15),
+
+        inset 0 -4px 6px
+        rgba(0, 0, 0, .08);
+}
+
+
+/*//////////////BANNER WEAVE//////////////*/
+
+.cs-role-banner__weave {
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    inset:
+        0;
+
+    transform-origin:
+        50% 0;
+
+    pointer-events:
+        none;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 84%,
+            50% 100%,
+            0 84%
+        );
+
+    opacity:
+        .32;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 1px,
+            rgba(255, 255, 255, .045) 1px 2px,
+            transparent 2px 4px
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 2px,
+            rgba(0, 0, 0, .085) 2px 3px,
+            transparent 3px 5px
+        );
+}
+
+
+/*//////////////NO BANNER ROLLER//////////////*/
+
+.cs-role-banner__roller {
+    display:
+        none !important;
+}
+
+
+/*//////////////BANNER ROD//////////////*/
+
+.cs-role-banner__rod {
+    position:
+        absolute;
+
+    z-index:
+        7;
+
+    inset-block-start:
+        -2px;
+
+    inset-inline-start:
+        -2px;
+
+    inset-inline-end:
+        -2px;
+
+    block-size:
+        3px;
+
+    border-radius:
+        2px;
+
+    transform-origin:
+        center;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            var(--iron-light),
+            var(--iron-mid) 36%,
+            var(--iron-dark) 68%,
+            var(--iron-black)
+        );
+
+    box-shadow:
+
+        0 1px 1px
+        rgba(0, 0, 0, .52),
+
+        0 2px 2px
+        rgba(0, 0, 0, .24),
+
+        inset 0 1px
+        rgba(255, 255, 255, .08);
+}
+
+.cs-role-banner__rod::before,
+.cs-role-banner__rod::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset-block-start:
+        50%;
+
+    inline-size:
+        4px;
+
+    block-size:
+        4px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 27%,
+            var(--iron-light),
+            var(--iron-mid) 45%,
+            var(--iron-black)
+        );
+}
+
+.cs-role-banner__rod::before {
+    inset-inline-start:
+        -1px;
+}
+
+.cs-role-banner__rod::after {
+    inset-inline-end:
+        -1px;
+}
+
+
+/*//////////////BANNER FIXINGS//////////////*/
+
+.cs-role-banner__rod i {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+}
+
+.cs-role-banner__rod i::before,
+.cs-role-banner__rod i::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset-block-start:
+        2px;
+
+    inline-size:
+        3px;
+
+    block-size:
+        4px;
+
+    border-radius:
+        0 0 1px 1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--iron-black),
+            var(--iron-mid),
+            var(--iron-black)
+        );
+
+    opacity:
+        .72;
+}
+
+.cs-role-banner__rod i::before {
+    inset-inline-start:
+        20%;
+}
+
+.cs-role-banner__rod i::after {
+    inset-inline-end:
+        20%;
+}
+
+
+/*//////////////HEADER//////////////*/
+
+.cs-header {
+    display:
+        contents;
+}
+
+
+/*//////////////USER//////////////*/
+
+.cs-user {
+    grid-area:
+        user;
+
+    position:
+        relative;
+
+    z-index:
+        8;
+
+    align-self:
+        end;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    min-inline-size:
+        0;
+
+    padding:
+        0;
+
+    background:
+        transparent;
+
+    border:
+        0;
+
+    box-shadow:
+        none;
+}
+
+
+/*//////////////USERNAME//////////////*/
+
+.cs-username,
+.cs-username--inline {
+    position:
+        relative;
+
+    z-index:
+        8;
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Noto Serif"
+        ),
+        Georgia,
+        serif;
+
+    font-size:
+        var(
+            --cs-username-font-size,
+            14px
+        );
+
+    font-weight:
+        var(
+            --cs-username-font-weight,
+            650
+        );
+
+    line-height:
+        1.18;
+
+    letter-spacing:
+        -.008em;
+
+    color:
+        var(--carved-text);
+
+    -webkit-text-stroke:
+        .14px
+        color-mix(
+            in srgb,
+            var(--carved-cut) 55%,
+            transparent
+        );
+
+    text-shadow:
+
+        0 -1px 0
+        var(--carved-cut),
+
+        0 -1.35px .55px
+        rgba(0, 0, 0, .5),
+
+        0 1px 0
+        color-mix(
+            in srgb,
+            var(--carved-light) 42%,
+            transparent
+        ),
+
+        0 1.35px .35px
+        rgba(255, 218, 163, .09),
+
+        .45px 0 .25px
+        var(--carved-inner);
+}
+
+
+/*//////////////CONTENT//////////////*/
+
+.cs-content {
+    grid-area:
+        content;
+
+    position:
+        relative;
+
+    z-index:
+        8;
+
+    min-inline-size:
+        0;
+}
+
+
+/*//////////////MESSAGE//////////////*/
+
+.cs-message {
+    padding:
+        0;
+
+    background:
+        transparent;
+
+    border:
+        0;
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "Noto Serif"
+        ),
+        Georgia,
+        serif;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            14px
+        );
+
+    font-weight:
+        var(
+            --cs-message-font-weight,
+            600
+        );
+
+    line-height:
+        1.36;
+
+    color:
+        var(--carved-text);
+
+    -webkit-text-stroke:
+        .12px
+        color-mix(
+            in srgb,
+            var(--carved-cut) 52%,
+            transparent
+        );
+
+    text-shadow:
+
+        0 -1px 0
+        var(--carved-cut),
+
+        0 -1.3px .5px
+        rgba(0, 0, 0, .47),
+
+        0 1px 0
+        color-mix(
+            in srgb,
+            var(--carved-light) 39%,
+            transparent
+        ),
+
+        0 1.3px .35px
+        rgba(255, 218, 163, .08),
+
+        .4px 0 .22px
+        var(--carved-inner);
+}
+
+
+/*//////////////BADGES//////////////*/
+
+.cs-badges,
+.cs-badges--inline {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        2px;
+
+    flex-shrink:
+        0;
+}
+
+.cs-badges img,
+.cs-badges--inline img {
+    inline-size:
+        clamp(
+            10px,
+            calc(
+                var(--cs-username-font-size, 14px)
+                - 2px
+            ),
+            13px
+        );
+
+    block-size:
+        clamp(
+            10px,
+            calc(
+                var(--cs-username-font-size, 14px)
+                - 2px
+            ),
+            13px
+        );
+
+    aspect-ratio:
+        1;
+
+    object-fit:
+        contain;
+
+    padding:
+        0;
+
+    margin:
+        0;
+
+    border:
+        0;
+
+    border-radius:
+        0;
+
+    background:
+        transparent;
+
+    opacity:
+        .67;
+
+    mix-blend-mode:
+        multiply;
+
+    filter:
+
+        grayscale(1)
+
+        sepia(1)
+
+        saturate(.12)
+
+        brightness(.51)
+
+        contrast(2)
+
+        drop-shadow(
+            0 -1px 0
+            rgba(6, 3, 1, .8)
+        )
+
+        drop-shadow(
+            0 1px 0
+            rgba(255, 211, 150, .17)
+        );
+}
+
+
+/*//////////////AVATAR//////////////*/
+
+.cs-avatar {
+    grid-area:
+        avatar;
+
+    position:
+        relative;
+
+    z-index:
+        12;
+
+    align-self:
+        center;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    inline-size:
+        var(--shield-width);
+
+    block-size:
+        var(--shield-height);
+
+    flex-shrink:
+        0;
+
+    overflow:
+        visible;
+}
+
+
+/*//////////////SHIELD SHADOW//////////////*/
+
+.cs-shield-shadow {
+    position:
+        absolute;
+
+    z-index:
+        0;
+
+    inset:
+        2px 0 -2px 1px;
+
+    clip-path:
+        var(--shield-shape);
+
+    background:
+        rgba(0, 0, 0, .74);
+
+    transform:
+        translateY(2px)
+        scale(.97);
+
+    filter:
+        blur(1.5px);
+}
+
+
+/*//////////////SHIELD RIM//////////////*/
+
+.cs-shield-rim {
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    inset:
+        0;
+
+    clip-path:
+        var(--shield-shape);
+
+    background:
+
+        linear-gradient(
+            124deg,
+            var(--iron-black) 0%,
+            var(--iron-dark) 7%,
+            var(--iron-light) 13%,
+            var(--iron-mid) 20%,
+            var(--iron-dark) 32%,
+            var(--iron-black) 49%,
+            var(--iron-mid) 68%,
+            var(--iron-light) 82%,
+            var(--iron-dark) 92%,
+            var(--iron-black) 100%
+        );
+
+    filter:
+        drop-shadow(
+            0 1px 1px
+            rgba(0, 0, 0, .67)
+        );
+}
+
+
+/*//////////////SHIELD BED//////////////*/
+
+.cs-shield-bed {
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    inset:
+        1.5px;
+
+    clip-path:
+        var(--shield-inner);
+
+    background:
+
+        linear-gradient(
+            135deg,
+
+            color-mix(
+                in srgb,
+                var(--cs-usercolor) 31%,
+                #25211d 69%
+            ),
+
+            color-mix(
+                in srgb,
+                var(--cs-usercolor) 48%,
+                #151514 52%
+            )
+            48%,
+
+            color-mix(
+                in srgb,
+                var(--cs-usercolor) 25%,
+                #0d0e0e 75%
+            )
+        );
+}
+
+
+/*//////////////AVATAR IMAGE//////////////*/
+
+.cs-avatar img {
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    inset:
+        2.5px;
+
+    inline-size:
+        calc(
+            100% - 5px
+        );
+
+    block-size:
+        calc(
+            100% - 5px
+        );
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+
+    padding:
+        0;
+
+    margin:
+        0;
+
+    border:
+        0;
+
+    border-radius:
+        0;
+
+    clip-path:
+        var(--shield-inner);
+
+    background-color:
+        var(
+            --cs-avatar-background-color,
+            #211711
+        );
+
+    filter:
+
+        sepia(.17)
+
+        saturate(.75)
+
+        contrast(1.12)
+
+        brightness(.91);
+}
+
+
+/*//////////////SHIELD BEVEL//////////////*/
+
+.cs-shield-bevel {
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    inset:
+        2.5px;
+
+    clip-path:
+        var(--shield-inner);
+
+    pointer-events:
+        none;
+
+    background:
+
+        linear-gradient(
+            132deg,
+            rgba(255, 240, 210, .1),
+            transparent 19% 64%,
+            rgba(46, 25, 13, .22) 84%,
+            rgba(0, 0, 0, .34) 100%
+        );
+
+    box-shadow:
+
+        inset 0 0 0 1px
+        rgba(239, 222, 192, .09),
+
+        inset -1px -2px 3px
+        rgba(0, 0, 0, .27),
+
+        inset 0 0 7px
+        rgba(56, 31, 16, .08);
+}
+
+
+/*//////////////NORMAL REVEAL//////////////*/
+
+.cs-bubble:not(
+    .cs-event
+)
+.cs-surface,
+
+.cs-bubble.cs-event:is(
+    .cs-event-action,
+    .cs-event-cheer,
+    .cs-event-highlight,
+    .cs-event-channel-points,
+    .cs-event-gigantified
+)
+.cs-surface {
+    animation:
+        wood-in
+        400ms
+        cubic-bezier(.18, .78, .18, 1)
+        both;
+}
+
+
+/*//////////////NORMAL CONTENT REVEAL//////////////*/
+
+.cs-bubble:not(
+    .cs-event
+)
+.cs-user,
+
+.cs-bubble.cs-event:is(
+    .cs-event-action,
+    .cs-event-cheer,
+    .cs-event-highlight,
+    .cs-event-channel-points,
+    .cs-event-gigantified
+)
+.cs-user {
+    animation:
+        carving-in
+        320ms
+        70ms
+        ease-out
+        both;
+}
+
+.cs-bubble:not(
+    .cs-event
+)
+.cs-content,
+
+.cs-bubble.cs-event:is(
+    .cs-event-action,
+    .cs-event-cheer,
+    .cs-event-highlight,
+    .cs-event-channel-points,
+    .cs-event-gigantified
+)
+.cs-content {
+    animation:
+        carving-in
+        350ms
+        110ms
+        ease-out
+        both;
+}
+
+
+/*//////////////NORMAL AVATAR REVEAL//////////////*/
+
+.cs-bubble:not(
+    .cs-event
+)
+.cs-avatar,
+
+.cs-bubble.cs-event:is(
+    .cs-event-action,
+    .cs-event-cheer,
+    .cs-event-highlight,
+    .cs-event-channel-points,
+    .cs-event-gigantified
+)
+.cs-avatar {
+    animation:
+        shield-in
+        470ms
+        100ms
+        cubic-bezier(.18, .8, .2, 1.04)
+        both;
+}
+
+
+/*//////////////WOOD EVENTS//////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-action,
+    .cs-event-cheer,
+    .cs-event-highlight,
+    .cs-event-channel-points,
+    .cs-event-gigantified
+)
+.cs-scroll {
+    display:
+        none !important;
+}
+
+
+/*//////////////ACTION//////////////*/
+
+.cs-bubble.cs-event-action
+.cs-message {
+    font-style:
+        italic;
+}
+
+
+/*//////////////CHEER//////////////*/
+
+.cs-bubble.cs-event-cheer
+.cs-surface {
+    border-color:
+        color-mix(
+            in srgb,
+            var(--frame-source) 70%,
+            var(--brass) 30%
+        );
+}
+
+
+/*//////////////HIGHLIGHT//////////////*/
+
+.cs-bubble.cs-event-highlight
+.cs-surface {
+    border-color:
+        var(--frame-light);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 218, 169, .075),
+
+        inset 0 -1px 0
+        rgba(0, 0, 0, .57),
+
+        inset 0 0 15px
+        rgba(0, 0, 0, .13),
+
+        0 0 0 1px
+        color-mix(
+            in srgb,
+            var(--frame-light) 16%,
+            transparent
+        ),
+
+        0 3px 8px
+        rgba(0, 0, 0, .2);
+}
+
+
+/*//////////////CHANNEL POINTS//////////////*/
+
+.cs-bubble.cs-event-channel-points
+.cs-shield-rim {
+    background:
+
+        linear-gradient(
+            124deg,
+
+            var(--iron-black),
+
+            color-mix(
+                in srgb,
+                var(--cs-usercolor) 30%,
+                var(--iron-light) 70%
+            )
+            15%,
+
+            var(--iron-mid)
+            35%,
+
+            var(--iron-black)
+            51%,
+
+            color-mix(
+                in srgb,
+                var(--cs-usercolor) 22%,
+                var(--iron-mid) 78%
+            )
+            72%,
+
+            var(--iron-light)
+            84%,
+
+            var(--iron-dark)
+        );
+}
+
+
+/*//////////////PARCHMENT EVENTS//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+) {
+    min-inline-size:
+        min(
+            220px,
+            calc(100vw - 28px)
+        );
+}
+
+
+/*//////////////EVENT SURFACE//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-surface {
+    position:
+        relative;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    row-gap:
+        0;
+
+    min-block-size:
+        0;
+
+    padding-block:
+        9px;
+
+    padding-inline:
+        27px;
+
+    background:
+        transparent;
+
+    border:
+        0;
+
+    border-radius:
+        0;
+
+    box-shadow:
+        none;
+
+    text-align:
+        center;
+
+    overflow:
+        visible;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    animation:
+        event-gate
+        1ms
+        20ms
+        steps(1, end)
+        forwards;
+}
+
+
+/*//////////////EVENT CLEANUP//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+:is(
+    .cs-avatar,
+    .cs-role-banner,
+    .cs-wood-knot,
+    .cs-wood-heraldry,
+    .cs-corner
+) {
+    display:
+        none !important;
+}
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-surface::before,
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-surface::after {
+    display:
+        none;
+}
+
+
+/*//////////////NO EVENT BADGES//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-badges,
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-badges--inline {
+    display:
+        none !important;
+}
+
+
+/*//////////////EVENT INLINE//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-user--inline {
+    display:
+        none !important;
+}
+
+
+/*//////////////EVENT USER//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-user {
+    position:
+        relative;
+
+    z-index:
+        12;
+
+    display:
+        flex !important;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    inline-size:
+        100%;
+
+    padding:
+        0;
+
+    text-align:
+        center;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+}
+
+
+/*//////////////EVENT CONTENT//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-content {
+    position:
+        relative;
+
+    z-index:
+        12;
+
+    inline-size:
+        100%;
+
+    text-align:
+        center;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+}
+
+
+/*//////////////EVENT TEXT//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-username,
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-message {
+    color:
+        var(--event-ink);
+
+    -webkit-text-stroke:
+        0;
+
+    text-align:
+        center;
+
+    text-shadow:
+
+        0 .5px 0
+        rgba(247, 222, 171, .16),
+
+        0 -.45px .3px
+        rgba(60, 34, 18, .27);
+
+    filter:
+        none;
+}
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-message {
+    inline-size:
+        100%;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+}
+/*//////////////SCROLL//////////////*/
+
+.cs-scroll {
+    display:
+        none;
+
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    inset:
+        -5px -9px;
+
+    pointer-events:
+        none;
+
+    overflow:
+        visible;
+}
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-scroll {
+    display:
+        block;
+}
+
+
+/*//////////////SCROLL SHADOW//////////////*/
+
+.cs-scroll__shadow {
+    position:
+        absolute;
+
+    z-index:
+        0;
+
+    inset:
+        9px 14px 3px;
+
+    border-radius:
+        45%;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(3px)
+        scaleX(.04);
+
+    background:
+        rgba(0, 0, 0, .27);
+
+    filter:
+        blur(3.5px);
+}
+
+
+/*//////////////SCROLL PAPER//////////////*/
+
+.cs-scroll__paper {
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    inset-block:
+        4px;
+
+    inset-inline:
+        6px;
+
+    overflow:
+        hidden;
+
+    opacity:
+        0;
+
+    transform:
+        scaleX(.025);
+
+    transform-origin:
+        center;
+
+    border-block:
+        1px solid
+        rgba(96, 59, 29, .32);
+
+    clip-path:
+        polygon(
+            0 5%,
+            10% 3%,
+            22% 4%,
+            35% 2%,
+            49% 4%,
+            63% 2%,
+            78% 4%,
+            90% 3%,
+            100% 5%,
+            100% 95%,
+            89% 97%,
+            77% 96%,
+            63% 98%,
+            49% 96%,
+            35% 98%,
+            21% 96%,
+            10% 98%,
+            0 95%
+        );
+
+    background:
+
+        linear-gradient(
+            45deg,
+            transparent 46%,
+            rgba(96, 59, 29, .075) 47% 49%,
+            transparent 50%
+        ),
+
+        linear-gradient(
+            -45deg,
+            transparent 46%,
+            rgba(96, 59, 29, .075) 47% 49%,
+            transparent 50%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(84, 48, 23, .06) 0 .6px,
+            transparent .9px
+        ),
+
+        radial-gradient(
+            ellipse 70px 26px at 14% 18%,
+            rgba(97, 58, 28, .055),
+            transparent 64%
+        ),
+
+        radial-gradient(
+            ellipse 53px 21px at 84% 78%,
+            rgba(103, 62, 28, .05),
+            transparent 65%
+        ),
+
+        repeating-linear-gradient(
+            1deg,
+            transparent 0 6px,
+            rgba(84, 50, 25, .017) 7px,
+            transparent 8px 15px
+        ),
+
+        linear-gradient(
+            90deg,
+            var(--parchment-dark) 0%,
+            var(--parchment-mid) 3%,
+            var(--parchment-light) 9%,
+            var(--parchment) 22% 78%,
+            var(--parchment-light) 91%,
+            var(--parchment-mid) 97%,
+            var(--parchment-dark) 100%
+        );
+
+    background-size:
+        26px 26px,
+        26px 26px,
+        26px 26px,
+        auto,
+        auto,
+        auto,
+        auto;
+
+    box-shadow:
+
+        inset 0 4px 6px
+        rgba(82, 49, 24, .07),
+
+        inset 0 -4px 7px
+        rgba(82, 49, 24, .095),
+
+        inset 10px 0 11px
+        rgba(78, 45, 21, .08),
+
+        inset -10px 0 11px
+        rgba(78, 45, 21, .08);
+}
+
+
+/*//////////////ROYAL INNER BORDER//////////////*/
+
+.cs-scroll__paper::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    inset:
+        5px 13px;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .14;
+
+    border-block:
+        1px solid
+        rgba(89, 54, 29, .55);
+}
+
+
+/*//////////////PAPER FIBRES//////////////*/
+
+.cs-scroll__fibres {
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .44;
+
+    background:
+
+        radial-gradient(
+            circle at 17% 28%,
+            rgba(78, 46, 22, .11) 0 .5px,
+            transparent .9px
+        ),
+
+        radial-gradient(
+            circle at 67% 62%,
+            rgba(76, 45, 21, .085) 0 .5px,
+            transparent .9px
+        ),
+
+        radial-gradient(
+            circle at 43% 45%,
+            rgba(255, 244, 218, .11) 0 .5px,
+            transparent .9px
+        );
+
+    background-size:
+        19px 17px,
+        23px 21px,
+        29px 25px;
+}
+
+
+/*//////////////STAINS//////////////*/
+
+.cs-scroll__stain {
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(95, 55, 25, .09),
+            rgba(95, 55, 25, .02) 54%,
+            transparent 74%
+        );
+}
+
+.cs-scroll__stain--a {
+    inline-size:
+        38px;
+
+    block-size:
+        17px;
+
+    inset-inline-start:
+        12%;
+
+    inset-block-start:
+        16%;
+
+    transform:
+        rotate(-9deg);
+}
+
+.cs-scroll__stain--b {
+    inline-size:
+        45px;
+
+    block-size:
+        18px;
+
+    inset-inline-end:
+        10%;
+
+    inset-block-end:
+        13%;
+
+    transform:
+        rotate(8deg);
+}
+
+
+/*//////////////CREASES//////////////*/
+
+.cs-scroll__crease {
+    position:
+        absolute;
+
+    block-size:
+        1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(72, 41, 19, .095),
+            transparent
+        );
+}
+
+.cs-scroll__crease--a {
+    inline-size:
+        57%;
+
+    inset-inline-start:
+        11%;
+
+    inset-block-start:
+        33%;
+
+    transform:
+        rotate(.8deg);
+}
+
+.cs-scroll__crease--b {
+    inline-size:
+        45%;
+
+    inset-inline-end:
+        12%;
+
+    inset-block-end:
+        23%;
+
+    transform:
+        rotate(-1deg);
+}
+
+
+/*//////////////WATERMARK//////////////*/
+
+.cs-scroll__watermark {
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    inset:
+        6px;
+
+    opacity:
+        .025;
+
+    background:
+
+        linear-gradient(
+            45deg,
+            transparent 40%,
+            var(--parchment-burn) 41% 46%,
+            transparent 47%
+        ),
+
+        linear-gradient(
+            -45deg,
+            transparent 40%,
+            var(--parchment-burn) 41% 46%,
+            transparent 47%
+        );
+
+    background-size:
+        26px 26px;
+}
+
+
+/*//////////////SCROLL ORNAMENT//////////////*/
+
+.cs-scroll__ornament {
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    inset-inline-start:
+        50%;
+
+    inline-size:
+        56px;
+
+    block-size:
+        8px;
+
+    transform:
+        translateX(-50%);
+
+    opacity:
+        .13;
+}
+
+.cs-scroll__ornament--top {
+    inset-block-start:
+        4px;
+}
+
+.cs-scroll__ornament--bottom {
+    inset-block-end:
+        4px;
+
+    transform:
+        translateX(-50%)
+        rotate(180deg);
+}
+
+.cs-scroll__ornament::before,
+.cs-scroll__ornament::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset-block-start:
+        3px;
+
+    inline-size:
+        23px;
+
+    block-size:
+        5px;
+
+    border-block-start:
+        1px solid
+        var(--parchment-burn);
+
+    border-radius:
+        50%;
+}
+
+.cs-scroll__ornament::before {
+    inset-inline-start:
+        0;
+
+    transform:
+        rotate(-11deg);
+}
+
+.cs-scroll__ornament::after {
+    inset-inline-end:
+        0;
+
+    transform:
+        rotate(11deg);
+}
+
+
+/*//////////////NO CENTER BANDEROLE//////////////*/
+
+.cs-scroll__banderole {
+    display:
+        none !important;
+}
+
+
+/*//////////////SCROLL ROLLS//////////////*/
+
+.cs-scroll__roll {
+    position:
+        absolute;
+
+    z-index:
+        6;
+
+    inset-block:
+        -1px;
+
+    inline-size:
+        17px;
+
+    opacity:
+        0;
+
+    overflow:
+        visible;
+
+    filter:
+        drop-shadow(
+            0 2px 1px
+            rgba(47, 28, 15, .3)
+        );
+}
+
+.cs-scroll__roll--left {
+    inset-inline-start:
+        calc(
+            50% - 8.5px
+        );
+}
+
+.cs-scroll__roll--right {
+    inset-inline-end:
+        calc(
+            50% - 8.5px
+        );
+}
+
+
+/*//////////////ROLL BODY//////////////*/
+
+.cs-scroll__roll-body {
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    inset-block:
+        3px;
+
+    inline-size:
+        12px;
+
+    border-radius:
+        48%;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 9px,
+            rgba(79, 45, 21, .045) 10px,
+            transparent 11px 18px
+        ),
+
+        linear-gradient(
+            90deg,
+            var(--parchment-burn) 0%,
+            var(--parchment-dark) 11%,
+            var(--parchment-mid) 26%,
+            var(--parchment-light) 43%,
+            var(--parchment-high) 54%,
+            var(--parchment-mid) 71%,
+            var(--parchment-dark) 88%,
+            var(--parchment-burn) 100%
+        );
+
+    box-shadow:
+
+        inset 2px 0 2px
+        rgba(72, 39, 18, .18),
+
+        inset -2px 0 2px
+        rgba(72, 39, 18, .18);
+}
+
+.cs-scroll__roll--left
+.cs-scroll__roll-body {
+    inset-inline-start:
+        1px;
+}
+
+.cs-scroll__roll--right
+.cs-scroll__roll-body {
+    inset-inline-end:
+        1px;
+}
+
+
+/*//////////////PAPER CONNECTION//////////////*/
+
+.cs-scroll__roll-body::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        -1;
+
+    inset-block:
+        2px;
+
+    inline-size:
+        8px;
+
+    opacity:
+        .97;
+}
+
+.cs-scroll__roll--left
+.cs-scroll__roll-body::after {
+    inset-inline-start:
+        8px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--parchment-mid),
+            var(--parchment-light) 42%,
+            var(--parchment)
+        );
+}
+
+.cs-scroll__roll--right
+.cs-scroll__roll-body::after {
+    inset-inline-end:
+        8px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--parchment),
+            var(--parchment-light) 58%,
+            var(--parchment-mid)
+        );
+}
+
+
+/*//////////////ROLL SEAM//////////////*/
+
+.cs-scroll__roll-seam {
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    inset-block:
+        7px;
+
+    inline-size:
+        1px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(74, 42, 20, .4) 12% 88%,
+            transparent
+        );
+}
+
+.cs-scroll__roll--left
+.cs-scroll__roll-seam {
+    inset-inline-start:
+        7px;
+}
+
+.cs-scroll__roll--right
+.cs-scroll__roll-seam {
+    inset-inline-end:
+        7px;
+}
+
+
+/*//////////////SCROLL HANDLES//////////////*/
+
+.cs-scroll__handle {
+    position:
+        absolute;
+
+    z-index:
+        8;
+
+    inline-size:
+        10px;
+
+    block-size:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 50%,
+            #b37d4c 0 8%,
+            var(--scroll-wood-light) 10% 30%,
+            var(--scroll-wood) 32% 55%,
+            var(--scroll-wood-dark) 57% 72%,
+            transparent 74%
+        );
+}
+
+.cs-scroll__roll--left
+.cs-scroll__handle {
+    inset-inline-start:
+        2px;
+}
+
+.cs-scroll__roll--right
+.cs-scroll__handle {
+    inset-inline-end:
+        2px;
+}
+
+.cs-scroll__handle--top {
+    inset-block-start:
+        -2px;
+}
+
+.cs-scroll__handle--bottom {
+    inset-block-end:
+        -2px;
+}
+
+.cs-scroll__handle i {
+    position:
+        absolute;
+
+    inset-inline-start:
+        50%;
+
+    inset-block-start:
+        50%;
+
+    inline-size:
+        3px;
+
+    block-size:
+        3px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        var(--scroll-wood-dark);
+}
+
+
+/*//////////////SCROLL REVEAL//////////////*/
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-scroll__paper {
+    animation:
+        scroll-paper-open
+        800ms
+        30ms
+        cubic-bezier(.2, .7, .18, 1)
+        both;
+}
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-scroll__roll--left {
+    animation:
+        scroll-roll-left
+        800ms
+        30ms
+        cubic-bezier(.2, .7, .18, 1)
+        both;
+}
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-scroll__roll--right {
+    animation:
+        scroll-roll-right
+        800ms
+        30ms
+        cubic-bezier(.2, .7, .18, 1)
+        both;
+}
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified
+    )
+)
+.cs-scroll__shadow {
+    animation:
+        scroll-shadow-in
+        600ms
+        100ms
+        ease-out
+        both;
+}
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified,
+        .cs-event-raid
+    )
+)
+.cs-user {
+    animation:
+        event-content-in
+        330ms
+        690ms
+        ease-out
+        both;
+}
+
+.cs-bubble.cs-event:not(
+    :is(
+        .cs-event-action,
+        .cs-event-cheer,
+        .cs-event-highlight,
+        .cs-event-channel-points,
+        .cs-event-gigantified,
+        .cs-event-raid
+    )
+)
+.cs-content {
+    animation:
+        event-content-in
+        360ms
+        730ms
+        ease-out
+        both;
+}
+
+
+/*//////////////GIFT EVENTS//////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-reward-gift
+)
+.cs-surface {
+    padding-inline-end:
+        31px;
+}
+
+
+/*//////////////WAX SEAL//////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-reward-gift
+)
+.cs-scroll__paper::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        5;
+
+    inset-inline-end:
+        11px;
+
+    inset-block-end:
+        7px;
+
+    inline-size:
+        12px;
+
+    block-size:
+        12px;
+
+    border-radius:
+        47% 53% 45% 55%;
+
+    opacity:
+        0;
+
+    transform:
+        scale(1.55)
+        rotate(-7deg);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 42%,
+            rgba(45, 7, 6, .58) 43% 57%,
+            transparent 58%
+        ),
+
+        linear-gradient(
+            0deg,
+            transparent 42%,
+            rgba(45, 7, 6, .58) 43% 57%,
+            transparent 58%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            transparent 0 28%,
+            rgba(49, 8, 6, .5) 30% 35%,
+            transparent 37%
+        ),
+
+        radial-gradient(
+            circle at 38% 34%,
+            rgba(255, 177, 147, .19) 0 7%,
+            transparent 9%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            var(--wax-light) 0 12%,
+            var(--wax) 34%,
+            var(--wax-dark) 69%,
+            var(--wax-black) 100%
+        );
+
+    box-shadow:
+
+        inset 1px 1px 1px
+        rgba(255, 190, 160, .18),
+
+        inset -1px -1px 2px
+        rgba(30, 4, 3, .38),
+
+        0 1px 1.5px
+        rgba(50, 28, 16, .32);
+
+    animation:
+        wax-stamp
+        340ms
+        790ms
+        cubic-bezier(.18, .78, .16, 1.15)
+        both;
+}
+
+
+/*//////////////ANNOUNCEMENT//////////////*/
+
+.cs-bubble.cs-event-announcement
+.cs-scroll__watermark {
+    opacity:
+        .05;
+}
+
+.cs-bubble.cs-event-announcement
+.cs-scroll__paper::before {
+    opacity:
+        .26;
+}
+
+.cs-bubble.cs-event-announcement
+.cs-username {
+    font-weight:
+        700;
+}
+
+.cs-bubble.cs-event-announcement
+.cs-message {
+    font-weight:
+        620;
+}
+
+
+/*//////////////UNRAID//////////////*/
+
+.cs-bubble.cs-event-unraid
+.cs-scroll__paper {
+    filter:
+        saturate(.82)
+        brightness(.95);
+}
+
+.cs-bubble.cs-event-unraid
+.cs-username,
+
+.cs-bubble.cs-event-unraid
+.cs-message {
+    color:
+        var(--event-ink-soft);
+}
+
+
+/*//////////////RAID//////////////*/
+
+.cs-raid-stage {
+    display:
+        none;
+
+    position:
+        absolute;
+
+    z-index:
+        10;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        visible;
+}
+
+.cs-bubble.cs-event-raid
+.cs-raid-stage {
+    display:
+        block;
+}
+
+
+/*//////////////RAID SPACE//////////////*/
+
+.cs-bubble.cs-event-raid
+.cs-surface {
+    padding-block-start:
+        8px;
+
+    /*
+        Echte separate Schwerterzone.
+    */
+
+    padding-block-end:
+        43px;
+}
+
+
+/*//////////////RAID USER//////////////*/
+
+.cs-bubble.cs-event-raid
+.cs-user {
+    position:
+        relative;
+
+    z-index:
+        12;
+
+    animation:
+        event-content-in
+        320ms
+        1460ms
+        ease-out
+        both;
+}
+
+
+/*//////////////RAID CONTENT//////////////*/
+
+.cs-bubble.cs-event-raid
+.cs-content {
+    position:
+        relative;
+
+    z-index:
+        12;
+
+    animation:
+        event-content-in
+        350ms
+        1500ms
+        ease-out
+        both;
+}
+
+
+/*//////////////RAID SWORDS//////////////*/
+
+.cs-raid-sword {
+    --sword-length:
+        104px;
+
+    position:
+        absolute;
+
+    z-index:
+        8;
+
+    inset-inline-start:
+        50%;
+
+    inset-block-start:
+        auto;
+
+    /*
+        Feste Position am unteren
+        Rand statt Prozentwert.
+    */
+
+    inset-block-end:
+        7px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    inline-size:
+        var(--sword-length);
+
+    block-size:
+        19px;
+
+    opacity:
+        0;
+
+    transform-origin:
+        center;
+
+    filter:
+        drop-shadow(
+            0 2px 1px
+            rgba(0, 0, 0, .62)
+        );
+}
+
+
+/*//////////////POMMEL//////////////*/
+
+.cs-sword__pommel {
+    flex:
+        0 0 auto;
+
+    inline-size:
+        9px;
+
+    block-size:
+        9px;
+
+    margin-inline-end:
+        -1px;
+
+    clip-path:
+        polygon(
+            50% 0,
+            82% 18%,
+            100% 50%,
+            82% 82%,
+            50% 100%,
+            18% 82%,
+            0 50%,
+            18% 18%
+        );
+
+    background:
+
+        radial-gradient(
+            circle at 31% 27%,
+            var(--brass-glint),
+            var(--brass-light) 25%,
+            var(--brass) 49%,
+            var(--brass-dark) 72%,
+            var(--brass-black)
+        );
+}
+
+
+/*//////////////GRIP//////////////*/
+
+.cs-sword__grip {
+    flex:
+        0 0 auto;
+
+    inline-size:
+        17px;
+
+    block-size:
+        5px;
+
+    border-block:
+        1px solid
+        #100a06;
+
+    background:
+
+        repeating-linear-gradient(
+            116deg,
+            #1b100a 0 3px,
+            #68432b 3px 4px
+        );
+}
+
+
+/*//////////////GUARD//////////////*/
+
+.cs-sword__guard {
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    flex:
+        0 0 auto;
+
+    inline-size:
+        5px;
+
+    block-size:
+        19px;
+
+    margin-inline:
+        2px 1px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--brass-black),
+            var(--brass) 23%,
+            var(--brass-glint) 48%,
+            var(--brass) 72%,
+            var(--brass-black)
+        );
+}
+
+.cs-sword__guard-tip {
+    position:
+        absolute;
+
+    inset-inline-start:
+        50%;
+
+    inline-size:
+        8px;
+
+    block-size:
+        3px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--brass-black),
+            var(--brass-light),
+            var(--brass-dark)
+        );
+}
+
+.cs-sword__guard-tip--top {
+    inset-block-start:
+        0;
+
+    transform:
+        translateX(-50%)
+        rotate(-8deg);
+}
+
+.cs-sword__guard-tip--bottom {
+    inset-block-end:
+        0;
+
+    transform:
+        translateX(-50%)
+        rotate(8deg);
+}
+
+
+/*//////////////RICASSO//////////////*/
+
+.cs-sword__ricasso {
+    flex:
+        0 0 auto;
+
+    inline-size:
+        6px;
+
+    block-size:
+        8px;
+
+    margin-inline-start:
+        -1px;
+
+    clip-path:
+        polygon(
+            0 12%,
+            100% 0,
+            100% 100%,
+            0 88%
+        );
+
+    background:
+
+        linear-gradient(
+            180deg,
+            var(--iron-glint),
+            var(--iron-light) 22%,
+            var(--iron-mid) 52%,
+            var(--iron-black)
+        );
+}
+
+
+/*//////////////BLADE//////////////*/
+
+.cs-sword__blade {
+    position:
+        relative;
+
+    flex:
+        1;
+
+    min-inline-size:
+        58px;
+
+    block-size:
+        6px;
+
+    margin-inline-start:
+        -1px;
+
+    clip-path:
+        polygon(
+            0 4%,
+            calc(100% - 12px) 4%,
+            100% 50%,
+            calc(100% - 12px) 96%,
+            0 96%
+        );
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #ebe8e0 0%,
+            #c4c2bc 20%,
+            #818285 39%,
+            #454749 49%,
+            #77797b 55%,
+            #bab9b3 75%,
+            #dfdcd4 100%
+        );
+}
+
+.cs-sword__blade::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset-inline-start:
+        3px;
+
+    inset-inline-end:
+        13px;
+
+    inset-block-start:
+        50%;
+
+    block-size:
+        1px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(30, 31, 32, .28),
+            rgba(255, 255, 255, .23),
+            rgba(35, 36, 38, .31)
+        );
+}
+
+
+/*//////////////RAID SWORD REVEAL//////////////*/
+
+.cs-bubble.cs-event-raid
+.cs-raid-sword--left {
+    animation:
+        raid-left
+        720ms
+        870ms
+        cubic-bezier(.2, .74, .2, 1)
+        both;
+}
+
+.cs-bubble.cs-event-raid
+.cs-raid-sword--right {
+    animation:
+        raid-right
+        720ms
+        900ms
+        cubic-bezier(.2, .74, .2, 1)
+        both;
+}
+
+
+/*//////////////RAID SPARKS//////////////*/
+
+.cs-raid-spark {
+    position:
+        absolute;
+
+    z-index:
+        9;
+
+    inset-inline-start:
+        50%;
+
+    inset-block-start:
+        auto;
+
+    inset-block-end:
+        17px;
+
+    inline-size:
+        7px;
+
+    block-size:
+        1.5px;
+
+    opacity:
+        0;
+
+    transform-origin:
+        0 50%;
+
+    border-radius:
+        50%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #d2b15f,
+            #8b5827 50%,
+            transparent
+        );
+
+    animation:
+        raid-spark
+        620ms
+        890ms
+        both;
+}
+
+.cs-raid-spark--1 {
+    --spark-angle:
+        -62deg;
+
+    --spark-distance:
+        13px;
+}
+
+.cs-raid-spark--2 {
+    --spark-angle:
+        -17deg;
+
+    --spark-distance:
+        11px;
+}
+
+.cs-raid-spark--3 {
+    --spark-angle:
+        38deg;
+
+    --spark-distance:
+        13px;
+}
+
+.cs-raid-spark--4 {
+    --spark-angle:
+        106deg;
+
+    --spark-distance:
+        10px;
+}
+
+
+/*//////////////AVATAR HIDDEN//////////////*/
+
+.cs-bubble.cs-avatar-hidden:not(
+    .cs-event
+)
+.cs-surface {
+    grid-template-columns:
+        minmax(0, 1fr);
+
+    grid-template-areas:
+        "user"
+        "content";
+}
+
+.cs-bubble.cs-avatar-hidden
+.cs-avatar,
+
+.cs-bubble.cs-avatar-hidden
+.cs-role-banner {
+    display:
+        none !important;
+}
+
+
+/*//////////////INLINE//////////////*/
+
+.cs-bubble.cs-username-position-inline:not(
+    .cs-event
+)
+.cs-surface {
+    grid-template-areas:
+        "avatar content"
+        "avatar content";
+}
+
+
+/*//////////////AVATAR RIGHT//////////////*/
+
+.cs-bubble.cs-avatar-position-right:not(
+    .cs-avatar-hidden,
+    .cs-event
+)
+.cs-surface {
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    grid-template-areas:
+        "user avatar"
+        "content avatar";
+}
+
+.cs-bubble.cs-avatar-position-right:not(
+    .cs-avatar-hidden,
+    .cs-event
+)
+.cs-role-banner {
+    inset-inline-start:
+        auto;
+
+    inset-inline-end:
+        calc(
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding, 8px)
+            )
+            + 3px
+        );
+}
+
+
+/*//////////////RTL//////////////*/
+
+.cs-bubble.cs-direction-rtl:not(
+    .cs-avatar-hidden,
+    .cs-event
+)
+.cs-surface {
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    grid-template-areas:
+        "user avatar"
+        "content avatar";
+}
+
+.cs-bubble.cs-direction-rtl:not(
+    .cs-avatar-hidden,
+    .cs-event
+)
+.cs-role-banner {
+    inset-inline-start:
+        auto;
+
+    inset-inline-end:
+        calc(
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding, 8px)
+            )
+            + 3px
+        );
+}
+
+.cs-bubble.cs-direction-rtl
+.cs-user,
+
+.cs-bubble.cs-direction-rtl
+.cs-content {
+    direction:
+        rtl;
+}
+
+
+/*//////////////RTL NORMAL AVATAR//////////////*/
+
+.cs-bubble.cs-direction-rtl:not(
+    .cs-event
+)
+.cs-avatar {
+    animation:
+        shield-in-rtl
+        470ms
+        100ms
+        cubic-bezier(.18, .8, .2, 1.04)
+        both;
+}
+
+
+/*//////////////FULL WIDTH//////////////*/
+
+.cs-chat.cs-full-width
+.cs-bubble,
+
+.cs-chat.cs-full-width
+.cs-surface {
+    inline-size:
+        100%;
+
+    max-inline-size:
+        none;
+}
+
+
+/*//////////////HORIZONTAL//////////////*/
+
+.cs-chat.cs-chat--horizontal
+.cs-bubble {
+    min-inline-size:
+        180px;
+
+    max-inline-size:
+        300px;
+}
+
+
+/*//////////////WOOD IN//////////////*/
+
+@keyframes wood-in {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(4px)
+            scale(.988);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/*//////////////BANNER UNROLL//////////////*/
+
+@keyframes banner-unroll {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            scaleY(.01);
+    }
+
+    4% {
+        opacity:
+            1;
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            scaleY(1);
+    }
+}
+
+
+/*//////////////BANNER ROD//////////////*/
+
+@keyframes banner-rod-in {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            scaleX(.45);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/*//////////////SHIELD IN//////////////*/
+
+@keyframes shield-in {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            translateX(-6px)
+            rotate(-2.5deg)
+            scale(.88);
+    }
+
+    68% {
+        opacity:
+            1;
+
+        transform:
+            translateX(1px)
+            rotate(.5deg)
+            scale(1.02);
+    }
+
+    100% {
+        opacity:
+            1;
+
+        transform:
+            translateX(0)
+            rotate(0)
+            scale(1);
+    }
+}
+
+
+/*//////////////SHIELD RTL//////////////*/
+
+@keyframes shield-in-rtl {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            translateX(6px)
+            rotate(2.5deg)
+            scale(.88);
+    }
+
+    68% {
+        opacity:
+            1;
+
+        transform:
+            translateX(-1px)
+            rotate(-.5deg)
+            scale(1.02);
+    }
+
+    100% {
+        opacity:
+            1;
+
+        transform:
+            translateX(0)
+            rotate(0)
+            scale(1);
+    }
+}
+
+
+/*//////////////CARVING//////////////*/
+
+@keyframes carving-in {
+
+    from {
+        opacity:
+            0;
+
+        filter:
+            blur(.45px)
+            contrast(.9);
+    }
+
+    to {
+        opacity:
+            1;
+
+        filter:
+            blur(0)
+            contrast(1.03);
+    }
+}
+
+
+/*//////////////EVENT GATE//////////////*/
+
+@keyframes event-gate {
+
+    from {
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+    }
+
+    to {
+        opacity:
+            1;
+
+        visibility:
+            visible;
+    }
+}
+
+
+/*//////////////SCROLL PAPER//////////////*/
+
+@keyframes scroll-paper-open {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            scaleX(.025);
+    }
+
+    2% {
+        opacity:
+            1;
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/*//////////////ROLL LEFT//////////////*/
+
+@keyframes scroll-roll-left {
+
+    from {
+        opacity:
+            0;
+
+        inset-inline-start:
+            calc(
+                50% - 8.5px
+            );
+    }
+
+    2% {
+        opacity:
+            1;
+    }
+
+    to {
+        opacity:
+            1;
+
+        inset-inline-start:
+            0;
+    }
+}
+
+
+/*//////////////ROLL RIGHT//////////////*/
+
+@keyframes scroll-roll-right {
+
+    from {
+        opacity:
+            0;
+
+        inset-inline-end:
+            calc(
+                50% - 8.5px
+            );
+    }
+
+    2% {
+        opacity:
+            1;
+    }
+
+    to {
+        opacity:
+            1;
+
+        inset-inline-end:
+            0;
+    }
+}
+
+
+/*//////////////SCROLL SHADOW//////////////*/
+
+@keyframes scroll-shadow-in {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(3px)
+            scaleX(.04);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(3px)
+            scaleX(1);
+    }
+}
+
+
+/*//////////////EVENT CONTENT//////////////*/
+
+@keyframes event-content-in {
+
+    from {
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        transform:
+            translateY(2px);
+    }
+
+    1% {
+        visibility:
+            visible;
+    }
+
+    to {
+        opacity:
+            1;
+
+        visibility:
+            visible;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////WAX STAMP//////////////*/
+
+@keyframes wax-stamp {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            scale(1.55)
+            rotate(-7deg);
+    }
+
+    68% {
+        opacity:
+            1;
+
+        transform:
+            scale(.9)
+            rotate(-7deg);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            scale(1)
+            rotate(-7deg);
+    }
+}
+
+
+/*//////////////RAID LEFT//////////////*/
+
+@keyframes raid-left {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            translateX(-180%)
+            rotate(3deg)
+            scale(.95);
+    }
+
+    18% {
+        opacity:
+            1;
+    }
+
+    52% {
+        opacity:
+            1;
+
+        transform:
+            translateX(-55%)
+            rotate(17deg)
+            scale(1);
+    }
+
+    80% {
+        opacity:
+            1;
+
+        transform:
+            translateX(-52%)
+            rotate(19deg)
+            scale(.67);
+    }
+
+    100% {
+        opacity:
+            1;
+
+        transform:
+            translateX(-52%)
+            rotate(19deg)
+            scale(.67);
+    }
+}
+
+
+/*//////////////RAID RIGHT//////////////*/
+
+@keyframes raid-right {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            translateX(80%)
+            rotate(177deg)
+            scale(.95);
+    }
+
+    18% {
+        opacity:
+            1;
+    }
+
+    52% {
+        opacity:
+            1;
+
+        transform:
+            translateX(-45%)
+            rotate(163deg)
+            scale(1);
+    }
+
+    80% {
+        opacity:
+            1;
+
+        transform:
+            translateX(-48%)
+            rotate(161deg)
+            scale(.67);
+    }
+
+    100% {
+        opacity:
+            1;
+
+        transform:
+            translateX(-48%)
+            rotate(161deg)
+            scale(.67);
+    }
+}
+
+
+/*//////////////RAID SPARK//////////////*/
+
+@keyframes raid-spark {
+
+    0%,
+    43% {
+        opacity:
+            0;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(
+                var(--spark-angle)
+            )
+            scaleX(.1);
+    }
+
+    49% {
+        opacity:
+            .7;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(
+                var(--spark-angle)
+            )
+            scaleX(1);
+    }
+
+    65% {
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(
+                    -50%
+                    + var(--spark-distance)
+                ),
+                -50%
+            )
+            rotate(
+                var(--spark-angle)
+            )
+            scaleX(.2);
+    }
+
+    100% {
+        opacity:
+            0;
+    }
+}
+
+
+/*//////////////RESPONSIVE//////////////*/
+
+@media (max-width: 480px) {
+
+    .cs-chat {
+        padding-inline:
+            max(
+                var(--cs-chat-padding, 8px),
+                8px
+            );
+    }
+
+    .cs-bubble {
+        max-inline-size:
+            calc(
+                100vw - 18px
+            );
+    }
+
+    .cs-surface {
+        column-gap:
+            7px;
+    }
+
+    .cs-bubble.cs-event:not(
+        :is(
+            .cs-event-action,
+            .cs-event-cheer,
+            .cs-event-highlight,
+            .cs-event-channel-points,
+            .cs-event-gigantified
+        )
+    )
+    .cs-surface {
+        padding-inline:
+            24px;
+    }
+
+    .cs-raid-sword {
+        --sword-length:
+            92px;
+    }
+}
+
+
+/*//////////////REDUCED MOTION//////////////*/
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    .cs-surface,
+    .cs-avatar,
+    .cs-role-banner__cloth,
+    .cs-role-banner__weave,
+    .cs-role-banner__rod,
+    .cs-user,
+    .cs-content,
+    .cs-scroll__paper,
+    .cs-scroll__roll,
+    .cs-scroll__shadow,
+    .cs-raid-sword,
+    .cs-raid-spark,
+    .cs-scroll__paper::after {
+        animation-duration:
+            1ms !important;
+
+        animation-delay:
+            0ms !important;
+    }
+}
+.cs-bubble:not(.cs-event) {
+    --obsidian-black: #050505;
+    --obsidian-mid: #1a191d;
+    --obsidian-purple: #5c376c;
+    --obsidian-purple-light: #9a6fa8;
+    --obsidian-metal: #555159;
+
+    --shield-shape:
+        polygon(
+            50% 0%,
+            78% 5%,
+            96% 21%,
+            87% 56%,
+            75% 72%,
+            50% 100%,
+            25% 72%,
+            13% 56%,
+            4% 21%,
+            22% 5%
+        );
+
+    --shield-inner:
+        polygon(
+            50% 5%,
+            76% 9%,
+            91% 23%,
+            83% 53%,
+            71% 69%,
+            50% 94%,
+            29% 69%,
+            17% 53%,
+            9% 23%,
+            24% 9%
+        );
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-corner {
+    z-index: 3 !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-role-banner {
+    display: block !important;
+    z-index: 9 !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-avatar {
+    z-index: 12 !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-user,
+.cs-bubble:not(.cs-event) .cs-content {
+    z-index: 14 !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-role-banner__cloth {
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #070707 0 10px,
+            #25162d 10px 15px,
+            #070707 15px 25px
+        ) !important;
+
+    box-shadow:
+        inset 2px 0 3px rgba(255, 255, 255, .018),
+        inset -2px 0 3px rgba(0, 0, 0, .34),
+        inset 0 -5px 9px rgba(0, 0, 0, .26),
+        0 2px 4px rgba(0, 0, 0, .28) !important;
+
+    animation:
+        obsidian-banner-unroll
+        610ms
+        45ms
+        cubic-bezier(.18, .8, .2, 1)
+        both !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-role-banner__weave {
+    opacity: 0;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 10px,
+            rgba(126, 70, 148, .58) 10px 15px,
+            transparent 15px 25px
+        ) !important;
+
+    animation:
+        obsidian-rune-reveal
+        760ms
+        120ms
+        cubic-bezier(.22, 1, .36, 1)
+        both !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-role-banner__rod {
+    background:
+        linear-gradient(
+            180deg,
+            #8e8992,
+            #555159 34%,
+            #2b292e 67%,
+            #0e0d10
+        ) !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-shield-rim {
+    background:
+        linear-gradient(
+            124deg,
+            #050607 0%,
+            #25272a 8%,
+            #b7b8b6 14%,
+            #686a6b 23%,
+            #2b2d2f 38%,
+            #070808 50%,
+            #505356 66%,
+            #8d8f8e 75%,
+            #c6c6c1 83%,
+            #3b3d3f 94%,
+            #08090a 100%
+        ) !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-shield-bed {
+    background:
+        linear-gradient(
+            135deg,
+            #737679 0%,
+            #3c3f42 24%,
+            #17191b 52%,
+            #070809 76%,
+            #2c2f31 100%
+        ) !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-shield-bevel {
+    overflow: hidden !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-shield-bevel::before {
+    content: "";
+    position: absolute;
+    inset: 1.5px;
+    pointer-events: none;
+    clip-path: var(--shield-inner);
+
+    background:
+        linear-gradient(
+            45deg,
+            transparent 0 47%,
+            rgba(214, 216, 214, .22) 48% 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 0 47%,
+            rgba(127, 130, 132, .18) 48% 49%,
+            transparent 50%
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(202, 205, 204, .20),
+        inset 0 0 7px rgba(0, 0, 0, .20);
+}
+
+.cs-bubble:not(.cs-event) .cs-shield-bevel::after {
+    content: "";
+    position: absolute;
+    z-index: 6;
+    inset: -12%;
+    pointer-events: none;
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            112deg,
+            transparent 30%,
+            rgba(184, 134, 199, 0) 40%,
+            rgba(238, 239, 235, .66) 48%,
+            rgba(127, 130, 132, .26) 54%,
+            transparent 65%
+        );
+
+    transform:
+        translateX(-145%);
+
+    animation:
+        obsidian-avatar-shine
+        7.1s
+        1.45s
+        ease-in-out
+        infinite;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-wood-heraldry {
+    display: block !important;
+    opacity: .055 !important;
+    mix-blend-mode: screen !important;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            transparent 0 5px,
+            rgba(124, 72, 145, .92) 5.5px 6.5px,
+            transparent 7px 12px,
+            rgba(124, 72, 145, .54) 12.5px 13.5px,
+            transparent 14px
+        ),
+        conic-gradient(
+            from 45deg at 50% 50%,
+            transparent 0 11%,
+            rgba(124, 72, 145, .5) 12% 13%,
+            transparent 14% 36%,
+            rgba(124, 72, 145, .5) 37% 38%,
+            transparent 39% 61%,
+            rgba(124, 72, 145, .5) 62% 63%,
+            transparent 64% 86%,
+            rgba(124, 72, 145, .5) 87% 88%,
+            transparent 89%
+        ) !important;
+
+    background-size:
+        58px 46px,
+        58px 46px !important;
+
+    animation:
+        obsidian-sigil-pulse
+        7.1s
+        1.8s
+        ease-in-out
+        infinite !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-corner {
+    inline-size: 10px !important;
+    block-size: 10px !important;
+    opacity: .68 !important;
+}
+
+.cs-bubble:not(.cs-event) .cs-corner::before {
+    background:
+        linear-gradient(
+            90deg,
+            #050505 0 1px,
+            #6b496f 1px 2px,
+            transparent 2px
+        ),
+        linear-gradient(
+            180deg,
+            #050505 0 1px,
+            #6b496f 1px 2px,
+            transparent 2px
+        ) !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-username,
+.cs-bubble:not(.cs-event) .cs-username--inline {
+    animation:
+        obsidian-username-pulse
+        7.1s
+        1.45s
+        ease-in-out
+        infinite !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-avatar {
+    animation:
+        obsidian-shield-in
+        580ms
+        390ms
+        cubic-bezier(.18, .82, .2, 1.04)
+        both !important;
+}
+
+.cs-bubble.cs-direction-rtl:not(.cs-event) .cs-avatar {
+    animation:
+        obsidian-shield-in-rtl
+        580ms
+        390ms
+        cubic-bezier(.18, .82, .2, 1.04)
+        both !important;
+}
+
+
+
+
+@keyframes obsidian-banner-unroll {
+    from {
+        opacity: 0;
+        transform: scaleY(.02) translateY(-2px);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scaleY(1.03) translateY(1px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1) translateY(0);
+    }
+}
+
+@keyframes obsidian-rune-reveal {
+    from {
+        opacity: 0;
+        transform: scaleY(.08);
+    }
+
+    60% {
+        opacity: .5;
+        transform: scaleY(1.04);
+    }
+
+    to {
+        opacity: .38;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes obsidian-shield-in {
+    from {
+        opacity: 0;
+        transform: translateX(-10px) rotate(-4deg) scale(.86);
+    }
+
+    68% {
+        opacity: 1;
+        transform: translateX(1px) rotate(.5deg) scale(1.03);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0) scale(1);
+    }
+}
+
+@keyframes obsidian-shield-in-rtl {
+    from {
+        opacity: 0;
+        transform: translateX(10px) rotate(4deg) scale(.86);
+    }
+
+    68% {
+        opacity: 1;
+        transform: translateX(-1px) rotate(-.5deg) scale(1.03);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0) scale(1);
+    }
+}
+
+@keyframes obsidian-avatar-shine {
+    0%, 67% {
+        opacity: 0;
+        transform: translateX(-145%);
+    }
+
+    73% {
+        opacity: .66;
+    }
+
+    83% {
+        opacity: 0;
+        transform: translateX(145%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(145%);
+    }
+}
+
+@keyframes obsidian-sigil-pulse {
+    0%, 62%, 100% {
+        opacity: .055;
+        transform: scale(.99);
+    }
+
+    72% {
+        opacity: .13;
+        transform: scale(1.018);
+    }
+
+    77% {
+        opacity: .04;
+    }
+
+    82% {
+        opacity: .095;
+    }
+
+    90% {
+        opacity: .055;
+        transform: scale(.99);
+    }
+}
+
+@keyframes obsidian-username-pulse {
+    0%, 69%, 100% {
+        color: var(--carved-text);
+    }
+
+    76% {
+        color: #a37daf;
+        text-shadow:
+            0 -1px 0 rgba(22, 10, 26, .8),
+            0 1px 0 rgba(215, 189, 220, .22),
+            0 0 3px rgba(111, 64, 129, .34);
+    }
+
+    86% {
+        color: var(--carved-text);
+    }
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    .cs-bubble:not(.cs-event) .cs-role-banner__cloth,
+    .cs-bubble:not(.cs-event) .cs-role-banner__weave,
+    .cs-bubble:not(.cs-event) .cs-avatar,
+    .cs-bubble:not(.cs-event) .cs-shield-bevel::after,
+    .cs-bubble:not(.cs-event) .cs-wood-heraldry,
+    .cs-bubble:not(.cs-event) .cs-username,
+    .cs-bubble:not(.cs-event) .cs-username--inline {
+        animation-duration: 1ms !important;
+        animation-delay: 0ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-left cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: left; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 10px; --cs-chat-padding-right: 14px; --cs-chat-padding-bottom: 10px; --cs-chat-padding-left: 14px; --cs-bubble-padding-top: 7px; --cs-bubble-padding-right: 11px; --cs-bubble-padding-bottom: 7px; --cs-bubble-padding-left: 8px; --cs-bubble-background-color: #25160e; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 1px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #70502f; --cs-bubble-border-radius-top-left: 4px; --cs-bubble-border-radius-top-right: 4px; --cs-bubble-border-radius-bottom-right: 4px; --cs-bubble-border-radius-bottom-left: 4px; --cs-bubble-gap: 9px; --cs-bubble-width: 400px; --cs-avatar-padding: 0px; --cs-avatar-padding-top: 0px; --cs-avatar-padding-right: 0px; --cs-avatar-padding-bottom: 0px; --cs-avatar-padding-left: 0px; --cs-avatar-background-color: var(--cs-usercolor); --cs-avatar-background-gradient: none; --cs-avatar-border-width: 0px; --cs-avatar-border-style: solid; --cs-avatar-border-color: #706e69; --cs-avatar-border-radius: 0px; --cs-avatar-border-radius-top-left: 0px; --cs-avatar-border-radius-top-right: 0px; --cs-avatar-border-radius-bottom-right: 0px; --cs-avatar-border-radius-bottom-left: 0px; --cs-avatar-size: 39px; --cs-username-font-size: 14px; --cs-username-font-color: #ffffff; --cs-username-font-family: 'Noto Serif'; --cs-username-font-weight: 400; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: #000000; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-font-size: 14px; --cs-message-font-color: #a39177; --cs-message-font-family: 'Noto Serif'; --cs-message-font-weight: 600; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: #000000; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+
+    <div class="cs-surface">
+
+        <div class="cs-scroll">
+
+            <span class="cs-scroll__shadow"></span>
+
+            <div class="cs-scroll__paper">
+
+                <span class="cs-scroll__fibres"></span>
+
+                <span class="cs-scroll__stain cs-scroll__stain--a"></span>
+                <span class="cs-scroll__stain cs-scroll__stain--b"></span>
+
+                <span class="cs-scroll__crease cs-scroll__crease--a"></span>
+                <span class="cs-scroll__crease cs-scroll__crease--b"></span>
+
+                <span class="cs-scroll__watermark"></span>
+
+                <span class="cs-scroll__ornament cs-scroll__ornament--top"></span>
+                <span class="cs-scroll__ornament cs-scroll__ornament--bottom"></span>
+
+                <span class="cs-scroll__banderole">
+                    <i></i>
+                </span>
+
+            </div>
+
+            <div class="cs-scroll__roll cs-scroll__roll--left">
+
+                <span class="cs-scroll__join"></span>
+
+                <span class="cs-scroll__roll-body"></span>
+
+                <span class="cs-scroll__roll-seam"></span>
+
+                <span class="cs-scroll__handle cs-scroll__handle--top">
+                    <i></i>
+                </span>
+
+                <span class="cs-scroll__handle cs-scroll__handle--bottom">
+                    <i></i>
+                </span>
+
+            </div>
+
+            <div class="cs-scroll__roll cs-scroll__roll--right">
+
+                <span class="cs-scroll__join"></span>
+
+                <span class="cs-scroll__roll-body"></span>
+
+                <span class="cs-scroll__roll-seam"></span>
+
+                <span class="cs-scroll__handle cs-scroll__handle--top">
+                    <i></i>
+                </span>
+
+                <span class="cs-scroll__handle cs-scroll__handle--bottom">
+                    <i></i>
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="cs-role-banner">
+
+            <span class="cs-role-banner__cloth"></span>
+
+            <span class="cs-role-banner__weave"></span>
+
+            <span class="cs-role-banner__roller"></span>
+
+            <span class="cs-role-banner__rod">
+                <i></i>
+            </span>
+
+        </div>
+
+        <span class="cs-wood-knot cs-wood-knot--a"></span>
+
+        <span class="cs-wood-knot cs-wood-knot--b"></span>
+
+        <span class="cs-wood-heraldry"></span>
+
+        <span class="cs-corner cs-corner--tl"></span>
+
+        <span class="cs-corner cs-corner--tr"></span>
+
+        <span class="cs-corner cs-corner--bl"></span>
+
+        <span class="cs-corner cs-corner--br"></span>
+
+        <div class="cs-header">
+
+            <div class="cs-avatar">
+
+                <span class="cs-shield-shadow"></span>
+
+                <span class="cs-shield-rim"></span>
+
+                <span class="cs-shield-bed"></span>
+
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">
+
+                <span class="cs-shield-bevel"></span>
+
+            </div>
+
+            <div class="cs-user">
+
+                <span class="cs-badges">
+                    <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+                </span>
+
+                <span class="cs-username">
+
+                    <span class="cs-pronouns">
+                        
+                    </span>
+
+                    JesusTenG
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="cs-content">
+
+            <span class="cs-user--inline">
+
+                <span class="cs-badges cs-badges--inline">
+                    <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+                </span>
+
+                <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+
+                    <span class="cs-pronouns">
+                        
+                    </span>
+
+                    JesusTenG
+
+                </span>
+
+            </span>
+
+            <div class="cs-message">
+                So sieht dein Chat aus.
+            </div>
+
+        </div>
+
+        <div class="cs-raid-stage">
+
+            <div class="cs-raid-sword cs-raid-sword--left">
+
+                <span class="cs-sword__pommel"></span>
+                <span class="cs-sword__grip"></span>
+
+                <span class="cs-sword__guard">
+
+                    <i class="cs-sword__guard-tip cs-sword__guard-tip--top"></i>
+
+                    <i class="cs-sword__guard-tip cs-sword__guard-tip--bottom"></i>
+
+                </span>
+
+                <span class="cs-sword__ricasso"></span>
+                <span class="cs-sword__blade"></span>
+
+            </div>
+
+            <div class="cs-raid-sword cs-raid-sword--right">
+
+                <span class="cs-sword__pommel"></span>
+                <span class="cs-sword__grip"></span>
+
+                <span class="cs-sword__guard">
+
+                    <i class="cs-sword__guard-tip cs-sword__guard-tip--top"></i>
+
+                    <i class="cs-sword__guard-tip cs-sword__guard-tip--bottom"></i>
+
+                </span>
+
+                <span class="cs-sword__ricasso"></span>
+                <span class="cs-sword__blade"></span>
+
+            </div>
+
+            <span class="cs-raid-spark cs-raid-spark--1"></span>
+            <span class="cs-raid-spark cs-raid-spark--2"></span>
+            <span class="cs-raid-spark cs-raid-spark--3"></span>
+            <span class="cs-raid-spark cs-raid-spark--4"></span>
+
+        </div>
+
+    </div>
+
+</div></div></div></body></html>

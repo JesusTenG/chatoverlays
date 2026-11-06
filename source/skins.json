@@ -1,0 +1,3365 @@
+{
+  "neo-tokyo": {
+    "sourceUrl": "https://chatstyle.gg/template/neo-tokyo",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 919,
+        "name": "blue",
+        "slug": "neo-tokyo-blue",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/919.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 921,
+        "name": "yellow",
+        "slug": "neo-tokyo-yellow",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/921.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 922,
+        "name": "green",
+        "slug": "neo-tokyo-green",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/922.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 935,
+        "name": "Moderator",
+        "slug": "neo-tokyo-moderator",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/935.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 936,
+        "name": "Broadcaster",
+        "slug": "neo-tokyo-broadcaster",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/936.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 926,
+        "name": "white",
+        "slug": "neo-tokyo-white",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/926.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 928,
+        "name": "mint",
+        "slug": "neo-tokyo-mint",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/928.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 931,
+        "name": "shinjuku",
+        "slug": "neo-tokyo-shinjuku",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/931.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 938,
+        "name": "Chrome",
+        "slug": "neo-tokyo-chrome",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/938.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 939,
+        "name": "shibuya",
+        "slug": "neo-tokyo-shibuya",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/939.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 932,
+        "name": "ikebukuro",
+        "slug": "neo-tokyo-cute",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/932.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 917,
+        "name": "tweak",
+        "slug": "neo-tokyo-e",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/917.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 918,
+        "name": "inversion",
+        "slug": "neo-tokyo-inversion",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/918.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 920,
+        "name": "vhs",
+        "slug": "neo-tokyo-vhs",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/920.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 923,
+        "name": "red",
+        "slug": "neo-tokyo-red",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/923.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 924,
+        "name": "purple",
+        "slug": "neo-tokyo-purple",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/924.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 925,
+        "name": "pink",
+        "slug": "neo-tokyo-pink",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/925.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 927,
+        "name": "black",
+        "slug": "neo-tokyo-black",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/927.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 929,
+        "name": "error",
+        "slug": "neo-tokyo-error",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/929.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 930,
+        "name": "orange",
+        "slug": "neo-tokyo-orange",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/930.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 933,
+        "name": "roppongi",
+        "slug": "neo-tokyo-roppongi",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/933.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 934,
+        "name": "rainbow",
+        "slug": "neo-tokyo-rainbow",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/934.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 937,
+        "name": "VIP",
+        "slug": "neo-tokyo-vip",
+        "url": "https://chatstyle.gg/template/neo-tokyo",
+        "preview": "/assets/skins/neo-tokyo/937.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "lofi-windows-93": {
+    "sourceUrl": "https://chatstyle.gg/template/lofi-windows-93",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 1121,
+        "name": "abstract",
+        "slug": "lofi-windows-93-abstract",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1121.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1132,
+        "name": "orchid",
+        "slug": "lofi-windows-93-orchid",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1132.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1130,
+        "name": "lavender",
+        "slug": "lofi-windows-93-lavender",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1130.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1133,
+        "name": "blueberry",
+        "slug": "lofi-windows-93-blueberry",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1133.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1134,
+        "name": "VIP",
+        "slug": "lofi-windows-93-vip",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1134.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1138,
+        "name": "chrome",
+        "slug": "lofi-windows-93-chrome",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1138.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1139,
+        "name": "tokyo",
+        "slug": "lofi-windows-93-tokyo",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1139.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1140,
+        "name": "sunset",
+        "slug": "lofi-windows-93-sunset",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1140.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1114,
+        "name": "nightdrive",
+        "slug": "lofi-windows-93-poles",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1114.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1119,
+        "name": "sakura",
+        "slug": "lofi-windows-93-sakura",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1119.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1120,
+        "name": "miami",
+        "slug": "lofi-windows-93-miami",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1120.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1122,
+        "name": "clouds",
+        "slug": "lofi-windows-93-clouds",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1122.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1123,
+        "name": "Moderator",
+        "slug": "lofi-windows-93-moderator",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1123.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1124,
+        "name": "Broadcaster",
+        "slug": "lofi-windows-93-broadcaster",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1124.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1125,
+        "name": "mint",
+        "slug": "lofi-windows-93-mint",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1125.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1126,
+        "name": "lemon",
+        "slug": "lofi-windows-93-lemon",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1126.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1127,
+        "name": "dark",
+        "slug": "lofi-windows-93-dark",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1127.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1128,
+        "name": "light",
+        "slug": "lofi-windows-93-light",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1128.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1129,
+        "name": "rose",
+        "slug": "lofi-windows-93-rose",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1129.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1131,
+        "name": "peach",
+        "slug": "lofi-windows-93-peach",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1131.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1135,
+        "name": "rainbow",
+        "slug": "lofi-windows-93-rainbow",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1135.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1136,
+        "name": "black",
+        "slug": "lofi-windows-93-black",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1136.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1137,
+        "name": "holo",
+        "slug": "lofi-windows-93-holo",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1137.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1141,
+        "name": "arcade",
+        "slug": "lofi-windows-93-arcade",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1141.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1142,
+        "name": "osaka",
+        "slug": "lofi-windows-93-osaka",
+        "url": "https://chatstyle.gg/template/lofi-windows-93",
+        "preview": "/assets/skins/lofi-windows-93/1142.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "lunar-omen": {
+    "sourceUrl": "https://chatstyle.gg/template/lunar-omen",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 687,
+        "name": "rainbow",
+        "slug": "lunar-omen-rainbow",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/687.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 698,
+        "name": "baphomet",
+        "slug": "lunar-omen-baphomet",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/698.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 700,
+        "name": "glitch",
+        "slug": "lunar-omen-glitch",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/700.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 696,
+        "name": "ritual",
+        "slug": "lunar-omen-ritual",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/696.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 690,
+        "name": "emerald",
+        "slug": "lunar-omen-emerald",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/690.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 691,
+        "name": "rose",
+        "slug": "lunar-omen-rose",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/691.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 692,
+        "name": "amethyst",
+        "slug": "lunar-omen-amethyst",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/692.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 695,
+        "name": "peach",
+        "slug": "lunar-omen-peach",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/695.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 694,
+        "name": "gold",
+        "slug": "lunar-omen-gold",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/694.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 686,
+        "name": "light",
+        "slug": "lunar-omen-light",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/686.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 688,
+        "name": "opal",
+        "slug": "lunar-omen-opal",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/688.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 689,
+        "name": "blood",
+        "slug": "lunar-omen-blood",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/689.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 693,
+        "name": "midnight",
+        "slug": "lunar-omen-midnight",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/693.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 697,
+        "name": "spell",
+        "slug": "lunar-omen-spell",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/697.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 699,
+        "name": "warp",
+        "slug": "lunar-omen-warp",
+        "url": "https://chatstyle.gg/template/lunar-omen",
+        "preview": "/assets/skins/lunar-omen/699.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "whatschat-lofi": {
+    "sourceUrl": "https://chatstyle.gg/template/whatschat-lofi",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 1158,
+        "name": "dark",
+        "slug": "whatschat-lofi-dark",
+        "url": "https://chatstyle.gg/template/whatschat-lofi",
+        "preview": "/assets/skins/whatschat-lofi/1158.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1160,
+        "name": "matcha",
+        "slug": "whatschat-lofi-matcha",
+        "url": "https://chatstyle.gg/template/whatschat-lofi",
+        "preview": "/assets/skins/whatschat-lofi/1160.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1161,
+        "name": "red",
+        "slug": "whatschat-lofi-red",
+        "url": "https://chatstyle.gg/template/whatschat-lofi",
+        "preview": "/assets/skins/whatschat-lofi/1161.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1162,
+        "name": "rainbow",
+        "slug": "whatschat-lofi-brown",
+        "url": "https://chatstyle.gg/template/whatschat-lofi",
+        "preview": "/assets/skins/whatschat-lofi/1162.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1157,
+        "name": "mint",
+        "slug": "whatschat-lofi-mint",
+        "url": "https://chatstyle.gg/template/whatschat-lofi",
+        "preview": "/assets/skins/whatschat-lofi/1157.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1159,
+        "name": "blue",
+        "slug": "whatschat-lofi-blue",
+        "url": "https://chatstyle.gg/template/whatschat-lofi",
+        "preview": "/assets/skins/whatschat-lofi/1159.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1163,
+        "name": "gold",
+        "slug": "whatschat-lofi-gold",
+        "url": "https://chatstyle.gg/template/whatschat-lofi",
+        "preview": "/assets/skins/whatschat-lofi/1163.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1164,
+        "name": "green",
+        "slug": "whatschat-lofi-green",
+        "url": "https://chatstyle.gg/template/whatschat-lofi",
+        "preview": "/assets/skins/whatschat-lofi/1164.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "chromatic-flow": {
+    "sourceUrl": "https://chatstyle.gg/template/chromatic-flow",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "magical-love": {
+    "sourceUrl": "https://chatstyle.gg/template/magical-love",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 1074,
+        "name": "blueberry",
+        "slug": "magical-love-blueberry",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1074.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1075,
+        "name": "matcha",
+        "slug": "magical-love-matcha",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1075.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1077,
+        "name": "cotton",
+        "slug": "magical-love-cotton",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1077.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1079,
+        "name": "kuromi",
+        "slug": "magical-love-kuromi",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1079.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1080,
+        "name": "sakura",
+        "slug": "magical-love-sakura",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1080.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1083,
+        "name": "VIP",
+        "slug": "magical-love-vip",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1083.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1073,
+        "name": "strawberry",
+        "slug": "magical-love-strawberry",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1073.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1076,
+        "name": "lemon",
+        "slug": "magical-love-lemon",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1076.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1078,
+        "name": "peach",
+        "slug": "magical-love-peach",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1078.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1081,
+        "name": "angel",
+        "slug": "magical-love-angel",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1081.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1082,
+        "name": "rainbow",
+        "slug": "magical-love-rainbow",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1082.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1084,
+        "name": "Moderator",
+        "slug": "magical-love-moderator",
+        "url": "https://chatstyle.gg/template/magical-love",
+        "preview": "/assets/skins/magical-love/1084.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "illusion-frames": {
+    "sourceUrl": "https://chatstyle.gg/template/illusion-frames",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "skate-check": {
+    "sourceUrl": "https://chatstyle.gg/template/skate-check",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 910,
+        "name": "VIP",
+        "slug": "skate-check-vip",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/910.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 892,
+        "name": "surf",
+        "slug": "skate-check-orange",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/892.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 893,
+        "name": "warped",
+        "slug": "skate-check-warped",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/893.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 897,
+        "name": "cherry",
+        "slug": "skate-check-cherry",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/897.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 894,
+        "name": "wavy",
+        "slug": "skate-check-wavy",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/894.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 898,
+        "name": "peach",
+        "slug": "skate-check-peach",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/898.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 899,
+        "name": "zigzag",
+        "slug": "skate-check-zigzag",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/899.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 903,
+        "name": "plum",
+        "slug": "skate-check-lilac",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/903.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 905,
+        "name": "dragonfruit",
+        "slug": "skate-check-dragonfruit",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/905.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 908,
+        "name": "melon",
+        "slug": "skate-check-melon",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/908.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 890,
+        "name": "bubblegum",
+        "slug": "skate-check-bubblegum",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/890.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 891,
+        "name": "70s",
+        "slug": "skate-check-70s",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/891.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 895,
+        "name": "mint",
+        "slug": "skate-check-mint",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/895.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 896,
+        "name": "lavender",
+        "slug": "skate-check-lavender",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/896.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 900,
+        "name": "diamond",
+        "slug": "skate-check-diamond",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/900.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 901,
+        "name": "lemon",
+        "slug": "skate-check-lemon",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/901.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 902,
+        "name": "blueberry",
+        "slug": "skate-check-blueberry",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/902.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 904,
+        "name": "pistachio",
+        "slug": "skate-check-pistachio",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/904.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 906,
+        "name": "pudding",
+        "slug": "skate-check-pudding",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/906.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 907,
+        "name": "grape",
+        "slug": "skate-check-grape",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/907.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 909,
+        "name": "Moderator",
+        "slug": "skate-check-moderator",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/909.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 911,
+        "name": "Broadcaster",
+        "slug": "skate-check-broadcaster",
+        "url": "https://chatstyle.gg/template/skate-check",
+        "preview": "/assets/skins/skate-check/911.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "medieval-announcement": {
+    "sourceUrl": "https://chatstyle.gg/template/medieval-announcement",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 794,
+        "name": "raidersknight",
+        "slug": "medieval-announcement-raidersknight",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/794.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 795,
+        "name": "raiderslord",
+        "slug": "medieval-announcement-raiderslord",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/795.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 797,
+        "name": "lurkersknight",
+        "slug": "medieval-announcement-lurkersknight",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/797.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 798,
+        "name": "lurkerslord",
+        "slug": "medieval-announcement-lurkerslord",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/798.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 799,
+        "name": "lurkerslord",
+        "slug": "medieval-announcement-lurkerslord-1",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/799.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 801,
+        "name": "gifterslord",
+        "slug": "medieval-announcement-gifterslord",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/801.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 802,
+        "name": "gifterslord",
+        "slug": "medieval-announcement-gifterslord-1",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/802.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 803,
+        "name": "checkerboard",
+        "slug": "medieval-announcement-checkerboard",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/803.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 806,
+        "name": "obsidian",
+        "slug": "medieval-announcement-obsidian",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/806.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 808,
+        "name": "angel",
+        "slug": "medieval-announcement-angel",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/808.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 809,
+        "name": "blue",
+        "slug": "medieval-announcement-blue",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/809.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 791,
+        "name": "VIP",
+        "slug": "medieval-announcement-vip",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/791.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 792,
+        "name": "Moderator",
+        "slug": "medieval-announcement-moderator",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/792.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 793,
+        "name": "Broadcaster",
+        "slug": "medieval-announcement-broadcaster",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/793.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 796,
+        "name": "raiderslord",
+        "slug": "medieval-announcement-raiderslord-1",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/796.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 800,
+        "name": "giftersknight",
+        "slug": "medieval-announcement-giftersknight",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/800.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 804,
+        "name": "green",
+        "slug": "medieval-announcement-crimson",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/804.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 805,
+        "name": "ice",
+        "slug": "medieval-announcement-ice",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/805.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 807,
+        "name": "stripes",
+        "slug": "medieval-announcement-stripes",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/807.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 810,
+        "name": "cute",
+        "slug": "medieval-announcement-cute",
+        "url": "https://chatstyle.gg/template/medieval-announcement",
+        "preview": "/assets/skins/medieval-announcement/810.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "neon-chat": {
+    "sourceUrl": "https://chatstyle.gg/template/neon-chat",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 1014,
+        "name": "sunrise",
+        "slug": "neon-chat-eclipse",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1014.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1013,
+        "name": "sunset",
+        "slug": "neon-chat-horizon",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1013.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1016,
+        "name": "dream",
+        "slug": "neon-chat-dream-1",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1016.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1017,
+        "name": "twilight",
+        "slug": "neon-chat-twilight",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1017.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1018,
+        "name": "miami",
+        "slug": "neon-chat-miami",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1018.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1022,
+        "name": "checker",
+        "slug": "neon-chat-checker",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1022.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1023,
+        "name": "grid",
+        "slug": "neon-chat-grid",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1023.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1015,
+        "name": "chrome",
+        "slug": "neon-chat-dream",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1015.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1019,
+        "name": "ocean",
+        "slug": "neon-chat-ocean",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1019.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1020,
+        "name": "VIP",
+        "slug": "neon-chat-vip",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1020.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1021,
+        "name": "Moderator",
+        "slug": "neon-chat-moderator",
+        "url": "https://chatstyle.gg/template/neon-chat",
+        "preview": "/assets/skins/neon-chat/1021.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "receipt-flow": {
+    "sourceUrl": "https://chatstyle.gg/template/receipt-flow",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 721,
+        "name": "bunny",
+        "slug": "receipt-flow-bunny",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/721.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 714,
+        "name": "canceled",
+        "slug": "receipt-flow-canceled",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/714.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 718,
+        "name": "items",
+        "slug": "receipt-flow-items",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/718.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 719,
+        "name": "cat",
+        "slug": "receipt-flow-cat",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/719.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 720,
+        "name": "supermod",
+        "slug": "receipt-flow-supermod",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/720.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 715,
+        "name": "refund",
+        "slug": "receipt-flow-refund",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/715.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 716,
+        "name": "declined",
+        "slug": "receipt-flow-declined",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/716.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 717,
+        "name": "supervip",
+        "slug": "receipt-flow-supervip",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/717.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 722,
+        "name": "frog",
+        "slug": "receipt-flow-frog",
+        "url": "https://chatstyle.gg/template/receipt-flow",
+        "preview": "/assets/skins/receipt-flow/722.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "system-failure": {
+    "sourceUrl": "https://chatstyle.gg/template/system-failure",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 871,
+        "name": "green",
+        "slug": "system-failure-green",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/871.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 872,
+        "name": "pink",
+        "slug": "system-failure-pink",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/872.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 874,
+        "name": "blue",
+        "slug": "system-failure-blue",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/874.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 875,
+        "name": "cyan",
+        "slug": "system-failure-cyan",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/875.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 877,
+        "name": "yellow",
+        "slug": "system-failure-yellow",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/877.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 879,
+        "name": "dark",
+        "slug": "system-failure-dark",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/879.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 880,
+        "name": "white",
+        "slug": "system-failure-white",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/880.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 883,
+        "name": "countdown",
+        "slug": "system-failure-shredder",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/883.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 873,
+        "name": "purple",
+        "slug": "system-failure-purple",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/873.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 876,
+        "name": "mint",
+        "slug": "system-failure-mint",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/876.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 878,
+        "name": "orange",
+        "slug": "system-failure-orange",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/878.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 881,
+        "name": "hazard",
+        "slug": "system-failure-desync",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/881.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 882,
+        "name": "warp",
+        "slug": "system-failure-warp",
+        "url": "https://chatstyle.gg/template/system-failure",
+        "preview": "/assets/skins/system-failure/882.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "gemstone-flow": {
+    "sourceUrl": "https://chatstyle.gg/template/gemstone-flow",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 971,
+        "name": "gold",
+        "slug": "gemstone-flow-gold",
+        "url": "https://chatstyle.gg/template/gemstone-flow",
+        "preview": "/assets/skins/gemstone-flow/971.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "90s-vibe": {
+    "sourceUrl": "https://chatstyle.gg/template/90s-vibe",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "wooden-signs": {
+    "sourceUrl": "https://chatstyle.gg/template/wooden-signs",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "daydream": {
+    "sourceUrl": "https://chatstyle.gg/template/daydream",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 761,
+        "name": "lava",
+        "slug": "daydream-lava",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/761.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 762,
+        "name": "shiny2",
+        "slug": "daydream-shiny2",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/762.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 763,
+        "name": "shiny3",
+        "slug": "daydream-shiny3",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/763.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 764,
+        "name": "midnight",
+        "slug": "daydream-midnight",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/764.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 765,
+        "name": "gold",
+        "slug": "daydream-gold",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/765.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 766,
+        "name": "dark",
+        "slug": "daydream-dark",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/766.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 767,
+        "name": "matcha",
+        "slug": "daydream-matcha",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/767.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 768,
+        "name": "blueberry",
+        "slug": "daydream-blueberry",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/768.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 713,
+        "name": "starlight",
+        "slug": "daydream-starlight",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/713.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 758,
+        "name": "shiny1",
+        "slug": "daydream-shiny1",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/758.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 759,
+        "name": "Moderator",
+        "slug": "daydream-moderator",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/759.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 760,
+        "name": "VIP",
+        "slug": "daydream-vip",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/760.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 769,
+        "name": "vanilla",
+        "slug": "daydream-lemon",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/769.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 770,
+        "name": "black",
+        "slug": "daydream-vaporwave",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/770.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 771,
+        "name": "neon",
+        "slug": "daydream-rainbow",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/771.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 772,
+        "name": "glitch",
+        "slug": "daydream-glitch",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/772.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 773,
+        "name": "rainbow",
+        "slug": "daydream-rainbow-1",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/773.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 774,
+        "name": "holo",
+        "slug": "daydream-holo",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/774.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 775,
+        "name": "silver",
+        "slug": "daydream-silver",
+        "url": "https://chatstyle.gg/template/daydream",
+        "preview": "/assets/skins/daydream/775.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "sakura-cherry-blossom": {
+    "sourceUrl": "https://chatstyle.gg/template/sakura-cherry-blossom",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 972,
+        "name": "matcha",
+        "slug": "sakura-cherry-blossom-midnight",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/972.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 973,
+        "name": "blueberry",
+        "slug": "sakura-cherry-blossom-blueberry",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/973.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 974,
+        "name": "lavender",
+        "slug": "sakura-cherry-blossom-lavender",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/974.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 975,
+        "name": "peach",
+        "slug": "sakura-cherry-blossom-peach",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/975.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 976,
+        "name": "lemon",
+        "slug": "sakura-cherry-blossom-lemon",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/976.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 977,
+        "name": "VIP",
+        "slug": "sakura-cherry-blossom-vip",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/977.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 978,
+        "name": "Broadcaster",
+        "slug": "sakura-cherry-blossom-broadcaster",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/978.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 979,
+        "name": "Moderator",
+        "slug": "sakura-cherry-blossom-moderator",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/979.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 980,
+        "name": "midnight",
+        "slug": "sakura-cherry-blossom-midnight-1",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/980.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 981,
+        "name": "gold",
+        "slug": "sakura-cherry-blossom-gold",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/981.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 982,
+        "name": "rainbow",
+        "slug": "sakura-cherry-blossom-rainbow",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/982.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 983,
+        "name": "pearl",
+        "slug": "sakura-cherry-blossom-pearl",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/983.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 984,
+        "name": "orchid",
+        "slug": "sakura-cherry-blossom-orchid",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/984.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 985,
+        "name": "deepsea",
+        "slug": "sakura-cherry-blossom-deepsea",
+        "url": "https://chatstyle.gg/template/sakura-cherry-blossom",
+        "preview": "/assets/skins/sakura-cherry-blossom/985.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "arcade-pixel": {
+    "sourceUrl": "https://chatstyle.gg/template/arcade-pixel",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 1067,
+        "name": "rainbow",
+        "slug": "arcade-pixel-rainbow",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1067.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1069,
+        "name": "terminator",
+        "slug": "arcade-pixel-terminator",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1069.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1071,
+        "name": "blue",
+        "slug": "arcade-pixel-blue",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1071.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1070,
+        "name": "green",
+        "slug": "arcade-pixel-green",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1070.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1072,
+        "name": "blue",
+        "slug": "arcade-pixel-blue-1",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1072.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1063,
+        "name": "gold",
+        "slug": "arcade-pixel-gold",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1063.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1065,
+        "name": "space",
+        "slug": "arcade-pixel-space",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1065.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1068,
+        "name": "VIP",
+        "slug": "arcade-pixel-vip",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1068.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1061,
+        "name": "win",
+        "slug": "arcade-pixel-win",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1061.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1062,
+        "name": "Moderator",
+        "slug": "arcade-pixel-loading",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1062.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1064,
+        "name": "candy",
+        "slug": "arcade-pixel-candy",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1064.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1066,
+        "name": "snake",
+        "slug": "arcade-pixel-snake",
+        "url": "https://chatstyle.gg/template/arcade-pixel",
+        "preview": "/assets/skins/arcade-pixel/1066.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "retromon-silver": {
+    "sourceUrl": "https://chatstyle.gg/template/retromon-silver",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 914,
+        "name": "pink",
+        "slug": "retromon-silver-pink",
+        "url": "https://chatstyle.gg/template/retromon-silver",
+        "preview": "/assets/skins/retromon-silver/914.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 915,
+        "name": "red",
+        "slug": "retromon-silver-red",
+        "url": "https://chatstyle.gg/template/retromon-silver",
+        "preview": "/assets/skins/retromon-silver/915.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 912,
+        "name": "purple",
+        "slug": "retromon-silver-purple",
+        "url": "https://chatstyle.gg/template/retromon-silver",
+        "preview": "/assets/skins/retromon-silver/912.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 913,
+        "name": "blue",
+        "slug": "retromon-silver-blue",
+        "url": "https://chatstyle.gg/template/retromon-silver",
+        "preview": "/assets/skins/retromon-silver/913.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "prism-shift": {
+    "sourceUrl": "https://chatstyle.gg/template/prism-shift",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "cyberchat-2077": {
+    "sourceUrl": "https://chatstyle.gg/template/cyberchat-2077",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "zuluxxman": {
+    "sourceUrl": "https://chatstyle.gg/template/zuluxxman",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 675,
+        "name": "rainbow",
+        "slug": "zuluxxman-rainbow",
+        "url": "https://chatstyle.gg/template/zuluxxman",
+        "preview": "/assets/skins/zuluxxman/675.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 674,
+        "name": "glitch",
+        "slug": "zuluxxman-glitch",
+        "url": "https://chatstyle.gg/template/zuluxxman",
+        "preview": "/assets/skins/zuluxxman/674.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 670,
+        "name": "mod",
+        "slug": "zuluxxman-mod",
+        "url": "https://chatstyle.gg/template/zuluxxman",
+        "preview": "/assets/skins/zuluxxman/670.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 671,
+        "name": "vip",
+        "slug": "zuluxxman-vip",
+        "url": "https://chatstyle.gg/template/zuluxxman",
+        "preview": "/assets/skins/zuluxxman/671.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 672,
+        "name": "scan",
+        "slug": "zuluxxman-scan",
+        "url": "https://chatstyle.gg/template/zuluxxman",
+        "preview": "/assets/skins/zuluxxman/672.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 673,
+        "name": "holo",
+        "slug": "zuluxxman-holo",
+        "url": "https://chatstyle.gg/template/zuluxxman",
+        "preview": "/assets/skins/zuluxxman/673.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "sakura-ice-tea": {
+    "sourceUrl": "https://chatstyle.gg/template/sakura-ice-tea",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "small-talk": {
+    "sourceUrl": "https://chatstyle.gg/template/small-talk",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 884,
+        "name": "Moderator",
+        "slug": "small-talk-moderator",
+        "url": "https://chatstyle.gg/template/small-talk",
+        "preview": "/assets/skins/small-talk/884.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 886,
+        "name": "VIP",
+        "slug": "small-talk-vip",
+        "url": "https://chatstyle.gg/template/small-talk",
+        "preview": "/assets/skins/small-talk/886.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 887,
+        "name": "purple",
+        "slug": "small-talk-purple",
+        "url": "https://chatstyle.gg/template/small-talk",
+        "preview": "/assets/skins/small-talk/887.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 888,
+        "name": "mint",
+        "slug": "small-talk-mint",
+        "url": "https://chatstyle.gg/template/small-talk",
+        "preview": "/assets/skins/small-talk/888.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 889,
+        "name": "red",
+        "slug": "small-talk-red",
+        "url": "https://chatstyle.gg/template/small-talk",
+        "preview": "/assets/skins/small-talk/889.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 885,
+        "name": "Broadcaster",
+        "slug": "small-talk-broadcaster",
+        "url": "https://chatstyle.gg/template/small-talk",
+        "preview": "/assets/skins/small-talk/885.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "floral-cuteness": {
+    "sourceUrl": "https://chatstyle.gg/template/floral-cuteness",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 952,
+        "name": "mint",
+        "slug": "floral-cuteness-mint",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/952.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 961,
+        "name": "mod",
+        "slug": "floral-cuteness-mod",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/961.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 962,
+        "name": "vip",
+        "slug": "floral-cuteness-vip",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/962.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 953,
+        "name": "lavender",
+        "slug": "floral-cuteness-lavender",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/953.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 954,
+        "name": "ice",
+        "slug": "floral-cuteness-ice",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/954.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 955,
+        "name": "rose",
+        "slug": "floral-cuteness-rose",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/955.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 956,
+        "name": "honey",
+        "slug": "floral-cuteness-honey",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/956.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 957,
+        "name": "midnight",
+        "slug": "floral-cuteness-midnight",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/957.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 958,
+        "name": "aurora",
+        "slug": "floral-cuteness-aurora",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/958.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 959,
+        "name": "bubblegum",
+        "slug": "floral-cuteness-bubblegum",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/959.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 960,
+        "name": "sun",
+        "slug": "floral-cuteness-sun",
+        "url": "https://chatstyle.gg/template/floral-cuteness",
+        "preview": "/assets/skins/floral-cuteness/960.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "dark-glitch": {
+    "sourceUrl": "https://chatstyle.gg/template/dark-glitch",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 787,
+        "name": "error",
+        "slug": "dark-glitch-error",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/787.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 782,
+        "name": "xray",
+        "slug": "dark-glitch-xray",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/782.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 788,
+        "name": "Moderator",
+        "slug": "dark-glitch-moderator-1",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/788.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 786,
+        "name": "extreme",
+        "slug": "dark-glitch-moderator",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/786.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 783,
+        "name": "amber",
+        "slug": "dark-glitch-poison",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/783.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 784,
+        "name": "redline",
+        "slug": "dark-glitch-redline",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/784.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 785,
+        "name": "mirror",
+        "slug": "dark-glitch-ultraviolet",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/785.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 789,
+        "name": "Broadcaster",
+        "slug": "dark-glitch-broadcaster",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/789.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 790,
+        "name": "VIP",
+        "slug": "dark-glitch-vip",
+        "url": "https://chatstyle.gg/template/dark-glitch",
+        "preview": "/assets/skins/dark-glitch/790.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "neon-talks": {
+    "sourceUrl": "https://chatstyle.gg/template/neon-talks",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 827,
+        "name": "green",
+        "slug": "neon-talks-green",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/827.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 828,
+        "name": "red",
+        "slug": "neon-talks-red",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/828.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 829,
+        "name": "pink",
+        "slug": "neon-talks-pink",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/829.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 830,
+        "name": "blue",
+        "slug": "neon-talks-blue",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/830.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 831,
+        "name": "yellow",
+        "slug": "neon-talks-yellow",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/831.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 832,
+        "name": "orange",
+        "slug": "neon-talks-orange",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/832.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 833,
+        "name": "purple",
+        "slug": "neon-talks-purple",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/833.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 834,
+        "name": "white",
+        "slug": "neon-talks-white",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/834.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 835,
+        "name": "poison",
+        "slug": "neon-talks-black",
+        "url": "https://chatstyle.gg/template/neon-talks",
+        "preview": "/assets/skins/neon-talks/835.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "sleeping-cats": {
+    "sourceUrl": "https://chatstyle.gg/template/sleeping-cats",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 724,
+        "name": "lagoon",
+        "slug": "sleeping-cats-lagoon",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/724.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 725,
+        "name": "candy",
+        "slug": "sleeping-cats-candy",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/725.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 726,
+        "name": "moss",
+        "slug": "sleeping-cats-moss",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/726.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 727,
+        "name": "ember",
+        "slug": "sleeping-cats-ember",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/727.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 737,
+        "name": "carnival",
+        "slug": "sleeping-cats-carnival",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/737.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 728,
+        "name": "coffee",
+        "slug": "sleeping-cats-coffee",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/728.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 729,
+        "name": "poison",
+        "slug": "sleeping-cats-poison",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/729.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 739,
+        "name": "tarot",
+        "slug": "sleeping-cats-tarot",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/739.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 730,
+        "name": "voodoo",
+        "slug": "sleeping-cats-voodoo",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/730.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 740,
+        "name": "savanna",
+        "slug": "sleeping-cats-savanna",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/740.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 753,
+        "name": "morning",
+        "slug": "sleeping-cats-morning",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/753.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 741,
+        "name": "vaporwave",
+        "slug": "sleeping-cats-lofi",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/741.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 743,
+        "name": "midnight",
+        "slug": "sleeping-cats-midnight",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/743.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 749,
+        "name": "lavender",
+        "slug": "sleeping-cats-lavender",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/749.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 747,
+        "name": "vanilla",
+        "slug": "sleeping-cats-vanilla",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/747.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 750,
+        "name": "pudding",
+        "slug": "sleeping-cats-pudding",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/750.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 754,
+        "name": "rainbow",
+        "slug": "sleeping-cats-moon",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/754.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 778,
+        "name": "swirly",
+        "slug": "sleeping-cats-swirly",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/778.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 738,
+        "name": "jaguar",
+        "slug": "sleeping-cats-jaguar",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/738.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 776,
+        "name": "tiger",
+        "slug": "sleeping-cats-tiger",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/776.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 777,
+        "name": "mystic",
+        "slug": "sleeping-cats-mystic",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/777.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 780,
+        "name": "dream",
+        "slug": "sleeping-cats-dream",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/780.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 781,
+        "name": "cozy",
+        "slug": "sleeping-cats-cozy",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/781.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 731,
+        "name": "arcade",
+        "slug": "sleeping-cats-arcade",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/731.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 723,
+        "name": "sakura",
+        "slug": "sleeping-cats-sakura",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/723.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 732,
+        "name": "lion",
+        "slug": "sleeping-cats-lion",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/732.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 733,
+        "name": "pearl",
+        "slug": "sleeping-cats-pearl",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/733.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 734,
+        "name": "neptun",
+        "slug": "sleeping-cats-neptun",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/734.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 735,
+        "name": "bubblegum",
+        "slug": "sleeping-cats-bubblegum",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/735.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 736,
+        "name": "chrome",
+        "slug": "sleeping-cats-chrome",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/736.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 742,
+        "name": "doodle",
+        "slug": "sleeping-cats-doodle",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/742.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 744,
+        "name": "checkerboard",
+        "slug": "sleeping-cats-checkerboard",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/744.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 745,
+        "name": "prism",
+        "slug": "sleeping-cats-prism",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/745.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 746,
+        "name": "matcha",
+        "slug": "sleeping-cats-matcha",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/746.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 752,
+        "name": "knitted",
+        "slug": "sleeping-cats-knitted",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/752.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 779,
+        "name": "love",
+        "slug": "sleeping-cats-love",
+        "url": "https://chatstyle.gg/template/sleeping-cats",
+        "preview": "/assets/skins/sleeping-cats/779.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "violet-frame": {
+    "sourceUrl": "https://chatstyle.gg/template/violet-frame",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "microchip-flow": {
+    "sourceUrl": "https://chatstyle.gg/template/microchip-flow",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 965,
+        "name": "vip",
+        "slug": "microchip-flow-vip",
+        "url": "https://chatstyle.gg/template/microchip-flow",
+        "preview": "/assets/skins/microchip-flow/965.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 963,
+        "name": "overload",
+        "slug": "microchip-flow-overload",
+        "url": "https://chatstyle.gg/template/microchip-flow",
+        "preview": "/assets/skins/microchip-flow/963.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 964,
+        "name": "mod",
+        "slug": "microchip-flow-mod",
+        "url": "https://chatstyle.gg/template/microchip-flow",
+        "preview": "/assets/skins/microchip-flow/964.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 966,
+        "name": "rose",
+        "slug": "microchip-flow-rose",
+        "url": "https://chatstyle.gg/template/microchip-flow",
+        "preview": "/assets/skins/microchip-flow/966.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 967,
+        "name": "yellow",
+        "slug": "microchip-flow-yellow",
+        "url": "https://chatstyle.gg/template/microchip-flow",
+        "preview": "/assets/skins/microchip-flow/967.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 968,
+        "name": "orange",
+        "slug": "microchip-flow-orange",
+        "url": "https://chatstyle.gg/template/microchip-flow",
+        "preview": "/assets/skins/microchip-flow/968.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 969,
+        "name": "lavender",
+        "slug": "microchip-flow-lavender",
+        "url": "https://chatstyle.gg/template/microchip-flow",
+        "preview": "/assets/skins/microchip-flow/969.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 970,
+        "name": "red",
+        "slug": "microchip-flow-red",
+        "url": "https://chatstyle.gg/template/microchip-flow",
+        "preview": "/assets/skins/microchip-flow/970.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "lightning-flow": {
+    "sourceUrl": "https://chatstyle.gg/template/lightning-flow",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "pacchat-ghosts": {
+    "sourceUrl": "https://chatstyle.gg/template/pacchat-ghosts",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "chat-garden": {
+    "sourceUrl": "https://chatstyle.gg/template/chat-garden",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "inline-flow": {
+    "sourceUrl": "https://chatstyle.gg/template/inline-flow",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 949,
+        "name": "black",
+        "slug": "inline-flow-black",
+        "url": "https://chatstyle.gg/template/inline-flow",
+        "preview": "/assets/skins/inline-flow/949.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 950,
+        "name": "white",
+        "slug": "inline-flow-white",
+        "url": "https://chatstyle.gg/template/inline-flow",
+        "preview": "/assets/skins/inline-flow/950.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 951,
+        "name": "rainbow",
+        "slug": "inline-flow-rainbow",
+        "url": "https://chatstyle.gg/template/inline-flow",
+        "preview": "/assets/skins/inline-flow/951.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "poker-stack": {
+    "sourceUrl": "https://chatstyle.gg/template/poker-stack",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 816,
+        "name": "cards",
+        "slug": "poker-stack-cards",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/816.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 817,
+        "name": "diamonds",
+        "slug": "poker-stack-diamonds",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/817.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 818,
+        "name": "hearts",
+        "slug": "poker-stack-hearts",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/818.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 820,
+        "name": "clubs",
+        "slug": "poker-stack-clubs",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/820.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 821,
+        "name": "Moderator",
+        "slug": "poker-stack-moderator",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/821.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 822,
+        "name": "VIP",
+        "slug": "poker-stack-vip",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/822.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 823,
+        "name": "Broadcaster",
+        "slug": "poker-stack-broadcaster",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/823.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 824,
+        "name": "dealer",
+        "slug": "poker-stack-dealer",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/824.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 819,
+        "name": "spades",
+        "slug": "poker-stack-spades",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/819.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 815,
+        "name": "royal",
+        "slug": "poker-stack-royal",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/815.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 825,
+        "name": "gold",
+        "slug": "poker-stack-gold",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/825.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 826,
+        "name": "rainbow",
+        "slug": "poker-stack-rainbow",
+        "url": "https://chatstyle.gg/template/poker-stack",
+        "preview": "/assets/skins/poker-stack/826.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "manhunt-2026": {
+    "sourceUrl": "https://chatstyle.gg/template/manhunt-2026",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 1379,
+        "name": "teamnick",
+        "slug": "manhunt-2026-teamnick",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1379.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1382,
+        "name": "teamniclas",
+        "slug": "manhunt-2026-teamniclas",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1382.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1386,
+        "name": "teamrichard",
+        "slug": "manhunt-2026-teamrichard",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1386.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1378,
+        "name": "teamkarsten",
+        "slug": "manhunt-2026-teamkarsten",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1378.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1380,
+        "name": "teammari",
+        "slug": "manhunt-2026-teammari",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1380.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1381,
+        "name": "teamette",
+        "slug": "manhunt-2026-teamette",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1381.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1383,
+        "name": "teamviktoria",
+        "slug": "manhunt-2026-teamviktoria",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1383.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1384,
+        "name": "teamjohannes",
+        "slug": "manhunt-2026-teamjohannes",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1384.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1385,
+        "name": "teamkim",
+        "slug": "manhunt-2026-teamkim",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1385.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1387,
+        "name": "teamhunter",
+        "slug": "manhunt-2026-teamhunter",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/1387.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 711,
+        "name": "white",
+        "slug": "manhunt-white",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/711.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 708,
+        "name": "sub",
+        "slug": "manhunt-sub",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/708.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 709,
+        "name": "mod",
+        "slug": "manhunt-mod",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/709.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 710,
+        "name": "vip",
+        "slug": "manhunt-vip",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/710.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 712,
+        "name": "rainbow",
+        "slug": "manhunt-rainbow",
+        "url": "https://chatstyle.gg/template/manhunt-2026",
+        "preview": "/assets/skins/manhunt-2026/712.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "violet-frame-slim": {
+    "sourceUrl": "https://chatstyle.gg/template/violet-frame-slim",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  },
+  "y2k-media-player": {
+    "sourceUrl": "https://chatstyle.gg/template/y2k-media-player",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 987,
+        "name": "acid",
+        "slug": "y2k-media-player-acid",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/987.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 995,
+        "name": "peach",
+        "slug": "y2k-media-player-peach",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/995.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 996,
+        "name": "cherry",
+        "slug": "y2k-media-player-cherry",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/996.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 997,
+        "name": "aqua",
+        "slug": "y2k-media-player-aqua",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/997.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1002,
+        "name": "2000",
+        "slug": "y2k-media-player-2000",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/1002.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1001,
+        "name": "winamp",
+        "slug": "y2k-media-player-winamp",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/1001.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 988,
+        "name": "chrome",
+        "slug": "y2k-media-player-chrome",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/988.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 989,
+        "name": "rainbow",
+        "slug": "y2k-media-player-rainbow",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/989.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 990,
+        "name": "midnight",
+        "slug": "y2k-media-player-midnight",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/990.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 991,
+        "name": "vintage",
+        "slug": "y2k-media-player-vintage",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/991.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 992,
+        "name": "nightstar",
+        "slug": "y2k-media-player-nightstar",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/992.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 993,
+        "name": "bubblegum",
+        "slug": "y2k-media-player-bubblegum",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/993.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 994,
+        "name": "toxic",
+        "slug": "y2k-media-player-toxic",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/994.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 998,
+        "name": "Moderator",
+        "slug": "y2k-media-player-moderator",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/998.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 999,
+        "name": "VIP",
+        "slug": "y2k-media-player-vip",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/999.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 1000,
+        "name": "discman",
+        "slug": "y2k-media-player-discman",
+        "url": "https://chatstyle.gg/template/y2k-media-player",
+        "preview": "/assets/skins/y2k-media-player/1000.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "kuromi": {
+    "sourceUrl": "https://chatstyle.gg/template/kuromi",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": [
+      {
+        "id": 682,
+        "name": "skull",
+        "slug": "kuromi-skull",
+        "url": "https://chatstyle.gg/template/kuromi",
+        "preview": "/assets/skins/kuromi/682.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 681,
+        "name": "darkskull",
+        "slug": "kuromi-skulldark",
+        "url": "https://chatstyle.gg/template/kuromi",
+        "preview": "/assets/skins/kuromi/681.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 685,
+        "name": "rainbow",
+        "slug": "kuromi-rainbow",
+        "url": "https://chatstyle.gg/template/kuromi",
+        "preview": "/assets/skins/kuromi/685.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 683,
+        "name": "vip",
+        "slug": "kuromi-vip",
+        "url": "https://chatstyle.gg/template/kuromi",
+        "preview": "/assets/skins/kuromi/683.html",
+        "image": null,
+        "sourceImage": null
+      },
+      {
+        "id": 684,
+        "name": "mod",
+        "slug": "kuromi-mod",
+        "url": "https://chatstyle.gg/template/kuromi",
+        "preview": "/assets/skins/kuromi/684.html",
+        "image": null,
+        "sourceImage": null
+      }
+    ]
+  },
+  "pastel-love": {
+    "sourceUrl": "https://chatstyle.gg/template/pastel-love",
+    "importedAt": "2026-11-06T12:57:37.801Z",
+    "sampleText": "So sieht dein Chat aus.",
+    "skins": []
+  }
+}

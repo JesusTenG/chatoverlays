@@ -1,0 +1,4574 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Neo Tokyo – Moderator</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'VCR OSD Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/dae3406898fc4d45d775.woff2") format('woff2');
+}
+/*//////////////NEO TOKYO//////////////////*/
+
+
+/*//////////////CHAT//////////////////*/
+
+.cs-chat {
+    padding-block-start:
+        var(
+            --cs-chat-padding-top,
+            var(--cs-chat-padding, 10px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-chat-padding-right,
+            var(--cs-chat-padding, 10px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-chat-padding-bottom,
+            var(--cs-chat-padding, 10px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-chat-padding-left,
+            var(--cs-chat-padding, 10px)
+        );
+}
+
+
+/*//////////////SKIN API//////////////////*/
+
+.cs-bubble {
+
+    /*//////////////FONT//////////////////*/
+
+    --nt-ui-font:
+        "VCR OSD Mono",
+        "MS Gothic",
+        "Yu Gothic",
+        "Noto Sans JP",
+        monospace;
+
+
+    /*//////////////FRAMEWORK BRIDGE//////////////////*/
+
+    --nt-border:
+        var(
+            --cs-bubble-border-color,
+            #6957a8
+        );
+
+    --nt-body-bg:
+        var(
+            --cs-bubble-background-color,
+            #05050b
+        );
+
+    --nt-body-gradient:
+        var(
+            --cs-bubble-background-gradient,
+            none
+        );
+
+    --nt-title-bg:
+        var(
+            --cs-username-background-color,
+            #3c3158
+        );
+
+    --nt-title-gradient:
+        var(
+            --cs-username-background-gradient,
+            none
+        );
+
+    --nt-text:
+        var(
+            --cs-message-font-color,
+            #ffffff
+        );
+
+    --nt-username:
+        var(
+            --cs-username-font-color,
+            #ffffff
+        );
+
+
+    /*//////////////WINDOW PANEL//////////////////*/
+
+    --nt-window-top:
+        #f2ebf5;
+
+    --nt-window-mid:
+        #ddd1e6;
+
+    --nt-window-bottom:
+        #c6b7d4;
+
+    --nt-window-control:
+        #281a36;
+
+
+    /*//////////////EVENT MODE//////////////////*/
+
+    --nt-event-title-bg:
+        color-mix(
+            in srgb,
+            var(--nt-title-bg) 24%,
+            #08070d 76%
+        );
+
+    --nt-event-window-top:
+        #453755;
+
+    --nt-event-window-mid:
+        #372c48;
+
+    --nt-event-window-bottom:
+        #2a2238;
+
+    --nt-event-window-control:
+        #e9dff0;
+
+    --nt-event-body-bg:
+        #090711;
+
+    --nt-event-bracket:
+        rgba(204, 187, 224, .70);
+
+
+    /*//////////////CONTROL REST COLOR//////////////////*/
+
+    --nt-control-rest:
+        var(--nt-window-control);
+
+
+    /*//////////////SIGNAL COLORS//////////////////*/
+
+    --nt-signal-a:
+        #6078ec;
+
+    --nt-signal-b:
+        #d267ae;
+
+    --nt-signal-c:
+        #e5d9eb;
+
+    --nt-signal-dark:
+        #05040a;
+
+
+    /*//////////////CRT//////////////////*/
+
+    --nt-scanline-opacity:
+        .030;
+
+    --nt-phosphor-blue-opacity:
+        .021;
+
+    --nt-phosphor-pink-opacity:
+        .015;
+
+    --nt-grain-opacity:
+        .28;
+
+
+    /*//////////////MEDIA//////////////////*/
+
+    --nt-badge-saturation:
+        0;
+
+    --nt-emote-saturation:
+        .50;
+
+    --nt-emote-grayscale:
+        .20;
+
+
+    /*//////////////GEOMETRY//////////////////*/
+
+    --nt-header-height:
+        max(
+            27px,
+            calc(var(--cs-avatar-size, 22px) + 5px)
+        );
+
+    --nt-border-size:
+        max(
+            var(--cs-bubble-border-width, 1px),
+            1px
+        );
+
+    --nt-cut-start:
+        10px;
+
+    --nt-cut-end:
+        4px;
+
+    --nt-title-cut:
+        22px;
+
+    --nt-window-width:
+        72px;
+
+    --nt-window-offset:
+        4px;
+
+
+    /*//////////////ENTRY//////////////////*/
+
+    --nt-shell-enter-time:
+        520ms;
+
+    --nt-titlebar-enter-time:
+        900ms;
+
+    --nt-window-enter-time:
+        780ms;
+
+    --nt-titlebar-enter-delay:
+        180ms;
+
+    --nt-window-enter-delay:
+        520ms;
+
+    --nt-header-content-delay:
+        900ms;
+
+
+    /*//////////////NORMAL TRANSMISSION//////////////////*/
+
+    --nt-normal-transmission-delay:
+        1080ms;
+
+    --nt-normal-transmission-time:
+        1450ms;
+
+
+    /*//////////////EVENT TRANSMISSION//////////////////*/
+
+    --nt-event-delay:
+        1120ms;
+
+    --nt-event-time:
+        1500ms;
+
+
+    /*//////////////GLITCH DIRECTIONS//////////////////*/
+
+    --nt-jump-a:
+        -3px;
+
+    --nt-jump-b:
+        4px;
+
+    --nt-jump-c:
+        -2px;
+
+    --nt-real-jump-a:
+        4px;
+
+    --nt-real-jump-b:
+        -2px;
+
+    --nt-real-jump-c:
+        2px;
+
+
+    /*//////////////SKIN API//////////////////*/
+
+    --nt-skin-accent:
+        var(--nt-border);
+
+    --nt-skin-accent-2:
+        var(--nt-signal-a);
+
+    --nt-skin-accent-3:
+        var(--nt-signal-b);
+
+    --nt-skin-pattern-opacity:
+        0;
+
+    --nt-skin-glow-opacity:
+        0;
+
+    --nt-skin-back-opacity:
+        0;
+
+    --nt-skin-front-opacity:
+        0;
+
+
+    /*//////////////KATAKANA//////////////////*/
+
+    --nt-m1:
+        "ヨ";
+
+    --nt-m2:
+        "ヨウ";
+
+    --nt-m3:
+        "ヨウコソ";
+
+    --nt-m4:
+        "ヨウコソネオトウキョウ";
+
+
+    isolation:
+        isolate;
+
+    overflow:
+        visible;
+
+    background-color:
+        transparent;
+
+    background-image:
+        none;
+
+    border-color:
+        transparent;
+}
+
+
+/*//////////////EVENT CONTROL REST COLOR//////////////////*/
+
+.cs-bubble.cs-event {
+    --nt-control-rest:
+        var(--nt-event-window-control);
+}
+
+
+/*//////////////KATAKANA SET 01//////////////////*/
+
+.cs-bubble:nth-child(6n + 1) {
+    --nt-m1: "ヨ";
+    --nt-m2: "ヨウ";
+    --nt-m3: "ヨウコソ";
+    --nt-m4: "ヨウコソネオトウキョウ";
+}
+
+
+/*//////////////KATAKANA SET 02//////////////////*/
+
+.cs-bubble:nth-child(6n + 2) {
+    --nt-m1: "キ";
+    --nt-m2: "キミ";
+    --nt-m3: "キミヲ";
+    --nt-m4: "キミヲミテル";
+}
+
+
+/*//////////////KATAKANA SET 03//////////////////*/
+
+.cs-bubble:nth-child(6n + 3) {
+    --nt-m1: "デ";
+    --nt-m2: "データ";
+    --nt-m3: "データロード";
+    --nt-m4: "データロードチュウ";
+}
+
+
+/*//////////////KATAKANA SET 04//////////////////*/
+
+.cs-bubble:nth-child(6n + 4) {
+    --nt-m1: "ト";
+    --nt-m2: "トウキョウ";
+    --nt-m3: "ヨルノ";
+    --nt-m4: "ヨルノツウシン";
+}
+
+
+/*//////////////KATAKANA SET 05//////////////////*/
+
+.cs-bubble:nth-child(6n + 5) {
+    --nt-m1: "ミ";
+    --nt-m2: "ミツ";
+    --nt-m3: "ミツケタ";
+    --nt-m4: "キミヲミツケタ";
+}
+
+
+/*//////////////KATAKANA SET 06//////////////////*/
+
+.cs-bubble:nth-child(6n + 6) {
+    --nt-m1: "マ";
+    --nt-m2: "マダ";
+    --nt-m3: "マダミテル";
+    --nt-m4: "マダキミヲミテル";
+}
+
+
+/*//////////////FONT BRIDGE//////////////////*/
+
+.cs-username,
+.cs-username--inline {
+    font-family:
+        var(
+            --cs-username-font-family,
+            "VCR OSD Mono"
+        ),
+        "VCR OSD Mono",
+        "MS Gothic",
+        "Yu Gothic",
+        "Noto Sans JP",
+        monospace;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0;
+}
+
+
+.cs-message {
+    font-family:
+        var(
+            --cs-message-font-family,
+            "VCR OSD Mono"
+        ),
+        "VCR OSD Mono",
+        "MS Gothic",
+        "Yu Gothic",
+        "Noto Sans JP",
+        monospace;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            14px
+        );
+
+    line-height:
+        1.18;
+
+    letter-spacing:
+        0;
+}
+
+
+/*//////////////SKIN LAYERS//////////////////*/
+
+.nt-skin-back,
+.nt-skin-front {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    visibility:
+        hidden;
+}
+
+
+/*//////////////SKIN BACK//////////////////*/
+
+.nt-skin-back {
+    z-index:
+        1;
+
+    opacity:
+        var(--nt-skin-back-opacity);
+}
+
+
+/*//////////////SKIN FRONT//////////////////*/
+
+.nt-skin-front {
+    z-index:
+        40;
+
+    opacity:
+        var(--nt-skin-front-opacity);
+}
+
+
+/*//////////////SKIN NODES//////////////////*/
+
+.nt-skin-node,
+.nt-skin-fx {
+    position:
+        absolute;
+
+    display:
+        block;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+}
+
+
+/*//////////////BODY SHELL//////////////////*/
+
+.nt-shell {
+    position:
+        absolute;
+
+    z-index:
+        0;
+
+    inset-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding, 0px)
+        );
+
+    inset-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding, 0px)
+        );
+
+    inset-block-start:
+        calc(
+            var(
+                --cs-bubble-padding-top,
+                var(--cs-bubble-padding, 0px)
+            )
+            + var(--nt-header-height)
+        );
+
+    inset-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding, 0px)
+        );
+
+    pointer-events:
+        none;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--nt-cut-end)),
+            calc(100% - var(--nt-cut-end)) 100%,
+            var(--nt-cut-start) 100%,
+            0 calc(100% - var(--nt-cut-start))
+        );
+
+    background:
+        var(--nt-border);
+
+    animation:
+        nt-shell-enter
+        var(--nt-shell-enter-time)
+        cubic-bezier(.22, .68, .24, 1)
+        both;
+}
+
+
+/*//////////////BODY SHELL INNER//////////////////*/
+
+.nt-shell::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        var(--nt-border-size);
+
+    pointer-events:
+        none;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--nt-cut-end)),
+            calc(100% - var(--nt-cut-end)) 100%,
+            var(--nt-cut-start) 100%,
+            0 calc(100% - var(--nt-cut-start))
+        );
+
+    background-color:
+        var(--nt-body-bg);
+
+    background-image:
+        var(--nt-body-gradient);
+}
+
+
+/*//////////////BODY SHELL EXTRA//////////////////*/
+
+.nt-shell::after {
+    content:
+        none;
+
+    display:
+        none;
+}
+
+
+/*//////////////CRT LAYER//////////////////*/
+
+.nt-crt-layer {
+    position:
+        absolute;
+
+    z-index:
+        30;
+
+    inset-inline-start:
+        calc(
+            var(
+                --cs-bubble-padding-left,
+                var(--cs-bubble-padding, 0px)
+            )
+            + var(--nt-border-size)
+        );
+
+    inset-inline-end:
+        calc(
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding, 0px)
+            )
+            + var(--nt-border-size)
+        );
+
+    inset-block-start:
+        calc(
+            var(
+                --cs-bubble-padding-top,
+                var(--cs-bubble-padding, 0px)
+            )
+            + var(--nt-header-height)
+            + var(--nt-border-size)
+        );
+
+    inset-block-end:
+        calc(
+            var(
+                --cs-bubble-padding-bottom,
+                var(--cs-bubble-padding, 0px)
+            )
+            + var(--nt-border-size)
+        );
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--nt-cut-end)),
+            calc(100% - var(--nt-cut-end)) 100%,
+            var(--nt-cut-start) 100%,
+            0 calc(100% - var(--nt-cut-start))
+        );
+
+    background-image:
+
+        /*//////////////SCANLINES//////////////////*/
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(
+                255,
+                255,
+                255,
+                var(--nt-scanline-opacity)
+            ) 0px,
+            rgba(
+                255,
+                255,
+                255,
+                var(--nt-scanline-opacity)
+            ) 1px,
+            transparent 1px,
+            transparent 3px
+        ),
+
+        /*//////////////PHOSPHOR//////////////////*/
+
+        repeating-linear-gradient(
+            90deg,
+            rgba(
+                74,
+                91,
+                207,
+                var(--nt-phosphor-blue-opacity)
+            ) 0px,
+            rgba(
+                74,
+                91,
+                207,
+                var(--nt-phosphor-blue-opacity)
+            ) 1px,
+            transparent 1px,
+            transparent 2px,
+            rgba(
+                176,
+                74,
+                145,
+                var(--nt-phosphor-pink-opacity)
+            ) 2px,
+            rgba(
+                176,
+                74,
+                145,
+                var(--nt-phosphor-pink-opacity)
+            ) 3px
+        ),
+
+        /*//////////////STATIC GRAIN//////////////////*/
+
+        radial-gradient(
+            circle at 11% 18%,
+            rgba(255,255,255,.18) 0 .38px,
+            transparent .7px
+        ),
+
+        radial-gradient(
+            circle at 33% 67%,
+            rgba(196,180,216,.13) 0 .38px,
+            transparent .72px
+        ),
+
+        radial-gradient(
+            circle at 69% 29%,
+            rgba(103,89,186,.16) 0 .38px,
+            transparent .72px
+        ),
+
+        radial-gradient(
+            circle at 87% 79%,
+            rgba(181,76,147,.11) 0 .38px,
+            transparent .72px
+        ),
+
+        /*//////////////CRT BLOOM//////////////////*/
+
+        radial-gradient(
+            ellipse at 43% 39%,
+            rgba(145,126,185,.075),
+            rgba(76,62,122,.032) 48%,
+            transparent 77%
+        );
+
+    background-size:
+        auto,
+        auto,
+        13px 17px,
+        19px 23px,
+        29px 31px,
+        37px 33px,
+        auto;
+
+    opacity:
+        var(--nt-grain-opacity);
+
+    animation:
+        nt-crt-enter
+        620ms
+        80ms
+        linear
+        both;
+}
+
+
+/*//////////////HEADER//////////////////*/
+
+.cs-header {
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    min-inline-size:
+        0;
+
+    min-block-size:
+        var(--nt-header-height);
+
+    box-sizing:
+        border-box;
+
+    padding:
+        2px
+        64px
+        2px
+        4px;
+
+    background:
+        transparent;
+
+    overflow:
+        visible;
+}
+
+
+/*//////////////USERNAME PANEL BORDER//////////////////*/
+
+.nt-titlebar {
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    inset-block:
+        0;
+
+    inset-inline-start:
+        0;
+
+    inset-inline-end:
+        46px;
+
+    pointer-events:
+        none;
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - var(--nt-title-cut)) 0,
+            100% 100%,
+            0 100%
+        );
+
+    background:
+        var(--nt-border);
+
+    border-start-start-radius:
+        3px;
+
+    animation:
+        nt-titlebar-rise
+        var(--nt-titlebar-enter-time)
+        var(--nt-titlebar-enter-delay)
+        cubic-bezier(.22, .68, .25, 1)
+        both;
+}
+
+
+/*//////////////USERNAME PANEL SURFACE//////////////////*/
+
+.nt-titlebar::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        var(--nt-border-size);
+
+    pointer-events:
+        none;
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - var(--nt-title-cut)) 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-start-start-radius:
+        2px;
+
+    background-color:
+        var(--nt-title-bg);
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(222,207,235,.055) 2px,
+            rgba(222,207,235,.055) 3px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(235,224,243,.09) 0 .4px,
+            transparent .62px
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.045) 0%,
+            transparent 45%,
+            rgba(0,0,0,.10) 100%
+        ),
+
+        var(--nt-title-gradient);
+
+    background-size:
+        auto,
+        4px 4px,
+        auto,
+        auto;
+
+    background-repeat:
+        repeat,
+        repeat,
+        no-repeat,
+        no-repeat;
+}
+
+
+/*//////////////USERNAME PANEL EXTRA//////////////////*/
+
+.nt-titlebar::after {
+    content:
+        none;
+
+    display:
+        none;
+}
+
+
+/*//////////////WINDOW PANEL//////////////////*/
+
+.nt-window-panel {
+    position:
+        absolute;
+
+    z-index:
+        1;
+
+    inset-block-start:
+        var(--nt-window-offset);
+
+    inset-block-end:
+        0;
+
+    inset-inline-end:
+        0;
+
+    inline-size:
+        var(--nt-window-width);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        5px;
+
+    box-sizing:
+        border-box;
+
+    padding-inline:
+        28px
+        6px;
+
+    pointer-events:
+        none;
+
+    direction:
+        ltr;
+
+    border:
+        var(--nt-border-size)
+        solid
+        var(--nt-border);
+
+    background:
+        transparent;
+
+    border-start-end-radius:
+        4px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.55);
+
+    animation:
+        nt-window-panel-rise
+        var(--nt-window-enter-time)
+        var(--nt-window-enter-delay)
+        cubic-bezier(.22, .68, .25, 1)
+        both;
+}
+
+
+/*//////////////WINDOW PANEL SURFACE//////////////////*/
+
+.nt-window-panel::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        0;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    border-start-end-radius:
+        2px;
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(47,31,68,.055) 0px,
+            rgba(47,31,68,.055) 1px,
+            transparent 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.18) 0 .35px,
+            transparent .62px
+        ),
+
+        linear-gradient(
+            180deg,
+            var(--nt-window-top) 0%,
+            var(--nt-window-mid) 46%,
+            var(--nt-window-bottom) 100%
+        );
+
+    background-size:
+        auto,
+        5px 5px,
+        auto;
+}
+
+
+/*//////////////WINDOW CONTROLS//////////////////*/
+
+.nt-window-control {
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    display:
+        block;
+
+    flex:
+        0 0 auto;
+
+    inline-size:
+        8px;
+
+    block-size:
+        8px;
+
+    color:
+        var(--nt-control-rest);
+
+    opacity:
+        1;
+}
+
+
+/*//////////////MINIMIZE//////////////////*/
+
+.nt-window-min::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset-inline:
+        0;
+
+    inset-block-end:
+        1px;
+
+    block-size:
+        1px;
+
+    background:
+        currentColor;
+}
+
+
+/*//////////////MAXIMIZE//////////////////*/
+
+.nt-window-max::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    box-sizing:
+        border-box;
+
+    border:
+        1px solid currentColor;
+}
+
+
+/*//////////////CLOSE//////////////////*/
+
+.nt-window-close::before,
+.nt-window-close::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset-inline-start:
+        3px;
+
+    inset-block-start:
+        0;
+
+    inline-size:
+        1px;
+
+    block-size:
+        8px;
+
+    background:
+        currentColor;
+
+    transform-origin:
+        center;
+}
+
+
+.nt-window-close::before {
+    transform:
+        rotate(45deg);
+}
+
+
+.nt-window-close::after {
+    transform:
+        rotate(-45deg);
+}
+
+
+/*//////////////EVENT USERNAME SURFACE//////////////////*/
+
+.cs-bubble.cs-event
+.nt-titlebar::before {
+    background-color:
+        var(--nt-event-title-bg);
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(210,195,228,.042) 2px,
+            rgba(210,195,228,.042) 3px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(211,193,229,.075) 0 .4px,
+            transparent .62px
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.035),
+            transparent 45%,
+            rgba(0,0,0,.18)
+        );
+}
+
+
+/*//////////////EVENT WINDOW PANEL//////////////////*/
+
+.cs-bubble.cs-event
+.nt-window-panel {
+    border-color:
+        var(--nt-border);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.08);
+}
+
+
+/*//////////////EVENT WINDOW SURFACE//////////////////*/
+
+.cs-bubble.cs-event
+.nt-window-panel::before {
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(220,205,234,.04) 0px,
+            rgba(220,205,234,.04) 1px,
+            transparent 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.08) 0 .35px,
+            transparent .62px
+        ),
+
+        linear-gradient(
+            180deg,
+            var(--nt-event-window-top) 0%,
+            var(--nt-event-window-mid) 46%,
+            var(--nt-event-window-bottom) 100%
+        );
+}
+
+
+/*//////////////HEADER CONTENT//////////////////*/
+
+.cs-header .cs-avatar,
+.cs-header .cs-user {
+    position:
+        relative;
+
+    z-index:
+        6;
+}
+
+
+/*//////////////AVATAR ENTRY//////////////////*/
+
+.cs-header .cs-avatar {
+    opacity:
+        0;
+
+    animation:
+        nt-header-content-enter
+        280ms
+        var(--nt-header-content-delay)
+        linear
+        both;
+}
+
+
+/*//////////////USER WRAPPER//////////////////*/
+
+.cs-header .cs-user {
+    min-inline-size:
+        0;
+
+    max-inline-size:
+        100%;
+
+    background-color:
+        transparent !important;
+
+    background-image:
+        none !important;
+
+    border-color:
+        transparent !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/*//////////////USER EXTRA ELEMENTS//////////////////*/
+
+.cs-header .cs-user::before,
+.cs-header .cs-user::after {
+    content:
+        none !important;
+
+    display:
+        none !important;
+}
+
+
+/*//////////////BADGES//////////////////*/
+
+.cs-header .cs-badges {
+    flex-shrink:
+        0;
+}
+
+
+.cs-badges,
+.cs-badges--inline {
+    opacity:
+        0;
+
+    animation:
+        nt-header-content-enter
+        280ms
+        calc(
+            var(--nt-header-content-delay)
+            + 80ms
+        )
+        linear
+        both;
+}
+
+
+/*//////////////BADGES DESATURATED//////////////////*/
+
+.cs-badges img,
+.cs-badges--inline img {
+    filter:
+        saturate(
+            var(--nt-badge-saturation)
+        );
+
+    opacity:
+        .92;
+}
+
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-username,
+.cs-username--inline {
+    position:
+        relative;
+
+    min-inline-size:
+        0;
+
+    max-inline-size:
+        100%;
+
+    white-space:
+        nowrap;
+
+    text-transform:
+        none;
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "VCR OSD Mono"
+        ),
+        "VCR OSD Mono",
+        "MS Gothic",
+        "Yu Gothic",
+        "Noto Sans JP",
+        monospace;
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/*//////////////REAL USERNAME//////////////////*/
+
+.nt-username-real {
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/*//////////////USERNAME COLOR//////////////////*/
+
+.cs-header .cs-username,
+.cs-username--inline {
+    color:
+        var(--nt-username);
+}
+
+
+/*//////////////USERNAME READABILITY//////////////////*/
+
+.cs-header .cs-username {
+    text-shadow:
+
+        var(
+            --cs-username-text-shadow-offset-x,
+            0px
+        )
+        var(
+            --cs-username-text-shadow-offset-y,
+            0px
+        )
+        var(
+            --cs-username-text-shadow-blur-radius,
+            0px
+        )
+        var(
+            --cs-username-text-shadow-color,
+            transparent
+        ),
+
+        -.45px 0
+        rgba(74,89,190,.25),
+
+        .45px 0
+        rgba(159,67,134,.17),
+
+        0 1px 0
+        rgba(0,0,0,.45);
+}
+
+
+/*//////////////NO EXE OR OLD USER SIGNAL//////////////////*/
+
+.cs-username::before,
+.cs-username::after,
+.cs-username--inline::before,
+.cs-username--inline::after {
+    content:
+        none;
+
+    display:
+        none;
+}
+
+
+/*//////////////MESSAGE PANEL BORDER//////////////////*/
+
+.cs-content {
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    min-inline-size:
+        0;
+
+    box-sizing:
+        border-box;
+
+    padding:
+        calc(7px + var(--nt-border-size))
+        calc(10px + var(--nt-border-size))
+        calc(9px + var(--nt-border-size));
+
+    overflow:
+        hidden;
+
+    border-start-end-radius:
+        0;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--nt-cut-end)),
+            calc(100% - var(--nt-cut-end)) 100%,
+            var(--nt-cut-start) 100%,
+            0 calc(100% - var(--nt-cut-start))
+        );
+
+    background:
+        var(--nt-border);
+}
+
+
+/*//////////////MESSAGE PANEL SURFACE//////////////////*/
+
+.cs-content::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        0;
+
+    inset:
+        var(--nt-border-size);
+
+    pointer-events:
+        none;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--nt-cut-end)),
+            calc(100% - var(--nt-cut-end)) 100%,
+            var(--nt-cut-start) 100%,
+            0 calc(100% - var(--nt-cut-start))
+        );
+
+    background-color:
+        var(--nt-body-bg);
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(119,100,162,.038) 3px,
+            rgba(119,100,162,.038) 4px
+        ),
+
+        linear-gradient(
+            rgba(101,83,148,.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(101,83,148,.022) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            ellipse at 32% 35%,
+            rgba(112,95,155,.032),
+            transparent 60%
+        ),
+
+        var(--nt-body-gradient);
+
+    background-size:
+        auto,
+        100% 17px,
+        20px 100%,
+        auto,
+        auto;
+
+    background-repeat:
+        repeat,
+        repeat,
+        repeat,
+        no-repeat,
+        no-repeat;
+}
+
+
+/*//////////////CONTENT CHILDREN//////////////////*/
+
+.cs-content > .cs-user--inline,
+.cs-content > .cs-message,
+.cs-content > .cs-events {
+    position:
+        relative;
+
+    z-index:
+        3;
+}
+
+
+/*//////////////NORMAL NO HUD//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-content::after {
+    content:
+        none;
+
+    display:
+        none;
+}
+
+
+/*//////////////EVENT PANEL//////////////////*/
+
+.cs-bubble.cs-event
+.cs-content {
+    padding:
+        calc(9px + var(--nt-border-size))
+        calc(12px + var(--nt-border-size))
+        calc(10px + var(--nt-border-size));
+
+    background:
+        var(--nt-border);
+
+    animation:
+        nt-event-border-hit
+        460ms
+        calc(
+            var(--nt-event-delay)
+            + 750ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////EVENT PANEL SURFACE//////////////////*/
+
+.cs-bubble.cs-event
+.cs-content::before {
+    background-color:
+        var(--nt-event-body-bg);
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(189,169,215,.042) 2px,
+            rgba(189,169,215,.042) 3px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(111,91,164,.10),
+            transparent 22%,
+            transparent 78%,
+            rgba(177,89,154,.055)
+        ),
+
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(135,108,183,.12),
+            transparent 52%
+        ),
+
+        var(--nt-body-gradient);
+}
+
+
+/*//////////////EVENT BRACKETS//////////////////*/
+
+.cs-bubble.cs-event
+.cs-content::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    inset:
+        calc(
+            var(--nt-border-size)
+            + 4px
+        );
+
+    pointer-events:
+        none;
+
+    opacity:
+        .62;
+
+    background:
+
+        linear-gradient(
+            var(--nt-event-bracket),
+            var(--nt-event-bracket)
+        )
+        left top
+        / 14px 1px
+        no-repeat,
+
+        linear-gradient(
+            var(--nt-event-bracket),
+            var(--nt-event-bracket)
+        )
+        left top
+        / 1px 9px
+        no-repeat,
+
+        linear-gradient(
+            var(--nt-event-bracket),
+            var(--nt-event-bracket)
+        )
+        right bottom
+        / 14px 1px
+        no-repeat,
+
+        linear-gradient(
+            var(--nt-event-bracket),
+            var(--nt-event-bracket)
+        )
+        right bottom
+        / 1px 9px
+        no-repeat;
+
+    animation:
+        nt-event-bracket-hit
+        480ms
+        calc(
+            var(--nt-event-delay)
+            + 760ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////NORMAL BORDER SIGNAL HIT//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-content {
+    animation:
+        nt-normal-border-hit
+        440ms
+        calc(
+            var(--nt-normal-transmission-delay)
+            + 760ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////NORMAL TITLE SIGNAL HIT//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.nt-titlebar {
+    animation:
+        nt-titlebar-rise
+        var(--nt-titlebar-enter-time)
+        var(--nt-titlebar-enter-delay)
+        cubic-bezier(.22, .68, .25, 1)
+        both,
+
+        nt-normal-title-hit
+        420ms
+        calc(
+            var(--nt-normal-transmission-delay)
+            + 770ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////EVENT TITLE SIGNAL HIT//////////////////*/
+
+.cs-bubble.cs-event
+.nt-titlebar {
+    animation:
+        nt-titlebar-rise
+        var(--nt-titlebar-enter-time)
+        var(--nt-titlebar-enter-delay)
+        cubic-bezier(.22, .68, .25, 1)
+        both,
+
+        nt-event-title-hit
+        440ms
+        calc(
+            var(--nt-event-delay)
+            + 770ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////MESSAGE//////////////////*/
+
+.cs-message {
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    isolation:
+        isolate;
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "VCR OSD Mono"
+        ),
+        "VCR OSD Mono",
+        "MS Gothic",
+        "Yu Gothic",
+        "Noto Sans JP",
+        monospace;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            14px
+        );
+
+    line-height:
+        1.18;
+
+    text-align:
+        start;
+
+    text-shadow:
+
+        var(
+            --cs-message-text-shadow-offset-x,
+            0px
+        )
+        var(
+            --cs-message-text-shadow-offset-y,
+            0px
+        )
+        var(
+            --cs-message-text-shadow-blur-radius,
+            0px
+        )
+        var(
+            --cs-message-text-shadow-color,
+            transparent
+        ),
+
+        -.4px 0
+        rgba(77,92,199,.25),
+
+        .4px 0
+        rgba(170,76,143,.16);
+}
+
+
+/*//////////////NO OLD MESSAGE SIGNAL//////////////////*/
+
+.cs-message::before,
+.cs-message::after {
+    content:
+        none;
+
+    display:
+        none;
+}
+
+
+/*//////////////REAL MESSAGE//////////////////*/
+
+.nt-message-real {
+    position:
+        relative;
+
+    display:
+        block;
+
+    min-inline-size:
+        0;
+
+    max-inline-size:
+        100%;
+}
+
+
+/*//////////////NORMAL USERNAME//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.nt-username-real {
+    opacity:
+        0;
+
+    animation:
+        nt-normal-real-user
+        var(--nt-normal-transmission-time)
+        var(--nt-normal-transmission-delay)
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////NORMAL MESSAGE//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.nt-message-real {
+    opacity:
+        0;
+
+    animation:
+        nt-normal-real-message
+        var(--nt-normal-transmission-time)
+        var(--nt-normal-transmission-delay)
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////EVENT USERNAME//////////////////*/
+
+.cs-bubble.cs-event
+.nt-username-real {
+    opacity:
+        0;
+
+    animation:
+        nt-event-real-user
+        var(--nt-event-time)
+        var(--nt-event-delay)
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////EVENT MESSAGE//////////////////*/
+
+.cs-bubble.cs-event
+.nt-message-real {
+    opacity:
+        0;
+
+    padding:
+        4px
+        6px;
+
+    border:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(113,91,164,.10),
+            transparent 74%
+        );
+
+    animation:
+        nt-event-real-message
+        var(--nt-event-time)
+        var(--nt-event-delay)
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////EMOTES//////////////////*/
+
+.cs-message .emote,
+.cs-message img.emote {
+    width:
+        auto !important;
+
+    inline-size:
+        auto !important;
+
+    max-width:
+        none !important;
+
+    max-inline-size:
+        none !important;
+
+    height:
+        calc(
+            var(--cs-message-font-size, 14px)
+            * 1.55
+        ) !important;
+
+    block-size:
+        calc(
+            var(--cs-message-font-size, 14px)
+            * 1.55
+        ) !important;
+
+    max-height:
+        calc(
+            var(--cs-message-font-size, 14px)
+            * 1.55
+        ) !important;
+
+    max-block-size:
+        calc(
+            var(--cs-message-font-size, 14px)
+            * 1.55
+        ) !important;
+
+    object-fit:
+        contain;
+
+    vertical-align:
+        middle;
+
+    filter:
+        grayscale(
+            var(--nt-emote-grayscale)
+        )
+        saturate(
+            var(--nt-emote-saturation)
+        )
+        contrast(1.08)
+        brightness(.91);
+
+    opacity:
+        .90;
+}
+
+
+/*//////////////TRANSMISSION DEFAULT//////////////////*/
+
+.nt-transmission {
+    display:
+        none;
+}
+
+
+/*//////////////TRANSMISSION COMMON//////////////////*/
+
+.cs-bubble
+.nt-transmission {
+    position:
+        absolute;
+
+    z-index:
+        20;
+
+    inset:
+        var(--nt-border-size);
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    box-sizing:
+        border-box;
+
+    padding:
+        8px;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--nt-cut-end)),
+            calc(100% - var(--nt-cut-end)) 100%,
+            var(--nt-cut-start) 100%,
+            0 calc(100% - var(--nt-cut-start))
+        );
+}
+
+
+/*//////////////NORMAL TRANSMISSION//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.nt-transmission {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(14,11,24,.97),
+            rgba(7,6,13,.98)
+        );
+
+    animation:
+        nt-normal-transmission-cover
+        var(--nt-normal-transmission-time)
+        var(--nt-normal-transmission-delay)
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////EVENT TRANSMISSION//////////////////*/
+
+.cs-bubble.cs-event
+.nt-transmission {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(23,17,37,.98),
+            rgba(10,8,18,.98)
+        );
+
+    animation:
+        nt-event-transmission-cover
+        var(--nt-event-time)
+        var(--nt-event-delay)
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////TRANSMISSION STATUS//////////////////*/
+
+.nt-transmission-status {
+    position:
+        relative;
+
+    display:
+        block;
+
+    max-inline-size:
+        100%;
+
+    text-align:
+        center;
+
+    white-space:
+        nowrap;
+
+    color:
+        #e4d7eb;
+
+    font-family:
+        "MS Gothic",
+        "Yu Gothic",
+        "Noto Sans JP",
+        monospace;
+
+    font-size:
+        calc(
+            var(--cs-message-font-size, 14px)
+            * .90
+        );
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        .07em;
+
+    text-shadow:
+        -1px 0
+        color-mix(
+            in srgb,
+            var(--nt-signal-a) 70%,
+            transparent
+        ),
+
+        1px 0
+        color-mix(
+            in srgb,
+            var(--nt-signal-b) 60%,
+            transparent
+        );
+}
+
+
+/*//////////////NORMAL TRANSMISSION TEXT//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.nt-transmission-status::before {
+    content:
+        var(--nt-m1);
+
+    animation:
+        nt-normal-transmission-signal
+        var(--nt-normal-transmission-time)
+        var(--nt-normal-transmission-delay)
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////EVENT TRANSMISSION TEXT//////////////////*/
+
+.cs-bubble.cs-event
+.nt-transmission-status::before {
+    content:
+        "トク";
+
+    animation:
+        nt-event-transmission-signal
+        var(--nt-event-time)
+        var(--nt-event-delay)
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////NORMAL CONTROL HIT//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.nt-window-min {
+    animation:
+        nt-control-hit
+        300ms
+        calc(
+            var(--nt-normal-transmission-delay)
+            + 720ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+.cs-bubble:not(.cs-event)
+.nt-window-max {
+    animation:
+        nt-control-hit
+        300ms
+        calc(
+            var(--nt-normal-transmission-delay)
+            + 760ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+.cs-bubble:not(.cs-event)
+.nt-window-close {
+    animation:
+        nt-control-hit
+        300ms
+        calc(
+            var(--nt-normal-transmission-delay)
+            + 800ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////EVENT CONTROL HIT//////////////////*/
+
+.cs-bubble.cs-event
+.nt-window-min {
+    animation:
+        nt-control-hit
+        300ms
+        calc(
+            var(--nt-event-delay)
+            + 720ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+.cs-bubble.cs-event
+.nt-window-max {
+    animation:
+        nt-control-hit
+        300ms
+        calc(
+            var(--nt-event-delay)
+            + 760ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+.cs-bubble.cs-event
+.nt-window-close {
+    animation:
+        nt-control-hit
+        300ms
+        calc(
+            var(--nt-event-delay)
+            + 800ms
+        )
+        steps(1, end)
+        both;
+}
+
+
+/*//////////////BODY ENTRY//////////////////*/
+
+@keyframes nt-shell-enter {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            scaleY(.18);
+
+        transform-origin:
+            center bottom;
+    }
+
+
+    22% {
+        opacity:
+            .72;
+    }
+
+
+    100% {
+        opacity:
+            1;
+
+        transform:
+            scaleY(1);
+    }
+}
+
+
+/*//////////////CRT ENTRY//////////////////*/
+
+@keyframes nt-crt-enter {
+
+    0% {
+        opacity:
+            0;
+    }
+
+
+    22% {
+        opacity:
+            .24;
+    }
+
+
+    31% {
+        opacity:
+            .08;
+    }
+
+
+    39% {
+        opacity:
+            .31;
+    }
+
+
+    49% {
+        opacity:
+            .19;
+    }
+
+
+    100% {
+        opacity:
+            var(--nt-grain-opacity);
+    }
+}
+
+
+/*//////////////USERNAME PANEL RISE//////////////////*/
+
+@keyframes nt-titlebar-rise {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            translateY(
+                calc(
+                    var(--nt-header-height)
+                    + 12px
+                )
+            );
+    }
+
+
+    16% {
+        opacity:
+            .30;
+    }
+
+
+    100% {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////WINDOW PANEL RISE//////////////////*/
+
+@keyframes nt-window-panel-rise {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            translateY(
+                calc(
+                    var(--nt-header-height)
+                    + 9px
+                )
+            );
+    }
+
+
+    18% {
+        opacity:
+            .30;
+    }
+
+
+    100% {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////HEADER CONTENT ENTRY//////////////////*/
+
+@keyframes nt-header-content-enter {
+
+    0% {
+        opacity:
+            0;
+    }
+
+
+    100% {
+        opacity:
+            1;
+    }
+}
+
+
+/*//////////////NORMAL TRANSMISSION SIGNAL//////////////////*/
+
+@keyframes nt-normal-transmission-signal {
+
+    0% {
+        content:
+            var(--nt-m1);
+
+        opacity:
+            0;
+
+        color:
+            #e4d7eb;
+
+        transform:
+            none;
+    }
+
+
+    8% {
+        content:
+            var(--nt-m1);
+
+        opacity:
+            .72;
+    }
+
+
+    20% {
+        content:
+            var(--nt-m2);
+
+        opacity:
+            .92;
+    }
+
+
+    35% {
+        content:
+            var(--nt-m3);
+    }
+
+
+    50% {
+        content:
+            var(--nt-m4);
+
+        opacity:
+            1;
+    }
+
+
+    61% {
+        content:
+            var(--nt-m4);
+    }
+
+
+    /*//////////////SIGNAL LOCK//////////////////*/
+
+    66% {
+        content:
+            "シグナル";
+
+        color:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+
+        text-shadow:
+            -2px 0
+            var(--nt-signal-a),
+
+            2px 0
+            var(--nt-signal-b);
+    }
+
+
+    /*//////////////GLITCH A//////////////////*/
+
+    69% {
+        content:
+            "シグナルロック";
+
+        color:
+            var(--nt-signal-b);
+
+        opacity:
+            .38;
+
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    /*//////////////GLITCH B//////////////////*/
+
+    72% {
+        color:
+            var(--nt-signal-c);
+
+        opacity:
+            1;
+
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+
+        text-shadow:
+            2px 0
+            var(--nt-signal-a),
+
+            -2px 0
+            var(--nt-signal-b);
+    }
+
+
+    75% {
+        opacity:
+            .18;
+
+        transform:
+            translateX(
+                var(--nt-real-jump-a)
+            );
+    }
+
+
+    78%,
+    100% {
+        content:
+            "";
+
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////NORMAL TRANSMISSION COVER//////////////////*/
+
+@keyframes nt-normal-transmission-cover {
+
+    0% {
+        opacity:
+            0;
+
+        background:
+            rgba(9,7,16,.98);
+
+        transform:
+            none;
+    }
+
+
+    5% {
+        opacity:
+            1;
+    }
+
+
+    62% {
+        opacity:
+            1;
+
+        background:
+            rgba(9,7,16,.98);
+    }
+
+
+    66% {
+        background:
+            color-mix(
+                in srgb,
+                var(--nt-signal-a) 35%,
+                #080710 65%
+            );
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+    }
+
+
+    69% {
+        background:
+            color-mix(
+                in srgb,
+                var(--nt-signal-b) 35%,
+                #080710 65%
+            );
+
+        opacity:
+            .86;
+
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    72% {
+        background:
+            var(--nt-signal-c);
+
+        opacity:
+            .68;
+
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+    }
+
+
+    75% {
+        background:
+            var(--nt-signal-dark);
+
+        opacity:
+            .22;
+
+        transform:
+            translateX(
+                var(--nt-real-jump-a)
+            );
+    }
+
+
+    78% {
+        opacity:
+            0;
+
+        transform:
+            none;
+    }
+
+
+    100% {
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+    }
+}
+
+
+/*//////////////NORMAL REAL USERNAME//////////////////*/
+
+@keyframes nt-normal-real-user {
+
+    0%,
+    71% {
+        opacity:
+            0;
+
+        color:
+            inherit;
+
+        transform:
+            none;
+    }
+
+
+    72% {
+        opacity:
+            .16;
+
+        color:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-a)
+            );
+    }
+
+
+    74% {
+        opacity:
+            1;
+
+        color:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-b)
+            );
+    }
+
+
+    76% {
+        opacity:
+            .40;
+
+        color:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-c)
+            );
+    }
+
+
+    78%,
+    100% {
+        opacity:
+            1;
+
+        color:
+            inherit;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////NORMAL REAL MESSAGE//////////////////*/
+
+@keyframes nt-normal-real-message {
+
+    0%,
+    72% {
+        opacity:
+            0;
+
+        color:
+            inherit;
+
+        transform:
+            none;
+    }
+
+
+    73% {
+        opacity:
+            .14;
+
+        color:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-a)
+            );
+    }
+
+
+    75% {
+        opacity:
+            1;
+
+        color:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-b)
+            );
+    }
+
+
+    77% {
+        opacity:
+            .38;
+
+        color:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-c)
+            );
+    }
+
+
+    79%,
+    100% {
+        opacity:
+            1;
+
+        color:
+            inherit;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////NORMAL TITLE HIT//////////////////*/
+
+@keyframes nt-normal-title-hit {
+
+    0%,
+    12% {
+        background:
+            var(--nt-border);
+
+        transform:
+            none;
+    }
+
+
+    27% {
+        background:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+    }
+
+
+    44% {
+        background:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    61% {
+        background:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+    }
+
+
+    76%,
+    100% {
+        background:
+            var(--nt-border);
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////NORMAL BORDER HIT//////////////////*/
+
+@keyframes nt-normal-border-hit {
+
+    0%,
+    12% {
+        background:
+            var(--nt-border);
+
+        transform:
+            none;
+    }
+
+
+    27% {
+        background:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+    }
+
+
+    44% {
+        background:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    61% {
+        background:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+    }
+
+
+    76%,
+    100% {
+        background:
+            var(--nt-border);
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////EVENT TRANSMISSION SIGNAL//////////////////*/
+
+@keyframes nt-event-transmission-signal {
+
+    0% {
+        content:
+            "トク";
+
+        opacity:
+            0;
+    }
+
+
+    8% {
+        content:
+            "トク";
+
+        opacity:
+            .72;
+    }
+
+
+    20% {
+        content:
+            "トクベツ";
+
+        opacity:
+            .92;
+    }
+
+
+    34% {
+        content:
+            "トクベツツウ";
+    }
+
+
+    48% {
+        content:
+            "トクベツツウシン";
+
+        opacity:
+            1;
+    }
+
+
+    62% {
+        content:
+            "トクベツツウシン";
+    }
+
+
+    68% {
+        content:
+            "シグナルロック";
+
+        color:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+
+        text-shadow:
+            -2px 0
+            var(--nt-signal-a),
+
+            2px 0
+            var(--nt-signal-b);
+    }
+
+
+    71% {
+        color:
+            var(--nt-signal-b);
+
+        opacity:
+            .36;
+
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    74% {
+        content:
+            "トクベツ";
+
+        color:
+            var(--nt-signal-c);
+
+        opacity:
+            1;
+
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+    }
+
+
+    77% {
+        opacity:
+            .12;
+
+        transform:
+            translateX(
+                var(--nt-real-jump-a)
+            );
+    }
+
+
+    79%,
+    100% {
+        content:
+            "";
+
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////EVENT TRANSMISSION COVER//////////////////*/
+
+@keyframes nt-event-transmission-cover {
+
+    0% {
+        opacity:
+            0;
+    }
+
+
+    5% {
+        opacity:
+            1;
+    }
+
+
+    66% {
+        opacity:
+            1;
+
+        transform:
+            none;
+    }
+
+
+    69% {
+        background:
+            color-mix(
+                in srgb,
+                var(--nt-signal-a) 35%,
+                #080710 65%
+            );
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+    }
+
+
+    72% {
+        background:
+            color-mix(
+                in srgb,
+                var(--nt-signal-b) 35%,
+                #080710 65%
+            );
+
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    75% {
+        background:
+            var(--nt-signal-c);
+
+        opacity:
+            .72;
+
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+    }
+
+
+    78% {
+        background:
+            var(--nt-signal-dark);
+
+        opacity:
+            .18;
+
+        transform:
+            none;
+    }
+
+
+    80% {
+        opacity:
+            0;
+    }
+
+
+    100% {
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+    }
+}
+
+
+/*//////////////EVENT REAL USERNAME//////////////////*/
+
+@keyframes nt-event-real-user {
+
+    0%,
+    72% {
+        opacity:
+            0;
+
+        transform:
+            none;
+    }
+
+
+    73% {
+        opacity:
+            .18;
+
+        color:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-a)
+            );
+    }
+
+
+    75% {
+        opacity:
+            1;
+
+        color:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-b)
+            );
+    }
+
+
+    77% {
+        opacity:
+            .38;
+
+        color:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-c)
+            );
+    }
+
+
+    79%,
+    100% {
+        opacity:
+            1;
+
+        color:
+            inherit;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////EVENT REAL MESSAGE//////////////////*/
+
+@keyframes nt-event-real-message {
+
+    0%,
+    74% {
+        opacity:
+            0;
+
+        transform:
+            none;
+    }
+
+
+    75% {
+        opacity:
+            .16;
+
+        color:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-a)
+            );
+    }
+
+
+    77% {
+        opacity:
+            1;
+
+        color:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-b)
+            );
+    }
+
+
+    79% {
+        opacity:
+            .42;
+
+        color:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(
+                var(--nt-real-jump-c)
+            );
+    }
+
+
+    81%,
+    100% {
+        opacity:
+            1;
+
+        color:
+            inherit;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////EVENT TITLE HIT//////////////////*/
+
+@keyframes nt-event-title-hit {
+
+    0%,
+    15% {
+        background:
+            var(--nt-border);
+
+        transform:
+            none;
+    }
+
+
+    30% {
+        background:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+    }
+
+
+    46% {
+        background:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    62% {
+        background:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+    }
+
+
+    76%,
+    100% {
+        background:
+            var(--nt-border);
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////EVENT BORDER HIT//////////////////*/
+
+@keyframes nt-event-border-hit {
+
+    0%,
+    15% {
+        background:
+            var(--nt-border);
+
+        transform:
+            none;
+    }
+
+
+    30% {
+        background:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+    }
+
+
+    46% {
+        background:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    62% {
+        background:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+    }
+
+
+    76%,
+    100% {
+        background:
+            var(--nt-border);
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////EVENT BRACKET HIT//////////////////*/
+
+@keyframes nt-event-bracket-hit {
+
+    0% {
+        opacity:
+            .62;
+
+        transform:
+            none;
+    }
+
+
+    22% {
+        opacity:
+            1;
+
+        transform:
+            translateX(
+                var(--nt-jump-a)
+            );
+    }
+
+
+    42% {
+        transform:
+            translateX(
+                var(--nt-jump-b)
+            );
+    }
+
+
+    60% {
+        transform:
+            translateX(
+                var(--nt-jump-c)
+            );
+    }
+
+
+    78%,
+    100% {
+        opacity:
+            .62;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////WINDOW CONTROL HIT//////////////////*/
+
+@keyframes nt-control-hit {
+
+    0%,
+    15% {
+        color:
+            var(--nt-control-rest);
+
+        transform:
+            none;
+    }
+
+
+    28% {
+        color:
+            var(--nt-signal-a);
+
+        transform:
+            translateX(-1px);
+    }
+
+
+    46% {
+        color:
+            var(--nt-signal-b);
+
+        transform:
+            translateX(1px);
+    }
+
+
+    64% {
+        color:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(-1px);
+    }
+
+
+    80%,
+    100% {
+        color:
+            var(--nt-control-rest);
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////SKIN LIBRARY - BORDER GLITCH//////////////////*/
+
+@keyframes nt-skin-border-glitch {
+
+    0%,
+    87%,
+    94%,
+    100% {
+        background-color:
+            var(--nt-skin-accent);
+
+        transform:
+            none;
+    }
+
+
+    88% {
+        background-color:
+            var(--nt-skin-accent-2);
+
+        transform:
+            translateX(-1px);
+    }
+
+
+    90% {
+        background-color:
+            var(--nt-skin-accent-3);
+
+        transform:
+            translateX(1px);
+    }
+
+
+    92% {
+        background-color:
+            var(--nt-signal-c);
+
+        transform:
+            translateX(-1px);
+    }
+
+
+    94% {
+        background-color:
+            var(--nt-skin-accent);
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////SKIN LIBRARY - CRT GLITCH//////////////////*/
+
+@keyframes nt-skin-crt-glitch {
+
+    0%,
+    91%,
+    97%,
+    100% {
+        opacity:
+            var(--nt-grain-opacity);
+
+        transform:
+            none;
+    }
+
+
+    92% {
+        opacity:
+            .12;
+
+        transform:
+            translateX(-1px);
+    }
+
+
+    94% {
+        opacity:
+            .38;
+
+        transform:
+            translateX(1px);
+    }
+
+
+    96% {
+        opacity:
+            var(--nt-grain-opacity);
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////SKIN LIBRARY - CONTROL GLITCH//////////////////*/
+
+@keyframes nt-skin-control-glitch {
+
+    0%,
+    91%,
+    97%,
+    100% {
+        color:
+            inherit;
+
+        transform:
+            none;
+    }
+
+
+    92% {
+        color:
+            var(--nt-skin-accent-2);
+
+        transform:
+            translateX(-1px);
+    }
+
+
+    94% {
+        color:
+            var(--nt-skin-accent-3);
+
+        transform:
+            translateX(1px);
+    }
+
+
+    96% {
+        color:
+            inherit;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////SKIN LIBRARY - BADGE GLITCH//////////////////*/
+
+@keyframes nt-skin-badge-glitch {
+
+    0%,
+    92%,
+    98%,
+    100% {
+        opacity:
+            .92;
+
+        transform:
+            none;
+    }
+
+
+    93% {
+        opacity:
+            .55;
+
+        transform:
+            translateX(-1px);
+    }
+
+
+    95% {
+        opacity:
+            1;
+
+        transform:
+            translateX(1px);
+    }
+
+
+    97% {
+        opacity:
+            .92;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////SKIN LIBRARY - FLOAT//////////////////*/
+
+@keyframes nt-skin-float {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+
+    50% {
+        transform:
+            translateY(-2px);
+    }
+}
+
+
+/*//////////////SKIN LIBRARY - SIGNAL SLICE//////////////////*/
+
+@keyframes nt-skin-signal-slice {
+
+    0%,
+    88%,
+    95%,
+    100% {
+        opacity:
+            0;
+
+        transform:
+            translateX(0);
+    }
+
+
+    89% {
+        opacity:
+            .80;
+
+        transform:
+            translateX(-8px);
+    }
+
+
+    91% {
+        opacity:
+            .28;
+
+        transform:
+            translateX(10px);
+    }
+
+
+    93% {
+        opacity:
+            .65;
+
+        transform:
+            translateX(-3px);
+    }
+
+
+    95% {
+        opacity:
+            0;
+
+        transform:
+            none;
+    }
+}
+
+
+/*//////////////SKIN LIBRARY - VERTICAL FLOW//////////////////*/
+
+@keyframes nt-skin-vertical-flow {
+
+    0% {
+        transform:
+            translateY(-115%);
+
+        opacity:
+            0;
+    }
+
+
+    12% {
+        opacity:
+            1;
+    }
+
+
+    88% {
+        opacity:
+            1;
+    }
+
+
+    100% {
+        transform:
+            translateY(115%);
+
+        opacity:
+            0;
+    }
+}
+
+
+/*//////////////RTL//////////////////*/
+
+.cs-bubble.cs-direction-rtl {
+    direction:
+        rtl;
+
+    --nt-jump-a:
+        3px;
+
+    --nt-jump-b:
+        -4px;
+
+    --nt-jump-c:
+        2px;
+
+    --nt-real-jump-a:
+        -4px;
+
+    --nt-real-jump-b:
+        2px;
+
+    --nt-real-jump-c:
+        -2px;
+}
+
+
+/*//////////////RTL TEXT//////////////////*/
+
+.cs-bubble.cs-direction-rtl
+.cs-header,
+
+.cs-bubble.cs-direction-rtl
+.cs-content,
+
+.cs-bubble.cs-direction-rtl
+.cs-user,
+
+.cs-bubble.cs-direction-rtl
+.cs-user--inline,
+
+.cs-bubble.cs-direction-rtl
+.cs-username,
+
+.cs-bubble.cs-direction-rtl
+.cs-username--inline,
+
+.cs-bubble.cs-direction-rtl
+.cs-message {
+    direction:
+        rtl;
+
+    text-align:
+        start;
+}
+
+
+/*//////////////RTL BODY GEOMETRY//////////////////*/
+
+.cs-bubble.cs-direction-rtl
+.nt-shell,
+
+.cs-bubble.cs-direction-rtl
+.nt-shell::before,
+
+.cs-bubble.cs-direction-rtl
+.nt-crt-layer,
+
+.cs-bubble.cs-direction-rtl
+.cs-content,
+
+.cs-bubble.cs-direction-rtl
+.cs-content::before,
+
+.cs-bubble.cs-direction-rtl
+.nt-transmission {
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--nt-cut-start)),
+            calc(100% - var(--nt-cut-start)) 100%,
+            var(--nt-cut-end) 100%,
+            0 calc(100% - var(--nt-cut-end))
+        );
+}
+
+
+/*//////////////RTL TITLEBAR//////////////////*/
+
+.cs-bubble.cs-direction-rtl
+.nt-titlebar,
+
+.cs-bubble.cs-direction-rtl
+.nt-titlebar::before {
+    clip-path:
+        polygon(
+            var(--nt-title-cut) 0,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-start-start-radius:
+        0;
+
+    border-start-end-radius:
+        3px;
+}
+
+
+/*//////////////RTL WINDOW PANEL//////////////////*/
+
+.cs-bubble.cs-direction-rtl
+.nt-window-panel {
+    border-start-end-radius:
+        0;
+
+    border-start-start-radius:
+        4px;
+}
+
+
+.cs-bubble.cs-direction-rtl
+.nt-window-panel::before {
+    border-start-end-radius:
+        0;
+
+    border-start-start-radius:
+        2px;
+}
+
+
+/*//////////////RTL EVENT MESSAGE//////////////////*/
+
+.cs-bubble.cs-event.cs-direction-rtl
+.nt-message-real {
+    background:
+        linear-gradient(
+            270deg,
+            rgba(113,91,164,.10),
+            transparent 74%
+        );
+}
+
+
+/*//////////////RTL EVENT BRACKETS//////////////////*/
+
+.cs-bubble.cs-event.cs-direction-rtl
+.cs-content::after {
+    background:
+
+        linear-gradient(
+            var(--nt-event-bracket),
+            var(--nt-event-bracket)
+        )
+        right top
+        / 14px 1px
+        no-repeat,
+
+        linear-gradient(
+            var(--nt-event-bracket),
+            var(--nt-event-bracket)
+        )
+        right top
+        / 1px 9px
+        no-repeat,
+
+        linear-gradient(
+            var(--nt-event-bracket),
+            var(--nt-event-bracket)
+        )
+        left bottom
+        / 14px 1px
+        no-repeat,
+
+        linear-gradient(
+            var(--nt-event-bracket),
+            var(--nt-event-bracket)
+        )
+        left bottom
+        / 1px 9px
+        no-repeat;
+}
+
+
+/*//////////////REDUCED MOTION//////////////////*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nt-shell,
+    .nt-titlebar,
+    .nt-window-panel,
+    .nt-crt-layer,
+
+    .cs-header
+    .cs-avatar,
+
+    .cs-badges,
+    .cs-badges--inline,
+
+    .nt-username-real,
+    .nt-message-real,
+
+    .nt-transmission,
+    .nt-transmission-status::before,
+
+    .cs-content,
+
+    .cs-bubble.cs-event
+    .cs-content::after,
+
+    .nt-window-control,
+
+    .nt-skin-back,
+    .nt-skin-front,
+    .nt-skin-node,
+    .nt-skin-fx {
+        animation:
+            none !important;
+    }
+
+
+    .nt-shell,
+    .nt-titlebar,
+    .nt-window-panel,
+    .nt-crt-layer,
+
+    .cs-header
+    .cs-avatar,
+
+    .cs-badges,
+    .cs-badges--inline,
+
+    .nt-username-real,
+    .nt-message-real {
+        opacity:
+            1;
+
+        transform:
+            none;
+    }
+
+
+    .nt-transmission {
+        display:
+            none !important;
+    }
+}
+.cs-bubble:not(.cs-event) {
+    --nt-border: #557e6a;
+
+    --nt-body-bg: #050907;
+
+    --nt-title-bg: #253a31;
+
+    --nt-window-top: #d4ddd7;
+    --nt-window-mid: #aabbb1;
+    --nt-window-bottom: #7c9487;
+
+    --nt-window-control: #1d3027;
+    --nt-control-rest: #1d3027;
+
+    --nt-username: #e6f0ea;
+    --nt-text: #dde7e1;
+
+    --nt-signal-a: #6aa686;
+    --nt-signal-b: #a1c6b2;
+    --nt-signal-c: #edf4f0;
+
+    --nt-skin-front-opacity: 1;
+}
+
+
+
+
+.cs-bubble:not(.cs-event)
+.nt-skin-front {
+    visibility: visible;
+
+    opacity: 1;
+
+    overflow: hidden;
+
+    inset-block-start:
+        var(--nt-header-height);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--nt-cut-end)),
+            calc(100% - var(--nt-cut-end)) 100%,
+            var(--nt-cut-start) 100%,
+            0 calc(100% - var(--nt-cut-start))
+        );
+}
+
+
+
+
+.cs-bubble:not(.cs-event)
+.nt-skin-front::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    pointer-events: none;
+
+    border:
+        1px dashed
+        rgba(119,169,143,.34);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 3px),
+            calc(100% - 3px) 100%,
+            7px 100%,
+            0 calc(100% - 7px)
+        );
+
+    animation:
+        nt-mod-frame
+        6.4s
+        steps(1,end)
+        infinite;
+}
+
+
+
+
+.cs-bubble:not(.cs-event)
+.nt-skin-fx--1 {
+    display: block;
+
+    inset-inline: 5px;
+
+    inset-block-start: 8px;
+
+    block-size: 1px;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(134,191,158,.35),
+            rgba(218,239,228,.75),
+            rgba(134,191,158,.35),
+            transparent
+        );
+
+    animation:
+        nt-mod-scan
+        6.4s
+        1.6s
+        ease-in-out
+        infinite;
+}
+
+
+
+
+.cs-bubble:not(.cs-event)
+.nt-skin-fx--2 {
+    display: block;
+
+    inset-inline-end: 9px;
+
+    inset-block-end: 7px;
+
+    color: rgba(176,210,192,.55);
+
+    font-family:
+        "VCR OSD Mono",
+        monospace;
+
+    font-size: 6px;
+
+    line-height: 1;
+
+    letter-spacing: .08em;
+
+    opacity: .72;
+}
+
+
+.cs-bubble:not(.cs-event)
+.nt-skin-fx--2::before {
+    content: "MOD//CONTROL";
+}
+
+
+
+
+.cs-bubble:not(.cs-event)
+.cs-content {
+    animation:
+        nt-normal-border-hit
+        440ms
+        calc(
+            var(--nt-normal-transmission-delay)
+            + 760ms
+        )
+        steps(1,end)
+        both,
+
+        nt-mod-border
+        6.4s
+        1.6s
+        steps(1,end)
+        infinite;
+}
+
+
+
+
+.cs-bubble:not(.cs-event)
+.nt-username-real {
+    animation:
+        nt-normal-real-user
+        var(--nt-normal-transmission-time)
+        var(--nt-normal-transmission-delay)
+        steps(1,end)
+        both,
+
+        nt-mod-user
+        6.4s
+        1.72s
+        steps(1,end)
+        infinite;
+}
+
+
+
+
+.cs-bubble:not(.cs-event)
+.cs-badges {
+    animation:
+        nt-header-content-enter
+        280ms
+        calc(
+            var(--nt-header-content-delay)
+            + 80ms
+        )
+        linear
+        both,
+
+        nt-mod-badge
+        6.4s
+        1.82s
+        steps(1,end)
+        infinite;
+}
+
+
+
+
+@keyframes nt-mod-scan {
+
+    0%,
+    66% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    68% {
+        opacity: .75;
+    }
+
+    82% {
+        opacity: .48;
+
+        transform:
+            translateY(56px);
+    }
+
+    86% {
+        opacity: 0;
+
+        transform:
+            translateY(62px);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+
+
+@keyframes nt-mod-frame {
+
+    0%,
+    66%,
+    88%,
+    100% {
+        border-color:
+            rgba(119,169,143,.34);
+
+        opacity: .70;
+    }
+
+    70% {
+        border-color:
+            rgba(220,239,229,.78);
+
+        opacity: 1;
+    }
+
+    76% {
+        border-color:
+            rgba(91,142,116,.45);
+    }
+
+    84% {
+        border-color:
+            rgba(163,205,181,.70);
+    }
+}
+
+
+
+
+@keyframes nt-mod-border {
+
+    0%,
+    67%,
+    88%,
+    100% {
+        background: var(--nt-border);
+    }
+
+    70% {
+        background: #77a98f;
+    }
+
+    76% {
+        background: #d8e9df;
+    }
+
+    82% {
+        background: #648974;
+    }
+
+    88% {
+        background: var(--nt-border);
+    }
+}
+
+
+
+
+@keyframes nt-mod-user {
+
+    0%,
+    68%,
+    88%,
+    100% {
+        color: inherit;
+        transform: none;
+    }
+
+    71% {
+        color: #9cc5af;
+        transform: translateY(-1px);
+    }
+
+    78% {
+        color: #e5f0e9;
+    }
+
+    84% {
+        color: inherit;
+        transform: none;
+    }
+}
+
+
+
+
+@keyframes nt-mod-badge {
+
+    0%,
+    69%,
+    88%,
+    100% {
+        opacity: .92;
+        transform: none;
+    }
+
+    72% {
+        opacity: .48;
+        transform: translateY(-1px);
+    }
+
+    78% {
+        opacity: 1;
+    }
+
+    84% {
+        transform: none;
+    }
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-left cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-avatar-hidden cs-badges-hidden cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 0; --cs-avatar-position: left; --cs-username-position: above-message; --cs-badges-show: 0; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 10px; --cs-chat-padding-right: 10px; --cs-chat-padding-bottom: 10px; --cs-chat-padding-left: 10px; --cs-bubble-padding-top: 0px; --cs-bubble-padding-right: 0px; --cs-bubble-padding-bottom: 0px; --cs-bubble-padding-left: 0px; --cs-bubble-background-color: #05050b; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 1px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #6957a8; --cs-bubble-border-radius: 0px; --cs-bubble-border-radius-top-left: 0px; --cs-bubble-border-radius-top-right: 0px; --cs-bubble-border-radius-bottom-right: 0px; --cs-bubble-border-radius-bottom-left: 0px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 0px; --cs-bubble-box-shadow-blur-radius: 0px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: #000000; --cs-bubble-box-shadow-inset: ; --cs-bubble-animation: bp-slide-in-up; --cs-bubble-animation-duration: 750ms; --cs-bubble-animation-delay: 0ms; --cs-bubble-animation-timing-function: ease-in-out; --cs-bubble-gap: 10px; --cs-bubble-width: 400px; --cs-avatar-padding: 0px; --cs-avatar-padding-top: 0px; --cs-avatar-padding-right: 0px; --cs-avatar-padding-bottom: 0px; --cs-avatar-padding-left: 0px; --cs-avatar-background-color: transparent; --cs-avatar-background-gradient: none; --cs-avatar-border-width: 0px; --cs-avatar-border-style: solid; --cs-avatar-border-color: transparent; --cs-avatar-border-radius: 0px; --cs-avatar-border-radius-top-left: 0px; --cs-avatar-border-radius-top-right: 0px; --cs-avatar-border-radius-bottom-right: 0px; --cs-avatar-border-radius-bottom-left: 0px; --cs-avatar-box-shadow-offset-x: 0px; --cs-avatar-box-shadow-offset-y: 0px; --cs-avatar-box-shadow-blur-radius: 0px; --cs-avatar-box-shadow-spread-radius: 0px; --cs-avatar-box-shadow-color: #000000; --cs-avatar-box-shadow-inset: ; --cs-avatar-size: 22px; --cs-username-padding: 0px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-background-color: #3c3158; --cs-username-background-gradient: none; --cs-username-border-width: 0px; --cs-username-border-style: solid; --cs-username-border-color: transparent; --cs-username-border-radius: 0px; --cs-username-border-radius-top-left: 0px; --cs-username-border-radius-top-right: 0px; --cs-username-border-radius-bottom-right: 0px; --cs-username-border-radius-bottom-left: 0px; --cs-username-box-shadow-offset-x: 0px; --cs-username-box-shadow-offset-y: 0px; --cs-username-box-shadow-blur-radius: 0px; --cs-username-box-shadow-spread-radius: 0px; --cs-username-box-shadow-color: #000000; --cs-username-box-shadow-inset: ; --cs-username-font-size: 14px; --cs-username-font-color: #ffffff; --cs-username-font-family: 'VCR OSD Mono'; --cs-username-font-weight: 400; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: transparent; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding: 0px; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-background-color: transparent; --cs-message-background-gradient: none; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: transparent; --cs-message-border-radius: 0px; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #000000; --cs-message-box-shadow-inset: ; --cs-message-font-size: 14px; --cs-message-font-color: #ffffff; --cs-message-font-family: 'VCR OSD Mono'; --cs-message-font-weight: 400; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: transparent; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+
+    <div class="nt-shell"></div>
+
+    <div class="nt-skin-back">
+        <span class="nt-skin-node nt-skin-node--1"></span>
+        <span class="nt-skin-node nt-skin-node--2"></span>
+        <span class="nt-skin-node nt-skin-node--3"></span>
+        <span class="nt-skin-node nt-skin-node--4"></span>
+    </div>
+
+    <div class="nt-crt-layer"></div>
+
+    <div class="cs-header">
+
+        <span class="nt-titlebar"></span>
+
+        <div class="cs-avatar">
+            <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">
+        </div>
+
+        <div class="cs-user">
+
+            <span class="cs-badges">
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+            </span>
+
+            <span class="cs-username">
+                <span class="nt-username-real">
+                    <span class="cs-pronouns"></span>JesusTenG
+                </span>
+            </span>
+
+        </div>
+
+        <span class="nt-window-panel">
+
+            <span class="nt-window-control nt-window-min"></span>
+
+            <span class="nt-window-control nt-window-max"></span>
+
+            <span class="nt-window-control nt-window-close"></span>
+
+        </span>
+
+    </div>
+
+    <div class="cs-content">
+
+        <span class="cs-user--inline">
+
+            <span class="cs-badges cs-badges--inline">
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+            </span>
+
+            <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+                <span class="nt-username-real">
+                    <span class="cs-pronouns"></span>JesusTenG
+                </span>
+            </span>
+
+        </span>
+
+        <div class="cs-message">
+            <span class="nt-message-real">
+                So sieht dein Chat aus.
+            </span>
+        </div>
+
+        <div class="nt-transmission">
+            <span class="nt-transmission-status"></span>
+        </div>
+
+    </div>
+
+    <div class="nt-skin-front">
+        <span class="nt-skin-fx nt-skin-fx--1"></span>
+        <span class="nt-skin-fx nt-skin-fx--2"></span>
+    </div>
+
+</div></div></div></body></html>

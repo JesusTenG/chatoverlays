@@ -1,0 +1,2094 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Lofi Windows 93 – clouds</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+/*//////////////LOFI WINDOWS 93//////////////////*/
+
+
+/*//////////////CHAT//////////////////*/
+
+.cs-chat {
+    --cs-chat-padding: 10px;
+}
+
+
+/*//////////////VARIABLES//////////////////*/
+
+.cs-bubble {
+    --lofi-ink: #34223f;
+
+    --lofi-shadow-deep: #704888;
+    --lofi-shadow: #8d61aa;
+
+    --lofi-purple: #bf77ef;
+    --lofi-purple-deep: #ad62df;
+
+    --lofi-pink: #df96ed;
+    --lofi-pink-light: #efb0f6;
+
+    --lofi-lavender: #d8b8eb;
+    --lofi-lavender-light: #ead7f4;
+
+    --lofi-panel-top: #efe0f7;
+    --lofi-panel-bottom: #e4cdf0;
+
+    --lofi-highlight: #fff2ff;
+
+    --lofi-text: #3a2943;
+    --lofi-message-text: #38104b;
+    --lofi-text-soft: #74577c;
+
+    --cs-message-font-color: #38104b;
+
+    --cs-message-font-family: "Courier New";
+    --cs-message-font-size: 13px;
+
+    --cs-username-font-family: "Courier New";
+    --cs-username-font-size: 13px;
+
+    --lofi-control-size:
+        var(--cs-avatar-size, 14px);
+
+    --lofi-message-art: none;
+    --lofi-message-art-size: cover;
+    --lofi-message-art-position: center;
+}
+
+
+/*//////////////BUBBLE//////////////////*/
+
+.cs-bubble {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+
+    min-inline-size: 190px;
+
+    max-inline-size:
+        var(--cs-bubble-width, 570px);
+
+    flex-shrink: 0;
+
+    padding-block-start:
+        var(
+            --cs-bubble-padding-top,
+            var(--cs-bubble-padding, 2px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding, 2px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding, 2px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding, 2px)
+        );
+
+    background-color:
+        var(
+            --cs-bubble-background-color,
+            transparent
+        );
+
+    background-image:
+        var(
+            --cs-bubble-background-gradient,
+            linear-gradient(
+                180deg,
+                var(--lofi-pink-light) 0%,
+                var(--lofi-pink) 36%,
+                var(--lofi-purple) 100%
+            )
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-bubble-border-width,
+            2px
+        );
+
+    border-style:
+        var(
+            --cs-bubble-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-bubble-border-color,
+            var(--lofi-ink)
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-bubble-border-radius-top-left,
+            var(--cs-bubble-border-radius, 3px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-bubble-border-radius-top-right,
+            var(--cs-bubble-border-radius, 3px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-bubble-border-radius-bottom-right,
+            var(--cs-bubble-border-radius, 3px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-bubble-border-radius-bottom-left,
+            var(--cs-bubble-border-radius, 3px)
+        );
+
+    box-shadow:
+        inset 0 2px 0
+        var(--lofi-highlight),
+
+        inset -2px 0 0
+        #f1cef7,
+
+        inset 2px 0 0
+        var(--lofi-shadow-deep),
+
+        inset 0 -2px 0
+        var(--lofi-shadow-deep),
+
+        var(--cs-bubble-box-shadow-inset,)
+        var(--cs-bubble-box-shadow-offset-x, 2px)
+        var(--cs-bubble-box-shadow-offset-y, 2px)
+        var(--cs-bubble-box-shadow-blur-radius, 0px)
+        var(--cs-bubble-box-shadow-spread-radius, 0px)
+        var(
+            --cs-bubble-box-shadow-color,
+            rgba(52, 34, 63, .28)
+        );
+}
+
+
+/*//////////////INNER FRAME//////////////////*/
+
+.cs-bubble::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    border:
+        1px solid
+        rgba(64, 39, 73, .72);
+
+    border-radius: 1px;
+}
+
+
+/*//////////////TOP HIGHLIGHT//////////////////*/
+
+.cs-bubble::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    inset-inline: 4px;
+    inset-block-start: 2px;
+
+    block-size: 1px;
+
+    background:
+        rgba(255, 255, 255, .65);
+}
+
+
+/*//////////////HEADER//////////////////*/
+
+.cs-bubble .cs-header {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+
+    gap: 2px;
+
+    min-block-size: 22px;
+
+    padding:
+        2px
+        3px;
+
+    overflow: hidden;
+
+    background-color:
+        #c979e7;
+
+    background-image:
+        var(
+            --cs-username-background-gradient,
+            none
+        ),
+
+        linear-gradient(
+            var(
+                --cs-username-background-color,
+                transparent
+            ),
+            var(
+                --cs-username-background-color,
+                transparent
+            )
+        ),
+
+        linear-gradient(
+            180deg,
+            #f0b1f7 0%,
+            #df94ed 42%,
+            #c979e7 100%
+        );
+
+    background-size:
+        100% 100%,
+        100% 100%,
+        100% 100%;
+
+    background-position:
+        center,
+        center,
+        center;
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat;
+
+    border:
+        2px solid
+        var(--lofi-ink);
+
+    border-radius: 1px;
+
+    box-shadow:
+        inset 0 2px 0
+        #fff7ff,
+
+        inset -2px 0 0
+        #f4d4f8,
+
+        inset 2px 0 0
+        #88569c,
+
+        inset 0 -2px 0
+        #704481;
+}
+
+
+/*//////////////HEADER HIGHLIGHT//////////////////*/
+
+.cs-bubble .cs-header::before {
+    content: "";
+
+    position: absolute;
+
+    pointer-events: none;
+
+    inset-inline: 3px;
+    inset-block-start: 2px;
+
+    block-size: 1px;
+
+    background:
+        rgba(255, 255, 255, .62);
+}
+
+
+/*//////////////WINDOW CONTROLS//////////////////*/
+
+.cs-window-controls {
+    position: relative;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+
+    gap: 2px;
+
+    flex-shrink: 0;
+}
+
+
+/*//////////////SHARED WINDOW BUTTON//////////////////*/
+
+.cs-window-button,
+.cs-window-mode {
+    box-sizing: border-box;
+
+    inline-size:
+        var(--lofi-control-size);
+
+    block-size:
+        var(--lofi-control-size);
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        var(--lofi-ink);
+
+    border-radius: 1px;
+
+    background-color:
+        #ead7f0;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            #fff8ff 0%,
+            #ead7f0 100%
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        #ffffff,
+
+        inset -1px 0 0
+        #f9ebfc,
+
+        inset 1px 0 0
+        #a178b0,
+
+        inset 0 -1px 0
+        #815b90;
+
+    color:
+        var(--lofi-ink);
+}
+
+
+/*//////////////WINDOW BUTTONS//////////////////*/
+
+.cs-window-button {
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Courier New"
+        ),
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+/*//////////////MINIMIZE//////////////////*/
+
+.cs-window-button:nth-child(2) {
+    font-size: 0;
+}
+
+
+.cs-window-button:nth-child(2)::before {
+    content: "−";
+
+    display: block;
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Courier New"
+        ),
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+
+    transform:
+        translateY(2px);
+}
+
+
+/*//////////////AVATAR//////////////////*/
+
+.cs-bubble .cs-avatar {
+    box-sizing: border-box;
+
+    position: relative;
+
+    z-index: 4;
+
+    display: grid;
+    place-items: center;
+
+    flex:
+        0
+        0
+        var(--lofi-control-size);
+
+    inline-size:
+        var(--lofi-control-size);
+
+    block-size:
+        var(--lofi-control-size);
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background-color:
+        #ead7f0;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            #fff8ff 0%,
+            #ead7f0 100%
+        );
+
+    border:
+        1px solid
+        var(--lofi-ink);
+
+    border-radius: 1px;
+
+    box-shadow:
+        inset 0 1px 0
+        #ffffff,
+
+        inset -1px 0 0
+        #f9ebfc,
+
+        inset 1px 0 0
+        #a178b0,
+
+        inset 0 -1px 0
+        #815b90;
+}
+
+
+/*//////////////AVATAR IMAGE//////////////////*/
+
+.cs-bubble .cs-avatar img {
+    box-sizing: border-box;
+
+    display: block;
+
+    inline-size:
+        calc(100% - 4px);
+
+    block-size:
+        calc(100% - 4px);
+
+    max-inline-size: none;
+
+    object-fit: cover;
+
+    padding-block-start:
+        var(
+            --cs-avatar-padding-top,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-avatar-padding-right,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-avatar-padding-bottom,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-avatar-padding-left,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    filter:
+        grayscale(.22)
+        sepia(.08)
+        saturate(.82)
+        contrast(1.06)
+        brightness(1.04);
+}
+
+
+/*//////////////AVATAR TINT//////////////////*/
+
+.cs-bubble .cs-avatar::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
+    pointer-events: none;
+
+    background:
+        rgba(205, 137, 230, .13);
+
+    mix-blend-mode: color;
+}
+
+
+/*//////////////USER//////////////////*/
+
+.cs-bubble .cs-user {
+    position: relative;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+
+    flex: 1;
+
+    min-inline-size: 0;
+
+    gap: 2px;
+
+    padding-block-start:
+        var(
+            --cs-username-padding-top,
+            var(--cs-username-padding, 0px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-username-padding-right,
+            var(--cs-username-padding, 0px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-username-padding-bottom,
+            var(--cs-username-padding, 0px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-username-padding-left,
+            var(--cs-username-padding, 0px)
+        );
+
+    background-color:
+        transparent;
+
+    background-image:
+        none;
+
+    border-width:
+        var(
+            --cs-username-border-width,
+            0px
+        );
+
+    border-style:
+        var(
+            --cs-username-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-username-border-color,
+            transparent
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-username-border-radius-top-left,
+            var(--cs-username-border-radius, 0px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-username-border-radius-top-right,
+            var(--cs-username-border-radius, 0px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-username-border-radius-bottom-right,
+            var(--cs-username-border-radius, 0px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-username-border-radius-bottom-left,
+            var(--cs-username-border-radius, 0px)
+        );
+
+    box-shadow:
+        var(--cs-username-box-shadow-inset,)
+        var(--cs-username-box-shadow-offset-x, 0px)
+        var(--cs-username-box-shadow-offset-y, 0px)
+        var(--cs-username-box-shadow-blur-radius, 0px)
+        var(--cs-username-box-shadow-spread-radius, 0px)
+        var(--cs-username-box-shadow-color, transparent);
+}
+
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-bubble .cs-username,
+.cs-bubble .cs-username--inline {
+    overflow: hidden;
+
+    max-inline-size: 100%;
+
+    color:
+        var(
+            --cs-username-font-color,
+            var(--lofi-text)
+        );
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Courier New"
+        ),
+        monospace;
+
+    font-size:
+        var(
+            --cs-username-font-size,
+            13px
+        );
+
+    font-weight:
+        var(
+            --cs-username-font-weight,
+            700
+        );
+
+    line-height: 1;
+
+    letter-spacing: .03em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    -webkit-text-stroke:
+        var(
+            --cs-username-text-stroke-width,
+            0px
+        )
+        var(
+            --cs-username-text-stroke-color,
+            #000000
+        );
+
+    text-shadow:
+        var(
+            --cs-username-text-shadow-offset-x,
+            1px
+        )
+        var(
+            --cs-username-text-shadow-offset-y,
+            1px
+        )
+        var(
+            --cs-username-text-shadow-blur-radius,
+            0px
+        )
+        var(
+            --cs-username-text-shadow-color,
+            rgba(255, 255, 255, .48)
+        );
+}
+
+
+/*//////////////PRONOUNS//////////////////*/
+
+.cs-bubble .cs-pronouns {
+    color:
+        var(
+            --cs-pronouns-font-color,
+            #74507e
+        );
+
+    background-color:
+        var(
+            --cs-pronouns-background-color,
+            transparent
+        );
+
+    font-size: .7em;
+    font-weight: 400;
+}
+
+
+/*//////////////BADGES//////////////////*/
+
+.cs-bubble .cs-badges {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 1px;
+
+    flex-shrink: 0;
+}
+
+
+/*//////////////BADGE BUTTONS//////////////////*/
+
+.cs-bubble .cs-badges img {
+    box-sizing: border-box;
+
+    display: block;
+
+    inline-size:
+        var(--lofi-control-size);
+
+    block-size:
+        var(--lofi-control-size);
+
+    aspect-ratio: 1;
+
+    padding: 2px;
+
+    object-fit: contain;
+
+    background-color:
+        #ead7f0;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            #fff8ff 0%,
+            #ead7f0 100%
+        );
+
+    border:
+        1px solid
+        var(--lofi-ink);
+
+    border-radius: 1px;
+
+    box-shadow:
+        inset 0 1px 0
+        #ffffff,
+
+        inset -1px 0 0
+        #f9ebfc,
+
+        inset 1px 0 0
+        #a178b0,
+
+        inset 0 -1px 0
+        #815b90;
+
+    filter:
+        grayscale(.22)
+        sepia(.08)
+        saturate(.82)
+        contrast(1.06)
+        brightness(1.04);
+}
+
+
+/*//////////////ROLE KANJI//////////////////*/
+
+.cs-bubble .cs-window-mode {
+    position: relative;
+
+    z-index: 4;
+
+    display: grid;
+    place-items: center;
+
+    inline-size:
+        calc(
+            var(--lofi-control-size)
+            + 5px
+        );
+
+    block-size:
+        var(--lofi-control-size);
+
+    font-family:
+        "MS Gothic",
+        "Yu Gothic UI",
+        "Meiryo",
+        sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: 0;
+
+    overflow: visible;
+}
+
+
+.cs-bubble .cs-window-mode::before {
+    display: block;
+
+    transform:
+        translateY(-.25px)
+        scale(1.05);
+
+    transform-origin: center;
+
+    text-shadow:
+        1px 0
+        rgba(255, 255, 255, .45);
+}
+
+
+/*//////////////NORMAL//////////////////*/
+
+.cs-window-mode::before {
+    content: "夜";
+}
+
+
+/*//////////////SUB//////////////////*/
+
+.cs-bubble.cs-sub
+.cs-window-mode::before {
+    content: "月";
+}
+
+
+/*//////////////VIP//////////////////*/
+
+.cs-bubble.cs-vip
+.cs-window-mode::before {
+    content: "星";
+}
+
+
+/*//////////////MOD//////////////////*/
+
+.cs-bubble.cs-mod
+.cs-window-mode::before {
+    content: "守";
+}
+
+
+/*//////////////BROADCASTER//////////////////*/
+
+.cs-bubble.cs-broadcaster
+.cs-window-mode::before {
+    content: "主";
+}
+
+
+/*//////////////CONTENT//////////////////*/
+
+.cs-bubble .cs-content {
+    position: relative;
+
+    z-index: 2;
+
+    min-inline-size: 0;
+
+    margin:
+        3px
+        1px
+        1px;
+
+    padding:
+        8px
+        9px;
+
+    overflow: hidden;
+
+    background-color:
+        var(--lofi-panel-bottom);
+
+    background-image:
+        var(--lofi-message-art),
+
+        var(
+            --cs-message-background-gradient,
+            none
+        ),
+
+        linear-gradient(
+            var(
+                --cs-message-background-color,
+                transparent
+            ),
+            var(
+                --cs-message-background-color,
+                transparent
+            )
+        ),
+
+        linear-gradient(
+            180deg,
+            var(--lofi-panel-top) 0%,
+            var(--lofi-panel-bottom) 100%
+        );
+
+    background-size:
+        var(--lofi-message-art-size),
+        100% 100%,
+        100% 100%,
+        100% 100%;
+
+    background-position:
+        var(--lofi-message-art-position),
+        center,
+        center,
+        center;
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+
+    border:
+        2px solid
+        var(--lofi-ink);
+
+    border-radius: 1px;
+
+    box-shadow:
+        inset 0 2px 0
+        #fffaff,
+
+        inset -2px 0 0
+        #f5e8fa,
+
+        inset 2px 0 0
+        #aa80ba,
+
+        inset 0 -2px 0
+        #8c659d;
+}
+
+
+/*//////////////NORMAL CONTENT HIGHLIGHT//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-content::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    inset-inline: 3px;
+    inset-block-start: 3px;
+
+    block-size: 1px;
+
+    background:
+        rgba(255, 255, 255, .72);
+}
+
+
+/*//////////////MESSAGE//////////////////*/
+
+.cs-bubble .cs-message {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 3px;
+
+    min-block-size: 21px;
+
+    padding-block-start:
+        var(
+            --cs-message-padding-top,
+            var(--cs-message-padding, 1px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-message-padding-right,
+            var(--cs-message-padding, 1px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-message-padding-bottom,
+            var(--cs-message-padding, 1px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-message-padding-left,
+            var(--cs-message-padding, 1px)
+        );
+
+    background-color:
+        transparent;
+
+    background-image:
+        none;
+
+    border-width:
+        var(
+            --cs-message-border-width,
+            0px
+        );
+
+    border-style:
+        var(
+            --cs-message-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-message-border-color,
+            transparent
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-message-border-radius-top-left,
+            var(--cs-message-border-radius, 0px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-message-border-radius-top-right,
+            var(--cs-message-border-radius, 0px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-message-border-radius-bottom-right,
+            var(--cs-message-border-radius, 0px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-message-border-radius-bottom-left,
+            var(--cs-message-border-radius, 0px)
+        );
+
+    box-shadow:
+        var(--cs-message-box-shadow-inset,)
+        var(--cs-message-box-shadow-offset-x, 0px)
+        var(--cs-message-box-shadow-offset-y, 0px)
+        var(--cs-message-box-shadow-blur-radius, 0px)
+        var(--cs-message-box-shadow-spread-radius, 0px)
+        var(--cs-message-box-shadow-color, transparent);
+
+    color:
+        var(
+            --cs-message-font-color,
+            #38104b
+        );
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "Courier New"
+        ),
+        monospace;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            13px
+        );
+
+    font-weight:
+        var(
+            --cs-message-font-weight,
+            700
+        );
+
+    line-height: 1.32;
+
+    -webkit-text-stroke:
+        var(
+            --cs-message-text-stroke-width,
+            0px
+        )
+        var(
+            --cs-message-text-stroke-color,
+            #000000
+        );
+
+    text-shadow:
+        var(
+            --cs-message-text-shadow-offset-x,
+            1px
+        )
+        var(
+            --cs-message-text-shadow-offset-y,
+            1px
+        )
+        var(
+            --cs-message-text-shadow-blur-radius,
+            0px
+        )
+        var(
+            --cs-message-text-shadow-color,
+            rgba(255, 255, 255, .72)
+        );
+}
+
+
+/*//////////////EMOTES//////////////////*/
+
+.cs-bubble .cs-message .emote,
+.cs-bubble .cs-message img.emote {
+    inline-size: auto;
+
+    block-size:
+        calc(
+            var(--cs-message-font-size, 13px)
+            * 1.55
+        );
+
+    max-block-size: none;
+
+    object-fit: contain;
+
+    margin-inline: 1px;
+
+    vertical-align: middle;
+}
+
+
+/*//////////////INLINE USERNAME//////////////////*/
+
+.cs-bubble.cs-username-position-inline
+.cs-user {
+    display: none;
+}
+
+
+.cs-bubble.cs-username-position-inline
+.cs-user--inline {
+    display: inline-flex;
+
+    align-items: baseline;
+
+    gap: 2px;
+
+    margin-inline-end: 3px;
+}
+
+
+.cs-bubble.cs-username-position-inline
+.cs-badges--inline {
+    display: inline-flex;
+}
+
+
+.cs-bubble.cs-username-position-inline
+.cs-username--inline {
+    display: inline;
+}
+
+
+/*//////////////VISIBILITY//////////////////*/
+
+.cs-bubble.cs-avatar-hidden
+.cs-avatar {
+    display: none;
+}
+
+
+.cs-bubble.cs-badges-hidden
+.cs-badges,
+
+.cs-bubble.cs-badges-hidden
+.cs-badges--inline {
+    display: none;
+}
+
+
+.cs-bubble .cs-avatar:empty {
+    display: none;
+}
+
+
+/*//////////////SKIN ASSET LIBRARY//////////////////*/
+
+.cs-bubble {
+    --lofi-art-sakura:
+        url("/assets/skins/shared/83d9d3d596b514e223f5.webp");
+
+    --lofi-art-miami:
+        url("/assets/skins/shared/609af3d260dc0cb76a0b.webp");
+
+    --lofi-art-colour-clouds:
+        url("/assets/skins/shared/22b3cac90c73b95da9e2.webp");
+
+    --lofi-art-abstract:
+        url("/assets/skins/shared/cf23a1151f92e1228755.webp");
+
+    --lofi-art-stromline:
+        url("/assets/skins/shared/bc2e13d26e6fc1b10ba7.webp");
+}
+
+
+/*//////////////EVENT DEFAULTS//////////////////*/
+
+.cs-bubble.cs-event {
+    --lofi-message-art: none;
+
+    --lofi-event-art:
+        url("/assets/skins/shared/ec68885737cea4dbfee2.webp");
+}
+
+
+/*//////////////NORMAL MESSAGE REVEAL//////////////////*/
+
+
+/*//////////////CLOSE//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-window-button:nth-child(1) {
+    animation:
+        lofi-ui-pop
+        380ms
+        steps(3, end)
+        80ms
+        both;
+}
+
+
+/*//////////////MINIMIZE//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-window-button:nth-child(2) {
+    animation:
+        lofi-ui-pop
+        380ms
+        steps(3, end)
+        320ms
+        both;
+}
+
+
+/*//////////////AVATAR//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-avatar {
+    animation:
+        lofi-ui-pop-strong
+        440ms
+        steps(4, end)
+        580ms
+        both;
+}
+
+
+/*//////////////BADGES//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-badges img {
+    animation:
+        lofi-ui-pop
+        380ms
+        steps(3, end)
+        820ms
+        both;
+}
+
+
+.cs-bubble:not(.cs-event)
+.cs-badges img:nth-child(2) {
+    animation-delay: 950ms;
+}
+
+
+.cs-bubble:not(.cs-event)
+.cs-badges img:nth-child(3) {
+    animation-delay: 1080ms;
+}
+
+
+.cs-bubble:not(.cs-event)
+.cs-badges img:nth-child(4) {
+    animation-delay: 1210ms;
+}
+
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-username,
+
+.cs-bubble:not(.cs-event)
+.cs-username--inline {
+    animation:
+        lofi-username-reveal
+        680ms
+        steps(12, end)
+        960ms
+        both;
+}
+
+
+/*//////////////KANJI//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-window-mode {
+    animation:
+        lofi-ui-pop-strong
+        440ms
+        steps(4, end)
+        1390ms
+        both;
+}
+
+
+/*//////////////MESSAGE//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.cs-message {
+    animation:
+        lofi-message-type
+        1000ms
+        steps(22, end)
+        1650ms
+        both;
+}
+
+
+/*//////////////EVENT HEADER CHOREOGRAPHY//////////////////*/
+
+
+/*//////////////CLOSE//////////////////*/
+
+.cs-bubble.cs-event
+.cs-window-button:nth-child(1) {
+    animation:
+        lofi-ui-pop
+        380ms
+        steps(3, end)
+        100ms
+        both;
+}
+
+
+/*//////////////MINIMIZE//////////////////*/
+
+.cs-bubble.cs-event
+.cs-window-button:nth-child(2) {
+    animation:
+        lofi-ui-pop
+        380ms
+        steps(3, end)
+        360ms
+        both;
+}
+
+
+/*//////////////AVATAR//////////////////*/
+
+.cs-bubble.cs-event
+.cs-avatar {
+    animation:
+        lofi-ui-pop-strong
+        440ms
+        steps(4, end)
+        650ms
+        both;
+}
+
+
+/*//////////////BADGES//////////////////*/
+
+.cs-bubble.cs-event
+.cs-badges img {
+    animation:
+        lofi-ui-pop
+        380ms
+        steps(3, end)
+        930ms
+        both;
+}
+
+
+.cs-bubble.cs-event
+.cs-badges img:nth-child(2) {
+    animation-delay: 1060ms;
+}
+
+
+.cs-bubble.cs-event
+.cs-badges img:nth-child(3) {
+    animation-delay: 1190ms;
+}
+
+
+.cs-bubble.cs-event
+.cs-badges img:nth-child(4) {
+    animation-delay: 1320ms;
+}
+
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-bubble.cs-event
+.cs-username,
+
+.cs-bubble.cs-event
+.cs-username--inline {
+    animation:
+        lofi-username-reveal
+        680ms
+        steps(12, end)
+        1100ms
+        both;
+}
+
+
+/*//////////////KANJI//////////////////*/
+
+.cs-bubble.cs-event
+.cs-window-mode {
+    animation:
+        lofi-ui-pop-strong
+        440ms
+        steps(4, end)
+        1550ms
+        both;
+}
+
+
+/*//////////////EVENT CONTENT//////////////////*/
+
+.cs-bubble.cs-event
+.cs-content {
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-block-size: 54px;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    interpolate-size:
+        allow-keywords;
+
+    animation:
+        lofi-event-window-open
+        1100ms
+        cubic-bezier(.22, .72, .18, 1)
+        1500ms
+        both;
+}
+
+
+.cs-bubble.cs-event
+.cs-user--inline {
+    display: none;
+}
+
+
+/*//////////////EVENT MESSAGE CENTERING//////////////////*/
+
+.cs-bubble.cs-event
+.cs-message {
+    position: relative;
+
+    z-index: 2;
+
+    inline-size: 100%;
+
+    min-block-size: 0;
+
+    margin: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    animation:
+        lofi-message-type
+        1000ms
+        steps(22, end)
+        2750ms
+        both;
+}
+
+
+/*//////////////EVENT ARTWORK//////////////////*/
+
+.cs-bubble.cs-event
+.cs-content::before,
+
+.cs-bubble.cs-event
+.cs-content::after {
+    content: "";
+
+    position: absolute;
+
+    inset-block: 0;
+
+    inline-size: 50%;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background-color: transparent;
+
+    background-image:
+        var(--lofi-event-art);
+
+    background-size:
+        200% 100%;
+
+    background-repeat:
+        no-repeat;
+
+    opacity: 1;
+
+    backface-visibility: hidden;
+}
+
+
+/*//////////////LEFT HALF//////////////////*/
+
+.cs-bubble.cs-event
+.cs-content::before {
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+
+    background-position:
+        left center;
+
+    animation:
+        lofi-event-art-left
+        900ms
+        cubic-bezier(.22, .7, .25, 1)
+        3950ms
+        both;
+}
+
+
+/*//////////////RIGHT HALF//////////////////*/
+
+.cs-bubble.cs-event
+.cs-content::after {
+    inset-inline-start: auto;
+    inset-inline-end: 0;
+
+    background-position:
+        right center;
+
+    animation:
+        lofi-event-art-right
+        900ms
+        cubic-bezier(.22, .7, .25, 1)
+        3950ms
+        both;
+}
+
+
+/*//////////////UI POP//////////////////*/
+
+@keyframes lofi-ui-pop {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(4px);
+    }
+
+    35% {
+        opacity: 1;
+
+        transform:
+            translateY(-2px);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            translateY(1px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////STRONG UI POP//////////////////*/
+
+@keyframes lofi-ui-pop-strong {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(5px)
+            scale(.72);
+    }
+
+    45% {
+        opacity: 1;
+
+        transform:
+            translateY(-2px)
+            scale(1.08);
+    }
+
+    75% {
+        opacity: 1;
+
+        transform:
+            translateY(1px)
+            scale(.96);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/*//////////////USERNAME REVEAL//////////////////*/
+
+@keyframes lofi-username-reveal {
+
+    0% {
+        opacity: 0;
+
+        clip-path:
+            inset(
+                0
+                100%
+                0
+                0
+            );
+
+        transform:
+            translateX(-5px);
+    }
+
+    18% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////EVENT WINDOW OPEN//////////////////*/
+
+@keyframes lofi-event-window-open {
+
+    0% {
+        block-size: 0;
+
+        min-block-size: 0;
+
+        margin-block-start: 0;
+        margin-block-end: 0;
+
+        padding-block-start: 0;
+        padding-block-end: 0;
+
+        border-top-width: 0;
+        border-bottom-width: 0;
+    }
+
+    100% {
+        block-size: auto;
+
+        min-block-size: 54px;
+
+        margin-block-start: 3px;
+        margin-block-end: 1px;
+
+        padding-block-start: 8px;
+        padding-block-end: 8px;
+
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+    }
+}
+
+
+/*//////////////EVENT ART LEFT//////////////////*/
+
+@keyframes lofi-event-art-left {
+
+    0% {
+        transform:
+            translateX(-102%);
+    }
+
+    100% {
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////EVENT ART RIGHT//////////////////*/
+
+@keyframes lofi-event-art-right {
+
+    0% {
+        transform:
+            translateX(102%);
+    }
+
+    100% {
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////TYPEWRITER//////////////////*/
+
+@keyframes lofi-message-type {
+
+    0% {
+        clip-path:
+            inset(
+                0
+                100%
+                0
+                0
+            );
+    }
+
+    100% {
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+}
+.cs-bubble:not(.cs-event) {
+    --lofi-message-art:
+        var(--lofi-art-colour-clouds);
+
+    --lofi-message-art-size:
+        cover;
+
+    --lofi-message-art-position:
+        center;
+
+
+    --lofi-ink:
+        #5b304d;
+
+    --lofi-shadow-deep:
+        #a55477;
+
+    --lofi-shadow:
+        #c46f8c;
+
+    --lofi-purple:
+        #c672c0;
+
+    --lofi-purple-deep:
+        #a8569b;
+
+    --lofi-pink:
+        #ef8ea8;
+
+    --lofi-pink-light:
+        #ffc0bc;
+
+    --lofi-lavender:
+        #e1a5cf;
+
+    --lofi-lavender-light:
+        #f7d5dd;
+
+    --lofi-highlight:
+        #fff8df;
+
+    --lofi-text:
+        #54213f;
+
+    --lofi-message-text:
+        #4a1736;
+
+
+    --cs-message-font-color:
+        #4a1736;
+
+    --cs-username-font-color:
+        #fff8ef;
+
+    --cs-bubble-border-color:
+        #5b304d;
+
+    --cs-bubble-box-shadow-color:
+        rgba(77, 34, 58, .34);
+
+    --cs-bubble-background-gradient:
+        linear-gradient(
+            180deg,
+            #ffc19f 0%,
+            #f08da8 42%,
+            #c66ab7 100%
+        );
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-header {
+    background:
+        linear-gradient(
+            180deg,
+            #ffd9ad 0%,
+            #f7a0aa 40%,
+            #de78a9 72%,
+            #ad5b9c 100%
+        );
+
+    border-color:
+        #5b304d;
+
+    box-shadow:
+        inset 0 2px 0 #fff5d5,
+        inset -2px 0 0 #efb0ba,
+        inset 2px 0 0 #ba6a83,
+        inset 0 -2px 0 #86465f;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-window-button,
+.cs-bubble:not(.cs-event) .cs-window-mode,
+.cs-bubble:not(.cs-event) .cs-avatar,
+.cs-bubble:not(.cs-event) .cs-badges img {
+    color:
+        #582c48;
+
+    border-color:
+        #5b304d;
+
+    background-color:
+        #f0b4bd;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            #ffe3c6 0%,
+            #efb0bb 55%,
+            #cc819f 100%
+        );
+
+    box-shadow:
+        inset 0 1px 0 #fff9e9,
+        inset -1px 0 0 #f6c8c7,
+        inset 1px 0 0 #ae657e,
+        inset 0 -1px 0 #82485e;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-content {
+    background-color:
+        #f5c1bf;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(255, 237, 207, .12),
+            rgba(198, 84, 137, .08)
+        ),
+        var(--lofi-art-colour-clouds);
+
+    background-size:
+        100% 100%,
+        cover;
+
+    background-position:
+        center,
+        center;
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
+
+    border-color:
+        #5b304d;
+
+    box-shadow:
+        inset 0 2px 0 #fff5dd,
+        inset -2px 0 0 #efb5bd,
+        inset 2px 0 0 #c37591,
+        inset 0 -2px 0 #9a526e;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-message {
+    color:
+        #4a1736;
+
+    text-shadow:
+        1px 1px 0
+        rgba(255, 241, 223, .86);
+}
+
+
+.cs-bubble:not(.cs-event) .cs-username,
+.cs-bubble:not(.cs-event) .cs-username--inline {
+    color:
+        #fff8ef;
+
+    text-shadow:
+        1px 1px 0
+        rgba(110, 46, 77, .8);
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-right cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: right; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding: 10px; --cs-chat-padding-top: 10px; --cs-chat-padding-right: 10px; --cs-chat-padding-bottom: 10px; --cs-chat-padding-left: 10px; --cs-bubble-padding-top: 2px; --cs-bubble-padding-right: 2px; --cs-bubble-padding-bottom: 2px; --cs-bubble-padding-left: 2px; --cs-bubble-background-color: transparent; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 2px; --cs-bubble-border-style: solid; --cs-bubble-border-color: transparent; --cs-bubble-border-radius-top-left: 3px; --cs-bubble-border-radius-top-right: 3px; --cs-bubble-border-radius-bottom-right: 3px; --cs-bubble-border-radius-bottom-left: 3px; --cs-bubble-box-shadow-offset-x: 2px; --cs-bubble-box-shadow-offset-y: 2px; --cs-bubble-box-shadow-blur-radius: 0px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: rgba(52, 34, 63, .28); --cs-bubble-box-shadow-inset: ; --cs-bubble-animation: bp-slide-in-up; --cs-bubble-animation-duration: 750ms; --cs-bubble-animation-delay: 0ms; --cs-bubble-animation-timing-function: ease-in-out; --cs-bubble-gap: 10px; --cs-bubble-width: 570px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-background-color: transparent; --cs-username-background-gradient: none; --cs-username-border-width: 0px; --cs-username-border-style: solid; --cs-username-border-color: transparent; --cs-username-border-radius-top-left: 0px; --cs-username-border-radius-top-right: 0px; --cs-username-border-radius-bottom-right: 0px; --cs-username-border-radius-bottom-left: 0px; --cs-username-box-shadow-offset-x: 0px; --cs-username-box-shadow-offset-y: 0px; --cs-username-box-shadow-blur-radius: 0px; --cs-username-box-shadow-spread-radius: 0px; --cs-username-box-shadow-color: transparent; --cs-username-box-shadow-inset: ; --cs-username-font-size: 13px; --cs-username-font-color: #ffffff; --cs-username-font-family: 'Courier New'; --cs-username-font-weight: 700; --cs-username-text-shadow-offset-x: 1px; --cs-username-text-shadow-offset-y: 1px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: rgba(255, 255, 255, .48); --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding-top: 1px; --cs-message-padding-right: 1px; --cs-message-padding-bottom: 1px; --cs-message-padding-left: 1px; --cs-message-background-color: transparent; --cs-message-background-gradient: none; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: transparent; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: transparent; --cs-message-box-shadow-inset: ; --cs-message-font-size: 13px; --cs-message-font-color: #38104b; --cs-message-font-family: 'Courier New'; --cs-message-font-weight: 700; --cs-message-text-shadow-offset-x: 1px; --cs-message-text-shadow-offset-y: 1px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: rgba(255, 255, 255, .72); --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+
+    <div class="cs-header">
+
+        <div class="cs-window-controls">
+            <span class="cs-window-button">×</span>
+            <span class="cs-window-button">−</span>
+        </div>
+
+        <div class="cs-avatar">
+            <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">
+        </div>
+
+        <div class="cs-user">
+
+            <span class="cs-badges">
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+            </span>
+
+            <span class="cs-username">
+                <span class="cs-pronouns">
+                    
+                </span>
+
+                JesusTenG
+            </span>
+
+        </div>
+
+        <div class="cs-window-mode"></div>
+
+    </div>
+
+
+    <div class="cs-content">
+
+        <span class="cs-user--inline">
+
+            <span class="cs-badges cs-badges--inline">
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+            </span>
+
+            <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+                <span class="cs-pronouns">
+                    
+                </span>
+
+                JesusTenG
+            </span>
+
+        </span>
+
+        <div class="cs-message">
+            So sieht dein Chat aus.
+        </div>
+
+    </div>
+
+</div></div></div></body></html>

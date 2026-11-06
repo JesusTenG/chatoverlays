@@ -1,0 +1,1326 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>WhatsChat LoFi – green</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+/*//////////////PASTEL WINDOW//////////////////*/
+
+.cs-pastel-window,
+.cs-pastel-window *,
+.cs-pastel-window::before,
+.cs-pastel-window::after,
+.cs-pastel-window *::before,
+.cs-pastel-window *::after {
+    box-sizing: border-box;
+}
+
+.cs-pastel-window {
+    --bg: #c9a4ad;
+    --bg-dark: #9d7d8b;
+
+    --surface: #eee3df;
+    --surface-soft: #e6d7d5;
+
+    --rose: #d4a4ad;
+
+    --lav: #998eaa;
+    --lav-dark: #6f667e;
+
+    --plum: #514858;
+
+    --highlight: #f8efeb;
+
+    --shadow: rgba(59, 45, 61, .2);
+
+    --cs-bubble-gap: 13px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    inline-size: 100%;
+    block-size: 100%;
+
+    min-inline-size: 220px;
+    min-block-size: 220px;
+
+    padding-block-start: 53px;
+    padding-inline-end: 29px;
+    padding-block-end: 14px;
+    padding-inline-start: 13px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--bg),
+            color-mix(
+                in srgb,
+                var(--bg) 74%,
+                var(--lav)
+            )
+        );
+
+    border-top: 2px solid var(--highlight);
+    border-left: 2px solid var(--highlight);
+    border-right: 2px solid var(--lav-dark);
+    border-bottom: 2px solid var(--lav-dark);
+
+    box-shadow:
+        3px 4px 0 rgba(74, 58, 79, .16),
+        5px 8px 18px rgba(45, 34, 49, .16);
+}
+
+
+/*//////////////WINDOW SURFACE//////////////////*/
+
+.cs-pastel-window::before {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+
+    inset:
+        44px
+        19px
+        5px
+        5px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            150deg,
+            var(--surface),
+            var(--surface-soft)
+        );
+
+    border: 1px solid var(--lav-dark);
+}
+
+
+/*//////////////WINDOW DIVIDER//////////////////*/
+
+.cs-pastel-window::after {
+    content: "";
+
+    position: absolute;
+    z-index: 19;
+
+    top: 37px;
+    right: 18px;
+    left: 0;
+
+    height: 8px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--bg),
+            color-mix(
+                in srgb,
+                var(--bg) 74%,
+                var(--lav)
+            )
+        );
+
+    border-bottom: 1px solid var(--lav-dark);
+
+    box-shadow:
+        inset 2px 0 var(--highlight);
+}
+
+
+/*//////////////CHAT//////////////////*/
+
+.cs-pastel-window > .cs-chat {
+    position: relative;
+    z-index: 1;
+
+    flex: 1 1 auto;
+
+    inline-size: 100%;
+    block-size: 100%;
+
+    min-inline-size: 0;
+    min-block-size: 0;
+
+    align-items: stretch;
+
+    gap: var(--cs-bubble-gap, 13px);
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.cs-pastel-window > .cs-chat > * {
+    flex-shrink: 0;
+
+    inline-size: 100%;
+    min-inline-size: 0;
+
+    margin: 0;
+}
+
+
+/*//////////////WINDOW HEADER//////////////////*/
+
+.cs-global-chrome {
+    position: absolute;
+    z-index: 20;
+
+    top: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 37px;
+
+    padding:
+        6px
+        7px
+        6px
+        13px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--lav-dark),
+            var(--lav)
+        );
+
+    border-top: 2px solid #dcd3df;
+    border-left: 2px solid #dcd3df;
+    border-right: 2px solid #51495f;
+    border-bottom: 2px solid #51495f;
+}
+
+.cs-global-chrome::before {
+    content: "";
+
+    position: absolute;
+
+    inset:
+        1px
+        1px
+        auto;
+
+    height: 45%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, .22),
+            transparent
+        );
+}
+
+
+/*//////////////WINDOW TITLE//////////////////*/
+
+.cs-global-title {
+    position: relative;
+    z-index: 1;
+
+    color: #f6ece8;
+
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1;
+
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    text-shadow:
+        1px
+        1px
+        0
+        rgba(55, 45, 62, .38);
+}
+
+
+/*//////////////WINDOW CONTROLS//////////////////*/
+
+.cs-global-controls {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+
+    gap: 3px;
+}
+
+.cs-global-control {
+    display: grid;
+    place-items: center;
+
+    width: 20px;
+    height: 19px;
+
+    padding-bottom: 1px;
+
+    color: var(--lav-dark);
+
+    background: var(--rose);
+
+    border-top: 1px solid #ead8dc;
+    border-left: 1px solid #ead8dc;
+    border-right: 1px solid #675b72;
+    border-bottom: 1px solid #675b72;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+/*//////////////SCROLLBAR//////////////////*/
+
+.cs-global-scrollbar {
+    position: absolute;
+    z-index: 20;
+
+    top: 37px;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 18px;
+
+    background: var(--surface);
+
+    border-left: 1px solid var(--lav-dark);
+    border-right: 1px solid var(--lav-dark);
+}
+
+.cs-scroll-button {
+    display: grid;
+    flex: 0 0 18px;
+
+    place-items: center;
+
+    width: 100%;
+    height: 18px;
+
+    color: var(--lav-dark);
+
+    background: var(--rose);
+
+    font-size: 7px;
+    line-height: 1;
+}
+
+.cs-scroll-button:first-child {
+    border-bottom: 1px solid var(--lav-dark);
+}
+
+.cs-scroll-button:last-child {
+    border-top: 1px solid var(--lav-dark);
+}
+
+.cs-scroll-track {
+    position: relative;
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            var(--surface) 0 2px,
+            #ded0d1 2px 4px
+        );
+}
+
+.cs-scroll-thumb {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 25%;
+
+    min-height: 34px;
+    max-height: 100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--rose),
+            var(--bg-dark)
+        );
+
+    border-top: 1px solid var(--lav-dark);
+
+    box-shadow:
+        inset 1px 1px rgba(255, 255, 255, .25);
+}
+
+
+/*//////////////BUBBLE//////////////////*/
+
+.cs-pastel-window .cs-bubble {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    inline-size: 100%;
+    max-inline-size: none;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: visible;
+
+    background-color: transparent;
+    background-image: none;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    animation: none;
+
+    transform: none;
+}
+
+
+/*//////////////ENTRY//////////////////*/
+
+.cs-entry-body {
+    --entry-bg: var(--rose);
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    inline-size: 100%;
+    min-inline-size: 0;
+
+    margin: 0;
+    padding: 0;
+
+    animation:
+        cs-entry-in
+        .42s
+        cubic-bezier(.2, .8, .25, 1)
+        both;
+}
+
+
+/*//////////////ALTERNATING ENTRY//////////////////*/
+
+.cs-pastel-window
+.cs-chat
+> :is(
+    [data-msg-id$="0"],
+    [data-msg-id$="2"],
+    [data-msg-id$="4"],
+    [data-msg-id$="6"],
+    [data-msg-id$="8"]
+)
+.cs-entry-body {
+    --entry-bg: var(--lav);
+
+    align-items: flex-end;
+}
+
+
+/*//////////////META//////////////////*/
+
+.cs-entry-meta {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    max-inline-size: 84%;
+
+    min-block-size: var(--cs-avatar-size, 21px);
+
+    margin:
+        0
+        0
+        5px
+        13px;
+}
+
+.cs-pastel-window
+.cs-chat
+> :is(
+    [data-msg-id$="0"],
+    [data-msg-id$="2"],
+    [data-msg-id$="4"],
+    [data-msg-id$="6"],
+    [data-msg-id$="8"]
+)
+.cs-entry-meta {
+    flex-direction: row-reverse;
+
+    margin-right: 13px;
+    margin-left: 0;
+}
+
+
+/*//////////////USER//////////////////*/
+
+.cs-pastel-window .cs-user {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    min-inline-size: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    animation: none;
+}
+
+.cs-pastel-window
+.cs-chat
+> :is(
+    [data-msg-id$="0"],
+    [data-msg-id$="2"],
+    [data-msg-id$="4"],
+    [data-msg-id$="6"],
+    [data-msg-id$="8"]
+)
+.cs-user {
+    flex-direction: row-reverse;
+}
+
+
+/*//////////////AVATAR//////////////////*/
+
+.cs-pastel-window .cs-avatar {
+    position: relative;
+
+    display: grid;
+    flex:
+        0
+        0
+        var(--cs-avatar-size, 21px);
+
+    place-items: center;
+
+    inline-size: var(--cs-avatar-size, 21px);
+    block-size: var(--cs-avatar-size, 21px);
+
+    overflow: hidden;
+
+    background: var(--lav);
+
+    border: 1px solid var(--lav-dark);
+    border-radius: 4px;
+
+    box-shadow:
+        inset
+        1px
+        1px
+        rgba(255, 255, 255, .25);
+}
+
+.cs-pastel-window .cs-avatar:empty {
+    display: none;
+}
+
+.cs-pastel-window .cs-avatar::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--entry-bg) 42%,
+            var(--lav)
+        );
+
+    mix-blend-mode: soft-light;
+}
+
+.cs-pastel-window .cs-avatar img {
+    display: block;
+
+    inline-size: 100%;
+    block-size: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    object-fit: cover;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    filter:
+        grayscale(.28)
+        sepia(.18)
+        saturate(.75)
+        contrast(.92)
+        brightness(.92);
+}
+
+
+/*//////////////BADGES//////////////////*/
+
+.cs-pastel-window .cs-badges {
+    display: inline-flex;
+    flex: 0 0 auto;
+
+    align-items: center;
+
+    gap: 2px;
+
+    padding:
+        2px
+        3px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--entry-bg) 35%,
+            var(--surface-soft)
+        );
+
+    border:
+        1px
+        solid
+        color-mix(
+            in srgb,
+            var(--entry-bg) 48%,
+            var(--lav-dark)
+        );
+
+    border-radius: 4px;
+
+    box-shadow:
+        inset
+        1px
+        1px
+        rgba(255, 255, 255, .3);
+}
+
+.cs-pastel-window .cs-badges:empty,
+.cs-pastel-window .cs-badges:not(:has(img)) {
+    display: none !important;
+}
+
+.cs-pastel-window .cs-badges img {
+    display: block;
+
+    inline-size:
+        calc(
+            var(--cs-username-font-size, 11px)
+            + 3px
+        );
+
+    block-size:
+        calc(
+            var(--cs-username-font-size, 11px)
+            + 3px
+        );
+
+    object-fit: contain;
+
+    border-radius: 1px;
+
+    opacity: .88;
+
+    filter:
+        grayscale(.45)
+        sepia(.22)
+        saturate(.68)
+        hue-rotate(285deg)
+        contrast(.9)
+        brightness(.9);
+}
+
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-pastel-window .cs-username,
+.cs-pastel-window .cs-username--inline {
+    min-inline-size: 0;
+
+    overflow: hidden;
+
+    color:
+        var(
+            --cs-username-font-color,
+            color-mix(
+                in srgb,
+                var(--entry-bg) 62%,
+                var(--plum)
+            )
+        );
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            Arial
+        ),
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-username-font-size,
+            11px
+        );
+
+    font-weight:
+        var(
+            --cs-username-font-weight,
+            700
+        );
+
+    line-height: 1.1;
+
+    text-overflow: ellipsis;
+
+    text-shadow:
+        0
+        1px
+        rgba(255, 255, 255, .35);
+
+    white-space: nowrap;
+}
+
+
+/*//////////////PRONOUNS//////////////////*/
+
+.cs-pastel-window .cs-pronouns {
+    display: none;
+}
+
+
+/*//////////////CONTENT//////////////////*/
+
+.cs-pastel-window .cs-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    inline-size: 100%;
+    min-inline-size: 0;
+}
+
+.cs-pastel-window
+.cs-chat
+> :is(
+    [data-msg-id$="0"],
+    [data-msg-id$="2"],
+    [data-msg-id$="4"],
+    [data-msg-id$="6"],
+    [data-msg-id$="8"]
+)
+.cs-content {
+    align-items: flex-end;
+}
+
+
+/*//////////////INLINE USER//////////////////*/
+
+.cs-pastel-window .cs-user--inline {
+    min-inline-size: 0;
+}
+
+
+/*//////////////MESSAGE//////////////////*/
+
+.cs-pastel-window .cs-message {
+    position: relative;
+
+    display: block;
+
+    width: fit-content;
+
+    min-width: 90px;
+    max-width: 84%;
+
+    margin:
+        0
+        0
+        8px;
+
+    padding-block-start:
+        var(
+            --cs-message-padding-top,
+            10px
+        );
+
+    padding-inline-end:
+        var(
+            --cs-message-padding-right,
+            14px
+        );
+
+    padding-block-end:
+        var(
+            --cs-message-padding-bottom,
+            11px
+        );
+
+    padding-inline-start:
+        var(
+            --cs-message-padding-left,
+            14px
+        );
+
+    color:
+        var(
+            --cs-message-font-color,
+            #403a43
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--entry-bg),
+            color-mix(
+                in srgb,
+                var(--entry-bg) 82%,
+                #b7a2ad
+            )
+        );
+
+    border: 0;
+
+    border-start-start-radius:
+        var(
+            --cs-message-border-radius-top-left,
+            var(
+                --cs-message-border-radius,
+                15px
+            )
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-message-border-radius-top-right,
+            var(
+                --cs-message-border-radius,
+                15px
+            )
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-message-border-radius-bottom-right,
+            var(
+                --cs-message-border-radius,
+                15px
+            )
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-message-border-radius-bottom-left,
+            var(
+                --cs-message-border-radius,
+                15px
+            )
+        );
+
+    box-shadow:
+        inset
+        0
+        1px
+        rgba(255, 255, 255, .35),
+
+        2px
+        3px
+        4px
+        var(--shadow);
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            Arial
+        ),
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            12px
+        );
+
+    font-weight:
+        var(
+            --cs-message-font-weight,
+            400
+        );
+
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+
+    animation: none;
+}
+
+
+/*//////////////MESSAGE HIGHLIGHT//////////////////*/
+
+.cs-pastel-window .cs-message::before {
+    content: "";
+
+    position: absolute;
+
+    top: 4px;
+    left: 50%;
+
+    width: calc(100% - 12px);
+    height: 19px;
+
+    border-radius: 999px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, .35),
+            rgba(255, 255, 255, .04)
+        );
+
+    transform: translateX(-50%);
+}
+
+
+/*//////////////MESSAGE TAIL//////////////////*/
+
+.cs-pastel-window .cs-message::after {
+    content: "";
+
+    position: absolute;
+
+    top: calc(100% - 1px);
+    left: 20px;
+
+    width: 0;
+    height: 0;
+
+    pointer-events: none;
+
+    border-left:
+        12px
+        solid
+        transparent;
+
+    border-right:
+        12px
+        solid
+        transparent;
+
+    border-top:
+        9px
+        solid
+        color-mix(
+            in srgb,
+            var(--entry-bg) 82%,
+            #b7a2ad
+        );
+}
+
+.cs-pastel-window
+.cs-chat
+> :is(
+    [data-msg-id$="0"],
+    [data-msg-id$="2"],
+    [data-msg-id$="4"],
+    [data-msg-id$="6"],
+    [data-msg-id$="8"]
+)
+.cs-message::after {
+    right: 20px;
+    left: auto;
+}
+
+
+/*//////////////EMOTES//////////////////*/
+
+.cs-pastel-window .cs-message .emote {
+    width: auto;
+    height: calc(var(--cs-message-font-size) * 1.55);
+
+    inline-size: auto;
+    block-size: calc(var(--cs-message-font-size) * 1.55);
+
+    max-width: none;
+    max-height: none;
+
+    max-inline-size: none;
+    max-block-size: none;
+
+    margin-inline: 2px;
+
+    vertical-align: middle;
+
+    object-fit: contain;
+
+    filter:
+        grayscale(.14)
+        sepia(.12)
+        saturate(.86)
+        contrast(.94);
+}
+
+
+/*//////////////INLINE POSITION//////////////////*/
+
+.cs-pastel-window
+.cs-bubble.cs-username-position-inline
+.cs-content {
+    display: block;
+}
+
+.cs-pastel-window
+.cs-bubble.cs-username-position-inline
+.cs-user--inline {
+    vertical-align: baseline;
+}
+
+
+/*//////////////REVEAL//////////////////*/
+
+@keyframes cs-entry-in {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px)
+            scale(.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*//////////////EVENT SYSTEM//////////////////*/
+
+@property --cs-event-bg {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #d4a4ad;
+}
+
+
+/*//////////////EVENT MESSAGE//////////////////*/
+
+.cs-pastel-window
+.cs-bubble.cs-event:not(
+    .cs-event-action,
+    .cs-event-highlight,
+    .cs-event-channel-points,
+    .cs-event-gigantified,
+    .cs-event-announcement
+)
+.cs-message {
+    --cs-event-bg: var(--rose);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--cs-event-bg),
+            color-mix(
+                in srgb,
+                var(--cs-event-bg) 82%,
+                #b7a2ad
+            )
+        );
+
+    animation:
+        cs-event-color-shift
+        1.5s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/*//////////////EVENT TAIL//////////////////*/
+
+.cs-pastel-window
+.cs-bubble.cs-event:not(
+    .cs-event-action,
+    .cs-event-highlight,
+    .cs-event-channel-points,
+    .cs-event-gigantified,
+    .cs-event-announcement
+)
+.cs-message::after {
+    border-top-color:
+        color-mix(
+            in srgb,
+            var(--cs-event-bg) 82%,
+            #b7a2ad
+        );
+}
+
+
+/*//////////////EVENT COLOR SHIFT//////////////////*/
+
+@keyframes cs-event-color-shift {
+    0% {
+        --cs-event-bg: var(--rose);
+    }
+
+    25% {
+        --cs-event-bg:
+            color-mix(
+                in srgb,
+                var(--rose) 75%,
+                var(--lav)
+            );
+    }
+
+    50% {
+        --cs-event-bg:
+            color-mix(
+                in srgb,
+                var(--rose) 50%,
+                var(--lav)
+            );
+    }
+
+    75% {
+        --cs-event-bg:
+            color-mix(
+                in srgb,
+                var(--lav) 75%,
+                var(--rose)
+            );
+    }
+
+    100% {
+        --cs-event-bg: var(--lav);
+    }
+}
+
+/*//////////////CHEER BITS FIX//////////////////*/
+
+.cs-pastel-window
+.cs-bubble.cs-event-cheer
+:is(.cs-message, .cs-events)
+:is(img, svg) {
+    width: auto !important;
+    height: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+
+    inline-size: auto !important;
+    block-size: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    max-width: calc(var(--cs-message-font-size, 12px) * 1.6) !important;
+    max-height: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+
+    max-inline-size: calc(var(--cs-message-font-size, 12px) * 1.6) !important;
+    max-block-size: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+
+    object-fit: contain !important;
+
+    vertical-align: middle !important;
+}
+
+
+/*//////////////CHEER BITS WRAPPER//////////////////*/
+
+.cs-pastel-window
+.cs-bubble.cs-event-cheer
+:is(.cs-message, .cs-events)
+> :is(span, div, picture):has(> img),
+
+.cs-pastel-window
+.cs-bubble.cs-event-cheer
+:is(.cs-message, .cs-events)
+> :is(span, div, picture):has(> svg) {
+    display: inline-flex !important;
+
+    width: auto !important;
+    height: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+
+    inline-size: auto !important;
+    block-size: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    max-width: calc(var(--cs-message-font-size, 12px) * 1.6) !important;
+    max-height: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+
+    max-inline-size: calc(var(--cs-message-font-size, 12px) * 1.6) !important;
+    max-block-size: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-inline: 2px !important;
+
+    padding: 0 !important;
+}
+
+
+/*//////////////CHEER BITS NESTED//////////////////*/
+
+.cs-pastel-window
+.cs-bubble.cs-event-cheer
+:is(.cs-message, .cs-events)
+:is(
+    [class*="cheer" i],
+    [class*="bit" i]
+) {
+    max-height: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+    max-block-size: calc(var(--cs-message-font-size, 12px) * 1.35) !important;
+}
+.cs-bubble {
+    --rose: #8da66d;
+    --lav: #5f8d82;
+    --lav-dark: #425f59;
+
+    --surface: #e0e5d8;
+    --surface-soft: #d2dbc9;
+
+    --plum: #435044;
+
+    --shadow: rgba(48, 67, 53, .22);
+}
+
+.cs-bubble .cs-message {
+    color: #37443a;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.34),
+        2px 3px 5px var(--shadow);
+}
+
+.cs-bubble .cs-avatar {
+    background:
+        color-mix(
+            in srgb,
+            var(--entry-bg) 76%,
+            #718e75
+        );
+}
+
+.cs-bubble .cs-badges {
+    background:
+        color-mix(
+            in srgb,
+            var(--entry-bg) 30%,
+            #dde4d5
+        );
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--entry-bg) 50%,
+            #52665b
+        );
+}
+
+.cs-bubble .cs-username {
+    color:
+        color-mix(
+            in srgb,
+            var(--entry-bg) 62%,
+            #36433b
+        );
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-right cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: right; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-usercolor: #9b59b6;">
+
+  <div class="cs-entry-body">
+
+    <div class="cs-entry-meta">
+
+      <div class="cs-avatar">
+        <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">
+      </div>
+
+      <div class="cs-user">
+
+        <span class="cs-badges">
+          <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+        </span>
+
+        <span class="cs-username">
+          <span class="cs-pronouns"></span>
+          JesusTenG
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="cs-content">
+
+      <span class="cs-user--inline">
+
+        <span class="cs-badges cs-badges--inline">
+          <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+        </span>
+
+        <span class="cs-username--inline">
+          <span class="cs-pronouns"></span>
+          JesusTenG
+        </span>
+
+      </span>
+
+      <div class="cs-message">
+        So sieht dein Chat aus.
+      </div>
+
+    </div>
+
+  </div>
+
+</div></div></div></body></html>

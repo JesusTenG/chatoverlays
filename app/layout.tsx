@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { Header, Footer } from '@/components/site-chrome';
+import { Footer } from '@/components/site-chrome';
+import { Header } from '@/components/navigation';
 import { VideoProvider } from '@/components/video-provider';
 import { RevealEffects } from '@/components/reveal-effects';
 import { config } from '@/lib/catalog';

@@ -1,0 +1,3165 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Arcade Pixel – gold</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/6d5fda4e7c8bd9440de1.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/677b9d983d6d18bcb5d9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/48c0f365e555c930159f.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/2c6636f5c2033988ae0a.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/4f6e38c96abe28ed90f9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/e3c9d5360767a6d8abf1.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/e9e3650061286ade95e2.woff2") format('woff2');
+}
+/*//////////////DOCUMENT//////////////*/
+
+html,
+body{
+    margin:0;
+    padding:0;
+
+    overflow:visible;
+
+    background:transparent;
+}
+
+
+/*//////////////CHAT//////////////*/
+
+.cs-chat{
+    --cs-chat-padding:4px;
+}
+
+
+/*//////////////BASE//////////////*/
+
+.cs-bubble,
+.cs-bubble *,
+.cs-bubble::before,
+.cs-bubble::after{
+    box-sizing:border-box;
+}
+
+.cs-bubble{
+    --a:
+        var(
+            --cs-usercolor,
+            #ff4040
+        );
+
+    --bg:#070913;
+    --text:#f7f8ff;
+
+
+    /*//////////////BUBBLE//////////////*/
+
+    --cs-bubble-width:340px;
+
+    --cs-bubble-background-color:#070913;
+
+    --cs-bubble-background-gradient:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.035),
+            transparent 42%
+        );
+
+    --cs-bubble-border-width:2px;
+
+    --cs-bubble-border-color:
+        var(--a);
+
+
+    /*//////////////AVATAR//////////////*/
+
+    --cs-avatar-size:34px;
+
+    --cs-avatar-border-width:2px;
+
+    --cs-avatar-border-color:
+        var(--a);
+
+    --cs-avatar-border-radius:2px;
+
+
+    /*//////////////USERNAME//////////////*/
+
+    --cs-username-font-family:
+        "Press Start 2P",
+        monospace;
+
+    --cs-username-font-size:10px;
+
+    --cs-username-font-weight:900;
+
+    --cs-username-font-color:
+        var(--a);
+
+    --cs-username-text-shadow-offset-x:1px;
+    --cs-username-text-shadow-offset-y:1px;
+    --cs-username-text-shadow-blur-radius:0px;
+
+    --cs-username-text-shadow-color:#000;
+
+    --cs-username-background-color:transparent;
+    --cs-username-background-gradient:none;
+
+    --cs-username-border-width:0px;
+    --cs-username-border-color:transparent;
+
+
+    /*//////////////MESSAGE//////////////*/
+
+    --cs-message-font-family:
+        "Press Start 2P",
+        monospace;
+
+    --cs-message-font-size:8px;
+
+    --cs-message-font-weight:700;
+
+    --cs-message-font-color:
+        var(--text);
+
+    --cs-message-background-color:transparent;
+    --cs-message-background-gradient:none;
+
+    --cs-message-border-width:0px;
+    --cs-message-border-color:transparent;
+
+
+    /*//////////////REVEAL//////////////*/
+
+    --cs-bubble-animation:
+        csPixelPanelReveal;
+
+    --cs-bubble-animation-duration:
+        520ms;
+
+    --cs-bubble-animation-delay:
+        0ms;
+
+    --cs-bubble-animation-timing-function:
+        steps(8,end);
+
+
+    --cs-avatar-animation:
+        csPixelAvatarReveal;
+
+    --cs-avatar-animation-duration:
+        420ms;
+
+    --cs-avatar-animation-delay:
+        145ms;
+
+    --cs-avatar-animation-timing-function:
+        steps(6,end);
+
+
+    --cs-username-animation:
+        csPixelUserReveal;
+
+    --cs-username-animation-duration:
+        420ms;
+
+    --cs-username-animation-delay:
+        220ms;
+
+    --cs-username-animation-timing-function:
+        steps(6,end);
+
+
+    --cs-message-animation:
+        csPixelMessageReveal;
+
+    --cs-message-animation-duration:
+        500ms;
+
+    --cs-message-animation-delay:
+        375ms;
+
+    --cs-message-animation-timing-function:
+        steps(8,end);
+
+
+    /*//////////////PIXEL SHELL//////////////*/
+
+    --pixel-shell:
+        polygon(
+            6px 0,
+            calc(100% - 6px) 0,
+
+            calc(100% - 6px) 3px,
+            calc(100% - 3px) 3px,
+
+            calc(100% - 3px) 6px,
+            100% 6px,
+
+            100% calc(100% - 6px),
+
+            calc(100% - 3px) calc(100% - 6px),
+            calc(100% - 3px) calc(100% - 3px),
+
+            calc(100% - 6px) calc(100% - 3px),
+            calc(100% - 6px) 100%,
+
+            6px 100%,
+
+            6px calc(100% - 3px),
+            3px calc(100% - 3px),
+
+            3px calc(100% - 6px),
+            0 calc(100% - 6px),
+
+            0 6px,
+
+            3px 6px,
+            3px 3px,
+
+            6px 3px
+        );
+
+
+    /*//////////////LAYOUT//////////////*/
+
+    position:relative;
+
+    inline-size:fit-content;
+
+    min-inline-size:130px;
+
+    max-inline-size:
+        min(
+            var(--cs-bubble-width,340px),
+            calc(100vw - 8px)
+        );
+
+    min-block-size:0;
+
+    margin:
+        1px
+        3px;
+
+    padding-block-start:
+        calc(
+            7px +
+            var(
+                --cs-bubble-padding-top,
+                var(--cs-bubble-padding,0px)
+            )
+        );
+
+    padding-inline-end:
+        calc(
+            9px +
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding,0px)
+            )
+        );
+
+    padding-block-end:
+        calc(
+            7px +
+            var(
+                --cs-bubble-padding-bottom,
+                var(--cs-bubble-padding,0px)
+            )
+        );
+
+    padding-inline-start:
+        calc(
+            9px +
+            var(
+                --cs-bubble-padding-left,
+                var(--cs-bubble-padding,0px)
+            )
+        );
+
+    background:transparent;
+
+    border:0;
+
+    box-shadow:none;
+
+    overflow:visible;
+
+    isolation:isolate;
+}
+
+
+/*//////////////PIXEL SHELL OUTER//////////////*/
+
+.cs-bubble::before{
+    content:"";
+
+    position:absolute;
+
+    z-index:0;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        var(
+            --cs-bubble-border-color,
+            var(--a)
+        );
+
+    clip-path:
+        var(--pixel-shell);
+
+    filter:
+        drop-shadow(
+            3px
+            3px
+            0
+            rgba(0,0,0,.32)
+        );
+
+    animation:
+        csPixelShellFlash
+        640ms
+        steps(1,end)
+        both;
+}
+
+
+/*//////////////PIXEL SHELL INNER//////////////*/
+
+.cs-bubble::after{
+    content:"";
+
+    position:absolute;
+
+    z-index:1;
+
+    inset:
+        var(
+            --cs-bubble-border-width,
+            2px
+        );
+
+    pointer-events:none;
+
+    background-color:
+        var(
+            --cs-bubble-background-color,
+            var(--bg)
+        );
+
+    background-image:
+        var(
+            --cs-bubble-background-gradient,
+            none
+        );
+
+    background-repeat:no-repeat;
+
+    clip-path:
+        var(--pixel-shell);
+
+    animation:
+        csPixelInnerReveal
+        540ms
+        steps(7,end)
+        55ms
+        both;
+}
+
+
+/*//////////////DEFAULT FONT FALLBACK//////////////*/
+
+.cs-bubble:is(
+    [style*="--cs-username-font-family: 'Inter'"],
+    [style*="--cs-username-font-family:'Inter'"],
+    [style*='--cs-username-font-family: "Inter"'],
+    [style*='--cs-username-font-family:"Inter"'],
+    [style*="--cs-username-font-family: Inter"],
+    [style*="--cs-username-font-family:Inter"]
+){
+    --cs-username-font-family:
+        "Press Start 2P",
+        monospace !important;
+}
+
+.cs-bubble:is(
+    [style*="--cs-message-font-family: 'Inter'"],
+    [style*="--cs-message-font-family:'Inter'"],
+    [style*='--cs-message-font-family: "Inter"'],
+    [style*='--cs-message-font-family:"Inter"'],
+    [style*="--cs-message-font-family: Inter"],
+    [style*="--cs-message-font-family:Inter"]
+){
+    --cs-message-font-family:
+        "Press Start 2P",
+        monospace !important;
+}
+
+
+/*//////////////HEADER//////////////*/
+
+.cs-header{
+    position:relative;
+
+    z-index:3;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    inline-size:100%;
+
+    min-inline-size:0;
+
+    margin-block-end:5px;
+}
+
+
+/*//////////////AVATAR//////////////*/
+
+.cs-avatar{
+    position:relative;
+
+    z-index:3;
+
+    flex:0 0 auto;
+}
+
+.cs-avatar img{
+    display:block;
+
+    inline-size:
+        var(
+            --cs-avatar-size,
+            34px
+        );
+
+    block-size:
+        var(
+            --cs-avatar-size,
+            34px
+        );
+
+    object-fit:cover;
+
+    transform-origin:center;
+}
+
+
+/*//////////////USER//////////////*/
+
+.cs-user,
+.cs-user--inline{
+    position:relative;
+
+    z-index:3;
+
+    min-inline-size:0;
+
+    gap:4px;
+}
+
+
+/*//////////////PIXEL USER INDICATOR//////////////*/
+
+.cs-user::before,
+.cs-user--inline::before{
+    content:"";
+
+    flex:0 0 auto;
+
+    inline-size:4px;
+    block-size:4px;
+
+    background:
+        var(
+            --cs-bubble-border-color,
+            var(--a)
+        );
+
+    animation:
+        csPixelIndicatorReveal
+        360ms
+        steps(5,end)
+        265ms
+        both;
+}
+
+
+/*//////////////USERNAME//////////////*/
+
+.cs-username,
+.cs-username--inline{
+    position:relative;
+
+    min-inline-size:0;
+
+    max-inline-size:100%;
+
+    overflow:hidden;
+
+    line-height:1.15;
+
+    letter-spacing:.035em;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    text-transform:uppercase;
+}
+
+
+/*//////////////PRONOUNS//////////////*/
+
+.cs-pronouns{
+    margin-inline-end:3px;
+
+    font-size:.68em;
+
+    opacity:.68;
+}
+
+
+/*//////////////BADGES//////////////*/
+
+.cs-badges,
+.cs-badges--inline{
+    position:relative;
+
+    z-index:3;
+
+    gap:2px;
+}
+
+.cs-badges img,
+.cs-badges svg,
+.cs-badges--inline img,
+.cs-badges--inline svg{
+    inline-size:
+        calc(
+            var(--cs-username-font-size,10px) + 1px
+        );
+
+    block-size:
+        calc(
+            var(--cs-username-font-size,10px) + 1px
+        );
+
+    object-fit:contain;
+}
+
+
+/*//////////////BADGE STAGGER//////////////*/
+
+.cs-badges > *,
+.cs-badges--inline > *{
+    animation:
+        csPixelBadgeReveal
+        320ms
+        steps(5,end)
+        both;
+}
+
+.cs-badges > :nth-child(1),
+.cs-badges--inline > :nth-child(1){
+    animation-delay:285ms;
+}
+
+.cs-badges > :nth-child(2),
+.cs-badges--inline > :nth-child(2){
+    animation-delay:325ms;
+}
+
+.cs-badges > :nth-child(3),
+.cs-badges--inline > :nth-child(3){
+    animation-delay:365ms;
+}
+
+.cs-badges > :nth-child(4),
+.cs-badges--inline > :nth-child(4){
+    animation-delay:405ms;
+}
+
+.cs-badges > :nth-child(n+5),
+.cs-badges--inline > :nth-child(n+5){
+    animation-delay:445ms;
+}
+
+
+/*//////////////CONTENT//////////////*/
+
+.cs-content{
+    position:relative;
+
+    z-index:3;
+
+    inline-size:100%;
+
+    min-inline-size:0;
+}
+
+
+/*//////////////HEADER DIVIDER//////////////*/
+
+.cs-bubble:not(.cs-username-position-inline):not(.cs-event)
+.cs-content::before{
+    content:"";
+
+    display:block;
+
+    inline-size:100%;
+
+    block-size:1px;
+
+    margin-block-end:5px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            var(
+                --cs-bubble-border-color,
+                var(--a)
+            )
+            0 7px,
+            transparent 7px 10px
+        );
+
+    opacity:.28;
+
+    transform-origin:left center;
+
+    animation:
+        csPixelDividerReveal
+        390ms
+        steps(7,end)
+        320ms
+        both;
+}
+
+
+/*//////////////MESSAGE//////////////*/
+
+.cs-message{
+    position:relative;
+
+    z-index:3;
+
+    inline-size:100%;
+
+    min-inline-size:0;
+    max-inline-size:100%;
+
+    line-height:1.55;
+
+    letter-spacing:.01em;
+
+    white-space:normal;
+
+    overflow-wrap:anywhere;
+
+    word-break:normal;
+}
+
+.cs-message__track{
+    display:block;
+
+    min-inline-size:0;
+
+    margin:0;
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "Press Start 2P"
+        ),
+        monospace;
+
+    white-space:normal;
+
+    overflow-wrap:anywhere;
+
+    word-break:normal;
+
+    animation:
+        csPixelTextReveal
+        520ms
+        steps(8,end)
+        385ms
+        both;
+}
+
+
+/*//////////////EMOTE FIX//////////////*/
+
+.cs-message .emote,
+.cs-message .emote img{
+    width:auto !important;
+    inline-size:auto !important;
+
+    max-width:none !important;
+    max-inline-size:none !important;
+
+    height:
+        clamp(
+            20px,
+            calc(var(--cs-message-font-size,8px) * 2.5),
+            32px
+        ) !important;
+
+    block-size:
+        clamp(
+            20px,
+            calc(var(--cs-message-font-size,8px) * 2.5),
+            32px
+        ) !important;
+
+    max-height:
+        clamp(
+            20px,
+            calc(var(--cs-message-font-size,8px) * 2.5),
+            32px
+        ) !important;
+
+    max-block-size:
+        clamp(
+            20px,
+            calc(var(--cs-message-font-size,8px) * 2.5),
+            32px
+        ) !important;
+
+    object-fit:contain;
+
+    vertical-align:middle;
+}
+
+.cs-message .emote{
+    flex:0 0 auto;
+
+    margin-inline:2px;
+}
+
+
+/*//////////////INLINE USERNAME//////////////*/
+
+.cs-bubble.cs-username-position-inline
+.cs-content{
+    display:block;
+
+    line-height:1.55;
+}
+
+.cs-bubble.cs-username-position-inline
+.cs-user--inline{
+    margin-inline-end:4px;
+
+    vertical-align:baseline;
+}
+
+.cs-bubble.cs-username-position-inline
+.cs-message{
+    inline-size:auto;
+}
+
+.cs-bubble.cs-username-position-inline
+.cs-message__track{
+    display:inline;
+}
+
+
+/*//////////////AVATAR HIDDEN//////////////*/
+
+.cs-bubble.cs-avatar-hidden
+.cs-header{
+    margin-block-end:4px;
+}
+
+
+/*//////////////RTL//////////////*/
+
+.cs-bubble.cs-direction-rtl{
+    --cs-bubble-animation:
+        csPixelPanelRevealRTL;
+
+    --cs-avatar-animation:
+        csPixelAvatarRevealRTL;
+
+    --cs-username-animation:
+        csPixelUserRevealRTL;
+}
+
+.cs-bubble.cs-direction-rtl
+.cs-content::before{
+    transform-origin:right center;
+}
+
+
+/*////////////////////////////////////////////////////////////*/
+/*//////////////////// EVENT ARCADE MODE //////////////////////*/
+/*////////////////////////////////////////////////////////////*/
+
+
+/*//////////////EVENT BASE//////////////*/
+
+.cs-bubble.cs-event{
+    min-inline-size:150px;
+
+    max-inline-size:
+        min(
+            300px,
+            calc(100vw - 8px)
+        );
+
+    padding-block-start:
+        calc(
+            8px +
+            var(
+                --cs-bubble-padding-top,
+                var(--cs-bubble-padding,0px)
+            )
+        );
+
+    padding-inline-end:
+        calc(
+            9px +
+            var(
+                --cs-bubble-padding-right,
+                var(--cs-bubble-padding,0px)
+            )
+        );
+
+    padding-block-end:
+        calc(
+            8px +
+            var(
+                --cs-bubble-padding-bottom,
+                var(--cs-bubble-padding,0px)
+            )
+        );
+
+    padding-inline-start:
+        calc(
+            9px +
+            var(
+                --cs-bubble-padding-left,
+                var(--cs-bubble-padding,0px)
+            )
+        );
+
+    text-align:center;
+
+    animation:
+        csEventArcadeBoot
+        760ms
+        steps(10,end)
+        0ms
+        both,
+
+        csArcadeCabinetKick
+        14s
+        steps(1,end)
+        1.4s
+        infinite;
+}
+
+
+/*//////////////EVENT OUTER SHELL//////////////*/
+
+.cs-bubble.cs-event::before{
+    background-color:
+        var(
+            --cs-bubble-border-color,
+            var(--a)
+        );
+
+    background-size:
+        20px 2px,
+        2px 20px,
+        20px 2px,
+        2px 20px;
+
+    background-repeat:
+        repeat-x,
+        repeat-y,
+        repeat-x,
+        repeat-y;
+
+    background-position:
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%;
+
+    animation:
+        csEventShellBoot
+        760ms
+        steps(1,end)
+        0ms
+        1
+        both,
+
+        csArcadeMarqueeCircuit
+        14s
+        steps(40,end)
+        1.4s
+        infinite;
+}
+
+
+/*//////////////EVENT INNER SHELL//////////////*/
+
+.cs-bubble.cs-event::after{
+    animation:
+        csEventInnerBoot
+        620ms
+        steps(8,end)
+        70ms
+        both;
+}
+
+
+/*//////////////EVENT HEADER//////////////*/
+
+.cs-bubble.cs-event
+.cs-header{
+    display:none;
+}
+
+
+/*//////////////EVENT CONTENT//////////////*/
+
+.cs-bubble.cs-event
+.cs-content{
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:5px;
+
+    inline-size:100%;
+
+    text-align:center;
+
+    animation:
+        csEventContentBoot
+        520ms
+        steps(7,end)
+        220ms
+        both;
+}
+
+
+/*//////////////EVENT USER//////////////*/
+
+.cs-bubble.cs-event
+.cs-user--inline{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    inline-size:fit-content;
+
+    max-inline-size:100%;
+
+    margin:0;
+
+    text-align:center;
+
+    animation:
+        csEventUserLock
+        440ms
+        steps(7,end)
+        245ms
+        both,
+
+        csArcadeScoreLock
+        14s
+        steps(1,end)
+        1.4s
+        infinite;
+}
+
+
+/*//////////////EVENT INDICATOR//////////////*/
+
+.cs-bubble.cs-event
+.cs-user--inline::before{
+    animation:
+        csEventIndicatorBoot
+        400ms
+        steps(5,end)
+        300ms
+        both;
+}
+
+
+/*//////////////EVENT META//////////////*/
+
+.cs-bubble.cs-event
+.cs-badges,
+.cs-bubble.cs-event
+.cs-badges--inline,
+.cs-bubble.cs-event
+.cs-pronouns{
+    display:none;
+}
+
+
+/*//////////////EVENT USERNAME//////////////*/
+
+.cs-bubble.cs-event
+.cs-username--inline{
+    display:block;
+
+    max-inline-size:100%;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+}
+
+
+/*//////////////EVENT MESSAGE//////////////*/
+
+.cs-bubble.cs-event
+.cs-message{
+    justify-content:center;
+
+    inline-size:100%;
+
+    text-align:center;
+
+    animation:
+        csEventMessageBoot
+        560ms
+        steps(8,end)
+        350ms
+        both;
+}
+
+.cs-bubble.cs-event
+.cs-message__track{
+    inline-size:100%;
+
+    text-align:center;
+
+    animation:
+        csEventTextBoot
+        560ms
+        steps(1,end)
+        390ms
+        both,
+
+        csArcadeTextLock
+        14s
+        steps(1,end)
+        1.4s
+        infinite;
+}
+
+
+/*//////////////FULL WIDTH//////////////*/
+
+.cs-chat.cs-full-width
+.cs-bubble{
+    inline-size:100%;
+
+    min-inline-size:0;
+
+    max-inline-size:none;
+}
+
+
+/*////////////////////////////////////////////////////////////*/
+/*//////////////////// NORMAL REVEAL //////////////////////////*/
+/*////////////////////////////////////////////////////////////*/
+
+
+/*//////////////PIXEL PANEL REVEAL//////////////*/
+
+@keyframes csPixelPanelReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-10px);
+
+        clip-path:
+            inset(
+                0
+                100%
+                0
+                0
+            );
+    }
+
+    12%{
+        opacity:1;
+
+        transform:
+            translateX(-8px);
+
+        clip-path:
+            inset(
+                0
+                78%
+                0
+                0
+            );
+    }
+
+    21%{
+        opacity:.22;
+    }
+
+    28%{
+        opacity:1;
+
+        transform:
+            translateX(-6px);
+
+        clip-path:
+            inset(
+                0
+                58%
+                0
+                0
+            );
+    }
+
+    38%{
+        opacity:.42;
+    }
+
+    46%{
+        opacity:1;
+
+        transform:
+            translateX(-4px);
+
+        clip-path:
+            inset(
+                0
+                36%
+                0
+                0
+            );
+    }
+
+    58%{
+        opacity:.72;
+    }
+
+    65%{
+        opacity:1;
+
+        transform:
+            translateX(-2px);
+
+        clip-path:
+            inset(
+                0
+                14%
+                0
+                0
+            );
+    }
+
+    75%{
+        opacity:.58;
+
+        transform:
+            translateX(2px);
+    }
+
+    82%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+
+    91%{
+        transform:
+            translateX(-1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+}
+
+
+/*//////////////PIXEL PANEL RTL//////////////*/
+
+@keyframes csPixelPanelRevealRTL{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(10px);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                100%
+            );
+    }
+
+    12%{
+        opacity:1;
+
+        transform:
+            translateX(8px);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                78%
+            );
+    }
+
+    21%{
+        opacity:.22;
+    }
+
+    28%{
+        opacity:1;
+
+        transform:
+            translateX(6px);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                58%
+            );
+    }
+
+    38%{
+        opacity:.42;
+    }
+
+    46%{
+        opacity:1;
+
+        transform:
+            translateX(4px);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                36%
+            );
+    }
+
+    58%{
+        opacity:.72;
+    }
+
+    65%{
+        opacity:1;
+
+        transform:
+            translateX(2px);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                14%
+            );
+    }
+
+    75%{
+        opacity:.58;
+
+        transform:
+            translateX(-2px);
+    }
+
+    82%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+
+    91%{
+        transform:
+            translateX(1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+}
+
+
+/*//////////////SHELL FLASH//////////////*/
+
+@keyframes csPixelShellFlash{
+
+    0%{
+        opacity:0;
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    15%{
+        opacity:.15;
+    }
+
+    21%{
+        opacity:1;
+    }
+
+    28%{
+        opacity:.38;
+    }
+
+    35%{
+        opacity:1;
+    }
+
+    43%{
+        opacity:.62;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    58%{
+        opacity:.78;
+    }
+
+    66%,
+    100%{
+        opacity:1;
+    }
+}
+
+
+/*//////////////INNER PANEL//////////////*/
+
+@keyframes csPixelInnerReveal{
+
+    0%{
+        opacity:0;
+    }
+
+    16%{
+        opacity:.24;
+    }
+
+    26%{
+        opacity:1;
+    }
+
+    35%{
+        opacity:.12;
+    }
+
+    44%{
+        opacity:1;
+    }
+
+    54%{
+        opacity:.4;
+    }
+
+    64%{
+        opacity:1;
+    }
+
+    73%{
+        opacity:.74;
+    }
+
+    82%,
+    100%{
+        opacity:1;
+    }
+}
+
+
+/*//////////////AVATAR REVEAL//////////////*/
+
+@keyframes csPixelAvatarReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translate(-6px,2px);
+
+        clip-path:
+            inset(
+                50%
+                50%
+                50%
+                50%
+            );
+    }
+
+    14%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                36%
+                26%
+                36%
+                26%
+            );
+    }
+
+    24%{
+        opacity:.12;
+
+        transform:
+            translate(-4px,0);
+    }
+
+    34%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                20%
+                12%
+                20%
+                12%
+            );
+    }
+
+    46%{
+        opacity:.4;
+
+        transform:
+            translate(2px,0);
+    }
+
+    58%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                5%
+                3%
+                5%
+                3%
+            );
+    }
+
+    70%{
+        opacity:.7;
+
+        transform:
+            translate(-1px,0);
+    }
+
+    80%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+
+    90%{
+        transform:
+            translate(1px,0);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translate(0,0);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+}
+
+
+/*//////////////AVATAR REVEAL RTL//////////////*/
+
+@keyframes csPixelAvatarRevealRTL{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translate(6px,2px);
+
+        clip-path:
+            inset(
+                50%
+                50%
+                50%
+                50%
+            );
+    }
+
+    14%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                36%
+                26%
+                36%
+                26%
+            );
+    }
+
+    24%{
+        opacity:.12;
+
+        transform:
+            translate(4px,0);
+    }
+
+    34%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                20%
+                12%
+                20%
+                12%
+            );
+    }
+
+    46%{
+        opacity:.4;
+
+        transform:
+            translate(-2px,0);
+    }
+
+    58%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                5%
+                3%
+                5%
+                3%
+            );
+    }
+
+    70%{
+        opacity:.7;
+
+        transform:
+            translate(1px,0);
+    }
+
+    80%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+
+    90%{
+        transform:
+            translate(-1px,0);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translate(0,0);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+}
+
+
+/*//////////////USERNAME REVEAL//////////////*/
+
+@keyframes csPixelUserReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-8px);
+
+        clip-path:
+            inset(
+                0
+                100%
+                0
+                0
+            );
+    }
+
+    17%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                72%
+                0
+                0
+            );
+    }
+
+    27%{
+        opacity:.12;
+    }
+
+    37%{
+        opacity:1;
+
+        transform:
+            translateX(-4px);
+
+        clip-path:
+            inset(
+                0
+                42%
+                0
+                0
+            );
+    }
+
+    50%{
+        opacity:.38;
+    }
+
+    60%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                16%
+                0
+                0
+            );
+    }
+
+    72%{
+        opacity:.72;
+
+        transform:
+            translateX(2px);
+    }
+
+    82%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+
+    91%{
+        transform:
+            translateX(-1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+}
+
+
+/*//////////////USERNAME REVEAL RTL//////////////*/
+
+@keyframes csPixelUserRevealRTL{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(8px);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                100%
+            );
+    }
+
+    17%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                72%
+            );
+    }
+
+    27%{
+        opacity:.12;
+    }
+
+    37%{
+        opacity:1;
+
+        transform:
+            translateX(4px);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                42%
+            );
+    }
+
+    50%{
+        opacity:.38;
+    }
+
+    60%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                16%
+            );
+    }
+
+    72%{
+        opacity:.72;
+
+        transform:
+            translateX(-2px);
+    }
+
+    82%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+
+    91%{
+        transform:
+            translateX(1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+}
+
+
+/*//////////////INDICATOR REVEAL//////////////*/
+
+@keyframes csPixelIndicatorReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(2px);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    35%{
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+
+        transform:
+            translateY(-1px);
+    }
+
+    65%{
+        opacity:.2;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////BADGE REVEAL//////////////*/
+
+@keyframes csPixelBadgeReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(3px);
+    }
+
+    18%{
+        opacity:1;
+
+        transform:
+            translateY(1px);
+    }
+
+    32%{
+        opacity:0;
+    }
+
+    46%{
+        opacity:1;
+
+        transform:
+            translateY(-1px);
+    }
+
+    60%{
+        opacity:.25;
+    }
+
+    75%{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////DIVIDER REVEAL//////////////*/
+
+@keyframes csPixelDividerReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            scaleX(0);
+    }
+
+    16%{
+        opacity:1;
+
+        transform:
+            scaleX(.16);
+    }
+
+    28%{
+        opacity:.12;
+    }
+
+    38%{
+        opacity:1;
+
+        transform:
+            scaleX(.38);
+    }
+
+    50%{
+        opacity:.28;
+    }
+
+    60%{
+        opacity:1;
+
+        transform:
+            scaleX(.68);
+    }
+
+    73%{
+        opacity:.16;
+    }
+
+    82%{
+        opacity:1;
+
+        transform:
+            scaleX(.9);
+    }
+
+    100%{
+        opacity:.28;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+/*//////////////MESSAGE REVEAL//////////////*/
+
+@keyframes csPixelMessageReveal{
+
+    0%{
+        opacity:0;
+    }
+
+    14%{
+        opacity:1;
+    }
+
+    23%{
+        opacity:.12;
+    }
+
+    31%{
+        opacity:1;
+    }
+
+    42%{
+        opacity:.35;
+    }
+
+    51%{
+        opacity:1;
+    }
+
+    62%{
+        opacity:.66;
+    }
+
+    72%,
+    100%{
+        opacity:1;
+    }
+}
+
+
+/*//////////////MESSAGE TEXT REVEAL//////////////*/
+
+@keyframes csPixelTextReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-6px);
+
+        clip-path:
+            inset(
+                0
+                100%
+                0
+                0
+            );
+    }
+
+    12%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                84%
+                0
+                0
+            );
+    }
+
+    22%{
+        opacity:.12;
+    }
+
+    30%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                62%
+                0
+                0
+            );
+    }
+
+    41%{
+        opacity:.38;
+    }
+
+    49%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                40%
+                0
+                0
+            );
+    }
+
+    60%{
+        opacity:.56;
+    }
+
+    68%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                20%
+                0
+                0
+            );
+    }
+
+    78%{
+        opacity:.74;
+
+        transform:
+            translateX(1px);
+    }
+
+    86%{
+        opacity:1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+
+    93%{
+        transform:
+            translateX(-1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }
+}
+
+
+/*////////////////////////////////////////////////////////////*/
+/*//////////////////// EVENT REVEAL ///////////////////////////*/
+/*////////////////////////////////////////////////////////////*/
+
+
+/*//////////////EVENT ARCADE BOOT//////////////*/
+
+@keyframes csEventArcadeBoot{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(5px);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    17%{
+        opacity:0;
+    }
+
+    24%{
+        opacity:1;
+
+        transform:
+            translateY(3px);
+    }
+
+    34%{
+        opacity:.3;
+    }
+
+    42%{
+        opacity:1;
+    }
+
+    53%{
+        transform:
+            translateY(1px);
+    }
+
+    62%{
+        opacity:.5;
+    }
+
+    70%{
+        opacity:1;
+
+        transform:
+            translateY(-1px);
+    }
+
+    82%{
+        opacity:.75;
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////EVENT SHELL BOOT//////////////*/
+
+@keyframes csEventShellBoot{
+
+    0%{
+        opacity:0;
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    14%{
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    28%{
+        opacity:.2;
+    }
+
+    35%{
+        opacity:1;
+    }
+
+    43%{
+        opacity:.5;
+    }
+
+    51%{
+        opacity:1;
+    }
+
+    61%{
+        opacity:.75;
+    }
+
+    69%,
+    100%{
+        opacity:1;
+    }
+}
+
+
+/*//////////////EVENT INNER BOOT//////////////*/
+
+@keyframes csEventInnerBoot{
+
+    0%{
+        opacity:0;
+    }
+
+    15%{
+        opacity:.2;
+    }
+
+    26%{
+        opacity:1;
+    }
+
+    35%{
+        opacity:.1;
+    }
+
+    45%{
+        opacity:1;
+    }
+
+    56%{
+        opacity:.42;
+    }
+
+    68%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:.72;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+
+/*//////////////EVENT CONTENT BOOT//////////////*/
+
+@keyframes csEventContentBoot{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(3px);
+    }
+
+    18%{
+        opacity:1;
+    }
+
+    28%{
+        opacity:.1;
+    }
+
+    39%{
+        opacity:1;
+
+        transform:
+            translateY(1px);
+    }
+
+    52%{
+        opacity:.38;
+    }
+
+    64%{
+        opacity:1;
+    }
+
+    78%{
+        transform:
+            translateY(-1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////EVENT USER LOCK//////////////*/
+
+@keyframes csEventUserLock{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-5px);
+    }
+
+    17%{
+        opacity:1;
+    }
+
+    29%{
+        opacity:0;
+    }
+
+    41%{
+        opacity:1;
+
+        transform:
+            translateX(-2px);
+    }
+
+    55%{
+        opacity:.25;
+    }
+
+    68%{
+        opacity:1;
+
+        transform:
+            translateX(1px);
+    }
+
+    82%{
+        transform:
+            translateX(-1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////EVENT INDICATOR BOOT//////////////*/
+
+@keyframes csEventIndicatorBoot{
+
+    0%{
+        opacity:0;
+    }
+
+    18%{
+        opacity:1;
+    }
+
+    32%{
+        opacity:0;
+    }
+
+    46%{
+        opacity:1;
+    }
+
+    62%{
+        opacity:.2;
+    }
+
+    78%,
+    100%{
+        opacity:1;
+    }
+}
+
+
+/*//////////////EVENT MESSAGE BOOT//////////////*/
+
+@keyframes csEventMessageBoot{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(3px);
+    }
+
+    14%{
+        opacity:1;
+    }
+
+    23%{
+        opacity:.1;
+    }
+
+    32%{
+        opacity:1;
+    }
+
+    43%{
+        opacity:.35;
+    }
+
+    52%{
+        opacity:1;
+
+        transform:
+            translateY(1px);
+    }
+
+    64%{
+        opacity:.65;
+    }
+
+    74%{
+        opacity:1;
+    }
+
+    86%{
+        transform:
+            translateY(-1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/*//////////////EVENT TEXT BOOT//////////////*/
+
+@keyframes csEventTextBoot{
+
+    0%{
+        opacity:0;
+    }
+
+    14%{
+        opacity:1;
+    }
+
+    22%{
+        opacity:0;
+    }
+
+    31%{
+        opacity:1;
+    }
+
+    41%{
+        opacity:.18;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    61%{
+        opacity:.55;
+    }
+
+    71%,
+    100%{
+        opacity:1;
+    }
+}
+
+
+/*////////////////////////////////////////////////////////////*/
+/*//////////////////// FAST ARCADE IDLE ///////////////////////*/
+/*////////////////////////////////////////////////////////////*/
+
+
+/*//////////////MARQUEE CIRCUIT//////////////*/
+
+@keyframes csArcadeMarqueeCircuit{
+
+    /*
+        14 Sekunden Gesamtzyklus.
+
+        Lange Ruhephase.
+
+        Danach:
+        schneller Arcade-Marquee-Chase.
+
+        Sichtbarer Chase:
+        ungefähr 1.8 Sekunden.
+    */
+
+
+    /*//////////////IDLE//////////////*/
+
+    0%,
+    78%{
+        background-image:none;
+
+        background-color:
+            var(
+                --cs-bubble-border-color,
+                var(--a)
+            );
+
+        background-position:
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%;
+    }
+
+
+    /*//////////////LIGHTS ON//////////////*/
+
+    79%{
+        background-image:
+
+            /* TOP */
+
+            repeating-linear-gradient(
+                90deg,
+
+                #ffffff
+                0 4px,
+
+                transparent
+                4px 8px,
+
+                color-mix(
+                    in srgb,
+                    var(--cs-bubble-border-color,var(--a)) 35%,
+                    #ffffff 65%
+                )
+                8px 12px,
+
+                transparent
+                12px 20px
+            ),
+
+
+            /* RIGHT */
+
+            repeating-linear-gradient(
+                180deg,
+
+                #ffffff
+                0 4px,
+
+                transparent
+                4px 8px,
+
+                color-mix(
+                    in srgb,
+                    var(--cs-bubble-border-color,var(--a)) 35%,
+                    #ffffff 65%
+                )
+                8px 12px,
+
+                transparent
+                12px 20px
+            ),
+
+
+            /* BOTTOM */
+
+            repeating-linear-gradient(
+                270deg,
+
+                #ffffff
+                0 4px,
+
+                transparent
+                4px 8px,
+
+                color-mix(
+                    in srgb,
+                    var(--cs-bubble-border-color,var(--a)) 35%,
+                    #ffffff 65%
+                )
+                8px 12px,
+
+                transparent
+                12px 20px
+            ),
+
+
+            /* LEFT */
+
+            repeating-linear-gradient(
+                0deg,
+
+                #ffffff
+                0 4px,
+
+                transparent
+                4px 8px,
+
+                color-mix(
+                    in srgb,
+                    var(--cs-bubble-border-color,var(--a)) 35%,
+                    #ffffff 65%
+                )
+                8px 12px,
+
+                transparent
+                12px 20px
+            );
+
+        background-position:
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%;
+    }
+
+
+    /*//////////////CHASE 01//////////////*/
+
+    80.5%{
+        background-position:
+            14px 0,
+            100% 14px,
+            calc(100% - 14px) 100%,
+            0 calc(100% - 14px);
+    }
+
+
+    /*//////////////CHASE 02//////////////*/
+
+    82%{
+        background-position:
+            28px 0,
+            100% 28px,
+            calc(100% - 28px) 100%,
+            0 calc(100% - 28px);
+    }
+
+
+    /*//////////////CHASE 03//////////////*/
+
+    83.5%{
+        background-position:
+            42px 0,
+            100% 42px,
+            calc(100% - 42px) 100%,
+            0 calc(100% - 42px);
+    }
+
+
+    /*//////////////CHASE 04//////////////*/
+
+    85%{
+        background-position:
+            56px 0,
+            100% 56px,
+            calc(100% - 56px) 100%,
+            0 calc(100% - 56px);
+    }
+
+
+    /*//////////////CHASE 05//////////////*/
+
+    86.5%{
+        background-position:
+            70px 0,
+            100% 70px,
+            calc(100% - 70px) 100%,
+            0 calc(100% - 70px);
+    }
+
+
+    /*//////////////CHASE 06//////////////*/
+
+    88%{
+        background-position:
+            84px 0,
+            100% 84px,
+            calc(100% - 84px) 100%,
+            0 calc(100% - 84px);
+    }
+
+
+    /*//////////////CHASE 07//////////////*/
+
+    89.5%{
+        background-position:
+            98px 0,
+            100% 98px,
+            calc(100% - 98px) 100%,
+            0 calc(100% - 98px);
+    }
+
+
+    /*//////////////CHASE 08//////////////*/
+
+    91%{
+        background-position:
+            112px 0,
+            100% 112px,
+            calc(100% - 112px) 100%,
+            0 calc(100% - 112px);
+    }
+
+
+    /*//////////////CHASE PEAK//////////////*/
+
+    92%{
+        background-position:
+            126px 0,
+            100% 126px,
+            calc(100% - 126px) 100%,
+            0 calc(100% - 126px);
+
+        background-color:
+            color-mix(
+                in srgb,
+                var(--cs-bubble-border-color,var(--a)) 72%,
+                #ffffff 28%
+            );
+    }
+
+
+    /*//////////////FULL CABINET FLASH//////////////*/
+
+    93%{
+        background-image:none;
+
+        background-color:#ffffff;
+    }
+
+
+    /*//////////////COLOR LOCK//////////////*/
+
+    94%{
+        background-image:none;
+
+        background-color:
+            var(
+                --cs-bubble-border-color,
+                var(--a)
+            );
+    }
+
+
+    95%{
+        background-color:
+            color-mix(
+                in srgb,
+                var(--cs-bubble-border-color,var(--a)) 55%,
+                #ffffff 45%
+            );
+    }
+
+
+    96%{
+        background-color:
+            var(
+                --cs-bubble-border-color,
+                var(--a)
+            );
+    }
+
+
+    /*//////////////RETURN TO IDLE//////////////*/
+
+    97%,
+    100%{
+        background-image:none;
+
+        background-color:
+            var(
+                --cs-bubble-border-color,
+                var(--a)
+            );
+
+        background-position:
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%;
+    }
+}
+
+
+/*//////////////CABINET KICK//////////////*/
+
+@keyframes csArcadeCabinetKick{
+
+    0%,
+    91%,
+    100%{
+        transform:
+            translate(0,0);
+    }
+
+    92%{
+        transform:
+            translateX(1px);
+    }
+
+    93%{
+        transform:
+            translateX(-1px);
+    }
+
+    94%{
+        transform:
+            translate(1px,-1px);
+    }
+
+    95%{
+        transform:
+            translate(-1px,0);
+    }
+
+    96%{
+        transform:
+            translateX(1px);
+    }
+
+    97%{
+        transform:
+            translate(0,0);
+    }
+}
+
+
+/*//////////////SCORE LOCK//////////////*/
+
+@keyframes csArcadeScoreLock{
+
+    0%,
+    91%,
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+    92%{
+        opacity:.35;
+
+        transform:
+            translateX(1px);
+    }
+
+    93%{
+        opacity:1;
+
+        transform:
+            translateX(-1px);
+    }
+
+    94%{
+        opacity:.2;
+
+        transform:
+            translateX(1px);
+    }
+
+    95%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+    96%{
+        opacity:.6;
+
+        transform:
+            translateX(-1px);
+    }
+
+    97%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////TEXT LOCK//////////////*/
+
+@keyframes csArcadeTextLock{
+
+    0%,
+    91%,
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+    93%{
+        opacity:.65;
+    }
+
+    94%{
+        opacity:1;
+
+        transform:
+            translateX(1px);
+    }
+
+    95%{
+        opacity:.4;
+
+        transform:
+            translateX(-1px);
+    }
+
+    96%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+    97%{
+        opacity:.75;
+    }
+
+    98%{
+        opacity:1;
+    }
+}
+.cs-bubble{
+    --a:#e8a91d !important;
+    --cs-bubble-border-color:#e8a91d !important;
+    --cs-bubble-background-color:#0e0a02 !important;
+
+    --cs-bubble-background-gradient:
+        linear-gradient(135deg,rgba(232,169,29,.13),transparent 42%) !important;
+
+    --cs-avatar-border-color:#ffd64d !important;
+    --cs-username-font-color:#ffdc68 !important;
+    --cs-message-font-color:#fff0b6 !important;
+}
+
+.cs-bubble:not(.cs-event)::before{
+    background-color:#e8a91d;
+
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            #9a6405 0 10px,
+            #e8a91d 10px 20px,
+            #fff0a0 20px 27px,
+            #e8a91d 27px 38px,
+            #9a6405 38px 48px
+        );
+
+    background-size:96px 100%;
+    background-position:0 0;
+
+    animation:
+        csPixelShellFlash 640ms steps(1,end) both,
+        skinCoinGold 1.8s steps(12,end) 640ms infinite;
+}
+
+.cs-bubble .cs-avatar img{
+    border-color:#ffd64d !important;
+}
+
+.cs-bubble .cs-username,
+.cs-bubble .cs-username--inline{
+    color:#ffdc68 !important;
+}
+
+.cs-bubble .cs-message{
+    color:#fff0b6 !important;
+}
+
+.cs-bubble .cs-user::before,
+.cs-bubble .cs-user--inline::before{
+    background:#ffd64d !important;
+}
+
+@keyframes skinCoinGold{
+    from{background-position:0 0;}
+    to{background-position:96px 0;}
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-right cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-avatar-hidden cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 0; --cs-avatar-position: right; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding: 4px; --cs-chat-padding-top: 4px; --cs-chat-padding-right: 4px; --cs-chat-padding-bottom: 4px; --cs-chat-padding-left: 4px; --cs-bubble-padding-top: 0px; --cs-bubble-padding-right: 0px; --cs-bubble-padding-bottom: 0px; --cs-bubble-padding-left: 0px; --cs-bubble-background-color: #070913; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 2px; --cs-bubble-border-style: solid; --cs-bubble-border-color: var(--a); --cs-bubble-border-radius: 0px; --cs-bubble-border-radius-top-left: 0px; --cs-bubble-border-radius-top-right: 0px; --cs-bubble-border-radius-bottom-right: 0px; --cs-bubble-border-radius-bottom-left: 0px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 0px; --cs-bubble-box-shadow-blur-radius: 0px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: #000000; --cs-bubble-box-shadow-inset: ; --cs-bubble-gap: 10px; --cs-bubble-width: 340px; --cs-avatar-padding: 0px; --cs-avatar-padding-top: 0px; --cs-avatar-padding-right: 0px; --cs-avatar-padding-bottom: 0px; --cs-avatar-padding-left: 0px; --cs-avatar-background-color: transparent; --cs-avatar-background-gradient: none; --cs-avatar-border-width: 2px; --cs-avatar-border-style: solid; --cs-avatar-border-color: var(--a); --cs-avatar-border-radius: 2px; --cs-avatar-border-radius-top-left: 2px; --cs-avatar-border-radius-top-right: 2px; --cs-avatar-border-radius-bottom-right: 2px; --cs-avatar-border-radius-bottom-left: 2px; --cs-avatar-box-shadow-offset-x: 0px; --cs-avatar-box-shadow-offset-y: 0px; --cs-avatar-box-shadow-blur-radius: 0px; --cs-avatar-box-shadow-spread-radius: 0px; --cs-avatar-box-shadow-color: #000000; --cs-avatar-box-shadow-inset: ; --cs-avatar-size: 34px; --cs-username-padding: 0px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-background-color: transparent; --cs-username-background-gradient: none; --cs-username-border-width: 0px; --cs-username-border-style: solid; --cs-username-border-color: transparent; --cs-username-border-radius: 0px; --cs-username-border-radius-top-left: 0px; --cs-username-border-radius-top-right: 0px; --cs-username-border-radius-bottom-right: 0px; --cs-username-border-radius-bottom-left: 0px; --cs-username-box-shadow-offset-x: 0px; --cs-username-box-shadow-offset-y: 0px; --cs-username-box-shadow-blur-radius: 0px; --cs-username-box-shadow-spread-radius: 0px; --cs-username-box-shadow-color: #000000; --cs-username-box-shadow-inset: ; --cs-username-font-size: 10px; --cs-username-font-color: var(--a); --cs-username-font-family: 'Inter'; --cs-username-font-weight: 900; --cs-username-text-shadow-offset-x: 1px; --cs-username-text-shadow-offset-y: 1px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: #000000; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding: 0px; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-background-color: transparent; --cs-message-background-gradient: none; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: transparent; --cs-message-border-radius: 0px; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #000000; --cs-message-box-shadow-inset: ; --cs-message-font-size: 8px; --cs-message-font-color: var(--text); --cs-message-font-family: 'Press Start 2P'; --cs-message-font-weight: 700; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: #000000; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor:#9b59b6;">
+    <div class="cs-header">
+        <div class="cs-avatar"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E"></div>
+
+        <div class="cs-user">
+            <span class="cs-badges"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+            <span class="cs-username">
+                <span class="cs-pronouns"></span>
+                JesusTenG
+            </span>
+        </div>
+    </div>
+
+    <div class="cs-content">
+        <span class="cs-user--inline">
+            <span class="cs-badges cs-badges--inline"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+            <span class="cs-username--inline">
+                <span class="cs-pronouns"></span>
+                JesusTenG
+            </span>
+        </span>
+
+        <div class="cs-message">
+            <span class="cs-message__track">So sieht dein Chat aus.</span>
+        </div>
+    </div>
+</div></div></div></body></html>

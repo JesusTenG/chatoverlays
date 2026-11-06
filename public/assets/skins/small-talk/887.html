@@ -1,0 +1,1468 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Small Talk – purple</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/d3773e073ffd239c5767.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/4967d9451523a4e6246a.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/2254010eadc99c92fc38.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/6d5fda4e7c8bd9440de1.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/677b9d983d6d18bcb5d9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/48c0f365e555c930159f.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/2c6636f5c2033988ae0a.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/4f6e38c96abe28ed90f9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/e3c9d5360767a6d8abf1.woff2") format('woff2');
+}
+/*//////////////CHAT//////////////*/
+
+.cs-chat {
+    --cs-silver-dark: #5a5a5f;
+    --cs-silver-mid: #8f8f96;
+    --cs-silver-light: #d8d8dc;
+
+    --cs-avatar-box-size:
+        calc(
+            var(--cs-avatar-size, 28px)
+            + var(--cs-avatar-padding-left, var(--cs-avatar-padding, 0px))
+            + var(--cs-avatar-padding-right, var(--cs-avatar-padding, 0px))
+            + var(--cs-avatar-border-width, 1px)
+            + var(--cs-avatar-border-width, 1px)
+        );
+
+    --cs-avatar-gap: 8px;
+
+    --cs-compact-avatar-track:
+        calc(
+            var(--cs-avatar-box-size)
+            + var(--cs-avatar-gap)
+        );
+
+    --cs-message-reveal-duration: 1450ms;
+    --cs-avatar-reveal-duration: 450ms;
+    --cs-avatar-reveal-delay: 1000ms;
+
+    gap:
+        var(
+            --cs-bubble-gap,
+            4px
+        );
+
+    padding-block-start:
+        var(
+            --cs-chat-padding-top,
+            var(--cs-chat-padding, 6px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-chat-padding-right,
+            var(--cs-chat-padding, 10px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-chat-padding-bottom,
+            var(--cs-chat-padding, 6px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-chat-padding-left,
+            var(--cs-chat-padding, 10px)
+        );
+}
+
+
+/*//////////////BUBBLE//////////////*/
+
+.cs-bubble {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    column-gap:
+        var(--cs-avatar-gap);
+
+    max-inline-size:
+        var(
+            --cs-bubble-width,
+            650px
+        );
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    box-shadow: none;
+
+    line-height: 1.35;
+
+    animation-name:
+        var(
+            --cs-bubble-animation,
+            none
+        );
+
+    animation-duration:
+        var(
+            --cs-bubble-animation-duration,
+            750ms
+        );
+
+    animation-delay:
+        var(
+            --cs-bubble-animation-delay,
+            0ms
+        );
+
+    animation-timing-function:
+        var(
+            --cs-bubble-animation-timing-function,
+            ease-out
+        );
+
+    animation-fill-mode: both;
+}
+
+
+/*//////////////HEADER//////////////*/
+
+.cs-header {
+    position: relative;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-inline-size: 0;
+}
+
+
+/*//////////////HEADER USER//////////////*/
+
+.cs-header .cs-user {
+    display: none;
+}
+
+
+/*//////////////AVATAR//////////////*/
+
+.cs-avatar {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        cs-avatar-enter
+        var(--cs-avatar-reveal-duration)
+        cubic-bezier(.16, 1, .3, 1)
+        var(--cs-avatar-reveal-delay)
+        both;
+}
+
+.cs-avatar img {
+    box-sizing: content-box;
+
+    inline-size:
+        var(
+            --cs-avatar-size,
+            28px
+        );
+
+    block-size:
+        var(
+            --cs-avatar-size,
+            28px
+        );
+
+    object-fit: cover;
+
+    padding-block-start:
+        var(
+            --cs-avatar-padding-top,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-avatar-padding-right,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-avatar-padding-bottom,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-avatar-padding-left,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    background-color:
+        var(
+            --cs-avatar-background-color,
+            #0a0a0b
+        );
+
+    background-image:
+        var(
+            --cs-avatar-background-gradient,
+            none
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-avatar-border-width,
+            1px
+        );
+
+    border-style:
+        var(
+            --cs-avatar-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-avatar-border-color,
+            #94949a
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-avatar-border-radius-top-left,
+            var(--cs-avatar-border-radius, 4px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-avatar-border-radius-top-right,
+            var(--cs-avatar-border-radius, 4px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-avatar-border-radius-bottom-right,
+            var(--cs-avatar-border-radius, 4px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-avatar-border-radius-bottom-left,
+            var(--cs-avatar-border-radius, 4px)
+        );
+
+    box-shadow:
+        var(
+            --cs-avatar-box-shadow-offset-x,
+            0px
+        )
+        var(
+            --cs-avatar-box-shadow-offset-y,
+            1px
+        )
+        var(
+            --cs-avatar-box-shadow-blur-radius,
+            5px
+        )
+        var(
+            --cs-avatar-box-shadow-spread-radius,
+            0px
+        )
+        var(
+            --cs-avatar-box-shadow-color,
+            rgb(0 0 0 / 45%)
+        );
+}
+
+
+/*//////////////CONTENT//////////////*/
+
+.cs-content {
+    position: relative;
+
+    grid-column: 2;
+    grid-row: 1;
+
+    display: block;
+
+    min-inline-size: 0;
+
+    text-align: center;
+
+    padding-block-start:
+        var(
+            --cs-bubble-padding-top,
+            var(--cs-bubble-padding, 5px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding, 11px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding, 5px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding, 11px)
+        );
+
+    background-color:
+        var(
+            --cs-bubble-background-color,
+            #09090a
+        );
+
+    background-image:
+        var(
+            --cs-bubble-background-gradient,
+            linear-gradient(
+                180deg,
+                rgb(255 255 255 / 3%),
+                rgb(255 255 255 / 0%) 60%
+            )
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-bubble-border-width,
+            1px
+        );
+
+    border-style:
+        var(
+            --cs-bubble-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-bubble-border-color,
+            #85858c
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-bubble-border-radius-top-left,
+            var(--cs-bubble-border-radius, 5px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-bubble-border-radius-top-right,
+            var(--cs-bubble-border-radius, 5px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-bubble-border-radius-bottom-right,
+            var(--cs-bubble-border-radius, 5px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-bubble-border-radius-bottom-left,
+            var(--cs-bubble-border-radius, 5px)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 4%),
+        0 2px 7px rgb(0 0 0 / 24%);
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        cs-content-enter
+        var(--cs-message-reveal-duration)
+        cubic-bezier(.16, 1, .3, 1)
+        both;
+}
+
+
+/*//////////////TRIANGLE LEFT OUTER//////////////*/
+
+.cs-content::before {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+
+    left: -8px;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+
+    transform:
+        translateY(-50%);
+
+    border-top:
+        7px solid transparent;
+
+    border-bottom:
+        7px solid transparent;
+
+    border-right:
+        8px solid
+        var(
+            --cs-bubble-border-color,
+            #85858c
+        );
+}
+
+
+/*//////////////TRIANGLE LEFT INNER//////////////*/
+
+.cs-content::after {
+    content: "";
+
+    position: absolute;
+    z-index: 1;
+
+    left: -6px;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+
+    transform:
+        translateY(-50%);
+
+    border-top:
+        6px solid transparent;
+
+    border-bottom:
+        6px solid transparent;
+
+    border-right:
+        7px solid
+        var(
+            --cs-bubble-background-color,
+            #09090a
+        );
+}
+
+
+/*//////////////INLINE USER//////////////*/
+
+.cs-user--inline {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    margin-inline-end: 5px;
+
+    line-height: 1;
+
+    vertical-align: middle;
+}
+
+
+/*//////////////INLINE BADGES//////////////*/
+
+.cs-badges--inline {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    margin-inline-end: 1px;
+
+    vertical-align: middle;
+}
+
+.cs-badges--inline img {
+    inline-size:
+        calc(
+            var(
+                --cs-username-font-size,
+                13px
+            ) + 1px
+        );
+
+    block-size:
+        calc(
+            var(
+                --cs-username-font-size,
+                13px
+            ) + 1px
+        );
+
+    border-radius: 2px;
+}
+
+
+/*//////////////USERNAME//////////////*/
+
+.cs-username--inline {
+    position: relative;
+    z-index: 2;
+
+    display: inline;
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Space Grotesk"
+        ),
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-username-font-size,
+            13px
+        );
+
+    font-weight:
+        var(
+            --cs-username-font-weight,
+            650
+        );
+
+    color:
+        var(
+            --cs-username-font-color,
+            var(
+                --cs-usercolor,
+                #d8d8dc
+            )
+        );
+
+    -webkit-text-stroke:
+        var(
+            --cs-username-text-stroke-width,
+            0px
+        )
+        var(
+            --cs-username-text-stroke-color,
+            #000000
+        );
+
+    text-shadow:
+        var(
+            --cs-username-text-shadow-offset-x,
+            0px
+        )
+        var(
+            --cs-username-text-shadow-offset-y,
+            0px
+        )
+        var(
+            --cs-username-text-shadow-blur-radius,
+            0px
+        )
+        var(
+            --cs-username-text-shadow-color,
+            transparent
+        );
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    vertical-align: middle;
+}
+
+
+/*//////////////PRONOUNS//////////////*/
+
+.cs-pronouns {
+    margin-inline-end: 2px;
+
+    color:
+        var(
+            --cs-pronouns-font-color,
+            #77777e
+        );
+
+    background-color:
+        var(
+            --cs-pronouns-background-color,
+            transparent
+        );
+}
+
+
+/*//////////////MESSAGE//////////////*/
+
+.cs-message {
+    position: relative;
+    z-index: 2;
+
+    display: inline;
+
+    padding-block-start:
+        var(
+            --cs-message-padding-top,
+            var(--cs-message-padding, 0px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-message-padding-right,
+            var(--cs-message-padding, 0px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-message-padding-bottom,
+            var(--cs-message-padding, 0px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-message-padding-left,
+            var(--cs-message-padding, 0px)
+        );
+
+    background-color:
+        var(
+            --cs-message-background-color,
+            transparent
+        );
+
+    background-image:
+        var(
+            --cs-message-background-gradient,
+            none
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-message-border-width,
+            0px
+        );
+
+    border-style:
+        var(
+            --cs-message-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-message-border-color,
+            transparent
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-message-border-radius-top-left,
+            var(--cs-message-border-radius, 0px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-message-border-radius-top-right,
+            var(--cs-message-border-radius, 0px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-message-border-radius-bottom-right,
+            var(--cs-message-border-radius, 0px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-message-border-radius-bottom-left,
+            var(--cs-message-border-radius, 0px)
+        );
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "Inter"
+        ),
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            13px
+        );
+
+    font-weight:
+        var(
+            --cs-message-font-weight,
+            400
+        );
+
+    color:
+        var(
+            --cs-message-font-color,
+            #d6d6d9
+        );
+
+    line-height: 1.35;
+
+    text-align: center;
+
+    -webkit-text-stroke:
+        var(
+            --cs-message-text-stroke-width,
+            0px
+        )
+        var(
+            --cs-message-text-stroke-color,
+            #000000
+        );
+
+    text-shadow:
+        var(
+            --cs-message-text-shadow-offset-x,
+            0px
+        )
+        var(
+            --cs-message-text-shadow-offset-y,
+            0px
+        )
+        var(
+            --cs-message-text-shadow-blur-radius,
+            0px
+        )
+        var(
+            --cs-message-text-shadow-color,
+            transparent
+        );
+
+    word-break: break-word;
+
+    vertical-align: middle;
+}
+
+
+/*//////////////EMOTES//////////////*/
+
+.cs-message .emote {
+    display: inline-block;
+
+    flex: 0 0 auto;
+
+    width: auto !important;
+    inline-size: auto !important;
+
+    height:
+        calc(
+            var(--cs-message-font-size, 13px)
+            * 1.55
+        )
+        !important;
+
+    block-size:
+        calc(
+            var(--cs-message-font-size, 13px)
+            * 1.55
+        )
+        !important;
+
+    max-width: none !important;
+    max-inline-size: none !important;
+
+    max-height:
+        calc(
+            var(--cs-message-font-size, 13px)
+            * 1.55
+        )
+        !important;
+
+    max-block-size:
+        calc(
+            var(--cs-message-font-size, 13px)
+            * 1.55
+        )
+        !important;
+
+    object-fit: contain;
+
+    margin-inline: 2px;
+
+    vertical-align: middle;
+}
+
+
+/*//////////////MESSAGE IMAGES//////////////*/
+
+.cs-message img:not(.emote) {
+    max-inline-size: 100%;
+}
+
+
+/*//////////////BADGES HIDDEN//////////////*/
+
+.cs-bubble.cs-badges-hidden .cs-badges,
+.cs-bubble.cs-badges-hidden .cs-badges--inline {
+    display: none;
+}
+
+
+/*//////////////RTL BUBBLE//////////////*/
+
+.cs-bubble.cs-direction-rtl {
+    direction: ltr;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+}
+
+
+/*//////////////RTL AVATAR//////////////*/
+
+.cs-bubble.cs-direction-rtl .cs-header {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/*//////////////RTL CONTENT//////////////*/
+
+.cs-bubble.cs-direction-rtl .cs-content {
+    grid-column: 1;
+    grid-row: 1;
+
+    direction: rtl;
+
+    text-align: center;
+
+    animation-name:
+        cs-content-enter-rtl;
+}
+
+
+/*//////////////RTL AVATAR ANIMATION//////////////*/
+
+.cs-bubble.cs-direction-rtl .cs-avatar {
+    animation-name:
+        cs-avatar-enter-rtl;
+}
+
+
+/*//////////////RTL TRIANGLE OUTER//////////////*/
+
+.cs-bubble.cs-direction-rtl .cs-content::before {
+    left: auto;
+    right: -8px;
+
+    border-top:
+        7px solid transparent;
+
+    border-bottom:
+        7px solid transparent;
+
+    border-right: 0;
+
+    border-left:
+        8px solid
+        var(
+            --cs-bubble-border-color,
+            #85858c
+        );
+}
+
+
+/*//////////////RTL TRIANGLE INNER//////////////*/
+
+.cs-bubble.cs-direction-rtl .cs-content::after {
+    left: auto;
+    right: -6px;
+
+    border-top:
+        6px solid transparent;
+
+    border-bottom:
+        6px solid transparent;
+
+    border-right: 0;
+
+    border-left:
+        7px solid
+        var(
+            --cs-bubble-background-color,
+            #09090a
+        );
+}
+
+
+/*//////////////RTL INLINE CONTENT//////////////*/
+
+.cs-bubble.cs-direction-rtl .cs-user--inline {
+    direction: rtl;
+
+    justify-content: center;
+}
+
+.cs-bubble.cs-direction-rtl .cs-username--inline {
+    direction: rtl;
+
+    text-align: center;
+}
+
+.cs-bubble.cs-direction-rtl .cs-message {
+    direction: rtl;
+
+    text-align: center;
+}
+
+
+/*//////////////AVATAR HIDDEN//////////////*/
+
+.cs-bubble.cs-avatar-hidden,
+.cs-bubble:has(.cs-avatar:empty) {
+    grid-template-columns:
+        minmax(0, 1fr);
+
+    column-gap: 0;
+}
+
+.cs-bubble.cs-avatar-hidden .cs-header,
+.cs-bubble:has(.cs-avatar:empty) .cs-header {
+    display: none;
+}
+
+.cs-bubble.cs-avatar-hidden .cs-content,
+.cs-bubble:has(.cs-avatar:empty) .cs-content {
+    grid-column: 1;
+    grid-row: 1;
+
+    text-align: center;
+
+    animation:
+        cs-content-enter-no-avatar
+        320ms
+        cubic-bezier(.16, 1, .3, 1)
+        both;
+}
+
+
+/*//////////////AVATAR HIDDEN RTL//////////////*/
+
+.cs-bubble.cs-avatar-hidden.cs-direction-rtl .cs-content,
+.cs-bubble.cs-direction-rtl:has(.cs-avatar:empty) .cs-content {
+    direction: rtl;
+
+    animation-name:
+        cs-content-enter-no-avatar;
+}
+
+
+/*//////////////AVATAR HIDDEN TRIANGLE//////////////*/
+
+.cs-bubble.cs-avatar-hidden .cs-content::before,
+.cs-bubble.cs-avatar-hidden .cs-content::after,
+.cs-bubble:has(.cs-avatar:empty) .cs-content::before,
+.cs-bubble:has(.cs-avatar:empty) .cs-content::after {
+    display: none;
+}
+
+
+/*//////////////EVENTS//////////////*/
+
+.cs-bubble.cs-event {
+    grid-template-columns:
+        var(--cs-compact-avatar-track)
+        minmax(0, 1fr);
+
+    column-gap: 0;
+}
+
+.cs-bubble.cs-event .cs-header {
+    display: none;
+}
+
+.cs-bubble.cs-event .cs-content {
+    grid-column: 2;
+    grid-row: 1;
+
+    text-align: center;
+
+    padding-block-start:
+        var(
+            --cs-bubble-padding-top,
+            var(--cs-bubble-padding, 7px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding, 11px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding, 7px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding, 11px)
+        );
+
+    background-color:
+        var(
+            --cs-bubble-background-color,
+            #09090a
+        );
+
+    background-image:
+        var(
+            --cs-bubble-background-gradient,
+            linear-gradient(
+                180deg,
+                rgb(255 255 255 / 4%),
+                rgb(255 255 255 / 0%) 65%
+            )
+        );
+
+    border-color:
+        var(
+            --cs-bubble-border-color,
+            #9a9aa0
+        );
+
+    animation:
+        cs-event-enter
+        380ms
+        cubic-bezier(.16, 1, .3, 1)
+        both;
+}
+
+.cs-bubble.cs-event .cs-content::before,
+.cs-bubble.cs-event .cs-content::after {
+    display: none;
+}
+
+.cs-bubble.cs-event .cs-user--inline {
+    justify-content: center;
+}
+
+.cs-bubble.cs-event .cs-username--inline {
+    text-align: center;
+}
+
+.cs-bubble.cs-event .cs-message {
+    text-align: center;
+
+    color:
+        var(
+            --cs-message-font-color,
+            #eeeeef
+        );
+}
+
+
+/*//////////////EVENTS RTL//////////////*/
+
+.cs-bubble.cs-event.cs-direction-rtl {
+    direction: ltr;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        var(--cs-compact-avatar-track);
+}
+
+.cs-bubble.cs-event.cs-direction-rtl .cs-content {
+    grid-column: 1;
+    grid-row: 1;
+
+    direction: rtl;
+
+    text-align: center;
+
+    animation-name:
+        cs-event-enter;
+}
+
+
+/*//////////////FULL WIDTH//////////////*/
+
+.cs-chat.cs-full-width .cs-bubble {
+    inline-size: 100%;
+
+    max-inline-size: none;
+}
+
+
+/*//////////////LTR CONTENT REVEAL//////////////*/
+
+@keyframes cs-content-enter {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(
+                calc(
+                    0px - var(--cs-compact-avatar-track)
+                )
+            )
+            translateY(3px);
+    }
+
+    12% {
+        opacity: 1;
+
+        transform:
+            translateX(
+                calc(
+                    0px - var(--cs-compact-avatar-track)
+                )
+            )
+            translateY(0);
+    }
+
+    68% {
+        opacity: 1;
+
+        transform:
+            translateX(
+                calc(
+                    0px - var(--cs-compact-avatar-track)
+                )
+            );
+    }
+
+    90% {
+        opacity: 1;
+
+        transform:
+            translateX(2px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////RTL CONTENT REVEAL//////////////*/
+
+@keyframes cs-content-enter-rtl {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(
+                var(--cs-compact-avatar-track)
+            )
+            translateY(3px);
+    }
+
+    12% {
+        opacity: 1;
+
+        transform:
+            translateX(
+                var(--cs-compact-avatar-track)
+            )
+            translateY(0);
+    }
+
+    68% {
+        opacity: 1;
+
+        transform:
+            translateX(
+                var(--cs-compact-avatar-track)
+            );
+    }
+
+    90% {
+        opacity: 1;
+
+        transform:
+            translateX(-2px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/*//////////////LTR AVATAR REVEAL//////////////*/
+
+@keyframes cs-avatar-enter {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-22px)
+            scale(.92);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+
+        transform:
+            translateX(2px)
+            scale(1.015);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+
+/*//////////////RTL AVATAR REVEAL//////////////*/
+
+@keyframes cs-avatar-enter-rtl {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(22px)
+            scale(.92);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+
+        transform:
+            translateX(-2px)
+            scale(1.015);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+
+/*//////////////NO AVATAR REVEAL//////////////*/
+
+@keyframes cs-content-enter-no-avatar {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(4px)
+            scale(.985);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            translateY(-1px)
+            scale(1.002);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/*//////////////EVENT REVEAL//////////////*/
+
+@keyframes cs-event-enter {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(5px)
+            scale(.985);
+    }
+
+    65% {
+        opacity: 1;
+
+        transform:
+            translateY(-1px)
+            scale(1.002);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/*//////////////REDUCED MOTION//////////////*/
+
+@media (prefers-reduced-motion: reduce) {
+    .cs-content,
+    .cs-avatar {
+        animation-duration: 1ms;
+        animation-delay: 0ms;
+    }
+}
+
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-right cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: right; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 6px; --cs-chat-padding-right: 10px; --cs-chat-padding-bottom: 6px; --cs-chat-padding-left: 10px; --cs-bubble-padding-top: 5px; --cs-bubble-padding-right: 11px; --cs-bubble-padding-bottom: 5px; --cs-bubble-padding-left: 11px; --cs-bubble-background-color: #09090a; --cs-bubble-background-gradient: radial-gradient(ellipse, #35274b 0%, rgba(0, 0, 0, 0) 100%); --cs-bubble-border-width: 1px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #492570; --cs-bubble-border-radius-top-left: 5px; --cs-bubble-border-radius-top-right: 5px; --cs-bubble-border-radius-bottom-right: 5px; --cs-bubble-border-radius-bottom-left: 5px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 0px; --cs-bubble-box-shadow-blur-radius: 0px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: #000000; --cs-bubble-box-shadow-inset: ; --cs-bubble-animation: bp-slide-in-up; --cs-bubble-animation-duration: 750ms; --cs-bubble-animation-delay: 0ms; --cs-bubble-animation-timing-function: ease-in-out; --cs-bubble-gap: 4px; --cs-bubble-width: 650px; --cs-avatar-padding-top: 0px; --cs-avatar-padding-right: 0px; --cs-avatar-padding-bottom: 0px; --cs-avatar-padding-left: 0px; --cs-avatar-background-color: #0a0a0b; --cs-avatar-background-gradient: none; --cs-avatar-border-width: 1px; --cs-avatar-border-style: solid; --cs-avatar-border-color: #4d1e79; --cs-avatar-border-radius-top-left: 4px; --cs-avatar-border-radius-top-right: 4px; --cs-avatar-border-radius-bottom-right: 4px; --cs-avatar-border-radius-bottom-left: 4px; --cs-avatar-box-shadow-offset-x: 0px; --cs-avatar-box-shadow-offset-y: 1px; --cs-avatar-box-shadow-blur-radius: 5px; --cs-avatar-box-shadow-spread-radius: 0px; --cs-avatar-box-shadow-color: rgb(0 0 0 / 45%); --cs-avatar-box-shadow-inset: ; --cs-avatar-size: 28px; --cs-username-padding: 0px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-font-size: 13px; --cs-username-font-color: #8d4af3; --cs-username-font-family: 'Space Grotesk'; --cs-username-font-weight: 400; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: transparent; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-background-color: transparent; --cs-message-background-gradient: none; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: transparent; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #000000; --cs-message-box-shadow-inset: ; --cs-message-font-size: 13px; --cs-message-font-color: #d6d6d9; --cs-message-font-family: 'Inter'; --cs-message-font-weight: 400; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: transparent; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+    <div class="cs-header">
+        <div class="cs-avatar"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E"></div>
+
+        <div class="cs-user">
+            <span class="cs-badges"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+            <span class="cs-username">
+                <span class="cs-pronouns"></span>
+                JesusTenG
+            </span>
+        </div>
+    </div>
+
+    <div class="cs-content">
+        <span class="cs-user--inline">
+            <span class="cs-badges cs-badges--inline"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+            <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+                <span class="cs-pronouns"></span>
+                JesusTenG
+            </span>
+        </span>
+
+        <div class="cs-message">So sieht dein Chat aus.</div>
+    </div>
+</div></div></div></body></html>

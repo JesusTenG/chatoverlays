@@ -33,7 +33,9 @@ npm start
 - `app/sitemap.ts`, `app/robots.ts`: automatisch erzeugte SEO-Dateien.
 - `app/assets/catalog.json/route.ts`: beim Build exportierter Katalog unter der bisherigen URL `/assets/catalog.json`.
 - `components/`: React-Komponenten für Galerie, Suche, Filter, Nachladen, Videovorschauen, Dialog und Animationen. Interne Links nutzen Next.js-Navigation.
-- `app/globals.css`: übernommenes Retro-Design mit Creme, Braun, Terrakotta, Gold-Akzent und kräftiger Schrift ab 16 px.
+- `app/globals.css`: Retro-Design mit Lavendel-Hero, cremefarbener Galerie, dunkelgrüner Einrichtungshilfe und pfirsichfarbenem Creator-Bereich; kräftige Schrift ab 16 px.
+- `components/navigation.tsx`: schwebende Navigation mit aktivem Abschnitt, kompakter Ansicht beim Scrollen und mobilem Menü.
+- `components/skin-gallery.tsx`, `lib/skins.ts`: Skin-Auswahl mit isolierter Originalgestaltung und umschaltbarem Vorschau-Hintergrund.
 - `lib/catalog.ts`, `lib/metadata.ts`: gemeinsames Datenmodell, Hero-Auswahl, Shop-URLs und SEO-Metadaten.
 - `source/catalog.json`, `source/editorial.mjs`: verifizierte Template-Daten, deutsche Beschreibungen, Gestaltungstipps und Kategorien.
 - `public/assets/templates/`: 40 originale WebP-Bilder und 40 WebM-Videos, lokal gespeichert.
@@ -43,6 +45,8 @@ npm start
 - `site.config.json`: Name, Creator-Link, veröffentlichter Ursprung und Indexierungsstatus.
 
 Im Hero laufen **Sleeping Cats, Neo Tokyo und Lofi Windows 93** stumm in Schleife. Die gedrehten Karten treten bei Hover oder Tastaturfokus hervor. Galerie-Videos starten bei Hover oder Fokus. Nicht sichtbare oder ausgefilterte Vorschauen sowie Videos hinter dem Dialog und in inaktiven Tabs pausieren. Reduzierte Bewegung wird berücksichtigt; die Hero-Videos lassen sich zusätzlich gemeinsam steuern.
+
+Auf allen Template-Seiten startet das Video automatisch, sobald es sichtbar ist. Es lässt sich pausieren oder vergrößern. Bei aktivierter reduzierter Bewegung startet es erst nach einem Klick. Die Shop-Buttons zeigen ihren Zweck und das originale ChatStyle-Logo.
 
 ## Hosting
 
@@ -68,6 +72,12 @@ npm run check
 ```
 
 Der Import erwartet 40 eindeutige Templates. Bei Änderungen den Import und die Prüfungen anpassen sowie neue redaktionelle Einträge ergänzen. Vorhandene Medien werden nicht automatisch überschrieben. Das rohe HTML bleibt lokal; ein normaler Checkout und Build benötigen es nicht.
+
+```powershell
+npm run import:skins
+```
+
+Der Skin-Import liest die öffentlich gelisteten Varianten auf jeder Template-Seite. Aktuell sind es **344 Skins bei 27 Templates**; 13 Templates haben keine gelisteten Skins. Namen, Einstellungen, Original-HTML und CSS werden übernommen, benötigte Bilder und Schriften lokal gespeichert. Die Vorschauen zeigen neutrale Beispielnachrichten mit der jeweiligen Originalgestaltung, keinen Live-Chat. `source/skins.json` enthält Herkunft und Importzeit; die eigenständigen Vorschauen liegen unter `public/assets/skins/` und führen keine Scripts aus. Ein normaler Build benötigt keinen Zugriff auf ChatStyle.
 
 ## Validierung
 

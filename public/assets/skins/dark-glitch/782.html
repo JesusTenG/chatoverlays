@@ -1,0 +1,4120 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Dark Glitch – xray</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/6d5fda4e7c8bd9440de1.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/677b9d983d6d18bcb5d9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/48c0f365e555c930159f.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/2c6636f5c2033988ae0a.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/4f6e38c96abe28ed90f9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/e3c9d5360767a6d8abf1.woff2") format('woff2');
+}
+/* /////////////////////////////////
+   HORROR SIGNAL / COLORS
+///////////////////////////////// */
+
+.cs-chat{
+    --cs-chat-padding:5px;
+}
+
+.cs-bubble{
+    --horror-black:#050505;
+    --horror-panel:#090909;
+    --horror-panel-soft:#0d0d0d;
+
+    --horror-border:#252525;
+    --horror-white:#e4e4e4;
+    --horror-grey:#858585;
+
+    --glitch-red:#ff153f;
+    --glitch-cyan:#00f6ff;
+    --glitch-blue:#2377ff;
+    --glitch-magenta:#ff00a8;
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        auto
+        minmax(0,1fr);
+
+    grid-template-rows:
+        auto
+        auto;
+
+    column-gap:9px;
+    row-gap:3px;
+
+    inline-size:fit-content;
+
+    min-inline-size:170px;
+
+    max-inline-size:
+        var(--cs-bubble-width,470px);
+
+    isolation:isolate;
+
+    overflow:hidden;
+
+    rotate:-.45deg;
+
+    padding-block-start:
+        var(
+            --cs-bubble-padding-top,
+            var(--cs-bubble-padding,7px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding,8px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding,7px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding,8px)
+        );
+
+    background-color:
+        var(
+            --cs-bubble-background-color,
+            var(--horror-black)
+        );
+
+    background-image:
+        linear-gradient(
+            115deg,
+            rgba(255,255,255,.018),
+            transparent 32%,
+            rgba(255,255,255,.01)
+        ),
+        var(--cs-bubble-background-gradient,none);
+
+    border-width:
+        var(--cs-bubble-border-width,1px);
+
+    border-style:
+        var(--cs-bubble-border-style,solid);
+
+    border-color:
+        var(
+            --cs-bubble-border-color,
+            var(--horror-border)
+        );
+
+    border-radius:
+        var(--cs-bubble-border-radius,10px);
+
+    animation:
+        horror-bubble-reveal
+        760ms
+        cubic-bezier(.2,.75,.18,1)
+        both;
+}
+
+
+/* /////////////////////////////////
+   ALTERNATING BUBBLE TILT
+///////////////////////////////// */
+
+.cs-bubble:nth-child(2n){
+    rotate:.42deg;
+}
+
+.cs-bubble:nth-child(3n){
+    rotate:-.62deg;
+}
+
+.cs-bubble:nth-child(4n){
+    rotate:.55deg;
+}
+
+.cs-bubble:nth-child(5n){
+    rotate:-.35deg;
+}
+
+
+/* /////////////////////////////////
+   HEADER
+///////////////////////////////// */
+
+.cs-header{
+    display:contents;
+}
+
+
+/* /////////////////////////////////
+   STATIC DETAILS
+///////////////////////////////// */
+
+.cs-horror-signal{
+    position:absolute;
+
+    z-index:5;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.75;
+
+    animation:
+        horror-detail-reveal
+        700ms
+        130ms
+        steps(1,end)
+        both;
+}
+
+.cs-horror-signal::before{
+    content:"";
+
+    position:absolute;
+
+    inset-block-start:0;
+    inset-inline-start:17px;
+
+    inline-size:27px;
+    block-size:1px;
+
+    background:#555555;
+
+    rotate:1.4deg;
+}
+
+.cs-horror-signal::after{
+    content:"";
+
+    position:absolute;
+
+    inset-inline-end:13px;
+    inset-block-end:0;
+
+    inline-size:18px;
+    block-size:1px;
+
+    background:#3d3d3d;
+
+    rotate:-1.8deg;
+}
+
+
+/* /////////////////////////////////
+   AVATAR
+///////////////////////////////// */
+
+.cs-avatar{
+    position:relative;
+
+    grid-column:1;
+    grid-row:1 / span 2;
+
+    align-self:center;
+
+    overflow:hidden;
+
+    z-index:3;
+
+    rotate:1.8deg;
+}
+
+.cs-bubble:nth-child(2n) .cs-avatar{
+    rotate:-1.5deg;
+}
+
+.cs-bubble:nth-child(3n) .cs-avatar{
+    rotate:2.1deg;
+}
+
+.cs-avatar img{
+    display:block;
+
+    inline-size:
+        var(--cs-avatar-size,35px);
+
+    block-size:
+        var(--cs-avatar-size,35px);
+
+    object-fit:cover;
+
+    padding:
+        var(--cs-avatar-padding,0);
+
+    background-color:
+        var(
+            --cs-avatar-background-color,
+            #0b0b0b
+        );
+
+    border-width:
+        var(--cs-avatar-border-width,1px);
+
+    border-style:
+        var(--cs-avatar-border-style,solid);
+
+    border-color:
+        var(
+            --cs-avatar-border-color,
+            #303030
+        );
+
+    border-radius:
+        var(--cs-avatar-border-radius,8px);
+
+    filter:
+        grayscale(1)
+        contrast(1.12)
+        brightness(.73);
+
+    opacity:.92;
+
+    animation:
+        horror-avatar-reveal
+        600ms
+        150ms
+        steps(1,end)
+        both;
+}
+
+
+/* /////////////////////////////////
+   USER
+///////////////////////////////// */
+
+.cs-user{
+    grid-column:2;
+    grid-row:1;
+
+    justify-self:start;
+    align-self:end;
+
+    min-inline-size:0;
+
+    gap:4px;
+
+    rotate:-1deg;
+
+    padding-block-start:
+        var(
+            --cs-username-padding-top,
+            var(--cs-username-padding,3px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-username-padding-right,
+            var(--cs-username-padding,7px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-username-padding-bottom,
+            var(--cs-username-padding,3px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-username-padding-left,
+            var(--cs-username-padding,7px)
+        );
+
+    background-color:
+        var(
+            --cs-username-background-color,
+            var(--horror-panel-soft)
+        );
+
+    background-image:
+        var(--cs-username-background-gradient,none);
+
+    border-width:
+        var(--cs-username-border-width,1px);
+
+    border-style:
+        var(--cs-username-border-style,solid);
+
+    border-color:
+        var(
+            --cs-username-border-color,
+            #202020
+        );
+
+    border-radius:
+        var(--cs-username-border-radius,7px);
+
+    animation:
+        horror-user-reveal
+        540ms
+        270ms
+        steps(1,end)
+        both;
+}
+
+.cs-bubble:nth-child(2n) .cs-user{
+    rotate:1.25deg;
+}
+
+.cs-bubble:nth-child(3n) .cs-user{
+    rotate:-1.5deg;
+}
+
+
+/* /////////////////////////////////
+   USERNAME
+///////////////////////////////// */
+
+.cs-username,
+.cs-username--inline{
+    color:
+        var(
+            --cs-username-font-color,
+            #d0d0d0
+        );
+
+    line-height:1.05;
+
+    letter-spacing:.045em;
+
+    text-shadow:none;
+}
+
+
+/* /////////////////////////////////
+   PRONOUNS
+///////////////////////////////// */
+
+.cs-pronouns{
+    color:
+        var(
+            --cs-pronouns-font-color,
+            #686868
+        );
+
+    background-color:
+        var(
+            --cs-pronouns-background-color,
+            transparent
+        );
+
+    opacity:.75;
+}
+
+
+/* /////////////////////////////////
+   BADGES
+///////////////////////////////// */
+
+.cs-badges{
+    gap:3px;
+}
+
+.cs-badges img{
+    filter:
+        grayscale(1)
+        contrast(1.1)
+        brightness(.78);
+
+    opacity:.72;
+
+    border-radius:4px;
+
+    rotate:4deg;
+
+    animation:
+        horror-badge-reveal
+        430ms
+        330ms
+        steps(1,end)
+        both;
+}
+
+.cs-badges img:nth-child(2n){
+    rotate:-5deg;
+}
+
+.cs-badges img:nth-child(3n){
+    rotate:3deg;
+}
+
+.cs-badges img:nth-child(4n){
+    rotate:-3deg;
+}
+
+.cs-badges img:nth-child(2){
+    animation-delay:370ms;
+}
+
+.cs-badges img:nth-child(3){
+    animation-delay:410ms;
+}
+
+.cs-badges img:nth-child(4){
+    animation-delay:450ms;
+}
+
+
+/* /////////////////////////////////
+   CONTENT
+///////////////////////////////// */
+
+.cs-content{
+    position:relative;
+
+    grid-column:2;
+    grid-row:2;
+
+    min-inline-size:0;
+
+    z-index:2;
+}
+
+
+/* /////////////////////////////////
+   MESSAGE
+///////////////////////////////// */
+
+.cs-message{
+    rotate:.7deg;
+
+    padding-block-start:
+        var(
+            --cs-message-padding-top,
+            var(--cs-message-padding,4px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-message-padding-right,
+            var(--cs-message-padding,7px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-message-padding-bottom,
+            var(--cs-message-padding,4px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-message-padding-left,
+            var(--cs-message-padding,7px)
+        );
+
+    background-color:
+        var(
+            --cs-message-background-color,
+            var(--horror-panel)
+        );
+
+    background-image:
+        var(--cs-message-background-gradient,none);
+
+    border-width:
+        var(--cs-message-border-width,1px);
+
+    border-style:
+        var(--cs-message-border-style,solid);
+
+    border-color:
+        var(
+            --cs-message-border-color,
+            #191919
+        );
+
+    border-radius:
+        var(--cs-message-border-radius,7px);
+
+    color:
+        var(
+            --cs-message-font-color,
+            #dddddd
+        );
+
+    line-height:1.32;
+
+    text-shadow:none;
+
+    animation:
+        horror-message-reveal
+        630ms
+        390ms
+        steps(1,end)
+        both;
+}
+
+.cs-bubble:nth-child(2n) .cs-message{
+    rotate:-.85deg;
+}
+
+.cs-bubble:nth-child(3n) .cs-message{
+    rotate:1.05deg;
+}
+
+.cs-bubble:nth-child(4n) .cs-message{
+    rotate:-.6deg;
+}
+
+
+/* /////////////////////////////////
+   INLINE USER
+///////////////////////////////// */
+
+.cs-bubble.cs-username-position-inline .cs-content{
+    grid-row:1 / span 2;
+
+    align-self:center;
+}
+
+
+/* /////////////////////////////////
+   NO AVATAR
+///////////////////////////////// */
+
+.cs-bubble.cs-avatar-hidden{
+    grid-template-columns:
+        minmax(0,1fr);
+
+    column-gap:0;
+}
+
+.cs-bubble.cs-avatar-hidden .cs-user,
+.cs-bubble.cs-avatar-hidden .cs-content{
+    grid-column:1;
+}
+
+
+/* /////////////////////////////////
+   NORMAL REVEAL TEAR
+///////////////////////////////// */
+
+.cs-bubble:not(.cs-event)::after{
+    content:"";
+
+    position:absolute;
+
+    z-index:12;
+
+    inset-inline:-8px;
+
+    block-size:3px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    border-radius:999px;
+
+    animation:
+        horror-reveal-tear
+        760ms
+        steps(1,end)
+        both;
+}
+
+
+/* /////////////////////////////////
+   EVENT BASE
+///////////////////////////////// */
+
+.cs-bubble.cs-event{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    min-inline-size:260px;
+
+    rotate:.3deg;
+
+    padding-block-start:
+        var(
+            --cs-bubble-padding-top,
+            var(--cs-bubble-padding,10px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding,14px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding,10px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding,14px)
+        );
+
+    background-color:
+        var(
+            --cs-bubble-background-color,
+            #040404
+        );
+
+    background-image:
+        linear-gradient(
+            110deg,
+            rgba(255,255,255,.025),
+            transparent 24%,
+            rgba(255,255,255,.015) 67%,
+            transparent
+        ),
+        var(--cs-bubble-background-gradient,none);
+
+    border-color:
+        var(
+            --cs-bubble-border-color,
+            #303030
+        );
+
+    border-radius:
+        var(--cs-bubble-border-radius,12px);
+
+    animation:
+        horror-event-reveal
+        900ms
+        cubic-bezier(.18,.82,.16,1)
+        both,
+
+        horror-event-jitter
+        6.7s
+        1.2s
+        steps(1,end)
+        infinite,
+
+        horror-event-frame
+        8.6s
+        1.4s
+        steps(1,end)
+        infinite;
+}
+
+.cs-bubble.cs-event:nth-child(2n){
+    rotate:-.45deg;
+}
+
+.cs-bubble.cs-event:nth-child(3n){
+    rotate:.6deg;
+}
+
+
+/* /////////////////////////////////
+   NO EVENT LABEL
+///////////////////////////////// */
+
+.cs-bubble.cs-event::before{
+    content:none;
+
+    display:none;
+}
+
+
+/* /////////////////////////////////
+   EVENT WITHOUT AVATAR / BADGES
+///////////////////////////////// */
+
+.cs-event .cs-avatar,
+.cs-event .cs-badges,
+.cs-event .cs-badges--inline,
+.cs-event .cs-pronouns{
+    display:none;
+}
+
+
+/* /////////////////////////////////
+   EVENT HEADER
+///////////////////////////////// */
+
+.cs-event .cs-header{
+    display:flex;
+
+    justify-content:center;
+
+    inline-size:100%;
+}
+
+
+/* /////////////////////////////////
+   EVENT USER
+///////////////////////////////// */
+
+.cs-event .cs-user{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    justify-self:auto;
+    align-self:center;
+
+    inline-size:auto;
+
+    max-inline-size:100%;
+
+    rotate:-1.35deg;
+
+    padding:4px 10px;
+
+    background:#0b0b0b;
+
+    border:1px solid #232323;
+
+    border-radius:999px;
+
+    animation:
+        horror-user-reveal
+        540ms
+        260ms
+        steps(1,end)
+        both,
+
+        horror-event-user-glitch
+        4.9s
+        1.15s
+        steps(1,end)
+        infinite;
+}
+
+.cs-event:nth-child(2n) .cs-user{
+    rotate:1.25deg;
+}
+
+.cs-event:nth-child(3n) .cs-user{
+    rotate:-1.7deg;
+}
+
+.cs-bubble.cs-event.cs-username-position-inline .cs-user{
+    display:flex;
+}
+
+.cs-bubble.cs-event.cs-username-position-inline .cs-user--inline{
+    display:none;
+}
+
+.cs-event .cs-username{
+    color:
+        var(
+            --cs-username-font-color,
+            #d8d8d8
+        );
+
+    text-align:center;
+
+    letter-spacing:.085em;
+}
+
+
+/* /////////////////////////////////
+   EVENT CONTENT
+///////////////////////////////// */
+
+.cs-event .cs-content{
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    inline-size:100%;
+}
+
+
+/* /////////////////////////////////
+   EVENT MESSAGE
+///////////////////////////////// */
+
+.cs-event .cs-message,
+.cs-bubble.cs-event.cs-username-position-inline .cs-message{
+    display:flex;
+
+    justify-content:center;
+
+    inline-size:auto;
+
+    max-inline-size:100%;
+
+    rotate:.8deg;
+
+    padding:5px 10px;
+
+    background:
+        var(
+            --cs-message-background-color,
+            #090909
+        );
+
+    border:
+        var(--cs-message-border-width,1px)
+        var(--cs-message-border-style,solid)
+        var(--cs-message-border-color,#1e1e1e);
+
+    border-radius:
+        var(--cs-message-border-radius,8px);
+
+    text-align:center;
+
+    color:
+        var(
+            --cs-message-font-color,
+            #dddddd
+        );
+
+    animation:
+        horror-message-reveal
+        620ms
+        390ms
+        steps(1,end)
+        both,
+
+        horror-event-message-glitch
+        5.8s
+        1.3s
+        steps(1,end)
+        infinite;
+}
+
+.cs-event:nth-child(2n) .cs-message{
+    rotate:-1deg;
+}
+
+.cs-event:nth-child(3n) .cs-message{
+    rotate:.65deg;
+}
+
+
+/* /////////////////////////////////
+   EVENT TEAR
+///////////////////////////////// */
+
+.cs-bubble.cs-event::after{
+    content:"";
+
+    position:absolute;
+
+    z-index:14;
+
+    inset-inline:-12px;
+
+    block-size:3px;
+
+    border-radius:999px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    animation:
+        horror-event-tear
+        5.7s
+        1.15s
+        steps(1,end)
+        infinite;
+}
+
+
+/* /////////////////////////////////
+   EVENT SCAN
+///////////////////////////////// */
+
+.cs-event .cs-content::after{
+    content:"";
+
+    position:absolute;
+
+    z-index:7;
+
+    inset-inline:-12px;
+
+    inset-block-start:50%;
+
+    block-size:2px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    border-radius:999px;
+
+    animation:
+        horror-event-scan
+        6.4s
+        1.4s
+        steps(1,end)
+        infinite;
+}
+
+
+/* /////////////////////////////////
+   ROLE COLORS
+///////////////////////////////// */
+
+.cs-vip{
+    --role-glitch-a:#b900ff;
+    --role-glitch-b:#00f6ff;
+    --role-glitch-c:#ff00bd;
+}
+
+.cs-mod{
+    --role-glitch-a:#35ff6f;
+    --role-glitch-b:#00f6ff;
+    --role-glitch-c:#eaff00;
+}
+
+.cs-sub{
+    --role-glitch-a:#9d38ff;
+    --role-glitch-b:#00d9ff;
+    --role-glitch-c:#ff37d1;
+}
+
+.cs-broadcaster{
+    --role-glitch-a:#ff153f;
+    --role-glitch-b:#00f6ff;
+    --role-glitch-c:#ff00a8;
+}
+
+
+/* /////////////////////////////////
+   VIP / CONTINUOUS GLITCH
+///////////////////////////////// */
+
+.cs-vip:not(.cs-event) .cs-user{
+    animation:
+        horror-user-reveal
+        540ms
+        270ms
+        steps(1,end)
+        both,
+
+        horror-vip-user-glitch
+        5.1s
+        1.3s
+        steps(1,end)
+        infinite;
+}
+
+.cs-vip:not(.cs-event) .cs-message{
+    animation:
+        horror-message-reveal
+        630ms
+        390ms
+        steps(1,end)
+        both,
+
+        horror-vip-message-glitch
+        5.6s
+        1.5s
+        steps(1,end)
+        infinite;
+}
+
+.cs-vip:not(.cs-event) .cs-avatar{
+    animation:
+        horror-vip-avatar-glitch
+        6.3s
+        1.6s
+        steps(1,end)
+        infinite;
+}
+
+
+/* /////////////////////////////////
+   VIP BADGE SYNC
+///////////////////////////////// */
+
+.cs-vip:not(.cs-event) .cs-badges img{
+    animation:
+        horror-badge-reveal
+        430ms
+        330ms
+        steps(1,end)
+        both,
+
+        horror-vip-badge-color
+        5.6s
+        1.5s
+        steps(1,end)
+        infinite;
+}
+
+.cs-vip:not(.cs-event) .cs-badges img:nth-child(2){
+    animation-delay:
+        370ms,
+        1.5s;
+}
+
+.cs-vip:not(.cs-event) .cs-badges img:nth-child(3){
+    animation-delay:
+        410ms,
+        1.5s;
+}
+
+.cs-vip:not(.cs-event) .cs-badges img:nth-child(4){
+    animation-delay:
+        450ms,
+        1.5s;
+}
+
+
+/* /////////////////////////////////
+   MODERATOR / REVEAL ONLY
+///////////////////////////////// */
+
+.cs-mod:not(.cs-event) .cs-user{
+    animation:
+        horror-mod-user-reveal
+        760ms
+        250ms
+        steps(1,end)
+        both;
+}
+
+.cs-mod:not(.cs-event) .cs-message{
+    animation:
+        horror-mod-message-reveal
+        820ms
+        360ms
+        steps(1,end)
+        both;
+}
+
+.cs-mod:not(.cs-event) .cs-avatar img{
+    animation:
+        horror-mod-avatar-reveal
+        700ms
+        140ms
+        steps(1,end)
+        both;
+}
+
+
+/* /////////////////////////////////
+   SUBSCRIBER / REVEAL ONLY
+///////////////////////////////// */
+
+.cs-sub:not(.cs-event) .cs-user{
+    animation:
+        horror-sub-user-reveal
+        760ms
+        250ms
+        steps(1,end)
+        both;
+}
+
+.cs-sub:not(.cs-event) .cs-message{
+    animation:
+        horror-sub-message-reveal
+        840ms
+        360ms
+        steps(1,end)
+        both;
+}
+
+.cs-sub:not(.cs-event) .cs-avatar img{
+    animation:
+        horror-sub-avatar-reveal
+        700ms
+        140ms
+        steps(1,end)
+        both;
+}
+
+
+/* /////////////////////////////////
+   BROADCASTER / BADGES
+///////////////////////////////// */
+
+.cs-broadcaster:not(.cs-event) .cs-badges{
+    animation:none;
+}
+
+.cs-broadcaster:not(.cs-event) .cs-badges img{
+    filter:
+        grayscale(1)
+        contrast(1.1)
+        brightness(.78);
+
+    opacity:.72;
+
+    box-shadow:none;
+}
+
+
+/* /////////////////////////////////
+   BROADCASTER / BORDER GLITCH
+///////////////////////////////// */
+
+.cs-broadcaster:not(.cs-event){
+    animation:
+        horror-bubble-reveal
+        760ms
+        cubic-bezier(.2,.75,.18,1)
+        both,
+
+        horror-broadcaster-border
+        3.8s
+        900ms
+        steps(1,end)
+        infinite;
+}
+
+
+/* /////////////////////////////////
+   BUBBLE REVEAL
+///////////////////////////////// */
+
+@keyframes horror-bubble-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-17px)
+            scaleX(.84);
+
+        clip-path:
+            inset(0 100% 0 0 round 10px);
+    }
+
+    12%{
+        opacity:1;
+
+        transform:
+            translateX(8px)
+            scaleX(1.035);
+
+        clip-path:
+            inset(0 44% 0 0 round 10px);
+    }
+
+    19%{
+        transform:
+            translateX(-7px)
+            scaleX(.97);
+
+        clip-path:
+            inset(58% 0 0 0 round 10px);
+    }
+
+    27%{
+        transform:
+            translateX(5px);
+
+        clip-path:
+            inset(0 0 40% 0 round 10px);
+    }
+
+    35%{
+        transform:
+            translateX(-4px);
+
+        clip-path:
+            inset(25% 0 42% 0 round 10px);
+    }
+
+    44%{
+        transform:
+            translateX(3px);
+
+        clip-path:
+            inset(0 round 10px);
+    }
+
+    58%{
+        transform:
+            translateX(-1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 10px);
+    }
+}
+
+
+/* /////////////////////////////////
+   AVATAR REVEAL
+///////////////////////////////// */
+
+@keyframes horror-avatar-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-11px);
+
+        clip-path:
+            inset(0 0 100% 0 round 8px);
+    }
+
+    19%{
+        opacity:.92;
+
+        transform:
+            translateX(7px);
+
+        clip-path:
+            inset(0 0 57% 0 round 8px);
+    }
+
+    30%{
+        transform:
+            translateX(-6px);
+
+        clip-path:
+            inset(54% 0 18% 0 round 8px);
+    }
+
+    40%{
+        transform:
+            translateX(5px);
+
+        clip-path:
+            inset(17% 0 44% 0 round 8px);
+
+        box-shadow:
+            5px 0 var(--glitch-cyan),
+            -5px 0 var(--glitch-red);
+    }
+
+    47%{
+        box-shadow:
+            -5px 0 var(--glitch-magenta),
+            5px 0 var(--glitch-blue);
+    }
+
+    54%{
+        transform:
+            translateX(-3px);
+
+        box-shadow:
+            4px 0 var(--glitch-red),
+            -4px 0 var(--glitch-cyan);
+    }
+
+    61%{
+        transform:
+            translateX(-1px);
+
+        clip-path:
+            inset(0 round 8px);
+
+        box-shadow:none;
+    }
+
+    100%{
+        opacity:.92;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 8px);
+
+        box-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   USER REVEAL
+///////////////////////////////// */
+
+@keyframes horror-user-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-10px);
+
+        clip-path:
+            inset(0 100% 0 0 round 7px);
+    }
+
+    24%{
+        opacity:1;
+
+        transform:
+            translateX(6px);
+
+        clip-path:
+            inset(0 47% 0 0 round 7px);
+    }
+
+    36%{
+        transform:
+            translateX(-5px);
+
+        clip-path:
+            inset(55% 0 0 0 round 7px);
+    }
+
+    48%{
+        transform:
+            translateX(4px);
+
+        clip-path:
+            inset(0 0 48% 0 round 7px);
+
+        box-shadow:
+            4px 0 var(--glitch-cyan),
+            -4px 0 var(--glitch-red);
+    }
+
+    55%{
+        box-shadow:
+            -5px 0 var(--glitch-magenta),
+            5px 0 var(--glitch-blue);
+    }
+
+    63%{
+        transform:
+            translateX(-1px);
+
+        clip-path:
+            inset(0 round 7px);
+
+        box-shadow:none;
+    }
+
+    100%{
+        opacity:1;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 7px);
+
+        box-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   BADGE REVEAL
+///////////////////////////////// */
+
+@keyframes horror-badge-reveal{
+
+    0%,
+    20%{
+        opacity:0;
+
+        transform:
+            translateX(-6px)
+            scale(.65);
+    }
+
+    32%{
+        opacity:.72;
+
+        transform:
+            translateX(5px)
+            scale(1.15);
+    }
+
+    44%{
+        transform:
+            translateX(-3px)
+            scale(.92);
+
+        box-shadow:
+            4px 0 var(--glitch-cyan),
+            -4px 0 var(--glitch-magenta);
+    }
+
+    52%{
+        box-shadow:
+            -4px 0 var(--glitch-red),
+            4px 0 var(--glitch-blue);
+    }
+
+    61%{
+        transform:
+            translateX(1px);
+
+        box-shadow:none;
+    }
+
+    100%{
+        opacity:.72;
+
+        transform:none;
+
+        box-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   MESSAGE REVEAL
+///////////////////////////////// */
+
+@keyframes horror-message-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-8px);
+
+        clip-path:
+            inset(0 100% 0 0 round 7px);
+    }
+
+    18%{
+        opacity:1;
+
+        transform:
+            translateX(6px);
+
+        clip-path:
+            inset(0 70% 0 0 round 7px);
+    }
+
+    30%{
+        transform:
+            translateX(-5px);
+
+        clip-path:
+            inset(52% 45% 0 0 round 7px);
+    }
+
+    42%{
+        transform:
+            translateX(4px);
+
+        clip-path:
+            inset(0 0 45% 0 round 7px);
+    }
+
+    48%{
+        text-shadow:
+            4px 0 var(--glitch-cyan),
+            -4px 0 var(--glitch-red);
+    }
+
+    53%{
+        text-shadow:
+            -5px 0 var(--glitch-magenta),
+            5px 0 var(--glitch-blue);
+    }
+
+    59%{
+        transform:
+            translateX(-2px);
+
+        clip-path:
+            inset(0 18% 0 0 round 7px);
+
+        text-shadow:
+            3px 0 var(--glitch-red),
+            -3px 0 var(--glitch-cyan);
+    }
+
+    68%{
+        text-shadow:none;
+    }
+
+    74%{
+        transform:
+            translateX(1px);
+
+        clip-path:
+            inset(0 round 7px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 7px);
+
+        text-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   DETAIL REVEAL
+///////////////////////////////// */
+
+@keyframes horror-detail-reveal{
+
+    0%,
+    24%{
+        opacity:0;
+    }
+
+    25%{
+        opacity:.8;
+
+        transform:
+            translateX(6px);
+    }
+
+    34%{
+        opacity:0;
+    }
+
+    42%{
+        opacity:.55;
+
+        transform:
+            translateX(-3px);
+    }
+
+    55%{
+        opacity:.75;
+
+        transform:none;
+    }
+
+    100%{
+        opacity:.75;
+
+        transform:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   NORMAL COLOR TEAR
+///////////////////////////////// */
+
+@keyframes horror-reveal-tear{
+
+    0%,
+    14%,
+    21%,
+    34%,
+    41%,
+    57%,
+    64%,
+    100%{
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+
+        inset-block-start:20%;
+
+        background:
+            var(--glitch-cyan);
+
+        box-shadow:
+            0 2px var(--glitch-blue);
+
+        transform:
+            translateX(11px)
+            scaleX(.78);
+    }
+
+    17%{
+        opacity:.9;
+
+        background:
+            var(--glitch-red);
+
+        box-shadow:
+            0 -2px var(--glitch-magenta);
+
+        transform:
+            translateX(-7px)
+            scaleX(.48);
+    }
+
+    19%{
+        opacity:.65;
+
+        background:
+            var(--glitch-magenta);
+    }
+
+    35%{
+        opacity:1;
+
+        inset-block-start:67%;
+
+        background:
+            var(--glitch-red);
+
+        box-shadow:
+            0 2px var(--glitch-cyan);
+
+        transform:
+            translateX(-10px)
+            scaleX(.9);
+    }
+
+    38%{
+        opacity:.7;
+
+        background:
+            var(--glitch-blue);
+
+        transform:
+            translateX(6px)
+            scaleX(.56);
+    }
+
+    58%{
+        opacity:.95;
+
+        inset-block-start:43%;
+
+        background:
+            var(--glitch-magenta);
+
+        box-shadow:
+            0 -2px var(--glitch-cyan);
+
+        transform:
+            translateX(7px)
+            scaleX(.6);
+    }
+
+    61%{
+        opacity:.65;
+
+        background:
+            var(--glitch-red);
+
+        transform:
+            translateX(-4px)
+            scaleX(.4);
+    }
+}
+
+
+/* /////////////////////////////////
+   EVENT REVEAL
+///////////////////////////////// */
+
+@keyframes horror-event-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-27px)
+            scaleX(.7);
+
+        clip-path:
+            inset(0 100% 0 0 round 12px);
+    }
+
+    10%{
+        opacity:1;
+
+        transform:
+            translateX(14px)
+            scaleX(1.07);
+    }
+
+    17%{
+        transform:
+            translateX(-11px)
+            scaleX(.94);
+
+        clip-path:
+            inset(65% 0 0 0 round 12px);
+    }
+
+    24%{
+        transform:
+            translateX(8px)
+            scaleX(1.04);
+
+        clip-path:
+            inset(0 0 54% 0 round 12px);
+    }
+
+    31%{
+        transform:
+            translateX(-6px);
+
+        clip-path:
+            inset(24% 0 51% 0 round 12px);
+    }
+
+    40%{
+        transform:
+            translateX(5px);
+
+        clip-path:
+            inset(0 round 12px);
+    }
+
+    51%{
+        transform:
+            translateX(-3px)
+            scaleX(1.015);
+    }
+
+    64%{
+        transform:
+            translateX(2px)
+            scaleX(.995);
+    }
+
+    78%{
+        transform:
+            translateX(-1px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 12px);
+    }
+}
+
+
+/* /////////////////////////////////
+   EVENT JITTER
+///////////////////////////////// */
+
+@keyframes horror-event-jitter{
+
+    0%,
+    18%,
+    20%,
+    46%,
+    48%,
+    73%,
+    75%,
+    100%{
+        transform:none;
+    }
+
+    18.3%{
+        transform:
+            translateX(3px);
+    }
+
+    18.8%{
+        transform:
+            translateX(-4px);
+    }
+
+    19.3%{
+        transform:
+            translateX(2px);
+    }
+
+    46.3%{
+        transform:
+            translateX(-3px)
+            skewX(-.5deg);
+    }
+
+    46.8%{
+        transform:
+            translateX(4px);
+    }
+
+    73.3%{
+        transform:
+            translateX(2px);
+    }
+
+    73.8%{
+        transform:
+            translateX(-3px);
+    }
+}
+
+
+/* /////////////////////////////////
+   EVENT FRAME GLITCH
+///////////////////////////////// */
+
+@keyframes horror-event-frame{
+
+    0%,
+    27%,
+    31%,
+    60%,
+    64%,
+    87%,
+    91%,
+    100%{
+        border-color:
+            var(
+                --cs-bubble-border-color,
+                #303030
+            );
+
+        box-shadow:none;
+    }
+
+    27.5%{
+        border-color:
+            var(--glitch-cyan);
+
+        box-shadow:
+            5px 0 var(--glitch-red),
+            -3px 0 var(--glitch-blue);
+    }
+
+    28.2%{
+        border-color:
+            var(--glitch-red);
+
+        box-shadow:
+            -5px 0 var(--glitch-cyan),
+            4px 0 var(--glitch-magenta);
+    }
+
+    29%{
+        border-inline-start-color:
+            var(--glitch-magenta);
+
+        border-inline-end-color:
+            var(--glitch-blue);
+    }
+
+    60.5%{
+        border-inline-start-color:
+            var(--glitch-magenta);
+
+        border-inline-end-color:
+            var(--glitch-cyan);
+
+        box-shadow:
+            -4px 1px var(--glitch-red),
+            4px -1px var(--glitch-blue);
+    }
+
+    61.5%{
+        border-block-start-color:
+            var(--glitch-cyan);
+
+        border-block-end-color:
+            var(--glitch-red);
+    }
+
+    87.5%{
+        border-block-end-color:
+            var(--glitch-red);
+
+        box-shadow:
+            0 4px var(--glitch-magenta);
+    }
+
+    88.5%{
+        border-block-start-color:
+            var(--glitch-cyan);
+
+        box-shadow:
+            0 -4px var(--glitch-blue);
+    }
+}
+
+
+/* /////////////////////////////////
+   EVENT TEAR
+///////////////////////////////// */
+
+@keyframes horror-event-tear{
+
+    0%,
+    14%,
+    17%,
+    39%,
+    42%,
+    67%,
+    70%,
+    90%,
+    93%,
+    100%{
+        opacity:0;
+    }
+
+    14.3%{
+        opacity:1;
+
+        inset-block-start:21%;
+
+        background:
+            var(--glitch-cyan);
+
+        box-shadow:
+            0 3px var(--glitch-blue);
+
+        transform:
+            translateX(14px)
+            scaleX(.86);
+    }
+
+    15%{
+        opacity:.9;
+
+        background:
+            var(--glitch-red);
+
+        box-shadow:
+            0 -3px var(--glitch-magenta);
+
+        transform:
+            translateX(-10px)
+            scaleX(.52);
+    }
+
+    16%{
+        opacity:.75;
+
+        background:
+            var(--glitch-magenta);
+
+        transform:
+            translateX(5px)
+            scaleX(.72);
+    }
+
+    39.3%{
+        opacity:1;
+
+        inset-block-start:70%;
+
+        background:
+            var(--glitch-magenta);
+
+        box-shadow:
+            0 3px var(--glitch-cyan);
+
+        transform:
+            translateX(-14px)
+            scaleX(.76);
+    }
+
+    40%{
+        opacity:.9;
+
+        background:
+            var(--glitch-blue);
+
+        box-shadow:
+            0 -3px var(--glitch-red);
+
+        transform:
+            translateX(8px)
+            scaleX(.43);
+    }
+
+    67.3%{
+        opacity:.95;
+
+        inset-block-start:45%;
+
+        background:
+            var(--glitch-red);
+
+        box-shadow:
+            0 3px var(--glitch-cyan);
+
+        transform:
+            translateX(11px)
+            scaleX(.9);
+    }
+
+    68.2%{
+        opacity:.75;
+
+        background:
+            var(--glitch-cyan);
+
+        transform:
+            translateX(-6px)
+            scaleX(.5);
+    }
+
+    90.3%{
+        opacity:1;
+
+        inset-block-start:31%;
+
+        background:
+            var(--glitch-cyan);
+
+        box-shadow:
+            0 -3px var(--glitch-magenta);
+
+        transform:
+            translateX(-8px)
+            scaleX(.65);
+    }
+
+    91.2%{
+        opacity:.75;
+
+        background:
+            var(--glitch-red);
+
+        transform:
+            translateX(5px)
+            scaleX(.45);
+    }
+}
+
+
+/* /////////////////////////////////
+   EVENT USER GLITCH
+///////////////////////////////// */
+
+@keyframes horror-event-user-glitch{
+
+    0%,
+    21%,
+    24%,
+    57%,
+    60%,
+    84%,
+    87%,
+    100%{
+        transform:none;
+
+        text-shadow:none;
+
+        border-color:#232323;
+
+        box-shadow:none;
+    }
+
+    21.3%{
+        transform:
+            translateX(-4px);
+
+        text-shadow:
+            5px 0 var(--glitch-cyan),
+            -5px 0 var(--glitch-red);
+
+        border-color:
+            var(--glitch-magenta);
+
+        box-shadow:
+            4px 0 var(--glitch-blue);
+    }
+
+    22%{
+        transform:
+            translateX(3px);
+
+        text-shadow:
+            -5px 0 var(--glitch-cyan),
+            4px 0 var(--glitch-magenta);
+
+        border-color:
+            var(--glitch-red);
+
+        box-shadow:
+            -4px 0 var(--glitch-cyan);
+    }
+
+    23%{
+        transform:
+            translateX(-1px);
+
+        text-shadow:
+            3px 0 var(--glitch-red);
+    }
+
+    57.3%{
+        transform:
+            translateX(4px);
+
+        text-shadow:
+            -5px 0 var(--glitch-magenta),
+            5px 0 var(--glitch-blue);
+
+        border-color:
+            var(--glitch-cyan);
+    }
+
+    58.2%{
+        transform:
+            translateX(-3px);
+
+        text-shadow:
+            4px 0 var(--glitch-red),
+            -4px 0 var(--glitch-cyan);
+    }
+
+    84.3%{
+        transform:
+            translateX(-3px);
+
+        text-shadow:
+            5px 0 var(--glitch-cyan),
+            -5px 0 var(--glitch-magenta);
+
+        border-color:
+            var(--glitch-red);
+    }
+
+    85.2%{
+        transform:
+            translateX(3px);
+
+        text-shadow:
+            -4px 0 var(--glitch-red);
+    }
+}
+
+
+/* /////////////////////////////////
+   EVENT MESSAGE GLITCH
+///////////////////////////////// */
+
+@keyframes horror-event-message-glitch{
+
+    0%,
+    16%,
+    19%,
+    44%,
+    47%,
+    74%,
+    77%,
+    93%,
+    96%,
+    100%{
+        transform:none;
+
+        text-shadow:none;
+
+        opacity:1;
+
+        color:
+            var(
+                --cs-message-font-color,
+                #dddddd
+            );
+
+        background:
+            var(
+                --cs-message-background-color,
+                #090909
+            );
+
+        border-color:
+            var(
+                --cs-message-border-color,
+                #1e1e1e
+            );
+
+        box-shadow:none;
+    }
+
+    16.3%{
+        transform:
+            translateX(4px);
+
+        text-shadow:
+            -5px 0 var(--glitch-cyan),
+            5px 0 var(--glitch-red);
+
+        border-color:
+            var(--glitch-magenta);
+
+        box-shadow:
+            4px 0 var(--glitch-blue);
+    }
+
+    17%{
+        transform:
+            translateX(-5px);
+
+        text-shadow:
+            5px 0 var(--glitch-magenta),
+            -5px 0 var(--glitch-blue);
+
+        border-color:
+            var(--glitch-red);
+
+        box-shadow:
+            -4px 0 var(--glitch-cyan);
+    }
+
+    18%{
+        transform:
+            translateX(2px);
+
+        opacity:.65;
+    }
+
+    44.3%{
+        transform:
+            translateX(-4px);
+
+        text-shadow:
+            5px 0 var(--glitch-magenta),
+            -4px 0 var(--glitch-red);
+
+        border-color:
+            var(--glitch-cyan);
+
+        box-shadow:
+            4px 0 var(--glitch-red);
+    }
+
+    45.3%{
+        transform:
+            translateX(3px);
+
+        text-shadow:
+            -5px 0 var(--glitch-cyan),
+            4px 0 var(--glitch-blue);
+    }
+
+    74.3%{
+        transform:
+            translateX(5px);
+
+        text-shadow:
+            -6px 0 var(--glitch-cyan),
+            6px 0 var(--glitch-magenta);
+
+        border-color:
+            var(--glitch-red);
+
+        box-shadow:
+            -4px 0 var(--glitch-blue);
+    }
+
+    75.3%{
+        transform:
+            translateX(-3px);
+
+        text-shadow:
+            5px 0 var(--glitch-red);
+
+        opacity:.55;
+    }
+
+    93.2%{
+        color:#000000;
+
+        background:
+            var(--glitch-cyan);
+
+        border-color:
+            var(--glitch-magenta);
+
+        text-shadow:
+            5px 0 var(--glitch-red);
+
+        box-shadow:
+            -4px 0 var(--glitch-blue);
+    }
+
+    93.8%{
+        color:#ffffff;
+
+        background:
+            var(--glitch-magenta);
+
+        border-color:
+            var(--glitch-cyan);
+
+        text-shadow:
+            -5px 0 var(--glitch-blue);
+
+        box-shadow:
+            4px 0 var(--glitch-red);
+    }
+
+    94.5%{
+        color:#000000;
+
+        background:
+            var(--glitch-red);
+
+        border-color:
+            var(--glitch-blue);
+    }
+}
+
+
+/* /////////////////////////////////
+   EVENT SCAN
+///////////////////////////////// */
+
+@keyframes horror-event-scan{
+
+    0%,
+    31%,
+    34%,
+    63%,
+    66%,
+    92%,
+    95%,
+    100%{
+        opacity:0;
+
+        transform:none;
+    }
+
+    31.3%{
+        opacity:1;
+
+        background:
+            var(--glitch-cyan);
+
+        box-shadow:
+            0 3px var(--glitch-magenta);
+
+        transform:
+            translateY(-8px)
+            scaleX(.72);
+    }
+
+    32%{
+        opacity:.85;
+
+        background:
+            var(--glitch-red);
+
+        box-shadow:
+            0 -3px var(--glitch-blue);
+
+        transform:
+            translateY(6px)
+            scaleX(1.04);
+    }
+
+    33%{
+        opacity:.6;
+
+        background:
+            var(--glitch-magenta);
+    }
+
+    63.3%{
+        opacity:1;
+
+        background:
+            var(--glitch-magenta);
+
+        box-shadow:
+            0 3px var(--glitch-cyan);
+
+        transform:
+            translateY(10px)
+            scaleX(.88);
+    }
+
+    64%{
+        opacity:.8;
+
+        background:
+            var(--glitch-blue);
+
+        box-shadow:
+            0 -3px var(--glitch-red);
+
+        transform:
+            translateY(-5px)
+            scaleX(.55);
+    }
+
+    92.3%{
+        opacity:.9;
+
+        background:
+            var(--glitch-red);
+
+        box-shadow:
+            0 3px var(--glitch-cyan);
+
+        transform:
+            translateY(3px)
+            scaleX(1.06);
+    }
+
+    93.2%{
+        opacity:.65;
+
+        background:
+            var(--glitch-cyan);
+
+        transform:
+            translateY(-4px)
+            scaleX(.7);
+    }
+}
+
+
+/* /////////////////////////////////
+   VIP USER GLITCH
+///////////////////////////////// */
+
+@keyframes horror-vip-user-glitch{
+
+    0%,
+    25%,
+    28%,
+    62%,
+    65%,
+    88%,
+    91%,
+    100%{
+        transform:none;
+
+        box-shadow:none;
+        text-shadow:none;
+
+        border-color:#202020;
+    }
+
+    25.3%{
+        transform:
+            translateX(-4px)
+            skewX(-1deg);
+
+        border-color:
+            var(--role-glitch-a);
+
+        box-shadow:
+            5px 0 var(--role-glitch-b);
+
+        text-shadow:
+            -5px 0 var(--role-glitch-a),
+            4px 0 var(--role-glitch-b);
+    }
+
+    26%{
+        transform:
+            translateX(5px)
+            skewX(.6deg);
+
+        border-color:
+            var(--role-glitch-b);
+
+        box-shadow:
+            -5px 0 var(--role-glitch-a);
+
+        text-shadow:
+            5px 0 var(--role-glitch-c),
+            -4px 0 var(--role-glitch-b);
+    }
+
+    27%{
+        transform:
+            translateX(-2px);
+
+        border-color:
+            var(--role-glitch-c);
+
+        box-shadow:
+            3px 0 var(--role-glitch-a);
+    }
+
+    62.3%{
+        transform:
+            translateX(4px);
+
+        box-shadow:
+            -6px 0 var(--role-glitch-a),
+            4px 0 var(--role-glitch-b);
+
+        text-shadow:
+            -4px 0 var(--role-glitch-b),
+            4px 0 var(--role-glitch-a);
+    }
+
+    63%{
+        transform:
+            translateX(-4px);
+
+        border-color:
+            var(--role-glitch-a);
+    }
+
+    64%{
+        transform:
+            translateX(1px);
+
+        box-shadow:
+            3px 0 var(--role-glitch-c);
+    }
+
+    88.3%{
+        transform:
+            translateX(-3px);
+
+        text-shadow:
+            5px 0 var(--role-glitch-a),
+            -5px 0 var(--role-glitch-b);
+    }
+
+    89%{
+        transform:
+            translateX(3px);
+
+        border-color:
+            var(--role-glitch-b);
+    }
+}
+
+
+/* /////////////////////////////////
+   VIP MESSAGE GLITCH
+///////////////////////////////// */
+
+@keyframes horror-vip-message-glitch{
+
+    0%,
+    19%,
+    22%,
+    52%,
+    55%,
+    79%,
+    82%,
+    100%{
+        transform:none;
+
+        box-shadow:none;
+        text-shadow:none;
+
+        border-color:#191919;
+
+        color:
+            var(
+                --cs-message-font-color,
+                #dddddd
+            );
+
+        background:
+            var(
+                --cs-message-background-color,
+                #090909
+            );
+    }
+
+    19.3%{
+        transform:
+            translateX(5px);
+
+        text-shadow:
+            -6px 0 var(--role-glitch-a),
+            6px 0 var(--role-glitch-b);
+
+        border-color:
+            var(--role-glitch-a);
+
+        box-shadow:
+            -4px 0 var(--role-glitch-b);
+    }
+
+    20%{
+        transform:
+            translateX(-6px);
+
+        text-shadow:
+            6px 0 var(--role-glitch-c),
+            -5px 0 var(--role-glitch-b);
+
+        box-shadow:
+            5px 0 var(--role-glitch-a);
+    }
+
+    21%{
+        transform:
+            translateX(2px);
+
+        text-shadow:
+            -3px 0 var(--role-glitch-a);
+    }
+
+    52.3%{
+        transform:
+            translateX(-4px)
+            skewX(.8deg);
+
+        border-color:
+            var(--role-glitch-b);
+
+        text-shadow:
+            5px 0 var(--role-glitch-a),
+            -4px 0 var(--role-glitch-b);
+    }
+
+    53%{
+        transform:
+            translateX(5px);
+
+        box-shadow:
+            -5px 0 var(--role-glitch-c);
+    }
+
+    79.3%{
+        color:#050505;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--role-glitch-a) 0%,
+                var(--role-glitch-a) 48%,
+                var(--role-glitch-b) 52%,
+                var(--role-glitch-b) 100%
+            );
+
+        border-color:
+            var(--role-glitch-b);
+
+        text-shadow:
+            4px 0 rgba(255,255,255,.45);
+
+        box-shadow:
+            -4px 0 var(--role-glitch-a),
+            4px 0 var(--role-glitch-b);
+    }
+
+    79.9%{
+        color:#ffffff;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--role-glitch-b) 0%,
+                var(--role-glitch-b) 35%,
+                var(--role-glitch-a) 39%,
+                var(--role-glitch-a) 100%
+            );
+
+        border-color:
+            var(--role-glitch-a);
+
+        transform:
+            translateX(-4px);
+
+        text-shadow:
+            -4px 0 var(--role-glitch-b);
+    }
+
+    80.5%{
+        color:#050505;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--role-glitch-a) 0%,
+                var(--role-glitch-a) 61%,
+                var(--role-glitch-b) 65%,
+                var(--role-glitch-b) 100%
+            );
+
+        border-color:
+            var(--role-glitch-b);
+
+        transform:
+            translateX(3px);
+
+        text-shadow:
+            4px 0 var(--role-glitch-a);
+    }
+
+    81.1%{
+        color:#ffffff;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--role-glitch-b) 0%,
+                var(--role-glitch-b) 46%,
+                var(--role-glitch-a) 50%,
+                var(--role-glitch-a) 100%
+            );
+
+        border-color:
+            var(--role-glitch-a);
+
+        transform:
+            translateX(-2px);
+
+        box-shadow:
+            4px 0 var(--role-glitch-b),
+            -4px 0 var(--role-glitch-a);
+    }
+}
+
+
+/* /////////////////////////////////
+   VIP AVATAR GLITCH
+///////////////////////////////// */
+
+@keyframes horror-vip-avatar-glitch{
+
+    0%,
+    38%,
+    41%,
+    76%,
+    79%,
+    100%{
+        transform:none;
+
+        box-shadow:none;
+    }
+
+    38.3%{
+        transform:
+            translateX(-4px);
+
+        box-shadow:
+            5px 0 var(--role-glitch-a),
+            -5px 0 var(--role-glitch-b);
+    }
+
+    39%{
+        transform:
+            translateX(5px);
+
+        box-shadow:
+            -6px 0 var(--role-glitch-c),
+            4px 0 var(--role-glitch-b);
+    }
+
+    40%{
+        transform:
+            translateX(-1px);
+
+        box-shadow:
+            3px 0 var(--role-glitch-a);
+    }
+
+    76.3%{
+        transform:
+            translateX(3px);
+
+        box-shadow:
+            -5px 0 var(--role-glitch-b),
+            5px 0 var(--role-glitch-a);
+    }
+
+    77%{
+        transform:
+            translateX(-3px);
+    }
+}
+
+
+/* /////////////////////////////////
+   VIP BADGE COLOR SYNC
+///////////////////////////////// */
+
+@keyframes horror-vip-badge-color{
+
+    0%,
+    79%,
+    82%,
+    100%{
+        filter:
+            grayscale(1)
+            contrast(1.1)
+            brightness(.78);
+
+        opacity:.72;
+
+        transform:none;
+
+        box-shadow:none;
+    }
+
+    79.3%{
+        filter:
+            grayscale(0)
+            contrast(1.18)
+            brightness(1.08)
+            saturate(1.35);
+
+        opacity:1;
+
+        transform:
+            translateX(2px);
+
+        box-shadow:
+            -3px 0 var(--role-glitch-a),
+            3px 0 var(--role-glitch-b);
+    }
+
+    79.9%{
+        filter:
+            grayscale(0)
+            contrast(1.25)
+            brightness(1.12)
+            saturate(1.45);
+
+        opacity:1;
+
+        transform:
+            translateX(-2px);
+
+        box-shadow:
+            3px 0 var(--role-glitch-b),
+            -3px 0 var(--role-glitch-a);
+    }
+
+    80.5%{
+        filter:
+            grayscale(0)
+            contrast(1.15)
+            brightness(1.08)
+            saturate(1.3);
+
+        opacity:1;
+
+        transform:
+            translateX(1px);
+
+        box-shadow:
+            -2px 0 var(--role-glitch-b),
+            3px 0 var(--role-glitch-a);
+    }
+
+    81.1%{
+        filter:
+            grayscale(0)
+            contrast(1.2)
+            brightness(1.1)
+            saturate(1.4);
+
+        opacity:1;
+
+        transform:
+            translateX(-1px);
+
+        box-shadow:
+            3px 0 var(--role-glitch-a),
+            -3px 0 var(--role-glitch-b);
+    }
+}
+
+
+/* /////////////////////////////////
+   MODERATOR USER REVEAL
+///////////////////////////////// */
+
+@keyframes horror-mod-user-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-10px);
+
+        clip-path:
+            inset(0 100% 0 0 round 7px);
+
+        box-shadow:none;
+        text-shadow:none;
+    }
+
+    18%{
+        opacity:1;
+
+        transform:
+            translateX(6px);
+
+        clip-path:
+            inset(0 48% 0 0 round 7px);
+    }
+
+    28%{
+        transform:
+            translateX(-6px);
+
+        clip-path:
+            inset(55% 0 0 0 round 7px);
+
+        border-color:
+            var(--role-glitch-a);
+
+        box-shadow:
+            5px 0 var(--role-glitch-b),
+            -4px 0 var(--role-glitch-c);
+
+        text-shadow:
+            4px 0 var(--role-glitch-b),
+            -4px 0 var(--role-glitch-a);
+    }
+
+    36%{
+        transform:
+            translateX(5px);
+
+        clip-path:
+            inset(0 0 46% 0 round 7px);
+
+        border-color:
+            var(--role-glitch-c);
+
+        box-shadow:
+            -5px 0 var(--role-glitch-b);
+
+        text-shadow:
+            -5px 0 var(--role-glitch-a);
+    }
+
+    43%{
+        transform:
+            translateX(-3px);
+
+        clip-path:
+            inset(26% 0 35% 0 round 7px);
+
+        box-shadow:
+            4px 0 var(--role-glitch-a);
+    }
+
+    51%{
+        transform:
+            translateX(2px);
+
+        clip-path:
+            inset(0 round 7px);
+
+        border-color:
+            var(--role-glitch-b);
+
+        text-shadow:
+            3px 0 var(--role-glitch-c);
+    }
+
+    61%{
+        transform:
+            translateX(-1px);
+
+        box-shadow:none;
+        text-shadow:none;
+
+        border-color:#202020;
+    }
+
+    100%{
+        opacity:1;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 7px);
+
+        box-shadow:none;
+        text-shadow:none;
+
+        border-color:#202020;
+    }
+}
+
+
+/* /////////////////////////////////
+   MODERATOR MESSAGE REVEAL
+///////////////////////////////// */
+
+@keyframes horror-mod-message-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-10px);
+
+        clip-path:
+            inset(0 100% 0 0 round 7px);
+    }
+
+    17%{
+        opacity:1;
+
+        transform:
+            translateX(7px);
+
+        clip-path:
+            inset(0 68% 0 0 round 7px);
+    }
+
+    27%{
+        transform:
+            translateX(-6px);
+
+        clip-path:
+            inset(55% 0 0 0 round 7px);
+
+        border-color:
+            var(--role-glitch-a);
+
+        text-shadow:
+            5px 0 var(--role-glitch-b),
+            -5px 0 var(--role-glitch-c);
+    }
+
+    34%{
+        transform:
+            translateX(6px);
+
+        clip-path:
+            inset(0 0 51% 0 round 7px);
+
+        background:
+            var(--role-glitch-a);
+
+        color:#050505;
+
+        border-color:
+            var(--role-glitch-b);
+    }
+
+    40%{
+        transform:
+            translateX(-4px);
+
+        background:#090909;
+
+        color:#dddddd;
+
+        border-color:
+            var(--role-glitch-c);
+
+        text-shadow:
+            -5px 0 var(--role-glitch-a),
+            5px 0 var(--role-glitch-b);
+    }
+
+    48%{
+        transform:
+            translateX(3px);
+
+        clip-path:
+            inset(24% 0 38% 0 round 7px);
+
+        box-shadow:
+            5px 0 var(--role-glitch-a),
+            -5px 0 var(--role-glitch-b);
+    }
+
+    57%{
+        transform:
+            translateX(-1px);
+
+        clip-path:
+            inset(0 round 7px);
+
+        background:#090909;
+
+        color:#dddddd;
+
+        border-color:#191919;
+
+        text-shadow:none;
+        box-shadow:none;
+    }
+
+    100%{
+        opacity:1;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 7px);
+
+        background:#090909;
+
+        color:#dddddd;
+
+        border-color:#191919;
+
+        text-shadow:none;
+        box-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   MODERATOR AVATAR REVEAL
+///////////////////////////////// */
+
+@keyframes horror-mod-avatar-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-10px);
+
+        clip-path:
+            inset(0 0 100% 0 round 8px);
+    }
+
+    22%{
+        opacity:.92;
+
+        transform:
+            translateX(6px);
+
+        clip-path:
+            inset(0 0 58% 0 round 8px);
+    }
+
+    34%{
+        transform:
+            translateX(-5px);
+
+        clip-path:
+            inset(55% 0 18% 0 round 8px);
+
+        box-shadow:
+            5px 0 var(--role-glitch-a),
+            -5px 0 var(--role-glitch-b);
+    }
+
+    44%{
+        transform:
+            translateX(5px);
+
+        clip-path:
+            inset(18% 0 42% 0 round 8px);
+
+        box-shadow:
+            -5px 0 var(--role-glitch-c),
+            4px 0 var(--role-glitch-a);
+    }
+
+    56%{
+        transform:
+            translateX(-2px);
+
+        clip-path:
+            inset(0 round 8px);
+
+        box-shadow:none;
+    }
+
+    100%{
+        opacity:.92;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 8px);
+
+        box-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   SUBSCRIBER USER REVEAL
+///////////////////////////////// */
+
+@keyframes horror-sub-user-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-9px);
+
+        clip-path:
+            inset(0 100% 0 0 round 7px);
+    }
+
+    20%{
+        opacity:1;
+
+        transform:
+            translateX(5px);
+
+        clip-path:
+            inset(0 56% 0 0 round 7px);
+    }
+
+    29%{
+        transform:
+            translateX(-4px);
+
+        clip-path:
+            inset(0 0 57% 0 round 7px);
+
+        text-shadow:
+            5px 0 var(--role-glitch-a),
+            -4px 0 var(--role-glitch-b);
+    }
+
+    37%{
+        transform:
+            translateX(5px);
+
+        clip-path:
+            inset(52% 0 0 0 round 7px);
+
+        border-color:
+            var(--role-glitch-c);
+
+        box-shadow:
+            -5px 0 var(--role-glitch-a);
+    }
+
+    44%{
+        transform:
+            translateX(-3px);
+
+        clip-path:
+            inset(28% 0 30% 0 round 7px);
+
+        text-shadow:
+            -5px 0 var(--role-glitch-c),
+            4px 0 var(--role-glitch-b);
+    }
+
+    52%{
+        transform:
+            translateX(2px);
+
+        clip-path:
+            inset(0 round 7px);
+
+        box-shadow:
+            4px 0 var(--role-glitch-b);
+    }
+
+    62%{
+        transform:
+            translateX(-1px);
+
+        border-color:#202020;
+
+        text-shadow:none;
+        box-shadow:none;
+    }
+
+    100%{
+        opacity:1;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 7px);
+
+        border-color:#202020;
+
+        text-shadow:none;
+        box-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   SUBSCRIBER MESSAGE REVEAL
+///////////////////////////////// */
+
+@keyframes horror-sub-message-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-8px);
+
+        clip-path:
+            inset(0 100% 0 0 round 7px);
+    }
+
+    18%{
+        opacity:1;
+
+        transform:
+            translateX(6px);
+
+        clip-path:
+            inset(0 70% 0 0 round 7px);
+    }
+
+    28%{
+        transform:
+            translateX(-5px);
+
+        clip-path:
+            inset(0 0 62% 0 round 7px);
+
+        text-shadow:
+            5px 0 var(--role-glitch-a),
+            -5px 0 var(--role-glitch-b);
+    }
+
+    36%{
+        transform:
+            translateX(5px);
+
+        clip-path:
+            inset(55% 0 0 0 round 7px);
+
+        border-color:
+            var(--role-glitch-c);
+
+        box-shadow:
+            5px 0 var(--role-glitch-b);
+    }
+
+    43%{
+        transform:
+            translateX(-4px);
+
+        clip-path:
+            inset(23% 0 39% 0 round 7px);
+
+        background:
+            var(--role-glitch-a);
+
+        color:#050505;
+    }
+
+    49%{
+        transform:
+            translateX(3px);
+
+        background:#090909;
+
+        color:#dddddd;
+
+        text-shadow:
+            -5px 0 var(--role-glitch-c),
+            5px 0 var(--role-glitch-b);
+    }
+
+    58%{
+        transform:
+            translateX(-1px);
+
+        clip-path:
+            inset(0 round 7px);
+
+        border-color:#191919;
+
+        text-shadow:none;
+        box-shadow:none;
+    }
+
+    100%{
+        opacity:1;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 7px);
+
+        background:#090909;
+
+        color:#dddddd;
+
+        border-color:#191919;
+
+        text-shadow:none;
+        box-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   SUBSCRIBER AVATAR REVEAL
+///////////////////////////////// */
+
+@keyframes horror-sub-avatar-reveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateX(-10px);
+
+        clip-path:
+            inset(0 0 100% 0 round 8px);
+    }
+
+    22%{
+        opacity:.92;
+
+        transform:
+            translateX(6px);
+
+        clip-path:
+            inset(0 0 60% 0 round 8px);
+    }
+
+    35%{
+        transform:
+            translateX(-5px);
+
+        clip-path:
+            inset(58% 0 16% 0 round 8px);
+
+        box-shadow:
+            5px 0 var(--role-glitch-a),
+            -4px 0 var(--role-glitch-b);
+    }
+
+    45%{
+        transform:
+            translateX(4px);
+
+        clip-path:
+            inset(14% 0 49% 0 round 8px);
+
+        box-shadow:
+            -5px 0 var(--role-glitch-c),
+            4px 0 var(--role-glitch-a);
+    }
+
+    57%{
+        transform:
+            translateX(-2px);
+
+        clip-path:
+            inset(0 round 8px);
+
+        box-shadow:none;
+    }
+
+    100%{
+        opacity:.92;
+
+        transform:none;
+
+        clip-path:
+            inset(0 round 8px);
+
+        box-shadow:none;
+    }
+}
+
+
+/* /////////////////////////////////
+   BROADCASTER BORDER GLITCH
+///////////////////////////////// */
+
+@keyframes horror-broadcaster-border{
+
+    0%,
+    8%,
+    13%,
+    24%,
+    31%,
+    46%,
+    53%,
+    67%,
+    74%,
+    88%,
+    94%,
+    100%{
+        border-color:
+            var(
+                --cs-bubble-border-color,
+                #252525
+            );
+
+        box-shadow:none;
+    }
+
+    8.5%{
+        border-block-start-color:
+            var(--role-glitch-b);
+
+        border-inline-end-color:
+            var(--role-glitch-b);
+
+        box-shadow:
+            3px -2px 0
+            rgba(0,246,255,.85);
+    }
+
+    9.2%{
+        border-inline-start-color:
+            var(--role-glitch-a);
+
+        border-block-end-color:
+            var(--role-glitch-c);
+
+        box-shadow:
+            -4px 2px 0
+            rgba(255,21,63,.8),
+            3px -2px 0
+            rgba(0,246,255,.75);
+    }
+
+    10%{
+        border-block-start-color:
+            var(--role-glitch-c);
+
+        border-inline-end-color:
+            var(--role-glitch-a);
+
+        box-shadow:
+            4px 0 0
+            rgba(255,0,168,.75);
+    }
+
+    24.5%{
+        border-inline-start-color:
+            var(--role-glitch-a);
+
+        border-inline-end-color:
+            var(--role-glitch-b);
+
+        box-shadow:
+            -3px 0 0
+            rgba(255,21,63,.85),
+            3px 0 0
+            rgba(0,246,255,.85);
+    }
+
+    25.3%{
+        border-inline-start-color:
+            var(--role-glitch-c);
+
+        border-inline-end-color:
+            var(--role-glitch-a);
+
+        border-block-start-color:#404040;
+
+        box-shadow:
+            -5px 0 0
+            rgba(255,0,168,.7),
+            4px 1px 0
+            rgba(255,21,63,.75);
+    }
+
+    26.1%{
+        border-block-end-color:
+            var(--role-glitch-b);
+
+        box-shadow:
+            0 3px 0
+            rgba(0,246,255,.8);
+    }
+
+    46.5%{
+        border-block-start-color:transparent;
+
+        border-inline-start-color:
+            var(--role-glitch-c);
+
+        border-inline-end-color:
+            var(--role-glitch-b);
+
+        box-shadow:
+            -3px -2px 0
+            rgba(255,0,168,.7),
+            4px 2px 0
+            rgba(0,246,255,.7);
+    }
+
+    47.2%{
+        border-block-start-color:
+            var(--role-glitch-a);
+
+        border-block-end-color:transparent;
+
+        box-shadow:
+            3px -3px 0
+            rgba(255,21,63,.8);
+    }
+
+    48%{
+        border-block-end-color:
+            var(--role-glitch-c);
+
+        border-inline-end-color:transparent;
+
+        box-shadow:
+            -2px 3px 0
+            rgba(255,0,168,.8);
+    }
+
+    67.5%{
+        border-color:
+            var(--role-glitch-b);
+
+        box-shadow:
+            -4px 0 0
+            rgba(255,21,63,.8),
+            4px 0 0
+            rgba(0,246,255,.9);
+    }
+
+    68.2%{
+        border-color:
+            var(--role-glitch-a);
+
+        box-shadow:
+            -5px 1px 0
+            rgba(255,0,168,.75),
+            5px -1px 0
+            rgba(0,246,255,.75);
+    }
+
+    69%{
+        border-color:#343434;
+
+        border-inline-start-color:
+            var(--role-glitch-c);
+
+        border-block-end-color:
+            var(--role-glitch-b);
+
+        box-shadow:
+            3px 2px 0
+            rgba(255,21,63,.65);
+    }
+
+    88.5%{
+        border-block-start-color:
+            var(--role-glitch-b);
+
+        border-block-end-color:
+            var(--role-glitch-a);
+
+        box-shadow:
+            0 -3px 0
+            rgba(0,246,255,.75),
+            0 3px 0
+            rgba(255,21,63,.75);
+    }
+
+    89.2%{
+        border-inline-start-color:
+            var(--role-glitch-c);
+
+        border-inline-end-color:
+            var(--role-glitch-b);
+
+        box-shadow:
+            -3px 0 0
+            rgba(255,0,168,.75),
+            3px 0 0
+            rgba(0,246,255,.75);
+    }
+
+    90%{
+        border-color:
+            var(--role-glitch-a);
+
+        box-shadow:
+            2px -2px 0
+            rgba(0,246,255,.65),
+            -2px 2px 0
+            rgba(255,0,168,.65);
+    }
+}
+
+/* /////////////////////////////////
+   ROLE AVATAR / REVERSED TILT
+///////////////////////////////// */
+
+.cs-bubble:is(.cs-vip,.cs-mod,.cs-sub) .cs-avatar{
+    rotate:-1.8deg;
+}
+
+.cs-bubble:is(.cs-vip,.cs-mod,.cs-sub):nth-child(2n) .cs-avatar{
+    rotate:1.5deg;
+}
+
+.cs-bubble:is(.cs-vip,.cs-mod,.cs-sub):nth-child(3n) .cs-avatar{
+    rotate:-2.1deg;
+}
+.cs-bubble:not(.cs-event){
+    --xray-white:#eaffff;
+    --xray-cyan:#68f5ff;
+    --xray-blue:#2a6d90;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(104,245,255,.1),
+            transparent 68%
+        ),
+        #02080b !important;
+
+    border-color:
+        var(--xray-cyan) !important;
+
+    box-shadow:
+        inset 0 0 14px rgba(104,245,255,.07),
+        0 0 8px rgba(104,245,255,.17) !important;
+
+    animation:
+        xray-enter
+        650ms
+        ease-out
+        both !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-user{
+    background:
+        rgba(4,17,21,.93) !important;
+
+    border-color:
+        rgba(104,245,255,.48) !important;
+
+    animation:none !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-username,
+.cs-bubble:not(.cs-event) .cs-username--inline{
+    color:
+        var(--xray-white) !important;
+
+    text-shadow:
+        0 0 5px
+        rgba(104,245,255,.42) !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-message{
+    background:
+        rgba(2,11,15,.88) !important;
+
+    border-color:
+        rgba(104,245,255,.36) !important;
+
+    color:#d9faff !important;
+
+    animation:
+        xray-exposure
+        8.5s
+        steps(1,end)
+        infinite !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-avatar img{
+    filter:
+        grayscale(1)
+        invert(1)
+        contrast(1.4)
+        brightness(.82)
+        sepia(.25)
+        hue-rotate(145deg)
+        saturate(2.3) !important;
+
+    border-color:
+        var(--xray-white) !important;
+
+    box-shadow:
+        0 0 8px
+        rgba(104,245,255,.35) !important;
+
+    animation:
+        xray-avatar-pulse
+        5.8s
+        ease-in-out
+        infinite !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-horror-signal{
+    opacity:1 !important;
+
+    animation:none !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-horror-signal::before{
+    content:"" !important;
+
+    position:absolute;
+
+    inset-inline:0 !important;
+
+    inset-block-start:0 !important;
+
+    inline-size:100% !important;
+    block-size:2px !important;
+
+    rotate:0deg !important;
+
+    background:
+        var(--xray-white) !important;
+
+    box-shadow:
+        0 0 6px
+        var(--xray-cyan) !important;
+
+    opacity:0;
+
+    animation:
+        xray-scan
+        5.5s
+        ease-in-out
+        infinite !important;
+}
+
+
+
+
+.cs-bubble:not(.cs-event) .cs-horror-signal::after{
+    content:"XR // SCAN" !important;
+
+    position:absolute;
+
+    inset-inline-end:6px !important;
+    inset-inline-start:auto !important;
+
+    inset-block-end:3px !important;
+
+    inline-size:auto !important;
+    block-size:auto !important;
+
+    rotate:0deg !important;
+
+    background:none !important;
+
+    color:
+        rgba(234,255,255,.8);
+
+    font:
+        700
+        6px/1
+        monospace;
+
+    letter-spacing:.09em;
+}
+
+
+
+
+@keyframes xray-enter{
+
+    0%{
+        opacity:0;
+
+        filter:
+            brightness(3);
+
+        transform:
+            scale(.96);
+    }
+
+    24%{
+        opacity:1;
+
+        filter:
+            brightness(1.7);
+    }
+
+    55%{
+        filter:
+            brightness(.85);
+    }
+
+    100%{
+        filter:none;
+
+        transform:none;
+    }
+}
+
+
+
+
+@keyframes xray-exposure{
+
+    0%,
+    48%,
+    52%,
+    86%,
+    89%,
+    100%{
+        filter:none;
+
+        opacity:1;
+    }
+
+    48.4%{
+        filter:
+            brightness(2.4)
+            contrast(1.4);
+
+        opacity:.95;
+    }
+
+    49.1%{
+        filter:
+            brightness(.48);
+
+        opacity:.6;
+    }
+
+    49.8%{
+        filter:
+            brightness(1.6);
+
+        opacity:1;
+    }
+
+    86.5%{
+        filter:
+            brightness(2);
+
+        opacity:.82;
+    }
+
+    87.1%{
+        filter:none;
+    }
+}
+
+
+
+
+@keyframes xray-scan{
+
+    0%,
+    14%{
+        opacity:0;
+
+        transform:
+            translateY(0);
+    }
+
+    18%{
+        opacity:.75;
+    }
+
+    61%{
+        opacity:.38;
+
+        transform:
+            translateY(78px);
+    }
+
+    65%,
+    100%{
+        opacity:0;
+
+        transform:
+            translateY(88px);
+    }
+}
+
+
+
+
+@keyframes xray-avatar-pulse{
+
+    0%,
+    100%{
+        opacity:.7;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-left cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: left; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding: 5px; --cs-chat-padding-top: 5px; --cs-chat-padding-right: 5px; --cs-chat-padding-bottom: 5px; --cs-chat-padding-left: 5px; --cs-bubble-padding-top: 7px; --cs-bubble-padding-right: 8px; --cs-bubble-padding-bottom: 7px; --cs-bubble-padding-left: 8px; --cs-bubble-background-color: #040404; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 1px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #303030; --cs-bubble-border-radius: 10px; --cs-bubble-border-radius-top-left: 10px; --cs-bubble-border-radius-top-right: 10px; --cs-bubble-border-radius-bottom-right: 10px; --cs-bubble-border-radius-bottom-left: 10px; --cs-bubble-gap: 10px; --cs-bubble-width: 470px; --cs-avatar-padding: 0px; --cs-avatar-padding-top: 0px; --cs-avatar-padding-right: 0px; --cs-avatar-padding-bottom: 0px; --cs-avatar-padding-left: 0px; --cs-avatar-background-color: #0b0b0b; --cs-avatar-background-gradient: none; --cs-avatar-border-width: 1px; --cs-avatar-border-style: solid; --cs-avatar-border-color: #303030; --cs-avatar-size: 35px; --cs-username-padding-top: 3px; --cs-username-padding-right: 7px; --cs-username-padding-bottom: 3px; --cs-username-padding-left: 7px; --cs-username-background-color: transparent; --cs-username-background-gradient: none; --cs-username-border-width: 1px; --cs-username-border-style: solid; --cs-username-border-color: #202020; --cs-username-font-size: 14px; --cs-username-font-color: #d0d0d0; --cs-username-font-family: 'Inter'; --cs-username-font-weight: 400; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: #000000; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding-top: 4px; --cs-message-padding-right: 7px; --cs-message-padding-bottom: 4px; --cs-message-padding-left: 7px; --cs-message-background-color: #090909; --cs-message-background-gradient: none; --cs-message-border-width: 1px; --cs-message-border-style: solid; --cs-message-border-color: #191919; --cs-message-font-size: 14px; --cs-message-font-color: #dddddd; --cs-message-font-family: 'Inter'; --cs-message-font-weight: 400; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: #000000; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+    <span class="cs-horror-signal"></span>
+
+    <div class="cs-header">
+        <div class="cs-avatar"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E"></div>
+
+        <div class="cs-user">
+            <span class="cs-badges"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+            <span class="cs-username">
+                <span class="cs-pronouns"></span>
+                JesusTenG
+            </span>
+        </div>
+    </div>
+
+    <div class="cs-content">
+        <span class="cs-user--inline">
+            <span class="cs-badges cs-badges--inline"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+            <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+                <span class="cs-pronouns"></span>
+                JesusTenG
+            </span>
+        </span>
+
+        <div class="cs-message">So sieht dein Chat aus.</div>
+    </div>
+</div></div></div></body></html>

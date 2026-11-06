@@ -1,9 +1,11 @@
 import { notFound } from 'next/navigation';
 import { catalog, categories, getTemplate, absoluteUrl, config } from '@/lib/catalog';
 import { pageMetadata } from '@/lib/metadata';
-import { Breadcrumbs, ChatStyleLink, ChatStyleLogo, StructuredData } from '@/components/site-chrome';
+import { Breadcrumbs, ShopButton, StructuredData } from '@/components/site-chrome';
 import { PreviewMedia } from '@/components/preview-media';
 import { TemplateCard } from '@/components/template-card';
+import { SkinGallery } from '@/components/skin-gallery';
+import { getSkins } from '@/lib/skins';
 
 type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
@@ -19,14 +21,16 @@ export default async function TemplatePage({ params }: Props) {
   if (!template) notFound();
   const category = categories.find(item => item.slug === template.categorySlug)!;
   const related = catalog.filter(item => item.slug !== template.slug && item.categorySlug === template.categorySlug).slice(0, 3);
-  return <div className="wrap">
+  const skins = getSkins(template.slug);
+  return <div className="wrap detail-page">
     <Breadcrumbs name={template.name} category={category}/>
-    <section className="detail-hero"><PreviewMedia template={template} mode="detail"/><div className="detail-copy">
+    <section className="detail-hero"><PreviewMedia key={template.slug} template={template} mode="detail"/><div className="detail-copy">
       <h1 data-reveal>{template.name}</h1><p className="lead">{template.description}</p>
-      <ChatStyleLink href={template.shopUrl} className="button">Auf <ChatStyleLogo/> ansehen</ChatStyleLink>
+      <ShopButton href={template.shopUrl} label={template.free ? 'Template holen' : 'Template kaufen'}/>
       <p className="shop-note">{template.free ? 'Kostenlos auf Chatstyle.' : 'Preis und Anpassungen findest du auf Chatstyle.'}</p>
       <div className="design-note"><h2>Für deinen Stream</h2><p>{template.advice}</p></div>
     </div></section>
+    {skins.length > 0 && <SkinGallery key={template.slug} skins={skins} templateName={template.name}/>}
     <section className="section related-section"><h2 data-reveal>Mehr in diesem Stil.</h2><div className="template-grid">{related.map(item => <TemplateCard key={item.slug} template={item}/>)}</div></section>
     <StructuredData data={{ '@graph': [
       { '@type': 'CreativeWork', name: template.name, description: template.description, image: absoluteUrl(template.image), url: absoluteUrl(`/overlays/${template.slug}/`), creator: { '@type': 'Person', name: config.creator, url: config.creatorUrl }, sameAs: template.url },

@@ -1,0 +1,354 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Retromon Silver – purple</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/e9e3650061286ade95e2.woff2") format('woff2');
+}
+html,body{
+  margin:0;
+  padding:0;
+  overflow:visible;
+  background:transparent;
+}
+.cs-bubble,
+.cs-bubble *,
+.cs-bubble::before,
+.cs-bubble::after{box-sizing:border-box}
+
+.cs-bubble{
+  --cs-glitch-duration:.48s;
+  --cs-pokemon-black:#000;
+  --cs-pokemon-bg:#f4f4f4;
+
+  --cs-bubble-width:350px;
+  --cs-bubble-padding-top:24px;
+  --cs-bubble-padding-right:30px;
+  --cs-bubble-padding-bottom:32px;
+  --cs-bubble-padding-left:30px;
+  --cs-bubble-background-color:var(--cs-pokemon-bg);
+  --cs-bubble-background-gradient:none;
+  --cs-bubble-border-width:3px;
+  --cs-bubble-border-style:solid;
+  --cs-bubble-border-color:var(--cs-pokemon-black);
+  --cs-bubble-border-radius:10px;
+  --cs-bubble-animation:cs-bubble-sliced-glitch-in;
+  --cs-bubble-animation-duration:var(--cs-glitch-duration);
+  --cs-bubble-animation-timing-function:steps(1,end);
+
+  --cs-username-font-family:"Press Start 2P";
+  --cs-username-font-size:10px;
+  --cs-username-font-weight:400;
+  --cs-username-font-color:var(--cs-pokemon-black);
+  --cs-username-background-color:transparent;
+  --cs-username-background-gradient:none;
+
+  --cs-message-font-family:"Press Start 2P";
+  --cs-message-font-size:10px;
+  --cs-message-font-weight:400;
+  --cs-message-font-color:var(--cs-pokemon-black);
+  --cs-message-background-color:transparent;
+  --cs-message-background-gradient:none;
+
+  display:block;
+  inline-size:min(92vw,var(--cs-bubble-width,350px));
+  min-block-size:calc((2em * 2.05) + 47px);
+  margin:1px 0;
+  border-width:
+    var(--cs-bubble-border-width,3px)
+    var(--cs-bubble-border-width,3px)
+    calc(var(--cs-bubble-border-width,3px) + 4px)
+    var(--cs-bubble-border-width,3px);
+  overflow:visible;
+  color:var(--cs-pokemon-black);
+  font-size:var(--cs-message-font-size,clamp(8px,1vw,11px));
+  line-height:2.05;
+  image-rendering:pixelated;
+  user-select:none;
+  will-change:transform,opacity,clip-path,filter;
+}
+
+.cs-bubble[style*="--cs-username-font-family: 'Inter'"],
+.cs-bubble[style*="--cs-username-font-family:'Inter'"]{
+  --cs-username-font-family:"Press Start 2P"!important;
+}
+.cs-bubble[style*="--cs-message-font-family: 'Inter'"],
+.cs-bubble[style*="--cs-message-font-family:'Inter'"]{
+  --cs-message-font-family:"Press Start 2P"!important;
+}
+:is([style*="--cs-bubble-animation:bp-slide-in-up"],[style*="--cs-bubble-animation: bp-slide-in-up"]){
+  --cs-bubble-animation:cs-bubble-sliced-glitch-in!important;
+  --cs-bubble-animation-duration:.48s!important;
+  --cs-bubble-animation-timing-function:steps(1,end)!important;
+}
+
+.cs-bubble::before{
+  content:"";
+  position:absolute;
+  top:3px;
+  right:3px;
+  bottom:6px;
+  left:3px;
+  pointer-events:none;
+  border-style:solid;
+  border-color:var(--cs-bubble-border-color,var(--cs-pokemon-black));
+  border-width:5px 3px 3px;
+  border-radius:7px;
+  z-index:1;
+}
+.cs-bubble::after{
+  content:"";
+  position:absolute;
+  right:14px;
+  bottom:-3px;
+  width:19px;
+  height:13px;
+  background:var(--cs-bubble-background-color,var(--cs-pokemon-bg));
+  z-index:3;
+  pointer-events:none;
+}
+
+.cs-header,
+.cs-avatar,
+.cs-user,
+.cs-header .cs-badges,
+.cs-header .cs-username,
+.cs-pronouns{display:none!important}
+
+.cs-content{
+  display:block;
+  padding:0;
+  margin:0;
+  background:transparent;
+}
+.cs-user--inline,
+.cs-bubble.cs-username-position-inline .cs-user--inline{display:contents}
+
+.cs-bubble.cs-username-position-inline .cs-badges--inline{display:none}
+.cs-badges--inline{
+  display:none;
+  position:relative;
+  z-index:2;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+  margin:0 0 8px;
+  background:transparent;
+  font-size:0;
+  line-height:0;
+}
+.cs-badges--inline *{
+  display:none!important;
+  width:0!important;
+  height:0!important;
+  max-width:0!important;
+  max-height:0!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  overflow:hidden!important;
+  background:none!important;
+}
+.cs-badges--inline :is(img,svg,picture,canvas,[class*="badge"],[class*="Badge"],[style*="background"]){
+  display:none!important;
+}
+.cs-bubble.cs-broadcaster .cs-badges--inline,
+.cs-bubble.cs-mod .cs-badges--inline,
+.cs-bubble.cs-vip .cs-badges--inline,
+.cs-bubble.cs-sub .cs-badges--inline{display:flex}
+
+.cs-badges--inline::before{
+  display:inline-block;
+  padding:0;
+  margin:0;
+  background:transparent;
+  font-family:var(--cs-username-font-family,"Press Start 2P"),monospace;
+  font-size:calc(var(--cs-username-font-size,clamp(8px,1vw,11px)) * .72);
+  line-height:1.4;
+  font-weight:400;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.cs-bubble.cs-broadcaster .cs-badges--inline::before{
+  content:"BROADCASTER";
+  color:#d71920;
+}
+.cs-bubble.cs-mod:not(.cs-broadcaster) .cs-badges--inline::before{
+  content:"MODERATOR";
+  color:#00a84f;
+}
+.cs-bubble.cs-vip:not(.cs-broadcaster):not(.cs-mod) .cs-badges--inline::before{
+  content:"VIP";
+  color:#8e44ff;
+}
+.cs-bubble.cs-sub:not(.cs-broadcaster):not(.cs-mod):not(.cs-vip) .cs-badges--inline::before{
+  content:"SUBSCRIBER";
+  color:#2f80ed;
+}
+.cs-bubble.cs-badges-hidden .cs-badges--inline{display:none}
+
+.cs-username--inline{
+  position:relative;
+  z-index:2;
+  display:inline;
+  padding-block-start:var(--cs-username-padding-top,var(--cs-username-padding,0px));
+  padding-inline-end:var(--cs-username-padding-right,var(--cs-username-padding,0px));
+  padding-block-end:var(--cs-username-padding-bottom,var(--cs-username-padding,0px));
+  padding-inline-start:var(--cs-username-padding-left,var(--cs-username-padding,0px));
+  background-color:var(--cs-username-background-color,transparent);
+  background-image:var(--cs-username-background-gradient,none);
+  border-width:var(--cs-username-border-width,0px);
+  border-style:var(--cs-username-border-style,solid);
+  border-color:var(--cs-username-border-color,transparent);
+  border-radius:var(--cs-username-border-radius,0px);
+  box-shadow:var(--cs-username-box-shadow-inset,) var(--cs-username-box-shadow-offset-x,0px) var(--cs-username-box-shadow-offset-y,0px) var(--cs-username-box-shadow-blur-radius,0px) var(--cs-username-box-shadow-spread-radius,0px) var(--cs-username-box-shadow-color,transparent);
+  line-height:inherit;
+  text-transform:uppercase;
+}
+.cs-username--inline::after{content:": "}
+
+.cs-message{
+  position:relative;
+  z-index:2;
+  display:inline;
+  padding-block-start:var(--cs-message-padding-top,var(--cs-message-padding,0px));
+  padding-inline-end:var(--cs-message-padding-right,var(--cs-message-padding,0px));
+  padding-block-end:var(--cs-message-padding-bottom,var(--cs-message-padding,0px));
+  padding-inline-start:var(--cs-message-padding-left,var(--cs-message-padding,0px));
+  line-height:inherit;
+  white-space:normal;
+  overflow:visible;
+  word-break:break-word;
+}
+.cs-message::after{content:none!important}
+
+.cs-content::after{
+  content:"";
+  position:absolute;
+  right:17px;
+  bottom:0;
+  width:0;
+  height:0;
+  border-left:7px solid transparent;
+  border-right:7px solid transparent;
+  border-top:10px solid var(--cs-pokemon-black);
+  z-index:4;
+  pointer-events:none;
+  animation:cs-pokemon-arrow-bounce .4s steps(2,end) infinite;
+}
+
+.cs-bubble.cs-event .cs-user--inline{display:contents}
+.cs-bubble.cs-event .cs-badges--inline{display:none!important}
+.cs-bubble.cs-event .cs-username--inline{display:inline}
+
+.cs-message :is(img,svg,.emote,[class*="emote"],[class*="emoji"]){
+  display:inline-block!important;
+  width:auto!important;
+  height:1.65em!important;
+  max-height:1.65em!important;
+  vertical-align:middle!important;
+  object-fit:contain!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.cs-message span[style*="background"]{
+  display:inline-block!important;
+  width:1.65em!important;
+  height:1.65em!important;
+  vertical-align:middle!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+}
+
+@keyframes cs-bubble-sliced-glitch-in{
+  0%{opacity:0;transform:translateX(-90px);clip-path:inset(0 0 100%);filter:contrast(240%)}
+  8%{opacity:1;transform:translateX(-82px);clip-path:inset(0 0 68%)}
+  18%{opacity:1;transform:translateX(68px);clip-path:inset(30% 0 35%)}
+  30%{transform:translateX(-52px);clip-path:inset(64% 0 0)}
+  42%{transform:translateX(39px);clip-path:inset(0 0 72%)}
+  54%{transform:translateX(-29px);clip-path:inset(24% 0 42%)}
+  66%{transform:translateX(18px);clip-path:inset(58% 0 0)}
+  78%{transform:translateX(-9px);clip-path:inset(12% 0 18%);filter:contrast(180%)}
+  90%{transform:translateX(3px);clip-path:inset(0)}
+  100%{opacity:1;transform:none;clip-path:inset(0);filter:none}
+}
+@keyframes cs-pokemon-arrow-bounce{
+  0%,100%{transform:translateY(-3px)}
+  50%{transform:translateY(4px)}
+}
+
+@media(max-width:520px){
+  .cs-bubble{
+    --cs-bubble-padding-top:21px;
+    --cs-bubble-padding-right:23px;
+    --cs-bubble-padding-bottom:29px;
+    --cs-bubble-padding-left:23px;
+    --cs-bubble-border-radius:9px;
+    --cs-username-font-size:clamp(7px,2.3vw,10px);
+    --cs-message-font-size:clamp(7px,2.3vw,10px);
+    inline-size:94vw;
+    min-block-size:calc((2em * 2) + 42px);
+    border-width:
+      var(--cs-bubble-border-width,3px)
+      var(--cs-bubble-border-width,3px)
+      calc(var(--cs-bubble-border-width,3px) + 3px)
+      var(--cs-bubble-border-width,3px);
+    line-height:2;
+  }
+  .cs-bubble::before{
+    top:3px;
+    right:3px;
+    bottom:5px;
+    left:3px;
+    border-width:4px 3px 3px;
+    border-radius:6px;
+  }
+  .cs-bubble::after{
+    right:12px;
+    bottom:-3px;
+    width:18px;
+    height:13px;
+  }
+  .cs-content::after{
+    right:15px;
+    bottom:0;
+    border-left-width:6px;
+    border-right-width:6px;
+    border-top-width:9px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cs-bubble,.cs-content::after{animation:none}
+}
+
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-right cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-avatar-hidden cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 0; --cs-avatar-position: right; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding: 0px; --cs-chat-padding-top: 0px; --cs-chat-padding-right: 0px; --cs-chat-padding-bottom: 0px; --cs-chat-padding-left: 0px; --cs-bubble-padding-top: 24px; --cs-bubble-padding-right: 30px; --cs-bubble-padding-bottom: 32px; --cs-bubble-padding-left: 30px; --cs-bubble-background-color: var(--cs-pokemon-bg); --cs-bubble-background-gradient: none; --cs-bubble-border-width: 3px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #9146ff; --cs-bubble-border-radius: 10px; --cs-bubble-border-radius-top-left: 10px; --cs-bubble-border-radius-top-right: 10px; --cs-bubble-border-radius-bottom-right: 10px; --cs-bubble-border-radius-bottom-left: 10px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 0px; --cs-bubble-box-shadow-blur-radius: 0px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: #000000; --cs-bubble-box-shadow-inset: ; --cs-bubble-gap: 10px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-background-color: transparent; --cs-username-background-gradient: none; --cs-username-border-width: 0px; --cs-username-border-style: solid; --cs-username-border-color: transparent; --cs-username-border-radius: 0px; --cs-username-border-radius-top-left: 0px; --cs-username-border-radius-top-right: 0px; --cs-username-border-radius-bottom-right: 0px; --cs-username-border-radius-bottom-left: 0px; --cs-username-box-shadow-offset-x: 0px; --cs-username-box-shadow-offset-y: 0px; --cs-username-box-shadow-blur-radius: 0px; --cs-username-box-shadow-spread-radius: 0px; --cs-username-box-shadow-color: transparent; --cs-username-box-shadow-inset: ; --cs-username-font-size: 10px; --cs-username-font-color: #9146ff; --cs-username-font-family: 'Press Start 2P'; --cs-username-font-weight: 400; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: #000000; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-background-color: transparent; --cs-message-background-gradient: none; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: transparent; --cs-message-border-radius: 0px; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #000000; --cs-message-box-shadow-inset: ; --cs-message-font-size: 10px; --cs-message-font-color: #9146ff; --cs-message-font-family: 'Press Start 2P'; --cs-message-font-weight: 400; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: #000000; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+    <div class="cs-header">
+        <div class="cs-avatar"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E"></div>
+        <div class="cs-user">
+            <span class="cs-badges"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+            <span class="cs-username">
+            	<span class="cs-pronouns"></span>
+            	JesusTenG
+            </span>
+        </div>
+    </div>
+    <div class="cs-content">
+        <span class="cs-user--inline">
+            <span class="cs-badges cs-badges--inline"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+            <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+            	<span class="cs-pronouns"></span>
+            	JesusTenG
+            </span>
+        </span>
+        <div class="cs-message">So sieht dein Chat aus.</div>
+    </div>
+</div></div></div></body></html>

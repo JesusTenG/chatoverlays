@@ -1,0 +1,2035 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Receipt Flow – cat</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Pokemon GB';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/15d68f088ca345045d5f.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'VCR OSD Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/dae3406898fc4d45d775.woff2") format('woff2');
+}
+/*//////////////DOCUMENT//////////////////*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+
+/*//////////////CHAT CONTAINER//////////////////*/
+
+.cs-chat {
+  --cs-bubble-gap: 0;
+  --cs-chat-padding: 10px;
+  --cs-chat-padding-left: 18px;
+  --cs-chat-padding-right: 18px;
+}
+
+
+/*//////////////BOX SIZING//////////////////*/
+
+.cs-bubble,
+.cs-bubble *,
+.cs-bubble:before,
+.cs-bubble:after {
+  box-sizing: border-box;
+}
+
+
+/*//////////////BUBBLE BASE//////////////////*/
+
+.cs-bubble {
+  --cs-bubble-background-color: #d9d9d9;
+  --cs-message-font-color: #20201e;
+
+  --p: var(--cs-bubble-background-color, #d9d9d9);
+  --i: var(--cs-message-font-color);
+  --s: color-mix(in srgb, var(--i) 62%, transparent);
+  --l: color-mix(in srgb, var(--i) 30%, transparent);
+
+  --h: var(--cs-username-font-family);
+  --f: var(--cs-message-font-family);
+
+  --role: "STANDARD CUSTOMER";
+  --note: "REGULAR PRICE APPLIED";
+
+  --cs-bubble-width: 250px;
+
+  --cs-username-font-family: "Pokemon GB";
+  --cs-username-font-size: 10px;
+  --cs-username-font-color: #20201e;
+
+  --cs-message-font-family: "VCR OSD Mono";
+  --cs-message-font-size: 12px;
+
+  --cs-bubble-animation: bp-roll-in !important;
+  --cs-bubble-animation-duration: 200ms;
+
+  width: var(--cs-bubble-width);
+
+  color: var(--i);
+
+  background-color: var(--p);
+}
+
+
+/*//////////////BUBBLE SIDE SHADOWS//////////////////*/
+
+.cs-bubble:before,
+.cs-bubble:after {
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  top: 0;
+  bottom: 0;
+
+  width: 9px;
+}
+
+.cs-bubble:before {
+  right: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #0002
+    );
+}
+
+.cs-bubble:after {
+  left: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0002,
+      transparent
+    );
+}
+
+
+/*//////////////AVATAR//////////////////*/
+
+.cs-avatar {
+  display: none !important;
+}
+
+
+/*//////////////RECEIPT PAPER//////////////////*/
+
+.r {
+  padding:
+    7px
+    12px
+    11px;
+
+  background-color:
+    var(--p);
+
+  background-image:
+    radial-gradient(
+      circle at 15% 30%,
+      #00000008 0 1px,
+      transparent 1.5px
+    ),
+    var(
+      --cs-bubble-background-gradient,
+      none
+    );
+
+  background-size:
+    9px 11px,
+    cover;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 -1px var(--p),
+    0 1px var(--p);
+}
+
+
+/*//////////////HIDDEN RECEIPT ELEMENTS//////////////////*/
+
+.r > [aria-hidden="true"] {
+  display: none !important;
+}
+
+
+/*//////////////OPTIONAL RECEIPT RESET//////////////////*/
+
+.rs,
+.re,
+.ra,
+.rh,
+.rc,
+.rx,
+.rr,
+.ry,
+.rt,
+.rg,
+.rp,
+.rd,
+.rn,
+.ri,
+.ro,
+.rq,
+.rz,
+.rf,
+.rj,
+.rw,
+.rb,
+.rk,
+.rl {
+  display: none !important;
+}
+
+
+/*//////////////ROLE RECEIPT RESET//////////////////*/
+
+.cu,
+.cu-n,
+.cu-s,
+.cu-v,
+.cu-b,
+.cu-m {
+  display: none !important;
+}
+
+
+/*//////////////TOP META//////////////////*/
+
+.r0 {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 10px;
+
+  margin-bottom: 2px;
+}
+
+.ru {
+  font:
+    400
+    8px/1
+    var(--f),
+    monospace;
+
+  letter-spacing: .5px;
+
+  color:
+    var(--s);
+
+  text-transform:
+    lowercase;
+}
+
+
+/*//////////////TIMESTAMP//////////////////*/
+
+.cs-timestamp {
+  font:
+    8px/1
+    var(--f),
+    monospace;
+
+  color:
+    var(--s);
+
+  white-space:
+    nowrap;
+}
+
+.cs-timestamp:before {
+  content:
+    "TIME ";
+}
+
+
+/*//////////////RECEIPT FLEX ROWS//////////////////*/
+
+.rm,
+.rt,
+.rg,
+.rp,
+.rz {
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 7px;
+}
+
+.rm {
+  display: flex;
+}
+
+
+/*//////////////USER HEADER//////////////////*/
+
+.cs-user {
+  width: 100%;
+
+  gap: 0;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.cs-user
+.cs-badges {
+  order: -1 !important;
+
+  align-self: center !important;
+  justify-content: center;
+
+  margin-bottom: 0;
+}
+
+
+/*//////////////USERNAME//////////////////*/
+
+.cs-username,
+.cs-username--inline {
+  width: 100%;
+
+  white-space:
+    normal;
+
+  overflow-wrap:
+    anywhere;
+
+  line-height:
+    1.25;
+
+  text-align:
+    center;
+}
+
+
+/*//////////////PRONOUNS//////////////////*/
+
+.cs-pronouns {
+  display:
+    none !important;
+}
+
+
+/*//////////////BADGES//////////////////*/
+
+.cs-badges img,
+.cs-badges--inline img {
+  filter:
+    grayscale(1)
+    contrast(.82);
+
+  opacity:
+    .8;
+}
+
+
+/*//////////////CONTENT//////////////////*/
+
+.cs-content {
+  margin-top:
+    3px;
+}
+
+.cs-message {
+  line-height:
+    1.25;
+
+  filter:
+    grayscale(1);
+}
+
+.cs-message .emote,
+.cs-message .emote img,
+.cs-message img.emote,
+.cs-message img[class*=emote] {
+  opacity:
+    .88;
+}
+
+
+/*//////////////EMOTES//////////////////*/
+
+.cs-message .emote {
+  display:
+    inline-block;
+
+  flex:
+    0 0 auto;
+
+  width:
+    auto !important;
+
+  inline-size:
+    auto !important;
+
+  height:
+    calc(
+      var(--cs-message-font-size, 12px)
+      * 1.55
+    )
+    !important;
+
+  block-size:
+    calc(
+      var(--cs-message-font-size, 12px)
+      * 1.55
+    )
+    !important;
+
+  max-width:
+    none !important;
+
+  max-inline-size:
+    none !important;
+
+  max-height:
+    calc(
+      var(--cs-message-font-size, 12px)
+      * 1.55
+    )
+    !important;
+
+  max-block-size:
+    calc(
+      var(--cs-message-font-size, 12px)
+      * 1.55
+    )
+    !important;
+
+  object-fit:
+    contain;
+
+  margin-inline:
+    1px;
+
+  vertical-align:
+    middle;
+}
+
+
+/*//////////////INLINE USER//////////////////*/
+
+.cs-user--inline {
+  width: 100%;
+
+  margin:
+    0 0 1px;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    0;
+
+  text-align:
+    center;
+}
+
+.cs-user--inline
+.cs-badges--inline {
+  order:
+    -1 !important;
+
+  align-self:
+    center !important;
+
+  justify-content:
+    center;
+
+  margin-bottom:
+    0;
+}
+
+.cs-bubble.cs-username-position-inline
+.cs-user--inline {
+  display:
+    flex;
+}
+
+.cs-bubble.cs-username-position-inline
+.cs-username--inline,
+
+.cs-bubble.cs-username-position-inline
+.cs-message {
+  display:
+    block;
+}
+
+.cs-bubble.cs-username-position-inline
+.cs-content {
+  padding-left:
+    0 !important;
+}
+
+
+/*//////////////RECEIPT FONT ELEMENTS//////////////////*/
+
+:is(
+  .ra,
+  .rh,
+  .rc,
+  .rk,
+  .rl,
+  .rf,
+  .rw,
+  .rn,
+  .ri,
+  .rd,
+  .ry
+) {
+  font-family:
+    var(--f),
+    monospace;
+}
+
+
+/*//////////////ROLE VARIABLES//////////////////*/
+
+.cs-sub {
+  --role:
+    "LOYALTY MEMBER";
+
+  --note:
+    "MEMBER PRICE APPLIED";
+}
+
+.cs-vip {
+  --role:
+    "PREMIUM CUSTOMER";
+}
+
+.cs-broadcaster {
+  --role:
+    "STORE OWNER";
+}
+
+.cs-mod {
+  --role:
+    "MY HAMMER MY RULES";
+}
+
+
+/*//////////////ROLE LABEL//////////////////*/
+
+.cs-bubble:not(.cs-event)
+.rr {
+  display:
+    block !important;
+
+  margin:
+    3px 0 2px;
+
+  font:
+    8px/1.15
+    var(--f),
+    monospace;
+
+  letter-spacing:
+    .6px;
+
+  color:
+    var(--s);
+
+  text-align:
+    center;
+}
+
+.rr:before {
+  content:
+    var(--role);
+}
+
+.rr:after {
+  content:
+    var(--note);
+
+  display:
+    block;
+
+  margin-top:
+    1px;
+
+  font-size:
+    7px;
+}
+
+:is(
+  .cs-vip,
+  .cs-broadcaster,
+  .cs-mod
+)
+.rr:after {
+  display:
+    none;
+}
+
+
+/*//////////////BARCODE//////////////////*/
+
+.rb {
+  width:
+    185px;
+
+  height:
+    27px;
+
+  margin:
+    7px auto 2px;
+
+  opacity:
+    .82;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--i) 0 2px,
+      transparent 2px 5px,
+      var(--i) 5px 6px,
+      transparent 6px 10px,
+      var(--i) 10px 14px,
+      transparent 14px 16px,
+      var(--i) 16px 18px,
+      transparent 18px 23px,
+      var(--i) 23px 24px,
+      transparent 24px 28px,
+      var(--i) 28px 33px,
+      transparent 33px 36px,
+      var(--i) 36px 38px,
+      transparent 38px 43px
+    );
+
+  background-size:
+    43px 100%;
+}
+
+
+/*//////////////THANK YOU TEXT//////////////////*/
+
+.rk {
+  font-size:
+    8px;
+
+  line-height:
+    1.15;
+
+  color:
+    var(--s);
+
+  text-align:
+    center;
+}
+
+
+/*//////////////ROLE RECEIPT BASE//////////////////*/
+
+.cu {
+  position:
+    relative;
+
+  margin:
+    7px -12px -11px;
+
+  padding:
+    6px 12px;
+
+  overflow:
+    hidden;
+
+  font:
+    8px/1.2
+    var(--f),
+    monospace;
+
+  color:
+    var(--s);
+}
+
+.cu span {
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  justify-content:
+    space-between;
+
+  gap:
+    3px;
+}
+
+.cu i {
+  font-style:
+    normal;
+
+  white-space:
+    nowrap;
+}
+
+.cu small {
+  display:
+    block;
+
+  font-size:
+    7px;
+
+  line-height:
+    1.2;
+
+  text-align:
+    center;
+}
+
+
+/*//////////////NORMAL CUSTOMER RECEIPT//////////////////*/
+
+.cu-n {
+  justify-content:
+    space-between;
+
+  border-block:
+    1px dashed
+    var(--l);
+}
+
+.cu-n span {
+  display:
+    block;
+
+  flex:
+    1;
+
+  text-align:
+    center;
+}
+
+.cu-n span + span {
+  border-left:
+    1px dotted
+    var(--l);
+}
+
+
+/*//////////////SUBSCRIBER RECEIPT//////////////////*/
+
+.cu-s {
+  border-top:
+    1px dashed
+    var(--l);
+
+  border-bottom:
+    2px double
+    var(--l);
+
+  gap:
+    2px;
+}
+
+.cu-s:before {
+  content:
+    "";
+
+  display:
+    block;
+
+  height:
+    4px;
+
+  margin-bottom:
+    2px;
+
+  opacity:
+    .28;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--i) 0 1px,
+      transparent 1px 3px,
+      var(--i) 3px 5px,
+      transparent 5px 8px
+    );
+}
+
+.cu-s span:after,
+.cu-v span:after {
+  content:
+    "";
+
+  order:
+    2;
+
+  flex:
+    1;
+
+  margin:
+    0 3px 2px;
+
+  border-bottom:
+    1px dotted
+    var(--l);
+}
+
+.cu-s b,
+.cu-v b {
+  order:
+    1;
+}
+
+.cu-s i,
+.cu-v i {
+  order:
+    3;
+}
+
+
+/*//////////////VIP RECEIPT//////////////////*/
+
+.cu-v {
+  margin-inline:
+    -7px;
+
+  margin-bottom:
+    -5px;
+
+  border:
+    2px double
+    color-mix(
+      in srgb,
+      var(--l) 72%,
+      transparent
+    );
+
+  gap:
+    2px;
+}
+
+.cu-v:before,
+.cu-v:after {
+  content:
+    "◆";
+
+  position:
+    absolute;
+
+  top:
+    4px;
+
+  font-size:
+    5px;
+
+  opacity:
+    .28;
+}
+
+.cu-v:before {
+  left:
+    6px;
+}
+
+.cu-v:after {
+  right:
+    6px;
+}
+
+
+/*//////////////BROADCASTER RECEIPT//////////////////*/
+
+.cu-b {
+  padding-block:
+    4px;
+
+  border-block:
+    1px double
+    var(--l);
+
+  text-align:
+    center;
+
+  gap:
+    1px;
+}
+
+.cu-b strong {
+  display:
+    block;
+
+  margin:
+    0;
+
+  font:
+    10px/1
+    var(--h),
+    monospace;
+
+  color:
+    var(--i);
+}
+
+.cu-b:after {
+  content:
+    "";
+
+  display:
+    block;
+
+  height:
+    4px;
+
+  margin-top:
+    2px;
+
+  opacity:
+    .36;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--i) 0 1px,
+      transparent 1px 3px,
+      var(--i) 3px 6px,
+      transparent 6px 9px
+    );
+}
+
+
+/*//////////////MODERATOR RECEIPT//////////////////*/
+
+.cu-m {
+  border-block:
+    1px dotted
+    color-mix(
+      in srgb,
+      var(--l) 62%,
+      transparent
+    );
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #00000008,
+      transparent
+    );
+
+  gap:
+    2px;
+}
+
+.cu-m small {
+  margin-top:
+    2px;
+
+  font-size:
+    7px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .25px;
+
+  opacity:
+    .8;
+}
+
+
+/*//////////////ROLE RECEIPT VISIBILITY//////////////////*/
+
+.cs-bubble:not(.cs-event):not(.cs-sub):not(.cs-vip):not(.cs-broadcaster):not(.cs-mod)
+.cu-n {
+  display:
+    flex !important;
+}
+
+.cs-bubble.cs-sub:not(.cs-event):not(.cs-vip):not(.cs-broadcaster):not(.cs-mod)
+.cu-s {
+  display:
+    grid !important;
+}
+
+.cs-bubble.cs-vip:not(.cs-event):not(.cs-broadcaster):not(.cs-mod)
+.cu-v {
+  display:
+    grid !important;
+}
+
+.cs-bubble.cs-broadcaster:not(.cs-event):not(.cs-mod)
+.cu-b {
+  display:
+    grid !important;
+}
+
+.cs-bubble.cs-mod:not(.cs-event)
+.cu-m {
+  display:
+    grid !important;
+}
+
+
+/*//////////////RECEIPT VARIANT 1//////////////////*/
+
+.cs-bubble:not(.cs-event):nth-child(6n+1) {
+
+  .r {
+    text-align:
+      center;
+  }
+
+  .cs-username {
+    font-size:
+      14px;
+  }
+
+  .cs-message {
+    justify-content:
+      center;
+
+    text-align:
+      center;
+  }
+}
+
+
+/*//////////////RECEIPT VARIANT 2//////////////////*/
+
+.cs-bubble:not(.cs-event):nth-child(6n+2) {
+
+  .rm:before {
+    content:
+      "1";
+
+    position:
+      absolute;
+
+    left:
+      12px;
+
+    font:
+      9px/1
+      var(--f),
+      monospace;
+  }
+
+  .cs-content {
+    padding-left:
+      13px;
+  }
+}
+
+
+/*//////////////RECEIPT VARIANT 3//////////////////*/
+
+.cs-bubble:not(.cs-event):nth-child(6n+3) {
+
+  .rx {
+    display:
+      block !important;
+
+    text-align:
+      center;
+
+    font:
+      9px/1
+      var(--h),
+      monospace;
+  }
+
+  .rx:before {
+    content:
+      "PAYMENT DETAILS";
+  }
+
+  .cs-user:before {
+    content:
+      "CUSTOMER";
+
+    order:
+      -2;
+
+    font:
+      8px/1
+      var(--f),
+      monospace;
+
+    color:
+      var(--s);
+  }
+
+  .cs-content {
+    margin:
+      5px 0;
+
+    padding:
+      4px 0 6px;
+
+    border-bottom:
+      1px dashed
+      var(--l);
+  }
+
+  :is(
+    .rt,
+    .rg,
+    .rp
+  ) {
+    display:
+      flex !important;
+
+    width:
+      150px;
+
+    margin:
+      3px auto;
+
+    font:
+      8px/1
+      var(--f),
+      monospace;
+  }
+
+  .rd {
+    display:
+      grid !important;
+
+    gap:
+      1px;
+
+    width:
+      200px;
+
+    margin:
+      6px auto 0;
+
+    font-size:
+      8px;
+
+    text-transform:
+      uppercase;
+  }
+}
+
+
+/*//////////////RECEIPT VARIANT 4//////////////////*/
+
+.cs-bubble:not(.cs-event):nth-child(6n+4) {
+
+  .ry {
+    display:
+      grid !important;
+
+    gap:
+      2px;
+
+    text-align:
+      center;
+
+    font-size:
+      8px;
+  }
+
+  .ry b {
+    font-size:
+      11px;
+  }
+
+  .rm {
+    justify-content:
+      center;
+
+    margin-top:
+      5px;
+  }
+
+  .cs-message {
+    justify-content:
+      center;
+
+    text-align:
+      center;
+  }
+
+  :is(
+    .rf,
+    .rj,
+    .rw
+  ) {
+    display:
+      block !important;
+
+    text-align:
+      center;
+  }
+
+  .rf {
+    margin-top:
+      5px;
+
+    font-size:
+      8px;
+
+    color:
+      var(--s);
+  }
+
+  .rj {
+    margin:
+      4px 0 2px;
+
+    font:
+      11px/1
+      var(--h),
+      monospace;
+  }
+
+  .rw {
+    font-size:
+      8px;
+
+    color:
+      var(--s);
+  }
+}
+
+
+/*//////////////RECEIPT VARIANT 5//////////////////*/
+
+.cs-bubble:not(.cs-event):nth-child(6n+5) {
+
+  .r {
+    text-align:
+      center;
+  }
+
+  .cs-username {
+    font-size:
+      12px;
+  }
+
+  :is(
+    .ro,
+    .rq,
+    .rz,
+    .rl
+  ) {
+    display:
+      block !important;
+  }
+
+  .ro {
+    margin:
+      5px 0 2px;
+
+    font:
+      17px/1
+      var(--h),
+      monospace;
+  }
+
+  .rq {
+    font:
+      9px/1.2
+      var(--f),
+      monospace;
+  }
+
+  .cs-message {
+    justify-content:
+      center;
+
+    text-align:
+      center;
+
+    margin:
+      5px 0;
+  }
+
+  .rz {
+    display:
+      flex !important;
+
+    margin-top:
+      5px;
+
+    font-size:
+      8px;
+  }
+
+  .rl {
+    margin-top:
+      4px;
+
+    font-size:
+      8px;
+
+    color:
+      var(--s);
+
+    text-align:
+      center;
+  }
+}
+
+
+/*//////////////RECEIPT VARIANT 6//////////////////*/
+
+.cs-bubble:not(.cs-event):nth-child(6n) {
+
+  :is(
+    .rn,
+    .ri
+  ) {
+    display:
+      block !important;
+  }
+
+  .rn {
+    display:
+      grid !important;
+
+    gap:
+      3px;
+
+    margin-top:
+      5px;
+
+    padding-top:
+      4px;
+
+    border-top:
+      1px dashed
+      var(--l);
+
+    font-size:
+      8px;
+
+    text-align:
+      center;
+  }
+
+  .ri {
+    display:
+      grid !important;
+
+    gap:
+      2px;
+
+    width:
+      215px;
+
+    margin:
+      6px auto 0;
+
+    font-size:
+      8px;
+  }
+
+  .ri span {
+    display:
+      flex;
+
+    justify-content:
+      space-between;
+
+    padding-left:
+      10px;
+  }
+
+  .ri i {
+    font-style:
+      normal;
+  }
+}
+
+
+/*//////////////EVENT RECEIPT//////////////////*/
+
+.cs-bubble.cs-event {
+  --event-title:
+    "SYSTEM EVENT";
+
+  .r {
+    text-align:
+      center;
+  }
+
+  :is(
+    .rs,
+    .re,
+    .rb,
+    .rk
+  ) {
+    display:
+      block !important;
+  }
+
+  .rs {
+    width:
+      calc(100% + 24px);
+
+    margin-inline:
+      -12px;
+
+    font:
+      9px/1
+      var(--f),
+      monospace;
+
+    white-space:
+      nowrap;
+
+    overflow:
+      hidden;
+  }
+
+  .re {
+    margin:
+      5px 0;
+
+    font:
+      10px/1.25
+      var(--h),
+      monospace;
+  }
+
+  .re:before {
+    content:
+      var(--event-title);
+  }
+
+  .cs-message {
+    justify-content:
+      center;
+
+    text-align:
+      center;
+
+    margin:
+      5px 0;
+  }
+
+  .rr {
+    display:
+      none !important;
+  }
+
+  .cu {
+    display:
+      none !important;
+  }
+}
+
+
+/*//////////////EVENT TITLES//////////////////*/
+
+.cs-event-sub {
+  --event-title:
+    "LOYALTY ACTIVATION";
+}
+
+.cs-event-resub {
+  --event-title:
+    "MEMBERSHIP RENEWAL";
+}
+
+.cs-event-subgift {
+  --event-title:
+    "GIFT RECEIPT";
+}
+
+.cs-event-mystery-gift {
+  --event-title:
+    "BULK GIFT ORDER";
+}
+
+.cs-event-raid {
+  --event-title:
+    "STORE TRANSFER";
+}
+
+.cs-event-cheer {
+  --event-title:
+    "BONUS PAYMENT";
+}
+
+.cs-event-announcement {
+  --event-title:
+    "MANAGER NOTICE";
+}
+
+.cs-event-highlight {
+  --event-title:
+    "FEATURED ITEM";
+}
+
+
+/*//////////////DEFAULT FONT FALLBACKS//////////////////*/
+
+.cs-bubble:is(
+  [style*="--cs-username-font-family: 'Inter'"],
+  [style*="--cs-username-font-family:'Inter'"]
+) {
+  --cs-username-font-family:
+    "Pokemon GB",
+    monospace !important;
+}
+
+.cs-bubble:is(
+  [style*="--cs-message-font-family: 'Inter'"],
+  [style*="--cs-message-font-family:'Inter'"]
+) {
+  --cs-message-font-family:
+    "VCR OSD Mono",
+    monospace !important;
+}
+
+
+/*//////////////TRANSPARENT BACKGROUND FALLBACK//////////////////*/
+
+.cs-bubble:is(
+  [style*="--cs-bubble-background-color: transparent"],
+  [style*="--cs-bubble-background-color:transparent"]
+) {
+  --cs-bubble-background-color:
+    #d9d9d9 !important;
+}
+
+
+/*//////////////SUBSCRIBER RECEIPT DETAILS//////////////////*/
+
+.cs-bubble.cs-sub:not(.cs-event):not(.cs-vip):not(.cs-broadcaster):not(.cs-mod)
+:is(
+  .ra,
+  .rh,
+  .rc
+) {
+  display:
+    block !important;
+}
+
+.cs-bubble.cs-sub:not(.cs-event)
+.ra {
+  margin:
+    4px 0;
+
+  font-size:
+    8px;
+
+  color:
+    var(--s);
+}
+
+.cs-bubble.cs-sub:not(.cs-event)
+:is(
+  .rh,
+  .rc
+) {
+  margin:
+    2px 0;
+
+  font-size:
+    8px;
+}
+
+
+/*//////////////BROADCASTER RECEIPT DETAILS//////////////////*/
+
+.cs-bubble.cs-broadcaster:not(.cs-event):not(.cs-mod)
+.ra {
+  display:
+    block !important;
+
+  font-size:
+    0;
+
+  margin:
+    3px 0 1px;
+}
+
+.cs-bubble.cs-broadcaster:not(.cs-event):not(.cs-mod)
+.ra:before {
+  content:
+    "1 OWNER PLAZA · CEO PARKING · RENT: $0.00";
+
+  font:
+    8px/1.2
+    var(--f),
+    monospace;
+
+  color:
+    var(--s);
+}
+
+
+/*//////////////USERNAME TYPEWRITER//////////////////*/
+
+.cs-username,
+.cs-username--inline {
+  animation-name:
+    cs-receipt-user-type !important;
+
+  animation-duration:
+    260ms !important;
+
+  animation-delay:
+    220ms !important;
+
+  animation-timing-function:
+    steps(16, end) !important;
+
+  animation-fill-mode:
+    both !important;
+}
+
+
+/*//////////////BADGE TYPEWRITER//////////////////*/
+
+.cs-badges,
+.cs-badges--inline {
+  animation-name:
+    cs-receipt-badge-type !important;
+
+  animation-duration:
+    180ms !important;
+
+  animation-delay:
+    220ms !important;
+
+  animation-timing-function:
+    steps(8, end) !important;
+
+  animation-fill-mode:
+    both !important;
+}
+
+
+/*//////////////MESSAGE TYPEWRITER//////////////////*/
+
+.cs-message {
+  animation-name:
+    cs-receipt-message-type !important;
+
+  animation-duration:
+    420ms !important;
+
+  animation-delay:
+    560ms !important;
+
+  animation-timing-function:
+    steps(28, end) !important;
+
+  animation-fill-mode:
+    both !important;
+}
+
+
+/*//////////////USERNAME TYPE KEYFRAME//////////////////*/
+
+@keyframes cs-receipt-user-type {
+
+  0% {
+    opacity:
+      0;
+
+    clip-path:
+      inset(0 100% 0 0);
+  }
+
+  1% {
+    opacity:
+      1;
+  }
+
+  100% {
+    opacity:
+      1;
+
+    clip-path:
+      inset(0 0 0 0);
+  }
+}
+
+
+/*//////////////BADGE TYPE KEYFRAME//////////////////*/
+
+@keyframes cs-receipt-badge-type {
+
+  0% {
+    opacity:
+      0;
+
+    clip-path:
+      inset(0 100% 0 0);
+  }
+
+  1% {
+    opacity:
+      1;
+  }
+
+  100% {
+    opacity:
+      1;
+
+    clip-path:
+      inset(0 0 0 0);
+  }
+}
+
+
+/*//////////////MESSAGE TYPE KEYFRAME//////////////////*/
+
+@keyframes cs-receipt-message-type {
+
+  0% {
+    opacity:
+      0;
+
+    clip-path:
+      inset(0 100% 0 0);
+  }
+
+  1% {
+    opacity:
+      1;
+  }
+
+  100% {
+    opacity:
+      1;
+
+    clip-path:
+      inset(0 0 0 0);
+  }
+}
+
+
+/*//////////////REDUCED MOTION//////////////////*/
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cs-username,
+  .cs-username--inline,
+  .cs-badges,
+  .cs-badges--inline,
+  .cs-message {
+    opacity:
+      1;
+
+    clip-path:
+      none;
+
+    animation:
+      none !important;
+  }
+}
+.rr,
+.ra,
+.rh,
+.rc,
+.rx,
+.ry,
+.rt,
+.rg,
+.rp,
+.rd,
+.rn,
+.ri,
+.ro,
+.rq,
+.rz,
+.rf,
+.rj,
+.rw,
+.rb,
+.rk,
+.rl,
+.rs,
+.re,
+.cu,
+.cu-n,
+.cu-s,
+.cu-v,
+.cu-b,
+.cu-m {
+  display:
+    none !important;
+}
+
+
+
+
+.rm::before,
+.cs-user::before {
+  content:
+    none !important;
+
+  display:
+    none !important;
+}
+
+.r {
+  text-align:
+    center !important;
+}
+
+.rm {
+  margin:
+    0 !important;
+
+  justify-content:
+    center !important;
+}
+
+.cs-content {
+  margin:
+    3px 0 0 !important;
+
+  padding:
+    0 !important;
+
+  border:
+    0 !important;
+
+  text-align:
+    center !important;
+}
+
+.cs-message {
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  justify-content:
+    center !important;
+
+  text-align:
+    center !important;
+}
+
+
+
+
+.cat-separator {
+  display:
+    block !important;
+
+  overflow:
+    hidden !important;
+
+  white-space:
+    nowrap !important;
+
+  font:
+    8px/1
+    var(--f),
+    monospace !important;
+
+  color:
+    var(--l) !important;
+
+  text-align:
+    center !important;
+}
+
+
+
+
+.cat-title {
+  display:
+    block !important;
+
+  margin:
+    3px 0 4px !important;
+
+  font:
+    9px/1
+    var(--h),
+    monospace !important;
+
+  color:
+    var(--i) !important;
+
+  text-align:
+    center !important;
+}
+
+
+
+
+.cat-doodle {
+  display:
+    block !important;
+
+  width:
+    max-content !important;
+
+  margin:
+    5px auto 2px !important;
+
+  padding:
+    0 !important;
+
+  border:
+    0 !important;
+
+  background:
+    transparent !important;
+
+  font:
+    9px/1.05
+    var(--f),
+    monospace !important;
+
+  color:
+    var(--i) !important;
+
+  text-align:
+    left !important;
+
+  white-space:
+    pre !important;
+}
+
+.cat-note {
+  display:
+    block !important;
+
+  font:
+    10px/1.1
+    var(--f),
+    monospace !important;
+
+  color:
+    var(--i) !important;
+
+  text-align:
+    center !important;
+}
+
+.cat-subnote {
+  display:
+    block !important;
+
+  margin-top:
+    5px !important;
+
+  font:
+    10px/1.1
+    var(--f),
+    monospace !important;
+
+  color:
+    var(--s) !important;
+
+  text-align:
+    center !important;
+}
+
+.cat-separator--bottom {
+  margin-top:
+    4px !important;
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-right cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-avatar-hidden cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 0; --cs-avatar-position: right; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 0px; --cs-chat-padding-right: 18px; --cs-chat-padding-bottom: 0px; --cs-chat-padding-left: 18px; --cs-bubble-padding: 0px; --cs-bubble-padding-top: 0px; --cs-bubble-padding-right: 0px; --cs-bubble-padding-bottom: 0px; --cs-bubble-padding-left: 0px; --cs-bubble-background-color: #d9d9d9; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 0px; --cs-bubble-border-style: solid; --cs-bubble-border-color: transparent; --cs-bubble-border-radius: 0px; --cs-bubble-border-radius-top-left: 0px; --cs-bubble-border-radius-top-right: 0px; --cs-bubble-border-radius-bottom-right: 0px; --cs-bubble-border-radius-bottom-left: 0px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 0px; --cs-bubble-box-shadow-blur-radius: 0px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: #000000; --cs-bubble-box-shadow-inset: ; --cs-bubble-gap: 0px; --cs-bubble-width: 250px; --cs-username-padding: 0px; --cs-username-padding-top: 0px; --cs-username-padding-right: 0px; --cs-username-padding-bottom: 0px; --cs-username-padding-left: 0px; --cs-username-background-color: transparent; --cs-username-background-gradient: none; --cs-username-border-width: 0px; --cs-username-border-style: solid; --cs-username-border-color: transparent; --cs-username-border-radius: 0px; --cs-username-border-radius-top-left: 0px; --cs-username-border-radius-top-right: 0px; --cs-username-border-radius-bottom-right: 0px; --cs-username-border-radius-bottom-left: 0px; --cs-username-box-shadow-offset-x: 0px; --cs-username-box-shadow-offset-y: 0px; --cs-username-box-shadow-blur-radius: 0px; --cs-username-box-shadow-spread-radius: 0px; --cs-username-box-shadow-color: #000000; --cs-username-box-shadow-inset: ; --cs-username-font-size: 10px; --cs-username-font-color: #20201e; --cs-username-font-family: 'Pokemon GB'; --cs-username-font-weight: 400; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 0px; --cs-username-text-shadow-color: #000000; --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: #000000; --cs-message-padding: 0px; --cs-message-padding-top: 0px; --cs-message-padding-right: 0px; --cs-message-padding-bottom: 0px; --cs-message-padding-left: 0px; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: transparent; --cs-message-border-radius: 0px; --cs-message-border-radius-top-left: 0px; --cs-message-border-radius-top-right: 0px; --cs-message-border-radius-bottom-right: 0px; --cs-message-border-radius-bottom-left: 0px; --cs-message-box-shadow-offset-x: 0px; --cs-message-box-shadow-offset-y: 0px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #000000; --cs-message-box-shadow-inset: ; --cs-message-font-size: 12px; --cs-message-font-color: #20201e; --cs-message-font-family: 'VCR OSD Mono'; --cs-message-font-weight: 400; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 0px; --cs-message-text-shadow-color: #000000; --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: #000000; --cs-usercolor: #9b59b6;">
+  <div class="cs-avatar"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E"></div>
+
+  <div class="r">
+    
+
+    <div class="r0 skin-r0">
+      <span class="ru">chatstyle.gg</span>
+      <span class="cs-timestamp">21:08</span>
+    </div>
+
+    
+
+    <div class="cat-separator">
+      ::::::::::::::::::::::::::::::::
+    </div>
+
+    <div class="cat-title">
+      QUALITY CONTROL
+    </div>
+
+    
+
+    <div class="rm">
+      <div class="cs-user">
+        <span class="cs-badges"><img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E"></span>
+
+        <span class="cs-username">
+          <span class="cs-pronouns"></span>
+          JesusTenG
+        </span>
+      </div>
+    </div>
+    
+
+    <div class="cs-content">
+      <span class="cs-user--inline">
+        <span class="cs-badges cs-badges--inline">
+          <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+        </span>
+
+        <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+          <span class="cs-pronouns"></span>
+          JesusTenG
+        </span>
+      </span>
+
+      <div class="cs-message">So sieht dein Chat aus.</div>
+    </div>
+
+    
+
+    <pre class="cat-doodle"> /\_/\
+( o.o )
+ &gt; ^ &lt;</pre>
+
+    <div class="cat-note">
+      INSPECTED BY: CAT
+    </div>
+
+    <div class="cat-subnote">
+      STATUS: SAT ON RECEIPT
+    </div>
+
+    <div class="cat-separator cat-separator--bottom">
+      ::::::::::::::::::::::::::::::::
+    </div>
+
+  </div>
+</div></div></div></body></html>

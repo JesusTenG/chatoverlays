@@ -1,0 +1,4431 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>Kuromi – mod</title><link rel="stylesheet" href="/assets/skins/shared/cad414f221929ba99d52.css"><link rel="stylesheet" href="/assets/skins/shared/238d0b760d93ce311d0c.css"><style>@font-face{font-family:Noto Sans;font-style:normal;font-weight:400 700;font-display:swap;src:url("/assets/skins/shared/50e812ed38d958a5dddd.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/bb3e7cfe38df36e3e2ee.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:500;font-display:swap;src:url("/assets/skins/shared/ca536f2bd03bb583b73c.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:600;font-display:swap;src:url("/assets/skins/shared/4967d9451523a4e6246a.woff2")format("woff2")}
+@font-face{font-family:Space Grotesk;font-style:normal;font-weight:700;font-display:swap;src:url("/assets/skins/shared/2254010eadc99c92fc38.woff2")format("woff2")}
+@font-face{font-family:Titillium Web;font-style:normal;font-weight:900;font-display:swap;src:url("/assets/skins/shared/8950680a7ee7ca0fc1fe.woff2")format("woff2")}
+@font-face{font-family:Neonderthaw;font-style:normal;font-weight:400;font-display:swap;src:url("/assets/skins/shared/60fde288aa790402ed5f.woff2")format("woff2")}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/assets/skins/shared/6d5fda4e7c8bd9440de1.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/skins/shared/677b9d983d6d18bcb5d9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/assets/skins/shared/48c0f365e555c930159f.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/skins/shared/2c6636f5c2033988ae0a.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/skins/shared/4f6e38c96abe28ed90f9.woff2") format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/assets/skins/shared/e3c9d5360767a6d8abf1.woff2") format('woff2');
+}
+/*////////////// TEMPLATE DEFAULTS //////////////*/
+
+:root {
+    --cs-bubble-background-color: #8b5acb;
+    --cs-bubble-border-color: #171219;
+
+    --cs-avatar-background-color: #8b5acb;
+    --cs-avatar-border-color: #171219;
+    --cs-avatar-box-shadow-offset-x: 3.4px;
+    --cs-avatar-box-shadow-offset-y: 3.4px;
+    --cs-avatar-box-shadow-blur-radius: 0px;
+    --cs-avatar-box-shadow-spread-radius: 0px;
+    --cs-avatar-box-shadow-color: #7049a3;
+
+    --cs-username-background-color: #171219;
+    --cs-username-border-color: #171219;
+    --cs-username-box-shadow-offset-x: 3.4px;
+    --cs-username-box-shadow-offset-y: 3.4px;
+    --cs-username-box-shadow-blur-radius: 0px;
+    --cs-username-box-shadow-spread-radius: 0px;
+    --cs-username-box-shadow-color: #7049a3;
+
+    --cs-message-background-color: #171219;
+    --cs-message-border-color: #171219;
+    --cs-message-box-shadow-offset-x: 3.4px;
+    --cs-message-box-shadow-offset-y: 3.4px;
+    --cs-message-box-shadow-blur-radius: 0px;
+    --cs-message-box-shadow-spread-radius: 0px;
+    --cs-message-box-shadow-color: #7049a3;
+}
+
+
+/*////////////// RESET //////////////*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/*////////////// CHAT //////////////*/
+
+.cs-chat {
+    gap:
+        var(
+            --cs-bubble-gap,
+            4.25px
+        );
+
+    padding-block-start:
+        var(
+            --cs-chat-padding-top,
+            var(--cs-chat-padding, 11px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-chat-padding-right,
+            var(--cs-chat-padding, 11px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-chat-padding-bottom,
+            var(--cs-chat-padding, 11px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-chat-padding-left,
+            var(--cs-chat-padding, 11px)
+        );
+}
+
+
+/*////////////// CHAT ALIGNMENT //////////////*/
+
+.cs-chat.cs-align-left {
+    align-items: flex-start !important;
+}
+
+.cs-chat.cs-align-center {
+    align-items: center !important;
+}
+
+.cs-chat.cs-align-right {
+    align-items: flex-end !important;
+}
+
+.cs-chat.cs-align-top {
+    align-items: flex-start !important;
+}
+
+.cs-chat.cs-align-bottom {
+    align-items: flex-end !important;
+}
+
+
+/*////////////// BUBBLE //////////////*/
+
+.cs-bubble {
+    --ku-purple:
+        var(
+            --cs-bubble-background-color,
+            #8b5acb
+        );
+
+    --ku-ink:
+        var(
+            --cs-bubble-border-color,
+            #171219
+        );
+
+    --ku-avatar-background:
+        var(
+            --cs-avatar-background-color,
+            var(--ku-purple)
+        );
+
+    --ku-username-background:
+        var(
+            --cs-username-background-color,
+            #171219
+        );
+
+    --ku-message-background:
+        var(
+            --cs-message-background-color,
+            #171219
+        );
+
+    --ku-pink-hot: #d889b5;
+
+    --ku-light:
+        color-mix(
+            in srgb,
+            var(--ku-purple) 76%,
+            #e4d6f1 24%
+        );
+
+    --ku-mid:
+        color-mix(
+            in srgb,
+            var(--ku-purple) 86%,
+            #c8aee1 14%
+        );
+
+    --ku-dark:
+        color-mix(
+            in srgb,
+            var(--ku-purple) 76%,
+            #4d356a 24%
+        );
+
+    --ku-username-spot:
+        color-mix(
+            in srgb,
+            var(--ku-username-background) 78%,
+            var(--ku-purple) 22%
+        );
+
+    --ku-message-spot:
+        color-mix(
+            in srgb,
+            var(--ku-message-background) 78%,
+            var(--ku-purple) 22%
+        );
+
+    --ku-message-spot-soft:
+        color-mix(
+            in srgb,
+            var(--ku-message-background) 88%,
+            var(--ku-purple) 12%
+        );
+
+    --spot-a-x: -8%;
+    --spot-a-y: 116%;
+    --spot-a-w: 187px;
+    --spot-a-h: 107px;
+
+    --spot-b-x: 108%;
+    --spot-b-y: -10%;
+    --spot-b-w: 149px;
+    --spot-b-h: 88px;
+
+    --spot-c-x: 92%;
+    --spot-c-y: 118%;
+    --spot-c-w: 107px;
+    --spot-c-h: 146px;
+
+    --panel-a-x: 116%;
+    --panel-a-y: -20%;
+
+    --panel-b-x: -18%;
+    --panel-b-y: 120%;
+
+    --ku-avatar-enter-x: -19px;
+    --ku-user-enter-x: -12px;
+    --ku-message-enter-x: 22px;
+    --ku-angry-message-enter-x: 36px;
+
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    gap: 6px;
+
+    inline-size: fit-content;
+    min-inline-size: 0;
+
+    max-inline-size:
+        min(
+            var(--cs-bubble-width, 365px),
+            100%
+        );
+
+    flex-shrink: 1;
+
+    overflow: visible;
+
+    padding-block-start:
+        var(
+            --cs-bubble-padding-top,
+            var(--cs-bubble-padding, 6px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-bubble-padding-right,
+            var(--cs-bubble-padding, 8.5px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-bubble-padding-bottom,
+            var(--cs-bubble-padding, 6px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-bubble-padding-left,
+            var(--cs-bubble-padding, 6.8px)
+        );
+
+    background-color:
+        var(
+            --cs-bubble-background-color,
+            #8b5acb
+        );
+
+    background-image:
+        var(
+            --cs-bubble-background-gradient,
+            linear-gradient(
+                145deg,
+                color-mix(
+                    in srgb,
+                    var(--ku-purple) 95%,
+                    #ffffff 5%
+                ),
+                var(--ku-purple) 55%,
+                color-mix(
+                    in srgb,
+                    var(--ku-purple) 94%,
+                    #000000 6%
+                )
+            )
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-bubble-border-width,
+            4.25px
+        );
+
+    border-style:
+        var(
+            --cs-bubble-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-bubble-border-color,
+            #171219
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-bubble-border-radius-top-left,
+            var(--cs-bubble-border-radius, 15.3px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-bubble-border-radius-top-right,
+            var(--cs-bubble-border-radius, 15.3px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-bubble-border-radius-bottom-right,
+            var(--cs-bubble-border-radius, 15.3px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-bubble-border-radius-bottom-left,
+            var(--cs-bubble-border-radius, 15.3px)
+        );
+
+    box-shadow:
+        var(--cs-bubble-box-shadow-inset,)
+        var(--cs-bubble-box-shadow-offset-x, 0px)
+        var(--cs-bubble-box-shadow-offset-y, 3.4px)
+        var(--cs-bubble-box-shadow-blur-radius, 9.4px)
+        var(--cs-bubble-box-shadow-spread-radius, 0px)
+        var(
+            --cs-bubble-box-shadow-color,
+            color-mix(
+                in srgb,
+                var(--ku-purple) 62%,
+                transparent
+            )
+        );
+
+    rotate: 0deg;
+
+    animation-name:
+        var(
+            --cs-bubble-animation,
+            ku-bubble-in
+        );
+
+    animation-duration:
+        var(
+            --cs-bubble-animation-duration,
+            680ms
+        );
+
+    animation-delay:
+        var(
+            --cs-bubble-animation-delay,
+            0ms
+        );
+
+    animation-timing-function:
+        var(
+            --cs-bubble-animation-timing-function,
+            cubic-bezier(.22, .85, .24, 1)
+        );
+
+    animation-fill-mode: both;
+}
+
+
+/*////////////// ODD //////////////*/
+
+.odd > .cs-bubble,
+.cs-bubble.odd {
+    --spot-a-x: -8%;
+    --spot-a-y: 116%;
+    --spot-a-w: 187px;
+    --spot-a-h: 107px;
+
+    --spot-b-x: 108%;
+    --spot-b-y: -10%;
+    --spot-b-w: 149px;
+    --spot-b-h: 88px;
+
+    --spot-c-x: 92%;
+    --spot-c-y: 118%;
+    --spot-c-w: 107px;
+    --spot-c-h: 146px;
+
+    --panel-a-x: 116%;
+    --panel-a-y: -20%;
+
+    --panel-b-x: -18%;
+    --panel-b-y: 120%;
+}
+
+
+/*////////////// EVEN //////////////*/
+
+.even > .cs-bubble,
+.cs-bubble.even {
+    --spot-a-x: 108%;
+    --spot-a-y: 32%;
+    --spot-a-w: 165px;
+    --spot-a-h: 139px;
+
+    --spot-b-x: -10%;
+    --spot-b-y: 108%;
+    --spot-b-w: 143px;
+    --spot-b-h: 116px;
+
+    --spot-c-x: 18%;
+    --spot-c-y: -12%;
+    --spot-c-w: 126px;
+    --spot-c-h: 78px;
+
+    --panel-a-x: -18%;
+    --panel-a-y: 118%;
+
+    --panel-b-x: 116%;
+    --panel-b-y: -18%;
+}
+
+
+/*////////////// BUBBLE SPOTS //////////////*/
+
+.cs-bubble::before {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+
+    inset:
+        var(
+            --cs-bubble-border-width,
+            4.25px
+        );
+
+    pointer-events: none;
+
+    border-start-start-radius:
+        max(
+            0px,
+            calc(
+                var(
+                    --cs-bubble-border-radius-top-left,
+                    var(--cs-bubble-border-radius, 15.3px)
+                )
+                -
+                var(
+                    --cs-bubble-border-width,
+                    4.25px
+                )
+            )
+        );
+
+    border-start-end-radius:
+        max(
+            0px,
+            calc(
+                var(
+                    --cs-bubble-border-radius-top-right,
+                    var(--cs-bubble-border-radius, 15.3px)
+                )
+                -
+                var(
+                    --cs-bubble-border-width,
+                    4.25px
+                )
+            )
+        );
+
+    border-end-end-radius:
+        max(
+            0px,
+            calc(
+                var(
+                    --cs-bubble-border-radius-bottom-right,
+                    var(--cs-bubble-border-radius, 15.3px)
+                )
+                -
+                var(
+                    --cs-bubble-border-width,
+                    4.25px
+                )
+            )
+        );
+
+    border-end-start-radius:
+        max(
+            0px,
+            calc(
+                var(
+                    --cs-bubble-border-radius-bottom-left,
+                    var(--cs-bubble-border-radius, 15.3px)
+                )
+                -
+                var(
+                    --cs-bubble-border-width,
+                    4.25px
+                )
+            )
+        );
+
+    background:
+        radial-gradient(
+            ellipse
+            var(--spot-a-w)
+            var(--spot-a-h)
+            at
+            var(--spot-a-x)
+            var(--spot-a-y),
+            var(--ku-light) 0 61%,
+            transparent 62.5%
+        ),
+
+        radial-gradient(
+            ellipse
+            var(--spot-b-w)
+            var(--spot-b-h)
+            at
+            var(--spot-b-x)
+            var(--spot-b-y),
+            var(--ku-dark) 0 60%,
+            transparent 61.5%
+        ),
+
+        radial-gradient(
+            ellipse
+            var(--spot-c-w)
+            var(--spot-c-h)
+            at
+            var(--spot-c-x)
+            var(--spot-c-y),
+            var(--ku-mid) 0 59%,
+            transparent 60.5%
+        );
+
+    animation:
+        ku-spots-in
+        820ms
+        calc(
+            var(--cs-bubble-animation-delay, 0ms)
+            + 90ms
+        )
+        cubic-bezier(.22, .8, .24, 1)
+        both;
+}
+
+
+/*////////////// HEADER //////////////*/
+
+.cs-header {
+    position: relative;
+    z-index: 5;
+
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    gap: 5.1px;
+
+    inline-size: max-content;
+    min-inline-size: max-content;
+    max-inline-size: none;
+
+    rotate: -1.7deg;
+}
+
+
+/*////////////// AVATAR //////////////*/
+
+.cs-avatar {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    rotate: -3.8deg;
+}
+
+
+/*////////////// AVATAR IMAGE //////////////*/
+
+.cs-avatar img,
+.cs-avatar video {
+    display: block;
+
+    inline-size:
+        var(
+            --cs-avatar-size,
+            36px
+        );
+
+    block-size:
+        var(
+            --cs-avatar-size,
+            36px
+        );
+
+    object-fit: cover;
+
+    overflow: hidden;
+
+    padding-block-start:
+        var(
+            --cs-avatar-padding-top,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-avatar-padding-right,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-avatar-padding-bottom,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-avatar-padding-left,
+            var(--cs-avatar-padding, 0px)
+        );
+
+    background-color:
+        var(
+            --cs-avatar-background-color,
+            #8b5acb
+        );
+
+    background-image:
+        var(
+            --cs-avatar-background-gradient,
+            none
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-avatar-border-width,
+            2.6px
+        );
+
+    border-style:
+        var(
+            --cs-avatar-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-avatar-border-color,
+            #171219
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-avatar-border-radius-top-left,
+            var(--cs-avatar-border-radius, 10.2px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-avatar-border-radius-top-right,
+            var(--cs-avatar-border-radius, 10.2px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-avatar-border-radius-bottom-right,
+            var(--cs-avatar-border-radius, 10.2px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-avatar-border-radius-bottom-left,
+            var(--cs-avatar-border-radius, 10.2px)
+        );
+
+    box-shadow:
+        var(--cs-avatar-box-shadow-inset,)
+        var(--cs-avatar-box-shadow-offset-x, 3.4px)
+        var(--cs-avatar-box-shadow-offset-y, 3.4px)
+        var(--cs-avatar-box-shadow-blur-radius, 0px)
+        var(--cs-avatar-box-shadow-spread-radius, 0px)
+        var(
+            --cs-avatar-box-shadow-color,
+            #7049a3
+        );
+
+    animation-name:
+        var(
+            --cs-avatar-animation,
+            ku-avatar-in
+        );
+
+    animation-duration:
+        var(
+            --cs-avatar-animation-duration,
+            680ms
+        );
+
+    animation-delay:
+        calc(
+            var(--cs-avatar-animation-delay, 0ms)
+            + 160ms
+        );
+
+    animation-timing-function:
+        var(
+            --cs-avatar-animation-timing-function,
+            cubic-bezier(.2, .84, .24, 1)
+        );
+
+    animation-fill-mode: both;
+}
+
+
+/*////////////// USER //////////////*/
+
+.cs-user {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 3.4px;
+
+    inline-size: max-content;
+    min-inline-size: max-content;
+    max-inline-size: none;
+
+    padding: 0;
+
+    background: none;
+
+    border: 0;
+
+    box-shadow: none;
+
+    rotate: 2.4deg;
+
+    animation: none;
+}
+
+
+/*////////////// BADGES //////////////*/
+
+.cs-user > .cs-badges {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 1.7px;
+
+    inline-size: fit-content;
+    max-inline-size: 100%;
+
+    padding-block: 1.7px;
+    padding-inline: 4.25px;
+
+    background-color:
+        var(
+            --cs-username-background-color,
+            #171219
+        );
+
+    background-image:
+        var(
+            --cs-username-background-gradient,
+            radial-gradient(
+                ellipse 47px 26px
+                at
+                var(--panel-a-x)
+                var(--panel-a-y),
+                var(--ku-username-spot) 0 63%,
+                transparent 64.5%
+            )
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-username-border-width,
+            1px
+        );
+
+    border-style:
+        var(
+            --cs-username-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-username-border-color,
+            #171219
+        );
+
+    border-radius:
+        var(
+            --cs-username-border-radius,
+            6.8px
+        );
+
+    box-shadow:
+        var(--cs-username-box-shadow-inset,)
+        var(--cs-username-box-shadow-offset-x, 2.6px)
+        var(--cs-username-box-shadow-offset-y, 2.6px)
+        var(--cs-username-box-shadow-blur-radius, 0px)
+        var(--cs-username-box-shadow-spread-radius, 0px)
+        var(
+            --cs-username-box-shadow-color,
+            #7049a3
+        );
+
+    rotate: -2.55deg;
+
+    animation:
+        ku-badges-in
+        540ms
+        calc(
+            var(--cs-username-animation-delay, 0ms)
+            + 240ms
+        )
+        cubic-bezier(.2, .84, .24, 1)
+        both;
+}
+
+
+/*////////////// EMPTY BADGES //////////////*/
+
+.cs-user > .cs-badges:empty,
+.cs-user > .cs-badges:not(:has(img, svg)),
+.cs-bubble.cs-badges-hidden
+.cs-user > .cs-badges {
+    display: none !important;
+
+    inline-size: 0;
+    block-size: 0;
+
+    min-inline-size: 0;
+    min-block-size: 0;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    box-shadow: none;
+
+    animation: none;
+}
+
+
+/*////////////// BADGE IMAGE //////////////*/
+
+.cs-badges img,
+.cs-badges svg,
+.cs-badges--inline img,
+.cs-badges--inline svg {
+    display: block;
+
+    inline-size:
+        calc(
+            var(--cs-username-font-size, 11px)
+            + 1.7px
+        );
+
+    block-size:
+        calc(
+            var(--cs-username-font-size, 11px)
+            + 1.7px
+        );
+
+    object-fit: contain;
+
+    border-radius: .85px;
+}
+
+
+/*////////////// BADGES AFTER NAME //////////////*/
+
+.cs-bubble.cs-badges-position-after-name
+.cs-user > .cs-badges {
+    order: 1;
+}
+
+
+/*////////////// USERNAME //////////////*/
+
+.cs-username {
+    display: block;
+
+    flex: 0 0 auto;
+
+    inline-size: max-content;
+    min-inline-size: max-content;
+    max-inline-size: none;
+
+    overflow: visible;
+
+    padding-block-start:
+        var(
+            --cs-username-padding-top,
+            var(--cs-username-padding, 2.55px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-username-padding-right,
+            var(--cs-username-padding, 5.95px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-username-padding-bottom,
+            var(--cs-username-padding, 2.55px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-username-padding-left,
+            var(--cs-username-padding, 5.95px)
+        );
+
+    color:
+        var(
+            --cs-username-font-color,
+            #fff8fc
+        );
+
+    background-color:
+        var(
+            --cs-username-background-color,
+            #171219
+        );
+
+    background-image:
+        var(
+            --cs-username-background-gradient,
+            radial-gradient(
+                ellipse 95px 39px
+                at
+                var(--panel-b-x)
+                var(--panel-b-y),
+                var(--ku-username-spot) 0 66%,
+                transparent 67.5%
+            )
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-username-border-width,
+            .85px
+        );
+
+    border-style:
+        var(
+            --cs-username-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-username-border-color,
+            #171219
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-username-border-radius-top-left,
+            var(--cs-username-border-radius, 8.5px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-username-border-radius-top-right,
+            var(--cs-username-border-radius, 8.5px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-username-border-radius-bottom-right,
+            var(--cs-username-border-radius, 8.5px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-username-border-radius-bottom-left,
+            var(--cs-username-border-radius, 8.5px)
+        );
+
+    box-shadow:
+        var(--cs-username-box-shadow-inset,)
+        var(--cs-username-box-shadow-offset-x, 3.4px)
+        var(--cs-username-box-shadow-offset-y, 3.4px)
+        var(--cs-username-box-shadow-blur-radius, 0px)
+        var(--cs-username-box-shadow-spread-radius, 0px)
+        var(
+            --cs-username-box-shadow-color,
+            #7049a3
+        );
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Arial Rounded MT Bold"
+        ),
+        Arial,
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-username-font-size,
+            11px
+        );
+
+    font-weight:
+        var(
+            --cs-username-font-weight,
+            800
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: .01em;
+
+    white-space: nowrap;
+
+    text-overflow: clip;
+
+    overflow-wrap: normal;
+
+    word-break: normal;
+
+    rotate: 1.7deg;
+
+    -webkit-text-stroke:
+        var(
+            --cs-username-text-stroke-width,
+            0px
+        )
+        var(
+            --cs-username-text-stroke-color,
+            transparent
+        );
+
+    text-shadow:
+        var(
+            --cs-username-text-shadow-offset-x,
+            0px
+        )
+        var(
+            --cs-username-text-shadow-offset-y,
+            .85px
+        )
+        var(
+            --cs-username-text-shadow-blur-radius,
+            1.7px
+        )
+        var(
+            --cs-username-text-shadow-color,
+            rgba(0, 0, 0, .4)
+        );
+
+    animation-name:
+        var(
+            --cs-username-animation,
+            ku-username-in
+        );
+
+    animation-duration:
+        var(
+            --cs-username-animation-duration,
+            620ms
+        );
+
+    animation-delay:
+        calc(
+            var(--cs-username-animation-delay, 0ms)
+            + 310ms
+        );
+
+    animation-timing-function:
+        var(
+            --cs-username-animation-timing-function,
+            cubic-bezier(.2, .84, .24, 1)
+        );
+
+    animation-fill-mode: both;
+}
+
+
+/*////////////// INLINE USERNAME //////////////*/
+
+.cs-username--inline {
+    color:
+        var(
+            --cs-username-font-color,
+            #fff8fc
+        );
+
+    font-family:
+        var(
+            --cs-username-font-family,
+            "Arial Rounded MT Bold"
+        ),
+        Arial,
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-username-font-size,
+            11px
+        );
+
+    font-weight:
+        var(
+            --cs-username-font-weight,
+            800
+        );
+
+    line-height: 1.05;
+
+    white-space: nowrap;
+}
+
+
+/*////////////// PRONOUNS //////////////*/
+
+.cs-pronouns {
+    margin-inline-end: 2.55px;
+
+    color:
+        var(
+            --cs-pronouns-font-color,
+            #ead7ed
+        );
+
+    background-color:
+        var(
+            --cs-pronouns-background-color,
+            transparent
+        );
+}
+
+
+/*////////////// CONTENT //////////////*/
+
+.cs-content {
+    position: relative;
+    z-index: 5;
+
+    flex: 1 1 auto;
+
+    min-inline-size: 53px;
+    max-inline-size: 238px;
+
+    display: flex;
+    align-items: stretch;
+
+    padding-block: 2.55px;
+    padding-inline-start: 1.7px;
+    padding-inline-end: 5.95px;
+
+    overflow: visible;
+
+    rotate: 0deg;
+}
+
+
+/*////////////// MESSAGE //////////////*/
+
+.cs-message {
+    position: relative;
+
+    flex: 0 1 auto;
+
+    inline-size: fit-content;
+
+    min-inline-size: 0;
+    max-inline-size: 100%;
+
+    min-block-size: 39px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 3.4px;
+
+    padding-block-start:
+        var(
+            --cs-message-padding-top,
+            var(--cs-message-padding, 5.1px)
+        );
+
+    padding-inline-end:
+        var(
+            --cs-message-padding-right,
+            var(--cs-message-padding, 7.65px)
+        );
+
+    padding-block-end:
+        var(
+            --cs-message-padding-bottom,
+            var(--cs-message-padding, 5.1px)
+        );
+
+    padding-inline-start:
+        var(
+            --cs-message-padding-left,
+            var(--cs-message-padding, 7.65px)
+        );
+
+    color:
+        var(
+            --cs-message-font-color,
+            #fff8fd
+        );
+
+    background-color:
+        var(
+            --cs-message-background-color,
+            #171219
+        );
+
+    background-image:
+        var(
+            --cs-message-background-gradient,
+            radial-gradient(
+                ellipse 183px 87px
+                at
+                var(--panel-a-x)
+                var(--panel-a-y),
+                var(--ku-message-spot) 0 62%,
+                transparent 63.5%
+            ),
+
+            radial-gradient(
+                ellipse 119px 80px
+                at
+                var(--panel-b-x)
+                var(--panel-b-y),
+                var(--ku-message-spot-soft) 0 61%,
+                transparent 62.5%
+            )
+        );
+
+    background-repeat: no-repeat;
+
+    border-width:
+        var(
+            --cs-message-border-width,
+            .85px
+        );
+
+    border-style:
+        var(
+            --cs-message-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-message-border-color,
+            #171219
+        );
+
+    border-start-start-radius:
+        var(
+            --cs-message-border-radius-top-left,
+            var(--cs-message-border-radius, 10.2px)
+        );
+
+    border-start-end-radius:
+        var(
+            --cs-message-border-radius-top-right,
+            var(--cs-message-border-radius, 10.2px)
+        );
+
+    border-end-end-radius:
+        var(
+            --cs-message-border-radius-bottom-right,
+            var(--cs-message-border-radius, 10.2px)
+        );
+
+    border-end-start-radius:
+        var(
+            --cs-message-border-radius-bottom-left,
+            var(--cs-message-border-radius, 10.2px)
+        );
+
+    box-shadow:
+        var(--cs-message-box-shadow-inset,)
+        var(--cs-message-box-shadow-offset-x, 3.4px)
+        var(--cs-message-box-shadow-offset-y, 3.4px)
+        var(--cs-message-box-shadow-blur-radius, 0px)
+        var(--cs-message-box-shadow-spread-radius, 0px)
+        var(
+            --cs-message-box-shadow-color,
+            #7049a3
+        );
+
+    font-family:
+        var(
+            --cs-message-font-family,
+            "Arial Rounded MT Bold"
+        ),
+        Arial,
+        sans-serif;
+
+    font-size:
+        var(
+            --cs-message-font-size,
+            11.5px
+        );
+
+    font-weight:
+        var(
+            --cs-message-font-weight,
+            600
+        );
+
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+
+    word-break: normal;
+
+    rotate: -1.7deg;
+
+    -webkit-text-stroke:
+        var(
+            --cs-message-text-stroke-width,
+            0px
+        )
+        var(
+            --cs-message-text-stroke-color,
+            transparent
+        );
+
+    text-shadow:
+        var(
+            --cs-message-text-shadow-offset-x,
+            0px
+        )
+        var(
+            --cs-message-text-shadow-offset-y,
+            .85px
+        )
+        var(
+            --cs-message-text-shadow-blur-radius,
+            1.7px
+        )
+        var(
+            --cs-message-text-shadow-color,
+            rgba(0, 0, 0, .35)
+        );
+
+    animation-name:
+        var(
+            --cs-message-animation,
+            ku-message-in
+        );
+
+    animation-duration:
+        var(
+            --cs-message-animation-duration,
+            720ms
+        );
+
+    animation-delay:
+        calc(
+            var(--cs-message-animation-delay, 0ms)
+            + 400ms
+        );
+
+    animation-timing-function:
+        var(
+            --cs-message-animation-timing-function,
+            cubic-bezier(.2, .84, .24, 1)
+        );
+
+    animation-fill-mode: both;
+}
+
+
+/*////////////// EMOTES //////////////*/
+
+.cs-message .emote {
+    flex: 0 0 auto;
+
+    inline-size: auto;
+    block-size: auto;
+
+    max-inline-size: none;
+
+    max-block-size:
+        calc(
+            var(--cs-message-font-size, 11.5px)
+            * 1.55
+        );
+
+    margin-inline: 1.7px;
+
+    vertical-align: middle;
+}
+
+
+/*////////////// EMOTE IMAGES //////////////*/
+
+.cs-message img.emote,
+.cs-message .emote img {
+    display: inline-block;
+
+    inline-size: auto !important;
+
+    block-size:
+        calc(
+            var(--cs-message-font-size, 11.5px)
+            * 1.55
+        )
+        !important;
+
+    width: auto !important;
+
+    height:
+        calc(
+            var(--cs-message-font-size, 11.5px)
+            * 1.55
+        )
+        !important;
+
+    max-inline-size: none !important;
+
+    max-block-size:
+        calc(
+            var(--cs-message-font-size, 11.5px)
+            * 1.55
+        )
+        !important;
+
+    max-width: none !important;
+
+    max-height:
+        calc(
+            var(--cs-message-font-size, 11.5px)
+            * 1.55
+        )
+        !important;
+
+    object-fit: contain;
+
+    flex: 0 0 auto;
+
+    margin: 0;
+
+    vertical-align: middle;
+}
+
+
+/*////////////// EMOTE ONLY //////////////*/
+
+.cs-bubble.cs-emote-only
+.cs-message {
+    min-block-size: 34px;
+
+    justify-content: center;
+
+    padding-block: 5.1px;
+    padding-inline: 9.35px;
+}
+
+
+/*////////////// INLINE MODE //////////////*/
+
+.cs-bubble.cs-username-position-inline:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-user {
+    display: none;
+}
+
+.cs-bubble.cs-username-position-inline:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-header {
+    inline-size: auto;
+    min-inline-size: 0;
+    max-inline-size: none;
+}
+
+.cs-bubble.cs-username-position-inline:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-content {
+    display: block;
+
+    max-inline-size: 255px;
+}
+
+.cs-bubble.cs-username-position-inline:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-user--inline {
+    display: inline-flex;
+    align-items: baseline;
+
+    gap: 2.55px;
+
+    margin-inline-end: 4.25px;
+    margin-block-end: 3.4px;
+
+    padding-block: 2.55px;
+    padding-inline: 5.95px;
+
+    color:
+        var(
+            --cs-username-font-color,
+            #fff8fc
+        );
+
+    background-color:
+        var(
+            --cs-username-background-color,
+            #171219
+        );
+
+    background-image:
+        var(
+            --cs-username-background-gradient,
+            none
+        );
+
+    border-width:
+        var(
+            --cs-username-border-width,
+            .85px
+        );
+
+    border-style:
+        var(
+            --cs-username-border-style,
+            solid
+        );
+
+    border-color:
+        var(
+            --cs-username-border-color,
+            #171219
+        );
+
+    border-radius:
+        var(
+            --cs-username-border-radius,
+            7.65px
+        );
+
+    box-shadow:
+        var(--cs-username-box-shadow-inset,)
+        var(--cs-username-box-shadow-offset-x, 2.55px)
+        var(--cs-username-box-shadow-offset-y, 2.55px)
+        var(--cs-username-box-shadow-blur-radius, 0px)
+        var(--cs-username-box-shadow-spread-radius, 0px)
+        var(
+            --cs-username-box-shadow-color,
+            #7049a3
+        );
+
+    rotate: 1.7deg;
+}
+
+
+/*////////////// AVATAR RIGHT //////////////*/
+
+.cs-bubble.cs-avatar-position-right:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)) {
+    --ku-avatar-enter-x: 19px;
+    --ku-user-enter-x: 12px;
+    --ku-message-enter-x: -22px;
+    --ku-angry-message-enter-x: -36px;
+
+    flex-direction: row-reverse;
+}
+
+.cs-bubble.cs-avatar-position-right:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-header {
+    flex-direction: row-reverse;
+
+    rotate: 1.7deg;
+}
+
+.cs-bubble.cs-avatar-position-right:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-avatar {
+    rotate: 3.8deg;
+}
+
+.cs-bubble.cs-avatar-position-right:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-user {
+    align-items: flex-end;
+
+    rotate: -2.4deg;
+}
+
+.cs-bubble.cs-avatar-position-right:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-message {
+    rotate: 1.7deg;
+}
+
+
+/*////////////// AVATAR CENTER //////////////*/
+
+.cs-bubble.cs-avatar-position-center:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)) {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.cs-bubble.cs-avatar-position-center:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-header {
+    inline-size: auto;
+
+    min-inline-size: 0;
+    max-inline-size: 100%;
+
+    flex-direction: column;
+
+    rotate: 0deg;
+}
+
+.cs-bubble.cs-avatar-position-center:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-user {
+    align-items: center;
+}
+
+.cs-bubble.cs-avatar-position-center:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-content {
+    inline-size: 100%;
+
+    max-inline-size: 100%;
+}
+
+
+/*////////////// AVATAR HIDDEN //////////////*/
+
+.cs-bubble.cs-avatar-hidden:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)) {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.cs-bubble.cs-avatar-hidden:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+))
+.cs-user {
+    align-items: center;
+}
+
+
+/*////////////// EVENT TAB DEFAULT //////////////*/
+
+.cs-event-tab {
+    display: none;
+}
+
+
+/*////////////// SPECIAL EVENTS //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+) {
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+
+    gap: 6.8px;
+
+    inline-size: fit-content;
+
+    min-inline-size:
+        min(
+            225px,
+            100%
+        );
+
+    max-inline-size:
+        min(
+            var(--cs-bubble-width, 365px),
+            100%
+        );
+
+    min-block-size: 55px;
+
+    padding-block-start: 23px;
+    padding-inline-end: 8.5px;
+    padding-block-end: 6px;
+    padding-inline-start: 8.5px;
+
+    overflow: visible;
+
+    rotate: 0deg;
+
+    animation-name:
+        var(
+            --cs-events-animation,
+            ku-event-shell-in
+        );
+
+    animation-duration:
+        var(
+            --cs-events-animation-duration,
+            720ms
+        );
+
+    animation-delay:
+        var(
+            --cs-events-animation-delay,
+            0ms
+        );
+
+    animation-timing-function:
+        var(
+            --cs-events-animation-timing-function,
+            cubic-bezier(.18, .78, .18, 1)
+        );
+
+    animation-fill-mode: both;
+}
+
+
+/*////////////// EVENT SPOTS //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)::before {
+    animation:
+        ku-event-spots-in
+        880ms
+        calc(
+            var(--cs-events-animation-delay, 0ms)
+            + 110ms
+        )
+        cubic-bezier(.18, .8, .2, 1)
+        both;
+}
+
+
+/*////////////// EVENT CLEANUP //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-avatar,
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-badges,
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-badges--inline,
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-pronouns {
+    display: none !important;
+}
+
+
+/*////////////// EVENT HEADER //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-header {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    inline-size: max-content;
+    min-inline-size: max-content;
+    max-inline-size: none;
+
+    margin: 0;
+
+    rotate: -1.1deg;
+
+    animation: none;
+}
+
+
+/*////////////// EVENT USER //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-user {
+    flex: 0 0 auto;
+
+    display: flex;
+
+    inline-size: max-content;
+    min-inline-size: max-content;
+    max-inline-size: none;
+
+    align-items: flex-start;
+
+    gap: 0;
+
+    rotate: 0deg;
+
+    animation: none;
+}
+
+
+/*////////////// EVENT USERNAME //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-username {
+    inline-size: max-content;
+    min-inline-size: max-content;
+    max-inline-size: none;
+
+    overflow: visible;
+
+    padding-block: 3.4px;
+    padding-inline: 7.65px;
+
+    white-space: nowrap;
+
+    overflow-wrap: normal;
+
+    word-break: normal;
+
+    text-overflow: clip;
+
+    text-align: start;
+
+    rotate: -1.2deg;
+
+    animation-name:
+        var(
+            --cs-username-animation,
+            ku-event-username-in
+        );
+
+    animation-duration:
+        var(
+            --cs-username-animation-duration,
+            620ms
+        );
+
+    animation-delay:
+        calc(
+            var(--cs-events-animation-delay, 0ms)
+            + 280ms
+        );
+
+    animation-timing-function:
+        var(
+            --cs-username-animation-timing-function,
+            cubic-bezier(.18, .82, .18, 1)
+        );
+
+    animation-fill-mode: both;
+}
+
+
+/*////////////// EVENT CONTENT //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-content {
+    flex: 1 1 auto;
+
+    display: flex;
+    align-items: center;
+
+    inline-size: auto;
+
+    min-inline-size: 70px;
+    max-inline-size: 235px;
+
+    padding: 0;
+
+    overflow: visible;
+}
+
+
+/*////////////// EVENT MESSAGE //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-message {
+    flex: 0 1 auto;
+
+    inline-size: fit-content;
+
+    min-inline-size: 70px;
+    max-inline-size: 100%;
+
+    min-block-size: 31px;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-block: 4.25px;
+    padding-inline: 7.65px;
+
+    text-align: start;
+
+    rotate: .9deg;
+
+    animation-name:
+        var(
+            --cs-message-animation,
+            ku-event-message-in
+        );
+
+    animation-duration:
+        var(
+            --cs-message-animation-duration,
+            700ms
+        );
+
+    animation-delay:
+        calc(
+            var(--cs-events-animation-delay, 0ms)
+            + 370ms
+        );
+
+    animation-timing-function:
+        var(
+            --cs-message-animation-timing-function,
+            cubic-bezier(.16, .82, .18, 1)
+        );
+
+    animation-fill-mode: both;
+}
+
+
+/*////////////// EVENT TAB //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-event-tab {
+    position: absolute;
+
+    z-index: 15;
+
+    inset-inline-start: 50%;
+
+    inset-block-start:
+        calc(
+            -1 *
+            var(
+                --cs-bubble-border-width,
+                4.25px
+            )
+        );
+
+    display: grid;
+    place-items: center;
+
+    inline-size: 61px;
+    block-size: 26px;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    transform:
+        translateX(-50%);
+
+    transform-origin:
+        50% 0%;
+
+    animation: none;
+}
+
+
+/*////////////// TAB SHAPE //////////////*/
+
+.cs-event-tab-shape {
+    position: absolute;
+
+    z-index: 0;
+
+    inset: 0;
+
+    display: block;
+
+    inline-size: 100%;
+    block-size: 100%;
+
+    overflow: visible;
+
+    transform-origin:
+        50% 0%;
+
+    animation:
+        ku-event-tab-shape-in
+        650ms
+        calc(
+            var(--cs-events-animation-delay, 0ms)
+            + 110ms
+        )
+        cubic-bezier(.16, .82, .18, 1)
+        both;
+}
+
+.cs-event-tab-shape path {
+    fill:
+        var(
+            --cs-bubble-border-color,
+            #171219
+        );
+}
+
+
+/*////////////// EVENT SKULL //////////////*/
+
+.cs-event-skull {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    inline-size: 19px;
+    block-size: auto;
+
+    overflow: visible;
+
+    transform-origin:
+        50% 50%;
+
+    animation:
+        ku-event-skull-in
+        560ms
+        calc(
+            var(--cs-events-animation-delay, 0ms)
+            + 190ms
+        )
+        cubic-bezier(.16, .84, .18, 1)
+        both;
+}
+
+
+/*////////////// SKULL HEAD //////////////*/
+
+.cs-event-skull__head {
+    fill:
+        var(
+            --cs-bubble-background-color,
+            #8b5acb
+        );
+
+    stroke:
+        var(
+            --cs-bubble-border-color,
+            #171219
+        );
+
+    stroke-width: 10;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/*////////////// SKULL EYES //////////////*/
+
+.cs-event-skull__eye {
+    fill:
+        var(
+            --cs-bubble-border-color,
+            #171219
+        );
+}
+
+
+/*////////////// SKULL TEETH //////////////*/
+
+.cs-event-skull__teeth {
+    fill: none;
+
+    stroke:
+        var(
+            --cs-bubble-border-color,
+            #171219
+        );
+
+    stroke-width: 10;
+
+    stroke-linecap: round;
+}
+
+
+/*////////////// NORMAL EVENTS //////////////*/
+
+.cs-bubble.cs-event:is(
+    .cs-event-cheer,
+    .cs-event-highlight,
+    .cs-event-channel-points,
+    .cs-event-gigantified,
+    .cs-event-shared-chat,
+    .cs-event-external
+)
+.cs-event-tab {
+    display: none !important;
+}
+
+
+/*////////////// ENDS BANG //////////////*/
+
+.cs-bubble.cs-ends-bang {
+    --ku-light:
+        color-mix(
+            in srgb,
+            var(--ku-purple) 76%,
+            var(--ku-pink-hot) 24%
+        );
+
+    --ku-mid:
+        color-mix(
+            in srgb,
+            var(--ku-purple) 78%,
+            #c875a5 22%
+        );
+
+    --ku-dark:
+        color-mix(
+            in srgb,
+            var(--ku-purple) 76%,
+            #60405c 24%
+        );
+
+    --ku-username-spot:
+        color-mix(
+            in srgb,
+            var(--ku-username-background) 70%,
+            var(--ku-pink-hot) 30%
+        );
+
+    --ku-message-spot:
+        color-mix(
+            in srgb,
+            var(--ku-message-background) 70%,
+            var(--ku-pink-hot) 30%
+        );
+
+    --ku-message-spot-soft:
+        color-mix(
+            in srgb,
+            var(--ku-message-background) 80%,
+            var(--ku-pink-hot) 20%
+        );
+}
+
+
+/*////////////// ANGRY BUBBLE //////////////*/
+
+.cs-bubble.cs-ends-bang:not(.cs-event) {
+    animation:
+        ku-angry-bubble-in
+        680ms
+        var(--cs-bubble-animation-delay, 0ms)
+        cubic-bezier(.18, .86, .22, 1)
+        both,
+
+        ku-angry-shake
+        360ms
+        calc(
+            var(--cs-bubble-animation-delay, 0ms)
+            + 900ms
+        )
+        cubic-bezier(.45, 0, .55, 1);
+}
+
+
+/*////////////// ANGRY SPOTS //////////////*/
+
+.cs-bubble.cs-ends-bang::before {
+    animation:
+        ku-angry-spots-in
+        700ms
+        calc(
+            var(--cs-bubble-animation-delay, 0ms)
+            + 80ms
+        )
+        cubic-bezier(.2, .82, .22, 1)
+        both;
+}
+
+
+/*////////////// ANGRY AVATAR //////////////*/
+
+.cs-bubble.cs-ends-bang:not(.cs-event)
+.cs-avatar {
+    rotate: -5.1deg;
+}
+
+.cs-bubble.cs-ends-bang:not(.cs-event)
+.cs-avatar img,
+
+.cs-bubble.cs-ends-bang:not(.cs-event)
+.cs-avatar video {
+    animation:
+        ku-angry-avatar-in
+        650ms
+        calc(
+            var(--cs-avatar-animation-delay, 0ms)
+            + 150ms
+        )
+        cubic-bezier(.16, .88, .2, 1)
+        both;
+}
+
+
+/*////////////// ANGRY BADGES //////////////*/
+
+.cs-bubble.cs-ends-bang:not(.cs-event)
+.cs-user > .cs-badges {
+    animation:
+        ku-angry-badges-in
+        520ms
+        calc(
+            var(--cs-username-animation-delay, 0ms)
+            + 250ms
+        )
+        cubic-bezier(.18, .86, .22, 1)
+        both;
+}
+
+
+/*////////////// ANGRY USERNAME //////////////*/
+
+.cs-bubble.cs-ends-bang:not(.cs-event)
+.cs-username {
+    rotate: 2.55deg;
+
+    animation:
+        ku-angry-username-in
+        580ms
+        calc(
+            var(--cs-username-animation-delay, 0ms)
+            + 330ms
+        )
+        cubic-bezier(.16, .88, .2, 1)
+        both;
+}
+
+
+/*////////////// ANGRY MESSAGE //////////////*/
+
+.cs-bubble.cs-ends-bang:not(.cs-event)
+.cs-message {
+    rotate: -2.65deg;
+
+    animation:
+        ku-angry-message-in
+        680ms
+        calc(
+            var(--cs-message-animation-delay, 0ms)
+            + 430ms
+        )
+        cubic-bezier(.14, .88, .18, 1)
+        both;
+}
+
+
+/*////////////// ANGRY RIGHT //////////////*/
+
+.cs-bubble.cs-avatar-position-right.cs-ends-bang:not(.cs-event)
+.cs-avatar {
+    rotate: 5.1deg;
+}
+
+.cs-bubble.cs-avatar-position-right.cs-ends-bang:not(.cs-event)
+.cs-username {
+    rotate: -2.55deg;
+}
+
+.cs-bubble.cs-avatar-position-right.cs-ends-bang:not(.cs-event)
+.cs-message {
+    rotate: 2.65deg;
+}
+
+
+/*////////////// USERNAME STYLE //////////////*/
+
+.cs-bubble.cs-username-italic
+.cs-username,
+.cs-bubble.cs-username-italic
+.cs-username--inline,
+.cs-bubble.cs-username-italic
+.cs-pronouns {
+    font-style: italic;
+}
+
+.cs-bubble.cs-username-underline
+.cs-username,
+.cs-bubble.cs-username-underline
+.cs-username--inline,
+.cs-bubble.cs-username-underline
+.cs-pronouns {
+    text-decoration: underline;
+}
+
+.cs-bubble.cs-username-uppercase
+.cs-username,
+.cs-bubble.cs-username-uppercase
+.cs-username--inline {
+    text-transform: uppercase;
+}
+
+.cs-bubble.cs-username-lowercase
+.cs-username,
+.cs-bubble.cs-username-lowercase
+.cs-username--inline {
+    text-transform: lowercase;
+}
+
+.cs-bubble.cs-username-capitalize
+.cs-username,
+.cs-bubble.cs-username-capitalize
+.cs-username--inline {
+    text-transform: capitalize;
+}
+
+
+/*////////////// MESSAGE STYLE //////////////*/
+
+.cs-bubble.cs-message-italic
+.cs-message {
+    font-style: italic;
+}
+
+.cs-bubble.cs-message-underline
+.cs-message {
+    text-decoration: underline;
+}
+
+.cs-bubble.cs-message-uppercase
+.cs-message {
+    text-transform: uppercase;
+}
+
+.cs-bubble.cs-message-lowercase
+.cs-message {
+    text-transform: lowercase;
+}
+
+.cs-bubble.cs-message-capitalize
+.cs-message {
+    text-transform: capitalize;
+}
+
+
+/*////////////// USERNAME ALIGNMENT //////////////*/
+
+.cs-bubble.cs-username-align-center
+.cs-username,
+.cs-bubble.cs-username-align-center
+.cs-username--inline {
+    text-align: center;
+}
+
+.cs-bubble.cs-username-align-end
+.cs-username,
+.cs-bubble.cs-username-align-end
+.cs-username--inline {
+    text-align: end;
+}
+
+
+/*////////////// MESSAGE ALIGNMENT //////////////*/
+
+.cs-bubble.cs-message-align-center
+.cs-message {
+    justify-content: center;
+
+    text-align: center;
+}
+
+.cs-bubble.cs-message-align-end
+.cs-message {
+    justify-content: flex-end;
+
+    text-align: end;
+}
+
+
+/*////////////// RTL //////////////*/
+
+.cs-bubble.cs-direction-rtl {
+    direction: ltr;
+}
+
+
+/*////////////// RTL TEXT //////////////*/
+
+.cs-bubble.cs-direction-rtl
+.cs-username,
+
+.cs-bubble.cs-direction-rtl
+.cs-username--inline,
+
+.cs-bubble.cs-direction-rtl
+.cs-pronouns,
+
+.cs-bubble.cs-direction-rtl
+.cs-message {
+    direction: rtl;
+
+    unicode-bidi: isolate;
+}
+
+
+/*////////////// RTL DEFAULT //////////////*/
+
+.cs-bubble.cs-direction-rtl:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)):not(.cs-avatar-position-right):not(.cs-avatar-position-center) {
+    --ku-avatar-enter-x: -19px;
+    --ku-user-enter-x: -12px;
+    --ku-message-enter-x: 22px;
+    --ku-angry-message-enter-x: 36px;
+
+    flex-direction: row;
+}
+
+.cs-bubble.cs-direction-rtl:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)):not(.cs-avatar-position-right):not(.cs-avatar-position-center)
+.cs-header {
+    flex-direction: row;
+
+    rotate: -1.7deg;
+}
+
+.cs-bubble.cs-direction-rtl:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)):not(.cs-avatar-position-right):not(.cs-avatar-position-center)
+.cs-user {
+    align-items: flex-start;
+}
+
+
+/*////////////// RTL AVATAR RIGHT //////////////*/
+
+.cs-bubble.cs-direction-rtl.cs-avatar-position-right:not(:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)) {
+    --ku-avatar-enter-x: 19px;
+    --ku-user-enter-x: 12px;
+    --ku-message-enter-x: -22px;
+    --ku-angry-message-enter-x: -36px;
+
+    flex-direction: row-reverse;
+}
+
+
+/*////////////// RTL MESSAGE //////////////*/
+
+.cs-bubble.cs-direction-rtl:not(.cs-message-align-center):not(.cs-message-align-end)
+.cs-message {
+    justify-content: flex-start;
+
+    text-align: start;
+}
+
+
+/*////////////// RTL USERNAME //////////////*/
+
+.cs-bubble.cs-direction-rtl:not(.cs-username-align-center):not(.cs-username-align-end)
+.cs-username,
+
+.cs-bubble.cs-direction-rtl:not(.cs-username-align-center):not(.cs-username-align-end)
+.cs-username--inline,
+
+.cs-bubble.cs-direction-rtl:not(.cs-username-align-center):not(.cs-username-align-end)
+.cs-pronouns {
+    text-align: start;
+}
+
+
+/*////////////// RTL SPECIAL EVENT //////////////*/
+
+.cs-bubble.cs-direction-rtl.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+) {
+    direction: ltr;
+
+    flex-direction: row;
+}
+
+.cs-bubble.cs-direction-rtl.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-username,
+
+.cs-bubble.cs-direction-rtl.cs-event:is(
+    .cs-event-sub,
+    .cs-event-resub,
+    .cs-event-subgift,
+    .cs-event-mystery-gift,
+    .cs-event-gift-upgrade,
+    .cs-event-reward-gift,
+    .cs-event-anon-gift-upgrade,
+    .cs-event-raid,
+    .cs-event-unraid,
+    .cs-event-announcement,
+    .cs-event-bits-badge,
+    .cs-event-kofi
+)
+.cs-message {
+    direction: rtl;
+}
+
+
+/*////////////// FULL WIDTH //////////////*/
+
+.cs-chat.cs-full-width
+.cs-bubble {
+    inline-size: 100%;
+
+    max-inline-size: none;
+}
+
+.cs-chat.cs-full-width
+.cs-bubble
+.cs-content {
+    max-inline-size: none;
+}
+
+
+/*////////////// HORIZONTAL //////////////*/
+
+.cs-chat.cs-chat--horizontal
+.cs-bubble {
+    max-inline-size: 100%;
+}
+
+
+/*////////////// BUBBLE REVEAL //////////////*/
+
+@keyframes ku-bubble-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(8.5px)
+            scale(.982);
+    }
+
+    58% {
+        opacity: 1;
+
+        transform:
+            translateY(-1.3px)
+            scale(1.003);
+    }
+
+    78% {
+        transform:
+            translateY(.4px)
+            scale(.999);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// SPOT REVEAL //////////////*/
+
+@keyframes ku-spots-in {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: .12;
+    }
+
+    68% {
+        opacity: .72;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*////////////// AVATAR REVEAL //////////////*/
+
+@keyframes ku-avatar-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(
+                var(--ku-avatar-enter-x)
+            )
+            translateY(2.55px)
+            rotate(-4.25deg)
+            scale(.88);
+    }
+
+    64% {
+        opacity: 1;
+
+        transform:
+            translateX(1.3px)
+            translateY(-.4px)
+            rotate(.7deg)
+            scale(1.018);
+    }
+
+    82% {
+        transform:
+            translateX(-.4px)
+            scale(.996);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// BADGES REVEAL //////////////*/
+
+@keyframes ku-badges-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-6px)
+            scale(.86);
+    }
+
+    66% {
+        opacity: 1;
+
+        transform:
+            translateY(.7px)
+            scale(1.025);
+    }
+
+    84% {
+        transform:
+            translateY(-.25px)
+            scale(.997);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// USERNAME REVEAL //////////////*/
+
+@keyframes ku-username-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(
+                var(--ku-user-enter-x)
+            )
+            translateY(-4.25px)
+            scale(.91);
+    }
+
+    66% {
+        opacity: 1;
+
+        transform:
+            translateX(1.3px)
+            translateY(.4px)
+            scale(1.018);
+    }
+
+    84% {
+        transform:
+            translateX(-.4px)
+            scale(.997);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// MESSAGE REVEAL //////////////*/
+
+@keyframes ku-message-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(
+                var(--ku-message-enter-x)
+            )
+            scaleX(.9)
+            scaleY(.97);
+    }
+
+    62% {
+        opacity: 1;
+
+        transform:
+            translateX(-1.7px)
+            scaleX(1.014)
+            scaleY(1.004);
+    }
+
+    82% {
+        transform:
+            translateX(.4px)
+            scaleX(.998);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// EVENT SHELL REVEAL //////////////*/
+
+@keyframes ku-event-shell-in {
+    0% {
+        opacity: 0;
+
+        clip-path:
+            inset(
+                0 47%
+                0 47%
+                round 15.3px
+            );
+
+        transform:
+            translateY(4px)
+            scaleX(.94);
+    }
+
+    24% {
+        opacity: .55;
+    }
+
+    62% {
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0 1%
+                0 1%
+                round 15.3px
+            );
+
+        transform:
+            translateY(-.5px)
+            scaleX(1.004);
+    }
+
+    82% {
+        clip-path:
+            inset(
+                0
+                round 15.3px
+            );
+
+        transform:
+            translateY(.15px)
+            scaleX(.999);
+    }
+
+    100% {
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0
+                round 15.3px
+            );
+
+        transform: none;
+    }
+}
+
+
+/*////////////// EVENT SPOTS REVEAL //////////////*/
+
+@keyframes ku-event-spots-in {
+    0% {
+        opacity: 0;
+    }
+
+    38% {
+        opacity: .15;
+    }
+
+    72% {
+        opacity: .8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*////////////// EVENT TAB REVEAL //////////////*/
+
+@keyframes ku-event-tab-shape-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            rotate(-5deg)
+            scaleX(.72)
+            scaleY(.4);
+    }
+
+    42% {
+        opacity: 1;
+    }
+
+    70% {
+        transform:
+            rotate(.7deg)
+            scaleX(1.015)
+            scaleY(1.025);
+    }
+
+    86% {
+        transform:
+            rotate(-.15deg)
+            scale(.998);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// EVENT SKULL REVEAL //////////////*/
+
+@keyframes ku-event-skull-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-3px)
+            rotate(-12deg)
+            scale(.5);
+    }
+
+    48% {
+        opacity: 1;
+    }
+
+    72% {
+        transform:
+            translateY(.4px)
+            rotate(1.6deg)
+            scale(1.04);
+    }
+
+    88% {
+        transform:
+            rotate(-.3deg)
+            scale(.995);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// EVENT USERNAME REVEAL //////////////*/
+
+@keyframes ku-event-username-in {
+    0% {
+        opacity: 0;
+
+        filter:
+            blur(1.5px);
+
+        transform:
+            translateX(-18px)
+            scale(.92);
+    }
+
+    52% {
+        opacity: 1;
+
+        filter:
+            blur(0);
+
+        transform:
+            translateX(1.2px)
+            scale(1.012);
+    }
+
+    78% {
+        transform:
+            translateX(-.3px)
+            scale(.998);
+    }
+
+    100% {
+        opacity: 1;
+
+        filter: none;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// EVENT MESSAGE REVEAL //////////////*/
+
+@keyframes ku-event-message-in {
+    0% {
+        opacity: 0;
+
+        clip-path:
+            inset(
+                0 0
+                0 96%
+                round 10.2px
+            );
+
+        transform:
+            translateX(16px)
+            scaleX(.94);
+    }
+
+    30% {
+        opacity: .3;
+    }
+
+    66% {
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0 0
+                0 1%
+                round 10.2px
+            );
+
+        transform:
+            translateX(-.7px)
+            scaleX(1.006);
+    }
+
+    84% {
+        clip-path:
+            inset(
+                0
+                round 10.2px
+            );
+
+        transform:
+            translateX(.15px)
+            scaleX(.999);
+    }
+
+    100% {
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0
+                round 10.2px
+            );
+
+        transform: none;
+    }
+}
+
+
+/*////////////// ANGRY BUBBLE REVEAL //////////////*/
+
+@keyframes ku-angry-bubble-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(11px)
+            scaleX(.965)
+            scaleY(.94);
+    }
+
+    52% {
+        opacity: 1;
+
+        transform:
+            translateY(-2.55px)
+            scaleX(1.012)
+            scaleY(1.025);
+    }
+
+    72% {
+        transform:
+            translateY(.85px)
+            scaleX(.996)
+            scaleY(.992);
+    }
+
+    86% {
+        transform:
+            translateY(-.4px)
+            scale(1.002);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// ANGRY SPOTS //////////////*/
+
+@keyframes ku-angry-spots-in {
+    0% {
+        opacity: 0;
+
+        filter: saturate(.7);
+    }
+
+    38% {
+        opacity: .35;
+
+        filter: saturate(1.15);
+    }
+
+    68% {
+        opacity: .86;
+
+        filter: saturate(1.06);
+    }
+
+    100% {
+        opacity: 1;
+
+        filter: none;
+    }
+}
+
+
+/*////////////// ANGRY AVATAR //////////////*/
+
+@keyframes ku-angry-avatar-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(
+                var(--ku-avatar-enter-x)
+            )
+            translateY(2.55px)
+            rotate(-10.2deg)
+            scaleX(.8)
+            scaleY(1.08);
+    }
+
+    58% {
+        opacity: 1;
+
+        transform:
+            translateX(3.4px)
+            rotate(2.55deg)
+            scaleX(1.06)
+            scaleY(.97);
+    }
+
+    78% {
+        transform:
+            translateX(-1.3px)
+            rotate(-.85deg)
+            scale(.992);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// ANGRY BADGES REVEAL //////////////*/
+
+@keyframes ku-angry-badges-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-8.5px)
+            rotate(-5.1deg)
+            scale(.78);
+    }
+
+    62% {
+        opacity: 1;
+
+        transform:
+            translateY(.85px)
+            rotate(1.7deg)
+            scale(1.04);
+    }
+
+    82% {
+        transform:
+            translateY(-.4px)
+            rotate(-.4deg)
+            scale(.995);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// ANGRY USERNAME REVEAL //////////////*/
+
+@keyframes ku-angry-username-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(
+                var(--ku-user-enter-x)
+            )
+            translateY(-6px)
+            rotate(-4.25deg)
+            scale(.86);
+    }
+
+    58% {
+        opacity: 1;
+
+        transform:
+            translateX(2.55px)
+            translateY(.85px)
+            rotate(1.7deg)
+            scale(1.035);
+    }
+
+    78% {
+        transform:
+            translateX(-.85px)
+            rotate(-.5deg)
+            scale(.995);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// ANGRY MESSAGE REVEAL //////////////*/
+
+@keyframes ku-angry-message-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(
+                var(--ku-angry-message-enter-x)
+            )
+            rotate(5.95deg)
+            scaleX(.75)
+            scaleY(1.06);
+    }
+
+    54% {
+        opacity: 1;
+
+        transform:
+            translateX(-5.1px)
+            rotate(-1.3deg)
+            scaleX(1.045)
+            scaleY(.985);
+    }
+
+    73% {
+        transform:
+            translateX(1.7px)
+            rotate(.4deg)
+            scaleX(.99);
+    }
+
+    88% {
+        transform:
+            translateX(-.4px)
+            scaleX(1.002);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/*////////////// ANGRY SHAKE //////////////*/
+
+@keyframes ku-angry-shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    18% {
+        transform: translateX(-2.55px);
+    }
+
+    36% {
+        transform: translateX(2.55px);
+    }
+
+    54% {
+        transform: translateX(-1.7px);
+    }
+
+    72% {
+        transform: translateX(1px);
+    }
+
+    86% {
+        transform: translateX(-.4px);
+    }
+}
+
+
+/*////////////// RESPONSIVE //////////////*/
+
+@media (max-width: 420px) {
+
+    .cs-bubble {
+        gap: 4.25px;
+
+        padding-inline-start: 5.95px;
+        padding-inline-end: 6.8px;
+    }
+
+    .cs-bubble
+    .cs-header {
+        flex: 0 0 auto;
+
+        inline-size: max-content;
+        min-inline-size: max-content;
+        max-inline-size: none;
+
+        gap: 3.4px;
+    }
+
+    .cs-bubble
+    .cs-user {
+        flex: 0 0 auto;
+
+        inline-size: max-content;
+        min-inline-size: max-content;
+        max-inline-size: none;
+    }
+
+    .cs-bubble
+    .cs-username {
+        inline-size: max-content;
+        min-inline-size: max-content;
+        max-inline-size: none;
+
+        white-space: nowrap;
+
+        overflow-wrap: normal;
+
+        word-break: normal;
+    }
+
+    .cs-bubble
+    .cs-content {
+        flex: 1 1 auto;
+
+        min-inline-size: 44px;
+
+        max-inline-size: none;
+    }
+
+    .cs-bubble.cs-event:is(
+        .cs-event-sub,
+        .cs-event-resub,
+        .cs-event-subgift,
+        .cs-event-mystery-gift,
+        .cs-event-gift-upgrade,
+        .cs-event-reward-gift,
+        .cs-event-anon-gift-upgrade,
+        .cs-event-raid,
+        .cs-event-unraid,
+        .cs-event-announcement,
+        .cs-event-bits-badge,
+        .cs-event-kofi
+    ) {
+        min-inline-size:
+            min(
+                205px,
+                100%
+            );
+
+        min-block-size: 53px;
+
+        gap: 5.1px;
+
+        padding-block-start: 18px;
+    }
+
+    .cs-bubble.cs-event:is(
+        .cs-event-sub,
+        .cs-event-resub,
+        .cs-event-subgift,
+        .cs-event-mystery-gift,
+        .cs-event-gift-upgrade,
+        .cs-event-reward-gift,
+        .cs-event-anon-gift-upgrade,
+        .cs-event-raid,
+        .cs-event-unraid,
+        .cs-event-announcement,
+        .cs-event-bits-badge,
+        .cs-event-kofi
+    )
+    .cs-content {
+        min-inline-size: 55px;
+    }
+
+    .cs-bubble.cs-event:is(
+        .cs-event-sub,
+        .cs-event-resub,
+        .cs-event-subgift,
+        .cs-event-mystery-gift,
+        .cs-event-gift-upgrade,
+        .cs-event-reward-gift,
+        .cs-event-anon-gift-upgrade,
+        .cs-event-raid,
+        .cs-event-unraid,
+        .cs-event-announcement,
+        .cs-event-bits-badge,
+        .cs-event-kofi
+    )
+    .cs-message {
+        min-inline-size: 55px;
+    }
+
+    .cs-bubble.cs-event:is(
+        .cs-event-sub,
+        .cs-event-resub,
+        .cs-event-subgift,
+        .cs-event-mystery-gift,
+        .cs-event-gift-upgrade,
+        .cs-event-reward-gift,
+        .cs-event-anon-gift-upgrade,
+        .cs-event-raid,
+        .cs-event-unraid,
+        .cs-event-announcement,
+        .cs-event-bits-badge,
+        .cs-event-kofi
+    )
+    .cs-event-tab {
+        inline-size: 57px;
+        block-size: 24px;
+    }
+
+    .cs-event-skull {
+        inline-size: 18px;
+    }
+}
+
+
+/*////////////// VERY SMALL //////////////*/
+
+@media (max-width: 320px) {
+
+    .cs-avatar img,
+    .cs-avatar video {
+        inline-size:
+            min(
+                var(--cs-avatar-size, 36px),
+                31px
+            );
+
+        block-size:
+            min(
+                var(--cs-avatar-size, 36px),
+                31px
+            );
+    }
+
+    .cs-content {
+        min-inline-size: 37px;
+    }
+
+    .cs-message {
+        padding-inline-start: 5.1px;
+        padding-inline-end: 5.1px;
+    }
+
+    .cs-bubble.cs-event:is(
+        .cs-event-sub,
+        .cs-event-resub,
+        .cs-event-subgift,
+        .cs-event-mystery-gift,
+        .cs-event-gift-upgrade,
+        .cs-event-reward-gift,
+        .cs-event-anon-gift-upgrade,
+        .cs-event-raid,
+        .cs-event-unraid,
+        .cs-event-announcement,
+        .cs-event-bits-badge,
+        .cs-event-kofi
+    ) {
+        min-inline-size:
+            min(
+                185px,
+                100%
+            );
+
+        min-block-size: 52px;
+
+        padding-block-start: 17.5px;
+
+        padding-inline-start: 5.95px;
+        padding-inline-end: 5.95px;
+    }
+
+    .cs-bubble.cs-event:is(
+        .cs-event-sub,
+        .cs-event-resub,
+        .cs-event-subgift,
+        .cs-event-mystery-gift,
+        .cs-event-gift-upgrade,
+        .cs-event-reward-gift,
+        .cs-event-anon-gift-upgrade,
+        .cs-event-raid,
+        .cs-event-unraid,
+        .cs-event-announcement,
+        .cs-event-bits-badge,
+        .cs-event-kofi
+    )
+    .cs-username {
+        padding-inline: 5.95px;
+    }
+
+    .cs-bubble.cs-event:is(
+        .cs-event-sub,
+        .cs-event-resub,
+        .cs-event-subgift,
+        .cs-event-mystery-gift,
+        .cs-event-gift-upgrade,
+        .cs-event-reward-gift,
+        .cs-event-anon-gift-upgrade,
+        .cs-event-raid,
+        .cs-event-unraid,
+        .cs-event-announcement,
+        .cs-event-bits-badge,
+        .cs-event-kofi
+    )
+    .cs-message {
+        padding-inline: 5.95px;
+    }
+}
+
+
+/*////////////// REDUCED MOTION //////////////*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cs-bubble,
+    .cs-bubble::before,
+    .cs-avatar img,
+    .cs-avatar video,
+    .cs-badges,
+    .cs-username,
+    .cs-message,
+    .cs-event-tab,
+    .cs-event-tab-shape,
+    .cs-event-skull {
+        animation: none !important;
+
+        filter: none !important;
+    }
+}
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event) {
+    background-color:#639b57;
+
+    background-image:
+        radial-gradient(
+            ellipse at 8% 0%,
+            rgba(207,237,184,.14),
+            transparent 36%
+        ),
+        radial-gradient(
+            ellipse at 103% 108%,
+            rgba(36,74,34,.22),
+            transparent 47%
+        ),
+        linear-gradient(
+            145deg,
+            #75ac65,
+            #609552 55%,
+            #4b7a42
+        );
+
+    border-color:#203620;
+
+    box-shadow:
+        0 0 7px rgba(125,185,104,.36),
+        0 0 15px rgba(72,121,63,.20),
+        inset 0 0 9px rgba(186,224,158,.07);
+}
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)::before {
+    background:none;
+    animation:none;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-skull-pattern {
+    position:absolute;
+
+    z-index:1;
+
+    top:5px;
+    left:5px;
+
+    display:block;
+
+    width:calc(100% - 10px);
+    height:calc(100% - 10px);
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+    pointer-events:none;
+}
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-skull-pattern__fill {
+    opacity:.57;
+
+    transform-box:fill-box;
+    transform-origin:center;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        ku-mod-pattern-float
+        7.2s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-header,
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-content {
+    position:relative;
+    z-index:5;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-user > .cs-badges,
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-username,
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-user--inline,
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-message {
+    background-color:#151915;
+
+    border-color:#31512f;
+
+    box-shadow:
+        0 0 5px rgba(119,180,101,.36),
+        0 0 11px rgba(69,116,61,.19),
+        inset 0 0 7px rgba(171,214,145,.05);
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-username,
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-user--inline {
+    color:#f5fff1;
+
+    background-image:
+        radial-gradient(
+            ellipse at 108% 120%,
+            rgba(105,165,89,.30),
+            transparent 58%
+        );
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-message {
+    color:#f7fff4;
+
+    background-image:
+        radial-gradient(
+            ellipse at -10% 115%,
+            rgba(102,160,85,.25),
+            transparent 56%
+        );
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-avatar img,
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-avatar video {
+    border-color:#3d6739;
+
+    box-shadow:
+        0 0 6px rgba(164,207,137,.48),
+        0 0 12px rgba(80,132,70,.23);
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-avatar {
+    will-change:transform;
+
+    animation:
+        ku-mod-avatar-idle
+        4.7s
+        ease-in-out
+        infinite;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-user {
+    will-change:transform;
+
+    animation:
+        ku-mod-user-idle
+        5.2s
+        ease-in-out
+        infinite;
+}
+
+
+
+
+.cs-bubble.cs-bubble.cs-bubble:not(.cs-event)
+.cs-content {
+    will-change:transform;
+
+    animation:
+        ku-mod-content-idle
+        5.8s
+        ease-in-out
+        infinite;
+}
+
+
+
+
+@keyframes ku-mod-pattern-float {
+
+    0% {
+        opacity:.46;
+
+        transform:
+            translate3d(7px,2px,0)
+            rotate(.6deg);
+    }
+
+    30% {
+        opacity:.61;
+
+        transform:
+            translate3d(-6px,-5px,0)
+            rotate(-.6deg);
+    }
+
+    65% {
+        opacity:.50;
+
+        transform:
+            translate3d(-3px,7px,0)
+            rotate(.3deg);
+    }
+
+    100% {
+        opacity:.64;
+
+        transform:
+            translate3d(8px,-3px,0)
+            rotate(-.8deg);
+    }
+
+}
+
+
+
+
+@keyframes ku-mod-avatar-idle {
+
+    0%,
+    100% {
+        transform:
+            translate3d(0,0,0)
+            rotate(-1.5deg);
+    }
+
+    50% {
+        transform:
+            translate3d(0,-2.2px,0)
+            rotate(1.8deg);
+    }
+
+}
+
+
+
+
+@keyframes ku-mod-user-idle {
+
+    0%,
+    100% {
+        transform:translate3d(0,0,0);
+    }
+
+    42% {
+        transform:translate3d(-1px,-1.3px,0);
+    }
+
+    70% {
+        transform:translate3d(.7px,.5px,0);
+    }
+
+}
+
+
+
+
+@keyframes ku-mod-content-idle {
+
+    0%,
+    100% {
+        transform:translate3d(0,0,0);
+    }
+
+    40% {
+        transform:translate3d(-.8px,1px,0);
+    }
+
+    70% {
+        transform:translate3d(.9px,-1.3px,0);
+    }
+
+}
+
+
+
+
+.cs-bubble.cs-event
+.cs-skull-pattern {
+    display:none;
+}
+
+
+
+
+@media (prefers-reduced-motion:reduce) {
+
+    .cs-skull-pattern__fill,
+    .cs-avatar,
+    .cs-user,
+    .cs-content {
+        animation:none;
+    }
+
+}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center"><div class="cs-bubble cs-avatar-position-left cs-username-position-above-message cs-badges-position-before-name cs-direction-ltr cs-platform-twitch cs-pronouns-hidden" style="--cs-bubble-alignment: left; --cs-bubble-direction: ltr; --cs-bubble-full-width: 0; --cs-bubble-message-direction: bottom-up; --cs-avatar-show: 1; --cs-avatar-position: left; --cs-username-position: above-message; --cs-badges-show: 1; --cs-badges-position: before-name; --cs-pronouns-show: 0; --cs-chat-padding-top: 11px; --cs-chat-padding-right: 11px; --cs-chat-padding-bottom: 11px; --cs-chat-padding-left: 11px; --cs-bubble-padding-top: 6px; --cs-bubble-padding-right: 8px; --cs-bubble-padding-bottom: 6px; --cs-bubble-padding-left: 6px; --cs-bubble-background-color: #8b5acb; --cs-bubble-background-gradient: none; --cs-bubble-border-width: 4px; --cs-bubble-border-style: solid; --cs-bubble-border-color: #171219; --cs-bubble-border-radius-top-left: 15px; --cs-bubble-border-radius-top-right: 15px; --cs-bubble-border-radius-bottom-right: 15px; --cs-bubble-border-radius-bottom-left: 15px; --cs-bubble-box-shadow-offset-x: 0px; --cs-bubble-box-shadow-offset-y: 3px; --cs-bubble-box-shadow-blur-radius: 9px; --cs-bubble-box-shadow-spread-radius: 0px; --cs-bubble-box-shadow-color: color-mix(
+                in srgb,
+                var(--ku-purple) 62%,
+                transparent
+            ); --cs-bubble-box-shadow-inset: ; --cs-bubble-animation: bp-slide-in-up; --cs-bubble-animation-duration: 680ms; --cs-bubble-animation-delay: 0ms; --cs-bubble-animation-timing-function: ease-in-out; --cs-bubble-gap: 4px; --cs-bubble-width: 365px; --cs-avatar-padding-top: 0px; --cs-avatar-padding-right: 0px; --cs-avatar-padding-bottom: 0px; --cs-avatar-padding-left: 0px; --cs-avatar-background-color: #8b5acb; --cs-avatar-background-gradient: none; --cs-avatar-border-width: 2px; --cs-avatar-border-style: solid; --cs-avatar-border-color: #171219; --cs-avatar-border-radius-top-left: 10px; --cs-avatar-border-radius-top-right: 10px; --cs-avatar-border-radius-bottom-right: 10px; --cs-avatar-border-radius-bottom-left: 10px; --cs-avatar-box-shadow-offset-x: 3px; --cs-avatar-box-shadow-offset-y: 3px; --cs-avatar-box-shadow-blur-radius: 0px; --cs-avatar-box-shadow-spread-radius: 0px; --cs-avatar-box-shadow-color: #7049a3; --cs-avatar-box-shadow-inset: ; --cs-avatar-size: 36px; --cs-username-padding-top: 2px; --cs-username-padding-right: 5px; --cs-username-padding-bottom: 2px; --cs-username-padding-left: 5px; --cs-username-background-color: #171219; --cs-username-background-gradient: none; --cs-username-border-width: 1px; --cs-username-border-style: solid; --cs-username-border-color: #171219; --cs-username-border-radius-top-left: 8px; --cs-username-border-radius-top-right: 8px; --cs-username-border-radius-bottom-right: 8px; --cs-username-border-radius-bottom-left: 8px; --cs-username-box-shadow-offset-x: 3px; --cs-username-box-shadow-offset-y: 3px; --cs-username-box-shadow-blur-radius: 0px; --cs-username-box-shadow-spread-radius: 0px; --cs-username-box-shadow-color: #7049a3; --cs-username-box-shadow-inset: ; --cs-username-font-size: 11px; --cs-username-font-color: #fff8fc; --cs-username-font-family: 'Inter'; --cs-username-font-weight: 800; --cs-username-text-shadow-offset-x: 0px; --cs-username-text-shadow-offset-y: 0px; --cs-username-text-shadow-blur-radius: 1px; --cs-username-text-shadow-color: rgba(0, 0, 0, .4); --cs-username-text-stroke-width: 0px; --cs-username-text-stroke-color: transparent; --cs-message-padding-top: 5px; --cs-message-padding-right: 7px; --cs-message-padding-bottom: 5px; --cs-message-padding-left: 7px; --cs-message-background-color: #171219; --cs-message-background-gradient: none; --cs-message-border-width: 0px; --cs-message-border-style: solid; --cs-message-border-color: #171219; --cs-message-border-radius-top-left: 10px; --cs-message-border-radius-top-right: 10px; --cs-message-border-radius-bottom-right: 10px; --cs-message-border-radius-bottom-left: 10px; --cs-message-box-shadow-offset-x: 3px; --cs-message-box-shadow-offset-y: 3px; --cs-message-box-shadow-blur-radius: 0px; --cs-message-box-shadow-spread-radius: 0px; --cs-message-box-shadow-color: #7049a3; --cs-message-box-shadow-inset: ; --cs-message-font-size: 11px; --cs-message-font-color: #fff8fd; --cs-message-font-family: 'Inter'; --cs-message-font-weight: 600; --cs-message-text-shadow-offset-x: 0px; --cs-message-text-shadow-offset-y: 0px; --cs-message-text-shadow-blur-radius: 1px; --cs-message-text-shadow-color: rgba(0, 0, 0, .35); --cs-message-text-stroke-width: 0px; --cs-message-text-stroke-color: transparent; --cs-usercolor: #9b59b6;">
+
+    
+
+    <div class="cs-event-tab">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="cs-event-tab-shape" viewBox="0 0 120 46">
+            <path d="                     M0 0                     H120                     L90 35                     Q86 42 76 42                     H44                     Q34 42 30 35                     Z                 "/>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="cs-event-skull" viewBox="0 0 314 306">
+            <path class="cs-event-skull__head" d="                     M157 46                     C92 46 38 92 38 157                     C38 198 61 218 105 225                     L109 244                     Q110 251 118 251                     H196                     Q204 251 205 244                     L209 225                     C253 218 276 198 276 157                     C276 92 222 46 157 46                     Z                 "/>
+
+            <ellipse class="cs-event-skull__eye" cx="94" cy="165" rx="21" ry="29" transform="rotate(8 94 165)"/>
+
+            <ellipse class="cs-event-skull__eye" cx="211" cy="165" rx="21" ry="29" transform="rotate(-8 211 165)"/>
+
+            <path class="cs-event-skull__teeth" d="                     M140 224 V250                     M170 224 V250                 "/>
+        </svg>
+
+    </div>
+
+
+    
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="cs-skull-pattern" width="100%" height="100%" aria-hidden="true">
+
+        <defs>
+
+            <pattern id="cs-skull-mod-pattern" x="0" y="0" width="52" height="42" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
+
+                <g transform="translate(2 0) scale(.08)">
+
+                    <path d="                             M157 46                             C92 46 38 92 38 157                             C38 198 61 218 105 225                             L109 244                             Q110 251 118 251                             H196                             Q204 251 205 244                             L209 225                             C253 218 276 198 276 157                             C276 92 222 46 157 46                             Z                         " fill="#d7efc1" stroke="#416b3d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <ellipse cx="94" cy="165" rx="21" ry="29" transform="rotate(8 94 165)" fill="#234421"/>
+
+                    <ellipse cx="211" cy="165" rx="21" ry="29" transform="rotate(-8 211 165)" fill="#234421"/>
+
+                    <path d="                             M140 224 V250                             M170 224 V250                         " fill="none" stroke="#234421" stroke-width="14" stroke-linecap="round"/>
+
+                </g>
+
+
+                <g transform="translate(28 20) scale(.08)">
+
+                    <path d="                             M157 46                             C92 46 38 92 38 157                             C38 198 61 218 105 225                             L109 244                             Q110 251 118 251                             H196                             Q204 251 205 244                             L209 225                             C253 218 276 198 276 157                             C276 92 222 46 157 46                             Z                         " fill="#d7efc1" stroke="#416b3d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <ellipse cx="94" cy="165" rx="21" ry="29" transform="rotate(8 94 165)" fill="#234421"/>
+
+                    <ellipse cx="211" cy="165" rx="21" ry="29" transform="rotate(-8 211 165)" fill="#234421"/>
+
+                    <path d="                             M140 224 V250                             M170 224 V250                         " fill="none" stroke="#234421" stroke-width="14" stroke-linecap="round"/>
+
+                </g>
+
+            </pattern>
+
+        </defs>
+
+        <rect class="cs-skull-pattern__fill" x="-20%" y="-20%" width="140%" height="140%" fill="url(#cs-skull-mod-pattern)"/>
+
+    </svg>
+
+
+    
+
+    <div class="cs-header">
+
+        <div class="cs-avatar">
+            <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">
+        </div>
+
+        <div class="cs-user">
+
+            <span class="cs-badges">
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+            </span>
+
+            <span class="cs-username">
+                <span class="cs-pronouns">
+                    
+                </span>
+                JesusTenG
+            </span>
+
+        </div>
+
+    </div>
+
+
+    
+
+    <div class="cs-content">
+
+        <span class="cs-user--inline">
+
+            <span class="cs-badges cs-badges--inline">
+                <img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">
+            </span>
+
+            <span class="cs-username--inline" style="--cs-usercolor: #9b59b6;">
+                <span class="cs-pronouns">
+                    
+                </span>
+                JesusTenG
+            </span>
+
+        </span>
+
+        <div class="cs-message">
+            So sieht dein Chat aus.
+        </div>
+
+    </div>
+
+</div></div></div></body></html>

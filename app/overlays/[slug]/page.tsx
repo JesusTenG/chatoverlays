@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { catalog, categories, getTemplate, absoluteUrl, config } from '@/lib/catalog';
 import { pageMetadata } from '@/lib/metadata';
-import { Breadcrumbs, ShopButton, StructuredData } from '@/components/site-chrome';
+import { Breadcrumbs, ChatStyleButton, StructuredData } from '@/components/site-chrome';
 import { PreviewMedia } from '@/components/preview-media';
 import { TemplateCard } from '@/components/template-card';
 import { SkinGallery } from '@/components/skin-gallery';
@@ -26,7 +26,7 @@ export default async function TemplatePage({ params }: Props) {
     <Breadcrumbs name={template.name} category={category}/>
     <section className="detail-hero"><PreviewMedia key={template.slug} template={template} mode="detail"/><div className="detail-copy">
       <h1 data-reveal>{template.name}</h1><p className="lead">{template.description}</p>
-      <ShopButton href={template.shopUrl} label={template.free ? 'Template holen' : 'Template kaufen'}/>
+      <ChatStyleButton href={template.shopUrl}/>
       <p className="shop-note">{template.free ? 'Kostenlos auf Chatstyle.' : 'Preis und Anpassungen findest du auf Chatstyle.'}</p>
       <div className="design-note"><h2>Für deinen Stream</h2><p>{template.advice}</p></div>
     </div></section>

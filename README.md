@@ -32,9 +32,9 @@ npm start
 - `app/ratgeber/chat-overlay-auswaehlen/page.tsx`: Overlay-Ratgeber.
 - `app/sitemap.ts`, `app/robots.ts`: automatisch erzeugte SEO-Dateien.
 - `app/assets/catalog.json/route.ts`: beim Build exportierter Katalog unter der bisherigen URL `/assets/catalog.json`.
-- `components/`: React-Komponenten für Galerie, Suche, Filter, Nachladen, Videovorschauen, Dialog und Animationen. Interne Links nutzen Next.js-Navigation.
+- `components/`: React-Komponenten für Galerie, Suche, Filter, Nachladen, Videovorschauen und Animationen. Interne Links nutzen Next.js-Navigation.
 - `app/globals.css`: Retro-Design mit Lavendel-Hero, cremefarbener Galerie, dunkelgrüner Einrichtungshilfe und pfirsichfarbenem Creator-Bereich; kräftige Schrift ab 16 px.
-- `components/navigation.tsx`: schwebende Navigation mit aktivem Abschnitt, kompakter Ansicht beim Scrollen und mobilem Menü.
+- `components/navigation.tsx`: schwebende Navigation mit aktivem Abschnitt, kompakter Ansicht beim Scrollen und mobilem Menü. „Über die Designs“ führt zum Creator-Bereich.
 - `components/skin-gallery.tsx`, `lib/skins.ts`: Skin-Auswahl mit isolierter Originalgestaltung und umschaltbarem Vorschau-Hintergrund.
 - `lib/catalog.ts`, `lib/metadata.ts`: gemeinsames Datenmodell, Hero-Auswahl, Shop-URLs und SEO-Metadaten.
 - `source/catalog.json`, `source/editorial.mjs`: verifizierte Template-Daten, deutsche Beschreibungen, Gestaltungstipps und Kategorien.
@@ -44,9 +44,9 @@ npm start
 - `public/assets/logo.svg`, `public/assets/favicon.svg`: eigenes Logo aus zwei überlagerten Chatblasen.
 - `site.config.json`: Name, Creator-Link, veröffentlichter Ursprung und Indexierungsstatus.
 
-Im Hero laufen **Sleeping Cats, Neo Tokyo und Lofi Windows 93** stumm in Schleife. Die gedrehten Karten treten bei Hover oder Tastaturfokus hervor. Galerie-Videos starten bei Hover oder Fokus. Nicht sichtbare oder ausgefilterte Vorschauen sowie Videos hinter dem Dialog und in inaktiven Tabs pausieren. Reduzierte Bewegung wird berücksichtigt; die Hero-Videos lassen sich zusätzlich gemeinsam steuern.
+Im Hero laufen **Sleeping Cats, Neo Tokyo und Lofi Windows 93** stumm in Schleife. Die gedrehten Karten treten bei Hover oder Tastaturfokus hervor. Galerie-Videos starten bei Hover oder Fokus. Nicht sichtbare oder ausgefilterte Vorschauen sowie Videos in inaktiven Tabs pausieren. Reduzierte Bewegung wird berücksichtigt; die Hero-Videos lassen sich zusätzlich gemeinsam steuern.
 
-Auf allen Template-Seiten startet das Video automatisch, sobald es sichtbar ist. Es lässt sich pausieren oder vergrößern. Bei aktivierter reduzierter Bewegung startet es erst nach einem Klick. Die Shop-Buttons zeigen ihren Zweck und das originale ChatStyle-Logo.
+Auf allen Template-Seiten startet das Video automatisch, sobald es sichtbar ist. Es lässt sich direkt auf der Seite pausieren. Video-Karten in Hero, Galerie und verwandten Templates verlinken auf die jeweilige Detailseite; Vorschau-Modals gibt es nicht mehr. Bei aktivierter reduzierter Bewegung startet es erst nach einem Klick. Die ChatStyle-Links verwenden neutrale Texte und das originale Logo. Der Hero-Link führt zur ChatStyle-Startseite, die Template-Links führen weiterhin zum jeweiligen Original.
 
 ## Hosting
 

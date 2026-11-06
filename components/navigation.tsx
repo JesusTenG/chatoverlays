@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { BrandMark, ShopButton } from './site-chrome';
+import { BrandMark, ChatStyleButton } from './site-chrome';
 
-const links = [{ id: 'templates', label: 'Templates' }, { id: 'so-gehts', label: 'So geht’s' }, { id: 'creator', label: 'Creator' }];
+const links = [{ id: 'templates', label: 'Templates' }, { id: 'so-gehts', label: 'So geht’s' }, { id: 'creator', label: 'Über die Designs' }];
 
 export function Header() {
   const pathname = usePathname();
@@ -41,9 +41,9 @@ export function Header() {
     <div className="nav-bar">
       <Link className="brand" href="/" aria-label="Chat Overlays Startseite" onClick={() => setOpen(false)}><BrandMark/><span>chatoverlays</span></Link>
       <nav className="desktop-nav" aria-label="Hauptnavigation">{links.map(link => <Link key={link.id} href={`/#${link.id}`} className={active === link.id ? 'active' : ''} aria-current={active === link.id ? 'location' : undefined}>{link.label}</Link>)}</nav>
-      <ShopButton className="nav-shop" label="Zum Shop"/>
-      <button ref={toggleRef} className="menu-toggle" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(value => !value)}><span>{open ? 'Schließen' : 'Menü'}</span><span className="menu-lines" aria-hidden="true"><i/><i/></span></button>
+      <ChatStyleButton className="nav-shop" label="Templates auf"/>
+      <button ref={toggleRef} className="menu-toggle" aria-label={open ? 'Menü schließen' : 'Menü öffnen'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(value => !value)}><span>Menü</span><span className="menu-lines" aria-hidden="true"><i/><i/></span></button>
     </div>
-    <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile Navigation" hidden={!open}>{links.map(link => <Link key={link.id} href={`/#${link.id}`} onClick={() => setOpen(false)}>{link.label}</Link>)}<ShopButton label="Zum Template-Shop"/></nav>
+    <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile Navigation" hidden={!open}>{links.map(link => <Link key={link.id} href={`/#${link.id}`} onClick={() => setOpen(false)}>{link.label}</Link>)}<ChatStyleButton label="Templates auf"/></nav>
   </header>;
 }

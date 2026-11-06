@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { config, type Category } from '@/lib/catalog';
-import { BagIcon } from './icons';
 
 export function BrandMark() {
   return <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M25 6H9a4 4 0 0 0-4 4v14l6-5h14a4 4 0 0 0 4-4v-5a4 4 0 0 0-4-4Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/><path d="M16 24v3a4 4 0 0 0 4 4h9l6 5V19a4 4 0 0 0-4-4" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>;
@@ -17,8 +16,8 @@ export function ChatStyleLink({ href = config.creatorUrl, children, className = 
   </a>;
 }
 
-export function ShopButton({ href = config.creatorUrl, label = 'Template-Shop', className = '', id }: { href?: string; label?: string; className?: string; id?: string }) {
-  return <ChatStyleLink href={href} className={`button shop-button ${className}`} id={id}><BagIcon/><span>{label}</span><span className="shop-brand"><ChatStyleLogo/></span></ChatStyleLink>;
+export function ChatStyleButton({ href = config.creatorUrl, label = 'Ansehen auf', className = '', id }: { href?: string; label?: string; className?: string; id?: string }) {
+  return <ChatStyleLink href={href} className={`button shop-button ${className}`} id={id}><span>{label}</span><span className="shop-brand"><ChatStyleLogo/></span></ChatStyleLink>;
 }
 
 export function Footer() {

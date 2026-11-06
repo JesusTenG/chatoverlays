@@ -4,7 +4,7 @@ import { pageMetadata } from '@/lib/metadata';
 import { Gallery } from '@/components/gallery';
 import { PreviewMedia } from '@/components/preview-media';
 import { HeroMotionToggle } from '@/components/video-provider';
-import { BrandMark, ChatStyleLink, ChatStyleLogo, ShopButton, StructuredData } from '@/components/site-chrome';
+import { BrandMark, ChatStyleLink, ChatStyleLogo, ChatStyleButton, StructuredData } from '@/components/site-chrome';
 import { GridIcon, Starburst } from '@/components/icons';
 
 export const metadata = pageMetadata('/', 'Chat-Overlays für Twitch & OBS von JesusTenG | Chat Overlays', 'Entdecke 40 Chat-Overlays von JesusTenG mit Originalvideos. Finde deinen Style und dein Lieblings-Template auf Chatstyle.');
@@ -13,7 +13,7 @@ export default function HomePage() {
   return <div className="home-page">
     <section className="hero-section">
       <div className="hero wrap">
-        <div className="hero-heading"><h1><span className="headline-line">Dein Chat.</span><span className="headline-line accent">Dein Style<em>.</em></span></h1><p>Chat-Overlays von JesusTenG.<br/>Gemacht für deinen Stream.</p><div className="hero-actions"><ShopButton label="Templates kaufen"/><a className="button button-secondary" href="#templates"><GridIcon/>Galerie entdecken</a></div></div>
+        <div className="hero-heading"><h1><span className="headline-line">Chat mit</span>{' '}<span className="headline-line accent">Charakter<em>.</em></span></h1><p>Animierte Overlays für den Look deiner Community.</p><div className="hero-actions"><a className="button hero-discover" href="#templates"><GridIcon/>Overlays entdecken</a><ChatStyleButton href="https://chatstyle.gg/" label="Mehr über"/></div></div>
         <div className="hero-stage"><div className="hero-orbit" aria-hidden="true"/><Starburst className="hero-star"/><div className="hero-showcase">{featuredTemplates.map(template => <figure key={template.slug} className={`hero-tile tile-${template.slug}`} data-autoplay-preview><div className="card-window" aria-hidden="true"><i/><i/><i/></div><PreviewMedia template={template} mode="hero"/><figcaption><Link prefetch={false} href={`/overlays/${template.slug}/`}>{template.name}</Link></figcaption></figure>)}</div><div className="hero-controls"><HeroMotionToggle/></div></div>
       </div>
       <div className="hero-stripes" aria-hidden="true"><span/><span/><span/></div>

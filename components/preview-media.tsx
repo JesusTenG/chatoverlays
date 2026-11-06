@@ -1,17 +1,14 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import type { Template } from '@/lib/catalog';
 import { useVideoState } from './video-provider';
-import { PauseIcon, ExpandIcon } from './icons';
-
-export function PlayIcon() {
-  return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7Z" fill="currentColor"/></svg>;
-}
+import { PauseIcon, PlayIcon } from './icons';
 
 export function PreviewMedia({ template, mode, active = true }: { template: Template; mode: 'hero' | 'hover' | 'detail'; active?: boolean }) {
-  const { reducedMotion, heroPaused, documentVisible, modalOpen, openPreview } = useVideoState();
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const { reducedMotion, heroPaused, documentVisible } = useVideoState();
+  const mediaRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [inView, setInView] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -19,12 +16,12 @@ export function PreviewMedia({ template, mode, active = true }: { template: Temp
   const [playing, setPlaying] = useState(false);
   const [failed, setFailed] = useState(false);
   const [detailPaused, setDetailPaused] = useState<boolean | null>(null);
-  const wantsPlayback = active && inView && documentVisible && !modalOpen && !failed &&
+  const wantsPlayback = active && inView && documentVisible && !failed &&
     (mode === 'hero' ? !heroPaused : mode === 'detail' ? (detailPaused === null ? !reducedMotion : !detailPaused) : !reducedMotion && (hovered || focused));
 
   useEffect(() => {
-    const button = buttonRef.current!;
-    const container = button.closest('.hero-tile,.template-card') ?? button;
+    const media = mediaRef.current!;
+    const container = media.closest('.hero-tile,.template-card') ?? media;
     const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold: .12 });
     const enter = (event: Event) => { if ((event as PointerEvent).pointerType !== 'touch') setHovered(true); };
     const leave = () => setHovered(false);
@@ -51,11 +48,11 @@ export function PreviewMedia({ template, mode, active = true }: { template: Temp
   }, [wantsPlayback, template.video]);
 
   const className = mode === 'hero' ? 'hero-media' : mode === 'detail' ? 'detail-media' : 'card-media';
-  const preview = <button ref={buttonRef} className={`${className}${playing ? ' is-playing' : ''}`} data-preview={template.slug} aria-label={`${template.name} – große Videovorschau öffnen`} onClick={event => openPreview(template, event.currentTarget)}>
+  const media = <>
     <img src={template.image} alt={`${template.name} Chat-Overlay`} width="1080" height="1080" loading={mode === 'hover' ? 'lazy' : 'eager'} decoding="async" fetchPriority={mode === 'detail' || mode === 'hero' && template.slug === 'neo-tokyo' ? 'high' : 'auto'}/>
     <video ref={videoRef} className="inline-video" data-inline-video={mode} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} onPause={() => setPlaying(false)} onError={() => { setFailed(true); setPlaying(false); }}/>
-    {mode === 'hover' && <span className="play-indicator"><PlayIcon/></span>}
-  </button>;
-  if (mode !== 'detail') return preview;
-  return <div className="detail-preview">{preview}<div className="media-toolbar"><button className="text-button" aria-pressed={detailPaused === true} onClick={() => setDetailPaused(playing)}>{playing ? <PauseIcon/> : <PlayIcon/>}<span>{playing ? 'Pausieren' : 'Abspielen'}</span></button><button className="text-button" onClick={event => openPreview(template, event.currentTarget)}><ExpandIcon/><span>Große Vorschau</span></button></div></div>;
+  </>;
+  const mediaClass = `${className}${playing ? ' is-playing' : ''}`;
+  if (mode !== 'detail') return <Link ref={node => { mediaRef.current = node; }} prefetch={false} className={mediaClass} data-preview={template.slug} href={`/overlays/${template.slug}/`} aria-label={`${template.name} – Details ansehen`}>{media}</Link>;
+  return <div className="detail-preview"><div ref={node => { mediaRef.current = node; }} className={mediaClass}>{media}</div><div className="media-toolbar"><button className="text-button" aria-pressed={detailPaused === true} onClick={() => setDetailPaused(playing)}>{playing ? <PauseIcon/> : <PlayIcon/>}<span>{playing ? 'Pausieren' : 'Abspielen'}</span></button></div></div>;
 }

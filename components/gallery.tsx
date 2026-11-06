@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { categories, type Template } from '@/lib/catalog';
 import { TemplateCard } from './template-card';
-import { useVideoState } from './video-provider';
 
 const normalize = (value: string) => value.toLocaleLowerCase('de').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replaceAll('ß', 'ss');
 
@@ -13,7 +12,6 @@ export function Gallery({ items }: { items: Template[] }) {
   const [limit, setLimit] = useState(9);
   const searchRef = useRef<HTMLInputElement>(null);
   const nextFocusRef = useRef<string | null>(null);
-  const { modalOpen } = useVideoState();
   const availableCategories = useMemo(() => categories.filter(category => items.some(item => item.categorySlug === category.slug)), [items]);
   const matches = useMemo(() => {
     const words = normalize(query.trim()).split(/\s+/).filter(Boolean);
@@ -35,20 +33,20 @@ export function Gallery({ items }: { items: Template[] }) {
 
   useEffect(() => {
     if (!nextFocusRef.current) return;
-    document.querySelector<HTMLButtonElement>(`#template-grid [data-preview="${nextFocusRef.current}"]`)?.focus({ preventScroll: true });
+    document.querySelector<HTMLAnchorElement>(`#template-grid [data-preview="${nextFocusRef.current}"]`)?.focus({ preventScroll: true });
     nextFocusRef.current = null;
   }, [limit]);
 
   useEffect(() => {
     const shortcut = (event: KeyboardEvent) => {
       const active = document.activeElement as HTMLElement | null;
-      if (event.key === '/' && !modalOpen && !event.ctrlKey && !event.metaKey && !event.altKey && !['INPUT', 'TEXTAREA', 'SELECT'].includes(active?.tagName ?? '') && !active?.isContentEditable) {
+      if (event.key === '/' && !event.ctrlKey && !event.metaKey && !event.altKey && !['INPUT', 'TEXTAREA', 'SELECT'].includes(active?.tagName ?? '') && !active?.isContentEditable) {
         event.preventDefault(); searchRef.current?.focus();
       }
     };
     document.addEventListener('keydown', shortcut);
     return () => document.removeEventListener('keydown', shortcut);
-  }, [modalOpen]);
+  }, []);
 
   function updateFilters(nextQuery: string, nextStyle: string) {
     setQuery(nextQuery); setStyle(nextStyle); setLimit(9);

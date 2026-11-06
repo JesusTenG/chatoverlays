@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { PauseIcon, PlayIcon } from './icons';
+import { useLocale } from './locale-provider';
 
 type VideoState = {
   reducedMotion: boolean;
@@ -37,6 +38,7 @@ export function VideoProvider({ children }: { children: ReactNode }) {
 }
 
 export function HeroMotionToggle() {
+  const { t } = useLocale();
   const { heroPaused, toggleHero } = useVideoState();
-  return <button className="text-button motion-toggle" id="hero-motion" aria-pressed={heroPaused} onClick={toggleHero}>{heroPaused ? <PlayIcon/> : <PauseIcon/>}<span>Vorschauen {heroPaused ? 'abspielen' : 'pausieren'}</span></button>;
+  return <button className="text-button motion-toggle" id="hero-motion" aria-pressed={heroPaused} onClick={toggleHero}>{heroPaused ? <PlayIcon/> : <PauseIcon/>}<span>{heroPaused ? t.ui.playPreviews : t.ui.pausePreviews}</span></button>;
 }

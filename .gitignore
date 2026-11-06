@@ -10,3 +10,7 @@ dist/
 *.tsbuildinfo
 .env*
 !.env.example
+
+# Generated localized sample messages; rebuilt from the original skins.
+public/assets/skins/**/*.en.html
+public/assets/skins/**/*.es.html

@@ -1,6 +1,6 @@
 # Chat Overlays — JesusTenG
 
-Next.js-Projekt mit App Router, React und TypeScript für die 40 Templates der [Creator-Seite von JesusTenG](https://chatstyle.gg/templates/creator/jesusteng). Der Kauf findet auf ChatStyle statt. Der bestehende Retro-Look, alle URLs und Originalmedien sind übernommen.
+Mehrsprachiges Next.js-Projekt mit App Router, React und TypeScript für die 40 Templates der [Creator-Seite von JesusTenG](https://chatstyle.gg/templates/creator/jesusteng). Der Kauf findet auf ChatStyle statt. Der bestehende Retro-Look, alle URLs und Originalmedien sind übernommen.
 
 ## Lokal entwickeln
 
@@ -25,11 +25,11 @@ npm start
 
 ## Aufbau
 
-- `app/layout.tsx`: gemeinsames Layout, Navigation, Footer, lokale Schrift und Video-Provider.
-- `app/page.tsx`: Hero, Galerie, Einrichtungshilfe, Creator-Bereich und FAQ.
-- `app/overlays/[slug]/page.tsx`: 40 vorab gerenderte Template-Seiten über `generateStaticParams`, mit individuellen Metadaten und passenden weiteren Templates.
-- `app/styles/[slug]/page.tsx`: fünf vorab gerenderte Kategorien.
-- `app/ratgeber/chat-overlay-auswaehlen/page.tsx`: Overlay-Ratgeber.
+- `app/(default)/layout.tsx`, `app/[locale]/layout.tsx`: vorgerenderte Sprachlayouts mit korrektem `html lang`; `components/site-layout.tsx` enthält das gemeinsame Layout.
+- `components/pages.tsx`: gemeinsame Start-, Template-, Kategorie- und Ratgeberseiten, gespeist aus den Übersetzungen.
+- `app/(default)/overlays/[slug]/page.tsx` und `app/[locale]/overlays/[slug]/page.tsx`: 40 vorab gerenderte Template-Seiten über `generateStaticParams`, mit individuellen Metadaten und passenden weiteren Templates.
+- `app/(default)/styles/[slug]/page.tsx` und `app/[locale]/styles/[slug]/page.tsx`: fünf vorab gerenderte Kategorien.
+- `app/(default)/ratgeber/chat-overlay-auswaehlen/page.tsx` und die entsprechende Sprachroute: Overlay-Ratgeber.
 - `app/sitemap.ts`, `app/robots.ts`: automatisch erzeugte SEO-Dateien.
 - `app/assets/catalog.json/route.ts`: beim Build exportierter Katalog unter der bisherigen URL `/assets/catalog.json`.
 - `components/`: React-Komponenten für Galerie, Suche, Filter, Nachladen, Videovorschauen und Animationen. Interne Links nutzen Next.js-Navigation.
@@ -50,7 +50,7 @@ Auf allen Template-Seiten startet das Video automatisch, sobald es sichtbar ist.
 
 ## Hosting
 
-Das Projekt verwendet echtes Next.js mit `output: 'export'` und `trailingSlash: true`. Es erzeugt 47 Inhaltsseiten plus 404. Es braucht im Betrieb keinen Node.js-Server und läuft deshalb weiterhin auf der vorhandenen Sites-Adresse. `.openai/hosting.json` verweist auf `out/`; generierte Build-Verzeichnisse werden nicht eingecheckt.
+Das Projekt verwendet echtes Next.js mit `output: 'export'` und `trailingSlash: true`. Es erzeugt 141 Inhaltsseiten (47 je Sprache) plus globale 404. Es braucht im Betrieb keinen Node.js-Server und läuft deshalb weiterhin auf der vorhandenen Sites-Adresse. `.openai/hosting.json` verweist auf `out/`; generierte Build-Verzeichnisse werden nicht eingecheckt.
 
 `scripts/fix-static-export.mjs` korrigiert nach dem Build einen [bekannten Windows-Pfadfehler in Next.js](https://github.com/vercel/next.js/issues/85374) bei RSC-Dateien zum Vorladen. Auf bereits korrekt exportierten Pfaden ist der Schritt wirkungslos. Der Regressionstest prüft dynamische Routen, unveränderte Dateien, wiederholte Ausführung und Konflikte.
 
@@ -81,4 +81,14 @@ Der Skin-Import liest die öffentlich gelisteten Varianten auf jeder Template-Se
 
 ## Validierung
 
-`npm run check` führt TypeScript und die Exportprüfung aus: alle 47 Inhaltsrouten plus 404, lokale Links und Medien, unveränderte Shop-Ziele, ChatStyle-Logos, H1-Struktur, eindeutige Metadaten, Canonicals, Indexierungsstatus, JSON-LD und Sitemap. Alle 40 Templates müssen bereits im erzeugten HTML stehen. Browserprüfungen ergänzen dies um React-Hydration, Seitennavigation, Suche, Filter, Nachladen, Video-Steuerung, Tastaturbedienung und mobile Layouts.
+`npm run check` führt TypeScript und die Exportprüfung aus: alle 141 Inhaltsrouten plus 404, lokale Links und Medien, unveränderte Shop-Ziele, ChatStyle-Logos, H1-Struktur, eindeutige Metadaten, Canonicals, Indexierungsstatus, JSON-LD und Sitemap. Alle 40 Templates müssen bereits im erzeugten HTML stehen. Browserprüfungen ergänzen dies um React-Hydration, Seitennavigation, Suche, Filter, Nachladen, Video-Steuerung, Tastaturbedienung und mobile Layouts.
+
+## Sprachen
+
+Englisch ist die Standardsprache unter `/`, Deutsch liegt unter `/de/`, Spanisch unter `/es/`. Die bestehenden Pfade bleiben erhalten; die Sprachversionen ergänzen lediglich ihren Präfix. Es gibt keine automatische Browser-Sprachumleitung: Ein direkter Aufruf von `/` bleibt Englisch. Die gewählte Sprache steckt in der URL und bleibt bei internen Seitenwechseln sowie beim Neuladen erhalten. Der Sprachwechsel bewahrt Seite, Suchfilter und Abschnitt.
+
+`source/locales/{en,de,es}.json` enthält Oberfläche, Startseite, Kategorien, Ratgeber und Metadaten. `source/editorial.en.json` und `source/editorial.es.json` ergänzen die deutschen Beschreibungen und Gestaltungstipps aus `source/editorial.mjs`. Template- und Skin-Namen sowie Originalvideos bleiben unverändert. Auch englische und spanische Skin-Beispielnachrichten werden lokal generiert (`predev` und `build`); diese abgeleiteten HTML-Dateien werden nicht eingecheckt.
+
+Jede Sprachseite hat einen eigenen Canonical, gegenseitige `hreflang`-Verweise einschließlich englischem `x-default`, übersetzte Metadaten und passende strukturierte Daten. Die Sitemap enthält alle 141 Sprachseiten. Die vorhandenen privaten Freigaben und `noindex` bleiben bestehen. Die global verwendete 404 ist auf Englisch; unbekannte Sprachpfade führen über die Sprachauswahl zur jeweiligen Startseite.
+
+Die Übersetzungs- und Routingtests prüfen vollständige Schlüssel, Platzhalter, alle 40 Template-Texte, Sprachwechsel mit Suchparametern sowie HTML-Sprachen und Alternativ-URLs im fertigen Export.

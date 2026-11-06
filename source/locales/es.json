@@ -1,0 +1,173 @@
+{
+  "ui": {
+    "skip": "Saltar al contenido",
+    "home": "Inicio",
+    "homeLabel": "Inicio de Chat Overlays",
+    "mainNav": "Navegación principal",
+    "mobileNav": "Navegación móvil",
+    "morePages": "Más páginas",
+    "breadcrumbs": "Ruta de navegación",
+    "templates": "Plantillas",
+    "how": "Cómo funciona",
+    "about": "Sobre los diseños",
+    "templatesOn": "Plantillas en",
+    "menu": "Menú",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "language": "Idioma",
+    "newTab": "se abre en una pestaña nueva",
+    "viewOn": "Ver en",
+    "guide": "Guía de overlays",
+    "search": "Buscar plantillas",
+    "searchLabel": "Buscar plantillas",
+    "filter": "Filtrar por estilo",
+    "allStyles": "Todos los estilos",
+    "count": "{shown} de {total} plantillas",
+    "noResults": "No se encontraron plantillas",
+    "empty": "No hay plantillas que coincidan.",
+    "reset": "Restablecer búsqueda",
+    "more": "Más plantillas",
+    "details": "Ver detalles",
+    "overlay": "overlay de chat",
+    "pause": "Pausar",
+    "play": "Reproducir",
+    "pausePreviews": "Pausar vistas previas",
+    "playPreviews": "Reproducir vistas previas",
+    "forStream": "Para tu directo",
+    "free": "Gratis en ChatStyle.",
+    "price": "Consulta el precio y las opciones de personalización en ChatStyle.",
+    "related": "Más de este estilo.",
+    "skinsTitle": "Un estilo. Tu versión.",
+    "skins": "variantes",
+    "skin": "Variante",
+    "previewBackground": "Fondo de la vista previa",
+    "lightBackground": "Fondo claro",
+    "darkBackground": "Fondo oscuro",
+    "chooseSkin": "Elegir una variante",
+    "sampleText": "Así se ve tu chat.",
+    "countOne": "{shown} de {total} plantilla",
+    "skinsOne": "variante"
+  },
+  "home": {
+    "hero": [
+      "Chat con",
+      "carácter"
+    ],
+    "tagline": "Overlays animados con el estilo de tu comunidad.",
+    "discover": "Explorar overlays",
+    "platform": "Más sobre",
+    "gallery": "Encuentra tu estilo.",
+    "howTitle": "Tu estilo. En tu directo.",
+    "steps": [
+      [
+        "Encuentra tu estilo",
+        "Reproduce las vistas previas y descubre tu overlay favorito."
+      ],
+      [
+        "Descúbrelo en ChatStyle",
+        "El enlace lleva a la plantilla, donde encontrarás el precio y los ajustes."
+      ],
+      [
+        "Llévalo a tu directo",
+        "Configura el overlay en ChatStyle y añádelo como fuente de navegador en OBS."
+      ]
+    ],
+    "creatorTitle": [
+      "Pequeños detalles.",
+      "Mucha personalidad."
+    ],
+    "creatorDescription": "Desde gatos dormidos hasta escritorios retro: 40 overlays de chat para el estilo de tu comunidad.",
+    "allDesigns": "Todos los diseños en",
+    "faqTitle": "Resolvemos tus dudas.",
+    "faq": [
+      [
+        "¿Dónde encuentro las plantillas?",
+        "En ChatStyle. Los enlaces de las vistas previas llevan a cada plantilla, donde puedes consultar el precio actual y todos los detalles."
+      ],
+      [
+        "¿Cómo añado el overlay a OBS?",
+        "Tras configurarlo en ChatStyle, añade la URL del overlay como fuente de navegador en tu escena de OBS. Ajusta allí su tamaño y posición."
+      ],
+      [
+        "¿Qué estilo encaja con mi directo?",
+        "Ten en cuenta los colores, la legibilidad y el movimiento junto al juego o la cámara. Nuestra [guía de overlays](/ratgeber/chat-overlay-auswaehlen/) te ayuda a elegir."
+      ]
+    ]
+  },
+  "seo": {
+    "homeTitle": "Overlays de chat para Twitch y OBS | Chat Overlays",
+    "homeDescription": "Explora 40 overlays de chat con vistas previas en vídeo. Encuentra tu estilo y descubre tu plantilla favorita en ChatStyle.",
+    "collection": "Overlays de chat de JesusTenG",
+    "collectionDescription": "Vistas previas originales e inspiración de diseño para tus directos.",
+    "detailTitle": "{name} – Overlay de chat {category} | JesusTenG",
+    "detailDescription": "Mira el vídeo original y descubre la plantilla en ChatStyle.",
+    "categoryTitle": "Overlays de chat {category} para tu directo | JesusTenG"
+  },
+  "guide": {
+    "title": "Cómo elegir tu overlay de chat | Guía de diseño para directos",
+    "description": "Encuentra un overlay que encaje con tu directo: comprueba el estilo, la legibilidad, el ancho del chat y las animaciones con ejemplos reales.",
+    "heading": [
+      "Un buen diseño",
+      "se lee bien."
+    ],
+    "intro": "Tu chat debe reflejar tu personalidad y resultar fácil de leer. Estas cuatro comprobaciones te ayudarán a encontrar un diseño que funcione en tu escena real.",
+    "sections": [
+      [
+        "1. Empieza por tu escena.",
+        "Observa tu cámara, los paneles y los juegos que sueles emitir. Elige un elemento que quieras repetir en el chat: un color, una forma o un ambiente. Prueba [Lofi Windows 93](/overlays/lofi-windows-93/) para un escritorio nostálgico o [Chat Garden](/overlays/chat-garden/) para una escena botánica."
+      ],
+      [
+        "2. Dale al chat el espacio adecuado.",
+        "El overlay debe funcionar con mensajes cortos y largos. Decide si usarás una columna fija o una esquina libre de tu escena. Diseños estrechos como [Inline Flow](/overlays/inline-flow/) y [Small Talk](/overlays/small-talk/) encajan en composiciones compactas. Los diseños decorativos necesitan más espacio alrededor de las burbujas."
+      ],
+      [
+        "3. Comprueba el contraste y las vistas pequeñas.",
+        "Prueba el overlay sobre momentos claros y oscuros del juego. Después, reduce la escena completa: ¿siguen siendo legibles los nombres y los mensajes? Los estilos de píxeles como [Retromon Silver](/overlays/retromon-silver/) necesitan un tamaño de letra suficiente. Los adornos florales no deben tapar el texto."
+      ],
+      [
+        "4. Fíjate en la animación.",
+        "Una imagen muestra el estilo; el vídeo original muestra el ritmo. Comprueba cómo funciona el chat junto a la cámara y las alertas. Si tu escena ya tiene mucho movimiento, quizá convenga un chat más tranquilo. Compara [Violet Frame](/overlays/violet-frame/) con su versión más compacta, [Violet Frame Slim](/overlays/violet-frame-slim/)."
+      ]
+    ],
+    "calloutTitle": "¿Ya tienes tu favorito?",
+    "callout": "Abre la plantilla en ChatStyle para consultar el precio actual y los ajustes disponibles. Allí podrás configurar el overlay.",
+    "cta": "Explorar las 40 plantillas"
+  },
+  "categories": {
+    "neon-cyber": {
+      "name": "Neón y ciber",
+      "intro": "Contornos luminosos, ventanas de terminal y detalles digitales. Overlays para escenas oscuras, ciencia ficción y entornos tecnológicos.",
+      "tip": "Comprueba que las líneas de neón se distingan del fondo. Una zona tranquila detrás del chat y unos pocos colores recurrentes ayudan a mantener la coherencia visual."
+    },
+    "cozy-cute": {
+      "name": "Acogedor y adorable",
+      "intro": "Colores pastel, flores y pequeños personajes para directos relajados. Encuentra un overlay que se sienta parte de tu comunidad.",
+      "tip": "Comprueba el contraste de las burbujas claras con tu escena. Deja espacio entre los adornos, la cámara y las alertas para que los mensajes sigan siendo protagonistas."
+    },
+    "retro-pixel": {
+      "name": "Retro y píxeles",
+      "intro": "Desde ventanas clásicas de escritorio hasta diálogos arcade: overlays para juegos retro, mundos de píxeles y nostalgia digital.",
+      "tip": "Las fuentes de píxeles necesitan suficiente tamaño. Revisa también una vista reducida de la escena, porque muchos espectadores usan el móvil."
+    },
+    "clean-minimal": {
+      "name": "Limpio y minimalista",
+      "intro": "Burbujas estrechas, líneas claras y espacio para tu contenido. Diseños discretos para complementar tu escena.",
+      "tip": "Prueba la columna de chat con nombres largos, emotes y mensajes de varias líneas. Un diseño minimalista transmite calma cuando sus espacios funcionan en la práctica."
+    },
+    "dark-gothic": {
+      "name": "Oscuro y gótico",
+      "intro": "Fondos oscuros, marcos ornamentales y temáticas con personalidad. Descubre diseños para fantasía, terror y directos con ambiente.",
+      "tip": "Los diseños oscuros necesitan texto con buen contraste. Prueba el overlay en momentos claros y oscuros del juego y mira sus animaciones antes de usarlo."
+    }
+  },
+  "error": {
+    "title": "Página no encontrada | Chat Overlays",
+    "description": "Explora overlays de chat y encuentra tu próximo estilo.",
+    "heading": [
+      "Este chat está",
+      "vacío por ahora."
+    ],
+    "text": "Esta página no existe. Tu próximo estilo te espera en la galería.",
+    "back": "Volver a la galería"
+  }
+}

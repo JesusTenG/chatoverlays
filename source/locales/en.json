@@ -1,0 +1,173 @@
+{
+  "ui": {
+    "skip": "Skip to content",
+    "home": "Home",
+    "homeLabel": "Chat Overlays home",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "morePages": "More pages",
+    "breadcrumbs": "Breadcrumbs",
+    "templates": "Templates",
+    "how": "How it works",
+    "about": "About the designs",
+    "templatesOn": "Templates on",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "newTab": "opens in a new tab",
+    "viewOn": "View on",
+    "guide": "Overlay guide",
+    "search": "Search templates",
+    "searchLabel": "Search templates",
+    "filter": "Filter by style",
+    "allStyles": "All styles",
+    "count": "{shown} of {total} templates",
+    "noResults": "No templates found",
+    "empty": "No matching templates.",
+    "reset": "Reset search",
+    "more": "More templates",
+    "details": "View details",
+    "overlay": "chat overlay",
+    "pause": "Pause",
+    "play": "Play",
+    "pausePreviews": "Pause previews",
+    "playPreviews": "Play previews",
+    "forStream": "For your stream",
+    "free": "Free on ChatStyle.",
+    "price": "Find pricing and customization options on ChatStyle.",
+    "related": "More in this style.",
+    "skinsTitle": "One look. Your version.",
+    "skins": "skins",
+    "skin": "Skin",
+    "previewBackground": "Preview background",
+    "lightBackground": "Light background",
+    "darkBackground": "Dark background",
+    "chooseSkin": "Choose a skin",
+    "sampleText": "This is how your chat looks.",
+    "countOne": "{shown} of {total} template",
+    "skinsOne": "skin"
+  },
+  "home": {
+    "hero": [
+      "Chat with",
+      "character"
+    ],
+    "tagline": "Animated overlays for your community’s own look.",
+    "discover": "Explore overlays",
+    "platform": "More about",
+    "gallery": "Find your look.",
+    "howTitle": "Your look. In your stream.",
+    "steps": [
+      [
+        "Find your style",
+        "Play the previews and discover your favorite overlay."
+      ],
+      [
+        "Explore on ChatStyle",
+        "Go straight to the template for pricing and settings."
+      ],
+      [
+        "Bring it to your stream",
+        "Set up your overlay in ChatStyle and add it as a browser source in OBS."
+      ]
+    ],
+    "creatorTitle": [
+      "Small details.",
+      "Big personality."
+    ],
+    "creatorDescription": "From sleeping cats to retro desktops: 40 chat overlays for your community’s look.",
+    "allDesigns": "All designs on",
+    "faqTitle": "A few quick answers.",
+    "faq": [
+      [
+        "Where can I find the templates?",
+        "On ChatStyle. Each preview links to its original template, where you’ll find current pricing and all the details."
+      ],
+      [
+        "How do I add an overlay to OBS?",
+        "After setting it up in ChatStyle, add the overlay URL as a browser source in your OBS scene. Adjust its size and position in your scene."
+      ],
+      [
+        "Which style suits my stream?",
+        "Think about color, readability and movement alongside your game or camera. Our [quick overlay guide](/ratgeber/chat-overlay-auswaehlen/) helps you choose."
+      ]
+    ]
+  },
+  "seo": {
+    "homeTitle": "Chat overlays for Twitch & OBS | Chat Overlays",
+    "homeDescription": "Explore 40 chat overlays with original video previews. Find your style and discover your favorite template on ChatStyle.",
+    "collection": "Chat overlays by JesusTenG",
+    "collectionDescription": "Original previews and design inspiration for your livestream.",
+    "detailTitle": "{name} – {category} chat overlay | JesusTenG",
+    "detailDescription": "Watch the original preview and explore the template on ChatStyle.",
+    "categoryTitle": "{category} chat overlays for your stream | JesusTenG"
+  },
+  "guide": {
+    "title": "Choose the right chat overlay | Stream design guide",
+    "description": "Find a chat overlay that fits your stream: check style, readability, chat width and motion with real design examples.",
+    "heading": [
+      "A great look",
+      "reads well."
+    ],
+    "intro": "Your chat should feel like you, and your community should be able to read it. These four checks help you find a design that works in your actual stream.",
+    "sections": [
+      [
+        "1. Start with your scene.",
+        "Look at your camera, panels and the games you stream. Pick an element to echo in your chat: an accent color, a shape or a mood. Try [Lofi Windows 93](/overlays/lofi-windows-93/) for a nostalgic desktop feel, or [Chat Garden](/overlays/chat-garden/) for a botanical scene."
+      ],
+      [
+        "2. Give your chat the right space.",
+        "An overlay needs to handle short and long messages. Decide between a dedicated chat column and a free corner of your scene. Slim designs such as [Inline Flow](/overlays/inline-flow/) and [Small Talk](/overlays/small-talk/) suit compact layouts. Decorative designs need more space around their bubbles."
+      ],
+      [
+        "3. Check contrast and smaller views.",
+        "Try your overlay over both light and dark gameplay. Then shrink the entire scene: can you still read names and messages? Pixel styles such as [Retromon Silver](/overlays/retromon-silver/) need enough text size. Floral details should never cover the words."
+      ],
+      [
+        "4. Watch the animation.",
+        "A still image shows the style; the original video shows the pace. See how the chat works alongside your camera and alerts. If your scene already has lots of movement, a calmer chat may work better. Compare [Violet Frame](/overlays/violet-frame/) with the more compact [Violet Frame Slim](/overlays/violet-frame-slim/)."
+      ]
+    ],
+    "calloutTitle": "Found your favorite?",
+    "callout": "Open the template on ChatStyle to see current pricing and available settings. You can then set up your overlay there.",
+    "cta": "Explore all 40 templates"
+  },
+  "categories": {
+    "neon-cyber": {
+      "name": "Neon & Cyber",
+      "intro": "Glowing outlines, terminal windows and digital details. Chat overlays for dark gaming scenes, sci-fi and technical setups.",
+      "tip": "Keep neon lines visible against your background. A calm area behind the chat and a few repeating accent colors help the scene feel consistent."
+    },
+    "cozy-cute": {
+      "name": "Cozy & Cute",
+      "intro": "Pastel colors, flowers and little characters for relaxed streams. Find a chat overlay that feels like part of your community.",
+      "tip": "Check the contrast between light bubbles and your scene. Leave space around decorations, your camera and alerts so messages remain the focus."
+    },
+    "retro-pixel": {
+      "name": "Retro & Pixel",
+      "intro": "From classic desktop windows to arcade dialogues: chat overlays for retro games, pixel worlds and digital nostalgia.",
+      "tip": "Pixel fonts need enough size. Check a smaller preview of your entire scene, since many viewers watch on their phones."
+    },
+    "clean-minimal": {
+      "name": "Clean & Minimal",
+      "intro": "Slim bubbles, clean lines and plenty of room for your content. Subtle designs that complement your scene.",
+      "tip": "Test your chat column with long names, emotes and multiline messages. Minimal designs feel calm when their spacing works in real use."
+    },
+    "dark-gothic": {
+      "name": "Dark & Gothic",
+      "intro": "Dark surfaces, ornate frames and distinctive themes. Explore chat designs for fantasy, horror and atmospheric streams.",
+      "tip": "Dark designs need clear text contrast. Check the overlay in light and dark game scenes and watch its animated effects before using it."
+    }
+  },
+  "error": {
+    "title": "Page not found | Chat Overlays",
+    "description": "Explore chat overlays and find your next style.",
+    "heading": [
+      "This chat is",
+      "empty for now."
+    ],
+    "text": "This page doesn’t exist. Your next style is waiting in the gallery.",
+    "back": "Back to the gallery"
+  }
+}

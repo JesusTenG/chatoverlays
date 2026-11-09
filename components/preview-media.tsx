@@ -51,8 +51,9 @@ export function PreviewMedia({ template, mode, active = true }: { template: Temp
   }, [wantsPlayback, template.video]);
 
   const className = mode === 'hero' ? 'hero-media' : mode === 'detail' ? 'detail-media' : 'card-media';
+  const sizes = mode === 'hero' ? '(max-width: 680px) 47vw, 23vw' : mode === 'detail' ? '(max-width: 680px) 100vw, 50vw' : '(max-width: 680px) 100vw, (max-width: 900px) 50vw, 33vw';
   const media = <>
-    <img src={template.image} alt={`${template.name} ${t.ui.overlay}`} width="1080" height="1080" loading={mode === 'hover' ? 'lazy' : 'eager'} decoding="async" fetchPriority={mode === 'detail' || mode === 'hero' && template.slug === 'neo-tokyo' ? 'high' : 'auto'}/>
+    <img src={template.image} srcSet={`${template.image.replace('.webp', '.360.webp')} 360w, ${template.image.replace('.webp', '.720.webp')} 720w, ${template.image} 1080w`} sizes={sizes} alt={`${template.name} ${t.ui.overlay}`} width="1080" height="1080" loading={mode === 'hover' ? 'lazy' : 'eager'} decoding="async" fetchPriority={mode === 'detail' || mode === 'hero' && template.slug === 'neo-tokyo' ? 'high' : 'auto'}/>
     <video ref={videoRef} className="inline-video" data-inline-video={mode} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} onPause={() => setPlaying(false)} onError={() => { setFailed(true); setPlaying(false); }}/>
   </>;
   const mediaClass = `${className}${playing ? ' is-playing' : ''}`;

@@ -64,6 +64,8 @@ Kein eigenes Tracking, keine externen Schriftarten und keine Anwendungscookies. 
 
 Die Originalmedien stammen von den öffentlich verlinkten CDN-URLs der Creator-Seite und wurden am 3. November 2026 lokal übernommen.
 
+Die Originalbilder bleiben erhalten. Eingecheckte Varianten mit 360 und 720 Pixeln werden über `srcset` passend zur Anzeigegröße geladen. Nach einem Medienimport erstellt `node scripts/resize-template-posters.mjs` diese Varianten neu.
+
 ```powershell
 Invoke-WebRequest -Uri 'https://chatstyle.gg/templates/creator/jesusteng' -OutFile 'source/creator.html'
 npm run import:catalog
@@ -78,6 +80,10 @@ npm run import:skins
 ```
 
 Der Skin-Import liest die öffentlich gelisteten Varianten auf jeder Template-Seite. Aktuell sind es **344 Skins bei 27 Templates**; 13 Templates haben keine gelisteten Skins. Namen, Einstellungen, Original-HTML und CSS werden übernommen, benötigte Bilder und Schriften lokal gespeichert. Die Vorschauen zeigen neutrale Beispielnachrichten mit der jeweiligen Originalgestaltung, keinen Live-Chat. `source/skins.json` enthält Herkunft und Importzeit; die eigenständigen Vorschauen liegen unter `public/assets/skins/` und führen keine Scripts aus. Ein normaler Build benötigt keinen Zugriff auf ChatStyle.
+
+Die Skinauswahl verwendet kleine, eingecheckte WebP-Vorschaubilder aus diesen Originalgestaltungen. Zunächst erscheinen sechs Varianten; weitere lassen sich aufklappen. Nur die ausgewählte große Vorschau lädt ein isoliertes HTML-Dokument. Auf dem Handy führt eine Auswahl unterhalb der Vorschau wieder zu ihr zurück.
+
+Nach einem erneuten Skin-Import lassen sich die Bilder mit `scripts/render-skin-thumbnails.mjs` aktualisieren: Bei laufendem Entwicklungsserver erzeugt `node scripts/render-skin-thumbnails.mjs --browser-code 0 344` eine Funktion für Playwrights `browser_run_code_unsafe` (oder einen eigenen Playwright-Aufruf). Die Funktion speichert PNGs in `qa/`; `node scripts/render-skin-thumbnails.mjs --compress` erzeugt daraus die WebPs neben den Skin-HTML-Dateien. Normale Builds benötigen diese Browser-Schritte nicht.
 
 ## Validierung
 

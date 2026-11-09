@@ -57,6 +57,10 @@ for (const item of catalog) {
   assert.equal(new URL(item.shopUrl).pathname, new URL(item.url).pathname);
   const image = await readFile(path.join(root, item.image));
   assert.equal(image.subarray(8, 12).toString(), 'WEBP');
+  for (const width of [360, 720]) {
+    const poster = await readFile(path.join(root, item.image.replace('.webp', `.${width}.webp`)));
+    assert.equal(poster.subarray(8, 12).toString(), 'WEBP', `Responsive poster: ${item.slug}/${width}`);
+  }
   const video = await readFile(path.join(root, item.video));
   assert.equal(video.subarray(0, 4).toString('hex'), '1a45dfa3');
   const skins = skinCatalog[item.slug].skins;

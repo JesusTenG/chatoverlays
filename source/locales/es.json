@@ -46,7 +46,9 @@
     "chooseSkin": "Elegir una variante",
     "sampleText": "Así se ve tu chat.",
     "countOne": "{shown} de {total} plantilla",
-    "skinsOne": "variante"
+    "skinsOne": "variante",
+    "allSkins": "Ver las {count} variantes",
+    "fewerSkins": "Ver menos variantes"
   },
   "home": {
     "hero": [
@@ -55,7 +57,7 @@
     ],
     "tagline": "Overlays animados con el estilo de tu comunidad.",
     "discover": "Explorar overlays",
-    "platform": "Más sobre",
+    "platform": "Personaliza con",
     "gallery": "Encuentra tu estilo.",
     "howTitle": "Tu estilo. En tu directo.",
     "steps": [
@@ -82,7 +84,7 @@
     "faq": [
       [
         "¿Dónde encuentro las plantillas?",
-        "En ChatStyle. Los enlaces de las vistas previas llevan a cada plantilla, donde puedes consultar el precio actual y todos los detalles."
+        "Explora aquí las vistas previas y variantes de cada plantilla. Después, ábrela en ChatStyle para consultar el precio y personalizarla."
       ],
       [
         "¿Cómo añado el overlay a OBS?",

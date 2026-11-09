@@ -46,7 +46,9 @@
     "chooseSkin": "Choose a skin",
     "sampleText": "This is how your chat looks.",
     "countOne": "{shown} of {total} template",
-    "skinsOne": "skin"
+    "skinsOne": "skin",
+    "allSkins": "See all {count} skins",
+    "fewerSkins": "Show fewer skins"
   },
   "home": {
     "hero": [
@@ -55,7 +57,7 @@
     ],
     "tagline": "Animated overlays for your community’s own look.",
     "discover": "Explore overlays",
-    "platform": "More about",
+    "platform": "Customize with",
     "gallery": "Find your look.",
     "howTitle": "Your look. In your stream.",
     "steps": [
@@ -82,7 +84,7 @@
     "faq": [
       [
         "Where can I find the templates?",
-        "On ChatStyle. Each preview links to its original template, where you’ll find current pricing and all the details."
+        "Explore a template’s previews and skins here, then open it on ChatStyle for current pricing and customization."
       ],
       [
         "How do I add an overlay to OBS?",

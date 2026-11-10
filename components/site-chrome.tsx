@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import config from '@/site.config.json';
 import type { Category } from '@/lib/catalog';
-import { localizePath, guidePath } from '@/lib/routing.mjs';
+import { localizePath } from '@/lib/routing.mjs';
 import { useLocale } from './locale-provider';
 
 export function BrandMark() {
@@ -29,7 +29,7 @@ export function ChatStyleButton({ href = config.creatorUrl, label, className = '
 
 export function Footer() {
   const { locale, t } = useLocale();
-  return <footer className="footer wrap"><span>© JesusTenG</span><nav aria-label={t.ui.morePages}><Link href={localizePath(guidePath, locale)}>{t.ui.guide}</Link><ChatStyleLink/></nav></footer>;
+  return <footer className="footer wrap"><span>© JesusTenG</span><nav aria-label={t.ui.morePages}><Link href={localizePath('/guides/', locale)}>{t.ui.guides}</Link><ChatStyleLink/></nav></footer>;
 }
 
 export function Breadcrumbs({ name, category }: { name: string; category?: Category }) {

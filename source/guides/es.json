@@ -1,0 +1,167 @@
+{
+  "ui": {
+    "title": "Guías de overlays de chat: variantes, estilos y OBS",
+    "description": "Elige variantes de chat, compara diseños reales y configura OBS. Cada ejemplo enlaza a su vista previa y a la plantilla original de ChatStyle.",
+    "heading": "Dale tu estilo al chat.",
+    "intro": "Desde elegir los colores hasta configurar OBS. Guías prácticas con overlays reales que puedes explorar.",
+    "nav": "Guías",
+    "examples": "Ver los ejemplos",
+    "steps": "Paso a paso",
+    "notes": "Qué comprobar",
+    "faq": "Respuestas rápidas",
+    "related": "Sigue explorando",
+    "contents": "En esta guía",
+    "preview": "Vista previa y detalles",
+    "skinPreview": "Explorar esta variante",
+    "all": "Todas las guías",
+    "sources": "Instrucciones oficiales",
+    "homeTitle": "Una ayuda para tu configuración.",
+    "homeLink": "Explorar las guías"
+  },
+  "articles": {
+    "add-chat-overlay-obs": {
+      "title": "Añadir un overlay de chat de Twitch a OBS: guía paso a paso",
+      "description": "Configura un overlay de ChatStyle en OBS, elige un diseño y comprueba su posición. Cuatro pasos con Sleeping Cats, Lofi Windows 93 y Small Talk como ejemplos.",
+      "heading": "Añade tu overlay de chat a OBS.",
+      "intro": "Una buena caja de chat encaja en tu escena: se ve junto a la acción, tiene un tamaño legible y combina con tu canal. Empieza por uno de los overlays de abajo y después lleva tu chat configurado a OBS.",
+      "answer": "Utiliza la URL del overlay de tu chat configurado. La página de una plantilla y los vídeos de esta galería sirven para elegir el diseño; no son la fuente de tu chat en directo.",
+      "steps": [
+        ["Elige primero la forma", "Compara los ejemplos al tamaño aproximado que usarás. Deja espacio para nombres, varias líneas de texto y adornos sobre la burbuja. Un diseño compacto y uno decorativo necesitan superficies diferentes."],
+        ["Configura el chat en ChatStyle", "Abre el enlace de ChatStyle del ejemplo y configura allí el overlay. Termina de elegir su aspecto y obtén la URL del overlay de tu chat configurado. La necesitarás para la escena de OBS."],
+        ["Añade una fuente Navegador", "En OBS, selecciona la escena y añade Navegador desde la lista de Fuentes. Pega la URL del overlay en el campo URL, con Archivo local desactivado. Ajusta el ancho y el alto a la zona que quieras mostrar."],
+        ["Colócalo y prueba una conversación", "Sitúa la fuente de chat por encima del juego en la lista de Fuentes y colócala en la escena. Prueba un mensaje largo y varios cortos. Observa la escena completa, no solo la vista ampliada del chat."]
+      ],
+      "examples": [
+        {"slug":"sleeping-cats","why":"Para un rincón propio y acogedor. Los gatos sobresalen por encima de las burbujas: revisa el borde superior antes de fijar el espacio definitivo."},
+        {"slug":"lofi-windows-93","why":"Ventanas de escritorio para una escena retro. Mantén visibles sus bordes y repite uno de sus colores de acento en otra parte del diseño."},
+        {"slug":"small-talk","why":"Un punto de partida compacto cuando el juego necesita casi toda la pantalla. Comprueba que reducir la superficie del chat no haya dejado el texto demasiado pequeño."}
+      ],
+      "notes": [
+        ["La fuente está vacía", "Comprueba la URL del overlay y que la fuente sea visible. Envía un mensaje de prueba; un chat sin actividad puede no tener nada que mostrar."],
+        ["Los mensajes se cortan", "Revisa el ancho y el alto de la fuente Navegador antes de reducir toda la fuente. Deja un pequeño margen alrededor de los bordes decorativos."]
+      ],
+      "faq": [
+        ["¿Debo pegar la página de la plantilla en OBS?", "Utiliza la URL de tu overlay configurado en ChatStyle. La página de la plantilla permite consultar el diseño y sus opciones."],
+        ["¿Por qué aparece el chat detrás del juego?", "Comprueba el orden de las fuentes. OBS dibuja las fuentes situadas más arriba en la lista por delante de las inferiores."]
+      ],
+      "related": ["readable-chat-overlay","chat-overlay-skins"],
+      "sources": [
+        {"label":"OBS: fuente Navegador","url":"https://obsproject.com/kb/Browser-Source"},
+        {"label":"OBS: guía de fuentes","url":"https://obsproject.com/kb/sources-guide"},
+        {"label":"ChatStyle: configurar el overlay","url":"https://chatstyle.gg/"}
+      ]
+    },
+    "chat-overlay-skins": {
+      "title": "Skins de chat: compara colores y burbujas personalizadas",
+      "description": "Explora variantes reales de ChatStyle para Sleeping Cats, Lofi Windows 93 y Neo Tokyo. Compara colores y abre cada ejemplo con su variante seleccionada.",
+      "heading": "Encuentra los colores de tu chat.",
+      "intro": "¿Te gusta la forma de un overlay, pero buscas otro ambiente? Empieza por sus variantes. Aquí tienes tres ejemplos reales: gatos pastel, una ventana clara y una terminal azul oscura. Cada enlace de vista previa abre esa variante exacta en nuestra galería.",
+      "answer": "La plantilla define el diseño general del chat; una variante cambia el aspecto de un mensaje dentro de él. El streamer controla el acceso de los espectadores. Este estilo aparece en el overlay del directo, no en el panel de chat de Twitch.",
+      "steps": [
+        ["Empieza por la forma de la burbuja", "Elige un marco antes de comparar colores. Fíjate en la superficie del mensaje, la posición del nombre y el espacio que ocupan los detalles decorativos."],
+        ["Abre una variante concreta", "Pulsa Explorar esta variante en uno de los ejemplos. La selección aparece en la vista grande. Alterna los fondos claro y oscuro para comparar los bordes y las letras."],
+        ["Haz una selección breve", "Compara una opción suave, una oscura y otra con acentos fuertes, si la plantilla las ofrece. Abre el mismo ejemplo en el móvil: la miniatura no sustituye una prueba de la escena completa."],
+        ["Continúa en ChatStyle", "Usa el enlace de la plantilla a ChatStyle para consultar sus opciones actuales. La galería muestra el aspecto; la configuración del canal y los permisos se gestionan en ChatStyle."]
+      ],
+      "examples": [
+        {"slug":"sleeping-cats","skinId":725,"why":"Candy combina una superficie rosa clara con detalles violetas. Compárala con Lagoon dentro de la misma plantilla: el color cambia el ambiente, pero los gatos se mantienen."},
+        {"slug":"lofi-windows-93","skinId":1130,"why":"Lavender coloca una zona clara de mensajes dentro de una ventana retro. Comprueba el marco con ambos fondos de vista previa, no solo sobre gris oscuro."},
+        {"slug":"neo-tokyo","skinId":919,"why":"Blue aporta un contraste más oscuro, de estilo terminal, frente a los ejemplos pastel. Fíjate en los nombres y bordes al compararlo con escenas claras."}
+      ],
+      "notes": [
+        ["Compara en las mismas condiciones", "Usa el mismo fondo en la primera comparación y después cámbialo para todos tus favoritos. Así evitarás preferir una variante solo porque destaca más sobre un fondo concreto."],
+        ["Vista previa y chat real", "Las vistas de variantes contienen mensajes de ejemplo. El vídeo original muestra el movimiento; prueba una conversación real con tu overlay configurado."]
+      ],
+      "faq": [
+        ["¿Todas las plantillas tienen variantes?", "Solo mostramos una galería cuando hay variantes públicas importadas. La ausencia de una galería no significa que el diseño no se pueda personalizar."],
+        ["¿Puedo compartir una variante concreta?", "Sí. Al seleccionar una variante se actualiza la URL de la página de detalles. Copia el enlace para volver a abrir la misma selección."]
+      ],
+      "related": ["cute-cozy-chat-overlays","retro-pixel-chat-overlays"],
+      "sources": [{"label":"ChatStyle: variantes para espectadores","url":"https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"}]
+    },
+    "cute-cozy-chat-overlays": {
+      "title": "Overlays de chat cute y cozy para Twitch: gatos, flores y pastel",
+      "description": "Compara Sleeping Cats, Chat Garden y Magical Love para un directo acogedor. Pasos de diseño, vistas previas y enlaces directos a las plantillas en ChatStyle.",
+      "heading": "Un rincón acogedor para tu chat.",
+      "intro": "Un overlay adorable puede encajar en juegos tranquilos, manualidades o una escena de charla. La pregunta útil es cómo cabe su decoración en el espacio real disponible. Estos ejemplos siguen tres caminos: gatos, plantas y un marco divertido.",
+      "answer": "Elige un tema decorativo, dale espacio y comprueba las letras sobre tu fondo habitual. Incluso una paleta pastel necesita separar claramente los mensajes del resto de la escena.",
+      "steps": [
+        ["Elige un tema visual", "Decide si quieres animales, plantas o un marco más juguetón. Compara las formas de los ejemplos antes de reunir muchos adornos sin relación entre sí."],
+        ["Repite una paleta pequeña", "Elige un tono base y un acento presentes en el marco de tu cámara o en tus paneles. Si la plantilla tiene variantes, compáralas en su página de detalles."],
+        ["Deja sitio para los adornos", "Coloca la burbuja en una zona tranquila. Comprueba qué sobresale del mensaje, especialmente los gatos de Sleeping Cats y las plantas que rodean Chat Garden."],
+        ["Observa un momento con actividad", "Reproduce la vista original e imagina varios mensajes junto al juego o la cámara. Si ambas zonas compiten, simplifica primero los adornos cercanos antes de reducir el texto del chat."]
+      ],
+      "examples": [
+        {"slug":"sleeping-cats","why":"El motivo animal más evidente de esta selección. Funciona como punto de partida para una columna donde los gatos tengan espacio encima de cada mensaje. Explora sus distintas paletas."},
+        {"slug":"chat-garden","why":"Una alternativa botánica a los personajes. Pruébala sobre un fondo tranquilo para que las plantas se distingan del resto de la escena."},
+        {"slug":"magical-love","why":"Una opción más juguetona si quieres que el chat destaque como elemento de diseño. Compara su animación original con tus alertas antes de combinarlas."}
+      ],
+      "notes": [
+        ["Juegos con escenas claras", "Prueba tanto un fondo claro como uno oscuro. Si una burbuja pálida pierde su contorno, compara otra variante disponible o busca una zona más tranquila detrás del chat."],
+        ["Pantallas pequeñas", "Observa toda la escena a tamaño de móvil. Conserva nombres y mensajes legibles antes de dedicar espacio a más adornos."]
+      ],
+      "faq": [
+        ["¿Cozy tiene que significar rosa?", "No. Compara verde, crema, azul o tonos oscuros suaves cuando estén disponibles. La forma y el entorno importan tanto como el color."],
+        ["¿Dónde puedo ver la animación?", "Abre Vista previa y detalles en los ejemplos. Cada página reproduce el vídeo original de la plantilla y muestra las variantes importadas, si las hay."]
+      ],
+      "related": ["chat-overlay-skins","readable-chat-overlay"],
+      "sources": []
+    },
+    "retro-pixel-chat-overlays": {
+      "title": "Overlays de chat retro y pixel: ventanas, terminales y juegos",
+      "description": "Compara Lofi Windows 93, Neo Tokyo y Retromon Silver. Descubre estilos de escritorio, terminal y pixel con vistas previas y enlaces directos a ChatStyle.",
+      "heading": "Una pantalla retro para tu chat.",
+      "intro": "Retro no describe un único estilo. Una ventana de escritorio, una terminal oscura y un marco de videojuego evocan referencias distintas. Elige la que encaje con tu directo y revisa si el texto se entiende al tamaño que verá tu audiencia.",
+      "answer": "Lofi Windows 93 representa las ventanas de escritorio; Neo Tokyo, un ambiente de terminal; Retromon Silver, un marco pixel. Compara sus vídeos originales antes de elegir una variante de color.",
+      "steps": [
+        ["Elige una época o interfaz", "Empieza por una referencia: programas antiguos, ventanas de terminal o diálogos de videojuegos. Así será más fácil combinar los paneles sin llenar la escena de efectos inconexos."],
+        ["Comprueba el marco a tamaño real", "Mira las barras de título, esquinas y letras en la escena completa. Si se convierten en ruido visual, deja más espacio al chat en lugar de encajar un marco detallado en una esquina diminuta."],
+        ["Escoge un acento", "Repite uno de los colores del overlay en tu escena. Las galerías de Lofi y Neo Tokyo permiten comparar opciones claras y oscuras dentro del mismo diseño."],
+        ["Prueba el movimiento junto al juego", "Reproduce el vídeo de la plantilla al lado del tipo de contenido que sueles emitir. Un juego rápido agradece un entorno más tranquilo: el marco retro ya aporta bastante personalidad."]
+      ],
+      "examples": [
+        {"slug":"lofi-windows-93","why":"Los controles y bordes en capas hacen evidente la referencia al escritorio. Un punto de partida para escenas inspiradas en software antiguo y tonos violetas suaves."},
+        {"slug":"neo-tokyo","why":"Las ventanas oscuras y los acentos luminosos recuerdan a una terminal. Conserva visibles los bordes cuando lo coloques sobre una escena oscura."},
+        {"slug":"retromon-silver","why":"Una dirección pixel para composiciones inspiradas en videojuegos. Revisa las letras al tamaño previsto antes de reservar la zona del chat."}
+      ],
+      "notes": [
+        ["Evita marcos que compitan", "Una ventana de chat elaborada junto a un marco de cámara recargado puede saturar la escena. Repite un color o una forma de esquina en lugar de inventar un borde diferente para cada elemento."],
+        ["Mantén el texto legible", "Comprueba nombres y mensajes de varias líneas al reducir la escena completa. La nitidez del pixel no compensa unas letras demasiado pequeñas."]
+      ],
+      "faq": [
+        ["¿Son paquetes completos de overlays?", "Los ejemplos son plantillas de chat. Las vistas muestran el diseño del chat, no un paquete completo de cámara, alertas y escenas."],
+        ["¿Puedo comparar colores sin cambiar de plantilla?", "Sí, cuando hay variantes disponibles. Abre los detalles y selecciona una opción en su galería."]
+      ],
+      "related": ["chat-overlay-skins","add-chat-overlay-obs"],
+      "sources": []
+    },
+    "readable-chat-overlay": {
+      "title": "Overlays de chat legibles: diseños minimalistas, tamaño y contraste",
+      "description": "Elige un chat legible con Inline Flow, Small Talk y Violet Frame Slim. Pasos prácticos para comprobar ancho, contraste y posición en la escena.",
+      "heading": "Que cada mensaje se lea bien.",
+      "intro": "Una vista previa bonita puede resultar difícil de leer junto a un juego en movimiento. Compara el espacio que ocupan el marco, el mensaje y el nombre. Estos ejemplos estrechos priorizan la conversación frente a un panel decorativo grande.",
+      "answer": "Evalúa la legibilidad en la escena completa. Una zona de mensajes suficientemente ancha, un texto que contraste y un fondo tranquilo ayudan más que elegir un tamaño de letra aislado.",
+      "steps": [
+        ["Reserva una zona tranquila", "Elige un lugar que no quede cubierto constantemente por menús, subtítulos o movimientos rápidos. Decide cuánto espacio puedes dedicar antes de seleccionar el marco."],
+        ["Prueba tres longitudes de mensaje", "Usa un saludo corto, una frase larga y varios emotes. Busca saltos de línea incómodos, nombres que compitan con el texto y adornos que reduzcan demasiado la superficie útil."],
+        ["Compara escenas claras y oscuras", "Utiliza ambos fondos de vista previa cuando haya variantes y comprueba después tu juego real. Una burbuja oscura puede funcionar en una escena y perderse en otra."],
+        ["Revisa una grabación pequeña", "Graba una escena breve en local y mírala a menor tamaño. Si necesitas acercarte para leer, amplía el chat o simplifica el diseño que lo rodea."]
+      ],
+      "examples": [
+        {"slug":"inline-flow","why":"Un diseño en línea compacto para comparar cuando falta espacio vertical. Prueba un nombre largo junto al mensaje para comprobar cómo se aprovecha el ancho."},
+        {"slug":"small-talk","why":"Burbujas pequeñas como alternativa compacta. Deja sitio para varias líneas, de modo que una frase larga no se convierta en una columna estrecha de palabras."},
+        {"slug":"violet-frame-slim","why":"Un marco delgado que conserva un acento violeta más visible. Compáralo con los ejemplos más sencillos si buscas estilo alrededor de una zona de mensajes discreta."}
+      ],
+      "notes": [
+        ["No existe un tamaño universal", "El tamaño adecuado depende de la escena, la resolución de salida y la proporción de pantalla dedicada al chat. Una cifra aislada no garantiza que el resultado se lea bien."],
+        ["Un diseño sencillo también necesita contraste", "Minimalista no significa legible automáticamente. El mensaje debe distinguirse de su burbuja y esta, del juego que tiene detrás."]
+      ],
+      "faq": [
+        ["¿Debo reducir el chat para mostrar más juego?", "Primero elimina márgenes innecesarios o adornos que compitan en el entorno. Conserva suficiente espacio para leer la conversación."],
+        ["¿Por dónde empiezo si no conozco OBS?", "Elige uno de los ejemplos y sigue la guía de OBS enlazada al final de esta página."]
+      ],
+      "related": ["add-chat-overlay-obs","chat-overlay-skins"],
+      "sources": []
+    }
+  }
+}

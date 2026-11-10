@@ -48,7 +48,8 @@
     "countOne": "{shown} of {total} template",
     "skinsOne": "skin",
     "allSkins": "See all {count} skins",
-    "fewerSkins": "Show fewer skins"
+    "fewerSkins": "Show fewer skins",
+    "guides": "Guides"
   },
   "home": {
     "hero": [

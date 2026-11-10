@@ -87,14 +87,23 @@ Nach einem erneuten Skin-Import lassen sich die Bilder mit `scripts/render-skin-
 
 ## Validierung
 
-`npm run check` führt TypeScript und die Exportprüfung aus: alle 141 Inhaltsrouten plus 404, lokale Links und Medien, unveränderte Shop-Ziele, ChatStyle-Logos, H1-Struktur, eindeutige Metadaten, Canonicals, Indexierungsstatus, JSON-LD und Sitemap. Alle 40 Templates müssen bereits im erzeugten HTML stehen. Browserprüfungen ergänzen dies um React-Hydration, Seitennavigation, Suche, Filter, Nachladen, Video-Steuerung, Tastaturbedienung und mobile Layouts.
+`npm run check` führt TypeScript und die Exportprüfung aus: alle 159 Inhaltsrouten plus 404, lokale Links und Medien, unveränderte Shop-Ziele, ChatStyle-Logos, H1-Struktur, eindeutige Metadaten, Canonicals, Indexierungsstatus, JSON-LD und Sitemap. Alle 40 Templates müssen bereits im erzeugten HTML stehen. Browserprüfungen ergänzen dies um React-Hydration, Seitennavigation, Suche, Filter, Nachladen, Video-Steuerung, Tastaturbedienung und mobile Layouts.
 
-## Sprachen
+
+## Ratgeber und Suchthemen
+
+`/guides/` bündelt fünf Themen mit Beispielen, Schrittfolgen und direkten ChatStyle-Links: OBS-Einrichtung, Chat-Skins, Cozy-Designs, Retro-/Pixel-Designs und lesbare Layouts. Der bisherige Auswahl-Ratgeber bleibt unter seiner bestehenden URL erreichbar und enthält nun ebenfalls visuelle Beispiele. Alle Ratgeber liegen vollständig auf Englisch, Deutsch und Spanisch vor; die Site exportiert damit 159 Inhaltsrouten plus 404.
+
+Inhalte: `source/guides/{en,de,es}.json`; gemeinsame Darstellung: `components/guide-pages.tsx`; Routenliste: `source/guides/routes.mjs`. Die Ratgeber sind über Navigation, Startseite, Footer und passende Template-Seiten erreichbar. Sitemap, Canonicals, Sprachalternativen und Artikel-/Breadcrumb-Daten werden mit exportiert.
+
+Links wie `/overlays/sleeping-cats/?skin=725#skins` öffnen eine konkrete Variante. Die Auswahl aktualisiert die URL; Sprachwechsel behalten sie bei. Diese Varianten-URLs haben weiterhin die Template-Seite als Canonical. Die Artikel beschreiben konkrete Suchthemen, ohne Suchvolumen oder Rankings zu behaupten. Die private Freigabe und `noindex` bleiben bis zum öffentlichen Start unverändert.
+
+## Übersetzungen
 
 Englisch ist die Standardsprache unter `/`, Deutsch liegt unter `/de/`, Spanisch unter `/es/`. Die bestehenden Pfade bleiben erhalten; die Sprachversionen ergänzen lediglich ihren Präfix. Es gibt keine automatische Browser-Sprachumleitung: Ein direkter Aufruf von `/` bleibt Englisch. Die gewählte Sprache steckt in der URL und bleibt bei internen Seitenwechseln sowie beim Neuladen erhalten. Der Sprachwechsel bewahrt Seite, Suchfilter und Abschnitt.
 
 `source/locales/{en,de,es}.json` enthält Oberfläche, Startseite, Kategorien, Ratgeber und Metadaten. `source/editorial.en.json` und `source/editorial.es.json` ergänzen die deutschen Beschreibungen und Gestaltungstipps aus `source/editorial.mjs`. Template- und Skin-Namen sowie Originalvideos bleiben unverändert. Auch englische und spanische Skin-Beispielnachrichten werden lokal generiert (`predev` und `build`); diese abgeleiteten HTML-Dateien werden nicht eingecheckt.
 
-Jede Sprachseite hat einen eigenen Canonical, gegenseitige `hreflang`-Verweise einschließlich englischem `x-default`, übersetzte Metadaten und passende strukturierte Daten. Die Sitemap enthält alle 141 Sprachseiten. Die vorhandenen privaten Freigaben und `noindex` bleiben bestehen. Die global verwendete 404 ist auf Englisch; unbekannte Sprachpfade führen über die Sprachauswahl zur jeweiligen Startseite.
+Jede Sprachseite hat einen eigenen Canonical, gegenseitige `hreflang`-Verweise einschließlich englischem `x-default`, übersetzte Metadaten und passende strukturierte Daten. Die Sitemap enthält alle 159 Sprachseiten. Die vorhandenen privaten Freigaben und `noindex` bleiben bestehen. Die global verwendete 404 ist auf Englisch; unbekannte Sprachpfade führen über die Sprachauswahl zur jeweiligen Startseite.
 
 Die Übersetzungs- und Routingtests prüfen vollständige Schlüssel, Platzhalter, alle 40 Template-Texte, Sprachwechsel mit Suchparametern sowie HTML-Sprachen und Alternativ-URLs im fertigen Export.

@@ -48,7 +48,8 @@
     "countOne": "{shown} de {total} plantilla",
     "skinsOne": "variante",
     "allSkins": "Ver las {count} variantes",
-    "fewerSkins": "Ver menos variantes"
+    "fewerSkins": "Ver menos variantes",
+    "guides": "Guías"
   },
   "home": {
     "hero": [

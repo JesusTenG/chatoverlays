@@ -3,13 +3,14 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { categories } from './source/editorial.mjs';
 import { locales, localizePath } from './lib/routing.mjs';
+import { guidesPath, guideSlugs, articlePath } from './source/guides/routes.mjs';
 
 const root = path.resolve('out');
 const config = JSON.parse(await readFile('site.config.json', 'utf8'));
 const original = JSON.parse(await readFile('source/catalog.json', 'utf8'));
 const catalog = JSON.parse(await readFile('out/assets/catalog.json', 'utf8'));
 const skinCatalog = JSON.parse(await readFile('source/skins.json', 'utf8'));
-const baseRoutes = ['/', ...catalog.map(item => `/overlays/${item.slug}/`), ...categories.map(item => `/styles/${item.slug}/`), '/ratgeber/chat-overlay-auswaehlen/'];
+const baseRoutes = ['/', ...catalog.map(item => `/overlays/${item.slug}/`), ...categories.map(item => `/styles/${item.slug}/`), '/ratgeber/chat-overlay-auswaehlen/', guidesPath, ...guideSlugs.map(articlePath)];
 const entries = locales.flatMap(locale => baseRoutes.map(base => ({ locale, base, route: localizePath(base, locale) })));
 const routes = entries.map(entry => entry.route);
 const files = [...entries.map(entry => ({ ...entry, file: path.join(root, entry.route, 'index.html') })), { locale: 'en', base: '/404.html', route: '/404.html', file: path.join(root, '404.html') }];
@@ -51,7 +52,7 @@ for (const { file, locale, base, route } of files) {
   }
 }
 assert.equal(catalog.length, 40);
-assert.equal(routes.length, 141);
+assert.equal(routes.length, 159);
 for (const item of catalog) {
   assert.equal(item.url, original.find(source => source.slug === item.slug)?.url, `Changed destination: ${item.slug}`);
   assert.equal(new URL(item.shopUrl).pathname, new URL(item.url).pathname);

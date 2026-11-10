@@ -11,6 +11,8 @@ import { BrandMark, Breadcrumbs, ChatStyleLink, ChatStyleLogo, ChatStyleButton, 
 import { GridIcon, Starburst } from './icons';
 import { TemplateCard } from './template-card';
 import { SkinGallery } from './skin-gallery';
+import { getGuideBundle, getGuides, articlePath, guidesPath } from '@/lib/guides';
+import { GuideExamples } from './guide-pages';
 
 function RichText({ text, locale }: { text: string; locale: Locale }) {
   return <>{text.split(/(\[[^\]]+\]\(\/[^)]+\))/g).map((part, index) => {
@@ -33,6 +35,7 @@ export function HomePage({ locale }: { locale: Locale }) {
     </div><div className="hero-stripes" aria-hidden="true"><span/><span/><span/></div></section>
     <section className="section gallery-section" id="templates"><div className="wrap"><h2 data-reveal>{h.gallery}</h2><Gallery items={catalog}/></div></section>
     <section className="how-section" id="so-gehts"><div className="wrap"><h2 data-reveal>{h.howTitle}</h2><ol className="steps">{h.steps.map(([title, text], index) => <li key={title} data-reveal><span className="step-number" aria-hidden="true">0{index + 1}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></div></section>
+    <aside className="home-guides"><div className="wrap"><h2>{getGuideBundle(locale).ui.homeTitle}</h2><Link className="button button-outline" href={localizePath(guidesPath, locale)}>{getGuideBundle(locale).ui.homeLink}</Link></div></aside>
     <section className="creator-section" id="creator"><div className="wrap creator-inner"><div className="creator-art" aria-hidden="true"><div className="creator-emblem"><BrandMark/><span>JesusTenG</span></div><Starburst className="creator-star"/></div><div className="creator-copy"><h2 data-reveal>{h.creatorTitle[0]}<br/>{h.creatorTitle[1]}</h2><p>{h.creatorDescription}</p><ChatStyleLink className="creator-link">{h.allDesigns} <ChatStyleLogo/></ChatStyleLink></div></div></section>
     <section className="faq-section wrap" id="fragen"><h2 data-reveal>{h.faqTitle}</h2><div className="faq-list">{h.faq.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p><RichText text={answer} locale={locale}/></p></details>)}</div></section>
     <StructuredData data={{ '@type': 'CollectionPage', inLanguage: locale, name: seo.collection, url: absoluteUrl(localizePath('/', locale)), description: seo.collectionDescription, mainEntity: { '@type': 'ItemList', itemListElement: catalog.map((template, index) => ({ '@type': 'ListItem', position: index + 1, name: template.name, url: absoluteUrl(localizePath(`/overlays/${template.slug}/`, locale)) })) } }}/>
@@ -55,6 +58,7 @@ export function TemplatePage({ slug, locale }: { slug: string; locale: Locale })
   return <div className="wrap detail-page"><Breadcrumbs name={template.name} category={category}/>
     <section className="detail-hero"><PreviewMedia key={slug} template={template} mode="detail"/><div className="detail-copy"><h1 data-reveal>{template.name}</h1><p className="lead">{template.description}</p><ChatStyleButton href={template.shopUrl}/><p className="shop-note">{template.free ? ui.free : ui.price}</p><div className="design-note"><h2>{ui.forStream}</h2><p>{template.advice}</p></div></div></section>
     {skins.length > 0 && <SkinGallery key={slug} skins={skins} templateName={template.name}/>}
+    <aside className="template-guides"><h2>{getGuideBundle(locale).ui.nav}</h2><div>{getGuides(locale).filter(guide => guide.examples.some(example => example.slug === slug)).slice(0, 2).map(guide => <Link key={guide.slug} href={localizePath(articlePath(guide.slug), locale)}>{guide.heading}</Link>)}<Link href={localizePath(guidesPath, locale)}>{getGuideBundle(locale).ui.all}</Link></div></aside>
     <section className="section related-section"><h2 data-reveal>{ui.related}</h2><div className="template-grid">{related.map(item => <TemplateCard key={item.slug} template={item}/>)}</div></section>
     <StructuredData data={{ '@graph': [
       { '@type': 'CreativeWork', inLanguage: locale, name: template.name, description: template.description, image: absoluteUrl(template.image), url: absoluteUrl(localizePath(`/overlays/${slug}/`, locale)), creator: { '@type': 'Person', name: config.creator, url: config.creatorUrl }, sameAs: template.url },
@@ -80,5 +84,13 @@ export function guideMetadata(locale: Locale) {
 }
 export function GuidePage({ locale }: { locale: Locale }) {
   const { guide: g, ui } = getMessages(locale);
-  return <article className="wrap guide"><Breadcrumbs name={ui.guide}/><h1>{g.heading[0]}<br/>{g.heading[1]}</h1><p className="lead">{g.intro}</p>{g.sections.map(([title, text]) => <section key={title}><h2>{title}</h2><p><RichText text={text} locale={locale}/></p></section>)}<div className="guide-callout"><h2>{g.calloutTitle}</h2><p>{g.callout}</p><Link href={localizePath('/#templates', locale)} className="button">{g.cta}</Link></div><StructuredData data={{ '@type': 'Article', inLanguage: locale, headline: g.title, author: { '@type': 'Person', name: config.creator, url: config.creatorUrl }, mainEntityOfPage: absoluteUrl(localizePath(guidePath, locale)) }}/></article>;
+  const guideUi = getGuideBundle(locale).ui;
+  const examples = ['lofi-windows-93', 'chat-garden', 'inline-flow'].map(slug => ({ slug, why: getTemplate(slug, locale)!.advice }));
+  return <article className="wrap guide">
+    <Breadcrumbs name={ui.guide}/><h1>{g.heading[0]}<br/>{g.heading[1]}</h1><p className="lead">{g.intro}</p>
+    {g.sections.map(([title, text]) => <section key={title}><h2>{title}</h2><p><RichText text={text} locale={locale}/></p></section>)}
+    <section className="legacy-guide-examples"><h2>{guideUi.examples}</h2><GuideExamples examples={examples} locale={locale}/></section>
+    <div className="guide-callout"><h2>{g.calloutTitle}</h2><p>{g.callout}</p><Link href={localizePath('/#templates', locale)} className="button">{g.cta}</Link><Link className="guide-preview-link" href={localizePath(guidesPath, locale)}>{guideUi.all}</Link></div>
+    <StructuredData data={{ '@type': 'Article', inLanguage: locale, headline: g.title, author: { '@type': 'Person', name: config.creator, url: config.creatorUrl }, mainEntityOfPage: absoluteUrl(localizePath(guidePath, locale)) }}/>
+  </article>;
 }

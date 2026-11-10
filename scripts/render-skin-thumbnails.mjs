@@ -51,11 +51,14 @@ if (process.argv[2] === '--browser-code') {
 
 if (process.argv[2] === '--compress') {
   const catalog = JSON.parse(await readFile(path.join(root, 'source/skins.json'), 'utf8'));
+  const offset = Number(process.argv[3] || 0);
+  const limit = Number(process.argv[4] || 344);
+  const skins = Object.values(catalog).flatMap(record => record.skins).slice(offset, offset + limit);
   let bytes = 0;
-  for (const skin of Object.values(catalog).flatMap(record => record.skins)) {
+  for (const skin of skins) {
     const thumbnail = await sharp(path.join(root, 'qa', `skin-${skin.id}.png`)).resize(360, 220, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).webp({ quality: 82 }).toBuffer();
     await writeFile(path.join(root, 'public', skin.preview.replace('.html', '.webp')), thumbnail);
     bytes += thumbnail.length;
   }
-  console.log(`344 skin thumbnails: ${(bytes / 1024 / 1024).toFixed(2)} MB total`);
+  console.log(`${skins.length} skin thumbnails: ${(bytes / 1024 / 1024).toFixed(2)} MB total`);
 }

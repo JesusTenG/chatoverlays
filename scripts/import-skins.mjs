@@ -71,6 +71,9 @@ function bubbleClasses(values) {
   return classes.join(' ');
 }
 
+// Neo Tokyo's entrance animations otherwise leave real text hidden when motion is disabled.
+export const reducedMotionTextFix = '@media(prefers-reduced-motion:reduce){.skin-content .nt-username-real,.skin-content .nt-message-real{opacity:1!important;transform:none!important}}';
+
 export function renderSkinDocument({ templateName, skin, baseHtml, baseCss, fontCss, frameworkPath, animationPath, values, variables }) {
   const sample = {
     username: 'JesusTenG', message: 'So sieht dein Chat aus.', timestamp: '21:08', pronouns: '', broadcaster: 'JesusTenG', usercolor: '#9b59b6',
@@ -84,6 +87,7 @@ export function renderSkinDocument({ templateName, skin, baseHtml, baseCss, font
 
   return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; script-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>${escapeHtml(templateName)} – ${escapeHtml(skin.name)}</title><link rel="stylesheet" href="${frameworkPath}">${animationPath ? `<link rel="stylesheet" href="${animationPath}">` : ''}<style>${css}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}*{box-sizing:border-box}body{display:flex;align-items:center;justify-content:center}.skin-content{width:100%;height:auto;max-width:600px;padding:45px 25px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;zoom:1.35}.skin-content .cs-chat{width:100%;padding:0;max-width:100%;align-items:center;overflow:visible}.skin-content .cs-bubble{animation:none!important;max-width:100%}.sample-avatar{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:24px;min-height:24px;background:#e9b4f0;color:#423448;font:700 16px Arial,sans-serif;border-radius:inherit}.sample-badge{color:#ab65d6;font-size:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+${markup.includes('nt-message-real') ? reducedMotionTextFix : ''}
 </style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center">${markup}</div></div></body></html>`;
 }
 

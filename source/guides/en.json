@@ -1,0 +1,167 @@
+{
+  "ui": {
+    "title": "Chat overlay guides: skins, styles & OBS setup",
+    "description": "Choose chat overlay skins, compare real designs and follow an OBS setup guide. Every example links to its preview and original ChatStyle template.",
+    "heading": "Make it your chat.",
+    "intro": "From finding your colors to setting up OBS. Practical guides with real overlays you can explore.",
+    "nav": "Guides",
+    "examples": "See the examples",
+    "steps": "Step by step",
+    "notes": "What to check",
+    "faq": "Quick answers",
+    "related": "Keep exploring",
+    "contents": "In this guide",
+    "preview": "Preview & details",
+    "skinPreview": "Explore this skin",
+    "all": "All guides",
+    "sources": "Official setup references",
+    "homeTitle": "A little help with your setup.",
+    "homeLink": "Explore the guides"
+  },
+  "articles": {
+    "add-chat-overlay-obs": {
+      "title": "Add a Twitch chat overlay to OBS: step-by-step guide",
+      "description": "Set up a ChatStyle chat overlay in OBS, choose a design and check positioning. Follow four steps with Sleeping Cats, Lofi Windows 93 and Small Talk examples.",
+      "heading": "Add your chat overlay to OBS.",
+      "intro": "A good chat box belongs in your scene: visible beside the action, large enough to read and styled to match your channel. Start with an actual overlay below, then bring your configured chat into OBS.",
+      "answer": "Use the overlay URL provided for your configured chat. A template's shop page and the preview videos in this gallery are for choosing a design; they are not your live chat source.",
+      "steps": [
+        ["Choose the shape first", "Compare the examples at the size you expect to use. Leave room for names, a few lines of text and any decorations above the bubble. A compact layout and an ornamental layout need different amounts of space."],
+        ["Configure your chat in ChatStyle", "Open the example's ChatStyle link and set up the overlay there. Finish choosing its appearance, then obtain the overlay URL for your configured chat. Keep that URL for your OBS scene."],
+        ["Add a Browser source", "In OBS, select your scene and add Browser from the Sources list. Paste the overlay URL into the URL field, with Local file disabled. Set the source's width and height to the area you want to display."],
+        ["Place it and test a conversation", "Put the chat above your gameplay source in the Sources list, then position it in the scene. Try a long message and several short ones. Watch the full scene, not just the enlarged chat preview."]
+      ],
+      "examples": [
+        {"slug":"sleeping-cats","why":"Try this when chat has its own comfortable corner. The cats extend above the bubbles, so check the top edge before finalizing the space."},
+        {"slug":"lofi-windows-93","why":"A desktop-window look for a retro scene. Keep its window borders visible and repeat one accent color elsewhere in your layout."},
+        {"slug":"small-talk","why":"A compact starting point when gameplay needs most of the screen. Check that reducing the chat footprint has not made the message text too small."}
+      ],
+      "notes": [
+        ["An empty source", "Check the overlay URL and whether the source is visible. Send a test message; an idle chat may have nothing to show."],
+        ["Cut-off messages", "Revisit the Browser source's width and height before shrinking the entire source. Leave a little spare room around decorative edges."]
+      ],
+      "faq": [
+        ["Should I paste the template page into OBS?", "Use the configured overlay URL from ChatStyle. The template page is where you inspect the design and its options."],
+        ["Why is my chat behind the game?", "Check the order of sources in the scene. OBS draws sources higher in the list above sources lower in the list."]
+      ],
+      "related": ["readable-chat-overlay","chat-overlay-skins"],
+      "sources": [
+        {"label":"OBS: Browser Source","url":"https://obsproject.com/kb/Browser-Source"},
+        {"label":"OBS: Sources Guide","url":"https://obsproject.com/kb/sources-guide"},
+        {"label":"ChatStyle: overlay setup","url":"https://chatstyle.gg/"}
+      ]
+    },
+    "chat-overlay-skins": {
+      "title": "Chat overlay skins: compare colors & custom chat bubbles",
+      "description": "Explore real ChatStyle skin variants for Sleeping Cats, Lofi Windows 93 and Neo Tokyo. Compare colors and open each example with its exact skin selected.",
+      "heading": "Find your chat's colors.",
+      "intro": "Love an overlay's shape but want a different mood? Start with its skins. Below are three real variants: pastel cats, a pale desktop window and a dark blue terminal. Each preview link opens the exact skin in our gallery.",
+      "answer": "A template defines the overall chat design; a skin changes the appearance of a message within it. Viewer access is controlled by the streamer. These looks appear in the stream overlay, not in Twitch's own chat panel.",
+      "steps": [
+        ["Start from the bubble shape", "Choose a frame you like before comparing colors. Look at the message area, the name placement and the space taken up by decorative details."],
+        ["Open an exact variant", "Use Explore this skin on an example below. The selected variant appears in the large preview. Switch between the light and dark preview backgrounds to compare its edges and lettering."],
+        ["Make a short list", "Compare one soft, one dark and one accent-heavy option if the template offers them. Reopen the same example on your phone: tiny preview text is not a substitute for testing the full scene."],
+        ["Continue in ChatStyle", "Use the template's ChatStyle link for its current options. The gallery demonstrates the appearance; the channel configuration and viewer permissions are handled in ChatStyle."]
+      ],
+      "examples": [
+        {"slug":"sleeping-cats","skinId":725,"why":"Candy pairs a pale pink message area with purple details. Compare it with Lagoon inside the same template to see how color changes the mood without changing the cats."},
+        {"slug":"lofi-windows-93","skinId":1130,"why":"Lavender uses a light message area inside a retro window. Inspect it against both preview backgrounds rather than judging the frame on dark gray alone."},
+        {"slug":"neo-tokyo","skinId":919,"why":"Blue offers a darker terminal-style contrast to the pastel examples. Focus on the name and message edges when comparing it with brighter scenes."}
+      ],
+      "notes": [
+        ["Keep comparisons fair", "Use the same preview background for your first comparison, then switch backgrounds for every finalist. Otherwise the backdrop can make one variant appear clearer than another."],
+        ["Preview versus live chat", "Our skin previews contain sample messages. Use the original template video to judge movement, and your configured overlay to check a real conversation."]
+      ],
+      "faq": [
+        ["Does every template have skins?", "Only templates with imported, publicly listed variants show a skin gallery here. An absent gallery does not imply that the design cannot be customized."],
+        ["Can I share a specific example?", "Yes. Choosing a skin updates the detail-page URL. Copy that link to return to the same selected variant."]
+      ],
+      "related": ["cute-cozy-chat-overlays","retro-pixel-chat-overlays"],
+      "sources": [{"label":"ChatStyle: viewer skins explained","url":"https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"}]
+    },
+    "cute-cozy-chat-overlays": {
+      "title": "Cute & cozy Twitch chat overlays: cats, flowers & pastel skins",
+      "description": "Compare Sleeping Cats, Chat Garden and Magical Love for a cozy stream. Follow a simple styling guide with previews and direct ChatStyle template links.",
+      "heading": "A cozy corner for your chat.",
+      "intro": "A cute chat overlay can work with a quiet game, a craft stream or a just-chatting scene. The useful question is how its decoration fits the space you actually have. These three examples take different routes: cats, plants and a playful frame.",
+      "answer": "Choose one decorative theme, give it breathing room and test the lettering over your normal background. A pastel palette still needs clear separation between the message and the scene.",
+      "steps": [
+        ["Choose one visual theme", "Decide whether your scene should echo animals, plants or a more playful frame. Use the examples below to compare shapes before collecting many unrelated decorations."],
+        ["Repeat a small color palette", "Pick a main background tone and an accent already present in your camera frame or panels. If the template has skins, compare variants inside its detail page."],
+        ["Leave room for the decoration", "Place the bubble in a quiet part of your scene. Check what extends beyond its message box, especially the cats above Sleeping Cats and the plant details around Chat Garden."],
+        ["Watch a busy moment", "Play the original preview and imagine several messages beside your game or camera. If both areas compete for attention, simplify the nearby scene decoration before making the chat text smaller."]
+      ],
+      "examples": [
+        {"slug":"sleeping-cats","why":"The strongest animal motif of these examples. It suits a dedicated chat column where the cats have room above each message; inspect the skins for different palettes."},
+        {"slug":"chat-garden","why":"A botanical alternative to character-led decoration. Try it beside a calm background so the plant details stay distinct from the rest of the scene."},
+        {"slug":"magical-love","why":"A more playful alternative when you want the chat to be a visible design feature. Compare its original animation with your alerts before combining both."}
+      ],
+      "notes": [
+        ["Light gameplay", "Test a bright scene as well as a dark one. If a pale bubble loses its outline, try another available skin or give the chat a calmer backdrop."],
+        ["Small screens", "Look at the entire scene at phone size. Keep the names and messages readable before spending space on extra ornaments."]
+      ],
+      "faq": [
+        ["Does cozy have to mean pink?", "No. Compare green, cream, blue or muted darker variants where available. The softness of the shape and the surrounding scene matter as much as color."],
+        ["Where can I inspect the animation?", "Open Preview & details below. Each detail page plays the original template video and shows any imported skins."]
+      ],
+      "related": ["chat-overlay-skins","readable-chat-overlay"],
+      "sources": []
+    },
+    "retro-pixel-chat-overlays": {
+      "title": "Retro & pixel chat overlays: Windows, terminals and game frames",
+      "description": "Find a retro chat overlay with Lofi Windows 93, Neo Tokyo and Retromon Silver examples. Compare desktop, terminal and pixel styles with direct preview links.",
+      "heading": "Give your chat a retro screen.",
+      "intro": "Retro does not describe one look. A desktop window, a dark terminal and a pixel game frame tell different visual stories. Choose the reference that fits your stream, then check whether its text survives at the size your viewers will see.",
+      "answer": "Use Lofi Windows 93 for the desktop-window direction, Neo Tokyo for a terminal mood, or Retromon Silver for a pixel frame. Compare their original previews before choosing a color variant.",
+      "steps": [
+        ["Pick an era or interface", "Start with one reference: old desktop software, terminal windows or game dialogue. This makes it easier to choose matching panels without filling the scene with unrelated effects."],
+        ["Check the frame at real size", "Look at the title bars, corners and text in a complete scene. If those details become visual noise, give the chat more room rather than squeezing a detailed frame into a tiny corner."],
+        ["Choose an accent", "Match one of the overlay's colors to your scene. Explore the Lofi and Neo Tokyo skin galleries to compare lighter and darker directions within the same design."],
+        ["Test motion alongside the game", "Play the template video next to the kind of content you stream. Give fast gameplay a quieter surrounding layout; a retro frame already adds plenty of character."]
+      ],
+      "examples": [
+        {"slug":"lofi-windows-93","why":"Window controls and layered borders make the desktop reference clear. This is a useful starting point for a scene built around old software and soft purple tones."},
+        {"slug":"neo-tokyo","why":"Dark windows and luminous accents suggest a terminal rather than a cartoon game interface. Leave its edges visible against a dark scene."},
+        {"slug":"retromon-silver","why":"A pixel-frame direction for game-inspired layouts. Preview the lettering carefully at your intended scene size before choosing how much space to reserve."}
+      ],
+      "notes": [
+        ["Avoid competing frames", "A detailed chat window beside a detailed webcam frame can feel crowded. Repeat a color or a corner shape instead of giving every element a different border."],
+        ["Keep the text large enough", "Check names and multiline messages after scaling the whole scene down. Sharp pixel styling cannot compensate for letters that are too small to read."]
+      ],
+      "faq": [
+        ["Are these full stream overlay packs?", "The examples are chat overlay templates. The previews demonstrate the chat design, not a complete package of webcam frames, alerts and scenes."],
+        ["Can I compare colors without changing the template?", "Yes, where skins are listed. Open a detail page and select a variant in its skin gallery."]
+      ],
+      "related": ["chat-overlay-skins","add-chat-overlay-obs"],
+      "sources": []
+    },
+    "readable-chat-overlay": {
+      "title": "Readable chat overlays: minimal layouts, size & contrast",
+      "description": "Choose a readable chat layout with Inline Flow, Small Talk and Violet Frame Slim. Follow practical checks for message width, contrast and scene placement.",
+      "heading": "Make every message easy to read.",
+      "intro": "The best-looking chat preview can still be difficult to read beside a moving game. Compare the space used by the frame, the message and the name. These slimmer examples help you start with the conversation rather than a large decorative panel.",
+      "answer": "Judge readability in your complete scene. A wide message area, clear text contrast and a calm background are more useful than choosing a font size in isolation.",
+      "steps": [
+        ["Reserve a quiet area", "Choose a part of the scene that is not constantly covered by menus, subtitles or fast movement. Decide how much space you can spare before selecting the frame."],
+        ["Try three message lengths", "Test a short greeting, a long sentence and several emotes. Look for awkward wrapping, names competing with the message and decoration pushing the words too far inward."],
+        ["Compare bright and dark scenes", "Use both preview backgrounds for available skins, then check your real gameplay. A dark bubble may work in one scene and disappear into another."],
+        ["Review a small recording", "Record a short local scene and watch it at a smaller size. If you have to lean in to read the messages, enlarge the chat or simplify the surrounding layout."]
+      ],
+      "examples": [
+        {"slug":"inline-flow","why":"A compact inline layout to compare when vertical space is tight. Test a longer name and message together to see how the available width behaves."},
+        {"slug":"small-talk","why":"Small bubbles give you another compact direction. Keep enough room for several lines so a long message does not become a narrow column of words."},
+        {"slug":"violet-frame-slim","why":"A slim frame preserves a stronger purple design accent. Compare it with the plainer examples if you want visible styling around a restrained message area."}
+      ],
+      "notes": [
+        ["No universal pixel size", "The right text size depends on your scene, output resolution and how much of the frame chat occupies. A number alone cannot tell you whether the final result is readable."],
+        ["A calm frame still needs contrast", "Minimal does not automatically mean legible. Make sure the message separates from its own bubble as well as from the gameplay behind it."]
+      ],
+      "faq": [
+        ["Should I shrink the chat to show more gameplay?", "First remove unnecessary padding or competing decoration in the surrounding scene. Keep enough space for the actual conversation to remain readable."],
+        ["Where should I start if I am new to OBS?", "Choose one of the examples below, then follow the OBS setup guide linked at the end of this page."]
+      ],
+      "related": ["add-chat-overlay-obs","chat-overlay-skins"],
+      "sources": []
+    }
+  }
+}

@@ -7,8 +7,8 @@ import { getSkins } from '@/lib/skins';
 import { Gallery } from './gallery';
 import { PreviewMedia } from './preview-media';
 import { HeroMotionToggle } from './video-provider';
-import { BrandMark, Breadcrumbs, ChatStyleLink, ChatStyleLogo, ChatStyleButton, StructuredData } from './site-chrome';
-import { GridIcon, Starburst } from './icons';
+import { Breadcrumbs, ChatStyleLink, ChatStyleLogo, ChatStyleButton, StructuredData } from './site-chrome';
+import { GridIcon } from './icons';
 import { TemplateCard } from './template-card';
 import { SkinGallery } from './skin-gallery';
 import { getGuideBundle, getGuides, articlePath, guidesPath } from '@/lib/guides';
@@ -31,12 +31,12 @@ export function HomePage({ locale }: { locale: Locale }) {
   return <div className="home-page">
     <section className="hero-section"><div className="hero wrap">
       <div className="hero-heading"><h1><span className="headline-line">{h.hero[0]}</span>{' '}<span className="headline-line accent">{h.hero[1]}<em>.</em></span></h1><p>{h.tagline}</p><div className="hero-actions"><a className="button hero-discover" href="#templates"><GridIcon/>{h.discover}</a><ChatStyleButton href="https://chatstyle.gg/" label={h.platform}/></div></div>
-      <div className="hero-stage"><div className="hero-orbit" aria-hidden="true"/><Starburst className="hero-star"/><div className="hero-showcase">{getFeaturedTemplates(locale).map(template => <figure key={template.slug} className={`hero-tile tile-${template.slug}`} data-autoplay-preview><div className="card-window" aria-hidden="true"><i/><i/><i/></div><PreviewMedia template={template} mode="hero"/><figcaption><Link prefetch={false} href={localizePath(`/overlays/${template.slug}/`, locale)}>{template.name}</Link></figcaption></figure>)}</div><div className="hero-controls"><HeroMotionToggle/></div></div>
-    </div><div className="hero-stripes" aria-hidden="true"><span/><span/><span/></div></section>
+      <div className="hero-stage"><div className="hero-showcase">{getFeaturedTemplates(locale).map(template => <figure key={template.slug} className={`hero-tile tile-${template.slug}`} data-autoplay-preview><div className="card-window" aria-hidden="true"><i/><i/><i/></div><PreviewMedia template={template} mode="hero"/><figcaption><Link prefetch={false} href={localizePath(`/overlays/${template.slug}/`, locale)}>{template.name}</Link></figcaption></figure>)}</div><div className="hero-controls"><HeroMotionToggle/></div></div>
+    </div></section>
     <section className="section gallery-section" id="templates"><div className="wrap"><h2 data-reveal>{h.gallery}</h2><Gallery items={catalog}/></div></section>
     <section className="how-section" id="so-gehts"><div className="wrap"><h2 data-reveal>{h.howTitle}</h2><ol className="steps">{h.steps.map(([title, text], index) => <li key={title} data-reveal><span className="step-number" aria-hidden="true">0{index + 1}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></div></section>
-    <aside className="home-guides"><div className="wrap"><h2>{getGuideBundle(locale).ui.homeTitle}</h2><Link className="button button-outline" href={localizePath(guidesPath, locale)}>{getGuideBundle(locale).ui.homeLink}</Link></div></aside>
-    <section className="creator-section" id="creator"><div className="wrap creator-inner"><div className="creator-art" aria-hidden="true"><div className="creator-emblem"><BrandMark/><span>JesusTenG</span></div><Starburst className="creator-star"/></div><div className="creator-copy"><h2 data-reveal>{h.creatorTitle[0]}<br/>{h.creatorTitle[1]}</h2><p>{h.creatorDescription}</p><ChatStyleLink className="creator-link">{h.allDesigns} <ChatStyleLogo/></ChatStyleLink></div></div></section>
+    <aside className="home-guides wrap"><div className="home-guides-card"><h2>{getGuideBundle(locale).ui.homeTitle}</h2><Link className="button button-outline" href={localizePath(guidesPath, locale)}>{getGuideBundle(locale).ui.homeLink}</Link></div></aside>
+    <section className="creator-section wrap" id="creator"><div className="creator-inner"><h2 data-reveal>{h.creatorTitle[0]}<br/>{h.creatorTitle[1]}</h2><div className="creator-copy"><p>{h.creatorDescription}</p><ChatStyleLink className="creator-link">{h.allDesigns} <ChatStyleLogo/></ChatStyleLink></div></div></section>
     <section className="faq-section wrap" id="fragen"><h2 data-reveal>{h.faqTitle}</h2><div className="faq-list">{h.faq.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p><RichText text={answer} locale={locale}/></p></details>)}</div></section>
     <StructuredData data={{ '@type': 'CollectionPage', inLanguage: locale, name: seo.collection, url: absoluteUrl(localizePath('/', locale)), description: seo.collectionDescription, mainEntity: { '@type': 'ItemList', itemListElement: catalog.map((template, index) => ({ '@type': 'ListItem', position: index + 1, name: template.name, url: absoluteUrl(localizePath(`/overlays/${template.slug}/`, locale)) })) } }}/>
   </div>;
@@ -55,7 +55,7 @@ export function TemplatePage({ slug, locale }: { slug: string; locale: Locale })
   const category = getCategories(locale).find(item => item.slug === template.categorySlug)!;
   const related = getCatalog(locale).filter(item => item.slug !== slug && item.categorySlug === template.categorySlug).slice(0, 3);
   const skins = getSkins(slug);
-  return <div className="wrap detail-page"><Breadcrumbs name={template.name} category={category}/>
+  return <div className="wrap detail-page" data-category={template.categorySlug}><Breadcrumbs name={template.name} category={category}/>
     <section className="detail-hero"><PreviewMedia key={slug} template={template} mode="detail"/><div className="detail-copy"><h1 data-reveal>{template.name}</h1><p className="lead">{template.description}</p><ChatStyleButton href={template.shopUrl}/><p className="shop-note">{template.free ? ui.free : ui.price}</p><div className="design-note"><h2>{ui.forStream}</h2><p>{template.advice}</p></div></div></section>
     {skins.length > 0 && <SkinGallery key={slug} skins={skins} templateName={template.name}/>}
     <aside className="template-guides"><h2>{getGuideBundle(locale).ui.nav}</h2><div>{getGuides(locale).filter(guide => guide.examples.some(example => example.slug === slug)).slice(0, 2).map(guide => <Link key={guide.slug} href={localizePath(articlePath(guide.slug), locale)}>{guide.heading}</Link>)}<Link href={localizePath(guidesPath, locale)}>{getGuideBundle(locale).ui.all}</Link></div></aside>
@@ -75,7 +75,7 @@ export function categoryMetadata(slug: string, locale: Locale) {
 export function CategoryPage({ slug, locale }: { slug: string; locale: Locale }) {
   const category = getCategories(locale).find(item => item.slug === slug);
   if (!category) notFound();
-  return <div className="wrap"><Breadcrumbs name={category.name}/><section className="category-hero"><h1 data-reveal>{category.name}</h1><p className="lead">{category.intro}</p></section><section className="section category-gallery"><Gallery items={getCatalog(locale).filter(item => item.categorySlug === slug)}/></section><aside className="category-tip"><h2 data-reveal>{getMessages(locale).ui.forStream}</h2><p>{category.tip}</p></aside><StructuredData data={{ '@type': 'CollectionPage', inLanguage: locale, name: category.name, url: absoluteUrl(localizePath(`/styles/${slug}/`, locale)), description: category.intro }}/></div>;
+  return <div className="wrap category-page" data-category={slug}><Breadcrumbs name={category.name}/><section className="category-hero"><h1 data-reveal>{category.name}</h1><p className="lead">{category.intro}</p></section><section className="section category-gallery"><Gallery items={getCatalog(locale).filter(item => item.categorySlug === slug)}/></section><aside className="category-tip"><h2 data-reveal>{getMessages(locale).ui.forStream}</h2><p>{category.tip}</p></aside><StructuredData data={{ '@type': 'CollectionPage', inLanguage: locale, name: category.name, url: absoluteUrl(localizePath(`/styles/${slug}/`, locale)), description: category.intro }}/></div>;
 }
 
 export function guideMetadata(locale: Locale) {

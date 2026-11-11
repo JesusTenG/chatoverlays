@@ -1,0 +1,33 @@
+/* Shared design values. Read STYLEGUIDE.md before changing the visual system. */
+:root {
+  /* Warm paper, dark print and four pastel card colors. */
+  --paper: #fff8e9;
+  --ink: #302637;
+  --muted: #6b5e71;
+  --accent: #77518c;
+  --green: #264f46;
+  --lilac: #d9cfeb;
+  --butter: #f5e6b9;
+  --sage: #e0e8db;
+  --apricot: #f4d9c2;
+  --peach: var(--apricot);
+  --panel: #f0e8df;
+  --line: #d9cdbd;
+
+  /* Card structure shared by the homepage, templates and guides. */
+  --card-border: #30263735;
+  --card-shadow: 0 5px 0 #30263716;
+  --card-shadow-hover: 0 9px 0 #30263720;
+  --card-radius: 20px;
+  --media-radius: 12px;
+  --card-padding: 24px;
+  --grid-gap: 24px;
+  --section-gap: 48px;
+  --motion-duration: .3s;
+  --motion-lift: -4px;
+
+  --font-body: Arial, Helvetica, sans-serif;
+  --display: Fraunces, Georgia, serif;
+  --weight-body: 700;
+  --weight-display: 800;
+}

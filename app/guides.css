@@ -3,15 +3,15 @@
 .guides-index-heading{max-width:850px;padding-block:26px 48px}
 .guides-index-heading h1{font-size:clamp(50px,6vw,82px);margin-bottom:24px}
 .guides-index-heading .lead{max-width:700px}
-.guide-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.guide-card{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;padding:24px;border:1px solid #30263735;border-radius:20px;background:var(--lilac);box-shadow:0 5px 0 #30263716;transition:transform .3s,box-shadow .3s}
-.guide-card:hover{transform:translateY(-4px);box-shadow:0 9px 0 #30263720;color:var(--ink)}
-.guide-card img{width:150px;height:150px;object-fit:cover;border-radius:12px;border:1px solid #30263730;transform:rotate(-4deg)}
+.guide-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--grid-gap)}
+.guide-card{display:grid;grid-template-columns:150px 1fr;gap:var(--grid-gap);align-items:center;padding:var(--card-padding);border:1px solid var(--card-border);border-radius:var(--card-radius);background:var(--lilac);box-shadow:var(--card-shadow);transition:transform var(--motion-duration),box-shadow var(--motion-duration)}
+.guide-card:hover{transform:translateY(var(--motion-lift));box-shadow:var(--card-shadow-hover);color:var(--ink)}
+.guide-card img{width:150px;height:150px;object-fit:cover;border-radius:var(--media-radius);border:1px solid #30263730;transform:rotate(-4deg)}
 .guide-card img.guide-card-skin{object-fit:contain;background:#35313d}
 .guide-card h2{font-size:31px;line-height:1.1;margin:0 0 14px;letter-spacing:-.045em}
 .guide-card p{font-size:17px;line-height:1.5;color:var(--muted)}
-.guide-tone-1{background:#e0e8db}
-.guide-tone-2{background:#f4d9c2}
+.guide-tone-1{background:var(--sage)}
+.guide-tone-2{background:var(--apricot)}
 .guides-index .guide-card:first-child{grid-column:1/-1;grid-template-columns:220px 1fr;padding:32px 42px;gap:50px;background:var(--butter)}
 .guides-index .guide-card:first-child img{width:220px;height:220px}
 .guides-index .guide-card:first-child h2{font-size:42px;max-width:700px}
@@ -21,8 +21,8 @@
 .guide-start p{font-size:18px;color:var(--muted);max-width:850px}
 .article-hero{background:var(--lilac);padding-block:48px 42px;border-block:1px solid #30263715}
 .guide-topic-add-chat-overlay-obs .article-hero{background:var(--butter)}
-.guide-topic-cute-cozy-chat-overlays .article-hero{background:#f4d9c2}
-.guide-topic-readable-chat-overlay .article-hero{background:#dbe5d9}
+.guide-topic-cute-cozy-chat-overlays .article-hero{background:var(--apricot)}
+.guide-topic-readable-chat-overlay .article-hero{background:var(--sage)}
 .article-hero h1{font-size:clamp(46px,5.4vw,76px);max-width:1000px;line-height:1.04}
 .article-hero .lead{max-width:860px;margin-top:25px}
 .article-contents{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:28px}
@@ -33,7 +33,7 @@
 .article-body>section{margin-top:28px;margin-bottom:58px}
 .article-body>section>h2{font-size:43px;margin-bottom:30px}
 .guide-examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:stretch}
-.guide-example{min-width:0;display:flex;flex-direction:column;border-radius:17px;background:#faf1d6;overflow:hidden;border:1px solid #30263725}
+.guide-example{min-width:0;display:flex;flex-direction:column;border-radius:var(--card-radius);background:var(--butter);overflow:hidden;border:1px solid var(--card-border)}
 .guide-example .card-media{border:0;border-radius:0}
 .guide-example .card-media:hover{transform:none;box-shadow:none}
 .guide-example-copy{padding:24px;display:flex;flex:1;flex-direction:column}
@@ -53,7 +53,7 @@
 .article-step-number{font-family:var(--display);font-size:36px;color:var(--accent);line-height:1.1}
 .article-steps h3,.article-notes h3{font-size:24px;margin-bottom:12px}
 .article-steps p,.article-notes p{font-size:18px;color:var(--muted);line-height:1.65}
-.article-notes{background:#dbe5d9;border-radius:22px;padding:34px 38px}
+.article-notes{background:var(--sage);border-radius:var(--card-radius);padding:34px 38px}
 .article-notes>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px}
 .article-faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px}
 .article-sources{border-top:1px solid var(--line);padding-top:24px}

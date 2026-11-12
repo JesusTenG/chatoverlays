@@ -1,13 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { guideSlugs } from '../source/guides/routes.mjs';
+import { guideSlugs, guideGroups } from '../source/guides/routes.mjs';
 import { locales } from '../lib/routing.mjs';
 
 test('guide translations cover every topic and reference real templates and exact skins', async () => {
   const catalog = JSON.parse(await readFile('source/catalog.json', 'utf8'));
   const skins = JSON.parse(await readFile('source/skins.json', 'utf8'));
-  const bundles = await Promise.all(locales.map(async locale => JSON.parse(await readFile(`source/guides/${locale}.json`, 'utf8'))));
+  const bundles = await Promise.all(locales.map(async locale => {
+    const base = JSON.parse(await readFile(`source/guides/${locale}.json`, 'utf8'));
+    const setup = JSON.parse(await readFile(`source/guides/setup.${locale}.json`, 'utf8'));
+    assert.equal(Object.keys(setup).length, 10);
+    return { ...base, articles: { ...base.articles, ...setup } };
+  }));
+  assert.deepEqual(guideGroups.flatMap(group => group.slugs).sort(), [...guideSlugs].sort(), 'Every guide appears in exactly one group');
   const titles = new Set(), descriptions = new Set();
   for (const bundle of bundles) {
     assert.deepEqual(Object.keys(bundle.articles), guideSlugs);
@@ -17,7 +23,13 @@ test('guide translations cover every topic and reference real templates and exac
       const guide = bundle.articles[slug];
       assert(!titles.has(guide.title)); titles.add(guide.title);
       assert(!descriptions.has(guide.description)); descriptions.add(guide.description);
-      assert(guide.steps.length >= 3 && guide.examples.length >= 3);
+      assert(guide.steps.length >= 3 && guide.examples.length >= 2);
+      assert.equal(Boolean(guide.stepsFirst), Boolean(bundles[0].articles[slug].stepsFirst));
+      if (slug === 'free-twitch-chat-overlays') assert(guide.examples.every(example => catalog.find(template => template.slug === example.slug)?.free), 'Free guide must only feature free templates');
+      if (guide.reference) {
+        assert(guide.reference.columns.length >= 2 && guide.reference.rows.length >= 3);
+        assert(guide.reference.rows.every(row => row.length === guide.reference.columns.length && row.every(value => value.trim())));
+      }
       assert(guide.steps.every(step => step.length === 2 && step.every(value => value.trim())));
       assert.deepEqual(guide.examples.map(({ slug, skinId }) => [slug, skinId]), bundles[0].articles[slug].examples.map(({ slug, skinId }) => [slug, skinId]));
       for (const example of guide.examples) {

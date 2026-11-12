@@ -52,7 +52,8 @@ for (const { file, locale, base, route } of files) {
   }
 }
 assert.equal(catalog.length, 40);
-assert.equal(routes.length, 159);
+assert.equal(routes.length, new Set(routes).size, 'Every localized route must be unique');
+assert.equal(guideSlugs.length, 15, 'Five existing guides and ten additional topics');
 for (const item of catalog) {
   assert.equal(item.url, original.find(source => source.slug === item.slug)?.url, `Changed destination: ${item.slug}`);
   assert.equal(new URL(item.shopUrl).pathname, new URL(item.url).pathname);

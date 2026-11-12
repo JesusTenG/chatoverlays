@@ -1,5 +1,21 @@
 /* Practical editorial pages share the gallery's print colors and bold typography. */
 .guides-index{padding-bottom:80px}
+.guide-group{margin-bottom:var(--section-gap);scroll-margin-top:110px}
+.guide-group>h2{font-size:38px;margin-bottom:28px}
+.guide-card h3{font-family:var(--display);font-weight:var(--weight-display)}
+.article-reference{background:var(--sage);border:1px solid var(--card-border);border-radius:var(--card-radius);padding:30px;box-shadow:var(--card-shadow)}
+.article-reference table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:18px;line-height:1.6;text-align:left}
+.article-reference caption{text-align:left;font-family:var(--display);font-size:32px;line-height:1.15;letter-spacing:-.04em;margin-bottom:22px}
+.article-reference th,.article-reference td{padding:16px 18px 16px 0;vertical-align:top;overflow-wrap:anywhere;border-bottom:1px solid var(--card-border)}
+.article-reference thead th{color:var(--muted)}
+.article-reference th:first-child{width:34%}
+.article-reference tbody tr:last-child>*{border-bottom:0}
+.article-reference td{color:var(--muted);padding-right:0}
+.guide-topic-free-twitch-chat-overlays .article-hero,.guide-topic-obs-stream-scenes .article-hero{background:var(--butter)}
+.guide-topic-obs-chat-not-showing .article-hero,.guide-topic-transparent-chat-overlay .article-hero,.guide-topic-streamlabs-chat-overlay .article-hero{background:var(--sage)}
+.guide-topic-just-chatting-overlay .article-hero,.guide-topic-viewer-chat-bubbles .article-hero{background:var(--apricot)}
+@media(min-width:901px){.guide-examples[data-count="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.guide-group>h2{font-size:32px}.article-reference{padding:22px}.article-reference table{font-size:17px}.article-reference caption{font-size:29px}.article-reference table,.article-reference caption,.article-reference tbody,.article-reference tr,.article-reference th,.article-reference td{display:block}.article-reference thead{display:none}.article-reference tr{padding-block:16px;border-bottom:1px solid var(--card-border)}.article-reference tr:last-child{border:0;padding-bottom:0}.article-reference th,.article-reference td{padding:0;border:0}.article-reference th:first-child{width:100%;margin-bottom:7px}.article-reference td{color:var(--muted)}}
 .guides-index-heading{max-width:850px;padding-block:26px 48px}
 .guides-index-heading h1{font-size:clamp(50px,6vw,82px);margin-bottom:24px}
 .guides-index-heading .lead{max-width:700px}
@@ -8,14 +24,14 @@
 .guide-card:hover{transform:translateY(var(--motion-lift));box-shadow:var(--card-shadow-hover);color:var(--ink)}
 .guide-card img{width:150px;height:150px;object-fit:cover;border-radius:var(--media-radius);border:1px solid #30263730;transform:rotate(-4deg)}
 .guide-card img.guide-card-skin{object-fit:contain;background:#35313d}
-.guide-card h2{font-size:31px;line-height:1.1;margin:0 0 14px;letter-spacing:-.045em}
+.guide-card :is(h2,h3){font-size:31px;line-height:1.1;margin:0 0 14px;letter-spacing:-.045em}
 .guide-card p{font-size:17px;line-height:1.5;color:var(--muted)}
 .guide-tone-1{background:var(--sage)}
 .guide-tone-2{background:var(--apricot)}
-.guides-index .guide-card:first-child{grid-column:1/-1;grid-template-columns:220px 1fr;padding:32px 42px;gap:50px;background:var(--butter)}
-.guides-index .guide-card:first-child img{width:220px;height:220px}
-.guides-index .guide-card:first-child h2{font-size:42px;max-width:700px}
-.guides-index .guide-card:first-child p{font-size:19px;max-width:660px}
+.guides-index .guide-group:first-of-type .guide-card:first-child{grid-column:1/-1;grid-template-columns:220px 1fr;padding:32px 42px;gap:50px;background:var(--butter)}
+.guides-index .guide-group:first-of-type .guide-card:first-child img{width:220px;height:220px}
+.guides-index .guide-group:first-of-type .guide-card:first-child :is(h2,h3){font-size:42px;max-width:700px}
+.guides-index .guide-group:first-of-type .guide-card:first-child p{font-size:19px;max-width:660px}
 .guide-start{display:block;margin-top:32px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .guide-start h2{font-size:31px;margin-bottom:14px}
 .guide-start p{font-size:18px;color:var(--muted);max-width:850px}
@@ -77,11 +93,11 @@
 .legacy-guide-examples .guide-examples{grid-template-columns:1fr}
 .legacy-guide-examples .guide-example{display:grid;grid-template-columns:240px 1fr;align-items:center}
 .legacy-guide-examples .guide-example-links{flex-direction:row;flex-wrap:wrap;align-items:center}
-@media(max-width:1180px){.guide-card{grid-template-columns:110px 1fr;padding:22px;gap:20px}.guide-card img{width:110px;height:110px}.guide-card h2{font-size:28px}.guide-example-copy{padding:20px}.guide-examples{gap:20px}.guide-example h3{font-size:23px}}
-@media(max-width:900px){.guide-card{grid-template-columns:1fr}.guide-card img{width:130px;height:130px}.guides-index .guide-card:first-child{grid-template-columns:170px 1fr;padding:26px;gap:30px}.guides-index .guide-card:first-child img{width:170px;height:170px}.guides-index .guide-card:first-child h2{font-size:36px}.guide-examples{grid-template-columns:1fr}.guide-example{display:grid;grid-template-columns:260px 1fr;align-items:center}.article-steps ol{gap:28px}.article-notes{padding:28px}.article-faq{grid-template-columns:1fr;gap:0}.article-sources ul{display:grid}.home-guides h2{font-size:29px}.template-guides{flex-direction:column;gap:18px}}
+@media(max-width:1180px){.guide-card{grid-template-columns:110px 1fr;padding:22px;gap:20px}.guide-card img{width:110px;height:110px}.guide-card :is(h2,h3){font-size:28px}.guide-example-copy{padding:20px}.guide-examples{gap:20px}.guide-example h3{font-size:23px}}
+@media(max-width:900px){.guide-card{grid-template-columns:1fr}.guide-card img{width:130px;height:130px}.guides-index .guide-group:first-of-type .guide-card:first-child{grid-template-columns:170px 1fr;padding:26px;gap:30px}.guides-index .guide-group:first-of-type .guide-card:first-child img{width:170px;height:170px}.guides-index .guide-group:first-of-type .guide-card:first-child :is(h2,h3){font-size:36px}.guide-examples{grid-template-columns:1fr}.guide-example{display:grid;grid-template-columns:260px 1fr;align-items:center}.article-steps ol{gap:28px}.article-notes{padding:28px}.article-faq{grid-template-columns:1fr;gap:0}.article-sources ul{display:grid}.home-guides h2{font-size:29px}.template-guides{flex-direction:column;gap:18px}}
 @media(max-width:680px){
   .guides-index{padding-bottom:48px}.guides-index-heading{padding-block:12px 30px}.guides-index-heading h1{font-size:49px;margin-bottom:21px}.guides-index-heading .lead{font-size:19px}
-  .guide-cards{grid-template-columns:1fr;gap:20px}.guide-card,.guides-index .guide-card:first-child{grid-template-columns:1fr;padding:23px;gap:22px}.guide-card img,.guides-index .guide-card:first-child img{width:140px;height:140px}.guide-card h2,.guides-index .guide-card:first-child h2{font-size:31px}.guide-card p,.guides-index .guide-card:first-child p{font-size:18px}.guide-start h2{font-size:29px}
+  .guide-cards{grid-template-columns:1fr;gap:20px}.guide-card,.guides-index .guide-group:first-of-type .guide-card:first-child{grid-template-columns:1fr;padding:23px;gap:22px}.guide-card img,.guides-index .guide-group:first-of-type .guide-card:first-child img{width:140px;height:140px}.guide-card :is(h2,h3),.guides-index .guide-group:first-of-type .guide-card:first-child :is(h2,h3){font-size:31px}.guide-card p,.guides-index .guide-group:first-of-type .guide-card:first-child p{font-size:18px}.guide-start h2{font-size:29px}
   .article-hero{padding-block:30px}.article-hero h1{font-size:46px;overflow-wrap:anywhere}.article-hero .lead{font-size:19px;margin-top:23px}.article-contents{gap:8px 22px;margin-top:20px}.article-contents a{font-size:17px}
   .article-body{padding-bottom:30px}.article-answer{font-size:19px;padding-block:28px 20px}.article-body>section{margin-bottom:40px}.article-body>section>h2{font-size:35px;margin-bottom:23px}
   .guide-example,.legacy-guide-examples .guide-example{display:flex;flex-direction:column;align-items:stretch}.guide-example-copy{padding:22px}.guide-example h3{font-size:25px}.guide-example .shop-button{font-size:17px}.guide-example-links{gap:13px}

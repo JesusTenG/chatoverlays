@@ -16,7 +16,10 @@
     "all": "Todas las guías",
     "sources": "Instrucciones oficiales",
     "homeTitle": "Una ayuda para tu configuración.",
-    "homeLink": "Explorar las guías"
+    "homeLink": "Explorar las guías",
+    "setupGroup": "Configuración y soluciones",
+    "styleGroup": "Encuentra tu diseño",
+    "sceneGroup": "Escenas y comunidad"
   },
   "articles": {
     "add-chat-overlay-obs": {
@@ -44,7 +47,7 @@
         ["¿Debo pegar la página de la plantilla en OBS?", "Utiliza la URL de tu overlay configurado en ChatStyle. La página de la plantilla permite consultar el diseño y sus opciones."],
         ["¿Por qué aparece el chat detrás del juego?", "Comprueba el orden de las fuentes. OBS dibuja las fuentes situadas más arriba en la lista por delante de las inferiores."]
       ],
-      "related": ["readable-chat-overlay","chat-overlay-skins"],
+      "related": ["obs-chat-not-showing","obs-stream-scenes"],
       "sources": [
         {"label":"OBS: fuente Navegador","url":"https://obsproject.com/kb/Browser-Source"},
         {"label":"OBS: guía de fuentes","url":"https://obsproject.com/kb/sources-guide"},
@@ -76,7 +79,7 @@
         ["¿Todas las plantillas tienen variantes?", "Solo mostramos una galería cuando hay variantes públicas importadas. La ausencia de una galería no significa que el diseño no se pueda personalizar."],
         ["¿Puedo compartir una variante concreta?", "Sí. Al seleccionar una variante se actualiza la URL de la página de detalles. Copia el enlace para volver a abrir la misma selección."]
       ],
-      "related": ["cute-cozy-chat-overlays","retro-pixel-chat-overlays"],
+      "related": ["viewer-chat-bubbles","readable-chat-overlay"],
       "sources": [{"label":"ChatStyle: variantes para espectadores","url":"https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"}]
     },
     "cute-cozy-chat-overlays": {
@@ -104,7 +107,7 @@
         ["¿Cozy tiene que significar rosa?", "No. Compara verde, crema, azul o tonos oscuros suaves cuando estén disponibles. La forma y el entorno importan tanto como el color."],
         ["¿Dónde puedo ver la animación?", "Abre Vista previa y detalles en los ejemplos. Cada página reproduce el vídeo original de la plantilla y muestra las variantes importadas, si las hay."]
       ],
-      "related": ["chat-overlay-skins","readable-chat-overlay"],
+      "related": ["just-chatting-overlay","viewer-chat-bubbles"],
       "sources": []
     },
     "retro-pixel-chat-overlays": {
@@ -132,7 +135,7 @@
         ["¿Son paquetes completos de overlays?", "Los ejemplos son plantillas de chat. Las vistas muestran el diseño del chat, no un paquete completo de cámara, alertas y escenas."],
         ["¿Puedo comparar colores sin cambiar de plantilla?", "Sí, cuando hay variantes disponibles. Abre los detalles y selecciona una opción en su galería."]
       ],
-      "related": ["chat-overlay-skins","add-chat-overlay-obs"],
+      "related": ["animated-chat-overlays","chat-overlay-skins"],
       "sources": []
     },
     "readable-chat-overlay": {
@@ -160,7 +163,7 @@
         ["¿Debo reducir el chat para mostrar más juego?", "Primero elimina márgenes innecesarios o adornos que compitan en el entorno. Conserva suficiente espacio para leer la conversación."],
         ["¿Por dónde empiezo si no conozco OBS?", "Elige uno de los ejemplos y sigue la guía de OBS enlazada al final de esta página."]
       ],
-      "related": ["add-chat-overlay-obs","chat-overlay-skins"],
+      "related": ["transparent-chat-overlay","vertical-chat-overlay"],
       "sources": []
     }
   }

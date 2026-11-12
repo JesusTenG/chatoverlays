@@ -16,7 +16,10 @@
     "all": "All guides",
     "sources": "Official setup references",
     "homeTitle": "A little help with your setup.",
-    "homeLink": "Explore the guides"
+    "homeLink": "Explore the guides",
+    "setupGroup": "Setup & troubleshooting",
+    "styleGroup": "Find your design",
+    "sceneGroup": "Scenes & community"
   },
   "articles": {
     "add-chat-overlay-obs": {
@@ -44,7 +47,7 @@
         ["Should I paste the template page into OBS?", "Use the configured overlay URL from ChatStyle. The template page is where you inspect the design and its options."],
         ["Why is my chat behind the game?", "Check the order of sources in the scene. OBS draws sources higher in the list above sources lower in the list."]
       ],
-      "related": ["readable-chat-overlay","chat-overlay-skins"],
+      "related": ["obs-chat-not-showing","obs-stream-scenes"],
       "sources": [
         {"label":"OBS: Browser Source","url":"https://obsproject.com/kb/Browser-Source"},
         {"label":"OBS: Sources Guide","url":"https://obsproject.com/kb/sources-guide"},
@@ -76,7 +79,7 @@
         ["Does every template have skins?", "Only templates with imported, publicly listed variants show a skin gallery here. An absent gallery does not imply that the design cannot be customized."],
         ["Can I share a specific example?", "Yes. Choosing a skin updates the detail-page URL. Copy that link to return to the same selected variant."]
       ],
-      "related": ["cute-cozy-chat-overlays","retro-pixel-chat-overlays"],
+      "related": ["viewer-chat-bubbles","readable-chat-overlay"],
       "sources": [{"label":"ChatStyle: viewer skins explained","url":"https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"}]
     },
     "cute-cozy-chat-overlays": {
@@ -104,7 +107,7 @@
         ["Does cozy have to mean pink?", "No. Compare green, cream, blue or muted darker variants where available. The softness of the shape and the surrounding scene matter as much as color."],
         ["Where can I inspect the animation?", "Open Preview & details below. Each detail page plays the original template video and shows any imported skins."]
       ],
-      "related": ["chat-overlay-skins","readable-chat-overlay"],
+      "related": ["just-chatting-overlay","viewer-chat-bubbles"],
       "sources": []
     },
     "retro-pixel-chat-overlays": {
@@ -132,7 +135,7 @@
         ["Are these full stream overlay packs?", "The examples are chat overlay templates. The previews demonstrate the chat design, not a complete package of webcam frames, alerts and scenes."],
         ["Can I compare colors without changing the template?", "Yes, where skins are listed. Open a detail page and select a variant in its skin gallery."]
       ],
-      "related": ["chat-overlay-skins","add-chat-overlay-obs"],
+      "related": ["animated-chat-overlays","chat-overlay-skins"],
       "sources": []
     },
     "readable-chat-overlay": {
@@ -160,7 +163,7 @@
         ["Should I shrink the chat to show more gameplay?", "First remove unnecessary padding or competing decoration in the surrounding scene. Keep enough space for the actual conversation to remain readable."],
         ["Where should I start if I am new to OBS?", "Choose one of the examples below, then follow the OBS setup guide linked at the end of this page."]
       ],
-      "related": ["add-chat-overlay-obs","chat-overlay-skins"],
+      "related": ["transparent-chat-overlay","vertical-chat-overlay"],
       "sources": []
     }
   }

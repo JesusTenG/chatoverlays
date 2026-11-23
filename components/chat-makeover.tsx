@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import { useLocale } from './locale-provider';
 
-type Look = { name: string; skin: string; preview: string };
+type Look = { name: string; skin: string; preview: string; document: string };
 
 export function ChatMakeover({ looks }: { looks: Look[] }) {
-  const { locale, t } = useLocale();
+  const { t } = useLocale();
   const [selected, setSelected] = useState(0);
   const look = looks[selected];
   const copy = t.makeover;
@@ -19,7 +19,7 @@ export function ChatMakeover({ looks }: { looks: Look[] }) {
         <div className="makeover-stage"><div className="plain-chat"><span className="plain-username">JesusTenG:</span>{' '}{t.ui.sampleText}</div></div>
       </figure>
       <figure className="makeover-panel makeover-result"><figcaption><span>{copy.after}</span><strong aria-live="polite">{look.name} · {look.skin}</strong></figcaption>
-        <div className="makeover-stage"><iframe key={look.preview} src={locale === 'de' ? look.preview : look.preview.replace('.html', `.${locale}.html`)} title={`${look.name} · ${look.skin}`} sandbox="allow-same-origin" referrerPolicy="no-referrer"/></div>
+        <div className="makeover-stage"><iframe key={look.preview} srcDoc={look.document} title={`${look.name} · ${look.skin}`} sandbox="allow-same-origin" referrerPolicy="no-referrer"/></div>
       </figure>
     </div>
     <p className="makeover-caption">{copy.caption}</p>

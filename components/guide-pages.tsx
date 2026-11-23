@@ -1,3 +1,4 @@
+import { skinDocument } from '@/lib/skin-document';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { absoluteUrl, config } from '@/lib/catalog';
@@ -80,7 +81,7 @@ export function GuideArticlePage({ slug, locale }: { slug: string; locale: Local
       <nav className="article-contents" aria-label={ui.contents}>{article.stepsFirst ? <><a href="#steps">{ui.steps}</a><a href="#examples">{ui.examples}</a></> : <><a href="#examples">{ui.examples}</a><a href="#steps">{ui.steps}</a></>}<a href="#questions">{ui.faq}</a></nav>
     </div></header>
     <div className="wrap article-body">
-      {article.comparison && <ChatMakeover looks={article.examples.map(example => { const template = getGuideTemplate(example.slug, locale)!; const skin = getSkins(example.slug).find(skin => skin.id === example.skinId)!; return { name: template.name, skin: skin.name, preview: skin.preview }; })}/>}
+      {article.comparison && <ChatMakeover looks={article.examples.map(example => { const template = getGuideTemplate(example.slug, locale)!; const skin = getSkins(example.slug).find(skin => skin.id === example.skinId)!; return { name: template.name, skin: skin.name, preview: skin.preview, document: skinDocument(skin.preview, locale) }; })}/>}
       <p className="article-answer">{article.answer}</p>
       {article.reference && <section className="article-reference"><table><caption>{article.reference.title}</caption><thead><tr>{article.reference.columns.map(column => <th key={column} scope="col">{column}</th>)}</tr></thead><tbody>{article.reference.rows.map(([label, ...cells]) => <tr key={label}><th scope="row">{label}</th>{cells.map((cell, index) => <td key={index}>{cell}</td>)}</tr>)}</tbody></table></section>}
       {article.stepsFirst ? <>{steps}{examples}</> : <>{examples}{steps}</>}

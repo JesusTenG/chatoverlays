@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { useVideoState } from './video-provider';
 
-type BackdropBubble = { id: number | string; href: string; label: string; preview: string };
+type BackdropBubble = { id: number | string; href: string; label: string; document: string };
 const exitEdges = ['top', 'top', 'top', 'top', 'left', 'right', 'left', 'right', 'top', 'top', 'left', 'right', 'right', 'right'] as const;
 
 export function HeroBackdrop({ bubbles }: { bubbles: BackdropBubble[] }) {
@@ -100,7 +100,7 @@ export function HeroBackdrop({ bubbles }: { bubbles: BackdropBubble[] }) {
       const className = `hero-bubble hero-bubble-${index + 1}`;
       return <Link key={bubble.id} href={bubble.href} prefetch={false} aria-label={bubble.label}
         className={className + ' hero-bubble-live'} data-exit={exitEdges[index]}>
-        <iframe src={bubble.preview} title={bubble.label} aria-hidden="true" sandbox="allow-same-origin" tabIndex={-1}/>
+        <iframe srcDoc={bubble.document} title={bubble.label} aria-hidden="true" sandbox="allow-same-origin" tabIndex={-1}/>
       </Link>;
     })}
   </div>;

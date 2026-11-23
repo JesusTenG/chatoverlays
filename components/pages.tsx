@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getCatalog, getCategories, getTemplate, getFeaturedTemplates, absoluteUrl, config } from '@/lib/catalog';
 import { getMessages, localizePath, guidePath, type Locale } from '@/lib/i18n';
 import { pageMetadata } from '@/lib/metadata';
+import { skinDocument } from '@/lib/skin-document';
 import { getSkins, getBasePreview } from '@/lib/skins';
 import { Gallery } from './gallery';
 import { PreviewMedia } from './preview-media';
@@ -52,7 +53,7 @@ export function HomePage({ locale }: { locale: Locale }) {
           id: skin.id,
           href: localizePath('/overlays/' + skin.preview.split('/')[3] + '/', locale),
           label: catalog.find(template => template.slug === skin.preview.split('/')[3])!.name + ' · ' + skin.name,
-          preview: skin.preview.replace('.html', `.hero.${locale}.html`),
+          document: skinDocument(skin.preview, locale, true),
         }] : [])}/>
       <div className="hero wrap">
       <div className="hero-heading"><h1><span className="headline-line">{h.hero[0]}</span>{' '}<span className="headline-line accent">{h.hero[1]}</span></h1><p>{h.tagline}</p><div className="hero-actions"><ChatStyleButton href="https://chatstyle.gg/" label={h.platform}/><a className="button hero-discover" href="#templates"><GridIcon/>{h.discover}</a></div></div>
@@ -82,7 +83,7 @@ export function TemplatePage({ slug, locale }: { slug: string; locale: Locale })
   const skins = getSkins(slug);
   return <div className="wrap detail-page" data-category={template.categorySlug}><Breadcrumbs name={template.name} category={category}/>
     <section className="detail-hero"><PreviewMedia key={slug} template={template} mode="detail"/><div className="detail-copy"><h1 data-reveal>{template.name}</h1><p className="lead">{template.description}</p><ChatStyleButton href={template.shopUrl}/><p className="shop-note">{template.free ? ui.free : ui.price}</p><div className="design-note"><h2>{ui.forStream}</h2><p>{template.advice}</p></div></div></section>
-    {skins.length > 0 && <SkinGallery key={slug} skins={skins} templateName={template.name}/>}
+    {skins.length > 0 && <SkinGallery key={slug} skins={skins.map(skin => ({ ...skin, document: skinDocument(skin.preview, locale) }))} templateName={template.name}/>}
     <DiscoverCard locale={locale}/>
     <aside className="template-guides"><h2>{getGuideBundle(locale).ui.nav}</h2><div>{getGuides(locale).filter(guide => guide.examples.some(example => example.slug === slug)).slice(0, 2).map(guide => <Link key={guide.slug} href={localizePath(articlePath(guide.slug), locale)}>{guide.heading}</Link>)}<Link href={localizePath(guidesPath, locale)}>{getGuideBundle(locale).ui.all}</Link></div></aside>
     <section className="section related-section"><h2 data-reveal>{ui.related}</h2><div className="template-grid">{related.map(item => <TemplateCard key={item.slug} template={item}/>)}</div></section>

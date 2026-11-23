@@ -8,7 +8,7 @@
 /* Original skin bubbles move at different depths behind the pastel hero. */
 .hero-section { padding: 246px 64px 192px; background: var(--hero-background); isolation: isolate; }
 .hero-section::before, .gallery-section::before, .creator-section::before { content: none; }
-.hero-backdrop { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.hero-backdrop { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .hero-bubble { position: absolute; width: 320px; height: auto; opacity: .9; transform: translate3d(var(--bubble-x, calc(110vw * var(--entry-x))), var(--bubble-y, calc(110vh * var(--entry-y))), 0) rotate(var(--bubble-rotation)); will-change: transform; }
 .hero-bubble[data-exit="top"] { --entry-x: 0; --entry-y: -1; }
 .hero-bubble-live { aspect-ratio: 360 / 220; container-type: inline-size; }
@@ -16,7 +16,9 @@
 .hero-bubble[data-exit="left"] { --entry-x: -1; --entry-y: -.25; }
 .hero-bubble[data-exit="right"] { --entry-x: 1; --entry-y: -.25; }
 .hero-bubble { pointer-events: auto; border-radius: var(--media-radius); }
-.hero-bubble:hover, .hero-bubble:focus-visible { opacity: 1; z-index: 2; filter: drop-shadow(0 4px 5px #30263735); }
+.hero-bubble:hover, .hero-bubble:focus-visible { opacity: 1; z-index: 20; overflow: visible; }
+.hero-bubble-live iframe { transition: translate var(--motion-duration), filter var(--motion-duration); }
+.hero-bubble:is(:hover, :focus-visible) iframe { translate: 0 -10px; filter: drop-shadow(0 6px 5px #30263745); }
 .hero-bubble:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .hero-bubble-live { aspect-ratio: 2.5; overflow: hidden; display: grid; align-content: center; }
 .hero-bubble-1,.hero-bubble-2,.hero-bubble-3,.hero-bubble-4,.hero-bubble-9,.hero-bubble-10 {
@@ -277,6 +279,8 @@
   .step-number { left: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .hero-bubble-live iframe { transition: none; }
+  .hero-bubble:is(:hover, :focus-visible) iframe { translate: none; }
   .template-card:hover, .template-card:focus-within { transform: none; }
   .hero-bubble { transform: rotate(var(--bubble-rotation)); will-change: auto; }
 }

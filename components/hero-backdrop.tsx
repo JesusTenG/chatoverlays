@@ -1,10 +1,11 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { useVideoState } from './video-provider';
 
-type BackdropBubble = { id: number; src: string };
-const exitEdges = ['top', 'top', 'left', 'right', 'left', 'right', 'top', 'right', 'left', 'right'] as const;
+type BackdropBubble = { id: number | string; href: string; label: string; preview: string };
+const exitEdges = ['top', 'top', 'top', 'top', 'left', 'right', 'left', 'right', 'top', 'top', 'left', 'right', 'right', 'right'] as const;
 
 export function HeroBackdrop({ bubbles }: { bubbles: BackdropBubble[] }) {
   const backdropRef = useRef<HTMLDivElement>(null);
@@ -14,7 +15,7 @@ export function HeroBackdrop({ bubbles }: { bubbles: BackdropBubble[] }) {
     const backdrop = backdropRef.current;
     const section = backdrop?.closest('section');
     if (!backdrop || !section) return;
-    const images = Array.from(backdrop.querySelectorAll<HTMLImageElement>('.hero-bubble'));
+    const images = Array.from(backdrop.querySelectorAll<HTMLElement>('.hero-bubble'));
     if (reducedMotion) {
       images.forEach(image => {
         image.style.setProperty('--bubble-x', '0px');
@@ -28,7 +29,7 @@ export function HeroBackdrop({ bubbles }: { bubbles: BackdropBubble[] }) {
     let cancelled = false;
     let entranceStart: number | null = null;
     let entranceFinished = false;
-    let journeys: { image: HTMLImageElement; x: number; y: number }[] = [];
+    let journeys: { image: HTMLElement; x: number; y: number }[] = [];
     const measure = () => {
       const bounds = backdrop.getBoundingClientRect();
       const documentTop = bounds.top + window.scrollY;
@@ -78,7 +79,7 @@ export function HeroBackdrop({ bubbles }: { bubbles: BackdropBubble[] }) {
     window.addEventListener('resize', resize);
     measure();
     update();
-    void Promise.all(images.map(image => image.decode().catch(() => {}))).then(() => {
+    const startEntrance = requestAnimationFrame(() => {
       if (cancelled) return;
       entranceStart = performance.now();
       entranceFinished = window.scrollY > 12;
@@ -86,6 +87,7 @@ export function HeroBackdrop({ bubbles }: { bubbles: BackdropBubble[] }) {
     });
     return () => {
       cancelled = true;
+      cancelAnimationFrame(startEntrance);
       cancelAnimationFrame(frame);
       observer.disconnect();
       window.removeEventListener('scroll', schedule);
@@ -93,7 +95,13 @@ export function HeroBackdrop({ bubbles }: { bubbles: BackdropBubble[] }) {
     };
   }, [reducedMotion]);
 
-  return <div ref={backdropRef} className="hero-backdrop" aria-hidden="true">
-    {bubbles.map((bubble, index) => <img key={bubble.id} className={`hero-bubble hero-bubble-${index + 1}`} data-exit={exitEdges[index]} src={bubble.src} alt="" width="360" height="220" decoding="async"/>)}
+  return <div ref={backdropRef} className="hero-backdrop">
+    {bubbles.map((bubble, index) => {
+      const className = `hero-bubble hero-bubble-${index + 1}`;
+      return <Link key={bubble.id} href={bubble.href} prefetch={false} aria-label={bubble.label}
+        className={className + ' hero-bubble-live'} data-exit={exitEdges[index]}>
+        <iframe src={bubble.preview} title={bubble.label} aria-hidden="true" sandbox="allow-same-origin" tabIndex={-1}/>
+      </Link>;
+    })}
   </div>;
 }

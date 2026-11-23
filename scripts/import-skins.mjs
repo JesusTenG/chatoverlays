@@ -77,7 +77,7 @@ export const reducedMotionTextFix = '@media(prefers-reduced-motion:reduce){.skin
 export function renderSkinDocument({ templateName, skin, baseHtml, baseCss, fontCss, frameworkPath, animationPath, values, variables }) {
   const sample = {
     username: 'JesusTenG', message: 'Das war eine richtig spannende Runde! Was spielen wir als Nächstes?', timestamp: '21:08', pronouns: '', broadcaster: 'JesusTenG', usercolor: '#9b59b6',
-    avatar: '<img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23e9b4f0%22/%3E%3Ctext x=%2220%22 y=%2228%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2225%22 fill=%22%23423448%22%3EJ%3C/text%3E%3C/svg%3E">',
+    avatar: '<img alt="" src="/assets/skins/shared/sample-profile.webp">',
     badges: '<img alt="" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 18 18%22%3E%3Crect width=%2218%22 height=%2218%22 rx=%223%22 fill=%22%239146ff%22/%3E%3Cpath d=%22m9 2 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z%22 fill=%22white%22/%3E%3C/svg%3E">',
   };
   let markup = sanitizeMarkup(skin.html_template || baseHtml).replace(/\{\{(\w+)\}\}/g, (_, key) => sample[key] ?? '');
@@ -91,10 +91,8 @@ ${markup.includes('nt-message-real') ? reducedMotionTextFix : ''}
 </style></head><body><div class="skin-content"><div class="cs-chat cs-chat--bottom-up cs-align-center">${markup}</div></div></body></html>`;
 }
 
-export async function importSkins({ baseOnly = [] } = {}) {
-  const fullCatalog = JSON.parse(await readFile(path.join(projectRoot, 'source/catalog.json'), 'utf8'));
-  for (const slug of baseOnly) if (!fullCatalog.some(template => template.slug === slug)) throw new Error(`Unknown template: ${slug}`);
-  const catalog = baseOnly.length ? fullCatalog.filter(template => baseOnly.includes(template.slug)) : fullCatalog;
+export async function importSkins() {
+  const catalog = JSON.parse(await readFile(path.join(projectRoot, 'source/catalog.json'), 'utf8'));
   const assetRoot = path.join(projectRoot, 'public/assets/skins');
   await mkdir(path.join(assetRoot, 'shared'), { recursive: true });
   const requestCache = new Map();
@@ -163,7 +161,7 @@ export async function importSkins({ baseOnly = [] } = {}) {
       const html = (await fetchBytes(template.url)).bytes.toString('utf8');
       const parsed = parseTemplateSkins(html, template.url);
       const record = { sourceUrl: template.url, importedAt, sampleText: 'Das war eine richtig spannende Runde! Was spielen wir als Nächstes?', skins: [] };
-      if (parsed.skins.length || baseOnly.length) {
+      if (parsed.skins.length) {
         const templateDirectory = path.join(assetRoot, template.slug);
         await mkdir(templateDirectory, { recursive: true });
         const frameworkPath = await saveStylesheet(parsed.frameworkUrl);
@@ -172,14 +170,6 @@ export async function importSkins({ baseOnly = [] } = {}) {
         const baseHtml = await localizeHtml(sanitizeMarkup(parsed.baseHtml), template.url);
         const appCss = parsed.appCssUrl ? (await fetchBytes(parsed.appCssUrl)).bytes.toString('utf8') : '';
         const fontCss = await localizeCss([...appCss.matchAll(/@font-face\s*\{[^}]+\}/g)].map(match => match[0]).join('\n'), parsed.appCssUrl || template.url);
-        if (baseOnly.length) {
-          const preview = `/assets/skins/${template.slug}/base.html`;
-          const baseSkin = { id: `base-${template.slug}`, name: 'Base' };
-          await writeFile(path.join(projectRoot, 'public', preview), renderSkinDocument({ templateName: template.name, skin: baseSkin, baseHtml, baseCss, fontCss, frameworkPath, animationPath, values: parsed.baseValues, variables: parsed.baseVariables }));
-          result[template.slug] = { id: baseSkin.id, name: 'Base', sourceUrl: template.url, importedAt, sampleText: record.sampleText, preview };
-          console.log(`${template.slug}: original base preview`);
-          continue;
-        }
         for (const skin of parsed.skins) {
           const localizedSkin = { ...skin, css_template: await localizeCss(skin.css_template || '', template.url), html_template: skin.html_template ? await localizeHtml(sanitizeMarkup(skin.html_template), template.url) : null };
           const preview = `/assets/skins/${template.slug}/${skin.id}.html`;
@@ -192,13 +182,6 @@ export async function importSkins({ baseOnly = [] } = {}) {
       console.log(`${template.slug}: ${record.skins.length} skins`);
     }
   }));
-  if (baseOnly.length) {
-    const target = path.join(projectRoot, 'source/base-previews.json');
-    const existing = JSON.parse(await readFile(target, 'utf8').catch(error => { if (error.code === 'ENOENT') return '{}'; throw error; }));
-    await writeFile(target, JSON.stringify({ ...existing, ...result }, null, 2) + '\n');
-    console.log(`Imported ${Object.keys(result).length} original base previews.`);
-    return result;
-  }
   const ordered = Object.fromEntries(catalog.map(template => [template.slug, result[template.slug]]));
   await writeFile(path.join(projectRoot, 'source/skins.json'), JSON.stringify(ordered, null, 2) + '\n');
   const count = Object.values(ordered).reduce((sum, value) => sum + value.skins.length, 0);
@@ -206,9 +189,4 @@ export async function importSkins({ baseOnly = [] } = {}) {
   return ordered;
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  const baseFlag = process.argv.indexOf('--base-only');
-  const baseOnly = baseFlag < 0 ? [] : process.argv.slice(baseFlag + 1);
-  if (baseFlag >= 0 && !baseOnly.length) throw new Error('Provide template slugs after --base-only');
-  await importSkins({ baseOnly });
-}
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) await importSkins();

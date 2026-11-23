@@ -1,0 +1,42 @@
+{
+  "retromon-silver": {
+    "id": "base-retromon-silver",
+    "name": "Base",
+    "sourceUrl": "https://chatstyle.gg/template/retromon-silver",
+    "verifiedAt": "2026-11-23",
+    "sampleText": "Das war eine richtig spannende Runde! Was spielen wir als Nächstes?",
+    "preview": "/assets/skins/retromon-silver/base.html"
+  },
+  "magical-love": {
+    "id": "base-magical-love",
+    "name": "Base",
+    "sourceUrl": "https://chatstyle.gg/template/magical-love",
+    "verifiedAt": "2026-11-23",
+    "sampleText": "Das war eine richtig spannende Runde! Was spielen wir als Nächstes?",
+    "preview": "/assets/skins/magical-love/base.html"
+  },
+  "daydream": {
+    "id": "base-daydream",
+    "name": "Base",
+    "sourceUrl": "https://chatstyle.gg/template/daydream",
+    "verifiedAt": "2026-11-23",
+    "sampleText": "Das war eine richtig spannende Runde! Was spielen wir als Nächstes?",
+    "preview": "/assets/skins/daydream/base.html"
+  },
+  "kuromi": {
+    "id": "base-kuromi",
+    "name": "Base",
+    "sourceUrl": "https://chatstyle.gg/template/kuromi",
+    "verifiedAt": "2026-11-23",
+    "sampleText": "Das war eine richtig spannende Runde! Was spielen wir als Nächstes?",
+    "preview": "/assets/skins/kuromi/base.html"
+  },
+  "lunar-omen": {
+    "id": "base-lunar-omen",
+    "name": "Base",
+    "sourceUrl": "https://chatstyle.gg/template/lunar-omen",
+    "verifiedAt": "2026-11-23",
+    "sampleText": "Das war eine richtig spannende Runde! Was spielen wir als Nächstes?",
+    "preview": "/assets/skins/lunar-omen/base.html"
+  }
+}

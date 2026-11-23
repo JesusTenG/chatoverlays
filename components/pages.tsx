@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation';
 import { getCatalog, getCategories, getTemplate, getFeaturedTemplates, absoluteUrl, config } from '@/lib/catalog';
 import { getMessages, localizePath, guidePath, type Locale } from '@/lib/i18n';
 import { pageMetadata } from '@/lib/metadata';
-import { getSkins } from '@/lib/skins';
-import { skinThumbnail } from '@/lib/skin-paths';
+import { getSkins, getBasePreview } from '@/lib/skins';
 import { Gallery } from './gallery';
 import { PreviewMedia } from './preview-media';
 import { Breadcrumbs, ChatStyleLink, ChatStyleLogo, ChatStyleButton, StructuredData } from './site-chrome';
@@ -32,19 +31,29 @@ export function HomePage({ locale }: { locale: Locale }) {
   const catalog = getCatalog(locale);
   const backdropSkins = [
     getSkins('sleeping-cats').find(skin => skin.id === 725),
-    getSkins('y2k-media-player').find(skin => skin.id === 987),
-    getSkins('medieval-announcement').find(skin => skin.id === 794),
-    getSkins('sakura-cherry-blossom').find(skin => skin.id === 972),
-    getSkins('arcade-pixel').find(skin => skin.id === 1067),
-    getSkins('daydream').find(skin => skin.id === 761),
-    getSkins('receipt-flow').find(skin => skin.id === 721),
-    getSkins('poker-stack').find(skin => skin.id === 816),
-    getSkins('lunar-omen').find(skin => skin.id === 687),
+    getSkins('y2k-media-player').find(skin => skin.id === 988),
+    getSkins('lofi-windows-93').find(skin => skin.id === 1119),
+    getBasePreview('magical-love'),
+    getSkins('arcade-pixel').find(skin => skin.id === 1068),
+    getBasePreview('daydream'),
+    getBasePreview('retromon-silver'),
+    getSkins('sleeping-cats').find(skin => skin.id === 776),
+    getBasePreview('lunar-omen'),
     getSkins('kuromi').find(skin => skin.id === 682),
+    getSkins('microchip-flow').find(skin => skin.id === 965),
+    getSkins('floral-cuteness').find(skin => skin.id === 952),
+    getSkins('neo-tokyo').find(skin => skin.id === 939),
+    getSkins('poker-stack').find(skin => skin.id === 818),
   ];
   return <div className="home-page">
     <section className="hero-section">
-      <HeroBackdrop bubbles={backdropSkins.flatMap(skin => skin ? [{ id: skin.id, src: skinThumbnail(skin.preview, locale) }] : [])}/>
+      <HeroBackdrop bubbles={
+        backdropSkins.flatMap(skin => skin ? [{
+          id: skin.id,
+          href: localizePath('/overlays/' + skin.preview.split('/')[3] + '/', locale),
+          label: catalog.find(template => template.slug === skin.preview.split('/')[3])!.name + ' · ' + skin.name,
+          preview: skin.preview.replace('.html', `.hero.${locale}.html`),
+        }] : [])}/>
       <div className="hero wrap">
       <div className="hero-heading"><h1><span className="headline-line">{h.hero[0]}</span>{' '}<span className="headline-line accent">{h.hero[1]}</span></h1><p>{h.tagline}</p><div className="hero-actions"><ChatStyleButton href="https://chatstyle.gg/" label={h.platform}/><a className="button hero-discover" href="#templates"><GridIcon/>{h.discover}</a></div></div>
       <div className="hero-stage"><div className="hero-showcase">{getFeaturedTemplates(locale).map(template => <figure key={template.slug} className={`hero-tile tile-${template.slug}`} data-autoplay-preview><div className="card-window" aria-hidden="true"><i/><i/><i/></div><PreviewMedia template={template} mode="hero"/><figcaption><Link prefetch={false} href={localizePath(`/overlays/${template.slug}/`, locale)}>{template.name}</Link></figcaption></figure>)}</div></div>

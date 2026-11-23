@@ -1,0 +1,23 @@
+{
+  "retromon-silver": {
+    "cssLength": 8852, "cssHash": "80dfa577", "cssEnd": "@media(prefers-reduced-motion:reduce){\n  .cs-bubble,.cs-content::after{animation:none}\n}",
+    "varsHash": "5766a34e", "markupHash": "f95f9e4", "avatar": "right", "avatarVisible": false,
+    "variableRestores": {"--cs-bubble-border-color": "var(--cs-pokemon-black)", "--cs-username-font-color": "var(--cs-pokemon-black)", "--cs-message-font-color": "var(--cs-pokemon-black)"}
+  },
+  "magical-love": {
+    "cssLength": 35318, "cssHash": "80513e3f", "cssEnd": "        stroke: #ffffff;\n    }\n}",
+    "varsHash": "92250a92", "markupHash": "36a24c", "avatar": "left", "avatarVisible": true, "variableRestores": {}
+  },
+  "daydream": {
+    "cssLength": 13379, "cssHash": "e2668403", "cssEnd": "            0 9px 22px rgba(80, 45, 120, .20);\n    }\n}",
+    "varsHash": "215bc97a", "markupHash": "33aa5f1a", "avatar": "right", "avatarVisible": true, "variableRestores": {}
+  },
+  "kuromi": {
+    "cssLength": 45457, "cssHash": "2e53e7fe", "cssEnd": "        filter: none !important;\n    }\n}",
+    "varsHash": "f5dc8060", "markupHash": "1f92f125", "avatar": "left", "avatarVisible": true, "variableRestores": {}
+  },
+  "lunar-omen": {
+    "cssLength": 27624, "cssHash": "4a9fab6e", "cssEnd": "        animation: none;\n    }\n\n}",
+    "varsHash": "10056049", "markupHash": "4f6a8346", "avatar": "left", "avatarVisible": true, "variableRestores": {}
+  }
+}

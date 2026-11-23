@@ -21,6 +21,7 @@ Bestehende Regeln an ihrer zuständigen Stelle ändern. Keine weiteren Override-
 | --- | --- | --- |
 | `--paper` | `#fff8e9` | Seitenhintergrund und helle Bedienelemente |
 | `--ink` | `#302637` | Überschriften, Text und Konturen |
+| `--hero-background` | `var(--paper)` | Heller Hintergrund hinter der pastellfarbenen Hero-Karte |
 | `--muted` | `#6b5e71` | Beschreibungstexte, weiterhin kräftig und lesbar |
 | `--lilac` | `#d9cfeb` | Hero, Neon-/Cyber- und dunkle Designkarten |
 | `--butter` | `#f5e6b9` | Retro-/Pixel-Karten und Guide-Verweise |
@@ -50,16 +51,23 @@ Template-Karten und Detailseiten erhalten ihre Farbe über `data-category`. Dies
 ## Buttons und Links
 
 - `.button` für eine Hauptaktion, `.button-outline` für eine sekundäre Aktion, klare Textlinks für weitere Navigation.
+- Vorschau-/Detailaktionen neben einem ChatStyle-Button verwenden `.button.button-preview`: gleiche Fläche, Kontur, Schatten und Mindesthöhe wie die ChatStyle-Aktion. Beide Ziele sind gleich gewichtet.
+- `DiscoverCard` bündelt unter Beispielen zwei gleich gewichtete Ziele: die lokale Galerie und den gesamten ChatStyle-Katalog. Ein ruhiges, mittig platziertes Panel statt zusätzlicher Banner.
 - Aussagekräftige Beschriftungen; keine alleinstehenden Pfeile. Nur so viele Aktionen wie der Bereich braucht.
 - ChatStyle-Verweise ausschließlich mit `ChatStyleButton` oder `ChatStyleLink` und dem offiziellen `ChatStyleLogo`. Hero-Link führt auf die ChatStyle-Hauptseite; Template-Verweise auf das jeweilige Template.
+- Text und ChatStyle-Logo stehen ohne Trennstrich direkt nebeneinander. Der englische Hero-Link lautet „Check out ChatStyle“; andere Sprachen verwenden eine passende Übersetzung.
+- Im Hero steht ChatStyle vor der Galerie-Aktion. Beide Buttons haben dieselbe Breite und Höhe.
 - Kein Kauf-Wording. Vorschaubilder und Titel führen zur eigenen Detailseite, nicht in ein Modal.
+- Community-Templates ohne lokale Detailseite führen ausdrücklich mit ChatStyle-Logo zur Originalseite. Ihre Verfügbarkeit wird mit Quelle und Prüfdatum dokumentiert.
 - Tastaturfokus sichtbar halten; zentrale Bedienelemente mindestens 44 px hoch.
 
 ## Bewegung und Medien
 
 - Karten schweben beim Hover um `--motion-lift` (−4 px) an; Schatten wechseln zu `--card-shadow-hover`. Dauer: `--motion-duration` (300 ms).
 - Hero-Ausnahme: drei geneigte, überlappende Vorschaukarten für Sleeping Cats, Neo Tokyo und Lofi Windows 93. Hover/Fokus bringt eine Karte nach vorne.
-- Hero-Videos und Detailvorschauen spielen stumm ab. Galerie-Videos starten bei Hover oder Fokus. `PreviewMedia` wiederverwenden, einschließlich Pause-, Sichtbarkeits- und Reduced-Motion-Verhalten.
+- Hinter der Hero-Karte liegen echte, dekorative Skin-Bubbles aus verschiedenen Templates unregelmäßig auf einer hellen Fläche. Beim Laden fliegen sie gestaffelt vom oberen oder seitlichen Bildschirmrand an ihren Platz; beim Scrollen bewegen sie sich auf demselben Weg wieder nach außen. Sie fangen keine Klicks ab, bleiben für Screenreader ausgeblendet und stehen bei Reduced Motion still. Die Hero-Vorschauen nutzen die 1080-Pixel-Originale mit einem behutsam engeren Bildausschnitt.
+- In Template-Details sind alle Skin-Kacheln sofort sichtbar. Kein Aufklapp-Button; Bilder unterhalb des sichtbaren Bereichs laden weiterhin verzögert.
+- Hero-Videos und Detailvorschauen spielen stumm ab. Galerie-Videos starten bei Hover oder Fokus. `PreviewMedia` wiederverwenden: ohne sichtbare Play-/Pause-Steuerungen, mit automatischem Stopp außerhalb des Sichtbereichs und bei ausgeblendetem Tab sowie Reduced-Motion-Verhalten.
 - Überschriften erscheinen dezent. Keine dauerhaften Hintergrundanimationen. `prefers-reduced-motion` respektieren.
 - Keine großen Creator-Abzeichen, erfundenen Avatare oder dekorativen Embleme. Autorenschaft zurückhaltend im Design-Bereich bzw. Footer platzieren.
 

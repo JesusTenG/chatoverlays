@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocale } from './locale-provider';
 import type { Skin } from '@/lib/skins';
+import { skinThumbnail } from '@/lib/skin-paths';
 
 export function SkinGallery({ skins, templateName }: { skins: Skin[]; templateName: string }) {
   const { locale, t } = useLocale();
   const [selectedId, setSelectedId] = useState(skins[0]?.id);
   const [background, setBackground] = useState<'light' | 'dark'>('dark');
-  const [expanded, setExpanded] = useState(false);
   const previewRef = useRef<HTMLElement>(null);
   useEffect(() => {
     const syncSelection = () => {
@@ -29,7 +29,7 @@ export function SkinGallery({ skins, templateName }: { skins: Skin[]; templateNa
         <figcaption className="skin-preview-caption"><span aria-live="polite">{selected.name}</span><div className="skin-backgrounds" role="group" aria-label={t.ui.previewBackground}><button className="background-light" aria-label={t.ui.lightBackground} aria-pressed={background === 'light'} onClick={() => setBackground('light')}/><button className="background-dark" aria-label={t.ui.darkBackground} aria-pressed={background === 'dark'} onClick={() => setBackground('dark')}/></div></figcaption>
       </figure>
       <div className="skin-choices">
-        <div className="skin-picker" id="skin-options" role="group" aria-label={t.ui.chooseSkin}>{skins.map((skin, index) => <button key={skin.id} className="skin-option" hidden={!expanded && index >= 6 && selected.id !== skin.id} aria-pressed={selected.id === skin.id} onClick={() => {
+        <div className="skin-picker" id="skin-options" role="group" aria-label={t.ui.chooseSkin}>{skins.map(skin => <button key={skin.id} className="skin-option" aria-pressed={selected.id === skin.id} onClick={() => {
           setSelectedId(skin.id);
           const url = new URL(window.location.href);
           url.searchParams.set('skin', String(skin.id));
@@ -39,10 +39,9 @@ export function SkinGallery({ skins, templateName }: { skins: Skin[]; templateNa
             previewRef.current.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
           }
         }}>
-          <span className="skin-thumbnail"><img src={skin.preview.replace('.html', '.webp')} alt="" width="360" height="220" loading="lazy" decoding="async"/><span className="skin-selected" aria-hidden="true">✓</span></span>
+          <span className="skin-thumbnail"><img src={skinThumbnail(skin.preview, locale)} alt="" width="360" height="220" loading="lazy" decoding="async"/><span className="skin-selected" aria-hidden="true">✓</span></span>
           <span className="skin-name">{skin.name}</span>
         </button>)}</div>
-        {skins.length > 6 && <button className="skin-expand" aria-expanded={expanded} aria-controls="skin-options" onClick={() => setExpanded(!expanded)}>{expanded ? t.ui.fewerSkins : t.ui.allSkins.replace('{count}', String(skins.length))}<span aria-hidden="true">{expanded ? '−' : '+'}</span></button>}
       </div>
     </div>
   </section>;

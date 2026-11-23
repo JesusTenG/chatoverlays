@@ -28,7 +28,7 @@ test('generated previews isolate original styles and strip executable markup', (
     baseCss: '.cs-bubble{border:1px solid}', fontCss: '', frameworkPath: '/assets/skins/shared/framework.css', animationPath: null,
     values: { 'bubble.width': 570 }, variables: '--cs-bubble-width:570px',
   });
-  assert(html.includes('So sieht dein Chat aus.'));
+  assert(html.includes('Das war eine richtig spannende Runde! Was spielen wir als Nächstes?'));
   assert(html.includes('script-src \'none\''));
   assert(!html.includes('<script'));
   assert(!html.includes('onclick='));
@@ -55,6 +55,12 @@ test('all catalog templates have verified skin coverage and local preview assets
       const previewFile = path.join('public', skin.preview);
       assert((await stat(previewFile)).isFile());
       const html = await readFile(previewFile, 'utf8');
+      assert(html.includes(record.sampleText), `Complete sample message: ${skin.preview}`);
+      for (const locale of ['de', 'en', 'es']) {
+        const thumbnail = skin.preview.replace('.html', locale === 'de' ? '.webp' : `.${locale}.webp`);
+        const bytes = await readFile(path.join('public', thumbnail));
+        assert.equal(bytes.subarray(8, 12).toString(), 'WEBP', `Localized thumbnail: ${thumbnail}`);
+      }
       assert(html.includes('Content-Security-Policy'));
       assert(!/<script\b/i.test(html));
       for (const [, url] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {

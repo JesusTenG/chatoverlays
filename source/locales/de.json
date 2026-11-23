@@ -44,7 +44,7 @@
     "lightBackground": "Heller Hintergrund",
     "darkBackground": "Dunkler Hintergrund",
     "chooseSkin": "Skin auswählen",
-    "sampleText": "So sieht dein Chat aus.",
+    "sampleText": "Das war eine richtig spannende Runde! Was spielen wir als Nächstes?",
     "countOne": "{shown} von {total} Template",
     "skinsOne": "Skin",
     "allSkins": "Alle {count} Skins ansehen",
@@ -56,9 +56,9 @@
       "Chat mit",
       "Charakter"
     ],
-    "tagline": "Animierte Overlays für den Look deiner Community.",
+    "tagline": "Entdecke animierte Chat-Overlays und vergleiche ihre Skins. Finde den Look für deinen Twitch-Stream, passe ihn auf ChatStyle an und bring ihn mit unseren Guides in OBS.",
     "discover": "Overlays entdecken",
-    "platform": "Gestalten mit",
+    "platform": "Entdecke",
     "gallery": "Finde deinen Look.",
     "howTitle": "Dein Look. In deinem Stream.",
     "steps": [
@@ -84,16 +84,28 @@
     "faqTitle": "Noch kurz gefragt.",
     "faq": [
       [
-        "Wo bekomme ich die Templates?",
-        "Entdecke hier die Vorschauen und Skins eines Templates. Auf ChatStyle findest du dann den aktuellen Preis und die Anpassungsmöglichkeiten."
+        "Wo finde und bearbeite ich ein Template?",
+        "Vergleiche hier die Vorschauen und Skins und öffne anschließend den ChatStyle-Link beim gewünschten Design. Auf der Originalseite findest du die aktuelle Verfügbarkeit, Preise und Anpassungsmöglichkeiten. Eine Skin-Auswahl in unserer Galerie verändert nur die Vorschau, nicht deinen Live-Kanal."
       ],
       [
-        "Wie kommt das Overlay in OBS?",
-        "Nach der Einrichtung in ChatStyle bindest du die Overlay-URL als Browserquelle in deine OBS-Szene ein. Größe und Position legst du in deiner Szene fest."
+        "Wie füge ich meinen Chat in OBS ein?",
+        "Richte das Overlay auf ChatStyle ein und verwende dessen Live-Overlay-URL in einer OBS-Browser-Quelle. Die Template-Shopseite und unsere Vorschauvideos sind keine Live-Quelle. Unser [OBS-Guide](/guides/add-chat-overlay-obs/) führt durch Quellengröße, Reihenfolge und einen ersten Gesprächstest."
       ],
       [
-        "Welcher Style passt zu meinem Stream?",
-        "Achte auf Farben, Lesbarkeit und die Bewegung neben deinem Spiel oder Kamerabild. Unser [kurzer Overlay-Ratgeber](/ratgeber/chat-overlay-auswaehlen/) hilft dir bei der Auswahl."
+        "Welches Design passt zu meinem Stream?",
+        "Prüfe zuerst den freien Platz neben Gameplay oder Kamera und vergleiche dann Kontrast, Nachrichtenbreite und Bewegung. Ein dekorativer Chat braucht Platz für Rahmen und Text. Nutze den [Vorher-nachher-Vergleich](/guides/chat-overlay-before-after/) und teste deinen Favoriten in der Größe, in der Zuschauer ihn tatsächlich sehen."
+      ],
+      [
+        "Ändert ein Skin das Chatfenster von Twitch?",
+        "Die Designs erscheinen im Chat-Overlay innerhalb deines übertragenen Bildes. Sie gestalten nicht das native Chatfenster neben dem Twitch-Player um. Welche Skins Zuschauer verwenden dürfen, legt der Streamer fest; unser [Guide zu Zuschauer-Skins](/guides/viewer-chat-bubbles/) erklärt den Ablauf."
+      ],
+      [
+        "Sind alle Templates kostenlos?",
+        "Nein. Die Galerie enthält kostenlose und kostenpflichtige Designs. Unser [Guide zu kostenlosen Templates](/guides/free-twitch-chat-overlays/) zeigt Beispiele, die zum Prüfzeitpunkt als kostenlos gelistet waren; maßgeblich ist das aktuelle Angebot auf ChatStyle. Ein kostenloses Template bedeutet nicht automatisch, dass alle Dienstfunktionen oder Tarife kostenlos sind."
+      ],
+      [
+        "Kann ich einen bestimmten Skin für später speichern?",
+        "Öffne die Template-Details und wähle einen Skin aus. Seine Auswahl steht anschließend in der Seitenadresse; mit dem kopierten Link kannst du genau diese Variante wieder öffnen. Nutze die hellen und dunklen Vorschauhintergründe zum Vergleichen und prüfe den Favoriten danach in deiner echten Stream-Szene."
       ]
     ]
   },
@@ -172,5 +184,24 @@
     ],
     "text": "Die gesuchte Seite gibt es hier nicht. Dein nächster Style wartet in der Galerie.",
     "back": "Zur Galerie"
+  },
+  "discovery": {
+    "title": "Noch mehr für deinen Stream.",
+    "text": "Stöbere durch unsere Galerie oder entdecke den gesamten Template-Katalog auf ChatStyle.",
+    "gallery": "Mehr Templates entdecken",
+    "chatstyle": "Mehr entdecken auf"
+  },
+  "makeover": {
+    "heading": "Gleiche Nachricht. Neuer Look.",
+    "choose": "Design für den Vergleich auswählen",
+    "before": "Vorher",
+    "after": "Nachher",
+    "plain": "Schlichter Chat",
+    "caption": "In beiden Ansichten steht derselbe Beispielsatz. Der schlichte Chat ist ein Anschauungsbeispiel; die gestaltete Ansicht zeigt einen originalen Template-Skin."
+  },
+  "community": {
+    "checked": "{count} im ChatStyle-Katalog als Free markierte Templates, geprüft am {date}. Designs aus der gesamten Community; aktuelle Bedingungen stehen auf der jeweiligen Originalseite.",
+    "free": "Auf ChatStyle als kostenlos gelistet",
+    "all": "Alle {count} kostenlosen Templates zeigen"
   }
 }

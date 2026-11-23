@@ -1,5 +1,15 @@
 # Zehn zusätzliche Suchintentionen für ChatOverlays
 
+## Erweiterung vom 12. November 2026
+
+Die Übersicht umfasst jetzt 18 Themen: zusätzlich einen interaktiven Vorher-nachher-Vergleich (`chat-overlay-before-after`), einen allgemeinen Einstieg (`chatstyle-setup`) und einen Guide zur Anpassung von Templates und Zuschauer-Skins (`customize-chatstyle`). Alle drei sind in Englisch, Deutsch und Spanisch vorhanden.
+
+Der Gratis-Guide ist nicht mehr auf die zwei kostenlosen Designs der eigenen Sammlung beschränkt. `source/free-templates.json` dokumentiert die 28 am Prüfdatum im vollständigen öffentlichen ChatStyle-Katalog als **Free** markierten Templates. Die Auswahl folgt dem Verfügbarkeitslabel, nicht einer Preiszahl oder einem Wort im Beschreibungstext. Die Originalseiten bleiben maßgeblich. `scripts/import-free-templates.mjs` kann den öffentlichen Abgleich und die Medienimporte erneut ausführen; sein Prüfdatum muss bei einer neuen redaktionellen Prüfung aktualisiert werden.
+
+Jeder Guide besitzt mindestens vier individuelle Fragen; die neuen Guides fünf und die Startseite sechs. Die Einstiege wurden gekürzt, ausführliche Hilfe bleibt in Schritten, Hinweisen und Q&A. Unter Beispielen führen gleich gewichtete Aktionen zur lokalen Galerie und zum vollständigen ChatStyle-Katalog. Alle 344 Skin-Beispiele besitzen ganze Beispielsätze und lokalisierte Vorschaubilder in drei Sprachen.
+
+Die allgemeinen ChatStyle-Guides verweisen auf die [Einrichtung](https://chatstyle.gg/), [Kontoberechtigungen](https://chatstyle.gg/permissions), [Zuschauer-Skins](https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins) sowie die offiziellen OBS-/Streamlabs-Dokumentationen. Allgemeine Bild- und Layoutprüfungen sind als praktische Empfehlungen formuliert; Verfügbarkeit, Kosten und Funktionsumfang werden nicht aus einer Vorschau abgeleitet.
+
 Recherche und Umsetzung: 11. November 2026.
 
 ## Bewertung

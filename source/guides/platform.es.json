@@ -1,0 +1,65 @@
+{
+  "chatstyle-setup": {
+    "title": "Configurar ChatStyle: de tu cuenta a un chat para el directo",
+    "description": "Empieza con ChatStyle: elige el rol de cuenta, conecta el canal, selecciona una plantilla y prueba el overlay en OBS o Streamlabs.",
+    "heading": "Tu primer chat con ChatStyle.",
+    "intro": "Conecta tu canal, elige un diseño y lleva la conversación a tu directo.",
+    "answer": "Empieza con la configuración para streamers si preparas tu propia emisión. El acceso de espectador sirve para elegir skins disponibles en otro canal. Una vez configurado el overlay, su URL en directo es lo que necesita tu programa de emisión.",
+    "stepsFirst": true,
+    "steps": [
+      ["Elige la configuración de streamer", "Abre ChatStyle y usa el inicio de sesión de streamer de tu plataforma. Lee los permisos solicitados antes de continuar. Confirma la identidad del canal, especialmente si una cuenta de Google puede representar varios canales de YouTube o de marca."],
+      ["Busca un diseño inicial", "Explora el catálogo completo y compara unos diseños al tamaño que permita tu escena. El filtro Free ayuda en la primera comparación visual. Revisa la oferta original y sus ajustes antes de dar por incluida una plantilla o una función de cuenta."],
+      ["Configura el overlay y añade su URL", "Termina la configuración en ChatStyle y obtén la URL de overlay en directo de tu canal. Añade una fuente de navegador en OBS o Streamlabs y pega esa URL. Ajusta el tamaño al área de chat; una página de catálogo, captura o vídeo de ejemplo no es una fuente de conversación en directo."],
+      ["Prueba mensajes y cambios de escena", "Envía mensajes reales al canal conectado y comprueba una frase y un nombre largos. Revisa el orden de fuentes si otra capa oculta el chat. Cambia de escena y vuelve, y revisa una grabación breve para comprobar la posición y la legibilidad."]
+    ],
+    "examples": [
+      { "slug": "flow-chat", "why": "Un diseño sencillo de dos burbujas del catálogo general. Sirve para comparar la estructura del mensaje antes de añadir más decoración." },
+      { "slug": "comic-pop", "why": "Una dirección de cómic con contorno marcado. Compara su marco y espaciado con un diseño más sencillo dentro de la misma escena." },
+      { "slug": "0xlia", "why": "Una alternativa de terminal para un montaje más oscuro. Comprueba el texto sobre momentos claros y oscuros de tu contenido." }
+    ],
+    "notes": [
+      ["Empieza con un montaje pequeño", "Usa un canal, una escena y una plantilla. Confirma que llegan mensajes nuevos antes de añadir skins por roles o más variantes de escena. Así separas los problemas de conexión de las decisiones de diseño y reconoces mejor cada cambio."],
+      ["Elige el siguiente paso adecuado", "Si el chat está vacío, revisa conexión y fuente antes del aspecto. Si llegan mensajes pero el diseño no encaja, continúa con la personalización. Puedes conservar la escena mientras comparas colores y espacios."]
+    ],
+    "faq": [
+      ["¿Entro como streamer o como espectador?", "Usa la configuración de streamer para el overlay de tu propio canal. El acceso de espectador permite encontrar un canal y elegir los skins que ofrece. Ver una vista previa pública no configura ninguno de los dos roles."],
+      ["¿Pego la página principal de ChatStyle en OBS?", "Utiliza la URL de overlay en directo de tu chat configurado. La página principal y el catálogo ayudan a elegir y preparar un diseño, pero no son la conversación. OBS carga la página del overlay mediante una fuente de navegador."],
+      ["¿Puedo empezar comparando diseños gratuitos?", "Sí. El catálogo tiene un filtro Free y nuestra guía enlaza las plantillas marcadas así en la fecha de comprobación. Consulta las condiciones actuales de cuenta y funciones en ChatStyle. Una plantilla gratuita no describe todos los posibles costes del servicio."],
+      ["¿Qué plataformas conectadas cubre esta guía?", "La información pública de ChatStyle documenta conexiones de Twitch y YouTube. En YouTube, revisa el canal seleccionado y el chat disponible en la emisión activa. No asumas que el mismo proceso y todas sus funciones se aplican a otras plataformas."],
+      ["¿Qué reviso si no aparecen mensajes?", "Confirma primero el canal conectado, la URL del overlay y la visibilidad de la fuente. Envía un mensaje nuevo y revisa el orden y tamaño de las fuentes. La guía de errores distingue problemas de conexión, visibilidad y recorte en lugar de atribuirlos todos a la plantilla."]
+    ],
+    "related": ["customize-chatstyle", "obs-chat-not-showing"],
+    "sources": [{"label":"ChatStyle: primeros pasos","url":"https://chatstyle.gg/"},{"label":"ChatStyle: permisos de cuenta","url":"https://chatstyle.gg/permissions"},{"label":"OBS: fuente de navegador","url":"https://obsproject.com/kb/Browser-Source"},{"label":"Streamlabs: fuente de navegador","url":"https://streamlabs.com/content-hub/post/introducing-browser-source-interaction-for-streamlabs-desktop"}]
+  },
+  "customize-chatstyle": {
+    "title": "Personalizar ChatStyle: plantillas, colores y skins para espectadores",
+    "description": "Distingue plantillas y skins, compara diseños de distintos creadores y prueba colores, espacios y acceso de espectadores con las opciones reales de ChatStyle.",
+    "heading": "Haz que ChatStyle encaje contigo.",
+    "intro": "Elige el diseño general, ajusta sus opciones disponibles y decide qué skins puede usar tu comunidad.",
+    "answer": "La plantilla define el diseño general y un skin aporta una variante a los mensajes. Empieza por una forma que encaje y utiliza después los controles de esa plantilla concreta. Las opciones varían: revisa el original antes de planear un cambio.",
+    "steps": [
+      ["Elige la estructura del diseño", "Compara la posición del nombre, el espacio del marco y los saltos de línea de frases largas. Escoge una plantilla que ya funcione con tu composición. Cambiar un acento de color es distinto de reconstruir toda la forma del mensaje."],
+      ["Comprueba los controles reales", "Abre la plantilla en ChatStyle y revisa qué ajustes ofrece. Cambia una propiedad visible cada vez, como un color o espaciado disponible, y compara el resultado con la escena. No supongas que todas las plantillas tienen los mismos controles."],
+      ["Planifica los skins de espectadores", "Un canal coherente puede empezar con una colección pequeña de estilos relacionados. ChatStyle documenta controles de disponibilidad y acceso por roles. Decide qué opciones encajan con tu comunidad antes de presentar la selección a los espectadores."],
+      ["Prueba con quienes lo usarán", "Pide a espectadores con el acceso previsto que inicien sesión, busquen la tienda de tu canal y elijan un skin disponible. Comprueba sus mensajes reales en el overlay. Revisa textos largos, nombres y fondos claros antes de ampliar la colección."]
+    ],
+    "examples": [
+      { "slug": "bitwitch", "why": "Un diseño marcado con sombras duras del catálogo general. Examina las variantes disponibles y su contraste en tu escena." },
+      { "slug": "retromon", "why": "Un marco de mensajes retro con skins publicados. Una comparación útil para mantener la forma general mientras exploras variantes." },
+      { "slug": "sleeping-cats", "skinId": 725, "why": "Candy es un ejemplo concreto de la galería de Sleeping Cats. Cambia de variante en los detalles para comparar la misma plantilla con fondos claros y oscuros." }
+    ],
+    "notes": [
+      ["Separa aspecto y acceso", "Una vista pública muestra cómo se ve un skin. No demuestra que cualquier espectador pueda usarlo en cualquier canal. Comprueba la disponibilidad y los roles por separado y prueba después con una persona que tenga el acceso previsto."],
+      ["Conserva una referencia visual", "Guarda una captura de la escena inicial antes de ajustar el diseño. Compara cada cambio con esa referencia y los mismos mensajes. Si una decoración dificulta seguir las palabras, revísala aunque resulte atractiva en una vista ampliada."]
+    ],
+    "faq": [
+      ["¿Todas las plantillas permiten cambiar las mismas fuentes y colores?", "No lo des por hecho. La plantilla original determina qué controles y variantes están disponibles. Revisa sus opciones actuales antes de elegirla por una necesidad concreta de personalización."],
+      ["¿Necesito escribir CSS para elegir un diseño?", "Puedes explorar plantillas y variantes públicas sin escribir CSS. Empieza por los controles de la plantilla elegida. Los cambios de código más específicos dependen de ese diseño y del acceso disponible en ChatStyle; un fragmento genérico no resuelve cualquier caso."],
+      ["¿Quién decide qué skins pueden usar los espectadores?", "ChatStyle documenta que el streamer controla la disponibilidad y el acceso, incluidas opciones por roles. Los espectadores eligen entre los skins a los que tienen acceso en la tienda del canal. Una vista previa atractiva no concede ese acceso."],
+      ["¿Un skin de espectador rediseña toda mi escena?", "Cambia la apariencia de sus mensajes en el overlay de ChatStyle. No recoloca cámara, juego ni otras fuentes de OBS y tampoco modifica el panel nativo de Twitch. Trata el overlay y la distribución de la escena como tareas distintas."],
+      ["¿Por qué la vista previa se ve distinta de mi escena?", "El fondo, el ancho mostrado y el contenido del mensaje influyen en el resultado. Las miniaturas usan una frase fija y el vídeo original muestra el movimiento. Compara el overlay configurado al tamaño real de reproducción antes de considerar incorrecto un ajuste."]
+    ],
+    "related": ["viewer-chat-bubbles", "chat-overlay-before-after"],
+    "sources": [{"label":"ChatStyle: catálogo de plantillas","url":"https://chatstyle.gg/templates"},{"label":"ChatStyle: skins para espectadores","url":"https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"},{"label":"ChatStyle: permisos","url":"https://chatstyle.gg/permissions"}]
+  }
+}

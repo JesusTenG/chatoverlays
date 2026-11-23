@@ -3,6 +3,7 @@
   /* Warm paper, dark print and four pastel card colors. */
   --paper: #fff8e9;
   --ink: #302637;
+  --hero-background: var(--paper);
   --muted: #6b5e71;
   --accent: #77518c;
   --green: #264f46;

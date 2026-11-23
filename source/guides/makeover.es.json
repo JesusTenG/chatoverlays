@@ -1,0 +1,32 @@
+{
+  "title": "Chat del directo antes y después: transforma un chat sencillo",
+  "description": "Compara un chat sencillo con skins originales de Sleeping Cats, Lofi Windows 93 y Neo Tokyo. Sigue los pasos y abre cada ejemplo y su plantilla en ChatStyle.",
+  "heading": "Dale personalidad a tu chat.",
+  "intro": "Convierte un chat sencillo en parte de tu diseño. Compara tres estilos y encuentra el tuyo.",
+  "answer": "Conserva el mensaje y cambia su presentación. Un marco, una paleta coherente y espacio alrededor del texto dan al chat un lugar definido en la escena. Empieza con la comparación y abre después los skins exactos de los ejemplos.",
+  "comparison": true,
+  "examples": [
+    { "slug": "sleeping-cats", "skinId": 725, "why": "Candy convierte el mensaje en una pegatina rosa suave con un gato dormido. Pruébalo en una escena acogedora y deja espacio sobre la burbuja para la decoración." },
+    { "slug": "lofi-windows-93", "skinId": 1130, "why": "Lavender presenta el chat como una pequeña ventana de escritorio retro. Repite uno de sus colores junto a la cámara para conectar visualmente las dos zonas." },
+    { "slug": "neo-tokyo", "skinId": 919, "why": "Blue añade un marco de terminal oscuro y un carácter más marcado. Comprueba el nombre y el mensaje sobre las partes más claras del juego antes de decidir la composición." }
+  ],
+  "steps": [
+    ["Decide qué quieres mejorar", "Mira una captura de tu escena actual. ¿El chat se confunde con el fondo, no encaja con el marco de la cámara o ocupa demasiado espacio? Elige primero una prioridad. Cambiar de skin no arregla una fuente de chat que está oculta detrás de otra."],
+    ["Elige primero una dirección", "Compara los tres diseños con el mismo mensaje. Antes de cambiar colores, decide qué forma encaja: burbuja suave, ventana retro o terminal oscuro. Mantén el mismo fondo durante la primera comparación para que la imagen que rodea al chat no determine el resultado."],
+    ["Lleva el diseño a tu escena", "Abre el enlace de ChatStyle del ejemplo, configura allí el overlay y utiliza su URL en una fuente de navegador de OBS. Conserva la escena anterior como referencia. Ajusta el área del navegador al chat y deja espacio para los marcos; no pegues la URL de la página de la tienda en OBS."],
+    ["Compara al tamaño de reproducción", "Graba una prueba breve con un mensaje largo, varios cortos y un cambio entre contenido claro y oscuro. Compara ambas versiones al tamaño normal del reproductor y en el teléfono. Quédate con la que mantenga las palabras claras y la decoración dentro del área prevista."]
+  ],
+  "notes": [
+    ["Da protagonismo a un elemento", "Si el chat ya tiene mucho color, el marco de cámara y los paneles cercanos pueden ser más tranquilos. Repetir un color de acento suele crear una conexión más clara que añadir otro patrón. Es un punto de partida de diseño: contrástalo con tu juego, iluminación y cámara reales en lugar de copiar una distribución sin probarla."],
+    ["El nuevo estilo también debe leerse bien", "Después de la primera impresión, revisa el mensaje. Un marco puede separar mejor el chat y, al mismo tiempo, necesitar más espacio. Si los mensajes largos se parten mal, revisa el ancho de la fuente y el tamaño disponible para las letras antes de reducir todo el overlay. Mira también el vídeo original para valorar el movimiento."]
+  ],
+  "faq": [
+    ["¿La vista anterior es el chat predeterminado de Twitch?", "No. Es un ejemplo deliberadamente sencillo con la misma frase que la vista con diseño. Cada herramienta puede mostrar un chat básico de forma diferente. Las vistas posteriores usan los skins originales enlazados abajo, que puedes explorar con detalle."],
+    ["¿Esto cambia el chat junto al reproductor de Twitch?", "La comparación trata del overlay dentro de la imagen de tu emisión. No modifica el panel nativo de Twitch. Configura el overlay en ChatStyle y añade la URL de emisión resultante a tu escena."],
+    ["¿Seleccionar un skin aquí lo activa en mi canal?", "Los botones solo cambian el ejemplo mostrado en esta página. El enlace de vista previa permite examinar el skin; después puedes abrir la plantilla original en ChatStyle para configurar el canal y consultar sus opciones. Una selección de la galería no modifica el directo."],
+    ["¿Tengo que rediseñar todo el directo?", "Empieza con una escena y conserva el resto de su distribución como referencia. Cambia el diseño del chat y revisa el espacio y el contraste alrededor. Si encaja, no hace falta sustituir también marcos de cámara o paneles independientes."],
+    ["¿Cómo comparo los diseños de forma justa?", "Utiliza el mismo texto, fondo y área aproximada de mensaje con cada candidato. Comprueba también un nombre largo y varias entradas. Una imagen fija ayuda a comparar el aspecto; el vídeo original y una prueba de escena responden a otras preguntas sobre animación y comportamiento real."]
+  ],
+  "related": ["chat-overlay-skins", "readable-chat-overlay"],
+  "sources": [{ "label": "OBS: fuente de navegador", "url": "https://obsproject.com/kb/Browser-Source" }, { "label": "ChatStyle: plantillas originales", "url": "https://chatstyle.gg/templates" }]
+}

@@ -44,7 +44,7 @@
     "lightBackground": "Light background",
     "darkBackground": "Dark background",
     "chooseSkin": "Choose a skin",
-    "sampleText": "This is how your chat looks.",
+    "sampleText": "That was such a close round! What are we playing next?",
     "countOne": "{shown} of {total} template",
     "skinsOne": "skin",
     "allSkins": "See all {count} skins",
@@ -56,9 +56,9 @@
       "Chat with",
       "character"
     ],
-    "tagline": "Animated overlays for your community’s own look.",
+    "tagline": "Discover animated chat overlays and preview their skins. Find a look for your Twitch stream, customize it on ChatStyle, and follow our guides to add it to OBS.",
     "discover": "Explore overlays",
-    "platform": "Customize with",
+    "platform": "Check out",
     "gallery": "Find your look.",
     "howTitle": "Your look. In your stream.",
     "steps": [
@@ -84,16 +84,28 @@
     "faqTitle": "A few quick answers.",
     "faq": [
       [
-        "Where can I find the templates?",
-        "Explore a template’s previews and skins here, then open it on ChatStyle for current pricing and customization."
+        "Where do I find and customize a template?",
+        "Browse the previews and skins in this gallery, then follow the ChatStyle link on the design you like. Its original page provides current availability, pricing and customization options. Choosing a skin here changes our preview; it does not configure your live channel."
       ],
       [
-        "How do I add an overlay to OBS?",
-        "After setting it up in ChatStyle, add the overlay URL as a browser source in your OBS scene. Adjust its size and position in your scene."
+        "How do I add my chat to OBS?",
+        "Configure the overlay in ChatStyle and use its live overlay URL in an OBS Browser source. The template shop page and our video previews are not the live source. Our [OBS setup guide](/guides/add-chat-overlay-obs/) walks through source size, order and a first conversation test."
       ],
       [
-        "Which style suits my stream?",
-        "Think about color, readability and movement alongside your game or camera. Our [quick overlay guide](/ratgeber/chat-overlay-auswaehlen/) helps you choose."
+        "Which design works with my stream?",
+        "Start with the space around your gameplay or camera, then compare contrast, message width and motion. A decorative chat needs room for its frame as well as its text. See the [before-and-after comparison](/guides/chat-overlay-before-after/) and test your favorite at the size viewers will actually see."
+      ],
+      [
+        "Does a skin change the Twitch chat panel?",
+        "These designs appear in the chat overlay inside your broadcast. They do not reskin the native chat panel beside the Twitch player. For viewer choices, the streamer controls which skins are available; our [viewer skin guide](/guides/viewer-chat-bubbles/) explains the difference."
+      ],
+      [
+        "Are all the templates free?",
+        "No. The gallery includes free and paid designs. Our [free template guide](/guides/free-twitch-chat-overlays/) identifies examples that were listed as free when checked; confirm the current offer on ChatStyle. A free template does not establish that every service feature or plan is free."
+      ],
+      [
+        "Can I save a particular skin to compare later?",
+        "Open the template details and choose a skin. The page address includes that selection, so copying the address lets you reopen the same variant. The light and dark background controls help compare its appearance; finish with a test in your real stream scene."
       ]
     ]
   },
@@ -172,5 +184,24 @@
     ],
     "text": "This page doesn’t exist. Your next style is waiting in the gallery.",
     "back": "Back to the gallery"
+  },
+  "discovery": {
+    "title": "Find your next favorite.",
+    "text": "Explore our gallery or discover the full template collection on ChatStyle.",
+    "gallery": "Explore our templates",
+    "chatstyle": "Discover more on"
+  },
+  "makeover": {
+    "heading": "Same message. A different feel.",
+    "choose": "Choose a design for the comparison",
+    "before": "Before",
+    "after": "After",
+    "plain": "Simple chat",
+    "caption": "The same sample sentence in both views. The plain chat is an illustrative example; the styled view shows an original template skin."
+  },
+  "community": {
+    "checked": "{count} templates marked Free in the ChatStyle catalog, checked on {date}. Designs from across the community; current conditions are on each original page.",
+    "free": "Listed as free on ChatStyle",
+    "all": "Show all {count} free templates"
   }
 }

@@ -1,14 +1,10 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { PauseIcon, PlayIcon } from './icons';
-import { useLocale } from './locale-provider';
 
 type VideoState = {
   reducedMotion: boolean;
   documentVisible: boolean;
-  heroPaused: boolean;
-  toggleHero: () => void;
 };
 const VideoContext = createContext<VideoState | null>(null);
 export function useVideoState() {
@@ -20,11 +16,10 @@ export function useVideoState() {
 export function VideoProvider({ children }: { children: ReactNode }) {
   const [reducedMotion, setReducedMotion] = useState(false);
   const [documentVisible, setDocumentVisible] = useState(true);
-  const [heroPaused, setHeroPaused] = useState(false);
 
   useEffect(() => {
     const media = matchMedia('(prefers-reduced-motion: reduce)');
-    const syncMotion = () => { setReducedMotion(media.matches); setHeroPaused(media.matches); };
+    const syncMotion = () => setReducedMotion(media.matches);
     const syncVisibility = () => setDocumentVisible(!document.hidden);
     syncMotion(); syncVisibility();
     media.addEventListener('change', syncMotion);
@@ -32,13 +27,8 @@ export function VideoProvider({ children }: { children: ReactNode }) {
     return () => { media.removeEventListener('change', syncMotion); document.removeEventListener('visibilitychange', syncVisibility); };
   }, []);
 
-  return <VideoContext.Provider value={{ reducedMotion, documentVisible, heroPaused, toggleHero: () => setHeroPaused(value => !value) }}>
+  return <VideoContext.Provider value={{ reducedMotion, documentVisible }}>
     {children}
   </VideoContext.Provider>;
 }
 
-export function HeroMotionToggle() {
-  const { t } = useLocale();
-  const { heroPaused, toggleHero } = useVideoState();
-  return <button className="text-button motion-toggle" id="hero-motion" aria-pressed={heroPaused} onClick={toggleHero}>{heroPaused ? <PlayIcon/> : <PauseIcon/>}<span>{heroPaused ? t.ui.playPreviews : t.ui.pausePreviews}</span></button>;
-}

@@ -1,0 +1,65 @@
+{
+  "chatstyle-setup": {
+    "title": "Set up ChatStyle: from your account to a working stream chat",
+    "description": "Get started with ChatStyle: choose the right account role, connect your channel, select a template and test your overlay in OBS or Streamlabs.",
+    "heading": "Your first chat with ChatStyle.",
+    "intro": "Connect your channel, choose a design and bring your chat into the stream.",
+    "answer": "Start with the streamer setup on ChatStyle if you are configuring your own broadcast. Viewer access serves a different purpose: selecting available skins for another channel. Once your overlay is configured, its live URL is what your streaming software needs.",
+    "stepsFirst": true,
+    "steps": [
+      ["Choose streamer setup", "Open ChatStyle and choose the streamer sign-in for the platform you use. Read the requested account permissions before continuing. Confirm the channel identity, especially if a Google account can represent more than one YouTube or Brand channel."],
+      ["Select a starting template", "Browse the full ChatStyle catalog and compare a few designs at the size your scene allows. Its Free filter is useful for a first visual comparison. Check the current original listing and available settings before assuming that a template or account feature is included."],
+      ["Configure the overlay and add its URL", "Complete the overlay configuration in ChatStyle and obtain the live overlay URL for your channel. In OBS or Streamlabs, add a Browser source and use that URL. Set the source dimensions to your chat area; a catalog page, screenshot or preview video is not a live chat source."],
+      ["Test the conversation and scene changes", "Send actual messages to the connected channel and check a long sentence and username. Review the source order if another layer hides the chat. Switch away from the scene and back, then inspect a short recording to check placement and readability."]
+    ],
+    "examples": [
+      { "slug": "flow-chat", "why": "A simple two-bubble design from the wider ChatStyle catalog. Use it to compare the basic message layout before considering more decoration." },
+      { "slug": "comic-pop", "why": "A comic-style direction with a strong outline. Compare its frame and spacing with a simpler design in the same scene." },
+      { "slug": "0xlia", "why": "A terminal-inspired alternative for a darker setup. Check the text over both bright and dark moments in your content." }
+    ],
+    "notes": [
+      ["Keep the first setup small", "Start with one channel, one scene and one template. Prove that new messages reach the overlay before adding role-specific skins or more scene variants. This separates connection problems from design decisions and makes it easier to identify what changed."],
+      ["Use the right guide for the next step", "If the chat is empty, check the connection and source before changing its look. If messages arrive but the design feels wrong, move on to customization. You can keep the same streaming scene while comparing colors and spacing."]
+    ],
+    "faq": [
+      ["Do I sign in as streamer or viewer?", "Use streamer setup for your own channel's overlay. Viewer sign-in is for finding a streamer's channel and choosing skins that channel makes available. Merely browsing a public preview does not configure either account role."],
+      ["Do I paste the ChatStyle homepage into OBS?", "Use the live overlay URL supplied for your configured chat. The homepage and template catalog help you choose and configure a design; they are not the conversation itself. In OBS the page is loaded through a Browser source."],
+      ["Can I start by comparing free designs?", "Yes. ChatStyle's catalog has a Free filter, and our free guide links the templates marked that way at its check date. Check the current offering on ChatStyle for any account or feature conditions; a free template alone does not describe every service cost."],
+      ["Which connected platforms does this guide cover?", "ChatStyle's public information documents Twitch and YouTube connections. For YouTube, check the selected channel and the available live chat on the active broadcast. Do not assume the same setup or every feature applies to other platforms."],
+      ["What should I check when no messages appear?", "Confirm the connected channel, live overlay URL and source visibility first. Send a new message and inspect the source order and dimensions. The troubleshooting guide below separates connection, visibility and crop problems instead of treating them all as a template issue."]
+    ],
+    "related": ["customize-chatstyle", "obs-chat-not-showing"],
+    "sources": [{"label":"ChatStyle: getting started","url":"https://chatstyle.gg/"},{"label":"ChatStyle: account permissions","url":"https://chatstyle.gg/permissions"},{"label":"OBS: Browser Source","url":"https://obsproject.com/kb/Browser-Source"},{"label":"Streamlabs: Browser Source","url":"https://streamlabs.com/content-hub/post/introducing-browser-source-interaction-for-streamlabs-desktop"}]
+  },
+  "customize-chatstyle": {
+    "title": "Customize ChatStyle: templates, colors and viewer skins explained",
+    "description": "Understand ChatStyle templates and skins, compare designs from different creators and test color, spacing and viewer access without guessing which settings exist.",
+    "heading": "Make ChatStyle feel like your channel.",
+    "intro": "Choose the overall design, refine its available settings and decide which skins your viewers can use.",
+    "answer": "A template supplies the overall design; a skin gives messages a variation within that design. Start with a shape you like, then use the controls available for that particular template. Customization options vary, so inspect the original before planning a change.",
+    "steps": [
+      ["Choose the design structure", "Compare where the username sits, how much space the frame uses and how long messages wrap. Choose a template that already suits your layout. Changing an accent color is a different task from rebuilding the shape of the message."],
+      ["Inspect the actual controls", "Open the template on ChatStyle and check which settings it exposes. Work on one visible property at a time, such as an available color or spacing setting, and compare the result with your scene. Do not assume every template offers the same controls."],
+      ["Decide how viewer skins fit", "A consistent channel can start with a small collection of related looks. ChatStyle documents streamer controls for skin availability and role access. Decide which options belong to your community before introducing viewer selection."],
+      ["Test with the people who will use it", "Ask viewers with the intended access to sign in, find your channel's shop page and choose an available skin. Check their actual messages in the overlay. Review long text, names and bright backgrounds before expanding the selection."]
+    ],
+    "examples": [
+      { "slug": "bitwitch", "why": "A bold design with hard shadows, from the wider ChatStyle catalog. Inspect its available variants and compare their contrast in your scene." },
+      { "slug": "retromon", "why": "A retro message frame with listed skins. A useful comparison when you want to preserve the overall shape while exploring variations." },
+      { "slug": "sleeping-cats", "skinId": 725, "why": "Candy is a concrete example from the Sleeping Cats skin gallery. Switch to other variants in the details to compare the same template on light and dark backgrounds." }
+    ],
+    "notes": [
+      ["Separate styling from access", "A public skin preview tells you what a design looks like. It does not establish that every viewer can use it on every channel. Check the channel's availability and role settings as a separate step, then test with a viewer who has the intended access."],
+      ["Keep a visual reference", "Capture your initial scene before adjusting the design. Compare each change with that reference and with the same sample messages. If a decorative change makes words harder to follow, revisit it even if the enlarged preview looks impressive."]
+    ],
+    "faq": [
+      ["Can every template change the same colors and fonts?", "Do not assume that. The original template determines which controls and variants are available. Inspect its current options before choosing it for a specific customization requirement."],
+      ["Do I need to edit CSS to choose a design?", "You can browse templates and their publicly listed variants without writing CSS. Start with the controls offered by your selected template. More specialized code changes depend on that design and the access available in ChatStyle; a generic snippet is not a universal solution."],
+      ["Who decides which viewer skins are available?", "ChatStyle documents that streamers control availability and access, including role-based options. Viewers choose from skins they can access on the channel's shop page. A nice preview alone does not grant that access."],
+      ["Does a viewer skin redesign my whole scene?", "It changes the appearance of the viewer's messages in the ChatStyle overlay. It does not rearrange your OBS camera, gameplay or other sources, and it does not restyle Twitch's native chat panel. Keep the overlay and scene layout as separate design tasks."],
+      ["Why does a preview look different from my scene?", "The background, displayed width and message content all affect the result. Our skin thumbnails show a fixed sample, while the original video demonstrates motion. Compare your actual configured overlay at viewing size before deciding that a setting is wrong."]
+    ],
+    "related": ["viewer-chat-bubbles", "chat-overlay-before-after"],
+    "sources": [{"label":"ChatStyle: template catalog","url":"https://chatstyle.gg/templates"},{"label":"ChatStyle: viewer skins","url":"https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"},{"label":"ChatStyle: permissions","url":"https://chatstyle.gg/permissions"}]
+  }
+}

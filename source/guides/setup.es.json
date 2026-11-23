@@ -3,228 +3,856 @@
     "title": "Overlay de chat personalizado en Streamlabs Desktop: guía y ejemplos",
     "description": "Añade un chat de ChatStyle a Streamlabs Desktop con una fuente de navegador. Conserva tus escenas y compara Small Talk, Lofi Windows 93 y Neo Tokyo.",
     "heading": "Tu propio chat en Streamlabs.",
-    "intro": "Si ya utilizas Streamlabs Desktop, puedes conservar tus escenas y añadir un chat personalizado mediante una fuente de navegador. La aplicación que emite el directo y el servicio que diseña el chat cumplen funciones distintas.",
+    "intro": "Si ya utilizas Streamlabs Desktop, puedes conservar tus escenas y añadir un chat personalizado mediante una fuente de navegador.",
     "answer": "Introduce la URL de tu overlay configurado en ChatStyle en una fuente de navegador. El widget Chat Box de Streamlabs y una plantilla de ChatStyle son independientes; un enlace a la tienda no convierte el widget existente.",
     "stepsFirst": true,
     "steps": [
-      ["Prepara el reemplazo", "Conserva tu fuente de chat actual mientras configuras la nueva. Elige una plantilla, configúrala en ChatStyle y copia la URL del overlay en directo de tu canal."],
-      ["Añade una fuente de navegador", "En Streamlabs Desktop, abre Fuentes → + → Fuente de navegador. Dale un nombre reconocible, como ChatStyle chat, y pega la URL del overlay."],
-      ["Ajusta el espacio reservado", "Configura el ancho y el alto del área de chat. Prueba un mensaje largo antes de reducir toda la fuente: el texto pequeño y un marco recortado requieren ajustes distintos."],
-      ["Descarta el chat duplicado", "Envía un mensaje nuevo. Cuando funcione el chat nuevo, oculta la fuente anterior. Cambia de escena y comprueba que solo aparece el widget previsto."]
+      [
+        "Prepara el reemplazo",
+        "Conserva tu fuente de chat actual mientras configuras la nueva. Elige una plantilla, configúrala en ChatStyle y copia la URL del overlay en directo de tu canal."
+      ],
+      [
+        "Añade una fuente de navegador",
+        "En Streamlabs Desktop, abre Fuentes → + → Fuente de navegador. Dale un nombre reconocible, como ChatStyle chat, y pega la URL del overlay."
+      ],
+      [
+        "Ajusta el espacio reservado",
+        "Configura el ancho y el alto del área de chat. Prueba un mensaje largo antes de reducir toda la fuente: el texto pequeño y un marco recortado requieren ajustes distintos."
+      ],
+      [
+        "Descarta el chat duplicado",
+        "Envía un mensaje nuevo. Cuando funcione el chat nuevo, oculta la fuente anterior. Cambia de escena y comprueba que solo aparece el widget previsto."
+      ]
     ],
     "examples": [
-      {"slug":"small-talk","why":"Una opción compacta para escenas con poco espacio de chat. Comprueba que el nombre de usuario más largo sigue cabiendo tras sustituir el widget."},
-      {"slug":"lofi-windows-93","why":"Una alternativa con aspecto de ventana de escritorio. Deja espacio para sus barras de título en lugar de recortarla a la forma de una caja anterior."},
-      {"slug":"neo-tokyo","why":"Un estilo de terminal para escenas oscuras. Compara su animación con tus alertas actuales antes de introducir más movimiento."}
+      {
+        "slug": "small-talk",
+        "why": "Una opción compacta para escenas con poco espacio de chat. Comprueba que el nombre de usuario más largo sigue cabiendo tras sustituir el widget."
+      },
+      {
+        "slug": "lofi-windows-93",
+        "why": "Una alternativa con aspecto de ventana de escritorio. Deja espacio para sus barras de título en lugar de recortarla a la forma de una caja anterior."
+      },
+      {
+        "slug": "neo-tokyo",
+        "why": "Un estilo de terminal para escenas oscuras. Compara su animación con tus alertas actuales antes de introducir más movimiento."
+      }
     ],
-    "notes": [["Dos paneles de configuración", "La apariencia se ajusta en ChatStyle; la posición, en Streamlabs Desktop. Cambia una cosa cada vez para reconocer su efecto."],["Conserva una alternativa", "Graba una prueba antes de eliminar la fuente antigua. Ver una demostración de la plantilla no confirma que llegan los mensajes de tu canal."]],
-    "faq": [["¿Tengo que reconstruir mis escenas?", "No. Añade la fuente a tu escena actual, pruébala y después oculta el widget que sustituye."],["¿Pego el diseño en el CSS personalizado de Streamlabs?", "Esta guía utiliza la URL del overlay configurado en ChatStyle como una fuente de navegador independiente."]],
-    "related": ["obs-chat-not-showing","transparent-chat-overlay"],
-    "sources": [{"label":"Streamlabs: fuente de navegador","url":"https://streamlabs.com/content-hub/post/introducing-browser-source-interaction-for-streamlabs-desktop"}]
+    "notes": [
+      [
+        "Dos paneles de configuración",
+        "La apariencia se ajusta en ChatStyle; la posición, en Streamlabs Desktop. Cambia una cosa cada vez para reconocer su efecto."
+      ],
+      [
+        "Conserva una alternativa",
+        "Graba una prueba antes de eliminar la fuente antigua. Ver una demostración de la plantilla no confirma que llegan los mensajes de tu canal."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Tengo que reconstruir mis escenas?",
+        "No. Añade la fuente a tu escena actual, pruébala y después oculta el widget que sustituye."
+      ],
+      [
+        "¿Pego el diseño en el CSS personalizado de Streamlabs?",
+        "Esta guía utiliza la URL del overlay configurado en ChatStyle como una fuente de navegador independiente."
+      ],
+      [
+        "¿Por qué aparecen dos cajas de chat?",
+        "Comprueba si la escena contiene tanto el widget Chat Box nativo como la fuente de navegador añadida. Si muestran la misma conversación, oculta uno para comparar. Decide qué fuente debe quedar antes de cambiar su diseño."
+      ],
+      [
+        "¿Debo copiar las dimensiones de otro montaje?",
+        "Úsalas como punto de partida, no como tamaño obligatorio. El espacio adecuado depende de tu escena, diseño y longitud de los mensajes. Comprueba todo el marco y una frase larga y ajusta por separado las dimensiones y la colocación."
+      ]
+    ],
+    "related": [
+      "obs-chat-not-showing",
+      "transparent-chat-overlay"
+    ],
+    "sources": [
+      {
+        "label": "Streamlabs: fuente de navegador",
+        "url": "https://streamlabs.com/content-hub/post/introducing-browser-source-interaction-for-streamlabs-desktop"
+      }
+    ]
   },
   "obs-chat-not-showing": {
     "title": "El chat no aparece en OBS: comprueba conexión, fuente y recorte",
     "description": "Diagnostica un chat vacío, oculto o recortado en OBS. Sigue una secuencia de comprobaciones con ejemplos de Small Talk, Inline Flow y Sleeping Cats.",
     "heading": "¿No aparece el chat en OBS?",
-    "intro": "Un chat vacío no significa necesariamente que la plantilla esté estropeada. Comprueba primero si llegan mensajes al overlay y después cómo los muestra OBS. Conserva el diseño actual mientras investigas.",
+    "intro": "Un chat vacío no significa necesariamente que la plantilla esté estropeada.",
     "answer": "Envía un mensaje nuevo, verifica la URL del overlay y revisa la visibilidad y el orden de las fuentes. Si funciona en el navegador pero no en OBS, centra la prueba en la fuente.",
     "stepsFirst": true,
-    "reference": {"title":"Empieza por el síntoma", "columns":["Qué ocurre","Primera comprobación"],"rows":[["No aparecen mensajes en ningún sitio","Canal correcto, conexión activa y un mensaje nuevo."],["Funciona en el navegador, no en OBS","URL exacta, fuente visible y orden de las fuentes."],["Solo aparece parte de la burbuja","Dimensiones de la fuente de navegador y recorte."],["Desaparece al cambiar de escena","Visibilidad y opciones de recarga o cierre de la fuente."]]},
+    "reference": {
+      "title": "Empieza por el síntoma",
+      "columns": [
+        "Qué ocurre",
+        "Primera comprobación"
+      ],
+      "rows": [
+        [
+          "No aparecen mensajes en ningún sitio",
+          "Canal correcto, conexión activa y un mensaje nuevo."
+        ],
+        [
+          "Funciona en el navegador, no en OBS",
+          "URL exacta, fuente visible y orden de las fuentes."
+        ],
+        [
+          "Solo aparece parte de la burbuja",
+          "Dimensiones de la fuente de navegador y recorte."
+        ],
+        [
+          "Desaparece al cambiar de escena",
+          "Visibilidad y opciones de recarga o cierre de la fuente."
+        ]
+      ]
+    },
     "steps": [
-      ["Separa conexión y diseño", "Abre el overlay configurado en un navegador y envía un mensaje. Si tampoco llega allí, comprueba primero el canal y su conexión en el servicio."],
-      ["Revisa la escena de OBS", "La fuente debe estar visible y por encima de cualquier fondo o captura que pueda taparla. Confirma también que revisas la escena que realmente se está emitiendo."],
-      ["Comprueba el rectángulo de la fuente", "Revisa ancho, alto y recorte en Editar transformación. Un área demasiado estrecha produce muchos saltos de línea; un recorte accidental puede ocultar los mensajes."],
-      ["Recarga una vez y repite", "Después de corregir los ajustes, actualiza la fuente y envía otro mensaje. Recargar continuamente un chat inactivo dificulta saber si están llegando mensajes nuevos."]
+      [
+        "Separa conexión y diseño",
+        "Abre el overlay configurado en un navegador y envía un mensaje. Si tampoco llega allí, comprueba primero el canal y su conexión en el servicio."
+      ],
+      [
+        "Revisa la escena de OBS",
+        "La fuente debe estar visible y por encima de cualquier fondo o captura que pueda taparla. Confirma también que revisas la escena que realmente se está emitiendo."
+      ],
+      [
+        "Comprueba el rectángulo de la fuente",
+        "Revisa ancho, alto y recorte en Editar transformación. Un área demasiado estrecha produce muchos saltos de línea; un recorte accidental puede ocultar los mensajes."
+      ],
+      [
+        "Recarga una vez y repite",
+        "Después de corregir los ajustes, actualiza la fuente y envía otro mensaje. Recargar continuamente un chat inactivo dificulta saber si están llegando mensajes nuevos."
+      ]
     ],
     "examples": [
-      {"slug":"small-talk","why":"Su forma compacta ayuda a comparar un espacio de escena estrecho. La prueba funcional debe hacerse con la configuración en directo de tu canal."},
-      {"slug":"inline-flow","why":"Un diseño sencillo para observar el ancho del texto. Es una referencia visual, no una solución para una conexión desconectada."},
-      {"slug":"sleeping-cats","why":"Los gatos permiten reconocer fácilmente un recorte superior excesivo. Si desaparecen pero la burbuja permanece, revisa el recorte y la altura disponible."}
+      {
+        "slug": "small-talk",
+        "why": "Su forma compacta ayuda a comparar un espacio de escena estrecho. La prueba funcional debe hacerse con la configuración en directo de tu canal."
+      },
+      {
+        "slug": "inline-flow",
+        "why": "Un diseño sencillo para observar el ancho del texto. Es una referencia visual, no una solución para una conexión desconectada."
+      },
+      {
+        "slug": "sleeping-cats",
+        "why": "Los gatos permiten reconocer fácilmente un recorte superior excesivo. Si desaparecen pero la burbuja permanece, revisa el recorte y la altura disponible."
+      }
     ],
-    "notes": [["Panel de OBS y vídeo emitido", "El panel donde tú lees el chat no es necesariamente una fuente visible para los espectadores. Comprueba la escena o una grabación."],["Identifica cuándo falla", "Anota si ocurre al cargar, al cambiar de escena o solo con mensajes largos. Es más útil que modificar varios ajustes a la vez."]],
-    "faq": [["¿Otra plantilla arreglará un chat vacío?", "No si el canal conectado es incorrecto o la fuente está oculta. Revisa primero conexión y escena."],["¿Por qué desaparecen los mensajes anteriores?", "Una fuente recargada puede reconstruir su vista. Prueba con un mensaje nuevo en lugar de asumir que recuperará todo el historial."]],
-    "related": ["add-chat-overlay-obs","streamlabs-chat-overlay"],
-    "sources": [{"label":"OBS: propiedades de la fuente de navegador","url":"https://obsproject.com/kb/Browser-Source"},{"label":"OBS: visibilidad, orden y recorte","url":"https://obsproject.com/kb/sources-guide"}]
+    "notes": [
+      [
+        "Panel de OBS y vídeo emitido",
+        "El panel donde tú lees el chat no es necesariamente una fuente visible para los espectadores. Comprueba la escena o una grabación."
+      ],
+      [
+        "Identifica cuándo falla",
+        "Anota si ocurre al cargar, al cambiar de escena o solo con mensajes largos. Es más útil que modificar varios ajustes a la vez."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Otra plantilla arreglará un chat vacío?",
+        "No si el canal conectado es incorrecto o la fuente está oculta. Revisa primero conexión y escena."
+      ],
+      [
+        "¿Por qué desaparecen los mensajes anteriores?",
+        "Una fuente recargada puede reconstruir su vista. Prueba con un mensaje nuevo en lugar de asumir que recuperará todo el historial."
+      ],
+      [
+        "¿Qué hace actualizar la fuente de navegador?",
+        "OBS puede volver a cargar la página mediante el control de actualización de caché. Sirve para comprobar si carga de nuevo, pero no corrige una URL equivocada ni una fuente oculta. Anota los valores actuales y prueba un cambio cada vez."
+      ],
+      [
+        "¿Cómo distingo un chat recortado de uno vacío?",
+        "Selecciona la fuente y revisa su área visible, tamaño y transformación. Envía un mensaje nuevo y busca partes del diseño junto a los bordes. Compáralas con el área del navegador antes de sustituir la plantilla o reducir todo el overlay."
+      ]
+    ],
+    "related": [
+      "add-chat-overlay-obs",
+      "streamlabs-chat-overlay"
+    ],
+    "sources": [
+      {
+        "label": "OBS: propiedades de la fuente de navegador",
+        "url": "https://obsproject.com/kb/Browser-Source"
+      },
+      {
+        "label": "OBS: visibilidad, orden y recorte",
+        "url": "https://obsproject.com/kb/sources-guide"
+      }
+    ]
   },
   "transparent-chat-overlay": {
     "title": "Chat transparente de Twitch en OBS: fondo y burbujas legibles",
     "description": "Identifica el fondo opaco de tu chat sin perder legibilidad. Compara Inline Flow, Small Talk y Violet Frame Slim con comprobaciones prácticas en OBS.",
     "heading": "Un overlay de chat transparente para OBS.",
-    "intro": "Un overlay transparente puede tener burbujas de colores. El espacio vacío alrededor de los mensajes y el relleno de cada burbuja son capas diferentes.",
+    "intro": "Un overlay transparente puede tener burbujas de colores.",
     "answer": "Coloca el chat sobre un fondo de prueba de color en OBS. Si lo tapa un rectángulo completo, revisa la página del overlay. Si solo tienen relleno las burbujas, puede ser parte del diseño.",
     "stepsFirst": true,
     "steps": [
-      ["Utiliza el overlay en directo", "Carga la URL de tu chat configurado. Una página de tienda, una imagen o un vídeo de demostración puede incluir un fondo y no es la fuente en directo."],
-      ["Haz una prueba de contraste", "Coloca temporalmente una fuente de color intenso detrás del chat. Observa los huecos entre mensajes y las esquinas para localizar qué superficie es opaca."],
-      ["Revisa los ajustes del fondo", "Comprueba la apariencia en el servicio y el CSS que hayas añadido. El CSS predeterminado de OBS hace transparente el fondo de la página, pero no elimina todos sus paneles o imágenes internos."],
-      ["Conserva el contraste", "Prueba el resultado sobre escenas claras y oscuras. Si desaparecen las letras, elige burbujas con una superficie legible o reserva una zona más tranquila."]
+      [
+        "Utiliza el overlay en directo",
+        "Carga la URL de tu chat configurado. Una página de tienda, una imagen o un vídeo de demostración puede incluir un fondo y no es la fuente en directo."
+      ],
+      [
+        "Haz una prueba de contraste",
+        "Coloca temporalmente una fuente de color intenso detrás del chat. Observa los huecos entre mensajes y las esquinas para localizar qué superficie es opaca."
+      ],
+      [
+        "Revisa los ajustes del fondo",
+        "Comprueba la apariencia en el servicio y el CSS que hayas añadido. El CSS predeterminado de OBS hace transparente el fondo de la página, pero no elimina todos sus paneles o imágenes internos."
+      ],
+      [
+        "Conserva el contraste",
+        "Prueba el resultado sobre escenas claras y oscuras. Si desaparecen las letras, elige burbujas con una superficie legible o reserva una zona más tranquila."
+      ]
     ],
     "examples": [
-      {"slug":"inline-flow","why":"Compara este estilo estrecho si quieres dejar más escena visible. Evalúa las letras frente a contenido en movimiento, no solo en una imagen fija."},
-      {"slug":"small-talk","why":"Burbujas pequeñas que combinan un área de lectura definida con poco espacio ocupado. Deja altura para mensajes de varias líneas."},
-      {"slug":"violet-frame-slim","why":"Una alternativa con marco fino si el texto aislado pierde presencia. Revisa el contorno en momentos claros y oscuros del juego."}
+      {
+        "slug": "inline-flow",
+        "why": "Compara este estilo estrecho si quieres dejar más escena visible. Evalúa las letras frente a contenido en movimiento, no solo en una imagen fija."
+      },
+      {
+        "slug": "small-talk",
+        "why": "Burbujas pequeñas que combinan un área de lectura definida con poco espacio ocupado. Deja altura para mensajes de varias líneas."
+      },
+      {
+        "slug": "violet-frame-slim",
+        "why": "Una alternativa con marco fino si el texto aislado pierde presencia. Revisa el contorno en momentos claros y oscuros del juego."
+      }
     ],
-    "notes": [["No hay un CSS universal", "Los selectores varían entre widgets. Eliminar todos los fondos puede borrar también el relleno que permite leer las burbujas."],["Fondos de las demostraciones", "Los fondos de nuestros vídeos presentan el diseño. Comprueba la transparencia del overlay configurado dentro de OBS."]],
-    "faq": [["¿Elimino el fondo negro con una clave de color?", "Primero identifica de dónde viene. Eliminar un color puede borrar detalles del mismo tono; empieza por la transparencia nativa del overlay."],["¿Transparente significa que las burbujas no tienen fondo?", "No. Una página transparente puede contener burbujas con relleno, contornos y elementos decorativos."]],
-    "related": ["readable-chat-overlay","obs-chat-not-showing"],
-    "sources": [{"label":"OBS: fuente de navegador y CSS predeterminado","url":"https://obsproject.com/kb/Browser-Source"}]
+    "notes": [
+      [
+        "No hay un CSS universal",
+        "Los selectores varían entre widgets. Eliminar todos los fondos puede borrar también el relleno que permite leer las burbujas."
+      ],
+      [
+        "Fondos de las demostraciones",
+        "Los fondos de nuestros vídeos presentan el diseño. Comprueba la transparencia del overlay configurado dentro de OBS."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Elimino el fondo negro con una clave de color?",
+        "Primero identifica de dónde viene. Eliminar un color puede borrar detalles del mismo tono; empieza por la transparencia nativa del overlay."
+      ],
+      [
+        "¿Transparente significa que las burbujas no tienen fondo?",
+        "No. Una página transparente puede contener burbujas con relleno, contornos y elementos decorativos."
+      ],
+      [
+        "¿Cómo compruebo que el fondo es transparente?",
+        "Coloca el chat sobre contenido con contraste o una fuente de color temporal. Mira el área exterior por separado del relleno de la burbuja. Una página transparente puede contener un panel de mensaje deliberadamente opaco."
+      ],
+      [
+        "¿Sirve el mismo código CSS para cualquier diseño?",
+        "No supongas que todas las plantillas usan los mismos selectores y estructura. Una regla que elimina un panel puede afectar al texto o al marco en otro diseño. Empieza por los controles disponibles y prueba cualquier cambio CSS en esa plantilla concreta."
+      ]
+    ],
+    "related": [
+      "readable-chat-overlay",
+      "obs-chat-not-showing"
+    ],
+    "sources": [
+      {
+        "label": "OBS: fuente de navegador y CSS predeterminado",
+        "url": "https://obsproject.com/kb/Browser-Source"
+      }
+    ]
   },
   "free-twitch-chat-overlays": {
-    "title": "Overlays de chat gratis para Twitch: dos plantillas de ChatStyle",
-    "description": "Compara Zuluxxman y Manhunt 2026, dos plantillas de JesusTenG anunciadas como gratuitas en ChatStyle, con vistas previas, enlaces y comprobaciones de inicio.",
-    "heading": "Overlays de chat gratis para Twitch.",
-    "intro": "Tu primer directo no necesita un paquete de overlays elaborado. Estas dos plantillas de JesusTenG figuraban como gratuitas en ChatStyle al revisarlas el 11 de noviembre de 2026. Cada ejemplo incluye vista previa y enlace directo.",
-    "answer": "Zuluxxman ofrece un estilo HUD turquesa; Manhunt 2026, una dirección oscura con detalles naranjas. Gratis se refiere a la plantilla: consulta en ChatStyle las opciones de cuenta y posibles costes separados del servicio.",
+    "title": "Overlays de chat gratis de ChatStyle: diseños de toda la comunidad",
+    "description": "Compara plantillas de chat gratuitas de todo el catálogo de ChatStyle. Vistas previas originales, enlaces directos y consejos prácticos de configuración.",
+    "heading": "Diseños gratis. Mucha personalidad.",
+    "intro": "Explora las plantillas gratuitas de la comunidad de ChatStyle y encuentra un punto de partida para tu directo.",
+    "answer": "Esta lista incluye todas las plantillas marcadas como Free en el catálogo público en la fecha indicada abajo. Reúne distintos creadores. La etiqueta se refiere a la oferta de la plantilla; revisa aparte las funciones de cuenta y las condiciones actuales en ChatStyle.",
     "steps": [
-      ["Elige por encaje visual", "Compara el diseño con tu escena habitual. Si ninguno combina, empieza con una composición temporal sencilla en lugar de añadir colores que chocan con el resto."],
-      ["Comprueba la ficha original", "Abre la plantilla en ChatStyle y confirma su etiqueta Free y las opciones disponibles. Esta página no afirma que todas las funciones de ChatStyle sean gratuitas."],
-      ["Prueba una variante discreta", "Explora los skins de la página de detalles. Empieza con una apariencia consistente antes de introducir muchos colores distintos para los espectadores."],
-      ["Graba una prueba breve", "Configura el overlay, añade su URL al programa de emisión y prueba mensajes reales. Revisa nombres, saltos de línea y contraste al tamaño final del vídeo."]
+      [
+        "Compara formas diferentes",
+        "Prueba un chat de texto sencillo, una burbuja con marco y una opción más decorativa. Mantén un área de mensaje comparable y revisa la vista original. Busca por nombre o muestra todos los resultados para recorrer los diseños gratuitos."
+      ],
+      [
+        "Revisa la oferta original actual",
+        "Abre el enlace de ChatStyle del diseño que prefieras. Confirma que siga siendo gratuito y revisa sus ajustes. Si la oferta ha cambiado después de nuestra comprobación, prevalece la página original."
+      ],
+      [
+        "Configura tu overlay en directo",
+        "Utiliza la configuración de streamer de ChatStyle para preparar el canal y la plantilla. Añade la URL de overlay resultante como fuente de navegador en OBS o Streamlabs. La imagen de galería y la página de la tienda sirven para elegir, no para mostrar la conversación en directo."
+      ],
+      [
+        "Prueba antes de completar el diseño",
+        "Comprueba mensajes largos, varias entradas cortas y contenido claro. Revisa que la audiencia pueda leer el chat al tamaño normal del reproductor. Compara otra opción gratuita si la forma no deja espacio suficiente para conversar."
+      ]
     ],
     "examples": [
-      {"slug":"zuluxxman","why":"Detalles turquesa y estética de HUD. Una referencia para escenas de colores fríos; comprueba sus bordes sobre momentos luminosos del juego."},
-      {"slug":"manhunt-2026","why":"Un diseño táctico oscuro con acentos naranjas. Pruébalo si tu escena ya utiliza tonos cálidos y deja espacio para efectos de eventos."}
+      {
+        "slug": "0xlia",
+        "why": "Terminal"
+      },
+      {
+        "slug": "comic-pop",
+        "why": "Comic"
+      },
+      {
+        "slug": "flow-chat",
+        "why": "Minimal"
+      }
     ],
-    "notes": [["Plantilla de chat, no paquete completo", "Los ejemplos diseñan la conversación. No incluyen marco de cámara, pantalla de inicio, configuración del micrófono ni cuenta de emisión."],["Condiciones actuales en ChatStyle", "Los precios y el acceso pueden cambiar. Confirma la disponibilidad en la ficha original antes de configurar tu canal."]],
-    "faq": [["¿Todas las plantillas de la galería son gratis?", "No. Esta guía selecciona las dos marcadas como gratuitas en nuestro catálogo actual. Otros diseños pueden tener un precio de plantilla."],["¿Hay un botón de descarga gratuita aquí?", "Son plantillas de chat basadas en navegador que se configuran en ChatStyle. Empieza mediante el enlace original; el vídeo solo es una demostración."]],
-    "related": ["add-chat-overlay-obs","animated-chat-overlays"],
-    "sources": [{"label":"ChatStyle: ficha de Zuluxxman","url":"https://chatstyle.gg/template/zuluxxman"},{"label":"ChatStyle: ficha de Manhunt 2026","url":"https://chatstyle.gg/template/manhunt-2026"}]
+    "notes": [
+      [
+        "Plantilla gratuita y funciones del servicio son cosas distintas",
+        "La etiqueta Free ayuda a elegir el diseño, pero no define todos los derechos de cuenta, opciones de espectadores o costes de suscripción. Consulta la oferta actual para las funciones que necesitas. Esta galería no descarga ni activa diseños en tu canal."
+      ],
+      [
+        "Una lista fechada de toda la comunidad",
+        "La colección procede del catálogo público y no se limita a JesusTenG. Los enlaces originales llevan a los detalles actuales. El catálogo completo también ofrece el filtro Free para encontrar novedades o cambios posteriores a nuestra comprobación."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Son solo plantillas de JesusTenG?",
+        "No. Esta guía recoge todas las plantillas marcadas como Free en el catálogo público en la fecha indicada, de distintos creadores. Nuestra colección existente conserva las vistas detalladas locales; los ejemplos de la comunidad enlazan directamente a sus originales."
+      ],
+      [
+        "¿Dónde consigo uno de estos diseños?",
+        "Abre el enlace de ChatStyle de su tarjeta y sigue el proceso que ofrezca allí. Esta página es una guía comparativa, no un servicio de descargas. En OBS o Streamlabs debes usar la URL del overlay configurado, no la página de la plantilla."
+      ],
+      [
+        "¿Una plantilla gratuita incluye todas las funciones de ChatStyle?",
+        "La etiqueta Free describe la oferta actual de esa plantilla. No determina el precio ni la disponibilidad de todas las funciones, suscripciones u opciones para espectadores. Consulta la página original y la oferta aplicable antes de contar con una función concreta."
+      ],
+      [
+        "¿Y si una plantilla enlazada deja de ser gratuita?",
+        "Esta lista es una comprobación fechada del catálogo, no un servicio de precios en directo. Si cambia una oferta, manda la página original actual. Abre el catálogo completo de ChatStyle y utiliza su filtro Free para buscar alternativas recientes."
+      ]
+    ],
+    "related": [
+      "chatstyle-setup",
+      "customize-chatstyle"
+    ],
+    "sources": [
+      {
+        "label": "ChatStyle: Templates",
+        "url": "https://chatstyle.gg/templates"
+      },
+      {
+        "label": "OBS: Browser Source",
+        "url": "https://obsproject.com/kb/Browser-Source"
+      }
+    ],
+    "communityExamples": true
   },
   "youtube-chat-overlay-obs": {
     "title": "Chat de YouTube como overlay en OBS: canal, fuente y diseño",
     "description": "Prepara un chat de YouTube con ChatStyle para OBS: revisa el canal, la emisión activa y la fuente de navegador, y compara tres diseños legibles.",
     "heading": "Tu chat de YouTube en OBS.",
-    "intro": "En un directo de YouTube, empieza por el canal y la emisión correctos. ChatStyle documenta compatibilidad con YouTube y acceso de lectura; el overlay sigue necesitando una conversación activa que mostrar.",
+    "intro": "En un directo de YouTube, empieza por el canal y la emisión correctos.",
     "answer": "Conecta el canal de YouTube o de marca previsto en ChatStyle, configura allí el chat y utiliza su URL de overlay en OBS. La página del vídeo de YouTube y la URL del overlay cumplen funciones distintas.",
     "stepsFirst": true,
     "steps": [
-      ["Comprueba la conversación", "Abre la emisión en YouTube Studio y verifica que el chat esté disponible. El contenido marcado como creado para niños no dispone de chat; un overlay no puede restaurarlo."],
-      ["Confirma el canal conectado", "Utiliza el proceso de conexión de Google/YouTube de ChatStyle y verifica el canal seleccionado. Si administras varios, compara su nombre con la emisión prevista."],
-      ["Configura el diseño", "Elige una plantilla de abajo y completa la configuración en ChatStyle. Confirma que llega un mensaje nuevo de la emisión correcta antes de ajustar la apariencia."],
-      ["Coloca y prueba la fuente", "Añade la URL configurada como fuente de navegador en OBS. Prueba un nombre de canal largo, graba una muestra y revísala al tamaño de un teléfono."]
+      [
+        "Comprueba la conversación",
+        "Abre la emisión en YouTube Studio y verifica que el chat esté disponible. El contenido marcado como creado para niños no dispone de chat; un overlay no puede restaurarlo."
+      ],
+      [
+        "Confirma el canal conectado",
+        "Utiliza el proceso de conexión de Google/YouTube de ChatStyle y verifica el canal seleccionado. Si administras varios, compara su nombre con la emisión prevista."
+      ],
+      [
+        "Configura el diseño",
+        "Elige una plantilla de abajo y completa la configuración en ChatStyle. Confirma que llega un mensaje nuevo de la emisión correcta antes de ajustar la apariencia."
+      ],
+      [
+        "Coloca y prueba la fuente",
+        "Añade la URL configurada como fuente de navegador en OBS. Prueba un nombre de canal largo, graba una muestra y revísala al tamaño de un teléfono."
+      ]
     ],
     "examples": [
-      {"slug":"small-talk","why":"Una opción compacta para tutoriales donde el contenido ocupa casi toda la pantalla. Prueba nombres de canal largos dentro del ancho disponible."},
-      {"slug":"chat-garden","why":"Un marco botánico para conversaciones tranquilas. Reserva una zona propia para que la decoración no compita con instrucciones en pantalla."},
-      {"slug":"lofi-windows-93","why":"Una estética de escritorio para una escena creativa o retro. Mantén los detalles de las ventanas reconocibles en reproductores pequeños."}
+      {
+        "slug": "small-talk",
+        "why": "Una opción compacta para tutoriales donde el contenido ocupa casi toda la pantalla. Prueba nombres de canal largos dentro del ancho disponible."
+      },
+      {
+        "slug": "chat-garden",
+        "why": "Un marco botánico para conversaciones tranquilas. Reserva una zona propia para que la decoración no compita con instrucciones en pantalla."
+      },
+      {
+        "slug": "lofi-windows-93",
+        "why": "Una estética de escritorio para una escena creativa o retro. Mantén los detalles de las ventanas reconocibles en reproductores pequeños."
+      }
     ],
-    "notes": [["Revisa también el siguiente directo", "Antes de emitir, confirma que se muestra la conversación prevista. Una prueba con una emisión no comprueba automáticamente otra."],["Distingue las funciones por plataforma", "Esta guía trata de mostrar mensajes. Revisa eventos y controles de acceso específicos en ChatStyle sin asumir que Twitch y YouTube funcionan igual."]],
-    "faq": [["¿Cambia el panel normal de YouTube?", "La plantilla diseña el chat dentro del vídeo emitido. YouTube sigue controlando su propia interfaz de chat."],["¿ChatStyle puede editar mis vídeos?", "Sus permisos publicados describen acceso de lectura sin subir, editar ni borrar vídeos. Revisa la página actual de permisos al conectar tu cuenta."]],
-    "related": ["obs-chat-not-showing","vertical-chat-overlay"],
-    "sources": [{"label":"ChatStyle: permisos de YouTube","url":"https://chatstyle.gg/permissions"},{"label":"YouTube: disponibilidad del chat","url":"https://support.google.com/youtube/answer/15268877"},{"label":"OBS: fuente de navegador","url":"https://obsproject.com/kb/Browser-Source"}]
+    "notes": [
+      [
+        "Revisa también el siguiente directo",
+        "Antes de emitir, confirma que se muestra la conversación prevista. Una prueba con una emisión no comprueba automáticamente otra."
+      ],
+      [
+        "Distingue las funciones por plataforma",
+        "Esta guía trata de mostrar mensajes. Revisa eventos y controles de acceso específicos en ChatStyle sin asumir que Twitch y YouTube funcionan igual."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Cambia el panel normal de YouTube?",
+        "La plantilla diseña el chat dentro del vídeo emitido. YouTube sigue controlando su propia interfaz de chat."
+      ],
+      [
+        "¿ChatStyle puede editar mis vídeos?",
+        "Sus permisos publicados describen acceso de lectura sin subir, editar ni borrar vídeos. Revisa la página actual de permisos al conectar tu cuenta."
+      ],
+      [
+        "¿Qué canal de YouTube debo revisar?",
+        "Confirma que el canal de YouTube o de marca conectado es el que emite el directo activo. Un inicio de sesión correcto en Google no demuestra que se eligió el canal adecuado. Comprueba después que esa emisión tiene chat disponible."
+      ],
+      [
+        "¿Otro diseño arregla un chat no disponible?",
+        "Una plantilla visual no puede crear un chat que la emisión no ofrece. YouTube desactiva el chat en los directos definidos como creados para niños. Revisa primero la emisión y la conexión y después la fuente de OBS si la conversación está disponible."
+      ]
+    ],
+    "related": [
+      "obs-chat-not-showing",
+      "vertical-chat-overlay"
+    ],
+    "sources": [
+      {
+        "label": "ChatStyle: permisos de YouTube",
+        "url": "https://chatstyle.gg/permissions"
+      },
+      {
+        "label": "YouTube: disponibilidad del chat",
+        "url": "https://support.google.com/youtube/answer/15268877"
+      },
+      {
+        "label": "OBS: fuente de navegador",
+        "url": "https://obsproject.com/kb/Browser-Source"
+      }
+    ]
   },
   "animated-chat-overlays": {
     "title": "Overlays de chat animados para Twitch: compara su movimiento",
     "description": "Compara Neo Tokyo, Magical Love y Manhunt 2026 en movimiento. Elige un chat animado según la entrada de mensajes, el tiempo de lectura y tu escena.",
     "heading": "Overlays de chat en movimiento.",
-    "intro": "Un chat animado debe hacer visible el mensaje nuevo y dejar tiempo para leerlo. Compara la entrada, el estado de reposo y lo que ocurre cuando llegan varios mensajes seguidos.",
+    "intro": "Un chat animado debe hacer visible el mensaje nuevo y dejar tiempo para leerlo.",
     "answer": "Observa los vídeos originales y prueba después el overlay junto a tu juego y tus alertas. Una demostración aislada y un directo completo son situaciones visuales diferentes.",
     "steps": [
-      ["Observa un ciclo completo", "Abre las páginas de detalles y mira más allá del primer fotograma. Fíjate en cuándo se lee el nombre, cuándo se estabiliza el texto y qué sigue moviéndose."],
-      ["Compara chat tranquilo y activo", "Prueba mensajes separados por pausas y después una pequeña ráfaga. Si se solapan muchas entradas, simplifica los elementos animados alrededor."],
-      ["Reserva una zona de lectura", "Coloca el chat donde el texto siga siendo legible al terminar el efecto. Evita subtítulos, menús cambiantes y otros widgets animados detrás."],
-      ["Graba con tu carga habitual", "Prueba con el juego, la cámara y las alertas funcionando. Compara grabaciones y rendimiento de OBS antes y después; un vídeo de muestra no mide el rendimiento real."]
+      [
+        "Observa un ciclo completo",
+        "Abre las páginas de detalles y mira más allá del primer fotograma. Fíjate en cuándo se lee el nombre, cuándo se estabiliza el texto y qué sigue moviéndose."
+      ],
+      [
+        "Compara chat tranquilo y activo",
+        "Prueba mensajes separados por pausas y después una pequeña ráfaga. Si se solapan muchas entradas, simplifica los elementos animados alrededor."
+      ],
+      [
+        "Reserva una zona de lectura",
+        "Coloca el chat donde el texto siga siendo legible al terminar el efecto. Evita subtítulos, menús cambiantes y otros widgets animados detrás."
+      ],
+      [
+        "Graba con tu carga habitual",
+        "Prueba con el juego, la cámara y las alertas funcionando. Compara grabaciones y rendimiento de OBS antes y después; un vídeo de muestra no mide el rendimiento real."
+      ]
     ],
     "examples": [
-      {"slug":"neo-tokyo","why":"Una presentación de terminal con entrada de mensajes marcada. Observa cuándo se vuelve legible el texto real durante una conversación rápida."},
-      {"slug":"magical-love","why":"Una alternativa alegre para escenas más claras. Compara su ritmo con el de tus alertas para evitar que ambas reclamen atención a la vez."},
-      {"slug":"manhunt-2026","why":"Una dirección oscura y cinematográfica con eventos destacados. Prueba por separado mensajes normales y eventos compatibles en el overlay configurado."}
+      {
+        "slug": "neo-tokyo",
+        "why": "Una presentación de terminal con entrada de mensajes marcada. Observa cuándo se vuelve legible el texto real durante una conversación rápida."
+      },
+      {
+        "slug": "magical-love",
+        "why": "Una alternativa alegre para escenas más claras. Compara su ritmo con el de tus alertas para evitar que ambas reclamen atención a la vez."
+      },
+      {
+        "slug": "manhunt-2026",
+        "why": "Una dirección oscura y cinematográfica con eventos destacados. Prueba por separado mensajes normales y eventos compatibles en el overlay configurado."
+      }
     ],
-    "notes": [["Una escena alrededor más tranquila", "Puedes conservar un chat expresivo simplificando bordes, widgets y fondos cercanos. No todas las zonas necesitan movimiento."],["Sin promesas universales de FPS", "El rendimiento depende del equipo y la configuración. Prueba la fuente real; la galería reproduce una demostración en vídeo."]],
-    "faq": [["¿Añado el vídeo de muestra como fuente multimedia?", "No. El vídeo presenta el diseño. Los mensajes en directo llegan mediante la URL del overlay configurado en ChatStyle."],["¿Puedo detener la animación de la galería?", "Utiliza la pausa de la cabecera o de los detalles. La galería respeta la preferencia de movimiento reducido; los ajustes del overlay en directo son independientes."]],
-    "related": ["free-twitch-chat-overlays","readable-chat-overlay"],
+    "notes": [
+      [
+        "Una escena alrededor más tranquila",
+        "Puedes conservar un chat expresivo simplificando bordes, widgets y fondos cercanos. No todas las zonas necesitan movimiento."
+      ],
+      [
+        "Sin promesas universales de FPS",
+        "El rendimiento depende del equipo y la configuración. Prueba la fuente real; la galería reproduce una demostración en vídeo."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Añado el vídeo de muestra como fuente multimedia?",
+        "No. El vídeo presenta el diseño. Los mensajes en directo llegan mediante la URL del overlay configurado en ChatStyle."
+      ],
+      [
+        "¿Puedo detener la animación de la galería?",
+        "Utiliza la pausa de la cabecera o de los detalles. La galería respeta la preferencia de movimiento reducido; los ajustes del overlay en directo son independientes."
+      ],
+      [
+        "¿Por qué no se mueven las imágenes de skins?",
+        "Las miniaturas son imágenes fijas para comparar formas y colores. El vídeo original es una referencia mejor para la animación. Por último, prueba el overlay configurado para observar mensajes reales en tu escena."
+      ],
+      [
+        "¿Un overlay animado irá fluido en mi ordenador?",
+        "No se puede determinar a partir de un vídeo de galería. Pruébalo junto al juego, cámara y fuentes que usas normalmente. Revisa una grabación corta y la información de rendimiento de OBS antes de añadir más movimiento."
+      ]
+    ],
+    "related": [
+      "free-twitch-chat-overlays",
+      "readable-chat-overlay"
+    ],
     "sources": []
   },
   "just-chatting-overlay": {
     "title": "Diseño de overlay Just Chatting: cámara, chat y tres ideas",
     "description": "Organiza una escena Just Chatting alrededor de la cámara y la conversación. Compara Sleeping Cats, WhatsChat LoFi y Chat Garden con un plan práctico.",
     "heading": "Crea tu escena Just Chatting.",
-    "intro": "En Just Chatting, la conversación puede ocupar más espacio que durante el juego. Decide primero la relación entre cámara y chat y después elige un diseño que encaje en el área reservada.",
+    "intro": "En Just Chatting, la conversación puede ocupar más espacio que durante el juego.",
     "answer": "Como primer boceto, coloca una cámara grande junto a una columna de chat. El reparto final depende del encuadre, de la longitud de los mensajes y de si compartes una web o un invitado.",
     "steps": [
-      ["Encuadra primero la cámara", "Elige cuánto rostro y torso deben verse. Deja espacio para gesticular y evita colocar mensajes encima de la cara o de las etiquetas de nombres."],
-      ["Reserva una columna de chat", "Prueba inicialmente con aproximadamente un cuarto o un tercio de la escena y ajusta después. Mantén separación entre la cámara y las burbujas decoradas."],
-      ["Introduce la plantilla", "Compara los ejemplos en el mismo espacio. Una ventana de mensajería, plantas y gatos dormidos crean ambientes distintos sin necesitar más widgets."],
-      ["Ensaya el contenido compartido", "Si a veces muestras una web o un invitado, prueba ese cambio de composición. El chat no debería tapar aquello de lo que estáis hablando."]
+      [
+        "Encuadra primero la cámara",
+        "Elige cuánto rostro y torso deben verse. Deja espacio para gesticular y evita colocar mensajes encima de la cara o de las etiquetas de nombres."
+      ],
+      [
+        "Reserva una columna de chat",
+        "Prueba inicialmente con aproximadamente un cuarto o un tercio de la escena y ajusta después. Mantén separación entre la cámara y las burbujas decoradas."
+      ],
+      [
+        "Introduce la plantilla",
+        "Compara los ejemplos en el mismo espacio. Una ventana de mensajería, plantas y gatos dormidos crean ambientes distintos sin necesitar más widgets."
+      ],
+      [
+        "Ensaya el contenido compartido",
+        "Si a veces muestras una web o un invitado, prueba ese cambio de composición. El chat no debería tapar aquello de lo que estáis hablando."
+      ]
     ],
     "examples": [
-      {"slug":"sleeping-cats","why":"Los gatos forman un motivo reconocible junto a la cámara. Deja espacio sobre el primer mensaje en lugar de pegarlo al borde de un panel."},
-      {"slug":"whatschat-lofi","why":"Una conversación dentro de una ventana de mensajería familiar. Compara el espacio total del diseño con la columna que has reservado."},
-      {"slug":"chat-garden","why":"Una alternativa botánica con decoración suave. Repite uno de sus colores en el resto de la escena para relacionar las zonas."}
+      {
+        "slug": "sleeping-cats",
+        "why": "Los gatos forman un motivo reconocible junto a la cámara. Deja espacio sobre el primer mensaje en lugar de pegarlo al borde de un panel."
+      },
+      {
+        "slug": "whatschat-lofi",
+        "why": "Una conversación dentro de una ventana de mensajería familiar. Compara el espacio total del diseño con la columna que has reservado."
+      },
+      {
+        "slug": "chat-garden",
+        "why": "Una alternativa botánica con decoración suave. Repite uno de sus colores en el resto de la escena para relacionar las zonas."
+      }
     ],
-    "notes": [["No rellenes por rellenar", "La cámara debe sostener la composición incluso con poco chat. Añade solo información que ayude a entender el segmento actual."],["Son diseños de chat", "Los ejemplos no incluyen una escena Just Chatting completa. La cámara y las demás fuentes se organizan en tu programa de emisión."]],
-    "faq": [["¿Qué ancho necesita el chat?", "No hay una medida universal. Prueba un nombre largo y un mensaje de varias líneas antes de decidir el reparto entre cámara y chat."],["¿Uso la misma composición para jugar?", "Puedes conservar el diseño y cambiar su posición. Un juego con indicadores importantes suele necesitar otro reparto del espacio."]],
-    "related": ["obs-stream-scenes","cute-cozy-chat-overlays"],
+    "notes": [
+      [
+        "No rellenes por rellenar",
+        "La cámara debe sostener la composición incluso con poco chat. Añade solo información que ayude a entender el segmento actual."
+      ],
+      [
+        "Son diseños de chat",
+        "Los ejemplos no incluyen una escena Just Chatting completa. La cámara y las demás fuentes se organizan en tu programa de emisión."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Qué ancho necesita el chat?",
+        "No hay una medida universal. Prueba un nombre largo y un mensaje de varias líneas antes de decidir el reparto entre cámara y chat."
+      ],
+      [
+        "¿Uso la misma composición para jugar?",
+        "Puedes conservar el diseño y cambiar su posición. Un juego con indicadores importantes suele necesitar otro reparto del espacio."
+      ],
+      [
+        "¿Qué reviso al compartir un navegador o vídeo?",
+        "Incluye el contenido compartido en la prueba antes de emitir. Deja sus controles y textos importantes libres del chat y la cámara. Una escena de conversación puede necesitar otra distribución cuando la pantalla compartida pasa a ser protagonista."
+      ],
+      [
+        "¿Cómo evito que cámara y chat compitan?",
+        "Elige un área principal y reserva un espacio definido para la conversación. Prueba un marco más tranquilo o menos acentos junto a la cara. Compara la escena completa al tamaño de reproducción en lugar de sus elementos aislados."
+      ]
+    ],
+    "related": [
+      "obs-stream-scenes",
+      "cute-cozy-chat-overlays"
+    ],
     "sources": []
   },
   "vertical-chat-overlay": {
     "title": "Overlay de chat vertical: diseña un directo legible en 9:16",
     "description": "Coloca el chat en vertical sin tapar al protagonista. Con un boceto de 1080 × 1920 y ejemplos de Small Talk, Inline Flow y Violet Frame Slim.",
     "heading": "Tu overlay de chat en 9:16.",
-    "intro": "Una escena vertical deja menos ancho para nombres y mensajes. Prepara una composición propia en lugar de comprimir una escena horizontal completa dentro de un marco alto.",
+    "intro": "Una escena vertical deja menos ancho para nombres y mensajes.",
     "answer": "Empieza con un lienzo 9:16, por ejemplo de 1080 × 1920. Reserva un área de chat y pruébala con la interfaz móvil del destino. El formato del vídeo no determina qué plataformas de chat admite el proveedor.",
     "stepsFirst": true,
-    "reference": {"title":"Un primer boceto de distribución", "columns":["Zona","Espacio que reservar"],"rows":[["Protagonista","Cámara o acción con espacio alrededor de caras e indicadores importantes."],["Chat","Una columna o franja corta y legible, con ancho para mensajes de varias líneas."],["Bordes de la interfaz","Margen para botones y textos de la plataforma; comprobarlo en el teléfono."]]},
+    "reference": {
+      "title": "Un primer boceto de distribución",
+      "columns": [
+        "Zona",
+        "Espacio que reservar"
+      ],
+      "rows": [
+        [
+          "Protagonista",
+          "Cámara o acción con espacio alrededor de caras e indicadores importantes."
+        ],
+        [
+          "Chat",
+          "Una columna o franja corta y legible, con ancho para mensajes de varias líneas."
+        ],
+        [
+          "Bordes de la interfaz",
+          "Margen para botones y textos de la plataforma; comprobarlo en el teléfono."
+        ]
+      ]
+    },
     "steps": [
-      ["Elige el punto de atención", "Coloca primero al protagonista. Decide si importa más una cara, el personaje del juego o una demostración y mantén libre esa región."],
-      ["Da espacio propio al texto", "Prueba el chat debajo o al lado de la zona principal. Si cada pocas palabras saltan de línea, amplía el área; reducir todo el overlay también reduce las letras."],
-      ["Prueba distintas formas de mensaje", "Comprueba un mensaje corto, un nombre largo y un texto de varias líneas. La decoración debe permanecer dentro de su zona incluso con varias burbujas visibles."],
-      ["Revisa la vista del destino", "Mira una prueba a tamaño de teléfono con la interfaz de la plataforma visible. Recoloca el chat si se cruza con botones o etiquetas y vuelve a probar tras cambiar el tamaño."]
+      [
+        "Elige el punto de atención",
+        "Coloca primero al protagonista. Decide si importa más una cara, el personaje del juego o una demostración y mantén libre esa región."
+      ],
+      [
+        "Da espacio propio al texto",
+        "Prueba el chat debajo o al lado de la zona principal. Si cada pocas palabras saltan de línea, amplía el área; reducir todo el overlay también reduce las letras."
+      ],
+      [
+        "Prueba distintas formas de mensaje",
+        "Comprueba un mensaje corto, un nombre largo y un texto de varias líneas. La decoración debe permanecer dentro de su zona incluso con varias burbujas visibles."
+      ],
+      [
+        "Revisa la vista del destino",
+        "Mira una prueba a tamaño de teléfono con la interfaz de la plataforma visible. Recoloca el chat si se cruza con botones o etiquetas y vuelve a probar tras cambiar el tamaño."
+      ]
     ],
     "examples": [
-      {"slug":"small-talk","why":"Un punto de partida compacto para una zona pequeña. Comprueba que el ancho de las burbujas sigue permitiendo mensajes normales."},
-      {"slug":"inline-flow","why":"Una dirección discreta cuando el protagonista necesita casi todo el encuadre. Un fondo tranquilo ayuda a conservar la legibilidad."},
-      {"slug":"violet-frame-slim","why":"Un marco estrecho para separar el chat de la imagen principal. Revisa el contorno completo cerca de los botones de la plataforma."}
+      {
+        "slug": "small-talk",
+        "why": "Un punto de partida compacto para una zona pequeña. Comprueba que el ancho de las burbujas sigue permitiendo mensajes normales."
+      },
+      {
+        "slug": "inline-flow",
+        "why": "Una dirección discreta cuando el protagonista necesita casi todo el encuadre. Un fondo tranquilo ayuda a conservar la legibilidad."
+      },
+      {
+        "slug": "violet-frame-slim",
+        "why": "Un marco estrecho para separar el chat de la imagen principal. Revisa el contorno completo cerca de los botones de la plataforma."
+      }
     ],
-    "notes": [["No hay márgenes seguros universales", "Las interfaces cambian entre dispositivos y plataformas. El boceto es un punto de partida visual, no una zona segura garantizada."],["La compatibilidad se comprueba aparte", "Esta guía explica composición. No promete que ChatStyle lea chats de TikTok o Kick; confirma la conexión compatible antes de preparar el directo."]],
-    "faq": [["¿Puedo recortar mi escena horizontal?", "Puedes probarlo, pero quizá desaparezca el chat o el protagonista quede pequeño. Una composición vertical propia permite controlar ambos."],["¿9:16 hace compatible cualquier servicio de chat?", "No. La proporción describe la imagen. El servicio sigue necesitando una conexión compatible con el chat que quieres mostrar."]],
-    "related": ["youtube-chat-overlay-obs","readable-chat-overlay"],
+    "notes": [
+      [
+        "No hay márgenes seguros universales",
+        "Las interfaces cambian entre dispositivos y plataformas. El boceto es un punto de partida visual, no una zona segura garantizada."
+      ],
+      [
+        "La compatibilidad se comprueba aparte",
+        "Esta guía explica composición. No promete que ChatStyle lea chats de TikTok o Kick; confirma la conexión compatible antes de preparar el directo."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Puedo recortar mi escena horizontal?",
+        "Puedes probarlo, pero quizá desaparezca el chat o el protagonista quede pequeño. Una composición vertical propia permite controlar ambos."
+      ],
+      [
+        "¿9:16 hace compatible cualquier servicio de chat?",
+        "No. La proporción describe la imagen. El servicio sigue necesitando una conexión compatible con el chat que quieres mostrar."
+      ],
+      [
+        "¿Puedo usar el mismo diseño en vertical y horizontal?",
+        "Compáralo en ambas composiciones antes de decidir. Un área estrecha cambia los saltos de línea y deja menos espacio para adornos. Conserva la identidad si sigue siendo legible y adapta la distribución a cada formato."
+      ],
+      [
+        "¿Dónde coloco el chat para evitar los controles de la plataforma?",
+        "Comprueba el destino real en un teléfono con la interfaz visible. Botones, rótulos y otras capas pueden ocupar zonas distintas según el dispositivo. Deja margen, prueba una grabación y corrige la posición en vez de asumir una zona segura universal."
+      ]
+    ],
+    "related": [
+      "youtube-chat-overlay-obs",
+      "readable-chat-overlay"
+    ],
     "sources": []
   },
   "obs-stream-scenes": {
     "title": "Escenas de OBS para principiantes: juego, charla y descanso",
     "description": "Organiza una colección sencilla de escenas OBS y decide dónde mostrar el chat. Con ejemplos de Inline Flow, Sleeping Cats y Lofi Windows 93.",
     "heading": "Tus primeras escenas de OBS.",
-    "intro": "Empieza con pocas escenas que realmente vayas a utilizar. Decide en qué deben fijarse los espectadores durante el juego, la conversación y las pausas, y coloca el chat con intención.",
+    "intro": "Empieza con pocas escenas que realmente vayas a utilizar.",
     "answer": "Una primera colección puede incluir Juego, Just Chatting y Descanso. Añade Empezamos pronto solo si lo necesitas. No hace falta un diseño de chat nuevo para cada escena; un estilo común puede unirlas.",
     "stepsFirst": true,
-    "reference": {"title":"Un plan de escenas sencillo", "columns":["Escena","Función del chat"],"rows":[["Juego","Secundario frente a la acción; deja libres indicadores y subtítulos."],["Just Chatting","Parte principal de la conversación junto a una cámara más grande."],["Descanso","Zona de conversación opcional junto a un aviso claro de pausa."],["Empezamos pronto","Opcional; no prometas una hora que no podrás cumplir."]]},
+    "reference": {
+      "title": "Un plan de escenas sencillo",
+      "columns": [
+        "Escena",
+        "Función del chat"
+      ],
+      "rows": [
+        [
+          "Juego",
+          "Secundario frente a la acción; deja libres indicadores y subtítulos."
+        ],
+        [
+          "Just Chatting",
+          "Parte principal de la conversación junto a una cámara más grande."
+        ],
+        [
+          "Descanso",
+          "Zona de conversación opcional junto a un aviso claro de pausa."
+        ],
+        [
+          "Empezamos pronto",
+          "Opcional; no prometas una hora que no podrás cumplir."
+        ]
+      ]
+    },
     "steps": [
-      ["Nombra las escenas por su función", "Crea solo los estados entre los que esperas cambiar. Nombres claros como Juego y Descanso facilitan la operación durante el directo."],
-      ["Coloca primero las fuentes esenciales", "Organiza el juego o la cámara antes de decorar. Añade el chat configurado donde apoye el propósito de la escena; no tiene que aparecer en todas."],
-      ["Mantén un hilo visual", "Reutiliza una plantilla o una paleta reducida. Si cambia el espacio del chat, vuelve a probar mensajes largos en vez de dar por hecho que encajarán."],
-      ["Ensaya una secuencia completa", "Graba el paso de juego a charla, descanso y vuelta. Revisa visibilidad del chat, mensajes duplicados, encuadre de cámara y sonido en cada cambio."]
+      [
+        "Nombra las escenas por su función",
+        "Crea solo los estados entre los que esperas cambiar. Nombres claros como Juego y Descanso facilitan la operación durante el directo."
+      ],
+      [
+        "Coloca primero las fuentes esenciales",
+        "Organiza el juego o la cámara antes de decorar. Añade el chat configurado donde apoye el propósito de la escena; no tiene que aparecer en todas."
+      ],
+      [
+        "Mantén un hilo visual",
+        "Reutiliza una plantilla o una paleta reducida. Si cambia el espacio del chat, vuelve a probar mensajes largos en vez de dar por hecho que encajarán."
+      ],
+      [
+        "Ensaya una secuencia completa",
+        "Graba el paso de juego a charla, descanso y vuelta. Revisa visibilidad del chat, mensajes duplicados, encuadre de cámara y sonido en cada cambio."
+      ]
     ],
     "examples": [
-      {"slug":"inline-flow","why":"Una opción discreta para escenas donde domina el juego. Colócala en una región realmente tranquila sin tapar indicadores importantes."},
-      {"slug":"sleeping-cats","why":"Una alternativa expresiva para conversaciones. Su motivo reconocible también puede relacionar una escena de descanso más tranquila."},
-      {"slug":"lofi-windows-93","why":"Una temática de escritorio capaz de unir varias escenas. Conserva la legibilidad de la ventana aunque cambies su posición."}
+      {
+        "slug": "inline-flow",
+        "why": "Una opción discreta para escenas donde domina el juego. Colócala en una región realmente tranquila sin tapar indicadores importantes."
+      },
+      {
+        "slug": "sleeping-cats",
+        "why": "Una alternativa expresiva para conversaciones. Su motivo reconocible también puede relacionar una escena de descanso más tranquila."
+      },
+      {
+        "slug": "lofi-windows-93",
+        "why": "Una temática de escritorio capaz de unir varias escenas. Conserva la legibilidad de la ventana aunque cambies su posición."
+      }
     ],
-    "notes": [["Colección y ajustes de salida", "Las colecciones de OBS contienen escenas y fuentes. Los ajustes de salida pertenecen a perfiles; cambiar de colección no sustituye revisar el perfil de emisión."],["Prueba la pausa en privado", "Comprueba que la escena oculta lo que no deseas emitir. Un aviso decorativo de descanso no esconde automáticamente las demás fuentes."]],
-    "faq": [["¿Necesito cuatro plantillas distintas?", "No. Empieza con un diseño que encaje y adapta la posición. Los ejemplos muestran enfoques, no una lista de compras necesaria."],["¿Se descarga aquí una colección de OBS?", "No. Es un plan de composición con ejemplos de chat. Crea y organiza las fuentes dentro de tu propia colección."]],
-    "related": ["just-chatting-overlay","add-chat-overlay-obs"],
-    "sources": [{"label":"OBS: colecciones de escenas","url":"https://obsproject.com/kb/scene-collections"}]
+    "notes": [
+      [
+        "Colección y ajustes de salida",
+        "Las colecciones de OBS contienen escenas y fuentes. Los ajustes de salida pertenecen a perfiles; cambiar de colección no sustituye revisar el perfil de emisión."
+      ],
+      [
+        "Prueba la pausa en privado",
+        "Comprueba que la escena oculta lo que no deseas emitir. Un aviso decorativo de descanso no esconde automáticamente las demás fuentes."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Necesito cuatro plantillas distintas?",
+        "No. Empieza con un diseño que encaje y adapta la posición. Los ejemplos muestran enfoques, no una lista de compras necesaria."
+      ],
+      [
+        "¿Se descarga aquí una colección de OBS?",
+        "No. Es un plan de composición con ejemplos de chat. Crea y organiza las fuentes dentro de tu propia colección."
+      ],
+      [
+        "¿Una colección de escenas es lo mismo que un perfil?",
+        "No. Las colecciones de OBS guardan escenas y fuentes, incluidas las fuentes globales de audio. Los ajustes de salida pertenecen a los perfiles. Distinguirlos evita confundir una composición con toda la configuración de emisión."
+      ],
+      [
+        "¿Por qué se recarga el chat al cambiar de escena?",
+        "Revisa las opciones de la fuente de navegador para cerrarla cuando no sea visible y actualizarla al activar una escena. Pueden descargar o recargar la página. Prueba un recorrido completo por tus escenas antes de esperar que la conversación permanezca visualmente continua."
+      ]
+    ],
+    "related": [
+      "just-chatting-overlay",
+      "add-chat-overlay-obs"
+    ],
+    "sources": [
+      {
+        "label": "OBS: colecciones de escenas",
+        "url": "https://obsproject.com/kb/scene-collections"
+      }
+    ]
   },
   "viewer-chat-bubbles": {
     "title": "Burbujas de Twitch para espectadores: skins y acceso del canal",
     "description": "Prepara skins de chat elegibles por tus espectadores en ChatStyle. Compara tres variantes concretas, define un estilo común y prueba el proceso de selección.",
     "heading": "Burbujas de chat para tus espectadores.",
-    "intro": "Los skins permiten que cada mensaje tenga personalidad sin perder la coherencia del canal. Empieza con una selección pequeña e intencionada en lugar de ofrecer todas las variantes posibles.",
+    "intro": "Los skins permiten que cada mensaje tenga personalidad sin perder la coherencia del canal.",
     "answer": "El streamer controla la disponibilidad en ChatStyle. Los espectadores inician sesión, visitan la tienda del canal y eligen un skin al que tienen acceso. Cambia su mensaje en el overlay, no el panel nativo de Twitch.",
     "steps": [
-      ["Define un límite visual", "Elige una plantilla y compara, cuando existan, una variante clara, otra oscura y otra con más acentos. Mantén un contraste de texto parecido entre opciones."],
-      ["Decide la disponibilidad", "Utiliza los controles de acceso del canal. Define qué experiencia quieres para un espectador nuevo y uno habitual antes de añadir muchas opciones por rol."],
-      ["Prueba como espectador", "Pide a una persona voluntaria que elija un skin disponible y envíe un mensaje. Revisa el overlay real; seleccionar una vista previa aquí no modifica una cuenta en directo."],
-      ["Presenta una selección breve", "Explica dónde elegir y qué límites de acceso existen. Amplía las opciones después de comprobar que las primeras se encuentran y utilizan sin confusión."]
+      [
+        "Define un límite visual",
+        "Elige una plantilla y compara, cuando existan, una variante clara, otra oscura y otra con más acentos. Mantén un contraste de texto parecido entre opciones."
+      ],
+      [
+        "Decide la disponibilidad",
+        "Utiliza los controles de acceso del canal. Define qué experiencia quieres para un espectador nuevo y uno habitual antes de añadir muchas opciones por rol."
+      ],
+      [
+        "Prueba como espectador",
+        "Pide a una persona voluntaria que elija un skin disponible y envíe un mensaje. Revisa el overlay real; seleccionar una vista previa aquí no modifica una cuenta en directo."
+      ],
+      [
+        "Presenta una selección breve",
+        "Explica dónde elegir y qué límites de acceso existen. Amplía las opciones después de comprobar que las primeras se encuentran y utilizan sin confusión."
+      ]
     ],
     "examples": [
-      {"slug":"sleeping-cats","skinId":725,"why":"Candy muestra una dirección rosa y violeta suave. Compárala con otras variantes de Sleeping Cats para definir una selección coherente en un canal."},
-      {"slug":"lofi-windows-93","skinId":1130,"why":"Lavender mantiene la identidad de ventana de escritorio con otra paleta. Sirve para valorar cuánta variación admite tu escena."},
-      {"slug":"neo-tokyo","skinId":919,"why":"Blue ofrece una referencia de terminal más oscura. Comprueba el contraste del nombre y del mensaje antes de ofrecer variantes parecidas."}
+      {
+        "slug": "sleeping-cats",
+        "skinId": 725,
+        "why": "Candy muestra una dirección rosa y violeta suave. Compárala con otras variantes de Sleeping Cats para definir una selección coherente en un canal."
+      },
+      {
+        "slug": "lofi-windows-93",
+        "skinId": 1130,
+        "why": "Lavender mantiene la identidad de ventana de escritorio con otra paleta. Sirve para valorar cuánta variación admite tu escena."
+      },
+      {
+        "slug": "neo-tokyo",
+        "skinId": 919,
+        "why": "Blue ofrece una referencia de terminal más oscura. Comprueba el contraste del nombre y del mensaje antes de ofrecer variantes parecidas."
+      }
     ],
-    "notes": [["La selección de la galería es local", "Elegir un skin aquí cambia el enlace de vista previa. La activación, el acceso y la configuración del canal se gestionan en ChatStyle."],["Explica el acceso real", "No prometas que todos pueden utilizar cualquier skin. Describe las opciones que has habilitado realmente en tu canal."]],
-    "faq": [["¿Los espectadores cambian toda la escena?", "Este proceso afecta a sus mensajes dentro de las opciones disponibles. La posición de cámara y la composición de escenas se configuran aparte."],["¿Por qué veo un skin pero no puedo elegirlo en directo?", "Una vista previa pública no concede acceso en un canal concreto. Comprueba la disponibilidad configurada por ese canal en ChatStyle."]],
-    "related": ["chat-overlay-skins","just-chatting-overlay"],
-    "sources": [{"label":"ChatStyle: skins de espectadores y acceso","url":"https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"},{"label":"ChatStyle: permisos por rol","url":"https://chatstyle.gg/permissions"}]
+    "notes": [
+      [
+        "La selección de la galería es local",
+        "Elegir un skin aquí cambia el enlace de vista previa. La activación, el acceso y la configuración del canal se gestionan en ChatStyle."
+      ],
+      [
+        "Explica el acceso real",
+        "No prometas que todos pueden utilizar cualquier skin. Describe las opciones que has habilitado realmente en tu canal."
+      ]
+    ],
+    "faq": [
+      [
+        "¿Los espectadores cambian toda la escena?",
+        "Este proceso afecta a sus mensajes dentro de las opciones disponibles. La posición de cámara y la composición de escenas se configuran aparte."
+      ],
+      [
+        "¿Por qué veo un skin pero no puedo elegirlo en directo?",
+        "Una vista previa pública no concede acceso en un canal concreto. Comprueba la disponibilidad configurada por ese canal en ChatStyle."
+      ],
+      [
+        "¿Cómo presento los skins a mi comunidad?",
+        "Empieza con una selección pequeña y explica cómo encontrar tu canal en ChatStyle. Pide a unas personas con el acceso previsto que elijan skins distintos y escriban mensajes. Así pruebas el recorrido real, no solo la vista previa del creador."
+      ],
+      [
+        "¿La vista pública indica qué permisos de Twitch hacen falta?",
+        "No. Una vista pública es independiente de conectar una cuenta y verificar sus roles. ChatStyle documenta los permisos solicitados en su página de permisos. Consulta la sección de streamer o espectador correspondiente al configurar el acceso."
+      ]
+    ],
+    "related": [
+      "chat-overlay-skins",
+      "just-chatting-overlay"
+    ],
+    "sources": [
+      {
+        "label": "ChatStyle: skins de espectadores y acceso",
+        "url": "https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"
+      },
+      {
+        "label": "ChatStyle: permisos por rol",
+        "url": "https://chatstyle.gg/permissions"
+      }
+    ]
   }
 }

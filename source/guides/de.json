@@ -26,144 +26,381 @@
       "title": "Twitch-Chat-Overlay in OBS einfügen: Schritt-für-Schritt-Anleitung",
       "description": "ChatStyle-Chat-Overlay in OBS einrichten, Design auswählen und Platzierung prüfen. Vier Schritte mit Sleeping Cats, Lofi Windows 93 und Small Talk als Beispielen.",
       "heading": "Dein Chat-Overlay in OBS.",
-      "intro": "Eine gute Chatbox passt in deine Szene: neben dem Geschehen sichtbar, groß genug zum Lesen und im Stil deines Kanals. Wähle unten zunächst ein echtes Overlay aus und bringe deinen eingerichteten Chat anschließend in OBS.",
+      "intro": "Eine gute Chatbox passt in deine Szene: neben dem Geschehen sichtbar, groß genug zum Lesen und im Stil deines Kanals.",
       "answer": "Verwende die Overlay-URL für deinen eingerichteten Chat. Die Template-Seite auf ChatStyle und unsere Vorschauvideos helfen bei der Auswahl; sie sind keine Quelle für deinen Live-Chat.",
       "steps": [
-        ["Zuerst die Form auswählen", "Vergleiche die Beispiele ungefähr in der Größe, die du später verwenden möchtest. Plane Platz für Namen, mehrere Textzeilen und Details oberhalb der Sprechblase ein. Schmale und aufwendig verzierte Designs brauchen unterschiedlich viel Raum."],
-        ["Den Chat in ChatStyle einrichten", "Öffne den ChatStyle-Link am Beispiel und richte dein Overlay dort ein. Wähle sein Aussehen und hole dir anschließend die Overlay-URL für deinen konfigurierten Chat. Diese Adresse brauchst du für deine OBS-Szene."],
-        ["Eine Browserquelle hinzufügen", "Wähle in OBS deine Szene und füge unter Quellen eine Browserquelle hinzu. Trage die Overlay-URL im URL-Feld ein; Lokale Datei bleibt deaktiviert. Stelle Breite und Höhe passend zur vorgesehenen Fläche ein."],
-        ["Platzieren und eine Unterhaltung testen", "Ordne die Chatquelle in der Quellenliste oberhalb des Gameplays an und positioniere sie in der Szene. Teste eine lange Nachricht und mehrere kurze. Beurteile die gesamte Szene, nicht nur die vergrößerte Chatvorschau."]
+        [
+          "Zuerst die Form auswählen",
+          "Vergleiche die Beispiele ungefähr in der Größe, die du später verwenden möchtest. Plane Platz für Namen, mehrere Textzeilen und Details oberhalb der Sprechblase ein. Schmale und aufwendig verzierte Designs brauchen unterschiedlich viel Raum."
+        ],
+        [
+          "Den Chat in ChatStyle einrichten",
+          "Öffne den ChatStyle-Link am Beispiel und richte dein Overlay dort ein. Wähle sein Aussehen und hole dir anschließend die Overlay-URL für deinen konfigurierten Chat. Diese Adresse brauchst du für deine OBS-Szene."
+        ],
+        [
+          "Eine Browserquelle hinzufügen",
+          "Wähle in OBS deine Szene und füge unter Quellen eine Browserquelle hinzu. Trage die Overlay-URL im URL-Feld ein; Lokale Datei bleibt deaktiviert. Stelle Breite und Höhe passend zur vorgesehenen Fläche ein."
+        ],
+        [
+          "Platzieren und eine Unterhaltung testen",
+          "Ordne die Chatquelle in der Quellenliste oberhalb des Gameplays an und positioniere sie in der Szene. Teste eine lange Nachricht und mehrere kurze. Beurteile die gesamte Szene, nicht nur die vergrößerte Chatvorschau."
+        ]
       ],
       "examples": [
-        {"slug":"sleeping-cats","why":"Ein Beispiel für eine eigene gemütliche Chat-Ecke. Die Katzen ragen über die Sprechblasen hinaus: Prüfe deshalb den oberen Rand, bevor du die Fläche endgültig festlegst."},
-        {"slug":"lofi-windows-93","why":"Desktop-Fenster für eine Retro-Szene. Lass die Fensterränder sichtbar und greife eine Akzentfarbe an anderer Stelle im Layout wieder auf."},
-        {"slug":"small-talk","why":"Ein kompakter Ausgangspunkt, wenn das Gameplay den meisten Platz braucht. Prüfe, ob die Nachrichten trotz der kleinen Chatfläche noch gut lesbar sind."}
+        {
+          "slug": "sleeping-cats",
+          "why": "Ein Beispiel für eine eigene gemütliche Chat-Ecke. Die Katzen ragen über die Sprechblasen hinaus: Prüfe deshalb den oberen Rand, bevor du die Fläche endgültig festlegst."
+        },
+        {
+          "slug": "lofi-windows-93",
+          "why": "Desktop-Fenster für eine Retro-Szene. Lass die Fensterränder sichtbar und greife eine Akzentfarbe an anderer Stelle im Layout wieder auf."
+        },
+        {
+          "slug": "small-talk",
+          "why": "Ein kompakter Ausgangspunkt, wenn das Gameplay den meisten Platz braucht. Prüfe, ob die Nachrichten trotz der kleinen Chatfläche noch gut lesbar sind."
+        }
       ],
       "notes": [
-        ["Die Quelle bleibt leer", "Prüfe die Overlay-URL und ob die Quelle sichtbar ist. Sende eine Testnachricht; in einem gerade inaktiven Chat gibt es möglicherweise nichts anzuzeigen."],
-        ["Nachrichten werden abgeschnitten", "Kontrolliere zuerst Breite und Höhe der Browserquelle, bevor du die gesamte Quelle kleiner ziehst. Plane etwas Abstand um dekorative Ränder ein."]
+        [
+          "Die Quelle bleibt leer",
+          "Prüfe die Overlay-URL und ob die Quelle sichtbar ist. Sende eine Testnachricht; in einem gerade inaktiven Chat gibt es möglicherweise nichts anzuzeigen."
+        ],
+        [
+          "Nachrichten werden abgeschnitten",
+          "Kontrolliere zuerst Breite und Höhe der Browserquelle, bevor du die gesamte Quelle kleiner ziehst. Plane etwas Abstand um dekorative Ränder ein."
+        ]
       ],
       "faq": [
-        ["Soll ich die Template-Seite in OBS eintragen?", "Verwende die URL deines eingerichteten Overlays aus ChatStyle. Die Template-Seite dient dazu, das Design und seine Optionen anzusehen."],
-        ["Warum liegt der Chat hinter dem Spiel?", "Prüfe die Reihenfolge der Quellen. OBS zeigt weiter oben gelistete Quellen vor den darunterliegenden Quellen an."]
+        [
+          "Soll ich die Template-Seite in OBS eintragen?",
+          "Verwende die URL deines eingerichteten Overlays aus ChatStyle. Die Template-Seite dient dazu, das Design und seine Optionen anzusehen."
+        ],
+        [
+          "Warum liegt der Chat hinter dem Spiel?",
+          "Prüfe die Reihenfolge der Quellen. OBS zeigt weiter oben gelistete Quellen vor den darunterliegenden Quellen an."
+        ],
+        [
+          "Was unterscheidet Quellengröße und Skalierung in der Szene?",
+          "Breite und Höhe der Browser-Quelle bestimmen die Fläche der geladenen Seite. Skalierst du die Quelle anschließend in der Szene, werden auch die bereits gerenderten Buchstaben kleiner oder größer. Prüfe bei abgeschnittenen Nachrichten zuerst die Quellengröße."
+        ],
+        [
+          "Wie teste ich vor dem ersten Stream?",
+          "Sende eine kurze Nachricht, einen längeren Satz und mehrere Nachrichten nacheinander. Nimm die vollständige Szene lokal auf und betrachte sie in normaler Zuschauergröße. Prüfe dabei einen hellen und einen dunklen Hintergrund, nicht nur die vergrößerte Editoransicht."
+        ]
       ],
-      "related": ["obs-chat-not-showing","obs-stream-scenes"],
+      "related": [
+        "obs-chat-not-showing",
+        "obs-stream-scenes"
+      ],
       "sources": [
-        {"label":"OBS: Browserquelle","url":"https://obsproject.com/kb/Browser-Source"},
-        {"label":"OBS: Quellen-Anleitung","url":"https://obsproject.com/kb/sources-guide"},
-        {"label":"ChatStyle: Overlay einrichten","url":"https://chatstyle.gg/"}
+        {
+          "label": "OBS: Browserquelle",
+          "url": "https://obsproject.com/kb/Browser-Source"
+        },
+        {
+          "label": "OBS: Quellen-Anleitung",
+          "url": "https://obsproject.com/kb/sources-guide"
+        },
+        {
+          "label": "ChatStyle: Overlay einrichten",
+          "url": "https://chatstyle.gg/"
+        }
       ]
     },
     "chat-overlay-skins": {
       "title": "Chat-Overlay-Skins: Farben und eigene Chatblasen vergleichen",
       "description": "Entdecke echte ChatStyle-Skins für Sleeping Cats, Lofi Windows 93 und Neo Tokyo. Vergleiche Farben und öffne jedes Beispiel mit genau diesem Skin.",
       "heading": "Finde die Farben für deinen Chat.",
-      "intro": "Dir gefällt die Form eines Overlays, aber du möchtest eine andere Stimmung? Schau dir seine Skins an. Hier vergleichst du drei echte Varianten: pastellige Katzen, ein helles Desktop-Fenster und ein dunkles blaues Terminal. Jeder Vorschau-Link öffnet genau diesen Skin in unserer Galerie.",
+      "intro": "Dir gefällt die Form eines Overlays, aber du möchtest eine andere Stimmung?",
       "answer": "Das Template bestimmt das grundlegende Chatdesign; ein Skin verändert das Aussehen einer Nachricht darin. Der Streamer steuert den Zugang für Zuschauer. Diese Gestaltung erscheint im Stream-Overlay, nicht in Twitchs eigenem Chatfenster.",
       "steps": [
-        ["Mit der Form der Chatblase beginnen", "Wähle zuerst einen Rahmen, der dir gefällt. Achte auf die Nachrichtenfläche, die Position des Namens und den Platz, den dekorative Details benötigen."],
-        ["Eine konkrete Variante öffnen", "Klicke an einem Beispiel auf Diesen Skin ansehen. Die ausgewählte Variante erscheint in der großen Vorschau. Wechsle zwischen hellem und dunklem Hintergrund, um Kanten und Schrift zu vergleichen."],
-        ["Eine kleine Auswahl treffen", "Vergleiche nach Möglichkeit eine sanfte, eine dunkle und eine kräftige Variante. Öffne denselben Link auch auf dem Handy: Die kleine Skin-Kachel ersetzt keinen Test deiner gesamten Szene."],
-        ["In ChatStyle weitermachen", "Über den ChatStyle-Link des Templates erreichst du die aktuellen Optionen. Unsere Galerie zeigt das Aussehen; Kanaleinstellungen und Zuschauerberechtigungen verwaltest du in ChatStyle."]
+        [
+          "Mit der Form der Chatblase beginnen",
+          "Wähle zuerst einen Rahmen, der dir gefällt. Achte auf die Nachrichtenfläche, die Position des Namens und den Platz, den dekorative Details benötigen."
+        ],
+        [
+          "Eine konkrete Variante öffnen",
+          "Klicke an einem Beispiel auf Diesen Skin ansehen. Die ausgewählte Variante erscheint in der großen Vorschau. Wechsle zwischen hellem und dunklem Hintergrund, um Kanten und Schrift zu vergleichen."
+        ],
+        [
+          "Eine kleine Auswahl treffen",
+          "Vergleiche nach Möglichkeit eine sanfte, eine dunkle und eine kräftige Variante. Öffne denselben Link auch auf dem Handy: Die kleine Skin-Kachel ersetzt keinen Test deiner gesamten Szene."
+        ],
+        [
+          "In ChatStyle weitermachen",
+          "Über den ChatStyle-Link des Templates erreichst du die aktuellen Optionen. Unsere Galerie zeigt das Aussehen; Kanaleinstellungen und Zuschauerberechtigungen verwaltest du in ChatStyle."
+        ]
       ],
       "examples": [
-        {"slug":"sleeping-cats","skinId":725,"why":"Candy kombiniert eine hellrosa Nachrichtenfläche mit violetten Details. Vergleiche es im selben Template mit Lagoon: Die Katzen bleiben gleich, während die Farben eine andere Stimmung erzeugen."},
-        {"slug":"lofi-windows-93","skinId":1130,"why":"Lavender setzt eine helle Nachrichtenfläche in ein Retro-Fenster. Prüfe den Rahmen auf beiden Vorschauhintergründen, statt ihn nur vor Dunkelgrau zu beurteilen."},
-        {"slug":"neo-tokyo","skinId":919,"why":"Blue bildet mit seinem dunkleren Terminal-Look einen Kontrast zu den Pastellbeispielen. Achte bei helleren Szenen besonders auf Namen und Nachrichtenränder."}
+        {
+          "slug": "sleeping-cats",
+          "skinId": 725,
+          "why": "Candy kombiniert eine hellrosa Nachrichtenfläche mit violetten Details. Vergleiche es im selben Template mit Lagoon: Die Katzen bleiben gleich, während die Farben eine andere Stimmung erzeugen."
+        },
+        {
+          "slug": "lofi-windows-93",
+          "skinId": 1130,
+          "why": "Lavender setzt eine helle Nachrichtenfläche in ein Retro-Fenster. Prüfe den Rahmen auf beiden Vorschauhintergründen, statt ihn nur vor Dunkelgrau zu beurteilen."
+        },
+        {
+          "slug": "neo-tokyo",
+          "skinId": 919,
+          "why": "Blue bildet mit seinem dunkleren Terminal-Look einen Kontrast zu den Pastellbeispielen. Achte bei helleren Szenen besonders auf Namen und Nachrichtenränder."
+        }
       ],
       "notes": [
-        ["Unter gleichen Bedingungen vergleichen", "Nutze zunächst denselben Vorschauhintergrund und wechsle ihn anschließend bei allen Favoriten. Sonst wirkt eine Variante vielleicht nur wegen des Hintergrunds deutlicher."],
-        ["Vorschau und Live-Chat unterscheiden", "Unsere Skin-Vorschauen zeigen Beispielnachrichten. Das Originalvideo hilft beim Beurteilen der Bewegung; eine echte Unterhaltung testest du in deinem eingerichteten Overlay."]
+        [
+          "Unter gleichen Bedingungen vergleichen",
+          "Nutze zunächst denselben Vorschauhintergrund und wechsle ihn anschließend bei allen Favoriten. Sonst wirkt eine Variante vielleicht nur wegen des Hintergrunds deutlicher."
+        ],
+        [
+          "Vorschau und Live-Chat unterscheiden",
+          "Unsere Skin-Vorschauen zeigen Beispielnachrichten. Das Originalvideo hilft beim Beurteilen der Bewegung; eine echte Unterhaltung testest du in deinem eingerichteten Overlay."
+        ]
       ],
       "faq": [
-        ["Hat jedes Template Skins?", "Eine Skin-Galerie erscheint hier nur bei Templates mit importierten, öffentlich gelisteten Varianten. Fehlt sie, bedeutet das nicht automatisch, dass sich das Design nicht anpassen lässt."],
-        ["Kann ich eine bestimmte Variante verlinken?", "Ja. Beim Auswählen eines Skins aktualisiert sich die Adresse der Detailseite. Kopiere diesen Link, um dieselbe Variante erneut zu öffnen."]
+        [
+          "Hat jedes Template Skins?",
+          "Eine Skin-Galerie erscheint hier nur bei Templates mit importierten, öffentlich gelisteten Varianten. Fehlt sie, bedeutet das nicht automatisch, dass sich das Design nicht anpassen lässt."
+        ],
+        [
+          "Kann ich eine bestimmte Variante verlinken?",
+          "Ja. Beim Auswählen eines Skins aktualisiert sich die Adresse der Detailseite. Kopiere diesen Link, um dieselbe Variante erneut zu öffnen."
+        ],
+        [
+          "Wie entscheide ich zwischen ähnlichen Farben?",
+          "Verwende beim ersten Vergleich dieselbe Nachricht und denselben Hintergrund. Prüfe die Favoriten danach vor hellen und dunklen Inhalten. Entscheidend sind auch Namen und Textkontrast, nicht nur die dekorative Farbe."
+        ],
+        [
+          "Wird ein Skin durch die Auswahl hier für Zuschauer aktiviert?",
+          "Nein. Unsere Galerie ändert nur die Vorschau und ihre teilbare Adresse. Kanaleinrichtung, Skin-Verfügbarkeit und Zuschauerauswahl finden auf ChatStyle statt; welche Personen einen Skin verwenden dürfen, bestimmt der Streamer."
+        ]
       ],
-      "related": ["viewer-chat-bubbles","readable-chat-overlay"],
-      "sources": [{"label":"ChatStyle: Zuschauer-Skins erklärt","url":"https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"}]
+      "related": [
+        "viewer-chat-bubbles",
+        "readable-chat-overlay"
+      ],
+      "sources": [
+        {
+          "label": "ChatStyle: Zuschauer-Skins erklärt",
+          "url": "https://chatstyle.gg/blog/custom-twitch-chat-bubbles-viewer-skins"
+        }
+      ]
     },
     "cute-cozy-chat-overlays": {
       "title": "Cute & Cozy Chat-Overlays für Twitch: Katzen, Blumen und Pastell",
       "description": "Sleeping Cats, Chat Garden und Magical Love für einen gemütlichen Stream vergleichen. Mit Gestaltungsschritten, Vorschauen und direkten ChatStyle-Links.",
       "heading": "Eine gemütliche Ecke für deinen Chat.",
-      "intro": "Ein niedliches Chat-Overlay passt zu ruhigen Spielen, Kreativstreams oder einer Just-Chatting-Szene. Entscheidend ist, wie seine Dekoration in deinen tatsächlichen Platz passt. Diese drei Beispiele setzen auf unterschiedliche Motive: Katzen, Pflanzen und einen verspielten Rahmen.",
+      "intro": "Ein niedliches Chat-Overlay passt zu ruhigen Spielen, Kreativstreams oder einer Just-Chatting-Szene.",
       "answer": "Wähle ein dekoratives Thema, lass ihm etwas Raum und prüfe die Schrift vor deinem üblichen Hintergrund. Auch eine Pastellpalette braucht einen klaren Unterschied zwischen Nachricht und Szene.",
       "steps": [
-        ["Ein Gestaltungsthema auswählen", "Entscheide dich zunächst für Tiere, Pflanzen oder einen verspielten Rahmen. Vergleiche die Formen in den Beispielen, bevor du viele verschiedene Dekorationen sammelst."],
-        ["Wenige Farben wiederholen", "Wähle einen Grundton und eine Akzentfarbe, die schon in deinem Kamerarahmen oder deinen Panels vorkommen. Hat das Template Skins, vergleiche die Varianten auf seiner Detailseite."],
-        ["Platz für die Details lassen", "Setze die Chatblase in einen ruhigen Bereich deiner Szene. Prüfe, was über die Nachrichtenfläche hinausragt, besonders die Katzen bei Sleeping Cats und die Pflanzendetails von Chat Garden."],
-        ["Einen lebhaften Moment ansehen", "Spiele die Originalvorschau ab und stelle dir mehrere Nachrichten neben Spiel oder Kamera vor. Konkurrieren beide Bereiche, vereinfache zuerst die Dekoration rund um den Chat, bevor du die Schrift verkleinerst."]
+        [
+          "Ein Gestaltungsthema auswählen",
+          "Entscheide dich zunächst für Tiere, Pflanzen oder einen verspielten Rahmen. Vergleiche die Formen in den Beispielen, bevor du viele verschiedene Dekorationen sammelst."
+        ],
+        [
+          "Wenige Farben wiederholen",
+          "Wähle einen Grundton und eine Akzentfarbe, die schon in deinem Kamerarahmen oder deinen Panels vorkommen. Hat das Template Skins, vergleiche die Varianten auf seiner Detailseite."
+        ],
+        [
+          "Platz für die Details lassen",
+          "Setze die Chatblase in einen ruhigen Bereich deiner Szene. Prüfe, was über die Nachrichtenfläche hinausragt, besonders die Katzen bei Sleeping Cats und die Pflanzendetails von Chat Garden."
+        ],
+        [
+          "Einen lebhaften Moment ansehen",
+          "Spiele die Originalvorschau ab und stelle dir mehrere Nachrichten neben Spiel oder Kamera vor. Konkurrieren beide Bereiche, vereinfache zuerst die Dekoration rund um den Chat, bevor du die Schrift verkleinerst."
+        ]
       ],
       "examples": [
-        {"slug":"sleeping-cats","why":"Das deutlichste Tiermotiv dieser Auswahl. Es passt zu einer eigenen Chatspalte, in der die Katzen oberhalb jeder Nachricht Raum haben. Die Skins zeigen unterschiedliche Farbpaletten."},
-        {"slug":"chat-garden","why":"Eine botanische Alternative zu Figuren und Charakteren. Probiere sie vor einem ruhigen Hintergrund, damit sich die Pflanzen von der übrigen Szene abheben."},
-        {"slug":"magical-love","why":"Eine verspieltere Variante, wenn der Chat ein sichtbares Gestaltungselement sein soll. Vergleiche seine Originalanimation mit deinen Alerts, bevor du beides kombinierst."}
+        {
+          "slug": "sleeping-cats",
+          "why": "Das deutlichste Tiermotiv dieser Auswahl. Es passt zu einer eigenen Chatspalte, in der die Katzen oberhalb jeder Nachricht Raum haben. Die Skins zeigen unterschiedliche Farbpaletten."
+        },
+        {
+          "slug": "chat-garden",
+          "why": "Eine botanische Alternative zu Figuren und Charakteren. Probiere sie vor einem ruhigen Hintergrund, damit sich die Pflanzen von der übrigen Szene abheben."
+        },
+        {
+          "slug": "magical-love",
+          "why": "Eine verspieltere Variante, wenn der Chat ein sichtbares Gestaltungselement sein soll. Vergleiche seine Originalanimation mit deinen Alerts, bevor du beides kombinierst."
+        }
       ],
       "notes": [
-        ["Helles Gameplay", "Teste eine helle und eine dunkle Szene. Verliert eine blasse Chatblase ihre Kontur, probiere einen anderen verfügbaren Skin oder einen ruhigeren Bereich hinter dem Chat."],
-        ["Kleine Bildschirme", "Betrachte die gesamte Szene in Handygröße. Namen und Nachrichten sollten lesbar bleiben, bevor zusätzliche Ornamente Platz bekommen."]
+        [
+          "Helles Gameplay",
+          "Teste eine helle und eine dunkle Szene. Verliert eine blasse Chatblase ihre Kontur, probiere einen anderen verfügbaren Skin oder einen ruhigeren Bereich hinter dem Chat."
+        ],
+        [
+          "Kleine Bildschirme",
+          "Betrachte die gesamte Szene in Handygröße. Namen und Nachrichten sollten lesbar bleiben, bevor zusätzliche Ornamente Platz bekommen."
+        ]
       ],
       "faq": [
-        ["Muss Cozy immer rosa sein?", "Nein. Vergleiche, soweit vorhanden, Grün, Creme, Blau oder gedeckte dunklere Varianten. Weiche Formen und die Umgebung prägen die Wirkung genauso wie die Farbe."],
-        ["Wo sehe ich die Animation?", "Öffne unten Vorschau & Details. Jede Detailseite spielt das Originalvideo des Templates ab und zeigt die importierten Skins, falls welche vorhanden sind."]
+        [
+          "Muss Cozy immer rosa sein?",
+          "Nein. Vergleiche, soweit vorhanden, Grün, Creme, Blau oder gedeckte dunklere Varianten. Weiche Formen und die Umgebung prägen die Wirkung genauso wie die Farbe."
+        ],
+        [
+          "Wo sehe ich die Animation?",
+          "Öffne unten Vorschau & Details. Jede Detailseite spielt das Originalvideo des Templates ab und zeigt die importierten Skins, falls welche vorhanden sind."
+        ],
+        [
+          "Funktioniert ein heller Skin vor hellem Gameplay?",
+          "Das lässt sich ausprobieren, aber Pastellfarben allein garantieren keinen lesbaren Kontrast. Prüfe Text, Nachrichtenfläche und Kontur vor deiner hellsten Szene. Ein ruhigerer Hintergrundbereich hilft unter Umständen mehr als zusätzliche Dekoration."
+        ],
+        [
+          "Wie viel Platz brauchen dekorative Bubbles?",
+          "Betrachte den gesamten Rahmen einschließlich Katzen, Blättern oder Details außerhalb der Textfläche. Teste mehrere Nachrichten zusammen, damit ihre Ränder keine benachbarten Inhalte überdecken. Orientiere dich an deiner Szene statt an einem pauschalen Pixelabstand."
+        ]
       ],
-      "related": ["just-chatting-overlay","viewer-chat-bubbles"],
+      "related": [
+        "just-chatting-overlay",
+        "viewer-chat-bubbles"
+      ],
       "sources": []
     },
     "retro-pixel-chat-overlays": {
       "title": "Retro- und Pixel-Chat-Overlays: Windows, Terminals und Spielrahmen",
       "description": "Retro-Chat-Overlays mit Lofi Windows 93, Neo Tokyo und Retromon Silver vergleichen. Desktop-, Terminal- und Pixel-Stile mit direkten Vorschau-Links entdecken.",
       "heading": "Ein Retro-Bildschirm für deinen Chat.",
-      "intro": "Retro ist kein einzelner Look. Ein Desktop-Fenster, ein dunkles Terminal und ein Pixel-Spielrahmen wecken unterschiedliche Erinnerungen. Wähle den Bezug, der zu deinem Stream passt, und prüfe die Schrift in der Größe, die deine Zuschauer später sehen.",
+      "intro": "Retro ist kein einzelner Look.",
       "answer": "Lofi Windows 93 steht hier für Desktop-Fenster, Neo Tokyo für Terminal-Stimmung und Retromon Silver für einen Pixel-Rahmen. Vergleiche zunächst die Originalvorschauen und entscheide dich danach für eine Farbvariante.",
       "steps": [
-        ["Eine Zeit oder Oberfläche auswählen", "Beginne mit einem Bezug: alte Desktop-Software, Terminal-Fenster oder Spieldialoge. So findest du leichter passende Panels, ohne die Szene mit unzusammenhängenden Effekten zu füllen."],
-        ["Den Rahmen in echter Größe prüfen", "Betrachte Titelleisten, Ecken und Schrift in der gesamten Szene. Werden die Details unruhig, gib dem Chat mehr Platz, statt einen aufwendigen Rahmen in eine winzige Ecke zu drücken."],
-        ["Eine Akzentfarbe wählen", "Greife eine Farbe des Overlays in deiner Szene auf. In den Skin-Galerien von Lofi und Neo Tokyo kannst du hellere und dunklere Richtungen desselben Designs vergleichen."],
-        ["Bewegung neben dem Spiel testen", "Spiele das Template-Video neben der Art von Inhalt ab, die du streamst. Bei schnellem Gameplay hilft eine ruhigere Umgebung: Der Retro-Rahmen bringt bereits viel Charakter mit."]
+        [
+          "Eine Zeit oder Oberfläche auswählen",
+          "Beginne mit einem Bezug: alte Desktop-Software, Terminal-Fenster oder Spieldialoge. So findest du leichter passende Panels, ohne die Szene mit unzusammenhängenden Effekten zu füllen."
+        ],
+        [
+          "Den Rahmen in echter Größe prüfen",
+          "Betrachte Titelleisten, Ecken und Schrift in der gesamten Szene. Werden die Details unruhig, gib dem Chat mehr Platz, statt einen aufwendigen Rahmen in eine winzige Ecke zu drücken."
+        ],
+        [
+          "Eine Akzentfarbe wählen",
+          "Greife eine Farbe des Overlays in deiner Szene auf. In den Skin-Galerien von Lofi und Neo Tokyo kannst du hellere und dunklere Richtungen desselben Designs vergleichen."
+        ],
+        [
+          "Bewegung neben dem Spiel testen",
+          "Spiele das Template-Video neben der Art von Inhalt ab, die du streamst. Bei schnellem Gameplay hilft eine ruhigere Umgebung: Der Retro-Rahmen bringt bereits viel Charakter mit."
+        ]
       ],
       "examples": [
-        {"slug":"lofi-windows-93","why":"Fensterknöpfe und mehrteilige Rahmen machen den Desktop-Bezug deutlich. Ein Ausgangspunkt für Szenen mit alter Software als Thema und sanften Violetttönen."},
-        {"slug":"neo-tokyo","why":"Dunkle Fenster und leuchtende Akzente erinnern eher an ein Terminal als an eine verspielte Spieloberfläche. Lass die Kanten auch vor einer dunklen Szene erkennbar."},
-        {"slug":"retromon-silver","why":"Eine Pixel-Richtung für spielinspirierte Layouts. Prüfe die Schrift in deiner geplanten Szenengröße, bevor du die Fläche für den Chat festlegst."}
+        {
+          "slug": "lofi-windows-93",
+          "why": "Fensterknöpfe und mehrteilige Rahmen machen den Desktop-Bezug deutlich. Ein Ausgangspunkt für Szenen mit alter Software als Thema und sanften Violetttönen."
+        },
+        {
+          "slug": "neo-tokyo",
+          "why": "Dunkle Fenster und leuchtende Akzente erinnern eher an ein Terminal als an eine verspielte Spieloberfläche. Lass die Kanten auch vor einer dunklen Szene erkennbar."
+        },
+        {
+          "slug": "retromon-silver",
+          "why": "Eine Pixel-Richtung für spielinspirierte Layouts. Prüfe die Schrift in deiner geplanten Szenengröße, bevor du die Fläche für den Chat festlegst."
+        }
       ],
       "notes": [
-        ["Konkurrierende Rahmen vermeiden", "Ein detailreiches Chatfenster neben einem aufwendigen Kamerarahmen kann gedrängt wirken. Wiederhole lieber eine Farbe oder Eckenform, statt jedem Element einen anderen Rand zu geben."],
-        ["Die Schrift groß genug lassen", "Prüfe Namen und mehrzeilige Nachrichten, wenn du die gesamte Szene verkleinerst. Eine scharfe Pixeloptik gleicht zu kleine Buchstaben nicht aus."]
+        [
+          "Konkurrierende Rahmen vermeiden",
+          "Ein detailreiches Chatfenster neben einem aufwendigen Kamerarahmen kann gedrängt wirken. Wiederhole lieber eine Farbe oder Eckenform, statt jedem Element einen anderen Rand zu geben."
+        ],
+        [
+          "Die Schrift groß genug lassen",
+          "Prüfe Namen und mehrzeilige Nachrichten, wenn du die gesamte Szene verkleinerst. Eine scharfe Pixeloptik gleicht zu kleine Buchstaben nicht aus."
+        ]
       ],
       "faq": [
-        ["Sind das vollständige Stream-Overlay-Pakete?", "Die Beispiele sind Chat-Overlay-Templates. Die Vorschauen zeigen den Chat und kein komplettes Paket aus Kamerarahmen, Alerts und Szenen."],
-        ["Kann ich Farben im selben Template vergleichen?", "Ja, wenn Skins gelistet sind. Öffne eine Detailseite und wähle eine Variante in der Skin-Galerie aus."]
+        [
+          "Sind das vollständige Stream-Overlay-Pakete?",
+          "Die Beispiele sind Chat-Overlay-Templates. Die Vorschauen zeigen den Chat und kein komplettes Paket aus Kamerarahmen, Alerts und Szenen."
+        ],
+        [
+          "Kann ich Farben im selben Template vergleichen?",
+          "Ja, wenn Skins gelistet sind. Öffne eine Detailseite und wähle eine Variante in der Skin-Galerie aus."
+        ],
+        [
+          "Warum wird eine Pixelschrift schwer lesbar?",
+          "Beim Verkleinern des gesamten Overlays schrumpfen auch die Buchstaben. Prüfe einen langen und einen kurzen Text in der vorgesehenen Playergröße. Lassen sich die Zeichen schlecht unterscheiden, gib dem Chat mehr Platz oder wähle eine besser lesbare Textgestaltung."
+        ],
+        [
+          "Wie kombiniere ich Retrochat und einen modernen Kamerarahmen?",
+          "Greife eine gemeinsame Akzentfarbe oder eine einfache rechteckige Form auf. Halte die Umgebung beim ersten Test etwas ruhiger. Nicht jede Kante und Textur muss übereinstimmen; eine klare Unterhaltung zählt mehr als eine vollständig dekorierte Szene."
+        ]
       ],
-      "related": ["animated-chat-overlays","chat-overlay-skins"],
+      "related": [
+        "animated-chat-overlays",
+        "chat-overlay-skins"
+      ],
       "sources": []
     },
     "readable-chat-overlay": {
       "title": "Lesbare Chat-Overlays: schmale Layouts, Größe und Kontrast",
       "description": "Mit Inline Flow, Small Talk und Violet Frame Slim ein lesbares Chatlayout auswählen. Praktische Schritte zu Nachrichtenbreite, Kontrast und Platzierung im Stream.",
       "heading": "Jede Nachricht gut lesen können.",
-      "intro": "Selbst die schönste Chatvorschau kann neben einem bewegten Spiel schwer lesbar werden. Vergleiche, wie viel Platz Rahmen, Nachricht und Name beanspruchen. Diese schmaleren Beispiele rücken die Unterhaltung vor eine große dekorative Fläche.",
+      "intro": "Selbst die schönste Chatvorschau kann neben einem bewegten Spiel schwer lesbar werden.",
       "answer": "Beurteile die Lesbarkeit in deiner vollständigen Szene. Eine ausreichend breite Nachrichtenfläche, deutlicher Textkontrast und ein ruhiger Hintergrund helfen mehr als eine isoliert gewählte Schriftgröße.",
       "steps": [
-        ["Einen ruhigen Bereich reservieren", "Wähle einen Teil der Szene, den nicht ständig Menüs, Untertitel oder schnelle Bewegungen überlagern. Entscheide zuerst, wie viel Platz verfügbar ist, und danach über den Rahmen."],
-        ["Drei Nachrichtenlängen testen", "Probiere einen kurzen Gruß, einen langen Satz und mehrere Emotes. Achte auf ungünstige Umbrüche, Namen neben dem Nachrichtentext und Dekoration, die den Text weit nach innen drückt."],
-        ["Helle und dunkle Szenen vergleichen", "Nutze bei verfügbaren Skins beide Vorschauhintergründe und prüfe danach dein echtes Gameplay. Eine dunkle Chatblase kann in einer Szene funktionieren und in einer anderen untergehen."],
-        ["Eine kleine Aufnahme ansehen", "Nimm eine kurze Szene lokal auf und schaue sie verkleinert an. Musst du näher an den Bildschirm rücken, vergrößere den Chat oder vereinfache die Umgebung."]
+        [
+          "Einen ruhigen Bereich reservieren",
+          "Wähle einen Teil der Szene, den nicht ständig Menüs, Untertitel oder schnelle Bewegungen überlagern. Entscheide zuerst, wie viel Platz verfügbar ist, und danach über den Rahmen."
+        ],
+        [
+          "Drei Nachrichtenlängen testen",
+          "Probiere einen kurzen Gruß, einen langen Satz und mehrere Emotes. Achte auf ungünstige Umbrüche, Namen neben dem Nachrichtentext und Dekoration, die den Text weit nach innen drückt."
+        ],
+        [
+          "Helle und dunkle Szenen vergleichen",
+          "Nutze bei verfügbaren Skins beide Vorschauhintergründe und prüfe danach dein echtes Gameplay. Eine dunkle Chatblase kann in einer Szene funktionieren und in einer anderen untergehen."
+        ],
+        [
+          "Eine kleine Aufnahme ansehen",
+          "Nimm eine kurze Szene lokal auf und schaue sie verkleinert an. Musst du näher an den Bildschirm rücken, vergrößere den Chat oder vereinfache die Umgebung."
+        ]
       ],
       "examples": [
-        {"slug":"inline-flow","why":"Ein kompaktes Inline-Layout zum Vergleichen, wenn die Höhe knapp ist. Teste einen längeren Namen zusammen mit einer Nachricht, um die verfügbare Breite einzuschätzen."},
-        {"slug":"small-talk","why":"Kleine Sprechblasen als weitere kompakte Richtung. Lass ausreichend Platz für mehrere Zeilen, damit lange Nachrichten nicht zu einer schmalen Wortsäule werden."},
-        {"slug":"violet-frame-slim","why":"Der schmale Rahmen erhält einen deutlicheren violetten Akzent. Vergleiche ihn mit den schlichteren Beispielen, wenn die Gestaltung sichtbar, die Nachrichtenfläche aber zurückhaltend sein soll."}
+        {
+          "slug": "inline-flow",
+          "why": "Ein kompaktes Inline-Layout zum Vergleichen, wenn die Höhe knapp ist. Teste einen längeren Namen zusammen mit einer Nachricht, um die verfügbare Breite einzuschätzen."
+        },
+        {
+          "slug": "small-talk",
+          "why": "Kleine Sprechblasen als weitere kompakte Richtung. Lass ausreichend Platz für mehrere Zeilen, damit lange Nachrichten nicht zu einer schmalen Wortsäule werden."
+        },
+        {
+          "slug": "violet-frame-slim",
+          "why": "Der schmale Rahmen erhält einen deutlicheren violetten Akzent. Vergleiche ihn mit den schlichteren Beispielen, wenn die Gestaltung sichtbar, die Nachrichtenfläche aber zurückhaltend sein soll."
+        }
       ],
       "notes": [
-        ["Keine universelle Pixelzahl", "Die passende Schriftgröße hängt von Szene, Ausgabeauflösung und dem Anteil des Chats am Bild ab. Eine einzelne Zahl sagt noch nicht, ob das Ergebnis gut lesbar ist."],
-        ["Auch ein schlichter Rahmen braucht Kontrast", "Minimal bedeutet nicht automatisch lesbar. Die Nachricht muss sich von ihrer Chatblase und diese wiederum vom Gameplay abheben."]
+        [
+          "Keine universelle Pixelzahl",
+          "Die passende Schriftgröße hängt von Szene, Ausgabeauflösung und dem Anteil des Chats am Bild ab. Eine einzelne Zahl sagt noch nicht, ob das Ergebnis gut lesbar ist."
+        ],
+        [
+          "Auch ein schlichter Rahmen braucht Kontrast",
+          "Minimal bedeutet nicht automatisch lesbar. Die Nachricht muss sich von ihrer Chatblase und diese wiederum vom Gameplay abheben."
+        ]
       ],
       "faq": [
-        ["Soll ich den Chat für mehr Spielfläche verkleinern?", "Reduziere zuerst unnötige Abstände oder konkurrierende Dekoration rund um den Chat. Lass der eigentlichen Unterhaltung genug Platz, damit sie lesbar bleibt."],
-        ["Wo beginne ich ohne OBS-Erfahrung?", "Wähle eines der Beispiele und folge anschließend der OBS-Anleitung, die am Ende dieser Seite verlinkt ist."]
+        [
+          "Soll ich den Chat für mehr Spielfläche verkleinern?",
+          "Reduziere zuerst unnötige Abstände oder konkurrierende Dekoration rund um den Chat. Lass der eigentlichen Unterhaltung genug Platz, damit sie lesbar bleibt."
+        ],
+        [
+          "Wo beginne ich ohne OBS-Erfahrung?",
+          "Beginne mit einem Template und einer Szene. In der Ratgeber-Übersicht findest du die OBS-Anleitung mit Prüfungen für Live-URL, Quellengröße und Platzierung."
+        ],
+        [
+          "Welche Testnachrichten zeigen Layoutprobleme?",
+          "Nutze einen langen Nutzernamen, einen vollständigen Satz und mehrere kurze Nachrichten. Achte auf ungünstige Zeilenumbrüche, abgeschnittene Ränder und Dekoration über dem Text. Wiederhole denselben Test nach Größenänderungen, damit der Vergleich aussagekräftig bleibt."
+        ],
+        [
+          "Reicht die OBS-Vorschau zur Prüfung?",
+          "Im vergrößerten Editor kann kleine Schrift gut lesbar wirken. Prüfe zusätzlich eine Aufnahme im normalen Player und auf dem Handy. Lass dabei den eigentlichen Szeneninhalt sichtbar, denn der Hintergrund beeinflusst den Kontrast."
+        ]
       ],
-      "related": ["transparent-chat-overlay","vertical-chat-overlay"],
+      "related": [
+        "transparent-chat-overlay",
+        "vertical-chat-overlay"
+      ],
       "sources": []
     }
   }

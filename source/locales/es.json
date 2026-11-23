@@ -44,7 +44,7 @@
     "lightBackground": "Fondo claro",
     "darkBackground": "Fondo oscuro",
     "chooseSkin": "Elegir una variante",
-    "sampleText": "Así se ve tu chat.",
+    "sampleText": "¡Qué ronda tan emocionante! ¿A qué jugamos ahora?",
     "countOne": "{shown} de {total} plantilla",
     "skinsOne": "variante",
     "allSkins": "Ver las {count} variantes",
@@ -56,9 +56,9 @@
       "Chat con",
       "carácter"
     ],
-    "tagline": "Overlays animados con el estilo de tu comunidad.",
+    "tagline": "Descubre overlays de chat animados y compara sus skins. Encuentra el estilo para tu directo de Twitch, personalízalo en ChatStyle y sigue nuestras guías para añadirlo a OBS.",
     "discover": "Explorar overlays",
-    "platform": "Personaliza con",
+    "platform": "Descubre",
     "gallery": "Encuentra tu estilo.",
     "howTitle": "Tu estilo. En tu directo.",
     "steps": [
@@ -84,16 +84,28 @@
     "faqTitle": "Resolvemos tus dudas.",
     "faq": [
       [
-        "¿Dónde encuentro las plantillas?",
-        "Explora aquí las vistas previas y variantes de cada plantilla. Después, ábrela en ChatStyle para consultar el precio y personalizarla."
+        "¿Dónde encuentro y personalizo una plantilla?",
+        "Compara las vistas previas y los skins aquí y abre el enlace de ChatStyle del diseño que te guste. Su página original muestra la disponibilidad, el precio y las opciones actuales. Elegir un skin en esta galería solo cambia la vista previa, no configura tu canal en directo."
       ],
       [
-        "¿Cómo añado el overlay a OBS?",
-        "Tras configurarlo en ChatStyle, añade la URL del overlay como fuente de navegador en tu escena de OBS. Ajusta allí su tamaño y posición."
+        "¿Cómo añado mi chat a OBS?",
+        "Configura el overlay en ChatStyle y utiliza su URL de overlay en directo en una fuente de navegador de OBS. La página de la plantilla y nuestros vídeos de ejemplo no son esa fuente. La [guía de OBS](/guides/add-chat-overlay-obs/) explica el tamaño, el orden de las fuentes y una primera prueba de conversación."
       ],
       [
-        "¿Qué estilo encaja con mi directo?",
-        "Ten en cuenta los colores, la legibilidad y el movimiento junto al juego o la cámara. Nuestra [guía de overlays](/ratgeber/chat-overlay-auswaehlen/) te ayuda a elegir."
+        "¿Qué diseño encaja con mi directo?",
+        "Empieza por el espacio junto al juego o la cámara y compara el contraste, el ancho del mensaje y el movimiento. Un chat decorativo necesita espacio para su marco además del texto. Usa la [comparación de antes y después](/guides/chat-overlay-before-after/) y prueba tu favorito al tamaño que verá la audiencia."
+      ],
+      [
+        "¿Un skin cambia el panel de chat de Twitch?",
+        "Estos diseños aparecen en el overlay dentro de la imagen de tu emisión. No cambian el panel nativo situado junto al reproductor de Twitch. El streamer controla los skins disponibles para sus espectadores; nuestra [guía de skins para espectadores](/guides/viewer-chat-bubbles/) explica ese proceso."
+      ],
+      [
+        "¿Todas las plantillas son gratuitas?",
+        "No. La galería incluye diseños gratuitos y de pago. La [guía de plantillas gratuitas](/guides/free-twitch-chat-overlays/) recoge ejemplos que figuraban como gratuitos al comprobarlos; confirma siempre la oferta actual en ChatStyle. Una plantilla gratuita no implica que todas las funciones o los planes del servicio sean gratuitos."
+      ],
+      [
+        "¿Puedo guardar un skin concreto para compararlo después?",
+        "Abre los detalles de una plantilla y selecciona un skin. La dirección de la página incluye la selección, así que puedes copiarla para volver a esa variante. Compara con los fondos claro y oscuro y termina con una prueba en tu escena real."
       ]
     ]
   },
@@ -172,5 +184,24 @@
     ],
     "text": "Esta página no existe. Tu próximo estilo te espera en la galería.",
     "back": "Volver a la galería"
+  },
+  "discovery": {
+    "title": "Más ideas para tu directo.",
+    "text": "Explora nuestra galería o descubre el catálogo completo de plantillas en ChatStyle.",
+    "gallery": "Explorar más plantillas",
+    "chatstyle": "Descubre más en"
+  },
+  "makeover": {
+    "heading": "Mismo mensaje. Otro estilo.",
+    "choose": "Elige un diseño para comparar",
+    "before": "Antes",
+    "after": "Después",
+    "plain": "Chat sencillo",
+    "caption": "Las dos vistas usan la misma frase de ejemplo. El chat sencillo es una ilustración; la vista con diseño muestra un skin original de la plantilla."
+  },
+  "community": {
+    "checked": "{count} plantillas marcadas como Free en el catálogo de ChatStyle, comprobadas el {date}. Diseños de toda la comunidad; consulta las condiciones actuales en cada página original.",
+    "free": "Publicada como gratuita en ChatStyle",
+    "all": "Mostrar las {count} plantillas gratuitas"
   }
 }

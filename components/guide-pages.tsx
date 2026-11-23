@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getTemplate, absoluteUrl, config } from '@/lib/catalog';
+import { absoluteUrl, config } from '@/lib/catalog';
 import { getSkins } from '@/lib/skins';
 import { getMessages, localizePath, guidePath, type Locale } from '@/lib/i18n';
-import { getGuide, getGuides, getGuideBundle, guideGroups, articlePath, guidesPath, type GuideExample } from '@/lib/guides';
+import { getGuideTemplate, getGuide, getGuides, getGuideBundle, guideGroups, articlePath, guidesPath, type GuideExample } from '@/lib/guides';
 import { pageMetadata } from '@/lib/metadata';
 import { Breadcrumbs, ChatStyleButton, ChatStyleLink, ChatStyleLogo, StructuredData } from './site-chrome';
 import { PreviewMedia } from './preview-media';
+import { DiscoverCard } from './discover-card';
+import { ChatMakeover } from './chat-makeover';
+import { skinThumbnail } from '@/lib/skin-paths';
+import { CommunityTemplates } from './community-templates';
 
 export function guidesMetadata(locale: Locale) {
   const { ui } = getGuideBundle(locale);
@@ -16,7 +20,7 @@ export function guidesMetadata(locale: Locale) {
 export function articleMetadata(slug: string, locale: Locale) {
   const article = getGuide(slug, locale);
   if (!article) notFound();
-  const metadata = pageMetadata(articlePath(slug), article.title, article.description, getTemplate(article.examples[0].slug, locale)?.image, locale);
+  const metadata = pageMetadata(articlePath(slug), article.title, article.description, getGuideTemplate(article.examples[0].slug, locale)?.image, locale);
   return { ...metadata, openGraph: { ...metadata.openGraph, type: 'article' as const } };
 }
 
@@ -26,10 +30,10 @@ export function GuideCards({ locale, slugs, headingLevel = 2 }: { locale: Locale
   const Heading = headingLevel === 3 ? 'h3' : 'h2';
   return <div className="guide-cards">{guides.map((guide, index) => {
     const illustration = guide.examples[guide.slug === 'cute-cozy-chat-overlays' ? 1 : 0];
-    const template = getTemplate(illustration.slug, locale)!;
+    const template = getGuideTemplate(illustration.slug, locale)!;
     const skin = illustration.skinId ? getSkins(template.slug).find(skin => skin.id === illustration.skinId) : undefined;
     return <Link prefetch={false} className={`guide-card guide-tone-${index % 3}`} key={guide.slug} href={localizePath(articlePath(guide.slug), locale)}>
-      <img className={skin ? 'guide-card-skin' : undefined} src={skin ? skin.preview.replace('.html', '.webp') : template.image.replace('.webp', '.360.webp')} alt="" width="360" height="360" loading="lazy"/>
+      <img className={skin ? 'guide-card-skin' : undefined} src={skin ? skinThumbnail(skin.preview, locale) : template.image.replace('.webp', '.360.webp')} alt="" width="360" height="360" loading="lazy"/>
       <div><Heading>{guide.heading}</Heading><p>{guide.description}</p></div>
     </Link>;
   })}</div>;
@@ -49,17 +53,17 @@ export function GuidesPage({ locale }: { locale: Locale }) {
 
 export function GuideExamples({ examples, locale }: { examples: GuideExample[]; locale: Locale }) {
   const { ui } = getGuideBundle(locale);
-  return <div className="guide-examples" data-count={examples.length}>{examples.map(example => {
-    const template = getTemplate(example.slug, locale)!;
+  return <><div className="guide-examples" data-count={examples.length}>{examples.map(example => {
+    const template = getGuideTemplate(example.slug, locale)!;
     const skin = example.skinId ? getSkins(template.slug).find(skin => skin.id === example.skinId) : undefined;
     const href = localizePath(`/overlays/${template.slug}/${skin ? `?skin=${skin.id}#skins` : ''}`, locale);
     return <article className="guide-example" data-hover-preview key={`${template.slug}-${skin?.id ?? ''}`}>
-      {skin ? <Link className="guide-skin-image" href={href} prefetch={false} aria-label={`${template.name} · ${skin.name}`}><img src={skin.preview.replace('.html', '.webp')} alt={`${template.name} · ${skin.name}`} width="360" height="220" loading="lazy"/></Link> : <PreviewMedia template={template} mode="hover"/>}
-      <div className="guide-example-copy"><h3><Link href={href} prefetch={false}>{template.name}{skin && <span> · {skin.name}</span>}</Link></h3><p>{example.why}</p>
-        <div className="guide-example-links"><Link className="guide-preview-link" href={href} prefetch={false}>{skin ? ui.skinPreview : ui.preview}</Link><ChatStyleButton href={template.shopUrl}/></div>
+      {skin ? <Link className="guide-skin-image" href={href} prefetch={false} aria-label={`${template.name} · ${skin.name}`}><img src={skinThumbnail(skin.preview, locale)} alt={`${template.name} · ${skin.name}`} width="360" height="220" loading="lazy"/></Link> : <PreviewMedia template={template} mode="hover" externalUrl={template.localDetail ? undefined : template.shopUrl}/>}
+      <div className="guide-example-copy"><h3>{template.localDetail ? <Link href={href} prefetch={false}>{template.name}{skin && <span> · {skin.name}</span>}</Link> : template.name}</h3><p>{example.why}</p>
+        <div className="guide-example-links">{template.localDetail && <Link className="button button-preview" href={href} prefetch={false}>{skin ? ui.skinPreview : ui.preview}</Link>}<ChatStyleButton href={template.shopUrl}/></div>
       </div>
     </article>;
-  })}</div>;
+  })}</div><DiscoverCard locale={locale}/></>;
 }
 
 export function GuideArticlePage({ slug, locale }: { slug: string; locale: Locale }) {
@@ -68,7 +72,7 @@ export function GuideArticlePage({ slug, locale }: { slug: string; locale: Local
   const { ui } = getGuideBundle(locale);
   const messages = getMessages(locale);
   const url = absoluteUrl(localizePath(articlePath(slug), locale));
-  const examples = <section id="examples" className="article-examples"><h2>{ui.examples}</h2><GuideExamples examples={article.examples} locale={locale}/></section>;
+  const examples = <section id="examples" className="article-examples"><h2>{ui.examples}</h2>{article.communityExamples ? <><CommunityTemplates/><DiscoverCard locale={locale}/></> : <GuideExamples examples={article.examples} locale={locale}/>}</section>;
   const steps = <section id="steps" className="article-steps"><h2>{ui.steps}</h2><ol>{article.steps.map(([title, text], index) => <li key={title}><span className="article-step-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol></section>;
   return <article className={`guide-article guide-topic-${slug}`}>
     <div className="wrap"><nav className="breadcrumbs" aria-label={messages.ui.breadcrumbs}><Link href={localizePath('/', locale)}>{messages.ui.home}</Link><span aria-hidden="true">/</span><Link href={localizePath(guidesPath, locale)}>{ui.nav}</Link></nav></div>
@@ -76,6 +80,7 @@ export function GuideArticlePage({ slug, locale }: { slug: string; locale: Local
       <nav className="article-contents" aria-label={ui.contents}>{article.stepsFirst ? <><a href="#steps">{ui.steps}</a><a href="#examples">{ui.examples}</a></> : <><a href="#examples">{ui.examples}</a><a href="#steps">{ui.steps}</a></>}<a href="#questions">{ui.faq}</a></nav>
     </div></header>
     <div className="wrap article-body">
+      {article.comparison && <ChatMakeover looks={article.examples.map(example => { const template = getGuideTemplate(example.slug, locale)!; const skin = getSkins(example.slug).find(skin => skin.id === example.skinId)!; return { name: template.name, skin: skin.name, preview: skin.preview }; })}/>}
       <p className="article-answer">{article.answer}</p>
       {article.reference && <section className="article-reference"><table><caption>{article.reference.title}</caption><thead><tr>{article.reference.columns.map(column => <th key={column} scope="col">{column}</th>)}</tr></thead><tbody>{article.reference.rows.map(([label, ...cells]) => <tr key={label}><th scope="row">{label}</th>{cells.map((cell, index) => <td key={index}>{cell}</td>)}</tr>)}</tbody></table></section>}
       {article.stepsFirst ? <>{steps}{examples}</> : <>{examples}{steps}</>}
@@ -85,7 +90,7 @@ export function GuideArticlePage({ slug, locale }: { slug: string; locale: Local
       <section className="article-related"><h2>{ui.related}</h2><GuideCards locale={locale} slugs={article.related}/><Link className="guide-preview-link" href={localizePath(guidesPath, locale)}>{ui.all}</Link></section>
     </div>
     <StructuredData data={{ '@graph': [
-      { '@type': 'Article', inLanguage: locale, headline: article.title, description: article.description, image: absoluteUrl(getTemplate(article.examples[0].slug, locale)!.image), author: { '@type': 'Person', name: config.creator, url: config.creatorUrl }, mainEntityOfPage: url, url, citation: article.sources.map(source => source.url) },
+      { '@type': 'Article', inLanguage: locale, headline: article.title, description: article.description, image: absoluteUrl(getGuideTemplate(article.examples[0].slug, locale)!.image), author: { '@type': 'Person', name: config.creator, url: config.creatorUrl }, mainEntityOfPage: url, url, citation: article.sources.map(source => source.url) },
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: messages.ui.home, item: absoluteUrl(localizePath('/', locale)) }, { '@type': 'ListItem', position: 2, name: ui.nav, item: absoluteUrl(localizePath(guidesPath, locale)) }, { '@type': 'ListItem', position: 3, name: article.heading, item: url }] }
     ] }}/>
   </article>;

@@ -1,0 +1,32 @@
+{
+  "title": "Stream-Chat vorher und nachher: vom schlichten Chat zum eigenen Look",
+  "description": "Vergleiche einen schlichten Stream-Chat mit echten Skins von Sleeping Cats, Lofi Windows 93 und Neo Tokyo. Mit Anleitung, Vorschauen und direkten Template-Links.",
+  "heading": "Mach mehr aus deinem Chat.",
+  "intro": "Vom schlichten Chat zum Teil deines Stream-Designs. Vergleiche drei Looks und finde deinen Favoriten.",
+  "answer": "Die Nachricht bleibt, ihre Gestaltung verändert sich. Ein Rahmen, passende Farben und Platz um den Text geben dem Chat einen klaren Bereich in deiner Szene. Vergleiche zuerst die Ansichten und öffne anschließend die konkreten Skins unter den Beispielen.",
+  "comparison": true,
+  "examples": [
+    { "slug": "sleeping-cats", "skinId": 725, "why": "Candy macht aus der Nachricht einen zartrosa Sticker mit schlafender Katze. Probiere den Look in einer gemütlichen Szene und lasse über der Bubble Platz für die Dekoration." },
+    { "slug": "lofi-windows-93", "skinId": 1130, "why": "Lavender verpackt den Chat in ein kleines Retro-Desktopfenster. Greife eine seiner Akzentfarben am Kamerabereich auf, um beide Bereiche optisch zu verbinden." },
+    { "slug": "neo-tokyo", "skinId": 919, "why": "Blue gibt der Nachricht einen dunklen Terminalrahmen und eine markantere Stimmung. Prüfe Namen und Text vor deinem hellsten Gameplay, bevor du das Layout festlegst." }
+  ],
+  "steps": [
+    ["Lege fest, was besser werden soll", "Schau dir ein Standbild deiner aktuellen Szene an. Hebt sich der Chat zu wenig vom Hintergrund ab, passt er nicht zum Kamerarahmen oder nimmt er zu viel Platz ein? Entscheide dich zunächst für ein Ziel. Ein neuer Skin behebt keine Chat-Quelle, die hinter einer anderen Quelle liegt."],
+    ["Wähle zuerst eine Richtung", "Vergleiche die drei Designs mit derselben Nachricht. Entscheide vor den Farben, welche Form zur Szene passt: weiche Bubble, Retrofenster oder dunkles Terminal. Nutze beim ersten Vergleich denselben Hintergrund, damit nicht das umgebende Bild den Eindruck bestimmt."],
+    ["Übertrage den Look in deine Szene", "Öffne den ChatStyle-Link beim Beispiel, richte dort dein Overlay ein und verwende dessen Overlay-URL in einer OBS-Browser-Quelle. Behalte deine bisherige Szene als Referenz. Passe die Browserfläche an den Chatbereich an und lasse Platz für Rahmen; die Shopseiten-URL gehört nicht in das URL-Feld von OBS."],
+    ["Vergleiche in Zuschauergröße", "Nimm einen kurzen Test mit einer langen Nachricht, mehreren kurzen Nachrichten und einem Wechsel zwischen hellen und dunklen Inhalten auf. Vergleiche vorher und nachher in normaler Playergröße und auf dem Handy. Behalte die Variante, bei der Text klar bleibt und Dekoration im vorgesehenen Bereich sitzt."]
+  ],
+  "notes": [
+    ["Gib einem Element den Akzent", "Ist der Chat bereits farbig, können Kamerarahmen und Panels daneben ruhiger bleiben. Eine wiederholte Akzentfarbe verbindet Bereiche oft klarer als ein zusätzliches Muster. Das ist ein gestalterischer Ausgangspunkt: Vergleiche ihn mit deinem echten Spiel, Licht und Kamerabild, statt ein Layout ungeprüft zu übernehmen."],
+    ["Ein neuer Look muss lesbar bleiben", "Prüfe nach dem ersten Eindruck die Nachricht selbst. Ein Rahmen kann den Chat deutlicher abgrenzen, benötigt aber zusätzlichen Platz. Brechen längere Nachrichten ungünstig um, überprüfe Quellengröße und verfügbare Schriftgröße, bevor du das gesamte Overlay verkleinerst. Für die Bewegung schau dir zusätzlich das originale Template-Video an."]
+  ],
+  "faq": [
+    ["Zeigt die Vorher-Ansicht den Standardchat von Twitch?", "Nein. Sie ist ein bewusst schlichtes Anschauungsbeispiel mit demselben Beispielsatz wie die gestaltete Vorschau. Verschiedene Tools stellen einen Standardchat unterschiedlich dar. Die Nachher-Ansichten verwenden die unten verlinkten originalen Skins, die du genau so näher ansehen kannst."],
+    ["Verändert das den Chat neben dem Twitch-Player?", "Der Vergleich betrifft das Overlay innerhalb deines übertragenen Bildes. Das native Chatfenster von Twitch wird dadurch nicht umgestaltet. Richte das Overlay auf ChatStyle ein und füge die daraus entstandene Live-URL deiner Stream-Szene hinzu."],
+    ["Aktiviere ich einen Skin durch die Auswahl im Vergleich?", "Die Buttons wechseln nur das Beispiel auf dieser Seite. Über den Vorschau-Link kannst du den Skin ansehen und anschließend auf ChatStyle die Kanalkonfiguration und verfügbaren Optionen öffnen. Die Auswahl in unserer Galerie verändert deinen laufenden Stream nicht."],
+    ["Muss ich dafür meinen ganzen Stream neu gestalten?", "Beginne mit einer Szene und behalte deren übriges Layout als Vergleich. Ändere das Chatdesign und prüfe danach Abstände und Kontrast in seiner Umgebung. Passt es bereits, brauchst du unabhängige Kamerarahmen oder Panels nicht ebenfalls auszutauschen."],
+    ["Wie vergleiche ich die Designs fair?", "Nutze für jeden Kandidaten denselben Text, Szenenhintergrund und ungefähr gleich viel Nachrichtenfläche. Prüfe neben dem Beispielsatz einen langen Namen und mehrere Nachrichten. Ein Standbild hilft beim Aussehen; das Originalvideo und ein Test in deiner Szene beantworten zusätzliche Fragen zu Animation und tatsächlichem Verhalten."]
+  ],
+  "related": ["chat-overlay-skins", "readable-chat-overlay"],
+  "sources": [{ "label": "OBS: Browser-Quelle", "url": "https://obsproject.com/kb/Browser-Source" }, { "label": "ChatStyle: originale Templates", "url": "https://chatstyle.gg/templates" }]
+}
